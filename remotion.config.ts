@@ -1,13 +1,19 @@
-/**
- * Note: When using the Node.JS APIs, the config file
- * doesn't apply. Instead, pass options directly to the APIs.
- *
- * All configuration options: https://remotion.dev/docs/config
- */
-
 import { Config } from "@remotion/cli/config";
-import { enableTailwind } from '@remotion/tailwind-v4';
+import { enableTailwind } from "@remotion/tailwind-v4";
+import * as path from "path";
 
 Config.setVideoImageFormat("jpeg");
 Config.setOverwriteOutput(true);
-Config.overrideWebpackConfig(enableTailwind);
+
+Config.overrideWebpackConfig((currentConfig) => {
+  return enableTailwind({
+    ...currentConfig,
+    resolve: {
+      ...currentConfig.resolve,
+      alias: {
+        ...(currentConfig.resolve?.alias ? (currentConfig.resolve.alias as Record<string, string>) : {}),
+        "@": path.resolve(process.cwd(), "src"),
+      },
+    },
+  });
+});

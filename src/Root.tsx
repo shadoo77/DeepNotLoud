@@ -1,18 +1,36 @@
 import "./index.css";
-import { Composition } from "remotion";
-import { MyComposition } from "./Composition";
+import { Composition, Folder } from "remotion";
+import {
+  ForeverLost,
+  FPS,
+  TOTAL_DURATION,
+} from "@/remotion/categories/forever-lost/ep-001/ForeverLost";
+import {
+  Scene0,
+  TOTAL_DURATION as EP2_TOTAL_DURATION,
+} from "@/remotion/categories/forever-lost/ep-002/scenes/scene0";
 
 export const RemotionRoot: React.FC = () => {
   return (
     <>
-      <Composition
-        id="MyComp"
-        component={MyComposition}
-        durationInFrames={60}
-        fps={30}
-        width={1280}
-        height={720}
-      />
+      <Folder name="Forever-Lost">
+        <Composition
+          id="ForeverLost"
+          component={ForeverLost}
+          durationInFrames={TOTAL_DURATION}
+          fps={FPS}
+          width={1280}
+          height={720}
+        />
+        <Composition
+          id="ForeverLost-Ep2"
+          component={Scene0}
+          durationInFrames={EP2_TOTAL_DURATION}
+          fps={FPS}
+          width={1920}
+          height={1080}
+        />
+      </Folder>
     </>
   );
 };
