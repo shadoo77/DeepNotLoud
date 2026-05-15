@@ -1,618 +1,583 @@
 [
   {
     "text": "At",
-    "startMs": 410,
-    "endMs": 450,
-    "timestampMs": 560,
-    "confidence": 0.94903
+    "startMs": 240,
+    "endMs": 320,
+    "timestampMs": 380,
+    "confidence": 0.979464
   },
   {
     "text": " 380",
-    "startMs": 450,
-    "endMs": 2270,
-    "timestampMs": 1240,
-    "confidence": 0.988729
+    "startMs": 320,
+    "endMs": 1790,
+    "timestampMs": 940,
+    "confidence": 0.990749
   },
   {
-    "text": " atmosp",
-    "startMs": 2270,
-    "endMs": 3580,
-    "timestampMs": 3600,
-    "confidence": 0.970361
-  },
-  {
-    "text": "heres",
-    "startMs": 3580,
-    "endMs": 4550,
-    "timestampMs": 4220,
-    "confidence": 0.999174
+    "text": " atmospheres",
+    "startMs": 1790,
+    "endMs": 3830,
+    "timestampMs": 2700,
+    "confidence": 0.971761
   },
   {
     "text": ",",
-    "startMs": 4550,
-    "endMs": 5020,
-    "timestampMs": 4820,
-    "confidence": 0.834666
+    "startMs": 3830,
+    "endMs": 3900,
+    "timestampMs": 3840,
+    "confidence": 0.850738
   },
   {
     "text": " the",
-    "startMs": 5020,
-    "endMs": 5310,
-    "timestampMs": 5060,
-    "confidence": 0.908574
+    "startMs": 3900,
+    "endMs": 4170,
+    "timestampMs": 3960,
+    "confidence": 0.913244
   },
   {
     "text": " pressure",
-    "startMs": 5310,
-    "endMs": 6230,
-    "timestampMs": 5420,
-    "confidence": 0.998401
+    "startMs": 4170,
+    "endMs": 5090,
+    "timestampMs": 4300,
+    "confidence": 0.998946
   },
   {
     "text": " is",
-    "startMs": 6230,
-    "endMs": 6490,
-    "timestampMs": 5840,
-    "confidence": 0.990044
+    "startMs": 5090,
+    "endMs": 5320,
+    "timestampMs": 4680,
+    "confidence": 0.992971
   },
   {
     "text": " so",
-    "startMs": 6490,
-    "endMs": 6750,
-    "timestampMs": 6220,
-    "confidence": 0.995412
+    "startMs": 5320,
+    "endMs": 5550,
+    "timestampMs": 5020,
+    "confidence": 0.99799
   },
   {
     "text": " extreme",
-    "startMs": 6750,
-    "endMs": 7690,
-    "timestampMs": 7000,
-    "confidence": 0.988487
+    "startMs": 5550,
+    "endMs": 6630,
+    "timestampMs": 5880,
+    "confidence": 0.992028
   },
   {
     "text": " that",
-    "startMs": 7690,
-    "endMs": 7900,
-    "timestampMs": 7800,
-    "confidence": 0.72226
+    "startMs": 6630,
+    "endMs": 6720,
+    "timestampMs": 6680,
+    "confidence": 0.620004
   },
   {
     "text": " it",
-    "startMs": 7900,
-    "endMs": 8130,
-    "timestampMs": 7900,
-    "confidence": 0.986656
+    "startMs": 6720,
+    "endMs": 7040,
+    "timestampMs": 6800,
+    "confidence": 0.978372
   },
   {
     "text": " crushed",
-    "startMs": 8130,
-    "endMs": 8980,
-    "timestampMs": 8440,
-    "confidence": 0.956664
+    "startMs": 7040,
+    "endMs": 7820,
+    "timestampMs": 7300,
+    "confidence": 0.945337
   },
   {
     "text": " a",
-    "startMs": 8980,
-    "endMs": 9070,
-    "timestampMs": 9020,
-    "confidence": 0.963714
+    "startMs": 7820,
+    "endMs": 7880,
+    "timestampMs": 7860,
+    "confidence": 0.974942
   },
   {
-    "text": " sty",
-    "startMs": 9070,
-    "endMs": 9400,
-    "timestampMs": 9500,
-    "confidence": 0.804331
-  },
-  {
-    "text": "ro",
-    "startMs": 9400,
-    "endMs": 9620,
-    "timestampMs": 9700,
-    "confidence": 0.966023
-  },
-  {
-    "text": "fo",
-    "startMs": 9620,
-    "endMs": 9910,
-    "timestampMs": 9940,
-    "confidence": 0.996873
-  },
-  {
-    "text": "am",
-    "startMs": 9910,
-    "endMs": 10080,
-    "timestampMs": 10100,
-    "confidence": 0.999519
+    "text": " styrofoam",
+    "startMs": 7880,
+    "endMs": 9000,
+    "timestampMs": 8240,
+    "confidence": 0.823852
   },
   {
     "text": " cup",
-    "startMs": 10080,
-    "endMs": 10910,
-    "timestampMs": 10380,
-    "confidence": 0.960323
+    "startMs": 9000,
+    "endMs": 9620,
+    "timestampMs": 9040,
+    "confidence": 0.967935
   },
   {
     "text": " to",
-    "startMs": 10910,
-    "endMs": 10990,
-    "timestampMs": 10980,
-    "confidence": 0.94548
+    "startMs": 9620,
+    "endMs": 9620,
+    "timestampMs": 9680,
+    "confidence": 0.937285
   },
   {
     "text": " a",
-    "startMs": 10990,
-    "endMs": 11370,
-    "timestampMs": 11120,
-    "confidence": 0.982634
+    "startMs": 9620,
+    "endMs": 9720,
+    "timestampMs": 9800,
+    "confidence": 0.992759
   },
   {
     "text": " fraction",
-    "startMs": 11370,
-    "endMs": 12220,
-    "timestampMs": 11620,
-    "confidence": 0.998028
+    "startMs": 9720,
+    "endMs": 10560,
+    "timestampMs": 10220,
+    "confidence": 0.997034
   },
   {
     "text": " of",
-    "startMs": 12220,
-    "endMs": 12610,
-    "timestampMs": 12340,
-    "confidence": 0.997729
+    "startMs": 10560,
+    "endMs": 10880,
+    "timestampMs": 10720,
+    "confidence": 0.566071
   },
   {
     "text": " its",
-    "startMs": 12610,
-    "endMs": 13190,
-    "timestampMs": 12460,
-    "confidence": 0.966888
+    "startMs": 10880,
+    "endMs": 11320,
+    "timestampMs": 10840,
+    "confidence": 0.980079
   },
   {
     "text": " size",
-    "startMs": 13190,
-    "endMs": 14450,
-    "timestampMs": 12900,
-    "confidence": 0.995729
+    "startMs": 11320,
+    "endMs": 11990,
+    "timestampMs": 11300,
+    "confidence": 0.993613
   },
   {
     "text": ".",
-    "startMs": 14450,
-    "endMs": 14560,
-    "timestampMs": 13980,
-    "confidence": 0.954928
+    "startMs": 11990,
+    "endMs": 12000,
+    "timestampMs": 12300,
+    "confidence": 0.930955
   },
   {
     "text": " Now",
-    "startMs": 14560,
-    "endMs": 14920,
-    "timestampMs": 14540,
-    "confidence": 0.9773
+    "startMs": 12000,
+    "endMs": 12690,
+    "timestampMs": 12860,
+    "confidence": 0.991567
   },
   {
     "text": " imagine",
-    "startMs": 14920,
-    "endMs": 15790,
-    "timestampMs": 15140,
-    "confidence": 0.996365
+    "startMs": 12690,
+    "endMs": 13610,
+    "timestampMs": 13840,
+    "confidence": 0.877304
   },
   {
     "text": " that",
-    "startMs": 15790,
-    "endMs": 16240,
-    "timestampMs": 15560,
-    "confidence": 0.994317
+    "startMs": 13610,
+    "endMs": 14260,
+    "timestampMs": 14300,
+    "confidence": 0.996892
   },
   {
     "text": " force",
-    "startMs": 16240,
-    "endMs": 16930,
-    "timestampMs": 16080,
-    "confidence": 0.994704
+    "startMs": 14260,
+    "endMs": 15070,
+    "timestampMs": 14820,
+    "confidence": 0.997577
   },
   {
     "text": " acting",
-    "startMs": 16930,
-    "endMs": 17560,
-    "timestampMs": 16800,
-    "confidence": 0.978467
+    "startMs": 15070,
+    "endMs": 16040,
+    "timestampMs": 15700,
+    "confidence": 0.895297
   },
   {
     "text": " on",
-    "startMs": 17560,
-    "endMs": 17880,
-    "timestampMs": 17260,
-    "confidence": 0.996447
+    "startMs": 16040,
+    "endMs": 16380,
+    "timestampMs": 16240,
+    "confidence": 0.998125
   },
   {
     "text": " a",
-    "startMs": 17880,
-    "endMs": 17920,
-    "timestampMs": 17340,
-    "confidence": 0.996774
+    "startMs": 16380,
+    "endMs": 16520,
+    "timestampMs": 16340,
+    "confidence": 0.998163
   },
   {
     "text": " ship",
-    "startMs": 17920,
-    "endMs": 18400,
-    "timestampMs": 17740,
-    "confidence": 0.996207
+    "startMs": 16520,
+    "endMs": 17170,
+    "timestampMs": 16740,
+    "confidence": 0.997849
   },
   {
     "text": " made",
-    "startMs": 18400,
-    "endMs": 18830,
-    "timestampMs": 18280,
-    "confidence": 0.97595
+    "startMs": 17170,
+    "endMs": 17820,
+    "timestampMs": 17360,
+    "confidence": 0.987841
   },
   {
     "text": " of",
-    "startMs": 18830,
-    "endMs": 19110,
-    "timestampMs": 18440,
-    "confidence": 0.996428
+    "startMs": 17820,
+    "endMs": 18140,
+    "timestampMs": 17580,
+    "confidence": 0.997706
   },
   {
     "text": " steel",
-    "startMs": 19110,
-    "endMs": 19710,
-    "timestampMs": 18960,
-    "confidence": 0.99931
+    "startMs": 18140,
+    "endMs": 19020,
+    "timestampMs": 18060,
+    "confidence": 0.999007
   },
   {
     "text": " that",
-    "startMs": 19710,
-    "endMs": 20200,
-    "timestampMs": 20640,
-    "confidence": 0.684299
+    "startMs": 19020,
+    "endMs": 19650,
+    "timestampMs": 19700,
+    "confidence": 0.414052
   },
   {
     "text": "'s",
-    "startMs": 20200,
-    "endMs": 20600,
-    "timestampMs": 20760,
-    "confidence": 0.903992
+    "startMs": 19650,
+    "endMs": 19800,
+    "timestampMs": 19820,
+    "confidence": 0.94646
   },
   {
     "text": " been",
-    "startMs": 20600,
-    "endMs": 20920,
-    "timestampMs": 20940,
-    "confidence": 0.997044
+    "startMs": 19800,
+    "endMs": 20340,
+    "timestampMs": 19980,
+    "confidence": 0.999211
   },
   {
-    "text": " corro",
-    "startMs": 20920,
-    "endMs": 21520,
-    "timestampMs": 21300,
-    "confidence": 0.994879
-  },
-  {
-    "text": "ding",
-    "startMs": 21520,
-    "endMs": 22000,
-    "timestampMs": 21940,
-    "confidence": 0.995657
+    "text": " corroding",
+    "startMs": 20340,
+    "endMs": 21540,
+    "timestampMs": 20520,
+    "confidence": 0.994499
   },
   {
     "text": " for",
-    "startMs": 22000,
-    "endMs": 22490,
-    "timestampMs": 22240,
-    "confidence": 0.978248
+    "startMs": 21540,
+    "endMs": 21940,
+    "timestampMs": 21200,
+    "confidence": 0.993866
   },
   {
     "text": " over",
-    "startMs": 22490,
-    "endMs": 22960,
-    "timestampMs": 22760,
-    "confidence": 0.971185
+    "startMs": 21940,
+    "endMs": 22480,
+    "timestampMs": 21600,
+    "confidence": 0.998466
   },
   {
     "text": " a",
-    "startMs": 22960,
-    "endMs": 23220,
-    "timestampMs": 23060,
-    "confidence": 0.925767
+    "startMs": 22480,
+    "endMs": 22570,
+    "timestampMs": 21900,
+    "confidence": 0.995393
   },
   {
     "text": " century",
-    "startMs": 23220,
-    "endMs": 25690,
-    "timestampMs": 23820,
-    "confidence": 0.999533
+    "startMs": 22570,
+    "endMs": 23540,
+    "timestampMs": 22620,
+    "confidence": 0.999018
   },
   {
     "text": ".",
-    "startMs": 25690,
-    "endMs": 25800,
-    "timestampMs": 24520,
-    "confidence": 0.94968
+    "startMs": 23540,
+    "endMs": 24000,
+    "timestampMs": 23980,
+    "confidence": 0.948239
   },
   {
     "text": " The",
-    "startMs": 25800,
-    "endMs": 26160,
-    "timestampMs": 26380,
-    "confidence": 0.873145
+    "startMs": 24000,
+    "endMs": 24570,
+    "timestampMs": 24640,
+    "confidence": 0.993043
   },
   {
     "text": " Titanic",
-    "startMs": 26160,
-    "endMs": 26910,
-    "timestampMs": 26380,
-    "confidence": 0.849805
+    "startMs": 24570,
+    "endMs": 25190,
+    "timestampMs": 24940,
+    "confidence": 0.883985
   },
   {
     "text": "'s",
-    "startMs": 26910,
-    "endMs": 27130,
-    "timestampMs": 26660,
-    "confidence": 0.998409
+    "startMs": 25190,
+    "endMs": 25440,
+    "timestampMs": 25400,
+    "confidence": 0.997596
   },
   {
     "text": " hull",
-    "startMs": 27130,
-    "endMs": 27570,
-    "timestampMs": 26960,
-    "confidence": 0.825446
+    "startMs": 25440,
+    "endMs": 25890,
+    "timestampMs": 25680,
+    "confidence": 0.995779
   },
   {
     "text": " isn",
-    "startMs": 27570,
-    "endMs": 27920,
-    "timestampMs": 27520,
-    "confidence": 0.992983
+    "startMs": 25890,
+    "endMs": 26310,
+    "timestampMs": 26420,
+    "confidence": 0.995811
   },
   {
     "text": "'t",
-    "startMs": 27920,
-    "endMs": 28120,
-    "timestampMs": 27780,
-    "confidence": 0.999653
+    "startMs": 26310,
+    "endMs": 26490,
+    "timestampMs": 26620,
+    "confidence": 0.999691
   },
   {
     "text": " the",
-    "startMs": 28120,
-    "endMs": 28460,
-    "timestampMs": 27960,
-    "confidence": 0.989245
+    "startMs": 26490,
+    "endMs": 26850,
+    "timestampMs": 26780,
+    "confidence": 0.994806
   },
   {
     "text": " solid",
-    "startMs": 28460,
-    "endMs": 29010,
-    "timestampMs": 28500,
-    "confidence": 0.996407
+    "startMs": 26850,
+    "endMs": 27450,
+    "timestampMs": 27240,
+    "confidence": 0.999032
   },
   {
     "text": " structure",
-    "startMs": 29010,
-    "endMs": 30020,
-    "timestampMs": 29260,
-    "confidence": 0.999077
+    "startMs": 27450,
+    "endMs": 28520,
+    "timestampMs": 27900,
+    "confidence": 0.999424
   },
   {
     "text": " it",
-    "startMs": 30020,
-    "endMs": 30240,
-    "timestampMs": 29460,
-    "confidence": 0.93025
+    "startMs": 28520,
+    "endMs": 28760,
+    "timestampMs": 28140,
+    "confidence": 0.969329
   },
   {
     "text": " once",
-    "startMs": 30240,
-    "endMs": 30420,
-    "timestampMs": 29660,
-    "confidence": 0.955797
+    "startMs": 28760,
+    "endMs": 29120,
+    "timestampMs": 28360,
+    "confidence": 0.981435
   },
   {
     "text": " was",
-    "startMs": 30420,
-    "endMs": 31380,
-    "timestampMs": 30060,
-    "confidence": 0.998689
+    "startMs": 29120,
+    "endMs": 29590,
+    "timestampMs": 28820,
+    "confidence": 0.999561
   },
   {
     "text": ".",
-    "startMs": 31380,
-    "endMs": 31420,
-    "timestampMs": 31180,
-    "confidence": 0.775714
+    "startMs": 29590,
+    "endMs": 30000,
+    "timestampMs": 29860,
+    "confidence": 0.902917
   },
   {
     "text": " The",
-    "startMs": 31420,
-    "endMs": 31840,
-    "timestampMs": 31440,
-    "confidence": 0.998009
+    "startMs": 30000,
+    "endMs": 30380,
+    "timestampMs": 30220,
+    "confidence": 0.992837
   },
   {
     "text": " iron",
-    "startMs": 31840,
-    "endMs": 32440,
-    "timestampMs": 31900,
-    "confidence": 0.969318
+    "startMs": 30380,
+    "endMs": 30820,
+    "timestampMs": 30580,
+    "confidence": 0.992799
   },
   {
     "text": " has",
-    "startMs": 32440,
-    "endMs": 32830,
-    "timestampMs": 32260,
-    "confidence": 0.985607
+    "startMs": 30820,
+    "endMs": 31170,
+    "timestampMs": 30980,
+    "confidence": 0.991038
   },
   {
     "text": " been",
-    "startMs": 32830,
-    "endMs": 33400,
-    "timestampMs": 32480,
-    "confidence": 0.995651
+    "startMs": 31170,
+    "endMs": 31640,
+    "timestampMs": 31160,
+    "confidence": 0.998864
   },
   {
     "text": " consumed",
-    "startMs": 33400,
-    "endMs": 34540,
-    "timestampMs": 33100,
-    "confidence": 0.999014
+    "startMs": 31640,
+    "endMs": 32700,
+    "timestampMs": 31720,
+    "confidence": 0.999216
   },
   {
     "text": " by",
-    "startMs": 34540,
-    "endMs": 35470,
-    "timestampMs": 33680,
-    "confidence": 0.997761
+    "startMs": 32700,
+    "endMs": 32810,
+    "timestampMs": 32300,
+    "confidence": 0.998382
   },
   {
     "text": " bacteria",
-    "startMs": 35470,
-    "endMs": 36010,
-    "timestampMs": 34300,
-    "confidence": 0.998302
+    "startMs": 32810,
+    "endMs": 33830,
+    "timestampMs": 32860,
+    "confidence": 0.998637
   },
   {
     "text": ",",
-    "startMs": 36010,
-    "endMs": 36240,
-    "timestampMs": 34940,
-    "confidence": 0.628314
+    "startMs": 33830,
+    "endMs": 34000,
+    "timestampMs": 33680,
+    "confidence": 0.896319
   },
   {
     "text": " transforming",
-    "startMs": 36240,
-    "endMs": 37950,
-    "timestampMs": 36180,
-    "confidence": 0.995493
+    "startMs": 34000,
+    "endMs": 35500,
+    "timestampMs": 34460,
+    "confidence": 0.966764
   },
   {
     "text": " it",
-    "startMs": 37950,
-    "endMs": 38580,
-    "timestampMs": 36520,
-    "confidence": 0.979634
+    "startMs": 35500,
+    "endMs": 35520,
+    "timestampMs": 34760,
+    "confidence": 0.987637
   },
   {
     "text": " into",
-    "startMs": 38580,
-    "endMs": 38800,
-    "timestampMs": 37100,
-    "confidence": 0.979385
+    "startMs": 35520,
+    "endMs": 35930,
+    "timestampMs": 35080,
+    "confidence": 0.994554
   },
   {
     "text": " fragile",
-    "startMs": 38800,
-    "endMs": 39610,
-    "timestampMs": 37780,
-    "confidence": 0.998685
+    "startMs": 35930,
+    "endMs": 36680,
+    "timestampMs": 35740,
+    "confidence": 0.994981
   },
   {
     "text": " rusticles",
-    "startMs": 39610,
-    "endMs": 41530,
-    "timestampMs": 38820,
-    "confidence": 0.938543
+    "startMs": 36680,
+    "endMs": 37410,
+    "timestampMs": 36620,
+    "confidence": 0.573083
   },
   {
     "text": ".",
-    "startMs": 41530,
-    "endMs": 41560,
-    "timestampMs": 40580,
-    "confidence": 0.988304
+    "startMs": 37410,
+    "endMs": 38000,
+    "timestampMs": 37980,
+    "confidence": 0.98581
   },
   {
     "text": " The",
-    "startMs": 41560,
-    "endMs": 41940,
-    "timestampMs": 42020,
-    "confidence": 0.768412
+    "startMs": 38000,
+    "endMs": 38950,
+    "timestampMs": 39000,
+    "confidence": 0.992856
   },
   {
     "text": " moment",
-    "startMs": 41940,
-    "endMs": 42700,
-    "timestampMs": 42020,
-    "confidence": 0.980602
+    "startMs": 38950,
+    "endMs": 39330,
+    "timestampMs": 39400,
+    "confidence": 0.99906
   },
   {
     "text": " any",
-    "startMs": 42700,
-    "endMs": 43080,
-    "timestampMs": 42580,
-    "confidence": 0.968572
+    "startMs": 39330,
+    "endMs": 39780,
+    "timestampMs": 39860,
+    "confidence": 0.993417
   },
   {
     "text": " lifting",
-    "startMs": 43080,
-    "endMs": 43980,
-    "timestampMs": 43200,
-    "confidence": 0.9819
+    "startMs": 39780,
+    "endMs": 40950,
+    "timestampMs": 40480,
+    "confidence": 0.993468
   },
   {
     "text": " force",
-    "startMs": 43980,
-    "endMs": 44560,
-    "timestampMs": 43780,
-    "confidence": 0.998851
+    "startMs": 40950,
+    "endMs": 41590,
+    "timestampMs": 41140,
+    "confidence": 0.998584
   },
   {
     "text": " was",
-    "startMs": 44560,
-    "endMs": 45790,
-    "timestampMs": 44020,
-    "confidence": 0.994099
+    "startMs": 41590,
+    "endMs": 41990,
+    "timestampMs": 41380,
+    "confidence": 0.997548
   },
   {
     "text": " applied",
-    "startMs": 45790,
-    "endMs": 45870,
-    "timestampMs": 44520,
-    "confidence": 0.999093
+    "startMs": 41990,
+    "endMs": 43140,
+    "timestampMs": 41880,
+    "confidence": 0.999676
   },
   {
     "text": ",",
-    "startMs": 45870,
-    "endMs": 46140,
-    "timestampMs": 45720,
-    "confidence": 0.860915
+    "startMs": 43140,
+    "endMs": 43320,
+    "timestampMs": 42780,
+    "confidence": 0.813515
   },
   {
     "text": " the",
-    "startMs": 46140,
-    "endMs": 46500,
-    "timestampMs": 45840,
-    "confidence": 0.989136
+    "startMs": 43320,
+    "endMs": 43760,
+    "timestampMs": 42800,
+    "confidence": 0.996681
   },
   {
     "text": " structure",
-    "startMs": 46500,
-    "endMs": 47580,
-    "timestampMs": 46460,
-    "confidence": 0.99486
+    "startMs": 43760,
+    "endMs": 45680,
+    "timestampMs": 43340,
+    "confidence": 0.99947
   },
   {
     "text": " would",
-    "startMs": 47580,
-    "endMs": 48260,
-    "timestampMs": 46800,
-    "confidence": 0.958963
+    "startMs": 45680,
+    "endMs": 45850,
+    "timestampMs": 43760,
+    "confidence": 0.996428
   },
   {
     "text": " simply",
-    "startMs": 48260,
-    "endMs": 49540,
-    "timestampMs": 47340,
-    "confidence": 0.975186
+    "startMs": 45850,
+    "endMs": 46720,
+    "timestampMs": 44360,
+    "confidence": 0.987044
   },
   {
     "text": " disintegrate",
-    "startMs": 49540,
-    "endMs": 50680,
-    "timestampMs": 49760,
-    "confidence": 0.976455
+    "startMs": 46720,
+    "endMs": 48490,
+    "timestampMs": 45940,
+    "confidence": 0.973027
   },
   {
     "text": ".",
-    "startMs": 50680,
-    "endMs": 50680,
-    "timestampMs": 50660,
-    "confidence": 0.962412
+    "startMs": 48490,
+    "endMs": 49000,
+    "timestampMs": 47440,
+    "confidence": 0.978777
   }
 ]
