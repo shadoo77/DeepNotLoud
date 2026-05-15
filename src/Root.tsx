@@ -6,9 +6,9 @@ import {
   TOTAL_DURATION,
 } from "@/remotion/categories/forever-lost/ep-001/ForeverLost";
 import {
-  Scene0,
+  ForeverLostEp2,
   TOTAL_DURATION as EP2_TOTAL_DURATION,
-} from "@/remotion/categories/forever-lost/ep-002/scenes/scene0";
+} from "@/remotion/categories/forever-lost/ep-002/ForeverLost";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -24,7 +24,7 @@ export const RemotionRoot: React.FC = () => {
         />
         <Composition
           id="ForeverLost-Ep2"
-          component={Scene0}
+          component={ForeverLostEp2}
           durationInFrames={EP2_TOTAL_DURATION}
           fps={FPS}
           width={1920}

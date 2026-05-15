@@ -10,7 +10,7 @@ import type { Caption, TikTokPage } from "@remotion/captions";
 import { cva } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
-const SWITCH_CAPTIONS_EVERY_MS = 1500;
+// const SWITCH_CAPTIONS_EVERY_MS = 1500;
 
 const captionPosition = cva("", {
   variants: {
@@ -92,6 +92,7 @@ interface CaptionProps {
   highlightedWords?: string[];
   position?: "bottom-center" | "bottom-left" | "center";
   startFrame?: number;
+  switchCaptionsEveryMs?: number;
 }
 
 export const TiktokCaptions: React.FC<CaptionProps> = ({
@@ -99,6 +100,7 @@ export const TiktokCaptions: React.FC<CaptionProps> = ({
   highlightedWords = [],
   position = "bottom-center",
   startFrame = 0,
+  switchCaptionsEveryMs = 1500,
 }) => {
   const { fps } = useVideoConfig();
 
@@ -106,9 +108,9 @@ export const TiktokCaptions: React.FC<CaptionProps> = ({
     () =>
       createTikTokStyleCaptions({
         captions: transcript,
-        combineTokensWithinMilliseconds: SWITCH_CAPTIONS_EVERY_MS,
+        combineTokensWithinMilliseconds: switchCaptionsEveryMs,
       }),
-    [transcript],
+    [transcript, switchCaptionsEveryMs],
   );
 
   return pages.map((page, index) => {
@@ -118,7 +120,7 @@ export const TiktokCaptions: React.FC<CaptionProps> = ({
       ? startFrame + (nextPage.startMs / 1000) * fps
       : startFrame +
         (page.startMs / 1000) * fps +
-        (SWITCH_CAPTIONS_EVERY_MS / 1000) * fps;
+        (switchCaptionsEveryMs / 1000) * fps;
     const durationInFrames = endFrame - startFrameAbs;
 
     if (durationInFrames <= 0) {

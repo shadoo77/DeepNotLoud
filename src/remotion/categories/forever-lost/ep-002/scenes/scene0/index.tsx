@@ -12,7 +12,7 @@ const timing = linearTiming({ durationInFrames: TRANSITION_DURATION });
 const presentation = fade();
 
 const BlackFrame = () => (
-  <AbsoluteFill style={{ backgroundColor: "var(--color-abyssBlack)" }} />
+  <AbsoluteFill className="bg-abyssBlack overflow-hidden" />
 );
 
 export const TOTAL_DURATION = SCENE_DURATION + BLACK_HOLD_FRAMES;
