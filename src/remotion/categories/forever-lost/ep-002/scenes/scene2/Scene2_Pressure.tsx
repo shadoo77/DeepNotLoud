@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import {
   AbsoluteFill,
   useCurrentFrame,
@@ -14,6 +15,14 @@ import { Explode } from "@/components/atoms/Explode";
 import { VO_START_FRAME, TRASCRIPT_DATA } from "./constants";
 
 const ASSET = "assets/forever-lost/ep-002";
+
+const HIGHLIGHTED_WORDS = [
+  "380",
+  "crushed",
+  "corroding",
+  "century",
+  "disintegrate",
+];
 
 const getWordFrame = (wordToFind: string, fps: number) => {
   const word = TRASCRIPT_DATA.find((w) =>
@@ -41,13 +50,15 @@ export function Scene2_Pressure() {
 
   const compressionScale = interpolate(pressureScale, [0, 1], [1, 0.85]);
 
-  const highlightedWords = [
-    "380",
-    "crushed",
-    "corroding",
-    "century",
-    "disintegrate",
-  ];
+  const highlightedWords = HIGHLIGHTED_WORDS;
+
+  const captionsData = useMemo(
+    () =>
+      TRASCRIPT_DATA.filter(
+        (w) => !HIGHLIGHTED_WORDS.includes("disintegrate") || !w.text.toLowerCase().includes("disintegrate"),
+      ),
+    [],
+  );
 
   return (
     <AbsoluteFill className="bg-abyssBlack overflow-hidden">
@@ -177,9 +188,7 @@ export function Scene2_Pressure() {
       </Sequence>
 
       <TiktokCaptions
-        transcript={TRASCRIPT_DATA.filter(
-          (w) => !w.text.toLowerCase().includes("disintegrate"),
-        )}
+        transcript={captionsData}
         highlightedWords={highlightedWords}
         position="center"
         startFrame={VO_START_FRAME}
