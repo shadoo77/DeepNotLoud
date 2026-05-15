@@ -1,0 +1,541 @@
+[
+  {
+    "text": "The",
+    "startMs": 290,
+    "endMs": 500,
+    "timestampMs": 380,
+    "confidence": 0.649249
+  },
+  {
+    "text": " ship",
+    "startMs": 500,
+    "endMs": 1310,
+    "timestampMs": 780,
+    "confidence": 0.980814
+  },
+  {
+    "text": " is",
+    "startMs": 1310,
+    "endMs": 1490,
+    "timestampMs": 1420,
+    "confidence": 0.989608
+  },
+  {
+    "text": " being",
+    "startMs": 1490,
+    "endMs": 2360,
+    "timestampMs": 1740,
+    "confidence": 0.991041
+  },
+  {
+    "text": " eaten",
+    "startMs": 2360,
+    "endMs": 3150,
+    "timestampMs": 2300,
+    "confidence": 0.998513
+  },
+  {
+    "text": " alive",
+    "startMs": 3150,
+    "endMs": 3980,
+    "timestampMs": 3220,
+    "confidence": 0.992571
+  },
+  {
+    "text": ".",
+    "startMs": 3980,
+    "endMs": 4420,
+    "timestampMs": 4820,
+    "confidence": 0.810314
+  },
+  {
+    "text": " A",
+    "startMs": 4420,
+    "endMs": 4820,
+    "timestampMs": 4980,
+    "confidence": 0.998015
+  },
+  {
+    "text": " bacterium",
+    "startMs": 4820,
+    "endMs": 5610,
+    "timestampMs": 5200,
+    "confidence": 0.977495
+  },
+  {
+    "text": " called",
+    "startMs": 5610,
+    "endMs": 6330,
+    "timestampMs": 6200,
+    "confidence": 0.833779
+  },
+  {
+    "text": " Halomonas",
+    "startMs": 6330,
+    "endMs": 7390,
+    "timestampMs": 6760,
+    "confidence": 0.473571
+  },
+  {
+    "text": " Titanicae",
+    "startMs": 7390,
+    "endMs": 8890,
+    "timestampMs": 7700,
+    "confidence": 0.188893
+  },
+  {
+    "text": " was",
+    "startMs": 8890,
+    "endMs": 9110,
+    "timestampMs": 9000,
+    "confidence": 0.490144
+  },
+  {
+    "text": " discovered",
+    "startMs": 9110,
+    "endMs": 9770,
+    "timestampMs": 9400,
+    "confidence": 0.934526
+  },
+  {
+    "text": " literally",
+    "startMs": 9770,
+    "endMs": 10530,
+    "timestampMs": 10300,
+    "confidence": 0.856201
+  },
+  {
+    "text": " consuming",
+    "startMs": 10530,
+    "endMs": 11680,
+    "timestampMs": 11040,
+    "confidence": 0.970346
+  },
+  {
+    "text": " the",
+    "startMs": 11680,
+    "endMs": 12080,
+    "timestampMs": 11720,
+    "confidence": 0.989647
+  },
+  {
+    "text": " iron",
+    "startMs": 12080,
+    "endMs": 12610,
+    "timestampMs": 12020,
+    "confidence": 0.96041
+  },
+  {
+    "text": ".",
+    "startMs": 12610,
+    "endMs": 13100,
+    "timestampMs": 13100,
+    "confidence": 0.988048
+  },
+  {
+    "text": " These",
+    "startMs": 13100,
+    "endMs": 13680,
+    "timestampMs": 13580,
+    "confidence": 0.996614
+  },
+  {
+    "text": " organisms",
+    "startMs": 13680,
+    "endMs": 14730,
+    "timestampMs": 14020,
+    "confidence": 0.993653
+  },
+  {
+    "text": " form",
+    "startMs": 14730,
+    "endMs": 15190,
+    "timestampMs": 14740,
+    "confidence": 0.998062
+  },
+  {
+    "text": " rusticles",
+    "startMs": 15190,
+    "endMs": 16500,
+    "timestampMs": 15400,
+    "confidence": 0.520821
+  },
+  {
+    "text": ",",
+    "startMs": 16500,
+    "endMs": 16620,
+    "timestampMs": 16740,
+    "confidence": 0.647465
+  },
+  {
+    "text": " those",
+    "startMs": 16620,
+    "endMs": 17040,
+    "timestampMs": 16820,
+    "confidence": 0.677275
+  },
+  {
+    "text": " haunting",
+    "startMs": 17040,
+    "endMs": 17900,
+    "timestampMs": 17300,
+    "confidence": 0.994142
+  },
+  {
+    "text": ",",
+    "startMs": 17900,
+    "endMs": 18000,
+    "timestampMs": 17400,
+    "confidence": 0.615094
+  },
+  {
+    "text": " icicle-like",
+    "startMs": 18000,
+    "endMs": 18670,
+    "timestampMs": 18100,
+    "confidence": 0.872397
+  },
+  {
+    "text": " structures",
+    "startMs": 18670,
+    "endMs": 19470,
+    "timestampMs": 19240,
+    "confidence": 0.997231
+  },
+  {
+    "text": " that",
+    "startMs": 19470,
+    "endMs": 19710,
+    "timestampMs": 19640,
+    "confidence": 0.959305
+  },
+  {
+    "text": " now",
+    "startMs": 19710,
+    "endMs": 20030,
+    "timestampMs": 19820,
+    "confidence": 0.9935
+  },
+  {
+    "text": " cover",
+    "startMs": 20030,
+    "endMs": 20330,
+    "timestampMs": 20280,
+    "confidence": 0.9893
+  },
+  {
+    "text": " the",
+    "startMs": 20330,
+    "endMs": 20590,
+    "timestampMs": 20520,
+    "confidence": 0.996643
+  },
+  {
+    "text": " rack",
+    "startMs": 20590,
+    "endMs": 22040,
+    "timestampMs": 20760,
+    "confidence": 0.390396
+  },
+  {
+    "text": ".",
+    "startMs": 22040,
+    "endMs": 22120,
+    "timestampMs": 22000,
+    "confidence": 0.996871
+  },
+  {
+    "text": " Scientists",
+    "startMs": 22120,
+    "endMs": 23170,
+    "timestampMs": 22800,
+    "confidence": 0.730527
+  },
+  {
+    "text": " estimate",
+    "startMs": 23170,
+    "endMs": 24010,
+    "timestampMs": 23560,
+    "confidence": 0.998711
+  },
+  {
+    "text": " the",
+    "startMs": 24010,
+    "endMs": 24320,
+    "timestampMs": 23820,
+    "confidence": 0.942058
+  },
+  {
+    "text": " Titanic",
+    "startMs": 24320,
+    "endMs": 25050,
+    "timestampMs": 24200,
+    "confidence": 0.906629
+  },
+  {
+    "text": " loses",
+    "startMs": 25050,
+    "endMs": 25570,
+    "timestampMs": 24940,
+    "confidence": 0.977112
+  },
+  {
+    "text": " roughly",
+    "startMs": 25570,
+    "endMs": 26300,
+    "timestampMs": 25320,
+    "confidence": 0.998041
+  },
+  {
+    "text": " 100",
+    "startMs": 26300,
+    "endMs": 27260,
+    "timestampMs": 26160,
+    "confidence": 0.945716
+  },
+  {
+    "text": " kilograms",
+    "startMs": 27260,
+    "endMs": 28050,
+    "timestampMs": 26980,
+    "confidence": 0.762185
+  },
+  {
+    "text": " of",
+    "startMs": 28050,
+    "endMs": 28860,
+    "timestampMs": 27720,
+    "confidence": 0.998555
+  },
+  {
+    "text": " iron",
+    "startMs": 28860,
+    "endMs": 28860,
+    "timestampMs": 28120,
+    "confidence": 0.995972
+  },
+  {
+    "text": ".",
+    "startMs": 28860,
+    "endMs": 28860,
+    "timestampMs": 28740,
+    "confidence": 0.666051
+  },
+  {
+    "text": " Every",
+    "startMs": 29100,
+    "endMs": 29890,
+    "timestampMs": 29480,
+    "confidence": 0.967585
+  },
+  {
+    "text": " single",
+    "startMs": 29890,
+    "endMs": 31120,
+    "timestampMs": 30040,
+    "confidence": 0.931052
+  },
+  {
+    "text": " day",
+    "startMs": 31120,
+    "endMs": 32290,
+    "timestampMs": 30720,
+    "confidence": 0.99987
+  },
+  {
+    "text": ".",
+    "startMs": 32290,
+    "endMs": 32380,
+    "timestampMs": 32320,
+    "confidence": 0.826927
+  },
+  {
+    "text": " By",
+    "startMs": 32380,
+    "endMs": 32630,
+    "timestampMs": 32800,
+    "confidence": 0.997461
+  },
+  {
+    "text": " 2030",
+    "startMs": 32630,
+    "endMs": 33970,
+    "timestampMs": 33240,
+    "confidence": 0.995095
+  },
+  {
+    "text": ",",
+    "startMs": 33970,
+    "endMs": 34170,
+    "timestampMs": 33900,
+    "confidence": 0.888191
+  },
+  {
+    "text": " some",
+    "startMs": 34170,
+    "endMs": 34250,
+    "timestampMs": 34320,
+    "confidence": 0.957375
+  },
+  {
+    "text": " researchers",
+    "startMs": 34250,
+    "endMs": 34930,
+    "timestampMs": 34760,
+    "confidence": 0.998868
+  },
+  {
+    "text": " believe",
+    "startMs": 34930,
+    "endMs": 35390,
+    "timestampMs": 35240,
+    "confidence": 0.987715
+  },
+  {
+    "text": " the",
+    "startMs": 35390,
+    "endMs": 35650,
+    "timestampMs": 35440,
+    "confidence": 0.980178
+  },
+  {
+    "text": " hull",
+    "startMs": 35650,
+    "endMs": 35820,
+    "timestampMs": 35680,
+    "confidence": 0.957448
+  },
+  {
+    "text": " will",
+    "startMs": 35820,
+    "endMs": 36200,
+    "timestampMs": 35980,
+    "confidence": 0.952819
+  },
+  {
+    "text": " have",
+    "startMs": 36200,
+    "endMs": 36580,
+    "timestampMs": 36120,
+    "confidence": 0.990715
+  },
+  {
+    "text": " largely",
+    "startMs": 36580,
+    "endMs": 37280,
+    "timestampMs": 36480,
+    "confidence": 0.992246
+  },
+  {
+    "text": " collapsed",
+    "startMs": 37280,
+    "endMs": 38130,
+    "timestampMs": 37140,
+    "confidence": 0.996478
+  },
+  {
+    "text": " into",
+    "startMs": 38130,
+    "endMs": 38500,
+    "timestampMs": 37720,
+    "confidence": 0.984115
+  },
+  {
+    "text": " the",
+    "startMs": 38500,
+    "endMs": 38800,
+    "timestampMs": 37880,
+    "confidence": 0.997868
+  },
+  {
+    "text": " ocean",
+    "startMs": 38800,
+    "endMs": 39270,
+    "timestampMs": 38180,
+    "confidence": 0.998729
+  },
+  {
+    "text": " floor",
+    "startMs": 39270,
+    "endMs": 39760,
+    "timestampMs": 38580,
+    "confidence": 0.992848
+  },
+  {
+    "text": ".",
+    "startMs": 39760,
+    "endMs": 40100,
+    "timestampMs": 39300,
+    "confidence": 0.981791
+  },
+  {
+    "text": " It",
+    "startMs": 40100,
+    "endMs": 40410,
+    "timestampMs": 40480,
+    "confidence": 0.991021
+  },
+  {
+    "text": "'s",
+    "startMs": 40410,
+    "endMs": 40560,
+    "timestampMs": 40560,
+    "confidence": 0.986022
+  },
+  {
+    "text": " not",
+    "startMs": 40560,
+    "endMs": 40900,
+    "timestampMs": 40720,
+    "confidence": 0.9987
+  },
+  {
+    "text": " just",
+    "startMs": 40900,
+    "endMs": 41350,
+    "timestampMs": 41020,
+    "confidence": 0.999527
+  },
+  {
+    "text": " sinking",
+    "startMs": 41350,
+    "endMs": 42160,
+    "timestampMs": 41440,
+    "confidence": 0.99488
+  },
+  {
+    "text": ".",
+    "startMs": 42160,
+    "endMs": 42540,
+    "timestampMs": 42680,
+    "confidence": 0.628141
+  },
+  {
+    "text": " It",
+    "startMs": 42540,
+    "endMs": 43000,
+    "timestampMs": 43080,
+    "confidence": 0.997198
+  },
+  {
+    "text": "'s",
+    "startMs": 43000,
+    "endMs": 43020,
+    "timestampMs": 43220,
+    "confidence": 0.998744
+  },
+  {
+    "text": " dissolving",
+    "startMs": 43020,
+    "endMs": 43970,
+    "timestampMs": 43440,
+    "confidence": 0.988105
+  },
+  {
+    "text": ".",
+    "startMs": 43970,
+    "endMs": 44640,
+    "timestampMs": 44620,
+    "confidence": 0.978263
+  }
+]
