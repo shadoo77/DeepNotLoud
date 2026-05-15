@@ -26,10 +26,12 @@ const CaptionPage = ({
   page,
   highlightedWords,
   position,
+  showOverlay,
 }: {
   page: TikTokPage;
   highlightedWords: string[];
   position: "bottom-center" | "bottom-left" | "center";
+  showOverlay: boolean;
 }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
@@ -39,12 +41,15 @@ const CaptionPage = ({
 
   return (
     <AbsoluteFill className={cn(captionPosition({ position }))}>
-      <div
-        className="max-w-4xl font-patua text-6xl font-bold whitespace-pre"
-        style={{
-          textShadow: "0 2px 12px rgba(0,0,0,0.9)",
-        }}
+      <div className="relative inline-block px-6 py-3 rounded-xl"
+        style={showOverlay ? { backgroundColor: "oklch(0.15 0.02 260 / 0.7)" } : {}}
       >
+        <div
+          className="max-w-4xl font-patua text-6xl font-bold whitespace-pre"
+          style={{
+            textShadow: "0 2px 12px rgba(0,0,0,0.9)",
+          }}
+        >
         {page.tokens.map((token) => {
           const isActive =
             token.fromMs <= absoluteTimeMs && token.toMs > absoluteTimeMs;
@@ -83,6 +88,7 @@ const CaptionPage = ({
           );
         })}
       </div>
+      </div>
     </AbsoluteFill>
   );
 };
@@ -93,6 +99,7 @@ interface CaptionProps {
   position?: "bottom-center" | "bottom-left" | "center";
   startFrame?: number;
   switchCaptionsEveryMs?: number;
+  showOverlay?: boolean;
 }
 
 export const TiktokCaptions: React.FC<CaptionProps> = ({
@@ -101,6 +108,7 @@ export const TiktokCaptions: React.FC<CaptionProps> = ({
   position = "bottom-center",
   startFrame = 0,
   switchCaptionsEveryMs = 1500,
+  showOverlay = false,
 }) => {
   const { fps } = useVideoConfig();
 
@@ -137,6 +145,7 @@ export const TiktokCaptions: React.FC<CaptionProps> = ({
           page={page}
           highlightedWords={highlightedWords}
           position={position}
+          showOverlay={showOverlay}
         />
       </Sequence>
     );

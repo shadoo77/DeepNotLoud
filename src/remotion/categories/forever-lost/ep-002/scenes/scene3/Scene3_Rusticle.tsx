@@ -134,10 +134,7 @@ export function Scene3_Rusticle() {
 
       {/* ====== TIMELINE ====== */}
       <Sequence from={frame100kg}>
-        <DissolutionTimeline
-          startFrame={0}
-          durationFrames={fps * 10}
-        />
+        <DissolutionTimeline startFrame={0} durationFrames={fps * 10} />
       </Sequence>
 
       {/* ====== AUDIO LAYERS ====== */}
@@ -187,6 +184,7 @@ export function Scene3_Rusticle() {
           highlightedWords={highlightedWords}
           position="center"
           startFrame={VO_START_FRAME}
+          showOverlay
         />
       </div>
     </AbsoluteFill>
