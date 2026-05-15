@@ -1,8 +1,10 @@
+import { SCENE_DURATION } from "./constants";
+
 export const videoMeta = {
   playlist: "Forever Lost",
   episode: "Episode 2",
   title: "Why The Titanic Can Never Be Raised",
-  totalDurationSeconds: 120,
+  totalDurationSeconds: SCENE_DURATION,
   voice: {
     instructions: `Style: Deep, resonant, documentary narrator. Intimate and haunting. 
 Pacing: Measured and efficient. Do not drag out the words. Keep a steady, natural rhythm with only micro-pauses between sentences. 
