@@ -30,17 +30,42 @@ export function Scene3_Rusticle() {
 
   const frameRusticle = getWordFrame("rusticles", fps);
   const frame100kg = getWordFrame("100", fps);
+  const dissolvingFrame = getWordFrame("dissolving", fps);
 
-  const zoomStage1 = interpolate(frame, [0, fps * 8], [1, 4]);
+  // ✅ FIX 1: Capped Zoom & Pan (Ken Burns Effect)
+  // Instead of zooming 3x (which destroys resolution), we zoom max 1.4x
+  // and add a slight downward pan to create the illusion of movement.
+  const zoomStage1 = interpolate(frame, [0, fps * 8], [1, 1.4]);
+  const panY1 = interpolate(frame, [0, fps * 8], [0, -100]); // Pan up slowly
+
   const zoomStage2 = interpolate(
     frame,
     [frameRusticle, frameRusticle + fps * 8],
-    [1, 3],
-    {
-      extrapolateLeft: "clamp",
-      extrapolateRight: "clamp",
-    },
+    [1, 1.5], // Capped at 1.5x
+    { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
   );
+
+  // ✅ FIX 2: Advanced BGM Ducking & "Dissolving Silence"
+  const bgmVolume = interpolate(
+    frame,
+    [
+      0,
+      VO_START_FRAME - 15,
+      VO_START_FRAME, // VO starts: duck to 15%
+      frame100kg - 30, // Approaching clock: start dipping more
+      frame100kg, // Clock starts: deep duck to 5% (makes room for high frequencies)
+      dissolvingFrame - 15, // Right before "dissolving"
+      dissolvingFrame + 45, // 1.5 seconds after "dissolving" starts -> absolute silence
+    ],
+    [0.25, 0.25, 0.15, 0.15, 0.05, 0.05, 0],
+    { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
+  );
+
+  // ✅ FIX 3: SFX Volume Balancing to prevent audio clipping (static)
+  // Lowering base volumes so they don't exceed 1.0 when stacked with VO
+  const bubblesVol = 0.15;
+  const clockVol = 0.2;
+  const dissolveVol = 0.3;
 
   const highlightedWords = [
     "eaten",
@@ -52,8 +77,12 @@ export function Scene3_Rusticle() {
     "dissolving",
   ];
 
+  // Caption Sway (Underwater drift)
+  const swayX = Math.sin((frame / fps) * Math.PI) * 10;
+
   return (
     <AbsoluteFill className="bg-abyssBlack overflow-hidden">
+      {/* ====== LAYER 1: RUSTICLES ====== */}
       <AbsoluteFill
         style={{
           opacity:
@@ -71,12 +100,16 @@ export function Scene3_Rusticle() {
           src={staticFile(`${ASSET}/images/img_rusticle_macro.png`)}
           className="w-full h-full object-cover"
           style={{
-            transform: `scale(${zoomStage1})`,
+            // Added slight blur to hide compression artifacts when scaling
+            filter:
+              zoomStage1 > 1.2 ? `blur(${(zoomStage1 - 1) * 2}px)` : "none",
+            transform: `scale(${zoomStage1}) translateY(${panY1}px)`,
             transformOrigin: "50% 60%",
           }}
         />
       </AbsoluteFill>
 
+      {/* ====== LAYER 2: BACTERIA ====== */}
       <Sequence from={frameRusticle}>
         <AbsoluteFill>
           <Img
@@ -89,6 +122,9 @@ export function Scene3_Rusticle() {
                 [0, 1],
                 { extrapolateRight: "clamp" },
               ),
+              // Artifact blur for heavy zooms
+              filter:
+                zoomStage2 > 1.2 ? `blur(${(zoomStage2 - 1) * 2}px)` : "none",
               transform: `scale(${zoomStage2})`,
               transformOrigin: "50% 50%",
             }}
@@ -96,49 +132,63 @@ export function Scene3_Rusticle() {
         </AbsoluteFill>
       </Sequence>
 
+      {/* ====== TIMELINE ====== */}
       <Sequence from={frame100kg}>
         <DissolutionTimeline
-          startFrame={frame100kg}
+          startFrame={0}
           durationFrames={fps * 10}
         />
       </Sequence>
 
-      <Audio
-        src={staticFile(`${ASSET}/voices/bgm/bgm_scene3_choir.mp3`)}
-        volume={0.2}
-      />
+      {/* ====== AUDIO LAYERS ====== */}
       <Audio
         src={staticFile(`${ASSET}/voices/sfx/sfx_micro_bubbles.wav`)}
-        volume={0.3}
+        volume={bubblesVol}
       />
 
       <Sequence from={frame100kg}>
         <Audio
           src={staticFile(`${ASSET}/voices/sfx/sfx_clock_tick.wav`)}
-          volume={0.4}
+          volume={clockVol}
         />
       </Sequence>
 
-      <Sequence from={getWordFrame("dissolving", fps)}>
+      <Sequence from={dissolvingFrame}>
         <Audio
           src={staticFile(`${ASSET}/voices/sfx/sfx_dissolution.wav`)}
-          volume={0.5}
+          volume={dissolveVol}
         />
       </Sequence>
 
+      {/* BGM with Advanced Ducking */}
+      <Audio
+        src={staticFile(`${ASSET}/voices/bgm/bgm_scene3_choir.mp3`)}
+        volume={bgmVolume}
+      />
+
+      {/* Voiceover */}
       <Sequence from={VO_START_FRAME}>
         <Audio
           src={staticFile(`${ASSET}/voices/vo/vo_scene3.wav`)}
-          volume={0.8}
+          volume={0.85} // Slightly lowered to leave headroom for SFX
         />
       </Sequence>
 
-      <TiktokCaptions
-        transcript={transcriptData}
-        highlightedWords={highlightedWords}
-        position="center"
-        startFrame={VO_START_FRAME}
-      />
+      {/* ====== CAPTIONS (With Underwater Sway) ====== */}
+      <div
+        style={{
+          transform: `translateX(${swayX}px)`,
+          width: "100%",
+          height: "100%",
+        }}
+      >
+        <TiktokCaptions
+          transcript={transcriptData}
+          highlightedWords={highlightedWords}
+          position="center"
+          startFrame={VO_START_FRAME}
+        />
+      </div>
     </AbsoluteFill>
   );
 }
