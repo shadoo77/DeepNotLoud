@@ -5,6 +5,8 @@ import { Scene0_ColdOpen } from "./scenes/scene0/Scene0_ColdOpen";
 import { SCENE_DURATION as SCENE0_DURATION } from "./scenes/scene0/constants";
 import { Scene1_Scale } from "./scenes/scene1/Scene1_Scale";
 import { SCENE_DURATION as SCENE1_DURATION } from "./scenes/scene1/constants";
+import { Scene2_Pressure } from "./scenes/scene2/Scene2_Pressure";
+import { SCENE_DURATION as SCENE2_DURATION } from "./scenes/scene2/constants";
 
 export const FPS = 30;
 export const TRANSITION_DURATION = 30;
@@ -18,7 +20,11 @@ const BlackFrame = () => (
 );
 
 export const TOTAL_DURATION =
-  SCENE0_DURATION + SCENE1_DURATION + BLACK_HOLD_FRAMES - TRANSITION_DURATION;
+  SCENE0_DURATION +
+  SCENE1_DURATION +
+  SCENE2_DURATION +
+  BLACK_HOLD_FRAMES -
+  2 * TRANSITION_DURATION;
 
 export const ForeverLostEp2 = () => {
   return (
@@ -32,6 +38,13 @@ export const ForeverLostEp2 = () => {
       />
       <TransitionSeries.Sequence durationInFrames={SCENE1_DURATION}>
         <Scene1_Scale />
+      </TransitionSeries.Sequence>
+      <TransitionSeries.Transition
+        presentation={presentation}
+        timing={timing}
+      />
+      <TransitionSeries.Sequence durationInFrames={SCENE2_DURATION}>
+        <Scene2_Pressure />
       </TransitionSeries.Sequence>
       <TransitionSeries.Transition
         presentation={presentation}
