@@ -22,29 +22,29 @@ export function DissolutionTimeline({
   const hullOpacity = interpolate(progress, [0, 1], [0.9, 0.1]);
 
   return (
-    <div className="absolute left-1/2 bottom-[15%] -translate-x-1/2 w-[60%] flex flex-col items-center">
-      <div className="relative w-full rounded-xl p-5 bg-[oklch(0.15_0.02_260_/_0.7)]">
+    <div className="absolute bottom-[15%] left-1/2 flex w-[60%] -translate-x-1/2 flex-col items-center">
+      <div className="relative w-full rounded-xl bg-[oklch(0.15_0.02_260_/_0.7)] p-5">
         <div className="relative mb-5">
           <div
-            className="font-mono text-[64px] text-biolumTeal text-center"
+            className="text-biolumTeal text-center font-mono text-[64px]"
             style={{ textShadow: "0 0 20px var(--color-biolumTeal)" }}
           >
             {currentYear}
           </div>
         </div>
 
-        <div className="w-full h-[6px] bg-steelGrey opacity-50 rounded-sm relative">
+        <div className="bg-steelGrey relative h-[6px] w-full rounded-sm opacity-80">
           <div
-            className="h-full bg-rustOrange rounded-sm"
+            className="bg-rustOrange h-full rounded-sm"
             style={{
               width: `${progress * 100}%`,
               boxShadow:
-                "0 0 12px var(--color-rustOrange), 0 0 24px var(--color-rustOrange)",
+                "0 0 10px var(--color-rustOrange), 0 0 24px var(--color-rustOrange)",
             }}
           />
 
           <div
-            className="absolute -top-[18px] -translate-x-1/2 w-5 h-5 rounded-full bg-rustOrange"
+            className="bg-rustOrange absolute -top-[8px] h-5 w-5 -translate-x-1/2 rounded-full"
             style={{
               left: `${progress * 100}%`,
               opacity: hullOpacity,
@@ -54,11 +54,11 @@ export function DissolutionTimeline({
           />
         </div>
 
-        <div className="w-full flex justify-between mt-[10px]">
-          <span className="text-stone-200 text-4xl font-bold font-mono">
+        <div className="mt-[10px] flex w-full justify-between">
+          <span className="font-mono text-4xl font-bold text-stone-200">
             1912
           </span>
-          <span className="text-rustOrange text-4xl font-bold font-mono">
+          <span className="text-rustOrange font-mono text-4xl font-bold">
             2030
           </span>
         </div>

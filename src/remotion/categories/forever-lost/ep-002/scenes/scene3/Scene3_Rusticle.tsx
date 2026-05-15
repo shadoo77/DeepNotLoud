@@ -98,7 +98,7 @@ export function Scene3_Rusticle() {
       >
         <Img
           src={staticFile(`${ASSET}/images/img_rusticle_macro.png`)}
-          className="w-full h-full object-cover"
+          className="h-full w-full object-cover"
           style={{
             // Added slight blur to hide compression artifacts when scaling
             filter:
@@ -114,7 +114,7 @@ export function Scene3_Rusticle() {
         <AbsoluteFill>
           <Img
             src={staticFile(`${ASSET}/images/img_bacteria_timelapse.png`)}
-            className="w-full h-full object-cover"
+            className="h-full w-full object-cover"
             style={{
               opacity: interpolate(
                 frame,
@@ -184,6 +184,7 @@ export function Scene3_Rusticle() {
           highlightedWords={highlightedWords}
           position="center"
           startFrame={VO_START_FRAME}
+          switchCaptionsEveryMs={4000}
           showOverlay
         />
       </div>
