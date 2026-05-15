@@ -21,32 +21,11 @@
     "confidence": 0.996246
   },
   {
-    "text": " 3",
+    "text": " 3.8 km",
     "startMs": 1970,
-    "endMs": 2800,
+    "endMs": 4100,
     "timestampMs": 3080,
     "confidence": 0.0756119
-  },
-  {
-    "text": ".",
-    "startMs": 2800,
-    "endMs": 3140,
-    "timestampMs": 3460,
-    "confidence": 0.990055
-  },
-  {
-    "text": "8",
-    "startMs": 3140,
-    "endMs": 3740,
-    "timestampMs": 3880,
-    "confidence": 0.998944
-  },
-  {
-    "text": " km",
-    "startMs": 3740,
-    "endMs": 4100,
-    "timestampMs": 4180,
-    "confidence": 0.289763
   },
   {
     "text": " below",
@@ -98,18 +77,11 @@
     "confidence": 0.991011
   },
   {
-    "text": " ship",
+    "text": " shipwreck",
     "startMs": 8800,
-    "endMs": 9370,
+    "endMs": 9880,
     "timestampMs": 8840,
     "confidence": 0.9579
-  },
-  {
-    "text": "wreck",
-    "startMs": 9370,
-    "endMs": 9880,
-    "timestampMs": 9120,
-    "confidence": 0.964611
   },
   {
     "text": " in",

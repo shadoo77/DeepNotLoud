@@ -49,25 +49,11 @@
     "confidence": 0.875783
   },
   {
-    "text": " 3",
+    "text": " 3,800",
     "startMs": 4910,
-    "endMs": 5660,
+    "endMs": 8460,
     "timestampMs": 6900,
     "confidence": 0.604268
-  },
-  {
-    "text": ",",
-    "startMs": 5660,
-    "endMs": 6630,
-    "timestampMs": 7280,
-    "confidence": 0.983191
-  },
-  {
-    "text": "800",
-    "startMs": 6630,
-    "endMs": 8460,
-    "timestampMs": 8220,
-    "confidence": 0.996455
   },
   {
     "text": " meters",
@@ -224,32 +210,11 @@
     "confidence": 0.972429
   },
   {
-    "text": " Bur",
+    "text": " Burj Khalifa",
     "startMs": 21350,
-    "endMs": 21700,
+    "endMs": 22640,
     "timestampMs": 21680,
     "confidence": 0.571394
-  },
-  {
-    "text": "j",
-    "startMs": 21700,
-    "endMs": 21810,
-    "timestampMs": 21900,
-    "confidence": 0.898686
-  },
-  {
-    "text": " Khal",
-    "startMs": 21810,
-    "endMs": 22270,
-    "timestampMs": 22080,
-    "confidence": 0.913247
-  },
-  {
-    "text": "ifa",
-    "startMs": 22270,
-    "endMs": 22640,
-    "timestampMs": 22400,
-    "confidence": 0.987448
   },
   {
     "text": " on",
@@ -280,25 +245,11 @@
     "confidence": 0.993566
   },
   {
-    "text": " E",
+    "text": " Eiffel",
     "startMs": 24140,
-    "endMs": 24290,
-    "timestampMs": 23680,
-    "confidence": 0.9777
-  },
-  {
-    "text": "iff",
-    "startMs": 24290,
-    "endMs": 24600,
-    "timestampMs": 23800,
-    "confidence": 0.965753
-  },
-  {
-    "text": "el",
-    "startMs": 24600,
     "endMs": 25310,
-    "timestampMs": 23960,
-    "confidence": 0.998811
+    "timestampMs": 23680,
+    "confidence": 0.965753
   },
   {
     "text": " Tower",
@@ -497,18 +448,11 @@
     "confidence": 0.917543
   },
   {
-    "text": " atmosp",
+    "text": " atmospheres",
     "startMs": 42900,
-    "endMs": 44540,
+    "endMs": 45920,
     "timestampMs": 42680,
     "confidence": 0.970219
-  },
-  {
-    "text": "heres",
-    "startMs": 44540,
-    "endMs": 45920,
-    "timestampMs": 43160,
-    "confidence": 0.997364
   },
   {
     "text": ".",
@@ -595,18 +539,11 @@
     "confidence": 0.993433
   },
   {
-    "text": " cent",
+    "text": " centimeter",
     "startMs": 55300,
-    "endMs": 55850,
+    "endMs": 56580,
     "timestampMs": 55700,
     "confidence": 0.972516
-  },
-  {
-    "text": "imeter",
-    "startMs": 55850,
-    "endMs": 56580,
-    "timestampMs": 56040,
-    "confidence": 0.991507
   },
   {
     "text": " of",
