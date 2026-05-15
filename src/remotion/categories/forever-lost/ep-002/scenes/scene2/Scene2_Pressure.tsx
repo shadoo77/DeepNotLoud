@@ -310,9 +310,38 @@ export function Scene2_Pressure() {
             src={staticFile(`${ASSET}/images/img_pressure_crushed_cup.png`)}
             className="object-contain w-[70%] h-[70%]"
             style={{
-              opacity: interpolate(frame, [frameCup, frameCup + 30], [0, 1], {
-                extrapolateRight: "clamp",
-              }),
+              opacity: (() => {
+                const cupDuration = frameHull > 0 ? frameHull - frameCup : fps * 5;
+                const fadeInEnd = frameCup + 20;
+                const fadeOutStart = frameCup + cupDuration - 15;
+                if (frame <= fadeInEnd) {
+                  return interpolate(frame, [frameCup, fadeInEnd], [0, 1], {
+                    extrapolateRight: "clamp",
+                  });
+                }
+                if (frame >= fadeOutStart) {
+                  return interpolate(frame, [fadeOutStart, frameCup + cupDuration], [1, 0], {
+                    extrapolateRight: "clamp",
+                  });
+                }
+                return 1;
+              })(),
+              transform: (() => {
+                const cupDuration = frameHull > 0 ? frameHull - frameCup : fps * 5;
+                const fadeInEnd = frameCup + 20;
+                const fadeOutStart = frameCup + cupDuration - 15;
+                if (frame <= fadeInEnd) {
+                  return `scale(${interpolate(frame, [frameCup, fadeInEnd], [0.5, 1], {
+                    extrapolateRight: "clamp",
+                  })})`;
+                }
+                if (frame >= fadeOutStart) {
+                  return `scale(${interpolate(frame, [fadeOutStart, frameCup + cupDuration], [1, 1.3], {
+                    extrapolateRight: "clamp",
+                  })})`;
+                }
+                return "scale(1)";
+              })(),
             }}
           />
         </AbsoluteFill>
