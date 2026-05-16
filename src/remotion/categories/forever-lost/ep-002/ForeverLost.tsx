@@ -6,6 +6,7 @@ import { Scene1, SCENE_DURATION as SCENE1_DURATION } from "./scenes/scene1";
 import { Scene2, SCENE_DURATION as SCENE2_DURATION } from "./scenes/scene2";
 import { Scene3, SCENE_DURATION as SCENE3_DURATION } from "./scenes/scene3";
 import { Scene4, SCENE_DURATION as SCENE4_DURATION } from "./scenes/scene4";
+import { Scene5, SCENE_DURATION as SCENE5_DURATION } from "./scenes/scene5";
 
 export const FPS = 30;
 export const TRANSITION_DURATION = 30;
@@ -24,12 +25,14 @@ export const TOTAL_DURATION =
   SCENE2_DURATION +
   SCENE3_DURATION +
   SCENE4_DURATION +
+  SCENE5_DURATION +
   BLACK_HOLD_FRAMES -
-  5 * TRANSITION_DURATION;
+  6 * TRANSITION_DURATION;
 
 export const ForeverLostEp2 = () => {
   return (
     <TransitionSeries>
+      {/* Scene 0 */}
       <TransitionSeries.Sequence durationInFrames={SCENE0_DURATION}>
         <Scene0 />
       </TransitionSeries.Sequence>
@@ -37,6 +40,7 @@ export const ForeverLostEp2 = () => {
         presentation={presentation}
         timing={timing}
       />
+      {/* Scene 1 */}
       <TransitionSeries.Sequence durationInFrames={SCENE1_DURATION}>
         <Scene1 />
       </TransitionSeries.Sequence>
@@ -44,6 +48,7 @@ export const ForeverLostEp2 = () => {
         presentation={presentation}
         timing={timing}
       />
+      {/* Scene 2 */}
       <TransitionSeries.Sequence durationInFrames={SCENE2_DURATION}>
         <Scene2 />
       </TransitionSeries.Sequence>
@@ -51,6 +56,7 @@ export const ForeverLostEp2 = () => {
         presentation={presentation}
         timing={timing}
       />
+      {/* Scene 3 */}
       <TransitionSeries.Sequence durationInFrames={SCENE3_DURATION}>
         <Scene3 />
       </TransitionSeries.Sequence>
@@ -58,6 +64,7 @@ export const ForeverLostEp2 = () => {
         presentation={presentation}
         timing={timing}
       />
+      {/* Scene 4 */}
       <TransitionSeries.Sequence durationInFrames={SCENE4_DURATION}>
         <Scene4 />
       </TransitionSeries.Sequence>
@@ -65,6 +72,15 @@ export const ForeverLostEp2 = () => {
         presentation={presentation}
         timing={timing}
       />
+      {/* Scene 5 */}
+      <TransitionSeries.Sequence durationInFrames={SCENE5_DURATION}>
+        <Scene5 />
+      </TransitionSeries.Sequence>
+      <TransitionSeries.Transition
+        presentation={presentation}
+        timing={timing}
+      />
+      {/* Final Black Frame Hold */}
       <TransitionSeries.Sequence
         durationInFrames={TRANSITION_DURATION + BLACK_HOLD_FRAMES}
       >
