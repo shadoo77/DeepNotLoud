@@ -16,62 +16,64 @@ import { TRASCRIPT_DATA as transcriptData, VO_START_FRAME } from "./constants";
 const ASSET = "assets/forever-lost/ep-002";
 
 const getWordFrame = (wordToFind: string, fps: number) => {
-  const word = transcriptData.find((w) =>
-    w.text
-      .toLowerCase()
-      .replace(/[.,!?]/g, "")
-      .includes(wordToFind.toLowerCase()),
-  );
-  return word ? Math.round((word.startMs / 1000) * fps) + VO_START_FRAME : 0;
+  const parts = wordToFind.toLowerCase().split(/\s+/);
+  if (parts.length === 1) {
+    const word = transcriptData.find((w) =>
+      w.text.toLowerCase().replace(/[.,!?]/g, "").includes(wordToFind.toLowerCase()),
+    );
+    return word ? Math.round((word.startMs / 1000) * fps) + VO_START_FRAME : 0;
+  }
+  for (let i = 0; i < transcriptData.length - parts.length + 1; i++) {
+    const match = parts.every((part, pi) => {
+      const text = transcriptData[i + pi].text.toLowerCase().replace(/[.,!?]/g, "").trim();
+      return text === part;
+    });
+    if (match) {
+      return Math.round((transcriptData[i].startMs / 1000) * fps) + VO_START_FRAME;
+    }
+  }
+  return 0;
 };
 
 export function Scene4_Weight() {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
-  // --- VISUAL TRIGGERS FROM VOICEOVER ---
   const frame52000 = getWordFrame("52,000", fps);
   const frameNoCrane = getWordFrame("no crane", fps);
-  const frame5tons = getWordFrame("5-ton", fps);
+  const frame5tons = getWordFrame("five", fps);
   const frameNearlyKilled = getWordFrame("nearly killed", fps);
-  const frame10000x = getWordFrame("ten thousand", fps);
+  const frame10000x = getWordFrame("10,000", fps);
 
-  // --- ANIMATIONS ---
-
-  // 1. Punch Zoom (Hits when 52,000 is spoken)
-  // Creates a heavy "slam" effect by scaling up 5% and snapping back
   const punchZoom = spring({
-    frame: frame - frame52000,
+    frame: Math.max(0, frame - frame52000),
     fps,
     config: { damping: 10, stiffness: 200, mass: 0.5 },
   });
   const dynamicScale = interpolate(punchZoom, [0, 1], [1, 1.05]);
 
-  // 2. Screen Shake (Triggered at the exact moment 52,000 is spoken)
   const shakeStartFrame = frame52000;
   const isShaking = frame > shakeStartFrame;
 
-  // Dampened sine wave for organic earthquake feel
   const shakeIntensity = isShaking
-    ? Math.exp(-(frame - shakeStartFrame) * 0.3) * 10 // Heavy 10px shake that decays rapidly
+    ? Math.exp(-(frame - shakeStartFrame) * 0.3) * 10
     : 0;
   const shakeY = Math.sin((frame - shakeStartFrame) * 1.5) * shakeIntensity;
 
-  // 3. Barge image crossfade (starts when 1998 salvage is mentioned)
   const bargeOpacity = interpolate(
     frame,
-    [frame5tons, frame5tons + 30], // 1 second crossfade
+    [frame5tons, frame5tons + 30],
     [0, 1],
     { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
   );
 
-  // --- HIGHLIGHTED WORDS ---
   const highlightedWords = [
     "52,000",
     "tons",
-    "no crane",
-    "nearly killed",
-    "ten thousand",
+    "crane",
+    "nearly",
+    "killed",
+    "10,000",
   ];
 
   return (

@@ -9,6 +9,8 @@ import { Scene2_Pressure } from "./scenes/scene2/Scene2_Pressure";
 import { SCENE_DURATION as SCENE2_DURATION } from "./scenes/scene2/constants";
 import { Scene3_Rusticle } from "./scenes/scene3/Scene3_Rusticle";
 import { SCENE_DURATION as SCENE3_DURATION } from "./scenes/scene3/constants";
+import { Scene4_Weight } from "./scenes/scene4/Scene4_Weight";
+import { SCENE_DURATION as SCENE4_DURATION } from "./scenes/scene4/constants";
 
 export const FPS = 30;
 export const TRANSITION_DURATION = 30;
@@ -26,8 +28,9 @@ export const TOTAL_DURATION =
   SCENE1_DURATION +
   SCENE2_DURATION +
   SCENE3_DURATION +
+  SCENE4_DURATION +
   BLACK_HOLD_FRAMES -
-  3 * TRANSITION_DURATION;
+  4 * TRANSITION_DURATION;
 
 export const ForeverLostEp2 = () => {
   return (
@@ -55,6 +58,13 @@ export const ForeverLostEp2 = () => {
       />
       <TransitionSeries.Sequence durationInFrames={SCENE3_DURATION}>
         <Scene3_Rusticle />
+      </TransitionSeries.Sequence>
+      <TransitionSeries.Transition
+        presentation={presentation}
+        timing={timing}
+      />
+      <TransitionSeries.Sequence durationInFrames={SCENE4_DURATION}>
+        <Scene4_Weight />
       </TransitionSeries.Sequence>
       <TransitionSeries.Transition
         presentation={presentation}

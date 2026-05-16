@@ -1,1 +1,618 @@
-[]
+[
+  {
+    "text": "Let",
+    "startMs": 250,
+    "endMs": 250,
+    "timestampMs": 440,
+    "confidence": 0.921187
+  },
+  {
+    "text": "'s",
+    "startMs": 250,
+    "endMs": 420,
+    "timestampMs": 600,
+    "confidence": 0.979163
+  },
+  {
+    "text": " talk",
+    "startMs": 420,
+    "endMs": 760,
+    "timestampMs": 880,
+    "confidence": 0.996757
+  },
+  {
+    "text": " about",
+    "startMs": 760,
+    "endMs": 1190,
+    "timestampMs": 1260,
+    "confidence": 0.996645
+  },
+  {
+    "text": " the",
+    "startMs": 1190,
+    "endMs": 1440,
+    "timestampMs": 1480,
+    "confidence": 0.958464
+  },
+  {
+    "text": " sheer",
+    "startMs": 1440,
+    "endMs": 1870,
+    "timestampMs": 1820,
+    "confidence": 0.905868
+  },
+  {
+    "text": " weight",
+    "startMs": 1870,
+    "endMs": 2460,
+    "timestampMs": 2380,
+    "confidence": 0.974704
+  },
+  {
+    "text": ".",
+    "startMs": 2460,
+    "endMs": 3760,
+    "timestampMs": 3700,
+    "confidence": 0.81658
+  },
+  {
+    "text": " The",
+    "startMs": 3760,
+    "endMs": 4110,
+    "timestampMs": 3900,
+    "confidence": 0.984718
+  },
+  {
+    "text": " Titanic",
+    "startMs": 4110,
+    "endMs": 4940,
+    "timestampMs": 4220,
+    "confidence": 0.922663
+  },
+  {
+    "text": " displaced",
+    "startMs": 4940,
+    "endMs": 6190,
+    "timestampMs": 5000,
+    "confidence": 0.914385
+  },
+  {
+    "text": " over",
+    "startMs": 6190,
+    "endMs": 6480,
+    "timestampMs": 5580,
+    "confidence": 0.990722
+  },
+  {
+    "text": " 52,000",
+    "startMs": 6480,
+    "endMs": 8480,
+    "timestampMs": 6160,
+    "confidence": 0.796667
+  },
+  {
+    "text": " tons",
+    "startMs": 8480,
+    "endMs": 9100,
+    "timestampMs": 8000,
+    "confidence": 0.782479
+  },
+  {
+    "text": ".",
+    "startMs": 9100,
+    "endMs": 9160,
+    "timestampMs": 8760,
+    "confidence": 0.810308
+  },
+  {
+    "text": " Even",
+    "startMs": 9160,
+    "endMs": 9500,
+    "timestampMs": 9400,
+    "confidence": 0.993383
+  },
+  {
+    "text": " after",
+    "startMs": 9500,
+    "endMs": 9930,
+    "timestampMs": 9720,
+    "confidence": 0.999542
+  },
+  {
+    "text": " a",
+    "startMs": 9930,
+    "endMs": 10010,
+    "timestampMs": 9860,
+    "confidence": 0.99346
+  },
+  {
+    "text": " century",
+    "startMs": 10010,
+    "endMs": 10610,
+    "timestampMs": 10400,
+    "confidence": 0.99831
+  },
+  {
+    "text": " of",
+    "startMs": 10610,
+    "endMs": 10770,
+    "timestampMs": 10660,
+    "confidence": 0.999251
+  },
+  {
+    "text": " corrosion",
+    "startMs": 10770,
+    "endMs": 11680,
+    "timestampMs": 10920,
+    "confidence": 0.986482
+  },
+  {
+    "text": ",",
+    "startMs": 11680,
+    "endMs": 11750,
+    "timestampMs": 11620,
+    "confidence": 0.911932
+  },
+  {
+    "text": " what",
+    "startMs": 11750,
+    "endMs": 12050,
+    "timestampMs": 11760,
+    "confidence": 0.52352
+  },
+  {
+    "text": " remains",
+    "startMs": 12050,
+    "endMs": 12680,
+    "timestampMs": 12120,
+    "confidence": 0.99827
+  },
+  {
+    "text": " still",
+    "startMs": 12680,
+    "endMs": 13000,
+    "timestampMs": 12920,
+    "confidence": 0.759946
+  },
+  {
+    "text": " weighs",
+    "startMs": 13000,
+    "endMs": 13580,
+    "timestampMs": 13260,
+    "confidence": 0.964313
+  },
+  {
+    "text": " tens",
+    "startMs": 13580,
+    "endMs": 14030,
+    "timestampMs": 13800,
+    "confidence": 0.956765
+  },
+  {
+    "text": " of",
+    "startMs": 14030,
+    "endMs": 14510,
+    "timestampMs": 14220,
+    "confidence": 0.989076
+  },
+  {
+    "text": " thousands",
+    "startMs": 14510,
+    "endMs": 15480,
+    "timestampMs": 14700,
+    "confidence": 0.98128
+  },
+  {
+    "text": " of",
+    "startMs": 15480,
+    "endMs": 15740,
+    "timestampMs": 15180,
+    "confidence": 0.988746
+  },
+  {
+    "text": " tons",
+    "startMs": 15740,
+    "endMs": 16270,
+    "timestampMs": 15440,
+    "confidence": 0.981684
+  },
+  {
+    "text": ".",
+    "startMs": 16270,
+    "endMs": 16680,
+    "timestampMs": 16540,
+    "confidence": 0.899117
+  },
+  {
+    "text": " No",
+    "startMs": 16680,
+    "endMs": 16920,
+    "timestampMs": 17060,
+    "confidence": 0.986455
+  },
+  {
+    "text": " crane",
+    "startMs": 16920,
+    "endMs": 17560,
+    "timestampMs": 17620,
+    "confidence": 0.981978
+  },
+  {
+    "text": " on",
+    "startMs": 17560,
+    "endMs": 17770,
+    "timestampMs": 18120,
+    "confidence": 0.99799
+  },
+  {
+    "text": " Earth",
+    "startMs": 17770,
+    "endMs": 18440,
+    "timestampMs": 18560,
+    "confidence": 0.676871
+  },
+  {
+    "text": " can",
+    "startMs": 18440,
+    "endMs": 18790,
+    "timestampMs": 19080,
+    "confidence": 0.998953
+  },
+  {
+    "text": " reach",
+    "startMs": 18790,
+    "endMs": 19350,
+    "timestampMs": 19380,
+    "confidence": 0.999428
+  },
+  {
+    "text": " that",
+    "startMs": 19350,
+    "endMs": 19930,
+    "timestampMs": 19740,
+    "confidence": 0.998315
+  },
+  {
+    "text": " deep",
+    "startMs": 19930,
+    "endMs": 20620,
+    "timestampMs": 20000,
+    "confidence": 0.992962
+  },
+  {
+    "text": ".",
+    "startMs": 20620,
+    "endMs": 20720,
+    "timestampMs": 20800,
+    "confidence": 0.919588
+  },
+  {
+    "text": " No",
+    "startMs": 20720,
+    "endMs": 20920,
+    "timestampMs": 20960,
+    "confidence": 0.995539
+  },
+  {
+    "text": " salvage",
+    "startMs": 20920,
+    "endMs": 21620,
+    "timestampMs": 21520,
+    "confidence": 0.906472
+  },
+  {
+    "text": " vessel",
+    "startMs": 21620,
+    "endMs": 22220,
+    "timestampMs": 21800,
+    "confidence": 0.999114
+  },
+  {
+    "text": " has",
+    "startMs": 22220,
+    "endMs": 22630,
+    "timestampMs": 22100,
+    "confidence": 0.998447
+  },
+  {
+    "text": " the",
+    "startMs": 22630,
+    "endMs": 22800,
+    "timestampMs": 22260,
+    "confidence": 0.997737
+  },
+  {
+    "text": " lifting",
+    "startMs": 22800,
+    "endMs": 23520,
+    "timestampMs": 22520,
+    "confidence": 0.99126
+  },
+  {
+    "text": " capacity",
+    "startMs": 23520,
+    "endMs": 24280,
+    "timestampMs": 23060,
+    "confidence": 0.998872
+  },
+  {
+    "text": " at",
+    "startMs": 24280,
+    "endMs": 24460,
+    "timestampMs": 23440,
+    "confidence": 0.997215
+  },
+  {
+    "text": " that",
+    "startMs": 24460,
+    "endMs": 24880,
+    "timestampMs": 23580,
+    "confidence": 0.988961
+  },
+  {
+    "text": " depth",
+    "startMs": 24880,
+    "endMs": 25550,
+    "timestampMs": 23860,
+    "confidence": 0.992127
+  },
+  {
+    "text": ".",
+    "startMs": 25550,
+    "endMs": 25720,
+    "timestampMs": 24560,
+    "confidence": 0.919018
+  },
+  {
+    "text": " The",
+    "startMs": 25780,
+    "endMs": 25980,
+    "timestampMs": 25860,
+    "confidence": 0.957269
+  },
+  {
+    "text": " largest",
+    "startMs": 25980,
+    "endMs": 26610,
+    "timestampMs": 26360,
+    "confidence": 0.99587
+  },
+  {
+    "text": " deep sea",
+    "startMs": 26610,
+    "endMs": 27210,
+    "timestampMs": 26800,
+    "confidence": 0.663237
+  },
+  {
+    "text": " salvage",
+    "startMs": 27210,
+    "endMs": 27830,
+    "timestampMs": 27580,
+    "confidence": 0.911214
+  },
+  {
+    "text": " operation",
+    "startMs": 27830,
+    "endMs": 28650,
+    "timestampMs": 28020,
+    "confidence": 0.977133
+  },
+  {
+    "text": " in",
+    "startMs": 28650,
+    "endMs": 28800,
+    "timestampMs": 28440,
+    "confidence": 0.994985
+  },
+  {
+    "text": " history",
+    "startMs": 28800,
+    "endMs": 29530,
+    "timestampMs": 28980,
+    "confidence": 0.996149
+  },
+  {
+    "text": " recovered",
+    "startMs": 29530,
+    "endMs": 29980,
+    "timestampMs": 29720,
+    "confidence": 0.735085
+  },
+  {
+    "text": " a",
+    "startMs": 29980,
+    "endMs": 30020,
+    "timestampMs": 30020,
+    "confidence": 0.982098
+  },
+  {
+    "text": " five-ton",
+    "startMs": 30020,
+    "endMs": 30800,
+    "timestampMs": 30460,
+    "confidence": 0.599938
+  },
+  {
+    "text": " piece",
+    "startMs": 30800,
+    "endMs": 31320,
+    "timestampMs": 31280,
+    "confidence": 0.980484
+  },
+  {
+    "text": " of",
+    "startMs": 31320,
+    "endMs": 31500,
+    "timestampMs": 31460,
+    "confidence": 0.975904
+  },
+  {
+    "text": " the",
+    "startMs": 31500,
+    "endMs": 31610,
+    "timestampMs": 31560,
+    "confidence": 0.97553
+  },
+  {
+    "text": " Titanic",
+    "startMs": 31610,
+    "endMs": 31980,
+    "timestampMs": 31800,
+    "confidence": 0.85251
+  },
+  {
+    "text": "'s",
+    "startMs": 31980,
+    "endMs": 32100,
+    "timestampMs": 32140,
+    "confidence": 0.991219
+  },
+  {
+    "text": " hull",
+    "startMs": 32100,
+    "endMs": 32640,
+    "timestampMs": 32340,
+    "confidence": 0.759424
+  },
+  {
+    "text": " in",
+    "startMs": 32640,
+    "endMs": 32980,
+    "timestampMs": 32580,
+    "confidence": 0.99533
+  },
+  {
+    "text": " 1998",
+    "startMs": 32980,
+    "endMs": 34800,
+    "timestampMs": 33360,
+    "confidence": 0.998479
+  },
+  {
+    "text": ".",
+    "startMs": 34800,
+    "endMs": 34960,
+    "timestampMs": 34600,
+    "confidence": 0.630537
+  },
+  {
+    "text": " And",
+    "startMs": 34960,
+    "endMs": 35710,
+    "timestampMs": 34900,
+    "confidence": 0.94865
+  },
+  {
+    "text": " that",
+    "startMs": 35710,
+    "endMs": 36150,
+    "timestampMs": 35260,
+    "confidence": 0.994742
+  },
+  {
+    "text": " nearly",
+    "startMs": 36150,
+    "endMs": 37180,
+    "timestampMs": 35980,
+    "confidence": 0.985336
+  },
+  {
+    "text": " killed",
+    "startMs": 37180,
+    "endMs": 38190,
+    "timestampMs": 36680,
+    "confidence": 0.993265
+  },
+  {
+    "text": " the",
+    "startMs": 38190,
+    "endMs": 38720,
+    "timestampMs": 37000,
+    "confidence": 0.994888
+  },
+  {
+    "text": " crew",
+    "startMs": 38720,
+    "endMs": 39810,
+    "timestampMs": 37320,
+    "confidence": 0.998894
+  },
+  {
+    "text": ".",
+    "startMs": 39810,
+    "endMs": 39960,
+    "timestampMs": 39460,
+    "confidence": 0.932005
+  },
+  {
+    "text": " The",
+    "startMs": 39960,
+    "endMs": 40480,
+    "timestampMs": 40000,
+    "confidence": 0.946353
+  },
+  {
+    "text": " entire",
+    "startMs": 40480,
+    "endMs": 41510,
+    "timestampMs": 40420,
+    "confidence": 0.990607
+  },
+  {
+    "text": " ship",
+    "startMs": 41510,
+    "endMs": 42530,
+    "timestampMs": 40980,
+    "confidence": 0.999596
+  },
+  {
+    "text": ",",
+    "startMs": 42530,
+    "endMs": 42560,
+    "timestampMs": 41440,
+    "confidence": 0.112443
+  },
+  {
+    "text": " that",
+    "startMs": 42560,
+    "endMs": 42900,
+    "timestampMs": 42740,
+    "confidence": 0.927249
+  },
+  {
+    "text": "'s",
+    "startMs": 42900,
+    "endMs": 43090,
+    "timestampMs": 42920,
+    "confidence": 0.991043
+  },
+  {
+    "text": " 10,000",
+    "startMs": 43090,
+    "endMs": 44620,
+    "timestampMs": 43420,
+    "confidence": 0.77783
+  },
+  {
+    "text": " times",
+    "startMs": 44620,
+    "endMs": 44950,
+    "timestampMs": 44940,
+    "confidence": 0.986816
+  },
+  {
+    "text": " heavier",
+    "startMs": 44950,
+    "endMs": 45540,
+    "timestampMs": 45520,
+    "confidence": 0.99898
+  },
+  {
+    "text": ".",
+    "startMs": 45540,
+    "endMs": 45840,
+    "timestampMs": 45820,
+    "confidence": 0.904411
+  }
+]
