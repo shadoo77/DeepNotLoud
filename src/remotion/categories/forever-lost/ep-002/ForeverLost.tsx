@@ -1,16 +1,11 @@
 import { AbsoluteFill } from "remotion";
 import { TransitionSeries, linearTiming } from "@remotion/transitions";
 import { fade } from "@remotion/transitions/fade";
-import { Scene0_ColdOpen } from "./scenes/scene0/Scene0_ColdOpen";
-import { SCENE_DURATION as SCENE0_DURATION } from "./scenes/scene0/constants";
-import { Scene1_Scale } from "./scenes/scene1/Scene1_Scale";
-import { SCENE_DURATION as SCENE1_DURATION } from "./scenes/scene1/constants";
-import { Scene2_Pressure } from "./scenes/scene2/Scene2_Pressure";
-import { SCENE_DURATION as SCENE2_DURATION } from "./scenes/scene2/constants";
-import { Scene3_Rusticle } from "./scenes/scene3/Scene3_Rusticle";
-import { SCENE_DURATION as SCENE3_DURATION } from "./scenes/scene3/constants";
-import { Scene4_Weight } from "./scenes/scene4/Scene4_Weight";
-import { SCENE_DURATION as SCENE4_DURATION } from "./scenes/scene4/constants";
+import { Scene0, SCENE_DURATION as SCENE0_DURATION } from "./scenes/scene0";
+import { Scene1, SCENE_DURATION as SCENE1_DURATION } from "./scenes/scene1";
+import { Scene2, SCENE_DURATION as SCENE2_DURATION } from "./scenes/scene2";
+import { Scene3, SCENE_DURATION as SCENE3_DURATION } from "./scenes/scene3";
+import { Scene4, SCENE_DURATION as SCENE4_DURATION } from "./scenes/scene4";
 
 export const FPS = 30;
 export const TRANSITION_DURATION = 30;
@@ -36,35 +31,35 @@ export const ForeverLostEp2 = () => {
   return (
     <TransitionSeries>
       <TransitionSeries.Sequence durationInFrames={SCENE0_DURATION}>
-        <Scene0_ColdOpen />
+        <Scene0 />
       </TransitionSeries.Sequence>
       <TransitionSeries.Transition
         presentation={presentation}
         timing={timing}
       />
       <TransitionSeries.Sequence durationInFrames={SCENE1_DURATION}>
-        <Scene1_Scale />
+        <Scene1 />
       </TransitionSeries.Sequence>
       <TransitionSeries.Transition
         presentation={presentation}
         timing={timing}
       />
       <TransitionSeries.Sequence durationInFrames={SCENE2_DURATION}>
-        <Scene2_Pressure />
+        <Scene2 />
       </TransitionSeries.Sequence>
       <TransitionSeries.Transition
         presentation={presentation}
         timing={timing}
       />
       <TransitionSeries.Sequence durationInFrames={SCENE3_DURATION}>
-        <Scene3_Rusticle />
+        <Scene3 />
       </TransitionSeries.Sequence>
       <TransitionSeries.Transition
         presentation={presentation}
         timing={timing}
       />
       <TransitionSeries.Sequence durationInFrames={SCENE4_DURATION}>
-        <Scene4_Weight />
+        <Scene4 />
       </TransitionSeries.Sequence>
       <TransitionSeries.Transition
         presentation={presentation}
