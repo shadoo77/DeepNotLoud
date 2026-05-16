@@ -77,8 +77,8 @@ export function Scene3_Rusticle() {
     "dissolving",
   ];
 
-  // Caption Sway (Underwater drift)
-  const swayX = Math.sin((frame / fps) * Math.PI) * 10;
+  // Caption Sway (Underwater drift - 4-second cycle)
+  const swayX = Math.sin((frame / fps) * (Math.PI / 2)) * 15;
 
   return (
     <AbsoluteFill className="bg-abyssBlack overflow-hidden">

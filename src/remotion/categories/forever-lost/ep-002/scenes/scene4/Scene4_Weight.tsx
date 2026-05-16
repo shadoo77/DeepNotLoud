@@ -12,47 +12,64 @@ import { Audio } from "@remotion/media";
 import { TiktokCaptions } from "@/components/atoms/TiktokCaptions";
 import { CountUp } from "@/components/atoms/CountUp";
 import { TRASCRIPT_DATA as transcriptData, VO_START_FRAME } from "./constants";
+import { getPhraseFrames } from "@/lib/utils";
 
 const ASSET = "assets/forever-lost/ep-002";
-
-const getWordFrame = (wordToFind: string, fps: number) => {
-  const parts = wordToFind.toLowerCase().split(/\s+/);
-  if (parts.length === 1) {
-    const word = transcriptData.find((w) =>
-      w.text.toLowerCase().replace(/[.,!?]/g, "").includes(wordToFind.toLowerCase()),
-    );
-    return word ? Math.round((word.startMs / 1000) * fps) + VO_START_FRAME : 0;
-  }
-  for (let i = 0; i < transcriptData.length - parts.length + 1; i++) {
-    const match = parts.every((part, pi) => {
-      const text = transcriptData[i + pi].text.toLowerCase().replace(/[.,!?]/g, "").trim();
-      return text === part;
-    });
-    if (match) {
-      return Math.round((transcriptData[i].startMs / 1000) * fps) + VO_START_FRAME;
-    }
-  }
-  return 0;
-};
 
 export function Scene4_Weight() {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
-  const frame52000 = getWordFrame("52,000", fps);
-  const frameNoCrane = getWordFrame("no crane", fps);
-  const frame5tons = getWordFrame("five", fps);
-  const frameNearlyKilled = getWordFrame("nearly killed", fps);
-  const frame10000x = getWordFrame("10,000", fps);
+  // ===== DYNAMIC PHRASE TIMINGS =====
+  // These now calculate both the start frame AND the exact duration from the transcript
 
+  const phrase52000 = getPhraseFrames({
+    phrase: "52,000",
+    transcriptData,
+    fps,
+    voiceOverStartFrame: VO_START_FRAME,
+  });
+
+  const phrase5tons = getPhraseFrames({
+    phrase: "five",
+    transcriptData,
+    fps,
+    voiceOverStartFrame: VO_START_FRAME,
+  });
+
+  const phraseNoCrane = getPhraseFrames({
+    phrase: "no crane on earth",
+    transcriptData,
+    fps,
+    voiceOverStartFrame: VO_START_FRAME,
+    bufferFrames: 12,
+  });
+
+  const phraseNearlyKilled = getPhraseFrames({
+    phrase: "nearly killed the crew",
+    transcriptData,
+    fps,
+    voiceOverStartFrame: VO_START_FRAME,
+    bufferFrames: 12,
+  });
+
+  const phrase10000x = getPhraseFrames({
+    phrase: "10,000 times heavier",
+    transcriptData,
+    fps,
+    voiceOverStartFrame: VO_START_FRAME,
+    bufferFrames: 15, // Let the final climax linger a bit longer
+  });
+
+  // ===== ANIMATION LOGIC =====
   const punchZoom = spring({
-    frame: Math.max(0, frame - frame52000),
+    frame: Math.max(0, frame - phrase52000.from),
     fps,
     config: { damping: 10, stiffness: 200, mass: 0.5 },
   });
   const dynamicScale = interpolate(punchZoom, [0, 1], [1, 1.05]);
 
-  const shakeStartFrame = frame52000;
+  const shakeStartFrame = phrase52000.from;
   const isShaking = frame > shakeStartFrame;
 
   const shakeIntensity = isShaking
@@ -62,7 +79,7 @@ export function Scene4_Weight() {
 
   const bargeOpacity = interpolate(
     frame,
-    [frame5tons, frame5tons + 30],
+    [phrase5tons.from, phrase5tons.from + 30],
     [0, 1],
     { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
   );
@@ -85,7 +102,7 @@ export function Scene4_Weight() {
       {/* ====== BACKGROUND LAYER 1: The Scale Image ====== */}
       <AbsoluteFill>
         <Img
-          src={staticFile(`${ASSET}/images/img_weight_scale.png`)}
+          src={staticFile(`${ASSET}/images/img_weight_scale.jpeg`)}
           className="h-full w-full object-cover"
           style={{
             opacity: interpolate(bargeOpacity, [0, 1], [1, 0]), // Fades out when barge fades in
@@ -96,35 +113,37 @@ export function Scene4_Weight() {
       {/* ====== BACKGROUND LAYER 2: The Barge/Salvage Image ====== */}
       <AbsoluteFill style={{ opacity: bargeOpacity }}>
         <Img
-          src={staticFile(`${ASSET}/images/img_barge_lift_attempt.png`)}
+          src={staticFile(`${ASSET}/images/img_barge_lift_attempt.jpeg`)}
           className="h-full w-full object-cover"
         />
       </AbsoluteFill>
 
       {/* ====== DYNAMIC COUNT OVERLAY ====== */}
-      {/* This overlays on top of the scale image */}
-      {frame >= frame52000 && (
+      {frame >= phrase52000.from && (
         <div className="absolute top-[20%] left-1/2 -translate-x-1/2 text-center">
           <CountUp
             to={52000}
             durationInFrames={fps * 2}
-            delay={frame52000}
+            delay={phrase52000.from}
             className="text-ghostWhite font-mono text-8xl drop-shadow-[0_0_30px_var(--color-rustOrange)]"
             suffix=" TONS"
           />
         </div>
       )}
 
-      {/* ====== TEXT SHOCKS (Triggered by VO) ====== */}
+      {/* ====== TEXT SHOCKS (Driven by Transcript Durations) ====== */}
 
       {/* "NO CRANE ON EARTH" Flash */}
-      <Sequence from={frameNoCrane} durationInFrames={fps * 2}>
+      <Sequence
+        from={phraseNoCrane.from}
+        durationInFrames={phraseNoCrane.duration}
+      >
         <AbsoluteFill className="bg-abyssBlack/80 flex items-center justify-center backdrop-blur-sm">
           <h1
             className="font-inter text-surfaceWhite text-7xl font-extrabold tracking-tight"
             style={{
               transform: `scale(${spring({
-                frame: frame - frameNoCrane,
+                frame: frame - phraseNoCrane.from, // Anchor spring to sequence start
                 fps,
                 config: { damping: 10, stiffness: 200 },
               })})`,
@@ -137,13 +156,16 @@ export function Scene4_Weight() {
       </Sequence>
 
       {/* "NEARLY KILLED THE CREW" Red Flash (Over the Barge Image) */}
-      <Sequence from={frameNearlyKilled} durationInFrames={fps * 2}>
+      <Sequence
+        from={phraseNearlyKilled.from}
+        durationInFrames={phraseNearlyKilled.duration}
+      >
         <AbsoluteFill className="bg-abyssBlack/90 flex items-center justify-center backdrop-blur-md">
           <h1
             className="font-inter text-rustOrange text-8xl font-extrabold tracking-tight"
             style={{
               transform: `scale(${spring({
-                frame: frame - frameNearlyKilled,
+                frame: frame - phraseNearlyKilled.from, // Anchor spring to sequence start
                 fps,
                 config: { damping: 8, stiffness: 300 },
               })})`,
@@ -156,13 +178,16 @@ export function Scene4_Weight() {
       </Sequence>
 
       {/* "10,000x HEAVIER" Final Climax */}
-      <Sequence from={frame10000x} durationInFrames={fps * 3}>
+      <Sequence
+        from={phrase10000x.from}
+        durationInFrames={phrase10000x.duration}
+      >
         <AbsoluteFill className="bg-abyssBlack/95 flex flex-col items-center justify-center gap-4 backdrop-blur-lg">
           <h1
             className="text-rustOrange font-mono text-[12rem] leading-none font-extrabold tracking-tighter"
             style={{
               transform: `scale(${spring({
-                frame: frame - frame10000x,
+                frame: frame - phrase10000x.from, // Anchor spring to sequence start
                 fps,
                 config: { damping: 8, stiffness: 200 },
               })})`,
@@ -186,7 +211,7 @@ export function Scene4_Weight() {
       />
 
       {/* SFX: Heavy impact synced with 52,000 TONS */}
-      <Sequence from={frame52000}>
+      <Sequence from={phrase52000.from}>
         <Audio
           src={staticFile(`${ASSET}/voices/sfx/sfx_heavy_impact.wav`)}
           volume={0.6}
@@ -194,7 +219,7 @@ export function Scene4_Weight() {
       </Sequence>
 
       {/* SFX: Cable snap on "Nearly killed" (Syncs with the Barge image) */}
-      <Sequence from={frameNearlyKilled}>
+      <Sequence from={phraseNearlyKilled.from}>
         <Audio
           src={staticFile(`${ASSET}/voices/sfx/sfx_cable_snap.wav`)}
           volume={0.5}
