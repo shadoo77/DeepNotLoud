@@ -182,9 +182,9 @@ export function Scene3_Rusticle() {
         <TiktokCaptions
           transcript={transcriptData}
           highlightedWords={highlightedWords}
-          position="center"
+          position="bottom-center"
           startFrame={VO_START_FRAME}
-          switchCaptionsEveryMs={4000}
+          switchCaptionsEveryMs={2000}
           showOverlay
         />
       </div>

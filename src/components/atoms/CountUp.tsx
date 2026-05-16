@@ -1,6 +1,8 @@
+import { ComponentPropsWithRef } from "react";
 import { useCurrentFrame, interpolate } from "remotion";
+import { cn } from "@/lib/utils";
 
-interface CountUpProps {
+type CountUpProps = ComponentPropsWithRef<"div"> & {
   from?: number;
   to: number;
   durationInFrames: number;
@@ -8,7 +10,7 @@ interface CountUpProps {
   fontSize?: number;
   color?: string;
   suffix?: string;
-}
+};
 
 export function CountUp({
   from = 0,
@@ -18,6 +20,9 @@ export function CountUp({
   fontSize = 80,
   color = "oklch(0.75 0.15 185)",
   suffix = "",
+  ref,
+  className,
+  ...rest
 }: CountUpProps) {
   const frame = useCurrentFrame();
 
@@ -35,12 +40,14 @@ export function CountUp({
 
   return (
     <div
+      ref={ref}
       style={{
         fontSize,
         color,
         textShadow: `0 0 20px ${color}`,
       }}
-      className="font-mono font-bold"
+      className={cn("font-mono font-bold", className)}
+      {...rest}
     >
       {currentValue.toLocaleString()}
       {suffix}

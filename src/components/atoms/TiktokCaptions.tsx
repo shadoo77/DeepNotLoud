@@ -41,53 +41,56 @@ const CaptionPage = ({
 
   return (
     <AbsoluteFill className={cn(captionPosition({ position }))}>
-      <div className="relative inline-block px-6 py-3 rounded-xl"
-        style={showOverlay ? { backgroundColor: "oklch(0.15 0.02 260 / 0.7)" } : {}}
+      <div
+        className="font-patua max-w-4xl text-6xl font-bold whitespace-pre"
+        style={{
+          textShadow: "0 2px 12px rgba(0,0,0,0.9)",
+        }}
       >
         <div
-          className="max-w-4xl font-patua text-6xl font-bold whitespace-pre"
-          style={{
-            textShadow: "0 2px 12px rgba(0,0,0,0.9)",
-          }}
+          className="relative inline-block rounded-xl px-6 py-3"
+          style={
+            showOverlay ? { backgroundColor: "oklch(0.15 0.02 260 / 0.7)" } : {}
+          }
         >
-        {page.tokens.map((token) => {
-          const isActive =
-            token.fromMs <= absoluteTimeMs && token.toMs > absoluteTimeMs;
-          const isHighlighted = highlightedWords.some(
-            (hw) =>
-              token.text
-                .toLowerCase()
-                .replace(/[.,!?]/g, "")
-                .trim() === hw.toLowerCase(),
-          );
+          {page.tokens.map((token) => {
+            const isActive =
+              token.fromMs <= absoluteTimeMs && token.toMs > absoluteTimeMs;
+            const isHighlighted = highlightedWords.some(
+              (hw) =>
+                token.text
+                  .toLowerCase()
+                  .replace(/[.,!?]/g, "")
+                  .trim() === hw.toLowerCase(),
+            );
 
-          const style: React.CSSProperties = isActive
-            ? {
-                textShadow:
-                  "0px 0px 15px oklch(50% 0.2 85 / 0.8), 2px 2px 0px oklch(0% 0 0)",
-                transform: "scale(1.05)",
-                // eslint-disable-next-line @remotion/non-pure-animation
-                transition: "transform 0.1s ease-out",
-              }
-            : {
-                textShadow: "2px 2px 0px oklch(0% 0 0)",
-                transform: "scale(1)",
-              };
+            const style: React.CSSProperties = isActive
+              ? {
+                  textShadow:
+                    "0px 0px 15px oklch(50% 0.2 85 / 0.8), 2px 2px 0px oklch(0% 0 0)",
+                  transform: "scale(1.05)",
+                  // eslint-disable-next-line @remotion/non-pure-animation
+                  transition: "transform 0.1s ease-out",
+                }
+              : {
+                  textShadow: "2px 2px 0px oklch(0% 0 0)",
+                  transform: "scale(1)",
+                };
 
-          return (
-            <span
-              key={token.fromMs}
-              className={cn("inline-block text-background", {
-                "text-biolumTeal": isHighlighted,
-                "text-gold-glow": isActive && !isHighlighted,
-              })}
-              style={style}
-            >
-              {token.text}
-            </span>
-          );
-        })}
-      </div>
+            return (
+              <span
+                key={token.fromMs}
+                className={cn("text-background inline-block", {
+                  "text-biolumTeal": isHighlighted,
+                  "text-gold-glow": isActive && !isHighlighted,
+                })}
+                style={style}
+              >
+                {token.text}
+              </span>
+            );
+          })}
+        </div>
       </div>
     </AbsoluteFill>
   );
