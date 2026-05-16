@@ -12,6 +12,7 @@ import {
 import { Audio } from "@remotion/media";
 import { TiktokCaptions } from "@/components/atoms/TiktokCaptions";
 import { Explode } from "@/components/atoms/Explode";
+import { getPhraseFrames } from "@/lib/utils";
 import { VO_START_FRAME, TRASCRIPT_DATA } from "./constants";
 
 const ASSET = "assets/forever-lost/ep-002";
@@ -23,16 +24,6 @@ const HIGHLIGHTED_WORDS = [
   "century",
   "disintegrate",
 ];
-
-const getWordFrame = (wordToFind: string, fps: number) => {
-  const word = TRASCRIPT_DATA.find((w) =>
-    w.text
-      .toLowerCase()
-      .replace(/[.,!?]/g, "")
-      .includes(wordToFind.toLowerCase()),
-  );
-  return word ? Math.round((word.startMs / 1000) * fps) + VO_START_FRAME : 0;
-};
 
 // Rusticle particle — falls downward from the sphere
 const Rusticle = ({
@@ -100,7 +91,7 @@ const CrackLines = ({ triggerFrame }: { triggerFrame: number }) => {
       width="1920"
       height="1080"
       viewBox="0 0 1920 1080"
-      className="pointer-events-none absolute"
+      className="absolute pointer-events-none"
     >
       {crackPaths.map((d, i) => {
         const pathLength = 300;
@@ -126,12 +117,16 @@ export function Scene2_Pressure() {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
-  const frame380 = getWordFrame("380", fps);
-  const frameCup = getWordFrame("crushed", fps);
-  const frameHull = getWordFrame("corroding", fps);
-  const frameSolid = getWordFrame("solid", fps);
-  const frameRusticles = getWordFrame("rusticles", fps);
-  const frameDisintegrate = getWordFrame("disintegrate", fps);
+  const gpf = (phrase: string) =>
+    getPhraseFrames({ phrase, transcriptData: TRASCRIPT_DATA, fps, voiceOverStartFrame: VO_START_FRAME }).from;
+
+  const frame380 = gpf("380");
+  const frameCup = gpf("crushed");
+  const frameHull = gpf("corroding");
+  const frameSolid = gpf("solid");
+  const frameRusticles = gpf("rusticles");
+  const frameDisintegrate = gpf("disintegrate");
+  const frameCentury = gpf("century");
 
   const pressureScale = spring({
     frame: Math.max(0, frame - 30),
@@ -295,18 +290,18 @@ export function Scene2_Pressure() {
       )}
 
       {/* ====== "113 YEARS" CENTURY BADGE ====== */}
-      {getWordFrame("century", fps) > 0 && (
+      {frameCentury > 0 && (
         <div
           className="absolute top-[15%] left-[8%]"
           style={{
             opacity: interpolate(
               frame,
-              [getWordFrame("century", fps), getWordFrame("century", fps) + 15],
+              [frameCentury, frameCentury + 15],
               [0, 1],
               { extrapolateRight: "clamp" },
             ),
             transform: `scale(${spring({
-              frame: frame - getWordFrame("century", fps),
+              frame: frame - frameCentury,
               fps,
               config: { damping: 10, stiffness: 200 },
             })})`,

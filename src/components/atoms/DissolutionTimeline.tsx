@@ -1,13 +1,13 @@
 import { useCurrentFrame, interpolate } from "remotion";
 
 interface DissolutionTimelineProps {
-  startFrame: number;
   durationFrames: number;
+  startFrame?: number;
 }
 
 export function DissolutionTimeline({
-  startFrame,
   durationFrames,
+  startFrame = 0,
 }: DissolutionTimelineProps) {
   const frame = useCurrentFrame();
 

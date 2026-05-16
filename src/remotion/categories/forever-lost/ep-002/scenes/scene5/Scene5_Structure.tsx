@@ -10,270 +10,206 @@ import {
 } from "remotion";
 import { Audio } from "@remotion/media";
 import { TiktokCaptions } from "@/components/atoms/TiktokCaptions";
-import { CountUp } from "@/components/atoms/CountUp";
-import { TRASCRIPT_DATA as transcriptData, VO_START_FRAME } from "./constants";
+import { GlitchText } from "@/components/atoms/GlitchText";
 import { getPhraseFrames } from "@/lib/utils";
+import { TRASCRIPT_DATA as transcriptData, VO_START_FRAME } from "./constants";
 
 const ASSET = "assets/forever-lost/ep-002";
-
-// Fade duration in frames for text shock in/out transitions
-const FADE_FRAMES = 6;
-
-/**
- * Returns an opacity value (0→1→1→0) over the lifetime of a sequence.
- * `localFrame` = frame - sequence.from  (i.e. the frame *within* the sequence)
- * `duration`   = total sequence duration in frames
- */
-function sequenceFade(localFrame: number, duration: number): number {
-  return interpolate(
-    localFrame,
-    [0, FADE_FRAMES, duration - FADE_FRAMES, duration],
-    [0, 1, 1, 0],
-    { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
-  );
-}
 
 export function Scene5_Structure() {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
-  // ===== DYNAMIC PHRASE TIMINGS =====
+  const gpf = (phrase: string) =>
+    getPhraseFrames({ phrase, transcriptData, fps, voiceOverStartFrame: VO_START_FRAME }).from;
 
-  const phrase52000 = getPhraseFrames({
-    phrase: "52,000",
-    transcriptData,
+  const frameBrokeHalf = gpf("broke in half");
+  const frameShatter = gpf("shatter");
+  const frameDebris = gpf("a debris field");
+
+  // --- ANIMATIONS ---
+
+  // 1. The Break Split (Activated on "shatter")
+  // Separates the image into left (bow) and right (stern) and pulls them apart
+  const breakSpring = spring({
+    frame: Math.max(0, frame - frameShatter),
     fps,
-    voiceOverStartFrame: VO_START_FRAME,
+    config: { damping: 20, stiffness: 80, mass: 1.5 },
   });
 
-  const phrase5tons = getPhraseFrames({
-    phrase: "five ton",
-    transcriptData,
-    fps,
-    voiceOverStartFrame: VO_START_FRAME,
-  });
+  const bowTranslateX = interpolate(breakSpring, [0, 1], [0, -150]);
+  const sternTranslateX = interpolate(breakSpring, [0, 1], [0, 150]);
+  const midGap = interpolate(breakSpring, [0, 1], [0, 80]); // Black gap in the middle
 
-  const phraseNoCrane = getPhraseFrames({
-    phrase: "no crane on earth",
-    transcriptData,
-    fps,
-    voiceOverStartFrame: VO_START_FRAME,
-    bufferFrames: 12,
-  });
+  // 2. Stress Heatmap Pulse (Before the break)
+  const stressPulse = Math.sin(frame * 0.3) * 0.2 + 0.6; // Pulses between 0.4 and 0.8 opacity
 
-  const phraseNearlyKilled = getPhraseFrames({
-    phrase: "nearly killed the crew",
-    transcriptData,
-    fps,
-    voiceOverStartFrame: VO_START_FRAME,
-    bufferFrames: 12,
-  });
-
-  const phrase10000x = getPhraseFrames({
-    phrase: "10,000",
-    transcriptData,
-    fps,
-    voiceOverStartFrame: VO_START_FRAME,
-    bufferFrames: 15,
-  });
-
-  // ===== ANIMATION LOGIC =====
-  const punchZoom = spring({
-    frame: Math.max(0, frame - phrase52000.from),
-    fps,
-    config: { damping: 10, stiffness: 200, mass: 0.5 },
-  });
-  const dynamicScale = interpolate(punchZoom, [0, 1], [1, 1.05]);
-
-  const shakeStartFrame = phrase52000.from;
-  const isShaking = frame > shakeStartFrame;
-  const shakeIntensity = isShaking
-    ? Math.exp(-(frame - shakeStartFrame) * 0.3) * 10
-    : 0;
-  const shakeY = Math.sin((frame - shakeStartFrame) * 1.5) * shakeIntensity;
-
-  const bargeOpacity = interpolate(
+  // 3. BGM Volume (Massive hit, then DEAD SILENCE for 2 seconds after shatter)
+  const hasDebrisKeyframe = frameDebris > frameShatter + fps * 2;
+  const bgmVolume = interpolate(
     frame,
-    [phrase5tons.from, phrase5tons.from + 30],
-    [0, 1],
+    hasDebrisKeyframe
+      ? [
+          0,
+          frameShatter - 5,
+          frameShatter,
+          frameShatter + 5,
+          frameShatter + fps * 2 - 10,
+          frameDebris - 15,
+          frameDebris,
+        ]
+      : [0, frameShatter - 5, frameShatter, frameShatter + 5],
+    hasDebrisKeyframe ? [0.4, 0.8, 1.0, 0, 0, 0, 0.15] : [0.4, 0.8, 1.0, 0],
     { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
   );
-  const scaleOpacity = interpolate(bargeOpacity, [0, 1], [1, 0]);
 
+  // --- HIGHLIGHTED WORDS ---
   const highlightedWords = [
-    "52,000",
-    "tons",
-    "crane",
-    "nearly",
-    "killed",
-    "10,000",
+    "broke",
+    "half",
+    "compromised",
+    "shatter",
+    "crumble",
+    "debris",
   ];
 
   return (
-    <AbsoluteFill
-      className="bg-abyssBlack overflow-hidden"
-      style={{ transform: `translateY(${shakeY}px) scale(${dynamicScale})` }}
-    >
-      {/* ====== BACKGROUND LAYER 1: The Scale Image ====== */}
-      <AbsoluteFill>
+    <AbsoluteFill className="bg-abyssBlack overflow-hidden">
+      {/* ====== LAYER 1: STRESS ANALYSIS WIREFRAME ====== */}
+      <AbsoluteFill
+        style={{
+          opacity:
+            frame < frameShatter
+              ? 1
+              : interpolate(frame, [frameShatter, frameShatter + 15], [1, 0], {
+                  extrapolateRight: "clamp",
+                }),
+        }}
+      >
         <Img
-          src={staticFile(`${ASSET}/images/img_weight_scale.jpeg`)}
+          src={staticFile(`${ASSET}/images/img_stress_analysis.jpeg`)}
           className="h-full w-full object-cover"
-          style={{ opacity: scaleOpacity }}
+        />
+        {/* Pulsing Heatmap Overlay */}
+        <AbsoluteFill
+          className="bg-rustOrange mix-blend-overlay"
+          style={{ opacity: frame >= frameBrokeHalf ? stressPulse : 0 }}
         />
       </AbsoluteFill>
 
-      {/* ====== BACKGROUND LAYER 2: The Barge/Salvage Image ====== */}
-      <AbsoluteFill style={{ opacity: bargeOpacity }}>
-        <Img
-          src={staticFile(`${ASSET}/images/img_barge_lift_attempt.jpeg`)}
-          className="h-full w-full object-cover"
-        />
-      </AbsoluteFill>
+      {/* ====== LAYER 2: THE BREAKING SHIP (Split in half) ====== */}
+      {frame >= frameShatter && (
+        <>
+          {/* LEFT SIDE (BOW) - Clips right half of the image */}
+          <AbsoluteFill
+            style={{
+              clipPath: "inset(0 50% 0 0)",
+              transform: `translateX(${bowTranslateX}px)`,
+            }}
+          >
+            <Img
+              src={staticFile(`${ASSET}/images/img_ship_breaking.jpeg`)}
+              className="h-full w-full object-cover"
+            />
+          </AbsoluteFill>
 
-      {/* ====== DYNAMIC COUNT OVERLAY ====== */}
-      {frame >= phrase52000.from && (
-        <div className="absolute top-[20%] left-1/2 -translate-x-1/2 text-center">
-          <CountUp
-            to={52000}
-            durationInFrames={fps * 2}
-            delay={phrase52000.from}
-            className="text-ghostWhite font-mono text-8xl drop-shadow-[0_0_30px_var(--color-rustOrange)]"
-            suffix=" TONS"
+          {/* RIGHT SIDE (STERN) - Clips left half of the image */}
+          <AbsoluteFill
+            style={{
+              clipPath: "inset(0 0 0 50%)",
+              transform: `translateX(${sternTranslateX}px)`,
+            }}
+          >
+            <Img
+              src={staticFile(`${ASSET}/images/img_ship_breaking.jpeg`)}
+              className="h-full w-full object-cover"
+            />
+          </AbsoluteFill>
+
+          {/* THE VOID (Black gap in the middle representing the break) */}
+          <div
+            style={{
+              position: "absolute",
+              top: 0,
+              bottom: 0,
+              left: "50%",
+              width: `${midGap}px`,
+              transform: "translateX(-50%)",
+              backgroundColor: "var(--color-abyssBlack)",
+              boxShadow: `0 0 60px 20px var(--color-abyssBlack)`, // Blurs the edges into the gap
+            }}
           />
-        </div>
+        </>
       )}
 
-      {/* ====== TEXT SHOCKS ====== */}
-
-      {/* FIX 3: All text shocks now fade in and out via sequenceFade().
-          The Sequence still hard-mounts/unmounts at the right frames,
-          but opacity does the smooth transition inside. */}
-
-      {/* "NO CRANE ON EARTH" Flash */}
-      <Sequence
-        from={phraseNoCrane.from}
-        durationInFrames={phraseNoCrane.duration}
-      >
-        <AbsoluteFill
-          className="bg-abyssBlack/80 flex items-center justify-center backdrop-blur-sm"
-          style={{
-            opacity: sequenceFade(
-              frame - phraseNoCrane.from,
-              phraseNoCrane.duration,
-            ),
-          }}
-        >
-          <h1
-            className="font-inter text-surfaceWhite text-7xl font-extrabold tracking-tight"
-            style={{
-              transform: `scale(${spring({
-                frame: frame - phraseNoCrane.from,
-                fps,
-                config: { damping: 10, stiffness: 200 },
-              })})`,
-              textShadow: "0 0 30px var(--color-surfaceWhite)",
-            }}
-          >
-            NO CRANE ON EARTH
-          </h1>
+      {/* ====== TEXT SHOCK: "SHATTER" GLITCH ====== */}
+      <Sequence from={frameShatter} durationInFrames={fps * 2}>
+        <AbsoluteFill className="bg-abyssBlack/70 z-30 flex items-center justify-center backdrop-blur-sm">
+          <GlitchText
+            text="SHATTER"
+            triggerFrame={frameShatter}
+            className="font-inter text-[10rem] leading-none font-extrabold tracking-tighter"
+            color="var(--color-rustOrange)"
+          />
         </AbsoluteFill>
       </Sequence>
 
-      {/* "NEARLY KILLED THE CREW" Red Flash */}
-      <Sequence
-        from={phraseNearlyKilled.from}
-        durationInFrames={phraseNearlyKilled.duration}
-      >
-        <AbsoluteFill
-          className="bg-abyssBlack/90 flex items-center justify-center backdrop-blur-md"
-          style={{
-            opacity: sequenceFade(
-              frame - phraseNearlyKilled.from,
-              phraseNearlyKilled.duration,
-            ),
-          }}
-        >
+      {/* ====== TEXT SHOCK: "DEBRIS FIELD" FINAL WHISPER ====== */}
+      <Sequence from={frameDebris} durationInFrames={fps * 3}>
+        <AbsoluteFill className="bg-abyssBlack/90 z-30 flex items-center justify-center backdrop-blur-lg">
           <h1
-            className="font-inter text-rustOrange text-8xl font-extrabold tracking-tight"
+            className="font-inter text-steelGrey text-7xl font-extrabold tracking-tight"
             style={{
               transform: `scale(${spring({
-                frame: frame - phraseNearlyKilled.from,
+                frame: frame - frameDebris,
                 fps,
-                config: { damping: 8, stiffness: 300 },
+                config: { damping: 20, stiffness: 100 },
               })})`,
-              textShadow: "0 0 40px var(--color-rustOrange)",
+              textShadow: "0 0 30px var(--color-oceanBlue)",
             }}
           >
-            NEARLY KILLED THE CREW
+            A DEBRIS FIELD
           </h1>
-        </AbsoluteFill>
-      </Sequence>
-
-      {/* "10,000x HEAVIER" Final Climax */}
-      <Sequence
-        from={phrase10000x.from}
-        durationInFrames={phrase10000x.duration}
-      >
-        <AbsoluteFill
-          className="bg-abyssBlack/95 flex flex-col items-center justify-center gap-4 backdrop-blur-lg"
-          style={{
-            opacity: sequenceFade(
-              frame - phrase10000x.from,
-              phrase10000x.duration,
-            ),
-          }}
-        >
-          <h1
-            className="text-rustOrange font-mono text-[12rem] leading-none font-extrabold tracking-tighter"
-            style={{
-              transform: `scale(${spring({
-                frame: frame - phrase10000x.from,
-                fps,
-                config: { damping: 8, stiffness: 200 },
-              })})`,
-              textShadow: "0 0 80px var(--color-rustOrange)",
-            }}
-          >
-            10,000x
-          </h1>
-          <p className="font-inter text-surfaceWhite text-5xl font-semibold tracking-wide uppercase opacity-80">
-            Heavier
-          </p>
         </AbsoluteFill>
       </Sequence>
 
       {/* ====== AUDIO LAYERS ====== */}
 
+      {/* BGM: Climax -> Sudden Silence -> Quiet Drone */}
       <Audio
-        src={staticFile(`${ASSET}/voices/bgm/bgm_scene4_tension.mp3`)}
-        volume={0.3}
+        src={staticFile(`${ASSET}/voices/bgm/bgm_scene5_climax.mp3`)}
+        volume={bgmVolume}
       />
 
-      <Sequence from={phrase52000.from}>
+      {/* SFX: Catastrophic break synced with "shatter" */}
+      <Sequence from={frameShatter}>
         <Audio
-          src={staticFile(`${ASSET}/voices/sfx/sfx_heavy_impact.wav`)}
+          src={staticFile(`${ASSET}/voices/sfx/sfx_metal_break.wav`)}
+          volume={0.8}
+        />
+      </Sequence>
+
+      {/* SFX: Underwater implosion boom (delayed slightly to rattle after the snap) */}
+      <Sequence from={frameShatter + 10}>
+        <Audio
+          src={staticFile(`${ASSET}/voices/sfx/sfx_implosion.wav`)}
           volume={0.6}
         />
       </Sequence>
 
-      <Sequence from={phraseNearlyKilled.from}>
-        <Audio
-          src={staticFile(`${ASSET}/voices/sfx/sfx_cable_snap.wav`)}
-          volume={0.5}
-        />
-      </Sequence>
-
+      {/* Voiceover */}
       <Sequence from={VO_START_FRAME}>
         <Audio
-          src={staticFile(`${ASSET}/voices/vo/vo_scene4.wav`)}
+          src={staticFile(`${ASSET}/voices/vo/vo_scene5.wav`)}
           volume={0.85}
         />
       </Sequence>
 
       {/* ====== CAPTIONS ====== */}
       <TiktokCaptions
-        transcript={transcriptData}
+        transcript={transcriptData.filter(
+          (w) => !w.text.toLowerCase().includes("shatter"),
+        )} // Filter out "shatter" so the Glitch component handles it
         highlightedWords={highlightedWords}
         position="bottom-center"
         startFrame={VO_START_FRAME}

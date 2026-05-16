@@ -10,27 +10,26 @@ import {
 import { Audio } from "@remotion/media";
 import { TiktokCaptions } from "@/components/atoms/TiktokCaptions";
 import { DissolutionTimeline } from "@/components/atoms/DissolutionTimeline";
+import { getPhraseFrames } from "@/lib/utils";
 import { TRASCRIPT_DATA as transcriptData, VO_START_FRAME } from "./constants";
 
 const ASSET = "assets/forever-lost/ep-002";
-
-const getWordFrame = (wordToFind: string, fps: number) => {
-  const word = transcriptData.find((w) =>
-    w.text
-      .toLowerCase()
-      .replace(/[.,!?]/g, "")
-      .includes(wordToFind.toLowerCase()),
-  );
-  return word ? Math.round((word.startMs / 1000) * fps) + VO_START_FRAME : 0;
-};
 
 export function Scene3_Rusticle() {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
-  const frameRusticle = getWordFrame("rusticles", fps);
-  const frame100kg = getWordFrame("100", fps);
-  const dissolvingFrame = getWordFrame("dissolving", fps);
+  const gpf = (phrase: string) =>
+    getPhraseFrames({
+      phrase,
+      transcriptData,
+      fps,
+      voiceOverStartFrame: VO_START_FRAME,
+    }).from;
+
+  const frameRusticle = gpf("rusticles");
+  const frame100kg = gpf("100");
+  const dissolvingFrame = gpf("dissolving");
 
   // ✅ FIX 1: Capped Zoom & Pan (Ken Burns Effect)
   // Instead of zooming 3x (which destroys resolution), we zoom max 1.4x
@@ -135,7 +134,7 @@ export function Scene3_Rusticle() {
       {/* ====== TIMELINE ====== */}
       <Sequence from={frame100kg}>
         <DissolutionTimeline
-          startFrame={frame100kg}
+          // startFrame={frame100kg}
           durationFrames={fps * 10}
         />
       </Sequence>

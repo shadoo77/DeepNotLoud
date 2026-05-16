@@ -1,4 +1,4 @@
-import transcriptData from "./transcript_scene4.json";
+import transcriptData from "./transcript_scene5.json";
 
 const FPS = 30;
 const lastEndMs = transcriptData[transcriptData.length - 1]?.endMs ?? 0;

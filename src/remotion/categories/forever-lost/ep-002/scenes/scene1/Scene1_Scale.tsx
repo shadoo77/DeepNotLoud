@@ -12,16 +12,10 @@ import { Audio } from "@remotion/media";
 import { TiktokCaptions } from "@/components/atoms/TiktokCaptions";
 import { CountUp } from "@/components/atoms/CountUp";
 import { BurjKhalifaSVG, EiffelTowerSVG } from "@/components/atoms/SvgIcons";
+import { getPhraseFrames } from "@/lib/utils";
 import { VO_START_FRAME, TRASCRIPT_DATA } from "./constants";
 
 const ASSET = "assets/forever-lost/ep-002";
-
-const getWordFrame = (wordToFind: string, fps: number) => {
-  const word = TRASCRIPT_DATA.find((w) =>
-    w.text.toLowerCase().includes(wordToFind.toLowerCase()),
-  );
-  return word ? Math.round((word.startMs / 1000) * fps) : 0;
-};
 
 export const Scene1_Scale: React.FC = () => {
   const frame = useCurrentFrame();
@@ -40,8 +34,8 @@ export const Scene1_Scale: React.FC = () => {
       config: { damping: 10, stiffness: 200 },
     });
 
-  const frame380atm = getWordFrame("380", fps) + VO_START_FRAME;
-  const frame385kg = getWordFrame("385", fps) + VO_START_FRAME;
+  const frame380atm = getPhraseFrames({ phrase: "380", transcriptData: TRASCRIPT_DATA, fps, voiceOverStartFrame: VO_START_FRAME }).from;
+  const frame385kg = getPhraseFrames({ phrase: "385", transcriptData: TRASCRIPT_DATA, fps, voiceOverStartFrame: VO_START_FRAME }).from;
 
   const highlightedWords = ["3", "800", "380", "385"];
 
