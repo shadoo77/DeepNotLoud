@@ -16,12 +16,28 @@ import { getPhraseFrames } from "@/lib/utils";
 
 const ASSET = "assets/forever-lost/ep-002";
 
+// Fade duration in frames for text shock in/out transitions
+const FADE_FRAMES = 6;
+
+/**
+ * Returns an opacity value (0→1→1→0) over the lifetime of a sequence.
+ * `localFrame` = frame - sequence.from  (i.e. the frame *within* the sequence)
+ * `duration`   = total sequence duration in frames
+ */
+function sequenceFade(localFrame: number, duration: number): number {
+  return interpolate(
+    localFrame,
+    [0, FADE_FRAMES, duration - FADE_FRAMES, duration],
+    [0, 1, 1, 0],
+    { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
+  );
+}
+
 export function Scene4_Weight() {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
   // ===== DYNAMIC PHRASE TIMINGS =====
-  // These now calculate both the start frame AND the exact duration from the transcript
 
   const phrase52000 = getPhraseFrames({
     phrase: "52,000",
@@ -31,7 +47,7 @@ export function Scene4_Weight() {
   });
 
   const phrase5tons = getPhraseFrames({
-    phrase: "five",
+    phrase: "five ton",
     transcriptData,
     fps,
     voiceOverStartFrame: VO_START_FRAME,
@@ -54,11 +70,11 @@ export function Scene4_Weight() {
   });
 
   const phrase10000x = getPhraseFrames({
-    phrase: "10,000 times heavier",
+    phrase: "10,000",
     transcriptData,
     fps,
     voiceOverStartFrame: VO_START_FRAME,
-    bufferFrames: 15, // Let the final climax linger a bit longer
+    bufferFrames: 15,
   });
 
   // ===== ANIMATION LOGIC =====
@@ -71,7 +87,6 @@ export function Scene4_Weight() {
 
   const shakeStartFrame = phrase52000.from;
   const isShaking = frame > shakeStartFrame;
-
   const shakeIntensity = isShaking
     ? Math.exp(-(frame - shakeStartFrame) * 0.3) * 10
     : 0;
@@ -83,6 +98,7 @@ export function Scene4_Weight() {
     [0, 1],
     { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
   );
+  const scaleOpacity = interpolate(bargeOpacity, [0, 1], [1, 0]);
 
   const highlightedWords = [
     "52,000",
@@ -94,7 +110,6 @@ export function Scene4_Weight() {
   ];
 
   return (
-    // ROOT: Applies the physical screen shake and punch zoom to everything
     <AbsoluteFill
       className="bg-abyssBlack overflow-hidden"
       style={{ transform: `translateY(${shakeY}px) scale(${dynamicScale})` }}
@@ -104,9 +119,7 @@ export function Scene4_Weight() {
         <Img
           src={staticFile(`${ASSET}/images/img_weight_scale.jpeg`)}
           className="h-full w-full object-cover"
-          style={{
-            opacity: interpolate(bargeOpacity, [0, 1], [1, 0]), // Fades out when barge fades in
-          }}
+          style={{ opacity: scaleOpacity }}
         />
       </AbsoluteFill>
 
@@ -131,19 +144,31 @@ export function Scene4_Weight() {
         </div>
       )}
 
-      {/* ====== TEXT SHOCKS (Driven by Transcript Durations) ====== */}
+      {/* ====== TEXT SHOCKS ====== */}
+
+      {/* FIX 3: All text shocks now fade in and out via sequenceFade().
+          The Sequence still hard-mounts/unmounts at the right frames,
+          but opacity does the smooth transition inside. */}
 
       {/* "NO CRANE ON EARTH" Flash */}
       <Sequence
         from={phraseNoCrane.from}
         durationInFrames={phraseNoCrane.duration}
       >
-        <AbsoluteFill className="bg-abyssBlack/80 flex items-center justify-center backdrop-blur-sm">
+        <AbsoluteFill
+          className="bg-abyssBlack/80 flex items-center justify-center backdrop-blur-sm"
+          style={{
+            opacity: sequenceFade(
+              frame - phraseNoCrane.from,
+              phraseNoCrane.duration,
+            ),
+          }}
+        >
           <h1
             className="font-inter text-surfaceWhite text-7xl font-extrabold tracking-tight"
             style={{
               transform: `scale(${spring({
-                frame: frame - phraseNoCrane.from, // Anchor spring to sequence start
+                frame: frame - phraseNoCrane.from,
                 fps,
                 config: { damping: 10, stiffness: 200 },
               })})`,
@@ -155,17 +180,25 @@ export function Scene4_Weight() {
         </AbsoluteFill>
       </Sequence>
 
-      {/* "NEARLY KILLED THE CREW" Red Flash (Over the Barge Image) */}
+      {/* "NEARLY KILLED THE CREW" Red Flash */}
       <Sequence
         from={phraseNearlyKilled.from}
         durationInFrames={phraseNearlyKilled.duration}
       >
-        <AbsoluteFill className="bg-abyssBlack/90 flex items-center justify-center backdrop-blur-md">
+        <AbsoluteFill
+          className="bg-abyssBlack/90 flex items-center justify-center backdrop-blur-md"
+          style={{
+            opacity: sequenceFade(
+              frame - phraseNearlyKilled.from,
+              phraseNearlyKilled.duration,
+            ),
+          }}
+        >
           <h1
             className="font-inter text-rustOrange text-8xl font-extrabold tracking-tight"
             style={{
               transform: `scale(${spring({
-                frame: frame - phraseNearlyKilled.from, // Anchor spring to sequence start
+                frame: frame - phraseNearlyKilled.from,
                 fps,
                 config: { damping: 8, stiffness: 300 },
               })})`,
@@ -182,12 +215,20 @@ export function Scene4_Weight() {
         from={phrase10000x.from}
         durationInFrames={phrase10000x.duration}
       >
-        <AbsoluteFill className="bg-abyssBlack/95 flex flex-col items-center justify-center gap-4 backdrop-blur-lg">
+        <AbsoluteFill
+          className="bg-abyssBlack/95 flex flex-col items-center justify-center gap-4 backdrop-blur-lg"
+          style={{
+            opacity: sequenceFade(
+              frame - phrase10000x.from,
+              phrase10000x.duration,
+            ),
+          }}
+        >
           <h1
             className="text-rustOrange font-mono text-[12rem] leading-none font-extrabold tracking-tighter"
             style={{
               transform: `scale(${spring({
-                frame: frame - phrase10000x.from, // Anchor spring to sequence start
+                frame: frame - phrase10000x.from,
                 fps,
                 config: { damping: 8, stiffness: 200 },
               })})`,
@@ -204,13 +245,11 @@ export function Scene4_Weight() {
 
       {/* ====== AUDIO LAYERS ====== */}
 
-      {/* BGM: Tension strings */}
       <Audio
         src={staticFile(`${ASSET}/voices/bgm/bgm_scene4_tension.mp3`)}
         volume={0.3}
       />
 
-      {/* SFX: Heavy impact synced with 52,000 TONS */}
       <Sequence from={phrase52000.from}>
         <Audio
           src={staticFile(`${ASSET}/voices/sfx/sfx_heavy_impact.wav`)}
@@ -218,7 +257,6 @@ export function Scene4_Weight() {
         />
       </Sequence>
 
-      {/* SFX: Cable snap on "Nearly killed" (Syncs with the Barge image) */}
       <Sequence from={phraseNearlyKilled.from}>
         <Audio
           src={staticFile(`${ASSET}/voices/sfx/sfx_cable_snap.wav`)}
@@ -226,7 +264,6 @@ export function Scene4_Weight() {
         />
       </Sequence>
 
-      {/* Voiceover */}
       <Sequence from={VO_START_FRAME}>
         <Audio
           src={staticFile(`${ASSET}/voices/vo/vo_scene4.wav`)}

@@ -134,7 +134,10 @@ export function Scene3_Rusticle() {
 
       {/* ====== TIMELINE ====== */}
       <Sequence from={frame100kg}>
-        <DissolutionTimeline startFrame={0} durationFrames={fps * 10} />
+        <DissolutionTimeline
+          startFrame={frame100kg}
+          durationFrames={fps * 10}
+        />
       </Sequence>
 
       {/* ====== AUDIO LAYERS ====== */}

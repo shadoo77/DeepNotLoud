@@ -20,41 +20,50 @@ export const getPhraseFrames = ({
   bufferFrames?: number;
   voiceOverStartFrame?: number;
 }) => {
-  const parts = phrase.toLowerCase().split(/\s+/);
-  let startIdx = -1;
+  const normalizeText = (t: string) =>
+    t
+      .toLowerCase()
+      .replace(/[.,!?'",]/g, "") // also strip commas so "52,000" → "52000"
+      .replace(/-/g, " ")
+      .trim();
 
-  // Find the starting index of the phrase in the transcript array
-  for (let i = 0; i < transcriptData.length - parts.length + 1; i++) {
-    const match = parts.every((part, pi) => {
-      const text = transcriptData[i + pi].text
-        .toLowerCase()
-        .replace(/[.,!?]/g, "")
-        .trim();
-      return text === part;
-    });
+  // Expand every transcript entry into individual word-tokens, preserving
+  // the original entry's timing on every token it produced.
+  // " five-ton"  →  [{ text:"five", startMs, endMs }, { text:"ton", startMs, endMs }]
+  // "52,000"     →  [{ text:"52000", startMs, endMs }]
+  const flatTokens = transcriptData.flatMap((entry) => {
+    const words = normalizeText(entry.text).split(/\s+/).filter(Boolean);
+    return words.map((word) => ({ ...entry, text: word }));
+  });
+
+  // Normalize the search phrase the same way
+  const parts = normalizeText(phrase).split(/\s+/).filter(Boolean);
+
+  // Search entirely within flatTokens — indices are now consistent
+  let startIdx = -1;
+  for (let i = 0; i <= flatTokens.length - parts.length; i++) {
+    const match = parts.every((part, pi) => flatTokens[i + pi].text === part);
     if (match) {
       startIdx = i;
       break;
     }
   }
 
-  if (startIdx === -1) return { from: 0, duration: fps }; // Fallback
+  if (startIdx === -1) {
+    console.warn(`[getPhraseFrames] No match for phrase: "${phrase}"`);
+    return { from: 0, duration: fps };
+  }
 
-  const startWord = transcriptData[startIdx];
-  const endWord = transcriptData[startIdx + parts.length - 1];
+  const startWord = flatTokens[startIdx];
+  const endWord = flatTokens[startIdx + parts.length - 1];
 
-  // Calculate start and end based on Whisper timestamps
   const startFrame =
     Math.round((startWord.startMs / 1000) * fps) + voiceOverStartFrame;
-
-  // UPDATED LINE: Use endWord.endMs directly instead of startMs + durationMs
   const endFrame =
     Math.round((endWord.endMs / 1000) * fps) + voiceOverStartFrame;
 
   return {
     from: startFrame,
-    // Add a small buffer (e.g., 8 frames) so the text lingers slightly after the word is spoken
-    // Math.max ensures we never accidentally pass 0 or a negative duration to a Remotion Sequence
     duration: Math.max(1, endFrame - startFrame + bufferFrames),
   };
 };

@@ -25,7 +25,7 @@ export const TOTAL_DURATION =
   SCENE3_DURATION +
   SCENE4_DURATION +
   BLACK_HOLD_FRAMES -
-  4 * TRANSITION_DURATION;
+  5 * TRANSITION_DURATION;
 
 export const ForeverLostEp2 = () => {
   return (
