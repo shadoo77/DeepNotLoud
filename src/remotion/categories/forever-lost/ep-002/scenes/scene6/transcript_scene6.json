@@ -1,0 +1,625 @@
+[
+  {
+    "text": "Even",
+    "startMs": 10,
+    "endMs": 440,
+    "timestampMs": 1240,
+    "confidence": 0.818582
+  },
+  {
+    "text": " if",
+    "startMs": 440,
+    "endMs": 960,
+    "timestampMs": 1540,
+    "confidence": 0.980748
+  },
+  {
+    "text": " the",
+    "startMs": 960,
+    "endMs": 990,
+    "timestampMs": 1720,
+    "confidence": 0.986077
+  },
+  {
+    "text": " physics",
+    "startMs": 990,
+    "endMs": 1950,
+    "timestampMs": 2120,
+    "confidence": 0.942747
+  },
+  {
+    "text": " allowed",
+    "startMs": 1950,
+    "endMs": 2530,
+    "timestampMs": 2700,
+    "confidence": 0.99482
+  },
+  {
+    "text": " it",
+    "startMs": 2530,
+    "endMs": 2750,
+    "timestampMs": 3000,
+    "confidence": 0.996443
+  },
+  {
+    "text": ",",
+    "startMs": 2750,
+    "endMs": 2950,
+    "timestampMs": 3940,
+    "confidence": 0.925339
+  },
+  {
+    "text": " the",
+    "startMs": 2950,
+    "endMs": 4060,
+    "timestampMs": 4120,
+    "confidence": 0.911864
+  },
+  {
+    "text": " law",
+    "startMs": 4060,
+    "endMs": 4380,
+    "timestampMs": 4440,
+    "confidence": 0.981459
+  },
+  {
+    "text": " does",
+    "startMs": 4380,
+    "endMs": 5300,
+    "timestampMs": 5240,
+    "confidence": 0.97515
+  },
+  {
+    "text": " not",
+    "startMs": 5300,
+    "endMs": 5990,
+    "timestampMs": 5520,
+    "confidence": 0.997778
+  },
+  {
+    "text": ".",
+    "startMs": 5990,
+    "endMs": 7320,
+    "timestampMs": 7060,
+    "confidence": 0.970289
+  },
+  {
+    "text": " In",
+    "startMs": 7320,
+    "endMs": 7710,
+    "timestampMs": 7800,
+    "confidence": 0.996215
+  },
+  {
+    "text": " 2003",
+    "startMs": 7710,
+    "endMs": 8750,
+    "timestampMs": 8840,
+    "confidence": 0.996489
+  },
+  {
+    "text": ",",
+    "startMs": 8750,
+    "endMs": 9460,
+    "timestampMs": 9320,
+    "confidence": 0.930514
+  },
+  {
+    "text": " UNESCO",
+    "startMs": 9460,
+    "endMs": 9560,
+    "timestampMs": 9720,
+    "confidence": 0.939474
+  },
+  {
+    "text": " formally",
+    "startMs": 9560,
+    "endMs": 10380,
+    "timestampMs": 10600,
+    "confidence": 0.995391
+  },
+  {
+    "text": " declared",
+    "startMs": 10380,
+    "endMs": 11240,
+    "timestampMs": 11060,
+    "confidence": 0.999258
+  },
+  {
+    "text": " the",
+    "startMs": 11240,
+    "endMs": 11560,
+    "timestampMs": 11440,
+    "confidence": 0.944587
+  },
+  {
+    "text": " Titanic",
+    "startMs": 11560,
+    "endMs": 12350,
+    "timestampMs": 11840,
+    "confidence": 0.911048
+  },
+  {
+    "text": " an",
+    "startMs": 12350,
+    "endMs": 12610,
+    "timestampMs": 12400,
+    "confidence": 0.826014
+  },
+  {
+    "text": " underwater",
+    "startMs": 12610,
+    "endMs": 13540,
+    "timestampMs": 12940,
+    "confidence": 0.912008
+  },
+  {
+    "text": " cultural",
+    "startMs": 13540,
+    "endMs": 14490,
+    "timestampMs": 13720,
+    "confidence": 0.948116
+  },
+  {
+    "text": " heritage",
+    "startMs": 14490,
+    "endMs": 15230,
+    "timestampMs": 14420,
+    "confidence": 0.993
+  },
+  {
+    "text": " site",
+    "startMs": 15230,
+    "endMs": 16000,
+    "timestampMs": 15020,
+    "confidence": 0.980513
+  },
+  {
+    "text": ".",
+    "startMs": 16000,
+    "endMs": 16520,
+    "timestampMs": 17520,
+    "confidence": 0.955853
+  },
+  {
+    "text": " It",
+    "startMs": 16520,
+    "endMs": 17110,
+    "timestampMs": 17940,
+    "confidence": 0.897491
+  },
+  {
+    "text": " is",
+    "startMs": 17110,
+    "endMs": 17830,
+    "timestampMs": 18280,
+    "confidence": 0.981669
+  },
+  {
+    "text": " a",
+    "startMs": 17830,
+    "endMs": 18020,
+    "timestampMs": 18380,
+    "confidence": 0.996297
+  },
+  {
+    "text": " grave",
+    "startMs": 18020,
+    "endMs": 19450,
+    "timestampMs": 18800,
+    "confidence": 0.989529
+  },
+  {
+    "text": ".",
+    "startMs": 19450,
+    "endMs": 20360,
+    "timestampMs": 20340,
+    "confidence": 0.936411
+  },
+  {
+    "text": " Over",
+    "startMs": 20960,
+    "endMs": 21010,
+    "timestampMs": 21120,
+    "confidence": 0.985521
+  },
+  {
+    "text": " 1,500",
+    "startMs": 21010,
+    "endMs": 23370,
+    "timestampMs": 21440,
+    "confidence": 0.691622
+  },
+  {
+    "text": " people",
+    "startMs": 23370,
+    "endMs": 24250,
+    "timestampMs": 23120,
+    "confidence": 0.996787
+  },
+  {
+    "text": " died",
+    "startMs": 24250,
+    "endMs": 24920,
+    "timestampMs": 23460,
+    "confidence": 0.989444
+  },
+  {
+    "text": " there",
+    "startMs": 24920,
+    "endMs": 25740,
+    "timestampMs": 24000,
+    "confidence": 0.991289
+  },
+  {
+    "text": ",",
+    "startMs": 25740,
+    "endMs": 26200,
+    "timestampMs": 24480,
+    "confidence": 0.251947
+  },
+  {
+    "text": " raising",
+    "startMs": 26200,
+    "endMs": 27200,
+    "timestampMs": 26560,
+    "confidence": 0.980474
+  },
+  {
+    "text": " it",
+    "startMs": 27200,
+    "endMs": 27700,
+    "timestampMs": 26800,
+    "confidence": 0.995853
+  },
+  {
+    "text": " would",
+    "startMs": 27700,
+    "endMs": 28510,
+    "timestampMs": 27740,
+    "confidence": 0.948207
+  },
+  {
+    "text": " be",
+    "startMs": 28510,
+    "endMs": 28690,
+    "timestampMs": 27960,
+    "confidence": 0.996196
+  },
+  {
+    "text": " a",
+    "startMs": 28690,
+    "endMs": 28850,
+    "timestampMs": 28040,
+    "confidence": 0.990119
+  },
+  {
+    "text": " profound",
+    "startMs": 28850,
+    "endMs": 30160,
+    "timestampMs": 28520,
+    "confidence": 0.999346
+  },
+  {
+    "text": " violation",
+    "startMs": 30160,
+    "endMs": 31620,
+    "timestampMs": 29460,
+    "confidence": 0.997693
+  },
+  {
+    "text": " of",
+    "startMs": 31620,
+    "endMs": 31970,
+    "timestampMs": 30100,
+    "confidence": 0.992549
+  },
+  {
+    "text": " that",
+    "startMs": 31970,
+    "endMs": 32710,
+    "timestampMs": 30280,
+    "confidence": 0.97345
+  },
+  {
+    "text": " memorial",
+    "startMs": 32710,
+    "endMs": 34470,
+    "timestampMs": 30680,
+    "confidence": 0.989109
+  },
+  {
+    "text": ".",
+    "startMs": 34470,
+    "endMs": 34520,
+    "timestampMs": 32060,
+    "confidence": 0.991459
+  },
+  {
+    "text": " The",
+    "startMs": 34520,
+    "endMs": 34900,
+    "timestampMs": 34520,
+    "confidence": 0.996913
+  },
+  {
+    "text": " ship",
+    "startMs": 34900,
+    "endMs": 35310,
+    "timestampMs": 34800,
+    "confidence": 0.996951
+  },
+  {
+    "text": " itself",
+    "startMs": 35310,
+    "endMs": 36010,
+    "timestampMs": 35320,
+    "confidence": 0.986965
+  },
+  {
+    "text": " has",
+    "startMs": 36010,
+    "endMs": 36350,
+    "timestampMs": 35740,
+    "confidence": 0.994315
+  },
+  {
+    "text": " become",
+    "startMs": 36350,
+    "endMs": 37030,
+    "timestampMs": 36100,
+    "confidence": 0.997025
+  },
+  {
+    "text": " an",
+    "startMs": 37030,
+    "endMs": 37230,
+    "timestampMs": 36400,
+    "confidence": 0.995087
+  },
+  {
+    "text": " ecosystem",
+    "startMs": 37230,
+    "endMs": 38320,
+    "timestampMs": 37000,
+    "confidence": 0.969573
+  },
+  {
+    "text": ",",
+    "startMs": 38320,
+    "endMs": 38470,
+    "timestampMs": 38280,
+    "confidence": 0.627374
+  },
+  {
+    "text": " home",
+    "startMs": 38470,
+    "endMs": 39010,
+    "timestampMs": 38460,
+    "confidence": 0.921458
+  },
+  {
+    "text": " to",
+    "startMs": 39010,
+    "endMs": 39140,
+    "timestampMs": 38820,
+    "confidence": 0.997655
+  },
+  {
+    "text": " deep sea",
+    "startMs": 39140,
+    "endMs": 39930,
+    "timestampMs": 39100,
+    "confidence": 0.693577
+  },
+  {
+    "text": " corals",
+    "startMs": 39930,
+    "endMs": 40650,
+    "timestampMs": 39940,
+    "confidence": 0.986671
+  },
+  {
+    "text": ",",
+    "startMs": 40650,
+    "endMs": 40830,
+    "timestampMs": 40580,
+    "confidence": 0.991669
+  },
+  {
+    "text": " crabs",
+    "startMs": 40830,
+    "endMs": 41420,
+    "timestampMs": 40900,
+    "confidence": 0.993585
+  },
+  {
+    "text": " and",
+    "startMs": 41420,
+    "endMs": 41730,
+    "timestampMs": 41620,
+    "confidence": 0.618258
+  },
+  {
+    "text": " bacteria",
+    "startMs": 41730,
+    "endMs": 42780,
+    "timestampMs": 42120,
+    "confidence": 0.994153
+  },
+  {
+    "text": " that",
+    "startMs": 42780,
+    "endMs": 42860,
+    "timestampMs": 42840,
+    "confidence": 0.895285
+  },
+  {
+    "text": " have",
+    "startMs": 42860,
+    "endMs": 43740,
+    "timestampMs": 42980,
+    "confidence": 0.987035
+  },
+  {
+    "text": " claimed",
+    "startMs": 43740,
+    "endMs": 45010,
+    "timestampMs": 43280,
+    "confidence": 0.99667
+  },
+  {
+    "text": " it",
+    "startMs": 45010,
+    "endMs": 45450,
+    "timestampMs": 43580,
+    "confidence": 0.993801
+  },
+  {
+    "text": " as",
+    "startMs": 45450,
+    "endMs": 45860,
+    "timestampMs": 43840,
+    "confidence": 0.992699
+  },
+  {
+    "text": " their",
+    "startMs": 45860,
+    "endMs": 46860,
+    "timestampMs": 43980,
+    "confidence": 0.994196
+  },
+  {
+    "text": " own",
+    "startMs": 46860,
+    "endMs": 48010,
+    "timestampMs": 44340,
+    "confidence": 0.998374
+  },
+  {
+    "text": ".",
+    "startMs": 48010,
+    "endMs": 48080,
+    "timestampMs": 45220,
+    "confidence": 0.995486
+  },
+  {
+    "text": " We",
+    "startMs": 48080,
+    "endMs": 48290,
+    "timestampMs": 48080,
+    "confidence": 0.986828
+  },
+  {
+    "text": " don't",
+    "startMs": 48290,
+    "endMs": 48810,
+    "timestampMs": 48240,
+    "confidence": 0.95874
+  },
+  {
+    "text": " have",
+    "startMs": 48810,
+    "endMs": 49330,
+    "timestampMs": 48540,
+    "confidence": 0.996753
+  },
+  {
+    "text": " the",
+    "startMs": 49330,
+    "endMs": 49540,
+    "timestampMs": 48720,
+    "confidence": 0.990278
+  },
+  {
+    "text": " right",
+    "startMs": 49540,
+    "endMs": 50070,
+    "timestampMs": 49000,
+    "confidence": 0.998294
+  },
+  {
+    "text": " to",
+    "startMs": 50070,
+    "endMs": 50340,
+    "timestampMs": 49380,
+    "confidence": 0.998967
+  },
+  {
+    "text": " destroy",
+    "startMs": 50340,
+    "endMs": 50920,
+    "timestampMs": 49800,
+    "confidence": 0.996426
+  },
+  {
+    "text": " one",
+    "startMs": 50920,
+    "endMs": 51330,
+    "timestampMs": 50420,
+    "confidence": 0.981867
+  },
+  {
+    "text": " world",
+    "startMs": 51330,
+    "endMs": 52120,
+    "timestampMs": 51020,
+    "confidence": 0.994901
+  },
+  {
+    "text": ",",
+    "startMs": 52120,
+    "endMs": 52120,
+    "timestampMs": 52060,
+    "confidence": 0.603575
+  },
+  {
+    "text": " to",
+    "startMs": 52120,
+    "endMs": 52290,
+    "timestampMs": 52180,
+    "confidence": 0.972522
+  },
+  {
+    "text": " reclaim",
+    "startMs": 52290,
+    "endMs": 52900,
+    "timestampMs": 52480,
+    "confidence": 0.997324
+  },
+  {
+    "text": " the",
+    "startMs": 52900,
+    "endMs": 53160,
+    "timestampMs": 53140,
+    "confidence": 0.991569
+  },
+  {
+    "text": " ruins",
+    "startMs": 53160,
+    "endMs": 53600,
+    "timestampMs": 53540,
+    "confidence": 0.997554
+  },
+  {
+    "text": " of",
+    "startMs": 53600,
+    "endMs": 53780,
+    "timestampMs": 54100,
+    "confidence": 0.994782
+  },
+  {
+    "text": " another",
+    "startMs": 53780,
+    "endMs": 54370,
+    "timestampMs": 54520,
+    "confidence": 0.991764
+  },
+  {
+    "text": ".",
+    "startMs": 54370,
+    "endMs": 54680,
+    "timestampMs": 54660,
+    "confidence": 0.975232
+  }
+]
