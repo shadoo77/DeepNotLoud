@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { ComponentPropsWithRef, useMemo } from "react";
 import {
   useCurrentFrame,
   useVideoConfig,
@@ -96,14 +96,14 @@ const CaptionPage = ({
   );
 };
 
-interface CaptionProps {
+type CaptionProps = ComponentPropsWithRef<"div"> & {
   transcript: Caption[];
   highlightedWords?: string[];
   position?: "bottom-center" | "bottom-left" | "center";
   startFrame?: number;
   switchCaptionsEveryMs?: number;
   showOverlay?: boolean;
-}
+};
 
 export const TiktokCaptions: React.FC<CaptionProps> = ({
   transcript,
@@ -112,6 +112,8 @@ export const TiktokCaptions: React.FC<CaptionProps> = ({
   startFrame = 0,
   switchCaptionsEveryMs = 1500,
   showOverlay = false,
+  ref,
+  ...rest
 }) => {
   const { fps } = useVideoConfig();
 
@@ -143,6 +145,8 @@ export const TiktokCaptions: React.FC<CaptionProps> = ({
         key={index}
         from={startFrameAbs}
         durationInFrames={durationInFrames}
+        ref={ref}
+        {...rest}
       >
         <CaptionPage
           page={page}
