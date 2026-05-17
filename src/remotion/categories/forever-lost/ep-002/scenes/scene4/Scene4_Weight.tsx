@@ -16,14 +16,8 @@ import { getPhraseFrames } from "@/lib/utils";
 
 const ASSET = "assets/forever-lost/ep-002";
 
-// Fade duration in frames for text shock in/out transitions
 const FADE_FRAMES = 6;
 
-/**
- * Returns an opacity value (0→1→1→0) over the lifetime of a sequence.
- * `localFrame` = frame - sequence.from  (i.e. the frame *within* the sequence)
- * `duration`   = total sequence duration in frames
- */
 function sequenceFade(localFrame: number, duration: number): number {
   return interpolate(
     localFrame,
@@ -77,12 +71,36 @@ export function Scene4_Weight() {
     bufferFrames: 15,
   });
 
-  // ===== ANIMATION LOGIC =====
+  // ===== ALL SPRINGS HOISTED TO TOP LEVEL =====
+  // Using Math.max(0, frame - trigger) so each spring idles at its resting
+  // value before its trigger frame, with no extra cost per frame.
+
   const punchZoom = spring({
     frame: Math.max(0, frame - phrase52000.from),
     fps,
     config: { damping: 10, stiffness: 200, mass: 0.5 },
   });
+
+  const noCraneScale = spring({
+    frame: Math.max(0, frame - phraseNoCrane.from),
+    fps,
+    config: { damping: 10, stiffness: 200 },
+  });
+
+  const nearlyKilledScale = spring({
+    frame: Math.max(0, frame - phraseNearlyKilled.from),
+    fps,
+    config: { damping: 8, stiffness: 300 },
+  });
+
+  const climaxScale = spring({
+    frame: Math.max(0, frame - phrase10000x.from),
+    fps,
+    config: { damping: 8, stiffness: 200 },
+  });
+
+  // ===== ANIMATION LOGIC =====
+
   const dynamicScale = interpolate(punchZoom, [0, 1], [1, 1.05]);
 
   const shakeStartFrame = phrase52000.from;
@@ -146,10 +164,6 @@ export function Scene4_Weight() {
 
       {/* ====== TEXT SHOCKS ====== */}
 
-      {/* FIX 3: All text shocks now fade in and out via sequenceFade().
-          The Sequence still hard-mounts/unmounts at the right frames,
-          but opacity does the smooth transition inside. */}
-
       {/* "NO CRANE ON EARTH" Flash */}
       <Sequence
         from={phraseNoCrane.from}
@@ -167,11 +181,7 @@ export function Scene4_Weight() {
           <h1
             className="font-inter text-surfaceWhite text-7xl font-extrabold tracking-tight"
             style={{
-              transform: `scale(${spring({
-                frame: frame - phraseNoCrane.from,
-                fps,
-                config: { damping: 10, stiffness: 200 },
-              })})`,
+              transform: `scale(${noCraneScale})`,
               textShadow: "0 0 30px var(--color-surfaceWhite)",
             }}
           >
@@ -197,11 +207,7 @@ export function Scene4_Weight() {
           <h1
             className="font-inter text-rustOrange text-8xl font-extrabold tracking-tight"
             style={{
-              transform: `scale(${spring({
-                frame: frame - phraseNearlyKilled.from,
-                fps,
-                config: { damping: 8, stiffness: 300 },
-              })})`,
+              transform: `scale(${nearlyKilledScale})`,
               textShadow: "0 0 40px var(--color-rustOrange)",
             }}
           >
@@ -227,11 +233,7 @@ export function Scene4_Weight() {
           <h1
             className="text-rustOrange font-mono text-[12rem] leading-none font-extrabold tracking-tighter"
             style={{
-              transform: `scale(${spring({
-                frame: frame - phrase10000x.from,
-                fps,
-                config: { damping: 8, stiffness: 200 },
-              })})`,
+              transform: `scale(${climaxScale})`,
               textShadow: "0 0 80px var(--color-rustOrange)",
             }}
           >
