@@ -45,13 +45,12 @@ const Mote: React.FC<{ delay: number; x: number; y: number }> = ({
 
   return (
     <div
+      className="absolute rounded-full"
       style={{
-        position: "absolute",
         left: x + xOffset,
         top: y + yOffset,
         width: 2,
         height: 2,
-        borderRadius: "50%",
         backgroundColor: "var(--color-surfaceWhite)",
         opacity,
         filter: "blur(1px)",
@@ -155,11 +154,10 @@ export function Scene6_Grave() {
       </AbsoluteFill>
 
       {/* ====== ATMOSPHERE: Deep Vignette ====== */}
-      {/* Reduced spread so it doesn't bleed into caption area at bottom */}
       <AbsoluteFill
+        className="pointer-events-none"
         style={{
           boxShadow: "inset 0 0 160px 80px oklch(0.15 0.02 260)",
-          pointerEvents: "none",
           zIndex: 5,
         }}
       />
@@ -178,13 +176,9 @@ export function Scene6_Grave() {
       >
         {/* Slow spinning ghostly ring behind document */}
         <div
+          className="border-oceanBlue absolute w-[60%] rounded-full border opacity-20"
           style={{
-            position: "absolute",
-            width: "60%",
             aspectRatio: "1 / 1",
-            border: "1px solid var(--color-oceanBlue)",
-            borderRadius: "50%",
-            opacity: 0.2,
             transform: `rotate(${frame * 0.2}deg)`,
             boxShadow: "0 0 40px var(--color-oceanBlue)",
           }}
@@ -238,13 +232,12 @@ export function Scene6_Grave() {
 
       {/* ====== CAPTIONS (TikTok Style) ====== */}
       <TiktokCaptions
-        className="z-20"
         transcript={transcriptData}
         highlightedWords={highlightedWords}
         position="bottom-center"
         startFrame={VO_START_FRAME}
         switchCaptionsEveryMs={2500}
-        showOverlay
+        className="z-20"
       />
 
       {/* ====== FADE TO SOLID BLACK OVERLAY ====== */}
