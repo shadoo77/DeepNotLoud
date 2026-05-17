@@ -8,6 +8,7 @@ import { Scene3, SCENE_DURATION as SCENE3_DURATION } from "./scenes/scene3";
 import { Scene4, SCENE_DURATION as SCENE4_DURATION } from "./scenes/scene4";
 import { Scene5, SCENE_DURATION as SCENE5_DURATION } from "./scenes/scene5";
 import { Scene6, SCENE_DURATION as SCENE6_DURATION } from "./scenes/scene6";
+import { Scene7, SCENE_DURATION as SCENE7_DURATION } from "./scenes/scene7";
 
 export const FPS = 30;
 export const TRANSITION_DURATION = 30;
@@ -28,8 +29,9 @@ export const TOTAL_DURATION =
   SCENE4_DURATION +
   SCENE5_DURATION +
   SCENE6_DURATION +
+  SCENE7_DURATION +
   BLACK_HOLD_FRAMES -
-  7 * TRANSITION_DURATION;
+  8 * TRANSITION_DURATION;
 
 export const ForeverLostEp2 = () => {
   return (
@@ -85,6 +87,14 @@ export const ForeverLostEp2 = () => {
       {/* Scene 6 */}
       <TransitionSeries.Sequence durationInFrames={SCENE6_DURATION}>
         <Scene6 />
+      </TransitionSeries.Sequence>
+      <TransitionSeries.Transition
+        presentation={presentation}
+        timing={timing}
+      />
+      {/* Scene 7 */}
+      <TransitionSeries.Sequence durationInFrames={SCENE7_DURATION}>
+        <Scene7 />
       </TransitionSeries.Sequence>
       <TransitionSeries.Transition
         presentation={presentation}
