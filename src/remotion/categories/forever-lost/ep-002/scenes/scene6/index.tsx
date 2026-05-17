@@ -1,2 +1,2 @@
-export { Scene6_LegalEthicalGrave as Scene6 } from "./Scene6_LegalEthicalGrave";
+export { Scene6_Grave as Scene6 } from "./Scene6_Grave";
 export { SCENE_DURATION } from "./constants";
