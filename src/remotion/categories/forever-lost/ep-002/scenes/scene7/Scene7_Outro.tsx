@@ -99,9 +99,8 @@ export function Scene7_Outro() {
       <AbsoluteFill className="z-20 flex flex-col items-center justify-center">
         {/* @DeepNotLoud */}
         <h1
-          className="font-inter text-7xl font-extrabold tracking-tight"
+          className="font-inter text-biolumTeal text-7xl font-extrabold tracking-tight"
           style={{
-            color: "var(--color-biolumTeal)",
             opacity: channelSpring,
             transform: `scale(${channelSpring})`,
             textShadow:
@@ -113,9 +112,8 @@ export function Scene7_Outro() {
 
         {/* Forever-Lost */}
         <h2
-          className="font-inter mt-4 text-5xl font-semibold tracking-wide"
+          className="font-inter text-steelGrey mt-4 text-7xl font-semibold tracking-wide"
           style={{
-            color: "var(--color-steelGrey)",
             opacity: playlistSpring,
             transform: `scale(${playlistSpring})`,
           }}
@@ -166,7 +164,7 @@ export function Scene7_Outro() {
         highlightedWords={highlightedWords}
         position="bottom-center"
         startFrame={VO_START_FRAME}
-        switchCaptionsEveryMs={1000}
+        switchCaptionsEveryMs={2000}
       />
     </AbsoluteFill>
   );
