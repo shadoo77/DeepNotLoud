@@ -1,0 +1,289 @@
+[
+  {
+    "text": "There it",
+    "startMs": 300,
+    "endMs": 1260,
+    "timestampMs": 620,
+    "confidence": 0.976282
+  },
+  {
+    "text": " sits",
+    "startMs": 1260,
+    "endMs": 2490,
+    "timestampMs": 1220,
+    "confidence": 0.9896
+  },
+  {
+    "text": ".",
+    "startMs": 2490,
+    "endMs": 2690,
+    "timestampMs": 2340,
+    "confidence": 0.375092
+  },
+  {
+    "text": " 3.8",
+    "startMs": 2690,
+    "endMs": 4610,
+    "timestampMs": 2800,
+    "confidence": 0.998721
+  },
+  {
+    "text": " km",
+    "startMs": 4610,
+    "endMs": 5040,
+    "timestampMs": 3980,
+    "confidence": 0.220462
+  },
+  {
+    "text": " down",
+    "startMs": 5040,
+    "endMs": 5950,
+    "timestampMs": 5000,
+    "confidence": 0.923455
+  },
+  {
+    "text": ".",
+    "startMs": 5950,
+    "endMs": 6000,
+    "timestampMs": 6360,
+    "confidence": 0.922689
+  },
+  {
+    "text": " That",
+    "startMs": 6000,
+    "endMs": 6450,
+    "timestampMs": 6580,
+    "confidence": 0.980814
+  },
+  {
+    "text": "'s",
+    "startMs": 6450,
+    "endMs": 6520,
+    "timestampMs": 6700,
+    "confidence": 0.960279
+  },
+  {
+    "text": " stacking",
+    "startMs": 6520,
+    "endMs": 7230,
+    "timestampMs": 7100,
+    "confidence": 0.995822
+  },
+  {
+    "text": " the",
+    "startMs": 7230,
+    "endMs": 7540,
+    "timestampMs": 7380,
+    "confidence": 0.996723
+  },
+  {
+    "text": " Burj Khalifa",
+    "startMs": 7540,
+    "endMs": 8500,
+    "timestampMs": 7640,
+    "confidence": 0.980261
+  },
+  {
+    "text": " on",
+    "startMs": 8500,
+    "endMs": 8780,
+    "timestampMs": 8840,
+    "confidence": 0.969964
+  },
+  {
+    "text": " top",
+    "startMs": 8780,
+    "endMs": 9220,
+    "timestampMs": 9140,
+    "confidence": 0.985135
+  },
+  {
+    "text": " of",
+    "startMs": 9220,
+    "endMs": 9480,
+    "timestampMs": 9300,
+    "confidence": 0.989119
+  },
+  {
+    "text": " itself",
+    "startMs": 9480,
+    "endMs": 10310,
+    "timestampMs": 9580,
+    "confidence": 0.983016
+  },
+  {
+    "text": " four",
+    "startMs": 10310,
+    "endMs": 11040,
+    "timestampMs": 10180,
+    "confidence": 0.757626
+  },
+  {
+    "text": " times",
+    "startMs": 11040,
+    "endMs": 11970,
+    "timestampMs": 10820,
+    "confidence": 0.997982
+  },
+  {
+    "text": ".",
+    "startMs": 11970,
+    "endMs": 12000,
+    "timestampMs": 11860,
+    "confidence": 0.977413
+  },
+  {
+    "text": " At",
+    "startMs": 12000,
+    "endMs": 12230,
+    "timestampMs": 12280,
+    "confidence": 0.989647
+  },
+  {
+    "text": " this",
+    "startMs": 12230,
+    "endMs": 12700,
+    "timestampMs": 12440,
+    "confidence": 0.998045
+  },
+  {
+    "text": " depth",
+    "startMs": 12700,
+    "endMs": 13350,
+    "timestampMs": 12860,
+    "confidence": 0.998807
+  },
+  {
+    "text": ",",
+    "startMs": 13350,
+    "endMs": 13530,
+    "timestampMs": 13320,
+    "confidence": 0.811185
+  },
+  {
+    "text": " the",
+    "startMs": 13530,
+    "endMs": 13990,
+    "timestampMs": 13400,
+    "confidence": 0.994294
+  },
+  {
+    "text": " water",
+    "startMs": 13990,
+    "endMs": 14450,
+    "timestampMs": 13660,
+    "confidence": 0.996261
+  },
+  {
+    "text": " pressure",
+    "startMs": 14450,
+    "endMs": 15380,
+    "timestampMs": 14180,
+    "confidence": 0.99481
+  },
+  {
+    "text": " is",
+    "startMs": 15380,
+    "endMs": 15610,
+    "timestampMs": 14540,
+    "confidence": 0.993777
+  },
+  {
+    "text": " 380",
+    "startMs": 15610,
+    "endMs": 16660,
+    "timestampMs": 15180,
+    "confidence": 0.991583
+  },
+  {
+    "text": " atmosp",
+    "startMs": 16660,
+    "endMs": 17360,
+    "timestampMs": 16700,
+    "confidence": 0.944064
+  },
+  {
+    "text": "heres",
+    "startMs": 17360,
+    "endMs": 18000,
+    "timestampMs": 17160,
+    "confidence": 0.998837
+  },
+  {
+    "text": ".",
+    "startMs": 18000,
+    "endMs": 18000,
+    "timestampMs": 17860,
+    "confidence": 0.317356
+  },
+  {
+    "text": " 385",
+    "startMs": 18000,
+    "endMs": 19310,
+    "timestampMs": 18700,
+    "confidence": 0.937778
+  },
+  {
+    "text": " kg",
+    "startMs": 19310,
+    "endMs": 19500,
+    "timestampMs": 19880,
+    "confidence": 0.697045
+  },
+  {
+    "text": ",",
+    "startMs": 19500,
+    "endMs": 19770,
+    "timestampMs": 20320,
+    "confidence": 0.421541
+  },
+  {
+    "text": " crushing",
+    "startMs": 19770,
+    "endMs": 20860,
+    "timestampMs": 21200,
+    "confidence": 0.976935
+  },
+  {
+    "text": " every",
+    "startMs": 20860,
+    "endMs": 21630,
+    "timestampMs": 21860,
+    "confidence": 0.991851
+  },
+  {
+    "text": " single",
+    "startMs": 21630,
+    "endMs": 22400,
+    "timestampMs": 22700,
+    "confidence": 0.871635
+  },
+  {
+    "text": " square",
+    "startMs": 22400,
+    "endMs": 23180,
+    "timestampMs": 23260,
+    "confidence": 0.983158
+  },
+  {
+    "text": " cent",
+    "startMs": 23180,
+    "endMs": 23710,
+    "timestampMs": 23780,
+    "confidence": 0.946998
+  },
+  {
+    "text": "imeter",
+    "startMs": 23710,
+    "endMs": 24510,
+    "timestampMs": 24120,
+    "confidence": 0.895422
+  },
+  {
+    "text": ".",
+    "startMs": 24510,
+    "endMs": 25000,
+    "timestampMs": 24720,
+    "confidence": 0.971764
+  }
+]
