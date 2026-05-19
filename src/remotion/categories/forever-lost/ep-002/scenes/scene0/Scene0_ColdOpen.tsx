@@ -15,24 +15,27 @@ import transcriptData from "./transcript_scene0.json";
 
 const ASSET = "assets/forever-lost/ep-002";
 
-const Particle = ({
+const RadiationParticle = ({
   delay,
   x,
-  y,
-  index,
+  originY,
+  size,
 }: {
   delay: number;
   x: number;
-  y: number;
-  index: number;
+  originY: number;
+  size: number;
 }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
-  const progress = Math.max(0, (frame - delay) / (fps * 12));
-  const opacity = Math.min(0.6, progress * 0.4);
-  const yOffset = -progress * 200;
-  const blur = 1 + ((index * 7) % 5);
+  const progress = Math.max(0, (frame - delay) / (fps * 10));
+  const opacity = interpolate(progress, [0, 1], [0, 0], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+  const pop = Math.floor((frame - delay) / 3) % 2 === 0 ? 0.8 : 0.2;
+  const yOffset = -progress * 150;
 
   return (
     <div
@@ -40,33 +43,27 @@ const Particle = ({
       style={{
         position: "absolute",
         left: x,
-        top: y + yOffset,
-        width: 3,
-        height: 3,
-        backgroundColor: "var(--color-biolumTeal)",
-        opacity,
-        filter: `blur(${blur}px)`,
-        boxShadow: `0 0 6px var(--color-biolumTeal)`,
+        top: originY + yOffset,
+        width: size,
+        height: size,
+        backgroundColor: "oklch(0.75 0.15 185 / 0.6)",
+        opacity: opacity > 0 ? pop : 0,
+        filter: `blur(${size * 0.5}px)`,
       }}
     />
   );
 };
 
-const LightShaft = () => {
+const GeigerFlash = () => {
   const frame = useCurrentFrame();
-  const opacity = interpolate(frame, [0, 90, 450], [0, 0.12, 0.15]);
+  const flash = Math.floor(frame / 4) % 3 === 0;
 
   return (
-    <div
-      className="absolute top-0 w-1/5 h-full pointer-events-none"
+    <AbsoluteFill
       style={{
-        left: "40%",
-        background: `linear-gradient(
-          to bottom,
-          oklch(0.35 0.10 250 / ${opacity}),
-          transparent 70%
-        )`,
-        filter: "blur(40px)",
+        opacity: flash ? 0.015 : 0,
+        backgroundColor: "white",
+        pointerEvents: "none",
       }}
     />
   );
@@ -75,11 +72,11 @@ const LightShaft = () => {
 const GrainOverlay = () => {
   return (
     <AbsoluteFill
-      style={{ opacity: 0.03 }}
+      style={{ opacity: 0.04 }}
       className="mix-blend-overlay pointer-events-none"
     >
       <svg viewBox="0 0 256 256" width="100%" height="100%">
-        <filter id="noise">
+        <filter id="noise-scene0">
           <feTurbulence
             type="fractalNoise"
             baseFrequency="0.9"
@@ -87,7 +84,12 @@ const GrainOverlay = () => {
             stitchTiles="stitch"
           />
         </filter>
-        <rect width="100%" height="100%" filter="url(#noise)" opacity="0.04" />
+        <rect
+          width="100%"
+          height="100%"
+          filter="url(#noise-scene0)"
+          opacity="0.06"
+        />
       </svg>
     </AbsoluteFill>
   );
@@ -100,107 +102,106 @@ export const Scene0_ColdOpen = () => {
   const zoomSpring = spring({
     frame,
     fps,
-    config: { damping: 12, stiffness: 100 },
-    durationInFrames: fps * 12,
+    config: { damping: 10, stiffness: 80 },
+    durationInFrames: fps * 15,
   });
 
-  const scale = interpolate(zoomSpring, [0, 1], [4, 1]);
+  const scale = interpolate(zoomSpring, [0, 1], [4, 1.05]);
 
-  const bowOpacity = interpolate(frame, [180, 300], [0, 1], {
-    extrapolateRight: "clamp",
-  });
+  const vignetteOpacity = interpolate(
+    frame,
+    [0, fps, fps * 10],
+    [0.6, 0.7, 0.8],
+    { extrapolateRight: "clamp" },
+  );
 
-  const particles = Array.from({ length: 25 }, (_, i) => ({
-    delay: i * SCENE_DURATION,
-    x: 100 + ((i * 137 + 50) % 1720),
-    y: 400 + ((i * 89 + 200) % 680),
-    index: i,
+  const particles = Array.from({ length: 20 }, (_, i) => ({
+    delay: i * 20,
+    x: 80 + ((i * 137 + 50) % 1760),
+    originY: 900 + ((i * 89 + 200) % 200),
+    size: 1.5 + ((i * 3) % 5),
   }));
 
-  const highlightedWords = ["3.8", "km", "never"];
+  const highlightedWords = [
+    "most",
+    "dangerous",
+    "object",
+    "30",
+    "seconds",
+    "death",
+    "5",
+    "minutes",
+    "kill",
+    "never",
+  ];
 
   return (
     <AbsoluteFill
-      style={{ backgroundColor: "var(--color-abyssBlack)" }}
+      style={{ backgroundColor: "oklch(0.08 0.01 260)" }}
       className="overflow-hidden"
     >
       <AbsoluteFill
         style={{
           transform: `scale(${scale})`,
-          transformOrigin: "50% 40%",
+          transformOrigin: "50% 50%",
         }}
       >
         <Sequence durationInFrames={SCENE_DURATION}>
           <Img
-            src={staticFile(`${ASSET}/images/img_coldopen_rivet.jpeg`)}
+            src={staticFile(`${ASSET}/images/img_scene00_elephants_foot.jpeg`)}
             className="object-cover"
             style={{
               width: "100%",
               height: "100%",
-              opacity: interpolate(bowOpacity, [0, 1], [1, 0.3]),
-            }}
-          />
-        </Sequence>
-
-        <Sequence durationInFrames={SCENE_DURATION}>
-          <Img
-            src={staticFile(`${ASSET}/images/img_coldopen_bow.jpeg`)}
-            className="object-cover"
-            style={{
-              width: "100%",
-              height: "100%",
-              opacity: bowOpacity,
+              filter: "contrast(1.2) brightness(0.7) saturate(0.6)",
             }}
           />
         </Sequence>
       </AbsoluteFill>
 
-      <LightShaft />
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          background: `radial-gradient(ellipse at center, transparent 40%, oklch(0 0 0 / ${vignetteOpacity}) 100%)`,
+          pointerEvents: "none",
+        }}
+      />
+
+      <GeigerFlash />
 
       {particles.map((p) => (
-        <Particle
-          key={p.index}
+        <RadiationParticle
+          key={p.delay}
           delay={p.delay}
           x={p.x}
-          y={p.y}
-          index={p.index}
+          originY={p.originY}
+          size={p.size}
         />
       ))}
 
       <GrainOverlay />
 
       <Audio
-        src={staticFile(`${ASSET}/voices/bgm/bgm_scene0_cello.mp3`)}
+        src={staticFile(`${ASSET}/audio/bgm/bgm_eerie_drone.mp3`)}
         volume={(f) =>
-          interpolate(f, [0, fps * 8], [0, 0.3], {
+          interpolate(f, [0, fps * 8], [0, 0.25], {
             extrapolateRight: "clamp",
           })
         }
       />
 
-      <Audio
-        src={staticFile(`${ASSET}/voices/sfx/sfx_sub_bass_rumble.wav`)}
-        volume={0.4}
-      />
-
       <Sequence from={120}>
         <Audio
-          src={staticFile(`${ASSET}/voices/sfx/sfx_metal_creak.wav`)}
-          volume={0.3}
-        />
-      </Sequence>
-
-      <Sequence from={240}>
-        <Audio
-          src={staticFile(`${ASSET}/voices/sfx/sfx_pressure_groan.wav`)}
-          volume={0.25}
+          src={staticFile(`${ASSET}/audio/sfx/sfx_deep_rumble.wav`)}
+          volume={0.35}
         />
       </Sequence>
 
       <Sequence from={VO_START_FRAME}>
         <Audio
-          src={staticFile(`${ASSET}/voices/vo/vo_scene0.wav`)}
-          volume={0.8}
+          src={staticFile(`${ASSET}/audio/vo/vo_scene0.wav`)}
+          volume={0.85}
         />
       </Sequence>
 
@@ -209,6 +210,7 @@ export const Scene0_ColdOpen = () => {
         highlightedWords={highlightedWords}
         position="bottom-center"
         startFrame={VO_START_FRAME}
+        showOverlay
       />
     </AbsoluteFill>
   );

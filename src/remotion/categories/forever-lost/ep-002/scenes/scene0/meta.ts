@@ -1,15 +1,13 @@
-import { SCENE_DURATION } from "./constants";
-
-export const videoMeta = {
-  playlist: "Forever Lost",
-  episode: "Episode 2",
-  title: "Why The Titanic Can Never Be Raised",
-  totalDurationSeconds: SCENE_DURATION,
-  voice: {
-    instructions: `Style: Deep, resonant, documentary narrator. Intimate and haunting. 
-Pacing: Measured and efficient. Do not drag out the words. Keep a steady, natural rhythm with only micro-pauses between sentences. 
-Tone: You are standing in pitch darkness, speaking to someone right next to you. No sensationalism—just cold, heavy awe. 
-Emphasis: Lean into the weight of the numbers. The final line should drop in pitch, delivering absolute finality.`,
-    name: "Charon",
-  },
+export const sceneMeta = {
+  id: "scene0",
+  title: "The Elephant's Foot",
+  estimatedDuration: 20,
+  slug: "elephants-foot",
+  images: [
+    "img_scene00_elephants_foot.jpeg",
+    "img_scene00_basement_corridor.jpeg",
+  ],
+  sfx: ["sfx_deep_rumble.wav", "sfx_geiger_crackle.wav"],
+  vo: "vo_scene0.wav",
+  voice: { name: "Charon" },
 };

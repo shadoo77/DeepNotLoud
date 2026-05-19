@@ -1,15 +1,15 @@
-import { SCENE_DURATION } from "./constants";
-
-export const videoMeta = {
-  playlist: "Forever Lost",
-  episode: "Episode 2",
-  title: "The Lifting Problem — Structural Integrity",
-  totalDurationSeconds: SCENE_DURATION,
-  voice: {
-    instructions: `Style: Deep, resonant, documentary narrator. Intimate and haunting, but now with rising, brutal intensity. 
-Pacing: Measured, but accelerating slightly as the sheer scale of the problem becomes clear. 
-Tone: Incomprehensible weight and absolute futility. 
-Emphasis: Hit "52,000 tons" like a physical weight dropping. "No crane on Earth" should sound definitive. "Nearly killed the crew" should be sharp and shocking.`,
-    name: "Charon",
-  },
+export const sceneMeta = {
+  id: "scene5",
+  title: "A 20,000-Year Grave",
+  estimatedDuration: 30,
+  slug: "a-20000-year-grave",
+  images: [
+    "img_scene05_pripyat_ferris_wheel.jpeg",
+    "img_scene05_sarcophagus_far.jpeg",
+    "img_scene05_abandoned_classroom.jpeg",
+    "img_scene05_title_card.jpeg",
+  ],
+  sfx: ["sfx_wind_empty.wav"],
+  vo: "vo_scene5.wav",
+  voice: { name: "Charon" },
 };

@@ -1,15 +1,15 @@
-import { SCENE_DURATION } from "./constants";
-
-export const videoMeta = {
-  playlist: "Forever Lost",
-  episode: "Episode 2",
-  title: "The Lifting Problem",
-  totalDurationSeconds: SCENE_DURATION,
-  voice: {
-    instructions: `Style: Deep, resonant, documentary narrator. Intimate and haunting, but now with rising, brutal intensity. 
-Pacing: Measured, but accelerating slightly as the sheer scale of the problem becomes clear. 
-Tone: Incomprehensible weight and absolute futility. 
-Emphasis: Hit "52,000 tons" like a physical weight dropping. "No crane on Earth" should sound definitive. "Nearly killed the crew" should be sharp and shocking.`,
-    name: "Charon",
-  },
+export const sceneMeta = {
+  id: "scene4",
+  title: "The Cage Cannot Be Opened",
+  estimatedDuration: 25,
+  slug: "the-cage-cannot-be-opened",
+  images: [
+    "img_scene04_nsc_arch.jpeg",
+    "img_scene04_drone_damage.jpeg",
+    "img_scene04_old_sarcophagus.jpeg",
+    "img_scene04_confinement_diagram.jpeg",
+  ],
+  sfx: ["sfx_metal_groan.wav"],
+  vo: "vo_scene4.wav",
+  voice: { name: "Charon" },
 };

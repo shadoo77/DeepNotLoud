@@ -1,83 +1,111 @@
-import { Audio } from "@remotion/media";
-import { AbsoluteFill, staticFile, useVideoConfig } from "remotion";
+import { AbsoluteFill } from "remotion";
 import { TransitionSeries, linearTiming } from "@remotion/transitions";
 import { fade } from "@remotion/transitions/fade";
-import { Scene01Hook } from "./scenes/Scene01_Hook";
-import { Scene02Depth } from "./scenes/Scene02_Depth";
-import { Scene03Pressure } from "./scenes/Scene03_Pressure";
-import { Scene04Scale } from "./scenes/Scene04_Scale";
-import { Scene05Fragility } from "./scenes/Scene05_Fragility";
-import { Scene06Plans } from "./scenes/Scene06_Plans";
-import { Scene07Outro } from "./scenes/Scene07_Outro";
+import { Scene0, SCENE_DURATION as SCENE0_DURATION } from "./scenes/scene0";
+import { Scene1, SCENE_DURATION as SCENE1_DURATION } from "./scenes/scene1";
+import { Scene2, SCENE_DURATION as SCENE2_DURATION } from "./scenes/scene2";
+import { Scene3, SCENE_DURATION as SCENE3_DURATION } from "./scenes/scene3";
+import { Scene4, SCENE_DURATION as SCENE4_DURATION } from "./scenes/scene4";
+import { Scene5, SCENE_DURATION as SCENE5_DURATION } from "./scenes/scene5";
+import { Scene6, SCENE_DURATION as SCENE6_DURATION } from "./scenes/scene6";
+import { Scene7, SCENE_DURATION as SCENE7_DURATION } from "./scenes/scene7";
 
 export const FPS = 30;
-export const SCENE_DURATIONS_SECONDS = [26, 36, 40, 44, 44, 50, 50] as const;
-export const TRANSITION_DURATION = 15;
-export const TOTAL_DURATION = Math.floor(
-  SCENE_DURATIONS_SECONDS.reduce((a, b) => a + b, 0) * FPS -
-    (SCENE_DURATIONS_SECONDS.length - 1) * TRANSITION_DURATION,
-);
-
-const sceneComponents = [
-  Scene01Hook,
-  Scene02Depth,
-  Scene03Pressure,
-  Scene04Scale,
-  Scene05Fragility,
-  Scene06Plans,
-  Scene07Outro,
-];
+export const TRANSITION_DURATION = 30;
+export const BLACK_HOLD_FRAMES = 15;
 
 const timing = linearTiming({ durationInFrames: TRANSITION_DURATION });
 const presentation = fade();
 
+const BlackFrame = () => (
+  <AbsoluteFill className="bg-abyssBlack overflow-hidden" />
+);
+
+export const TOTAL_DURATION =
+  SCENE0_DURATION +
+  SCENE1_DURATION +
+  SCENE2_DURATION +
+  SCENE3_DURATION +
+  SCENE4_DURATION +
+  SCENE5_DURATION +
+  SCENE6_DURATION +
+  SCENE7_DURATION +
+  BLACK_HOLD_FRAMES -
+  8 * TRANSITION_DURATION;
+
 export const ForeverLost = () => {
-  const { fps } = useVideoConfig();
-
-  const sceneDurations = sceneComponents.map((_, i) =>
-    Math.floor(SCENE_DURATIONS_SECONDS[i] * fps),
-  );
-
-  const offsets: number[] = [];
-  let cumulative = 0;
-  for (let i = 0; i < sceneDurations.length; i++) {
-    offsets.push(cumulative);
-    cumulative += sceneDurations[i] - TRANSITION_DURATION;
-  }
-
   return (
-    <AbsoluteFill>
-      <Audio
-        src={staticFile("assets/forever-lost/ep-001/sfx/deep-rumble.wav")}
-        volume={0.15}
-        loop
+    <TransitionSeries>
+      {/* Scene 0 */}
+      <TransitionSeries.Sequence durationInFrames={SCENE0_DURATION}>
+        <Scene0 />
+      </TransitionSeries.Sequence>
+      <TransitionSeries.Transition
+        presentation={presentation}
+        timing={timing}
       />
-
-      <TransitionSeries>
-        {sceneComponents.flatMap((Component, i) => {
-          const seq = (
-            <TransitionSeries.Sequence
-              key={`s${i}`}
-              durationInFrames={sceneDurations[i]}
-            >
-              <Component offsetFrames={offsets[i]} />
-            </TransitionSeries.Sequence>
-          );
-
-          if (i === sceneComponents.length - 1) {
-            return [seq];
-          }
-
-          return [
-            seq,
-            <TransitionSeries.Transition
-              key={`t${i}`}
-              presentation={presentation}
-              timing={timing}
-            />,
-          ];
-        })}
-      </TransitionSeries>
-    </AbsoluteFill>
+      {/* Scene 1 */}
+      <TransitionSeries.Sequence durationInFrames={SCENE1_DURATION}>
+        <Scene1 />
+      </TransitionSeries.Sequence>
+      <TransitionSeries.Transition
+        presentation={presentation}
+        timing={timing}
+      />
+      {/* Scene 2 */}
+      <TransitionSeries.Sequence durationInFrames={SCENE2_DURATION}>
+        <Scene2 />
+      </TransitionSeries.Sequence>
+      <TransitionSeries.Transition
+        presentation={presentation}
+        timing={timing}
+      />
+      {/* Scene 3 */}
+      <TransitionSeries.Sequence durationInFrames={SCENE3_DURATION}>
+        <Scene3 />
+      </TransitionSeries.Sequence>
+      <TransitionSeries.Transition
+        presentation={presentation}
+        timing={timing}
+      />
+      {/* Scene 4 */}
+      <TransitionSeries.Sequence durationInFrames={SCENE4_DURATION}>
+        <Scene4 />
+      </TransitionSeries.Sequence>
+      <TransitionSeries.Transition
+        presentation={presentation}
+        timing={timing}
+      />
+      {/* Scene 5 */}
+      <TransitionSeries.Sequence durationInFrames={SCENE5_DURATION}>
+        <Scene5 />
+      </TransitionSeries.Sequence>
+      <TransitionSeries.Transition
+        presentation={presentation}
+        timing={timing}
+      />
+      {/* Scene 6 */}
+      <TransitionSeries.Sequence durationInFrames={SCENE6_DURATION}>
+        <Scene6 />
+      </TransitionSeries.Sequence>
+      <TransitionSeries.Transition
+        presentation={presentation}
+        timing={timing}
+      />
+      {/* Scene 7 */}
+      <TransitionSeries.Sequence durationInFrames={SCENE7_DURATION}>
+        <Scene7 />
+      </TransitionSeries.Sequence>
+      <TransitionSeries.Transition
+        presentation={presentation}
+        timing={timing}
+      />
+      {/* Final Black Frame Hold */}
+      <TransitionSeries.Sequence
+        durationInFrames={TRANSITION_DURATION + BLACK_HOLD_FRAMES}
+      >
+        <BlackFrame />
+      </TransitionSeries.Sequence>
+    </TransitionSeries>
   );
 };

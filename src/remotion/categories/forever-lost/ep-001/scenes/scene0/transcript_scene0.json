@@ -1,0 +1,170 @@
+[
+  {
+    "text": "There",
+    "startMs": 320,
+    "endMs": 900,
+    "timestampMs": 600,
+    "confidence": 0.727342
+  },
+  {
+    "text": " it",
+    "startMs": 900,
+    "endMs": 1330,
+    "timestampMs": 820,
+    "confidence": 0.980052
+  },
+  {
+    "text": " sits",
+    "startMs": 1330,
+    "endMs": 1970,
+    "timestampMs": 1160,
+    "confidence": 0.996246
+  },
+  {
+    "text": " 3.8 km",
+    "startMs": 1970,
+    "endMs": 4100,
+    "timestampMs": 3080,
+    "confidence": 0.0756119
+  },
+  {
+    "text": " below",
+    "startMs": 4100,
+    "endMs": 5070,
+    "timestampMs": 5240,
+    "confidence": 0.987652
+  },
+  {
+    "text": " the",
+    "startMs": 5070,
+    "endMs": 5620,
+    "timestampMs": 5520,
+    "confidence": 0.993998
+  },
+  {
+    "text": " surface",
+    "startMs": 5620,
+    "endMs": 6980,
+    "timestampMs": 5960,
+    "confidence": 0.998767
+  },
+  {
+    "text": ",",
+    "startMs": 6980,
+    "endMs": 7430,
+    "timestampMs": 7280,
+    "confidence": 0.508002
+  },
+  {
+    "text": " the",
+    "startMs": 7430,
+    "endMs": 7600,
+    "timestampMs": 7540,
+    "confidence": 0.735059
+  },
+  {
+    "text": " most",
+    "startMs": 7600,
+    "endMs": 8120,
+    "timestampMs": 7760,
+    "confidence": 0.991047
+  },
+  {
+    "text": " famous",
+    "startMs": 8120,
+    "endMs": 8800,
+    "timestampMs": 8420,
+    "confidence": 0.991011
+  },
+  {
+    "text": " shipwreck",
+    "startMs": 8800,
+    "endMs": 9880,
+    "timestampMs": 8840,
+    "confidence": 0.9579
+  },
+  {
+    "text": " in",
+    "startMs": 9880,
+    "endMs": 10110,
+    "timestampMs": 9440,
+    "confidence": 0.988829
+  },
+  {
+    "text": " history",
+    "startMs": 10110,
+    "endMs": 10960,
+    "timestampMs": 10040,
+    "confidence": 0.993043
+  },
+  {
+    "text": ",",
+    "startMs": 10960,
+    "endMs": 11700,
+    "timestampMs": 10680,
+    "confidence": 0.477458
+  },
+  {
+    "text": " and",
+    "startMs": 11700,
+    "endMs": 11840,
+    "timestampMs": 11820,
+    "confidence": 0.555877
+  },
+  {
+    "text": " no",
+    "startMs": 11840,
+    "endMs": 12200,
+    "timestampMs": 12240,
+    "confidence": 0.918612
+  },
+  {
+    "text": " one",
+    "startMs": 12200,
+    "endMs": 13400,
+    "timestampMs": 12620,
+    "confidence": 0.781136
+  },
+  {
+    "text": " will",
+    "startMs": 13400,
+    "endMs": 13970,
+    "timestampMs": 13600,
+    "confidence": 0.983194
+  },
+  {
+    "text": " ever",
+    "startMs": 13970,
+    "endMs": 14760,
+    "timestampMs": 14200,
+    "confidence": 0.976382
+  },
+  {
+    "text": " bring",
+    "startMs": 14760,
+    "endMs": 15090,
+    "timestampMs": 14940,
+    "confidence": 0.997914
+  },
+  {
+    "text": " it",
+    "startMs": 15090,
+    "endMs": 15350,
+    "timestampMs": 15100,
+    "confidence": 0.997177
+  },
+  {
+    "text": " up",
+    "startMs": 15350,
+    "endMs": 15640,
+    "timestampMs": 15460,
+    "confidence": 0.999037
+  },
+  {
+    "text": ".",
+    "startMs": 15640,
+    "endMs": 15680,
+    "timestampMs": 15660,
+    "confidence": 0.825451
+  }
+]

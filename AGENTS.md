@@ -36,8 +36,8 @@ src/
   remotion/categories/forever-lost/
     WORKFLOW.md               ← Detailed production workflow
     ep-001/                   ← Flat scene files (Scene01_Hook.tsx, etc.)
-    ep-002/scenes/sceneN/     ← Per-scene folders (constants.ts + index.tsx barrel)
-    ep-002-shorts/acts/       ← Shorts version acts
+    ep-001/scenes/sceneN/     ← Per-scene folders (constants.ts + index.tsx barrel)
+    ep-001-shorts/acts/       ← Shorts version acts
 ```
 
 ## Path alias

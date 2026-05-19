@@ -8,8 +8,8 @@ Pipeline for building Remotion scenes with voiceover, frame-synced captions, and
 
 ## 1. Add a New VO Audio
 
-1. Place the WAV file in `public/assets/forever-lost/ep-002/voices/vo/vo_sceneN.wav`
-2. Create scene folder at `src/remotion/categories/forever-lost/ep-002/scenes/sceneN/`
+1. Place the WAV file in `public/assets/forever-lost/ep-001/voices/vo/vo_sceneN.wav`
+2. Create scene folder at `src/remotion/categories/forever-lost/ep-001/scenes/sceneN/`
 3. Create `constants.ts`:
 
 ```ts
@@ -36,8 +36,8 @@ export { SCENE_DURATION } from "./constants";
 
 ```bash
 npx tsx scripts/generate-captions.ts \
-  "public/assets/forever-lost/ep-002/voices/vo/vo_sceneN.wav" \
-  "src/remotion/categories/forever-lost/ep-002/scenes/sceneN/transcript_sceneN.json"
+  "public/assets/forever-lost/ep-001/voices/vo/vo_sceneN.wav" \
+  "src/remotion/categories/forever-lost/ep-001/scenes/sceneN/transcript_sceneN.json"
 ```
 
 ---
