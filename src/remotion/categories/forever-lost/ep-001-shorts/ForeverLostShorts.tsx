@@ -5,7 +5,7 @@ import { ACT1_DURATION, ACT2_DURATION, ACT3_DURATION } from "./constants";
 import { Act1_ImpossibleDepth } from "./acts/Act1_ImpossibleDepth";
 import { Act2_ConsumingOcean } from "./acts/Act2_ConsumingOcean";
 import { Act3_TheGrave } from "./acts/Act3_TheGrave";
-import BgmWithFade from "./BgmWithFade";
+import BgmWithFade from "@/components/atoms/BgmWithFade";
 
 export const TRANSITION_DURATION = 30;
 export const BLACK_HOLD_FRAMES = 30;
@@ -47,7 +47,10 @@ const totalFrames =
 export const ForeverLostShorts = () => {
   return (
     <AbsoluteFill>
-      <BgmWithFade totalFrames={totalFrames} />
+      <BgmWithFade
+        totalFrames={totalFrames}
+        srcPath="assets/forever-lost/ep-001/voices/bgm/bgm_scene0_cello.mp3"
+      />
       <TransitionSeries>
         {/* Combine Cold Open and Act 1 into one sequence */}
         <TransitionSeries.Sequence durationInFrames={6 + ACT1_DURATION}>

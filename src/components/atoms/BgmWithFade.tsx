@@ -4,15 +4,19 @@ import { Audio } from "@remotion/media";
 const BGM_FADE_FRAMES = 45;
 const BGM_TARGET_VOLUME = 0.2;
 
-export default function BgmWithFade({ totalFrames }: { totalFrames: number }) {
+export default function BgmWithFade({
+  totalFrames,
+  srcPath,
+}: {
+  totalFrames: number;
+  srcPath: string;
+}) {
   const fadeInEnd = BGM_FADE_FRAMES;
   const fadeOutStart = totalFrames - BGM_FADE_FRAMES;
 
   return (
     <Audio
-      src={staticFile(
-        "assets/forever-lost/ep-001/voices/bgm/bgm_scene0_cello.mp3",
-      )}
+      src={staticFile(srcPath)}
       volume={(f) =>
         interpolate(
           f,
