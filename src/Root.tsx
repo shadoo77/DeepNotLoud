@@ -13,6 +13,10 @@ import {
   ForeverLostShorts,
   TOTAL_DURATION as SHORTS_TOTAL_DURATION,
 } from "@/remotion/categories/forever-lost/ep-002-shorts/ForeverLostShorts";
+import {
+  ForeverLostEp3,
+  TOTAL_DURATION_OUT as EP3_TOTAL_DURATION,
+} from "@/remotion/categories/forever-lost/ep-003/ForeverLostEp3";
 
 export function RemotionRoot() {
   return (
@@ -41,6 +45,14 @@ export function RemotionRoot() {
           fps={30}
           width={1080}
           height={1920}
+        />
+        <Composition
+          id="ForeverLost-Ep3"
+          component={ForeverLostEp3}
+          durationInFrames={EP3_TOTAL_DURATION}
+          fps={30}
+          width={1920}
+          height={1080}
         />
       </Folder>
     </>
