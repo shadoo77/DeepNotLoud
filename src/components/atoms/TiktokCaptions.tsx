@@ -10,14 +10,13 @@ import type { Caption, TikTokPage } from "@remotion/captions";
 import { cva } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
-// const SWITCH_CAPTIONS_EVERY_MS = 1500;
-
 const captionPosition = cva("", {
   variants: {
     position: {
       "bottom-center": "justify-end items-center pb-16",
       "bottom-left": "justify-end items-start pb-16 pl-10",
       center: "justify-center items-center",
+      "youtube-shorts": "justify-end items-center pb-110",
     },
   },
 });
@@ -30,7 +29,7 @@ const CaptionPage = ({
 }: {
   page: TikTokPage;
   highlightedWords: string[];
-  position: "bottom-center" | "bottom-left" | "center";
+  position: "bottom-center" | "bottom-left" | "center" | "youtube-shorts";
   showOverlay: boolean;
 }) => {
   const frame = useCurrentFrame();
@@ -99,7 +98,7 @@ const CaptionPage = ({
 type CaptionProps = ComponentPropsWithRef<"div"> & {
   transcript: Caption[];
   highlightedWords?: string[];
-  position?: "bottom-center" | "bottom-left" | "center";
+  position?: "bottom-center" | "bottom-left" | "center" | "youtube-shorts";
   startFrame?: number;
   switchCaptionsEveryMs?: number;
   showOverlay?: boolean;

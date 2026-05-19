@@ -1,21 +1,27 @@
 export const FPS = 30;
+export const WIDTH = 1080;
+export const HEIGHT = 1920;
 
-// Estimated durations (seconds) — replace with real WAV durations after TTS
-export const ESTIMATED_DURATIONS = {
-  scene_00: 20, // The Elephant's Foot (Hook)
-  scene_01: 25, // April 26, 1986
-  scene_02: 30, // What the Core Became
-  scene_03: 30, // Physically Inaccessible
-  scene_04: 25, // The Cage Cannot Be Opened
-  scene_05: 30, // A 20,000-Year Grave
-};
+export const SCENES = {
+  s1: { durationInFrames: 240 }, // ~8s  HOOK
+  s2: { durationInFrames: 420 }, // ~14s STATS
+  s3: { durationInFrames: 450 }, // ~15s CORIUM
+  s4: { durationInFrames: 480 }, // ~16s SARCOPHAGUS
+  s5: { durationInFrames: 420 }, // ~14s HUMAN COST
+  s6: { durationInFrames: 390 }, // ~13s EXCLUSION ZONE
+  s7: { durationInFrames: 300 }, // ~10s CLOSER
+} as const;
 
-export const TRANSITION_DURATION = 30; // 1 sec fade
-export const BLACK_HOLD_FRAMES = 30;
+// Transition durations (frames)
+export const T = {
+  fade: 15,
+  slide: 20,
+  wipe: 20,
+} as const;
 
-export const TOTAL_DURATION =
-  Object.values(ESTIMATED_DURATIONS).reduce((a, b) => a + b, 0) * FPS +
-  BLACK_HOLD_FRAMES -
-  6 * TRANSITION_DURATION;
+// Total: sum of all scenes minus 6 transition overlaps
+// (2x fade 15 + slide 20 + wipe 20 + 2x fade 15 = 100 frames)
+export const TOTAL_FRAMES =
+  Object.values(SCENES).reduce((a, b) => a + b.durationInFrames, 0) - 100;
 
 export const ASSET_PATH = "assets/forever-lost/ep-002";

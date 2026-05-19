@@ -3,13 +3,13 @@ export const episodeMeta = {
   episode: "Episode 2 Shorts",
   title: "Why Chernobyl's Core Can Never Be Removed",
   slug: "chernobyl-core-shorts",
-  totalScenes: 6,
+  totalScenes: 7,
   fps: 30,
-  resolution: { width: 1920, height: 1080 },
+  resolution: { width: 1080, height: 1920 },
   colorTheme: {
-    // primary: "oklch(0.15 0.02 260)",      // abyssBlack
-    // accent: "oklch(0.55 0.15 45)",         // rustOrange
-    // highlight: "oklch(0.75 0.15 185)",     // biolumTeal
-    // danger: "oklch(0.6 0.2 30)",           // hot red-orange
+    ash: "oklch(0.1 0 0)",
+    toxicGreen: "oklch(0.85 0.25 145)",
+    bloodRed: "oklch(0.3 0.2 25)",
+    offWhite: "oklch(0.94 0.005 100)",
   },
 };

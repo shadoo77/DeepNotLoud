@@ -232,7 +232,7 @@ export const Act1_ImpossibleDepth: React.FC = () => {
       <TiktokCaptions
         transcript={TRASCRIPT_DATA}
         highlightedWords={highlightedWords}
-        position="bottom-center"
+        position="youtube-shorts"
         startFrame={0}
         switchCaptionsEveryMs={1500}
       />

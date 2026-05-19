@@ -105,7 +105,12 @@ export const Act3_TheGrave: React.FC = () => {
             right: 0,
             display: "flex",
             justifyContent: "center",
-            opacity: interpolate(Math.max(0, frame - frame52000), [0, 12], [0, 1], { extrapolateRight: "clamp" }),
+            opacity: interpolate(
+              Math.max(0, frame - frame52000),
+              [0, 12],
+              [0, 1],
+              { extrapolateRight: "clamp" },
+            ),
           }}
         >
           <div style={{ transform: `scale(${badge52k})` }}>
@@ -127,7 +132,7 @@ export const Act3_TheGrave: React.FC = () => {
       <TiktokCaptions
         transcript={TRASCRIPT_DATA}
         highlightedWords={highlightedWords}
-        position="bottom-center"
+        position="youtube-shorts"
         startFrame={0}
         switchCaptionsEveryMs={1500}
       />

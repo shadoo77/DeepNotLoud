@@ -250,7 +250,7 @@ export const Act2_ConsumingOcean: React.FC = () => {
       <TiktokCaptions
         transcript={TRASCRIPT_DATA}
         highlightedWords={highlightedWords}
-        position="bottom-center"
+        position="youtube-shorts"
         startFrame={VO_START_FRAME}
         switchCaptionsEveryMs={1800}
         showOverlay
