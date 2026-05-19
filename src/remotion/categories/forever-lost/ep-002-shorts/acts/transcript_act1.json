@@ -196,18 +196,11 @@
     "confidence": 0.991583
   },
   {
-    "text": " atmosp",
+    "text": " atmospheres",
     "startMs": 16660,
-    "endMs": 17360,
+    "endMs": 18000,
     "timestampMs": 16700,
     "confidence": 0.944064
-  },
-  {
-    "text": "heres",
-    "startMs": 17360,
-    "endMs": 18000,
-    "timestampMs": 17160,
-    "confidence": 0.998837
   },
   {
     "text": ".",
@@ -266,18 +259,11 @@
     "confidence": 0.983158
   },
   {
-    "text": " cent",
+    "text": " centimeter",
     "startMs": 23180,
-    "endMs": 23710,
+    "endMs": 24510,
     "timestampMs": 23780,
     "confidence": 0.946998
-  },
-  {
-    "text": "imeter",
-    "startMs": 23710,
-    "endMs": 24510,
-    "timestampMs": 24120,
-    "confidence": 0.895422
   },
   {
     "text": ".",

@@ -221,15 +221,11 @@ export const Act2_ConsumingOcean: React.FC = () => {
 
       {/* === AUDIO === */}
       <Audio
-        src={staticFile(`${ASSET}/voices/bgm/bgm_scene0_cello.mp3`)}
-        volume={0.2}
-      />
-      <Audio
         src={staticFile(`${ASSET}/voices/sfx/sfx_micro_bubbles.wav`)}
         volume={0.15}
       />
 
-      <Sequence from={frame100kg}>
+      <Sequence from={frame2030}>
         <Audio
           src={staticFile(`${ASSET}/voices/sfx/sfx_clock_tick.wav`)}
           volume={0.15}
@@ -256,7 +252,8 @@ export const Act2_ConsumingOcean: React.FC = () => {
         highlightedWords={highlightedWords}
         position="bottom-center"
         startFrame={VO_START_FRAME}
-        switchCaptionsEveryMs={1500}
+        switchCaptionsEveryMs={1800}
+        showOverlay
       />
     </AbsoluteFill>
   );
