@@ -1,0 +1,212 @@
+[
+  {
+    "text": "50",
+    "startMs": 390,
+    "endMs": 670,
+    "timestampMs": 500,
+    "confidence": 0.733304
+  },
+  {
+    "text": ",",
+    "startMs": 670,
+    "endMs": 700,
+    "timestampMs": 1020,
+    "confidence": 0.9714
+  },
+  {
+    "text": "000",
+    "startMs": 700,
+    "endMs": 1520,
+    "timestampMs": 1320,
+    "confidence": 0.998188
+  },
+  {
+    "text": " people",
+    "startMs": 1520,
+    "endMs": 2040,
+    "timestampMs": 1840,
+    "confidence": 0.994558
+  },
+  {
+    "text": " were",
+    "startMs": 2040,
+    "endMs": 2370,
+    "timestampMs": 2120,
+    "confidence": 0.995433
+  },
+  {
+    "text": " evacuated",
+    "startMs": 2370,
+    "endMs": 3770,
+    "timestampMs": 2500,
+    "confidence": 0.999028
+  },
+  {
+    "text": ".",
+    "startMs": 3770,
+    "endMs": 3800,
+    "timestampMs": 3800,
+    "confidence": 0.865342
+  },
+  {
+    "text": " They",
+    "startMs": 3800,
+    "endMs": 4350,
+    "timestampMs": 3820,
+    "confidence": 0.997904
+  },
+  {
+    "text": " were",
+    "startMs": 4350,
+    "endMs": 4900,
+    "timestampMs": 3920,
+    "confidence": 0.999405
+  },
+  {
+    "text": " told",
+    "startMs": 4900,
+    "endMs": 5410,
+    "timestampMs": 4200,
+    "confidence": 0.99879
+  },
+  {
+    "text": " three",
+    "startMs": 5410,
+    "endMs": 6640,
+    "timestampMs": 4980,
+    "confidence": 0.577678
+  },
+  {
+    "text": " days",
+    "startMs": 6640,
+    "endMs": 6720,
+    "timestampMs": 5420,
+    "confidence": 0.997672
+  },
+  {
+    "text": ".",
+    "startMs": 6720,
+    "endMs": 7080,
+    "timestampMs": 6620,
+    "confidence": 0.888737
+  },
+  {
+    "text": " Most",
+    "startMs": 7080,
+    "endMs": 7670,
+    "timestampMs": 7040,
+    "confidence": 0.994149
+  },
+  {
+    "text": " never",
+    "startMs": 7670,
+    "endMs": 8380,
+    "timestampMs": 7660,
+    "confidence": 0.991393
+  },
+  {
+    "text": " came",
+    "startMs": 8380,
+    "endMs": 9000,
+    "timestampMs": 8040,
+    "confidence": 0.997529
+  },
+  {
+    "text": " back",
+    "startMs": 9000,
+    "endMs": 9820,
+    "timestampMs": 8360,
+    "confidence": 0.999575
+  },
+  {
+    "text": ".",
+    "startMs": 9820,
+    "endMs": 10060,
+    "timestampMs": 9180,
+    "confidence": 0.966416
+  },
+  {
+    "text": " Some",
+    "startMs": 10060,
+    "endMs": 10440,
+    "timestampMs": 9980,
+    "confidence": 0.996189
+  },
+  {
+    "text": " areas",
+    "startMs": 10440,
+    "endMs": 10960,
+    "timestampMs": 10440,
+    "confidence": 0.999376
+  },
+  {
+    "text": " won",
+    "startMs": 10960,
+    "endMs": 11340,
+    "timestampMs": 11080,
+    "confidence": 0.992646
+  },
+  {
+    "text": "'t",
+    "startMs": 11340,
+    "endMs": 11370,
+    "timestampMs": 11240,
+    "confidence": 0.995074
+  },
+  {
+    "text": " be",
+    "startMs": 11370,
+    "endMs": 11560,
+    "timestampMs": 11400,
+    "confidence": 0.997484
+  },
+  {
+    "text": " safe",
+    "startMs": 11560,
+    "endMs": 12220,
+    "timestampMs": 11760,
+    "confidence": 0.99818
+  },
+  {
+    "text": " for",
+    "startMs": 12220,
+    "endMs": 12280,
+    "timestampMs": 12340,
+    "confidence": 0.99183
+  },
+  {
+    "text": " 20",
+    "startMs": 12280,
+    "endMs": 12790,
+    "timestampMs": 12740,
+    "confidence": 0.943073
+  },
+  {
+    "text": ",",
+    "startMs": 12790,
+    "endMs": 12970,
+    "timestampMs": 12740,
+    "confidence": 0.9917
+  },
+  {
+    "text": "000",
+    "startMs": 12970,
+    "endMs": 13820,
+    "timestampMs": 13840,
+    "confidence": 0.997463
+  },
+  {
+    "text": " years",
+    "startMs": 13820,
+    "endMs": 14290,
+    "timestampMs": 14320,
+    "confidence": 0.997662
+  },
+  {
+    "text": ".",
+    "startMs": 14290,
+    "endMs": 14620,
+    "timestampMs": 14600,
+    "confidence": 0.963576
+  }
+]

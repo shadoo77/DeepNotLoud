@@ -1,0 +1,149 @@
+[
+  {
+    "text": "The",
+    "startMs": 280,
+    "endMs": 370,
+    "timestampMs": 420,
+    "confidence": 0.64266
+  },
+  {
+    "text": " melted",
+    "startMs": 370,
+    "endMs": 1160,
+    "timestampMs": 780,
+    "confidence": 0.836747
+  },
+  {
+    "text": " fuel",
+    "startMs": 1160,
+    "endMs": 2070,
+    "timestampMs": 1240,
+    "confidence": 0.996297
+  },
+  {
+    "text": " formed",
+    "startMs": 2070,
+    "endMs": 2350,
+    "timestampMs": 2160,
+    "confidence": 0.981596
+  },
+  {
+    "text": " a",
+    "startMs": 2350,
+    "endMs": 2470,
+    "timestampMs": 2500,
+    "confidence": 0.998329
+  },
+  {
+    "text": " new",
+    "startMs": 2470,
+    "endMs": 2840,
+    "timestampMs": 2740,
+    "confidence": 0.998835
+  },
+  {
+    "text": " substance",
+    "startMs": 2840,
+    "endMs": 4000,
+    "timestampMs": 3200,
+    "confidence": 0.999213
+  },
+  {
+    "text": ".",
+    "startMs": 4000,
+    "endMs": 4300,
+    "timestampMs": 4440,
+    "confidence": 0.848597
+  },
+  {
+    "text": " They",
+    "startMs": 4300,
+    "endMs": 4810,
+    "timestampMs": 4640,
+    "confidence": 0.992638
+  },
+  {
+    "text": " call",
+    "startMs": 4810,
+    "endMs": 5340,
+    "timestampMs": 4900,
+    "confidence": 0.988123
+  },
+  {
+    "text": " it",
+    "startMs": 5340,
+    "endMs": 5870,
+    "timestampMs": 5120,
+    "confidence": 0.998917
+  },
+  {
+    "text": " the",
+    "startMs": 5870,
+    "endMs": 6130,
+    "timestampMs": 5960,
+    "confidence": 0.672527
+  },
+  {
+    "text": " elephant",
+    "startMs": 6130,
+    "endMs": 7400,
+    "timestampMs": 6320,
+    "confidence": 0.613997
+  },
+  {
+    "text": "'s",
+    "startMs": 7400,
+    "endMs": 7720,
+    "timestampMs": 6620,
+    "confidence": 0.995224
+  },
+  {
+    "text": " foot",
+    "startMs": 7720,
+    "endMs": 8400,
+    "timestampMs": 6840,
+    "confidence": 0.997596
+  },
+  {
+    "text": ".",
+    "startMs": 8400,
+    "endMs": 8500,
+    "timestampMs": 7780,
+    "confidence": 0.848577
+  },
+  {
+    "text": " Four",
+    "startMs": 8500,
+    "endMs": 9170,
+    "timestampMs": 9040,
+    "confidence": 0.820105
+  },
+  {
+    "text": " minutes",
+    "startMs": 9170,
+    "endMs": 10260,
+    "timestampMs": 9460,
+    "confidence": 0.99851
+  },
+  {
+    "text": " beside",
+    "startMs": 10260,
+    "endMs": 11340,
+    "timestampMs": 9880,
+    "confidence": 0.996734
+  },
+  {
+    "text": " it",
+    "startMs": 11340,
+    "endMs": 11700,
+    "timestampMs": 10300,
+    "confidence": 0.999243
+  },
+  {
+    "text": ".",
+    "startMs": 11700,
+    "endMs": 11700,
+    "timestampMs": 11680,
+    "confidence": 0.664604
+  }
+]

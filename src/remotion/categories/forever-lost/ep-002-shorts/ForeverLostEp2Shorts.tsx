@@ -1,88 +1,113 @@
-import { AbsoluteFill } from "remotion";
+import { AbsoluteFill, staticFile } from "remotion";
+import { Audio } from "@remotion/media";
 import { TransitionSeries, linearTiming } from "@remotion/transitions";
 import { fade } from "@remotion/transitions/fade";
-import {
-  ESTIMATED_DURATIONS,
-  TRANSITION_DURATION,
-  BLACK_HOLD_FRAMES,
-  FPS,
-} from "./constants";
-import { Scene0, SCENE_DURATION as SCENE0_DURATION } from "./scenes/scene0";
+import { slide } from "@remotion/transitions/slide";
+import { wipe } from "@remotion/transitions/wipe";
+import { T, BLACK_HOLD_FRAMES, ASSET_PATH } from "./constants";
+import { Scene1, SCENE_DURATION as S1_DURATION } from "./scenes/scene1-hook";
+import { Scene2, SCENE_DURATION as S2_DURATION } from "./scenes/scene2-stats";
+import { Scene3, SCENE_DURATION as S3_DURATION } from "./scenes/scene3-corium";
+import { Scene4, SCENE_DURATION as S4_DURATION } from "./scenes/scene4-sarcophagus";
+import { Scene5, SCENE_DURATION as S5_DURATION } from "./scenes/scene5-visual-only";
+import { Scene6, SCENE_DURATION as S6_DURATION } from "./scenes/scene6-exclusion";
+import { Scene7, SCENE_DURATION as S7_DURATION } from "./scenes/scene7-closer";
 
 const SCENE_DURATIONS = [
-  SCENE0_DURATION,
-  ...Object.values(ESTIMATED_DURATIONS)
-    .slice(1)
-    .map((s) => s * FPS),
+  S1_DURATION,
+  S2_DURATION,
+  S3_DURATION,
+  S4_DURATION,
+  S5_DURATION,
+  S6_DURATION,
+  S7_DURATION,
 ];
 
-const timing = linearTiming({ durationInFrames: TRANSITION_DURATION });
-const presentation = fade();
+const TOTAL_RAW = SCENE_DURATIONS.reduce((a, b) => a + b, 0);
+const TRANSITION_OVERLAP = 6 * T.fade;
+export const TOTAL_FRAMES = TOTAL_RAW - TRANSITION_OVERLAP + BLACK_HOLD_FRAMES;
 
 const BlackFrame = () => (
-  <AbsoluteFill className="bg-abyssBlack overflow-hidden" />
+  <AbsoluteFill style={{ backgroundColor: "#1A1A1A" }} />
 );
 
-const ScenePlaceholder = ({ label }: { label: string }) => (
-  <AbsoluteFill className="bg-abyssBlack items-center justify-center">
-    <div className="font-inter text-biolumTeal text-4xl font-bold opacity-60">
-      {label}
-    </div>
-  </AbsoluteFill>
-);
-
-const sceneLabels = [
-  "April 26, 1986",
-  "What the Core Became",
-  "Physically Inaccessible",
-  "The Cage Cannot Be Opened",
-  "A 20,000-Year Grave",
+const sceneComponents = [
+  () => <Scene1 />,
+  () => <Scene2 />,
+  () => <Scene3 />,
+  () => <Scene4 />,
+  () => <Scene5 />,
+  () => <Scene6 />,
+  () => <Scene7 />,
 ];
 
-const sceneComponents: (() => React.ReactNode)[] = [
-  () => <Scene0 />,
-  () => <ScenePlaceholder label={sceneLabels[0]} />,
-  () => <ScenePlaceholder label={sceneLabels[1]} />,
-  () => <ScenePlaceholder label={sceneLabels[2]} />,
-  () => <ScenePlaceholder label={sceneLabels[3]} />,
-  () => <ScenePlaceholder label={sceneLabels[4]} />,
+const fadeTiming = linearTiming({ durationInFrames: T.fade });
+const slideTiming = linearTiming({ durationInFrames: T.slide });
+const wipeTiming = linearTiming({ durationInFrames: T.wipe });
+
+const fadePres = fade();
+const slidePres = slide({ direction: "from-right" });
+const wipePres = wipe({ direction: "from-top" });
+
+const sceneTransitions = [
+  { timing: fadeTiming, presentation: fadePres },
+  { timing: fadeTiming, presentation: fadePres },
+  { timing: slideTiming, presentation: slidePres },
+  { timing: wipeTiming, presentation: wipePres },
+  { timing: fadeTiming, presentation: fadePres },
+  { timing: fadeTiming, presentation: fadePres },
 ];
 
 export const ForeverLostEp2Shorts = () => {
   return (
-    <TransitionSeries>
-      {sceneComponents.map((Component, i) => {
-        const seq = (
-          <TransitionSeries.Sequence
-            key={`s${i}`}
-            durationInFrames={SCENE_DURATIONS[i]}
-          >
-            <Component />
-          </TransitionSeries.Sequence>
-        );
-        if (i === sceneComponents.length - 1) {
-          return [seq];
-        }
-        return [
-          seq,
-          <TransitionSeries.Transition
-            key={`t${i}`}
-            presentation={presentation}
-            timing={timing}
-          />,
-        ];
-      })}
-      <TransitionSeries.Sequence
-        durationInFrames={TRANSITION_DURATION + BLACK_HOLD_FRAMES}
-      >
-        <BlackFrame />
-      </TransitionSeries.Sequence>
-    </TransitionSeries>
+    <AbsoluteFill style={{ backgroundColor: "#1A1A1A" }}>
+      <Audio
+        src={staticFile(`${ASSET_PATH}/audio/bgm/ep02_bgm.mp3`)}
+        volume={(f) => {
+          const s1End = SCENE_DURATIONS[0];
+          const s2End = s1End + SCENE_DURATIONS[1];
+          const s3End = s2End + SCENE_DURATIONS[2];
+          const s4End = s3End + SCENE_DURATIONS[3];
+          const s5End = s4End + SCENE_DURATIONS[4];
+          if (f < s1End) return 0.15;
+          if (f < s2End) return 0.15 + ((f - s1End) / SCENE_DURATIONS[1]) * 0.2;
+          if (f < s3End) return 0.35;
+          if (f < s5End) return 0.12;
+          return Math.max(0, 0.25 - ((f - s5End) / SCENE_DURATIONS[5]) * 0.25);
+        }}
+        loop
+      />
+
+      <TransitionSeries>
+        {sceneComponents.map((Component, i) => {
+          const seq = (
+            <TransitionSeries.Sequence
+              key={`s${i}`}
+              durationInFrames={SCENE_DURATIONS[i]}
+              premountFor={30}
+            >
+              <Component />
+            </TransitionSeries.Sequence>
+          );
+          if (i === sceneComponents.length - 1) {
+            return [seq];
+          }
+          return [
+            seq,
+            <TransitionSeries.Transition
+              key={`t${i}`}
+              presentation={sceneTransitions[i].presentation}
+              timing={sceneTransitions[i].timing}
+            />,
+          ];
+        })}
+        <TransitionSeries.Sequence
+          durationInFrames={T.fade + BLACK_HOLD_FRAMES}
+          key="black-hold"
+        >
+          <BlackFrame />
+        </TransitionSeries.Sequence>
+      </TransitionSeries>
+    </AbsoluteFill>
   );
 };
-
-export const FPS_OUT = FPS;
-export const TOTAL_DURATION_OUT =
-  SCENE_DURATIONS.reduce((a, b) => a + b, 0) +
-  BLACK_HOLD_FRAMES -
-  6 * TRANSITION_DURATION;

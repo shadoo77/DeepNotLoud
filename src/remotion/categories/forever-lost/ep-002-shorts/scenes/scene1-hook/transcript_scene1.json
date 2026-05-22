@@ -1,0 +1,121 @@
+[
+  {
+    "text": "It",
+    "startMs": 270,
+    "endMs": 280,
+    "timestampMs": 360,
+    "confidence": 0.881942
+  },
+  {
+    "text": " exploded",
+    "startMs": 280,
+    "endMs": 1460,
+    "timestampMs": 940,
+    "confidence": 0.997858
+  },
+  {
+    "text": " in",
+    "startMs": 1460,
+    "endMs": 1620,
+    "timestampMs": 1520,
+    "confidence": 0.98867
+  },
+  {
+    "text": " 1986",
+    "startMs": 1620,
+    "endMs": 3600,
+    "timestampMs": 2620,
+    "confidence": 0.995805
+  },
+  {
+    "text": ".",
+    "startMs": 3600,
+    "endMs": 3600,
+    "timestampMs": 3720,
+    "confidence": 0.773554
+  },
+  {
+    "text": " The",
+    "startMs": 3600,
+    "endMs": 4030,
+    "timestampMs": 3860,
+    "confidence": 0.992621
+  },
+  {
+    "text": " core",
+    "startMs": 4030,
+    "endMs": 4700,
+    "timestampMs": 4180,
+    "confidence": 0.52434
+  },
+  {
+    "text": " is",
+    "startMs": 4700,
+    "endMs": 4900,
+    "timestampMs": 4760,
+    "confidence": 0.996096
+  },
+  {
+    "text": " still",
+    "startMs": 4900,
+    "endMs": 5620,
+    "timestampMs": 5200,
+    "confidence": 0.999268
+  },
+  {
+    "text": " there",
+    "startMs": 5620,
+    "endMs": 6800,
+    "timestampMs": 5700,
+    "confidence": 0.998624
+  },
+  {
+    "text": ".",
+    "startMs": 6800,
+    "endMs": 6800,
+    "timestampMs": 6740,
+    "confidence": 0.950697
+  },
+  {
+    "text": " It",
+    "startMs": 6800,
+    "endMs": 7140,
+    "timestampMs": 7000,
+    "confidence": 0.994989
+  },
+  {
+    "text": " will",
+    "startMs": 7140,
+    "endMs": 7800,
+    "timestampMs": 7280,
+    "confidence": 0.997002
+  },
+  {
+    "text": " be",
+    "startMs": 7800,
+    "endMs": 8060,
+    "timestampMs": 7580,
+    "confidence": 0.999314
+  },
+  {
+    "text": " there",
+    "startMs": 8060,
+    "endMs": 9110,
+    "timestampMs": 8000,
+    "confidence": 0.998344
+  },
+  {
+    "text": " forever",
+    "startMs": 9110,
+    "endMs": 10200,
+    "timestampMs": 9360,
+    "confidence": 0.696684
+  },
+  {
+    "text": ".",
+    "startMs": 10200,
+    "endMs": 10200,
+    "timestampMs": 10180,
+    "confidence": 0.928001
+  }
+]

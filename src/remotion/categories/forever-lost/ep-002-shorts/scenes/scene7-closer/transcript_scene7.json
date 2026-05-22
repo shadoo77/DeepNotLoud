@@ -1,0 +1,219 @@
+[
+  {
+    "text": "It",
+    "startMs": 250,
+    "endMs": 320,
+    "timestampMs": 420,
+    "confidence": 0.74344
+  },
+  {
+    "text": " will",
+    "startMs": 320,
+    "endMs": 760,
+    "timestampMs": 620,
+    "confidence": 0.994258
+  },
+  {
+    "text": " out",
+    "startMs": 760,
+    "endMs": 1140,
+    "timestampMs": 860,
+    "confidence": 0.996286
+  },
+  {
+    "text": "live",
+    "startMs": 1140,
+    "endMs": 1960,
+    "timestampMs": 1160,
+    "confidence": 0.978666
+  },
+  {
+    "text": " everyone",
+    "startMs": 1960,
+    "endMs": 3010,
+    "timestampMs": 2340,
+    "confidence": 0.919183
+  },
+  {
+    "text": " alive",
+    "startMs": 3010,
+    "endMs": 3690,
+    "timestampMs": 3280,
+    "confidence": 0.99247
+  },
+  {
+    "text": " today",
+    "startMs": 3690,
+    "endMs": 4480,
+    "timestampMs": 3800,
+    "confidence": 0.994643
+  },
+  {
+    "text": ".",
+    "startMs": 4480,
+    "endMs": 5080,
+    "timestampMs": 5380,
+    "confidence": 0.895695
+  },
+  {
+    "text": " It",
+    "startMs": 5080,
+    "endMs": 5490,
+    "timestampMs": 5560,
+    "confidence": 0.991546
+  },
+  {
+    "text": " will",
+    "startMs": 5490,
+    "endMs": 5920,
+    "timestampMs": 5720,
+    "confidence": 0.998919
+  },
+  {
+    "text": " out",
+    "startMs": 5920,
+    "endMs": 6330,
+    "timestampMs": 5960,
+    "confidence": 0.995264
+  },
+  {
+    "text": "live",
+    "startMs": 6330,
+    "endMs": 6960,
+    "timestampMs": 6240,
+    "confidence": 0.998878
+  },
+  {
+    "text": " their",
+    "startMs": 6960,
+    "endMs": 7560,
+    "timestampMs": 7080,
+    "confidence": 0.987752
+  },
+  {
+    "text": " children",
+    "startMs": 7560,
+    "endMs": 8720,
+    "timestampMs": 7500,
+    "confidence": 0.993441
+  },
+  {
+    "text": ".",
+    "startMs": 8720,
+    "endMs": 9200,
+    "timestampMs": 9000,
+    "confidence": 0.986207
+  },
+  {
+    "text": " It",
+    "startMs": 9200,
+    "endMs": 9550,
+    "timestampMs": 9620,
+    "confidence": 0.993917
+  },
+  {
+    "text": " is",
+    "startMs": 9550,
+    "endMs": 9760,
+    "timestampMs": 9740,
+    "confidence": 0.995839
+  },
+  {
+    "text": " not",
+    "startMs": 9760,
+    "endMs": 10210,
+    "timestampMs": 9960,
+    "confidence": 0.998993
+  },
+  {
+    "text": " a",
+    "startMs": 10210,
+    "endMs": 10320,
+    "timestampMs": 10040,
+    "confidence": 0.998738
+  },
+  {
+    "text": " problem",
+    "startMs": 10320,
+    "endMs": 11330,
+    "timestampMs": 10620,
+    "confidence": 0.999575
+  },
+  {
+    "text": ".",
+    "startMs": 11330,
+    "endMs": 11800,
+    "timestampMs": 11520,
+    "confidence": 0.774712
+  },
+  {
+    "text": " It",
+    "startMs": 11800,
+    "endMs": 12180,
+    "timestampMs": 12240,
+    "confidence": 0.992649
+  },
+  {
+    "text": " is",
+    "startMs": 12180,
+    "endMs": 12380,
+    "timestampMs": 12380,
+    "confidence": 0.996869
+  },
+  {
+    "text": " just",
+    "startMs": 12380,
+    "endMs": 13000,
+    "timestampMs": 12740,
+    "confidence": 0.998458
+  },
+  {
+    "text": " a",
+    "startMs": 13000,
+    "endMs": 13080,
+    "timestampMs": 13880,
+    "confidence": 0.967645
+  },
+  {
+    "text": " fact",
+    "startMs": 13080,
+    "endMs": 13660,
+    "timestampMs": 14260,
+    "confidence": 0.997598
+  },
+  {
+    "text": " of",
+    "startMs": 13660,
+    "endMs": 14140,
+    "timestampMs": 14880,
+    "confidence": 0.994114
+  },
+  {
+    "text": " the",
+    "startMs": 14140,
+    "endMs": 14390,
+    "timestampMs": 15040,
+    "confidence": 0.99415
+  },
+  {
+    "text": " earth",
+    "startMs": 14390,
+    "endMs": 15210,
+    "timestampMs": 15340,
+    "confidence": 0.43522
+  },
+  {
+    "text": " now",
+    "startMs": 15210,
+    "endMs": 15530,
+    "timestampMs": 15720,
+    "confidence": 0.985011
+  },
+  {
+    "text": ".",
+    "startMs": 15530,
+    "endMs": 16000,
+    "timestampMs": 15980,
+    "confidence": 0.963365
+  }
+]
