@@ -1,16 +1,30 @@
 import { AbsoluteFill, staticFile } from "remotion";
-import { Audio } from "@remotion/media";
-import { TransitionSeries, linearTiming } from "@remotion/transitions";
+import {
+  TransitionSeries,
+  linearTiming,
+  type TransitionPresentation,
+  type TransitionTiming,
+} from "@remotion/transitions";
 import { fade } from "@remotion/transitions/fade";
 import { slide } from "@remotion/transitions/slide";
 import { wipe } from "@remotion/transitions/wipe";
 import { T, BLACK_HOLD_FRAMES, ASSET_PATH } from "./constants";
 import { Scene1, SCENE_DURATION as S1_DURATION } from "./scenes/scene1-hook";
+import { Audio } from "@remotion/media";
 import { Scene2, SCENE_DURATION as S2_DURATION } from "./scenes/scene2-stats";
 import { Scene3, SCENE_DURATION as S3_DURATION } from "./scenes/scene3-corium";
-import { Scene4, SCENE_DURATION as S4_DURATION } from "./scenes/scene4-sarcophagus";
-import { Scene5, SCENE_DURATION as S5_DURATION } from "./scenes/scene5-visual-only";
-import { Scene6, SCENE_DURATION as S6_DURATION } from "./scenes/scene6-exclusion";
+import {
+  Scene4,
+  SCENE_DURATION as S4_DURATION,
+} from "./scenes/scene4-sarcophagus";
+import {
+  Scene5,
+  SCENE_DURATION as S5_DURATION,
+} from "./scenes/scene5-visual-only";
+import {
+  Scene6,
+  SCENE_DURATION as S6_DURATION,
+} from "./scenes/scene6-exclusion";
 import { Scene7, SCENE_DURATION as S7_DURATION } from "./scenes/scene7-closer";
 
 const SCENE_DURATIONS = [
@@ -41,22 +55,25 @@ const sceneComponents = [
   () => <Scene7 />,
 ];
 
-const fadeTiming = linearTiming({ durationInFrames: T.fade });
-const slideTiming = linearTiming({ durationInFrames: T.slide });
-const wipeTiming = linearTiming({ durationInFrames: T.wipe });
-
-const fadePres = fade();
-const slidePres = slide({ direction: "from-right" });
-const wipePres = wipe({ direction: "from-top" });
-
-const sceneTransitions = [
-  { timing: fadeTiming, presentation: fadePres },
-  { timing: fadeTiming, presentation: fadePres },
-  { timing: slideTiming, presentation: slidePres },
-  { timing: wipeTiming, presentation: wipePres },
-  { timing: fadeTiming, presentation: fadePres },
-  { timing: fadeTiming, presentation: fadePres },
-];
+function getTransition(index: number): {
+  presentation: TransitionPresentation<Record<string, unknown>>;
+  timing: TransitionTiming;
+} {
+  if (index === 2)
+    return {
+      presentation: slide({ direction: "from-right" }),
+      timing: linearTiming({ durationInFrames: T.slide }),
+    };
+  if (index === 3)
+    return {
+      presentation: wipe({ direction: "from-top" }),
+      timing: linearTiming({ durationInFrames: T.wipe }),
+    };
+  return {
+    presentation: fade(),
+    timing: linearTiming({ durationInFrames: T.fade }),
+  };
+}
 
 export const ForeverLostEp2Shorts = () => {
   return (
@@ -75,7 +92,6 @@ export const ForeverLostEp2Shorts = () => {
           if (f < s5End) return 0.12;
           return Math.max(0, 0.25 - ((f - s5End) / SCENE_DURATIONS[5]) * 0.25);
         }}
-        loop
       />
 
       <TransitionSeries>
@@ -96,8 +112,8 @@ export const ForeverLostEp2Shorts = () => {
             seq,
             <TransitionSeries.Transition
               key={`t${i}`}
-              presentation={sceneTransitions[i].presentation}
-              timing={sceneTransitions[i].timing}
+              presentation={getTransition(i).presentation}
+              timing={getTransition(i).timing}
             />,
           ];
         })}

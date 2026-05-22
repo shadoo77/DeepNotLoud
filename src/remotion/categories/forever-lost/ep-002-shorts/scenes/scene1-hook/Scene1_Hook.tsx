@@ -3,18 +3,18 @@ import {
   Img,
   interpolate,
   useCurrentFrame,
-  useVideoConfig,
   staticFile,
   Easing,
 } from "remotion";
 import { Audio } from "@remotion/media";
+import { TRASCRIPT_DATA, SCENE_DURATION } from "./constants";
+import { TiktokCaptions } from "@/components/atoms/TiktokCaptions";
 import { ASSET_PATH } from "../../constants";
 
 export const Scene1Hook: React.FC = () => {
   const frame = useCurrentFrame();
-  const { durationInFrames } = useVideoConfig();
 
-  const scale = interpolate(frame, [0, durationInFrames], [1.0, 1.08], {
+  const scale = interpolate(frame, [0, SCENE_DURATION], [1.0, 1.08], {
     extrapolateRight: "clamp",
   });
 
@@ -35,7 +35,7 @@ export const Scene1Hook: React.FC = () => {
       <Audio src={staticFile(`${ASSET_PATH}/audio/vo/short/ep02_s1.wav`)} />
       <Audio
         src={staticFile(`${ASSET_PATH}/audio/sfx/explosion_distant.wav`)}
-        volume={0.6}
+        volume={0.8}
       />
 
       <AbsoluteFill>
@@ -65,6 +65,14 @@ export const Scene1Hook: React.FC = () => {
           UKRAINE · 1986
         </div>
       </AbsoluteFill>
+
+      <TiktokCaptions
+        transcript={TRASCRIPT_DATA}
+        highlightedWords={["exploded", "forever"]}
+        position="youtube-shorts"
+        startFrame={0}
+        switchCaptionsEveryMs={1500}
+      />
     </AbsoluteFill>
   );
 };

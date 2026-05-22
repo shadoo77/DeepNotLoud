@@ -29,7 +29,7 @@
   },
   {
     "text": ".",
-    "startMs": 3600,
+    "startMs": 3599,
     "endMs": 3600,
     "timestampMs": 3720,
     "confidence": 0.773554
@@ -71,7 +71,7 @@
   },
   {
     "text": ".",
-    "startMs": 6800,
+    "startMs": 6799,
     "endMs": 6800,
     "timestampMs": 6740,
     "confidence": 0.950697

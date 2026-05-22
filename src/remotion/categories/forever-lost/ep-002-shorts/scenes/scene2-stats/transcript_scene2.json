@@ -1,149 +1,163 @@
 [
   {
-    "text": "The",
-    "startMs": 280,
-    "endMs": 370,
-    "timestampMs": 420,
-    "confidence": 0.64266
+    "text": "400",
+    "startMs": 410,
+    "endMs": 1150,
+    "timestampMs": 840,
+    "confidence": 0.909603
   },
   {
-    "text": " melted",
-    "startMs": 370,
-    "endMs": 1160,
-    "timestampMs": 780,
-    "confidence": 0.836747
+    "text": " Hiroshima",
+    "startMs": 1150,
+    "endMs": 2300,
+    "timestampMs": 1640,
+    "confidence": 0.901794
+  },
+  {
+    "text": " bombs",
+    "startMs": 2300,
+    "endMs": 2940,
+    "timestampMs": 2520,
+    "confidence": 0.958109
+  },
+  {
+    "text": " worth",
+    "startMs": 2940,
+    "endMs": 3580,
+    "timestampMs": 2940,
+    "confidence": 0.881402
+  },
+  {
+    "text": " of",
+    "startMs": 3580,
+    "endMs": 3820,
+    "timestampMs": 3260,
+    "confidence": 0.989904
+  },
+  {
+    "text": " radiation",
+    "startMs": 3820,
+    "endMs": 4970,
+    "timestampMs": 3800,
+    "confidence": 0.993283
+  },
+  {
+    "text": ".",
+    "startMs": 4970,
+    "endMs": 5500,
+    "timestampMs": 4840,
+    "confidence": 0.624783
+  },
+  {
+    "text": " 200",
+    "startMs": 5500,
+    "endMs": 6690,
+    "timestampMs": 6260,
+    "confidence": 0.956155
+  },
+  {
+    "text": " tons",
+    "startMs": 6690,
+    "endMs": 7230,
+    "timestampMs": 6980,
+    "confidence": 0.977846
+  },
+  {
+    "text": " of",
+    "startMs": 7230,
+    "endMs": 7520,
+    "timestampMs": 7480,
+    "confidence": 0.997225
+  },
+  {
+    "text": " nuclear",
+    "startMs": 7520,
+    "endMs": 8400,
+    "timestampMs": 7740,
+    "confidence": 0.997274
   },
   {
     "text": " fuel",
-    "startMs": 1160,
-    "endMs": 2070,
-    "timestampMs": 1240,
-    "confidence": 0.996297
-  },
-  {
-    "text": " formed",
-    "startMs": 2070,
-    "endMs": 2350,
-    "timestampMs": 2160,
-    "confidence": 0.981596
-  },
-  {
-    "text": " a",
-    "startMs": 2350,
-    "endMs": 2470,
-    "timestampMs": 2500,
-    "confidence": 0.998329
-  },
-  {
-    "text": " new",
-    "startMs": 2470,
-    "endMs": 2840,
-    "timestampMs": 2740,
-    "confidence": 0.998835
-  },
-  {
-    "text": " substance",
-    "startMs": 2840,
-    "endMs": 4000,
-    "timestampMs": 3200,
-    "confidence": 0.999213
-  },
-  {
-    "text": ".",
-    "startMs": 4000,
-    "endMs": 4300,
-    "timestampMs": 4440,
-    "confidence": 0.848597
-  },
-  {
-    "text": " They",
-    "startMs": 4300,
-    "endMs": 4810,
-    "timestampMs": 4640,
-    "confidence": 0.992638
-  },
-  {
-    "text": " call",
-    "startMs": 4810,
-    "endMs": 5340,
-    "timestampMs": 4900,
-    "confidence": 0.988123
-  },
-  {
-    "text": " it",
-    "startMs": 5340,
-    "endMs": 5870,
-    "timestampMs": 5120,
-    "confidence": 0.998917
-  },
-  {
-    "text": " the",
-    "startMs": 5870,
-    "endMs": 6130,
-    "timestampMs": 5960,
-    "confidence": 0.672527
-  },
-  {
-    "text": " elephant",
-    "startMs": 6130,
-    "endMs": 7400,
-    "timestampMs": 6320,
-    "confidence": 0.613997
-  },
-  {
-    "text": "'s",
-    "startMs": 7400,
-    "endMs": 7720,
-    "timestampMs": 6620,
-    "confidence": 0.995224
-  },
-  {
-    "text": " foot",
-    "startMs": 7720,
-    "endMs": 8400,
-    "timestampMs": 6840,
-    "confidence": 0.997596
-  },
-  {
-    "text": ".",
     "startMs": 8400,
-    "endMs": 8500,
-    "timestampMs": 7780,
-    "confidence": 0.848577
+    "endMs": 9050,
+    "timestampMs": 8440,
+    "confidence": 0.998822
   },
   {
-    "text": " Four",
-    "startMs": 8500,
-    "endMs": 9170,
-    "timestampMs": 9040,
-    "confidence": 0.820105
+    "text": " still",
+    "startMs": 9050,
+    "endMs": 9910,
+    "timestampMs": 9300,
+    "confidence": 0.791868
   },
   {
-    "text": " minutes",
-    "startMs": 9170,
-    "endMs": 10260,
-    "timestampMs": 9460,
-    "confidence": 0.99851
+    "text": " fused",
+    "startMs": 9910,
+    "endMs": 10850,
+    "timestampMs": 9760,
+    "confidence": 0.993337
   },
   {
-    "text": " beside",
-    "startMs": 10260,
-    "endMs": 11340,
-    "timestampMs": 9880,
-    "confidence": 0.996734
-  },
-  {
-    "text": " it",
-    "startMs": 11340,
-    "endMs": 11700,
-    "timestampMs": 10300,
-    "confidence": 0.999243
+    "text": " inside",
+    "startMs": 10850,
+    "endMs": 11970,
+    "timestampMs": 10520,
+    "confidence": 0.992432
   },
   {
     "text": ".",
-    "startMs": 11700,
-    "endMs": 11700,
-    "timestampMs": 11680,
-    "confidence": 0.664604
+    "startMs": 11970,
+    "endMs": 12000,
+    "timestampMs": 12640,
+    "confidence": 0.949876
+  },
+  {
+    "text": " 600,000",
+    "startMs": 12000,
+    "endMs": 14300,
+    "timestampMs": 13180,
+    "confidence": 0.966826
+  },
+  {
+    "text": " workers",
+    "startMs": 14300,
+    "endMs": 15120,
+    "timestampMs": 14620,
+    "confidence": 0.997607
+  },
+  {
+    "text": " sent",
+    "startMs": 15120,
+    "endMs": 15580,
+    "timestampMs": 15220,
+    "confidence": 0.975599
+  },
+  {
+    "text": " to",
+    "startMs": 15580,
+    "endMs": 15790,
+    "timestampMs": 15480,
+    "confidence": 0.999306
+  },
+  {
+    "text": " clean",
+    "startMs": 15790,
+    "endMs": 16380,
+    "timestampMs": 15700,
+    "confidence": 0.985023
+  },
+  {
+    "text": " it",
+    "startMs": 16380,
+    "endMs": 16390,
+    "timestampMs": 15920,
+    "confidence": 0.998523
+  },
+  {
+    "text": ".",
+    "startMs": 16390,
+    "endMs": 17000,
+    "timestampMs": 16360,
+    "confidence": 0.970571
   }
 ]

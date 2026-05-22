@@ -13,6 +13,14 @@ import {
   TOTAL_FRAMES as EP2_TOTAL_FRAMES,
 } from "@/remotion/categories/forever-lost/ep-002-shorts/ForeverLostEp2Shorts";
 
+import TestEp02 from "@/remotion/categories/forever-lost/ep-002-shorts/TestEp02";
+import {
+  FPS,
+  WIDTH,
+  HEIGHT,
+  SCENES,
+} from "@/remotion/categories/forever-lost/ep-002-shorts/constants";
+
 export function RemotionRoot() {
   return (
     <>
@@ -40,6 +48,14 @@ export function RemotionRoot() {
           fps={30}
           width={1080}
           height={1920}
+        />
+        <Composition
+          id="Test-ep02"
+          component={TestEp02}
+          durationInFrames={SCENES.s2.durationInFrames}
+          fps={FPS}
+          width={WIDTH}
+          height={HEIGHT}
         />
       </Folder>
     </>
