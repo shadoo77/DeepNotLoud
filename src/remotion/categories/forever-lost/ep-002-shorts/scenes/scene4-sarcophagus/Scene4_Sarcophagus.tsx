@@ -156,7 +156,7 @@ export const Scene4Sarcophagus: React.FC = () => {
             <div className="text-bloodRed text-center font-mono text-7xl font-bold">
               600,000 MEN
             </div>
-            <div className="text-surfaceWhite text-center text-xl font-semibold">
+            <div className="text-surfaceWhite text-center text-4xl font-semibold">
               sent to clean it
             </div>
           </div>
