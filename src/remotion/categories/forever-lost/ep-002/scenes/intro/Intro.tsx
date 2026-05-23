@@ -3,20 +3,77 @@ import {
   Img,
   Sequence,
   useCurrentFrame,
+  useVideoConfig,
   staticFile,
   interpolate,
   Easing,
 } from "remotion";
 import { Audio } from "@remotion/media";
+import { getPhraseFrames } from "@/lib/utils";
+import { TiktokCaptions } from "@/components/atoms/TiktokCaptions";
 import { KineticText } from "../../components/KineticText";
 import { AnimatedBanner } from "../../components/AnimatedBanner";
 import { ASSET_PATH } from "../../constants";
+import { TRASCRIPT_DATA } from "./constants";
 
 export const Intro: React.FC = () => {
   const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+
+  const frameApril26 = getPhraseFrames({
+    phrase: "april 26",
+    transcriptData: TRASCRIPT_DATA,
+    fps,
+    voiceOverStartFrame: 0,
+  }).from;
+
+  const frame1986 = getPhraseFrames({
+    phrase: "1986",
+    transcriptData: TRASCRIPT_DATA,
+    fps,
+    voiceOverStartFrame: 0,
+  }).from;
+
+  const badgeApril =
+    frameApril26 > 0
+      ? interpolate(Math.max(0, frame - frameApril26), [0, 15], [0, 1], {
+          extrapolateLeft: "clamp",
+          extrapolateRight: "clamp",
+          easing: Easing.bezier(0.16, 1, 0.3, 1),
+        })
+      : 0;
+  const badgeAprilOut = interpolate(
+    Math.max(0, frame - frameApril26 - 60),
+    [0, 15],
+    [0, 1],
+    {
+      extrapolateLeft: "clamp",
+      extrapolateRight: "clamp",
+    },
+  );
+  const badgeAprilOpacity = Math.max(0, badgeApril - badgeAprilOut);
+
+  const badge1986 =
+    frame1986 > 0
+      ? interpolate(Math.max(0, frame - frame1986), [0, 15], [0, 1], {
+          extrapolateLeft: "clamp",
+          extrapolateRight: "clamp",
+          easing: Easing.bezier(0.16, 1, 0.3, 1),
+        })
+      : 0;
+  const badge1986Out = interpolate(
+    Math.max(0, frame - frame1986 - 60),
+    [0, 15],
+    [0, 1],
+    {
+      extrapolateLeft: "clamp",
+      extrapolateRight: "clamp",
+    },
+  );
+  const badge1986Opacity = Math.max(0, badge1986 - badge1986Out);
 
   // Typewriter: FOREVER LOST, frames 30-60
-  const titleReveal = Math.min(Math.floor(Math.max(0, frame - 30)), 12); // "FOREVER LOST" is 12 chars
+  const titleReveal = Math.min(Math.floor(Math.max(0, frame - 30)), 12);
   const letters = "FOREVER LOST".slice(0, titleReveal);
 
   // Underline bar: width 0→100% over frames 60-90
@@ -32,7 +89,7 @@ export const Intro: React.FC = () => {
     extrapolateRight: "clamp",
   });
 
-  // CORRECTED Image logic: 0 -> 0.4 (frames 180-300), 0.4 -> 1.0 (frames 300-420)
+  // Image: fade in at 40% over frames 180-300, then 40%→100% over 300-420
   const imageOpacity = interpolate(frame, [0, 180, 300, 420], [0, 0, 0.4, 1], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
@@ -65,7 +122,7 @@ export const Intro: React.FC = () => {
         volume={1}
       />
 
-      {/* Background image with corrected fade logic */}
+      {/* Background image */}
       <AbsoluteFill style={{ opacity: imageOpacity }}>
         <Img
           src={staticFile(`${ASSET_PATH}/images/ep02L_intro_sign.jpeg`)}
@@ -74,10 +131,11 @@ export const Intro: React.FC = () => {
         />
       </AbsoluteFill>
 
-      {/* Dim overlay (fades slightly as image appears) */}
+      {/* Dim overlay */}
       <AbsoluteFill
         style={{
-          background: `linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.85))`,
+          background:
+            "linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.85))",
           opacity: interpolate(frame, [0, 30], [1, 0.6], {
             extrapolateLeft: "clamp",
             extrapolateRight: "clamp",
@@ -85,21 +143,61 @@ export const Intro: React.FC = () => {
         }}
       />
 
+      {/* APRIL 26TH badge */}
+      {frameApril26 > 0 && (
+        <div
+          className="absolute inset-x-0 flex justify-center"
+          style={{ top: "25%", opacity: badgeAprilOpacity }}
+        >
+          <div
+            className="rounded-xl px-8 py-4"
+            style={{
+              backgroundColor: "oklch(0.22 0.04 260 / 0.8)",
+              backdropFilter: "blur(12px)",
+              border: "1px solid var(--color-toxicGreen)",
+            }}
+          >
+            <div className="font-bebas text-toxicGreen text-8xl font-bold">
+              APRIL 26TH
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* 1986 badge */}
+      {frame1986 > 0 && (
+        <div
+          className="absolute inset-x-0 flex justify-center"
+          style={{ top: "25%", opacity: badge1986Opacity }}
+        >
+          <div
+            className="rounded-xl px-8 py-4"
+            style={{
+              backgroundColor: "oklch(0.22 0.04 260 / 0.8)",
+              backdropFilter: "blur(12px)",
+              border: "1px solid var(--color-toxicGreen)",
+            }}
+          >
+            <div className="font-bebas text-toxicGreen text-8xl font-bold">
+              1986
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Title group */}
       <AbsoluteFill
         className="flex-col items-center justify-center"
         style={{ opacity: textGroupOpacity }}
       >
-        {/* FOREVER LOST typewriter - Fixed layout shift */}
+        {/* FOREVER LOST typewriter */}
         <div
-          className="font-bebas text-center text-white"
+          className="font-bebas flex justify-center text-center text-white"
           style={{
             fontSize: 180,
             letterSpacing: 8,
             height: 200,
-            minWidth: 1200, // Forces a fixed width so it doesn't jump around
-            display: "flex",
-            justifyContent: "center",
+            minWidth: 1200,
           }}
         >
           {letters}
@@ -112,7 +210,7 @@ export const Intro: React.FC = () => {
             width: `${barWidth}%`,
             maxWidth: 600,
             backgroundColor: "#39FF14",
-            marginTop: -40,
+            marginTop: 10, // Changed from -40 to 10 to sit UNDER the text
             marginBottom: 40,
           }}
         />
@@ -144,7 +242,16 @@ export const Intro: React.FC = () => {
         />
       </AbsoluteFill>
 
-      {/* Bottom scrolling banner */}
+      {/* Captions */}
+      <TiktokCaptions
+        transcript={TRASCRIPT_DATA}
+        position="bottom-center"
+        startFrame={0}
+        switchCaptionsEveryMs={1800}
+        showOverlay
+      />
+
+      {/* Top scrolling banner */}
       <AnimatedBanner
         items={[
           "UKRAINE · 1986",
@@ -152,7 +259,7 @@ export const Intro: React.FC = () => {
           "APRIL 26 · 01:23 LOCAL TIME",
         ]}
         speed={1.2}
-        position="bottom"
+        position="top"
       />
     </AbsoluteFill>
   );

@@ -24,16 +24,14 @@ export const AnimatedBanner: React.FC<Props> = ({
 
   return (
     <div
+      className="flex h-11 items-center overflow-hidden"
       style={{
         position: "absolute",
         [position]: 0,
         left: 0,
         right: 0,
         background: bgColor,
-        height: 44,
-        overflow: "hidden",
-        display: "flex",
-        alignItems: "center",
+        zIndex: 10,
       }}
     >
       <div
