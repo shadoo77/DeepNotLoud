@@ -48,7 +48,7 @@ export const Scene3Corium: React.FC = () => {
       />
       <Audio
         src={staticFile(`${ASSET_PATH}/audio/sfx/radiation_hum.wav`)}
-        volume={0.3}
+        volume={0.2}
         loop
       />
 
@@ -75,14 +75,13 @@ export const Scene3Corium: React.FC = () => {
 
       <AbsoluteFill
         style={{
-          background:
-            "linear-gradient(to right, #1A1A1A 0%, transparent 40%)",
+          background: "linear-gradient(to right, #1A1A1A 0%, transparent 40%)",
         }}
       />
 
       <AbsoluteFill className="flex-col items-start justify-center px-12">
         <div
-          className="font-bebas text-toxicGreen text-[52px] font-bold leading-tight"
+          className="font-bebas text-toxicGreen text-[52px] leading-tight font-bold"
           style={{
             opacity: titleOpacity,
             transform: `translateX(${titleX}px)`,
