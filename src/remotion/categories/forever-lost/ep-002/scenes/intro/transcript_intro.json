@@ -1,0 +1,219 @@
+[
+  {
+    "text": "April",
+    "startMs": 300,
+    "endMs": 800,
+    "timestampMs": 580,
+    "confidence": 0.955134
+  },
+  {
+    "text": " 26",
+    "startMs": 800,
+    "endMs": 1900,
+    "timestampMs": 980,
+    "confidence": 0.980275
+  },
+  {
+    "text": ",",
+    "startMs": 1900,
+    "endMs": 2070,
+    "timestampMs": 1760,
+    "confidence": 0.540963
+  },
+  {
+    "text": " 1986",
+    "startMs": 2070,
+    "endMs": 4140,
+    "timestampMs": 3080,
+    "confidence": 0.997262
+  },
+  {
+    "text": ",",
+    "startMs": 4140,
+    "endMs": 4210,
+    "timestampMs": 4080,
+    "confidence": 0.292541
+  },
+  {
+    "text": " Chernobyl",
+    "startMs": 4210,
+    "endMs": 4760,
+    "timestampMs": 4340,
+    "confidence": 0.987842
+  },
+  {
+    "text": " Nuclear",
+    "startMs": 4760,
+    "endMs": 5270,
+    "timestampMs": 4980,
+    "confidence": 0.387939
+  },
+  {
+    "text": " Power",
+    "startMs": 5270,
+    "endMs": 5620,
+    "timestampMs": 5520,
+    "confidence": 0.969797
+  },
+  {
+    "text": " Plant",
+    "startMs": 5620,
+    "endMs": 6000,
+    "timestampMs": 5820,
+    "confidence": 0.983445
+  },
+  {
+    "text": ",",
+    "startMs": 6000,
+    "endMs": 6770,
+    "timestampMs": 6620,
+    "confidence": 0.72144
+  },
+  {
+    "text": " Ukraine",
+    "startMs": 6770,
+    "endMs": 7980,
+    "timestampMs": 7020,
+    "confidence": 0.97673
+  },
+  {
+    "text": ".",
+    "startMs": 7980,
+    "endMs": 8000,
+    "timestampMs": 8340,
+    "confidence": 0.627511
+  },
+  {
+    "text": " At",
+    "startMs": 8000,
+    "endMs": 8470,
+    "timestampMs": 8580,
+    "confidence": 0.996094
+  },
+  {
+    "text": " 1",
+    "startMs": 8470,
+    "endMs": 8500,
+    "timestampMs": 8840,
+    "confidence": 0.840627
+  },
+  {
+    "text": ".",
+    "startMs": 8500,
+    "endMs": 8750,
+    "timestampMs": 9040,
+    "confidence": 0.864263
+  },
+  {
+    "text": "23",
+    "startMs": 8750,
+    "endMs": 9490,
+    "timestampMs": 9420,
+    "confidence": 0.995084
+  },
+  {
+    "text": " in",
+    "startMs": 9490,
+    "endMs": 9510,
+    "timestampMs": 9720,
+    "confidence": 0.983492
+  },
+  {
+    "text": " the",
+    "startMs": 9510,
+    "endMs": 9780,
+    "timestampMs": 9780,
+    "confidence": 0.998134
+  },
+  {
+    "text": " morning",
+    "startMs": 9780,
+    "endMs": 10490,
+    "timestampMs": 10080,
+    "confidence": 0.997312
+  },
+  {
+    "text": ",",
+    "startMs": 10490,
+    "endMs": 10920,
+    "timestampMs": 10800,
+    "confidence": 0.935142
+  },
+  {
+    "text": " the",
+    "startMs": 10920,
+    "endMs": 10990,
+    "timestampMs": 10960,
+    "confidence": 0.865892
+  },
+  {
+    "text": " worst",
+    "startMs": 10990,
+    "endMs": 11570,
+    "timestampMs": 11260,
+    "confidence": 0.992292
+  },
+  {
+    "text": " nuclear",
+    "startMs": 11570,
+    "endMs": 12180,
+    "timestampMs": 11760,
+    "confidence": 0.998624
+  },
+  {
+    "text": " disaster",
+    "startMs": 12180,
+    "endMs": 13070,
+    "timestampMs": 12460,
+    "confidence": 0.997563
+  },
+  {
+    "text": " in",
+    "startMs": 13070,
+    "endMs": 13280,
+    "timestampMs": 12860,
+    "confidence": 0.977771
+  },
+  {
+    "text": " human",
+    "startMs": 13280,
+    "endMs": 13790,
+    "timestampMs": 13160,
+    "confidence": 0.993852
+  },
+  {
+    "text": " history",
+    "startMs": 13790,
+    "endMs": 15180,
+    "timestampMs": 13880,
+    "confidence": 0.999022
+  },
+  {
+    "text": " began",
+    "startMs": 15180,
+    "endMs": 16190,
+    "timestampMs": 15400,
+    "confidence": 0.760829
+  },
+  {
+    "text": ".",
+    "startMs": 16190,
+    "endMs": 17000,
+    "timestampMs": 16860,
+    "confidence": 0.915569
+  },
+  {
+    "text": " Some",
+    "startMs": 17170,
+    "endMs": 18670,
+    "timestampMs": 17400,
+    "confidence": 0.967197
+  },
+  {
+    "text": " disasters",
+    "startMs": 18670,
+    "endMs": 22100,
+    "timestampMs": 17640,
+    "confidence": 0.970789
+  }
+]

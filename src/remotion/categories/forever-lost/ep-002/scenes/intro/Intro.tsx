@@ -59,6 +59,11 @@ export const Intro: React.FC = () => {
           volume={(f) => (f === 0 ? 1 : 0)}
         />
       </Sequence>
+      <Sequence premountFor={5}>
+        <Audio
+          src={staticFile(`${ASSET_PATH}/audio/vo/ep02L_intro.wav`)}
+        />
+      </Sequence>
 
       {/* Background image */}
       <AbsoluteFill style={{ opacity: imageFull }}>

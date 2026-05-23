@@ -3,7 +3,7 @@ export const W = 1920;
 export const H = 1080;
 
 export const SCENES = {
-  intro: { durationInFrames: 450 },
+  intro: { durationInFrames: 693 },
   s1: { durationInFrames: 600 },
   mg01: { durationInFrames: 750 },
   s2: { durationInFrames: 900 },
