@@ -3,6 +3,7 @@ import {
   Img,
   useCurrentFrame,
   useVideoConfig,
+  spring,
   staticFile,
   interpolate,
 } from "remotion";
@@ -22,6 +23,19 @@ export const Scene3Corium: React.FC = () => {
     fps,
     voiceOverStartFrame: 0,
   }).from;
+
+  const frameFuel = getPhraseFrames({
+    phrase: "melted",
+    transcriptData: TRASCRIPT_DATA,
+    fps,
+    voiceOverStartFrame: 0,
+  }).from;
+
+  const badgeFuel = spring({
+    frame: Math.max(0, frame - frameFuel),
+    fps,
+    config: { damping: 12, stiffness: 200 },
+  });
 
   const imagePulse = interpolate(
     frame % (fps * 4),
@@ -112,12 +126,45 @@ export const Scene3Corium: React.FC = () => {
         </AbsoluteFill>
       )}
 
+      {/* MOLTEN FUEL badge */}
+      {frameFuel > 0 && (
+        <div
+          className="absolute inset-x-0 flex justify-center"
+          style={{
+            top: "30%",
+            opacity: interpolate(
+              Math.max(0, frame - frameFuel),
+              [0, 12],
+              [0, 1],
+              { extrapolateRight: "clamp" },
+            ),
+          }}
+        >
+          <div
+            className="rounded-xl px-6 py-4"
+            style={{
+              backgroundColor: "oklch(0.22 0.04 260 / 0.8)",
+              backdropFilter: "blur(12px)",
+              border: "1px solid var(--color-toxicGreen)",
+              transform: `scale(${badgeFuel})`,
+            }}
+          >
+            <div className="text-toxicGreen text-center font-mono text-6xl font-bold">
+              THE MELTED FUEL
+            </div>
+            <div className="text-offWhite text-center text-4xl font-semibold">
+              still fused inside
+            </div>
+          </div>
+        </div>
+      )}
+
       <TiktokCaptions
         transcript={TRASCRIPT_DATA}
         highlightedWords={["elephant", "foot", "Four", "minutes"]}
         position="youtube-shorts"
         startFrame={0}
-        switchCaptionsEveryMs={1500}
+        switchCaptionsEveryMs={1800}
       />
     </AbsoluteFill>
   );
