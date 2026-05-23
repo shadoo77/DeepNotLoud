@@ -1,4 +1,5 @@
 import { useCurrentFrame, useVideoConfig, spring, interpolate } from "remotion";
+import { C } from "../constants";
 
 interface Props {
   text: string;
@@ -14,7 +15,7 @@ export const KineticText: React.FC<Props> = ({
   text,
   startFrame = 0,
   fontSize = 52,
-  color = "#F0EEE4",
+  color = C.white,
   highlightWords = [],
   staggerFrames = 4,
   center = false,
@@ -46,10 +47,11 @@ export const KineticText: React.FC<Props> = ({
         return (
           <span
             key={i}
+            className="font-inter"
             style={{
               fontSize,
               fontWeight: 800,
-              color: isHighlighted ? "#39FF14" : color,
+              color: isHighlighted ? C.green : color,
               opacity: wordProgress,
               transform: `translateY(${interpolate(wordProgress, [0, 1], [20, 0])}px)`,
               display: "inline-block",

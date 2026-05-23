@@ -48,4 +48,5 @@ export const SCENES = {
 } as const;
 
 export const TOTAL_FRAMES =
-  Object.values(SCENES).reduce((a, b) => a + b.durationInFrames, 0) - 345;
+  Object.values(SCENES).reduce((a, b) => a + b.durationInFrames, 0) -
+  (5 * T.fade + 5 * T.slide + 4 * T.wipe);
