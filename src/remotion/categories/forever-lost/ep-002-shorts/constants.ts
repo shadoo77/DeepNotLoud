@@ -39,7 +39,8 @@ const getSceneDuration = (lastEndMs: number) =>
 // Transcript-based durations (from whisper captions)
 export const SCENES = {
   s1: { durationInFrames: getSceneDuration(lastEndMs1) }, // ~10.2s HOOK
-  s2: { durationInFrames: getSceneDuration(lastEndMs2) }, // ~11.7s STATS
+  s2: { durationInFrames: getSceneDuration(lastEndMs2) }, // ~19.0s STATS
+  // s2: { durationInFrames: 570 }, // ~19.0s STATS
   s3: { durationInFrames: getSceneDuration(lastEndMs3) }, // ~11.7s CORIUM
   s4: { durationInFrames: getSceneDuration(lastEndMs4) }, // ~22.1s SARCOPHAGUS
   s5: { durationInFrames: 120 }, // ~4s    VISUAL ONLY — liquidator image, no VO

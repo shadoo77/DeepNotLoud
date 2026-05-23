@@ -18,13 +18,13 @@ export const Scene1Hook: React.FC = () => {
     extrapolateRight: "clamp",
   });
 
-  const titleOpacity = interpolate(frame, [15, 35], [0, 1], {
+  const titleOpacity = interpolate(frame, [30, 50], [0, 1], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
     easing: Easing.bezier(0.16, 1, 0.3, 1),
   });
 
-  const subtitleOpacity = interpolate(frame, [30, 50], [0, 1], {
+  const subtitleOpacity = interpolate(frame, [60, 80], [0, 1], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
     easing: Easing.bezier(0.16, 1, 0.3, 1),
@@ -53,13 +53,13 @@ export const Scene1Hook: React.FC = () => {
 
       <AbsoluteFill className="flex-col items-center justify-center gap-4">
         <div
-          className="font-bebas text-offWhite text-center text-8xl tracking-[0.15em]"
+          className="font-bebas text-offWhite text-center text-9xl font-bold tracking-[0.15em]"
           style={{ opacity: titleOpacity }}
         >
           CHERNOBYL
         </div>
         <div
-          className="font-inter text-offWhite text-center text-[28px] font-normal tracking-[0.15em]"
+          className="font-inter text-offWhite text-center text-3xl font-bold tracking-[0.15em]"
           style={{ opacity: subtitleOpacity }}
         >
           UKRAINE · 1986

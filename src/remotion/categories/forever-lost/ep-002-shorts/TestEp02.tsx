@@ -1,10 +1,10 @@
 import { AbsoluteFill } from "remotion";
-import { Scene2 } from "./scenes/scene2-stats";
+import { Scene3 } from "./scenes/scene3-corium";
 
 export default function TestEp02() {
   return (
     <AbsoluteFill style={{ backgroundColor: "#1A1A1A" }}>
-      <Scene2 />
+      <Scene3 />
     </AbsoluteFill>
   );
 }

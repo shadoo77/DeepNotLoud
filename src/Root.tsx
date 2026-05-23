@@ -52,7 +52,7 @@ export function RemotionRoot() {
         <Composition
           id="Test-ep02"
           component={TestEp02}
-          durationInFrames={SCENES.s2.durationInFrames}
+          durationInFrames={SCENES.s3.durationInFrames}
           fps={FPS}
           width={WIDTH}
           height={HEIGHT}
