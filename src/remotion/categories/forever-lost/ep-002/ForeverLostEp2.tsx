@@ -7,6 +7,7 @@ import { wipe } from "@remotion/transitions/wipe";
 import { T, SCENES, C, TOTAL_FRAMES, ASSET_PATH } from "./constants";
 import { Intro, SCENE_DURATION as INTRO_DURATION } from "./scenes/intro";
 import { Scene1Hook, SCENE_DURATION as S1_DURATION } from "./scenes/scene1-hook";
+import { MG01Timeline } from "./components/MG01Timeline";
 
 const ScenePlaceholder = ({ label }: { label: string }) => (
   <AbsoluteFill className="bg-ash items-center justify-center">
@@ -72,7 +73,7 @@ export const ForeverLostEp2 = () => {
           durationInFrames={SCENES.mg01.durationInFrames}
           premountFor={30}
         >
-          <ScenePlaceholder label="MG·01 · Timeline" />
+          <MG01Timeline />
         </TransitionSeries.Sequence>
         <TransitionSeries.Transition
           presentation={fade()}

@@ -14,18 +14,18 @@ import { AnimatedBanner } from "../components/AnimatedBanner";
 
 // Data from the MD
 const TIMELINE_EVENTS = [
-  { year: "Apr 26 1986", event: "Explosion" },
-  { year: "May 1986", event: "First sarcophagus built" },
-  { year: "1990", event: "Liquidator program ends" },
-  { year: "1991", event: "USSR collapses, funding stops" },
-  { year: "2000", event: "Reactor finally shut down" },
-  { year: "2016", event: "New Safe Confinement completed" },
-  { year: "2065", event: "NSC estimated lifespan ends" },
-  { year: "24,000 AD", event: "Plutonium-239 half-life point" },
+  { year: "Apr 26 1986", event: ["Explosion"] },
+  { year: "May 1986", event: ["First sarcophagus built"] },
+  { year: "1990", event: ["Liquidator program ends"] },
+  { year: "1991", event: ["USSR collapses,", "funding stops"] }, // Also broke this one for better spacing
+  { year: "2000", event: ["Reactor finally shut down"] },
+  { year: "2016", event: ["New Safe Confinement", "completed"] }, // And this one
+  { year: "2065", event: ["NSC estimated", "lifespan ends"] }, // And this one
+  { year: "24,000 AD", event: ["Plutonium-239", "half-life point"] }, // <--- BROKEN INTO TWO LINES
 ];
 
 // SVG Dimensions for the line
-const LINE_Y = 320;
+const LINE_Y = 300;
 const LINE_START_X = 120;
 const LINE_END_X = 1800;
 const TOTAL_LINE_LENGTH = LINE_END_X - LINE_START_X;
@@ -93,12 +93,11 @@ export const MG01Timeline: React.FC = () => {
       >
         {/* Title */}
         <div
-          className="font-bebas"
+          className="font-bebas text-7xl"
           style={{
             position: "absolute",
             top: 60,
             left: 100,
-            fontSize: 64,
             color: C.white,
             letterSpacing: 4,
           }}
@@ -120,23 +119,20 @@ export const MG01Timeline: React.FC = () => {
           {/* The Drawing Green Line */}
           <line
             x1={LINE_START_X}
-            y1={LINE_Y}
+            y1={300} // Centered vertically
             x2={currentLineTipX}
-            y2={LINE_Y}
+            y2={300}
             stroke={C.green}
             strokeWidth={4}
           />
 
-          {/* Map over events to place tick marks and labels */}
           {TIMELINE_EVENTS.map((evt, i) => {
             const eventX =
               LINE_START_X +
               (i / (TIMELINE_EVENTS.length - 1)) * TOTAL_LINE_LENGTH;
 
-            // Stagger appearance: First event at frame 60, each subsequent 25 frames later
             const eventStartFrame = 60 + i * 25;
 
-            // Spring pop for the tick mark
             const tickPop = spring({
               fps,
               frame: frame - eventStartFrame,
@@ -144,7 +140,6 @@ export const MG01Timeline: React.FC = () => {
               durationInFrames: 20,
             });
 
-            // Fade for text
             const textOpacity = interpolate(
               frame,
               [eventStartFrame, eventStartFrame + 15],
@@ -155,51 +150,97 @@ export const MG01Timeline: React.FC = () => {
               },
             );
 
-            // Only render the event if the drawing line has reached or passed it
             if (currentLineTipX < eventX) return null;
 
-            // Glitch effect for the final 24,000 AD event (Frame 240+)
             const isGlitchEvent = evt.year === "24,000 AD" && frame >= 240;
             const glitchOpacity = isGlitchEvent
               ? Math.sin(frame * 0.5) * 0.3 + 0.7
               : 1;
 
+            const isEven = i % 2 === 0;
+            const tickDirection = isEven ? -1 : 1;
+
             return (
               <g key={i} opacity={textOpacity * glitchOpacity}>
-                {/* Vertical Tick Mark (grows upward) */}
+                {/* Vertical Tick Mark */}
                 <line
                   x1={eventX}
                   y1={LINE_Y}
                   x2={eventX}
-                  y2={LINE_Y - 40 * tickPop}
+                  y2={LINE_Y + 40 * tickPop * tickDirection}
                   stroke={C.white}
                   strokeWidth={2}
                 />
 
-                {/* Event Label (Above line) */}
-                <text
-                  x={eventX}
-                  y={LINE_Y - 55}
-                  textAnchor="middle"
-                  fill={isGlitchEvent ? C.red : C.white}
-                  className="font-inter"
-                  fontSize={20}
-                  fontWeight={700}
-                >
-                  {evt.event}
-                </text>
+                {/* Events positioned ABOVE the line */}
+                {isEven && (
+                  <>
+                    {/* Event Label */}
+                    <text
+                      x={eventX}
+                      y={LINE_Y - 80}
+                      textAnchor="middle"
+                      fill={isGlitchEvent ? C.red : C.white}
+                      className="font-sans text-2xl font-bold"
+                    >
+                      {evt.event.map((line: string, idx: number) => (
+                        <tspan
+                          key={idx}
+                          x={eventX}
+                          dy={idx === 0 ? 0 : 24} // Moves next line down by 24px
+                        >
+                          {line}
+                        </tspan>
+                      ))}
+                    </text>
 
-                {/* Date (Below line) */}
-                <text
-                  x={eventX}
-                  y={LINE_Y + 35}
-                  textAnchor="middle"
-                  fill={C.green}
-                  className="font-mono"
-                  fontSize={16}
-                >
-                  {evt.year}
-                </text>
+                    {/* Date */}
+                    <text
+                      x={eventX}
+                      y={LINE_Y - 110} // Moved up slightly to make room for 2 lines
+                      textAnchor="middle"
+                      fill={C.green}
+                      className="font-mono text-xl"
+                    >
+                      {evt.year}
+                    </text>
+                  </>
+                )}
+
+                {/* Events positioned BELOW the line */}
+                {!isEven && (
+                  <>
+                    {/* Date */}
+                    <text
+                      x={eventX}
+                      y={LINE_Y + 75}
+                      textAnchor="middle"
+                      fill={C.green}
+                      className="font-mono text-xl"
+                    >
+                      {evt.year}
+                    </text>
+
+                    {/* Event Label */}
+                    <text
+                      x={eventX}
+                      y={LINE_Y + 100}
+                      textAnchor="middle"
+                      fill={isGlitchEvent ? C.red : C.white}
+                      className="font-sans text-2xl font-bold"
+                    >
+                      {evt.event.map((line: string, idx: number) => (
+                        <tspan
+                          key={idx}
+                          x={eventX}
+                          dy={idx === 0 ? 0 : 24} // Moves next line down by 24px
+                        >
+                          {line}
+                        </tspan>
+                      ))}
+                    </text>
+                  </>
+                )}
               </g>
             );
           })}
