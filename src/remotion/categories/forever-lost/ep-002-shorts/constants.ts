@@ -17,7 +17,7 @@ export const T = {
 } as const;
 
 export const COLORS = {
-  bg: "#1A1A1A",
+  bg: "#0d0d0d",
   green: "#39FF14",
   red: "#8B0000",
   white: "#F0EEE4",

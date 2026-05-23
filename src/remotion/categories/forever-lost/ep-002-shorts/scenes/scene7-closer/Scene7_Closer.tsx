@@ -36,7 +36,7 @@ export const Scene7Closer: React.FC = () => {
   );
 
   return (
-    <AbsoluteFill style={{ backgroundColor: "#1A1A1A" }}>
+    <AbsoluteFill className="bg-ash">
       <Audio
         src={staticFile(`${ASSET_PATH}/audio/vo/short/ep02_s7.wav`)}
         from={VO_START_FRAME}
@@ -87,7 +87,7 @@ export const Scene7Closer: React.FC = () => {
 
       <AbsoluteFill
         style={{
-          background: "#000000",
+          background: "var(--color-ash)",
           opacity: blackOverlay,
           pointerEvents: "none",
         }}

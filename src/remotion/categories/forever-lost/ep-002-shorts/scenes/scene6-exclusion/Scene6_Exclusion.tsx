@@ -56,7 +56,7 @@ export const Scene6Exclusion: React.FC = () => {
   );
 
   return (
-    <AbsoluteFill style={{ backgroundColor: "#1A1A1A" }}>
+    <AbsoluteFill className="bg-ash">
       <Audio
         src={staticFile(`${ASSET_PATH}/audio/vo/short/ep02_s6.wav`)}
         from={VO_START_FRAME}

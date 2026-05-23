@@ -1,4 +1,5 @@
 import { AbsoluteFill, staticFile } from "remotion";
+import { Audio } from "@remotion/media";
 import {
   TransitionSeries,
   linearTiming,
@@ -10,7 +11,6 @@ import { slide } from "@remotion/transitions/slide";
 import { wipe } from "@remotion/transitions/wipe";
 import { T, BLACK_HOLD_FRAMES, ASSET_PATH } from "./constants";
 import { Scene1, SCENE_DURATION as S1_DURATION } from "./scenes/scene1-hook";
-import { Audio } from "@remotion/media";
 import { Scene2, SCENE_DURATION as S2_DURATION } from "./scenes/scene2-stats";
 import { Scene3, SCENE_DURATION as S3_DURATION } from "./scenes/scene3-corium";
 import {
@@ -41,9 +41,7 @@ const TOTAL_RAW = SCENE_DURATIONS.reduce((a, b) => a + b, 0);
 const TRANSITION_OVERLAP = 6 * T.fade;
 export const TOTAL_FRAMES = TOTAL_RAW - TRANSITION_OVERLAP + BLACK_HOLD_FRAMES;
 
-const BlackFrame = () => (
-  <AbsoluteFill style={{ backgroundColor: "#1A1A1A" }} />
-);
+const BlackFrame = () => <AbsoluteFill className="bg-ash" />;
 
 const sceneComponents = [
   () => <Scene1 />,
@@ -77,7 +75,7 @@ function getTransition(index: number): {
 
 export const ForeverLostEp2Shorts = () => {
   return (
-    <AbsoluteFill style={{ backgroundColor: "#1A1A1A" }}>
+    <AbsoluteFill className="bg-ash">
       <Audio
         src={staticFile(`${ASSET_PATH}/audio/bgm/ep02_bgm.mp3`)}
         volume={(f) => {

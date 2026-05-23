@@ -38,33 +38,46 @@ export const Scene1Hook: React.FC = () => {
         volume={0.8}
       />
 
-      <AbsoluteFill>
-        <Img
-          src={staticFile(`${ASSET_PATH}/images/short/ep02_s1_aerial.jpeg`)}
-          className="h-full w-full object-cover"
-          style={{
-            transform: `scale(${scale})`,
-            transformOrigin: "center center",
-          }}
-        />
-      </AbsoluteFill>
+      {frame < 6 ? (
+        <AbsoluteFill>
+          <Img
+            src={staticFile(
+              `${ASSET_PATH}/images/short/thumbnail-9:16.jpeg`,
+            )}
+            className="h-full w-full object-cover"
+          />
+        </AbsoluteFill>
+      ) : (
+        <>
+          <AbsoluteFill>
+            <Img
+              src={staticFile(`${ASSET_PATH}/images/short/ep02_s1_aerial.jpeg`)}
+              className="h-full w-full object-cover"
+              style={{
+                transform: `scale(${scale})`,
+                transformOrigin: "center center",
+              }}
+            />
+          </AbsoluteFill>
 
-      <AbsoluteFill className="bg-gradient-to-b from-black/20 to-black/65" />
+          <AbsoluteFill className="bg-gradient-to-b from-black/20 to-black/65" />
 
-      <AbsoluteFill className="flex-col items-center justify-center gap-4">
-        <div
-          className="font-bebas text-offWhite text-center text-9xl font-bold tracking-[0.15em]"
-          style={{ opacity: titleOpacity }}
-        >
-          CHERNOBYL
-        </div>
-        <div
-          className="font-inter text-offWhite text-center text-3xl font-bold tracking-[0.15em]"
-          style={{ opacity: subtitleOpacity }}
-        >
-          UKRAINE · 1986
-        </div>
-      </AbsoluteFill>
+          <AbsoluteFill className="flex-col items-center justify-center gap-4">
+            <div
+              className="font-bebas text-offWhite text-center text-9xl font-bold tracking-[0.15em]"
+              style={{ opacity: titleOpacity }}
+            >
+              CHERNOBYL
+            </div>
+            <div
+              className="font-inter text-offWhite text-center text-4xl font-bold tracking-[0.15em]"
+              style={{ opacity: subtitleOpacity }}
+            >
+              UKRAINE · 1986
+            </div>
+          </AbsoluteFill>
+        </>
+      )}
 
       <TiktokCaptions
         transcript={TRASCRIPT_DATA}

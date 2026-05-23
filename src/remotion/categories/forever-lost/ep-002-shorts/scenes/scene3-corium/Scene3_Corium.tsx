@@ -66,7 +66,7 @@ export const Scene3Corium: React.FC = () => {
   });
 
   return (
-    <AbsoluteFill style={{ backgroundColor: "#1A1A1A" }}>
+    <AbsoluteFill className="bg-ash">
       <Audio src={staticFile(`${ASSET_PATH}/audio/vo/short/ep02_s3.wav`)} />
       <Audio
         src={staticFile(`${ASSET_PATH}/audio/sfx/geiger_loop.wav`)}
@@ -102,7 +102,7 @@ export const Scene3Corium: React.FC = () => {
 
       <AbsoluteFill
         style={{
-          background: `linear-gradient(to right, #1A1A1A 0%, transparent ${maskStop}%)`,
+          background: `linear-gradient(to right, var(--color-ash) 0%, transparent ${maskStop}%)`,
         }}
       />
 

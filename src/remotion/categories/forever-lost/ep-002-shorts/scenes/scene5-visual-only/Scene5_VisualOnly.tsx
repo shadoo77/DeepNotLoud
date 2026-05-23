@@ -27,7 +27,7 @@ export const Scene5VisualOnly: React.FC = () => {
   });
 
   return (
-    <AbsoluteFill style={{ backgroundColor: "#1A1A1A" }}>
+    <AbsoluteFill className="bg-ash">
       <Audio
         src={staticFile(`${ASSET_PATH}/audio/sfx/geiger_loop.wav`)}
         volume={(f) => {

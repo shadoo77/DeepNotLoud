@@ -67,7 +67,7 @@ export const Scene4Sarcophagus: React.FC = () => {
   );
 
   return (
-    <AbsoluteFill style={{ backgroundColor: "#1A1A1A" }}>
+    <AbsoluteFill className="bg-ash">
       <Audio
         src={staticFile(`${ASSET_PATH}/audio/vo/short/ep02_s4.wav`)}
         from={VO_START_FRAME}
