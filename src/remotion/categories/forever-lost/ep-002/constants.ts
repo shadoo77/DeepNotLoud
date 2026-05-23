@@ -1,21 +1,37 @@
 export const FPS = 30;
+export const W = 1920;
+export const H = 1080;
 
-// Estimated durations (seconds) — replace with real WAV durations after TTS
-export const ESTIMATED_DURATIONS = {
-  scene_00: 20, // The Elephant's Foot (Hook)
-  scene_01: 25, // April 26, 1986
-  scene_02: 30, // What the Core Became
-  scene_03: 30, // Physically Inaccessible
-  scene_04: 25, // The Cage Cannot Be Opened
-  scene_05: 30, // A 20,000-Year Grave
-};
+export const SCENES = {
+  intro: { durationInFrames: 450 },
+  s1: { durationInFrames: 600 },
+  mg01: { durationInFrames: 750 },
+  s2: { durationInFrames: 900 },
+  mg02: { durationInFrames: 1050 },
+  s3: { durationInFrames: 1050 },
+  mg03: { durationInFrames: 1200 },
+  s4: { durationInFrames: 1200 },
+  mg04: { durationInFrames: 900 },
+  s5: { durationInFrames: 1050 },
+  mg05: { durationInFrames: 1200 },
+  s6: { durationInFrames: 1050 },
+  mg06: { durationInFrames: 1050 },
+  s7: { durationInFrames: 750 },
+  outro: { durationInFrames: 450 },
+} as const;
 
-export const TRANSITION_DURATION = 30; // 1 sec fade
-export const BLACK_HOLD_FRAMES = 30;
+export const T = { fade: 20, slide: 25, wipe: 25 } as const;
 
-export const TOTAL_DURATION =
-  Object.values(ESTIMATED_DURATIONS).reduce((a, b) => a + b, 0) * FPS +
-  BLACK_HOLD_FRAMES -
-  6 * TRANSITION_DURATION;
+export const TOTAL_FRAMES =
+  Object.values(SCENES).reduce((a, b) => a + b.durationInFrames, 0) - 322;
+
+export const C = {
+  bg: "#111111",
+  green: "#39FF14",
+  red: "#8B0000",
+  white: "#F0EEE4",
+  dimBg: "rgba(0,0,0,0.7)",
+  panel: "rgba(17,17,17,0.92)",
+} as const;
 
 export const ASSET_PATH = "assets/forever-lost/ep-002";
