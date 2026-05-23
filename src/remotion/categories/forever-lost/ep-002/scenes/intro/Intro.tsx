@@ -15,11 +15,8 @@ import { ASSET_PATH } from "../../constants";
 export const Intro: React.FC = () => {
   const frame = useCurrentFrame();
 
-  // Typewriter: FOREVER LOST, one letter per frame, frames 30-60
-  const titleReveal = Math.min(
-    Math.floor(Math.max(0, frame - 30)),
-    14,
-  );
+  // Typewriter: FOREVER LOST, frames 30-60
+  const titleReveal = Math.min(Math.floor(Math.max(0, frame - 30)), 12); // "FOREVER LOST" is 12 chars
   const letters = "FOREVER LOST".slice(0, titleReveal);
 
   // Underline bar: width 0→100% over frames 60-90
@@ -35,17 +32,18 @@ export const Intro: React.FC = () => {
     extrapolateRight: "clamp",
   });
 
-  // Image: fade in at 40% opacity over frames 180-300
-  const imageFull = interpolate(frame, [300, 420], [0.4, 1], {
+  // CORRECTED Image logic: 0 -> 0.4 (frames 180-300), 0.4 -> 1.0 (frames 300-420)
+  const imageOpacity = interpolate(frame, [0, 180, 300, 420], [0, 0, 0.4, 1], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
   });
+
   const kenBurns = interpolate(frame, [180, 420], [1.0, 1.06], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
   });
 
-  // Text fade-out: frames 300-420
+  // Text fade-out: frames 300-360
   const textGroupOpacity = interpolate(frame, [300, 360], [1, 0], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
@@ -53,20 +51,22 @@ export const Intro: React.FC = () => {
 
   return (
     <AbsoluteFill className="bg-ash">
-      <Sequence premountFor={5}>
+      {/* SFX: Single Geiger tick at frame 0 */}
+      <Sequence durationInFrames={2}>
         <Audio
           src={staticFile(`${ASSET_PATH}/audio/sfx/geiger_loop.wav`)}
-          volume={(f) => (f === 0 ? 1 : 0)}
-        />
-      </Sequence>
-      <Sequence premountFor={5}>
-        <Audio
-          src={staticFile(`${ASSET_PATH}/audio/vo/ep02L_intro.wav`)}
+          volume={0.6}
         />
       </Sequence>
 
-      {/* Background image */}
-      <AbsoluteFill style={{ opacity: imageFull }}>
+      {/* VO: Intro Narration */}
+      <Audio
+        src={staticFile(`${ASSET_PATH}/audio/vo/ep02L_intro.wav`)}
+        volume={1}
+      />
+
+      {/* Background image with corrected fade logic */}
+      <AbsoluteFill style={{ opacity: imageOpacity }}>
         <Img
           src={staticFile(`${ASSET_PATH}/images/ep02L_intro_sign.jpeg`)}
           className="h-full w-full object-cover"
@@ -74,7 +74,7 @@ export const Intro: React.FC = () => {
         />
       </AbsoluteFill>
 
-      {/* Dim overlay */}
+      {/* Dim overlay (fades slightly as image appears) */}
       <AbsoluteFill
         style={{
           background: `linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.85))`,
@@ -90,17 +90,19 @@ export const Intro: React.FC = () => {
         className="flex-col items-center justify-center"
         style={{ opacity: textGroupOpacity }}
       >
-        {/* FOREVER LOST typewriter */}
+        {/* FOREVER LOST typewriter - Fixed layout shift */}
         <div
-          className="text-center font-bebas text-white"
+          className="font-bebas text-center text-white"
           style={{
             fontSize: 180,
             letterSpacing: 8,
             height: 200,
+            minWidth: 1200, // Forces a fixed width so it doesn't jump around
+            display: "flex",
+            justifyContent: "center",
           }}
         >
           {letters}
-          <span style={{ visibility: "hidden" }}>FOREVER LOST</span>
         </div>
 
         {/* Green underline bar */}
@@ -117,7 +119,7 @@ export const Intro: React.FC = () => {
 
         {/* Episode subtitle */}
         <div
-          className="text-center font-inter text-white"
+          className="font-inter text-center text-white"
           style={{ opacity: subOpacity, fontSize: 36, fontWeight: 400 }}
         >
           Episode 2
