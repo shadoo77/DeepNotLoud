@@ -6,6 +6,7 @@ import { slide } from "@remotion/transitions/slide";
 import { wipe } from "@remotion/transitions/wipe";
 import { T, SCENES, C, TOTAL_FRAMES, ASSET_PATH } from "./constants";
 import { Intro, SCENE_DURATION as INTRO_DURATION } from "./scenes/intro";
+import { Scene1Hook, SCENE_DURATION as S1_DURATION } from "./scenes/scene1-hook";
 
 const ScenePlaceholder = ({ label }: { label: string }) => (
   <AbsoluteFill className="bg-ash items-center justify-center">
@@ -56,10 +57,10 @@ export const ForeverLostEp2 = () => {
 
         {/* SCENE 1 */}
         <TransitionSeries.Sequence
-          durationInFrames={SCENES.s1.durationInFrames}
+          durationInFrames={S1_DURATION}
           premountFor={30}
         >
-          <ScenePlaceholder label="S1 · April 26, 1986" />
+          <Scene1Hook />
         </TransitionSeries.Sequence>
         <TransitionSeries.Transition
           presentation={slide({ direction: "from-bottom" })}

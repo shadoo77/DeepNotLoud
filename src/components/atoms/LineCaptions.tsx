@@ -36,7 +36,7 @@ const CaptionLine = ({
 }) => {
   return (
     <div className="w-full text-center">
-      <div className="font-cause text-4xl font-black tracking-wide wrap-break-word whitespace-pre-wrap">
+      <div className="font-cause wrap-break-word text-4xl font-black tracking-wide whitespace-pre-wrap">
         {page.tokens.map((token) => {
           const isSpoken = token.toMs > token.fromMs;
           const isActive =
@@ -46,10 +46,7 @@ const CaptionLine = ({
 
           if (!isSpoken) {
             return (
-              <span
-                key={`punct-${token.fromMs}`}
-                className="text-background"
-              >
+              <span key={`punct-${token.fromMs}`} className="text-background">
                 {token.text}
               </span>
             );
@@ -70,7 +67,7 @@ const CaptionLine = ({
             <span
               key={token.fromMs}
               className={cn(
-                "inline-block text-background",
+                "text-background inline-block",
                 isActive && "text-gold",
               )}
               style={style}
@@ -86,7 +83,6 @@ const CaptionLine = ({
 
 export const LineCaptions: React.FC<LineCaptionsProps> = ({
   transcript,
-  highlightedWords = [],
   startFrame = 0,
 }) => {
   const frame = useCurrentFrame();
@@ -101,10 +97,7 @@ export const LineCaptions: React.FC<LineCaptionsProps> = ({
     [transcript],
   );
 
-  const chunks = useMemo(
-    () => chunkPages(pages, LINES_PER_CHUNK),
-    [pages],
-  );
+  const chunks = useMemo(() => chunkPages(pages, LINES_PER_CHUNK), [pages]);
 
   const episodeTimeMs =
     frame >= startFrame

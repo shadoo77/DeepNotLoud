@@ -1,4 +1,5 @@
 import transcriptIntro from "./scenes/intro/transcript_intro.json";
+import transcriptS1 from "./scenes/scene1-hook/transcript_scene1.json";
 
 export const FPS = 30;
 export const WIDTH = 1920;
@@ -23,6 +24,7 @@ export const ASSET_PATH = "assets/forever-lost/ep-002";
 export const BLACK_HOLD_FRAMES = 30;
 
 const lastEndMsIntro = transcriptIntro[transcriptIntro.length - 1]?.endMs ?? 0;
+const lastEndMsS1 = transcriptS1[transcriptS1.length - 1]?.endMs ?? 0;
 
 const getSceneDuration = (lastEndMs: number) =>
   Math.ceil((lastEndMs / 1000) * FPS) + BLACK_HOLD_FRAMES;
@@ -31,7 +33,7 @@ const estimateDuration = (seconds: number) => Math.ceil(seconds * FPS);
 
 export const SCENES = {
   intro: { durationInFrames: getSceneDuration(lastEndMsIntro) },
-  s1: { durationInFrames: estimateDuration(20) },
+  s1: { durationInFrames: getSceneDuration(lastEndMsS1) },
   mg01: { durationInFrames: estimateDuration(25) },
   s2: { durationInFrames: estimateDuration(30) },
   mg02: { durationInFrames: estimateDuration(35) },
