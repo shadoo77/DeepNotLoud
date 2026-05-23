@@ -148,7 +148,4 @@ export const ForeverLostEp2 = () => {
   );
 };
 
-export {
-  TOTAL_FRAMES,
-  INTRO_DURATION as SCENE_DURATION,
-};
+export { TOTAL_FRAMES };
