@@ -18,6 +18,7 @@ import {
 import {
   ASSET_PATH,
   C,
+  mg01StartFrame,
 } from "@/remotion/categories/forever-lost/ep-002/constants";
 import { TRASCRIPT_DATA } from "./constants";
 
@@ -48,11 +49,19 @@ export const Scene1Hook: React.FC = () => {
 
   const counterOpacity = Math.sin(frame * 0.3) * 0.2 + 0.5;
 
+  const hookFadeStart = mg01StartFrame - 30;
+  const hookFadeEnd = mg01StartFrame;
+
   // Fade out the Hook visuals right before the Timeline takes over
-  const hookOpacity = interpolate(frame, [550, 580], [1, 0], {
-    extrapolateLeft: "clamp",
-    extrapolateRight: "clamp",
-  });
+  const hookOpacity = interpolate(
+    frame,
+    [hookFadeStart, hookFadeEnd],
+    [1, 0.8],
+    {
+      extrapolateLeft: "clamp",
+      extrapolateRight: "clamp",
+    },
+  );
 
   // ─── BRIDGE: Floating Badges (Syncs with VO) ───
   const phaseABadges = [
@@ -179,7 +188,10 @@ export const Scene1Hook: React.FC = () => {
         Inside MG01Timeline, useCurrentFrame() will start at 0!
         Its whoosh_data.wav audio will also trigger perfectly at frame 570.
       */}
-      <Sequence from={570} durationInFrames={SCENES.mg01.durationInFrames}>
+      <Sequence
+        from={mg01StartFrame}
+        durationInFrames={SCENES.mg01.durationInFrames}
+      >
         <MG01Timeline />
       </Sequence>
     </AbsoluteFill>
