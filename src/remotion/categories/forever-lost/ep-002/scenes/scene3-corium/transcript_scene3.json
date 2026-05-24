@@ -1,0 +1,660 @@
+[
+  {
+    "text": "When",
+    "startMs": 270,
+    "endMs": 410,
+    "timestampMs": 360,
+    "confidence": 0.947735
+  },
+  {
+    "text": " the",
+    "startMs": 410,
+    "endMs": 720,
+    "timestampMs": 500,
+    "confidence": 0.995121
+  },
+  {
+    "text": " reactor",
+    "startMs": 720,
+    "endMs": 1440,
+    "timestampMs": 860,
+    "confidence": 0.982278
+  },
+  {
+    "text": " core",
+    "startMs": 1440,
+    "endMs": 1850,
+    "timestampMs": 1360,
+    "confidence": 0.957613
+  },
+  {
+    "text": " melted",
+    "startMs": 1850,
+    "endMs": 2640,
+    "timestampMs": 1800,
+    "confidence": 0.990808
+  },
+  {
+    "text": ",",
+    "startMs": 2640,
+    "endMs": 2700,
+    "timestampMs": 2680,
+    "confidence": 0.867535
+  },
+  {
+    "text": " the",
+    "startMs": 2700,
+    "endMs": 2890,
+    "timestampMs": 2740,
+    "confidence": 0.817394
+  },
+  {
+    "text": " nuclear",
+    "startMs": 2890,
+    "endMs": 3500,
+    "timestampMs": 3060,
+    "confidence": 0.986754
+  },
+  {
+    "text": " fuel",
+    "startMs": 3500,
+    "endMs": 3840,
+    "timestampMs": 3560,
+    "confidence": 0.994373
+  },
+  {
+    "text": " didn't",
+    "startMs": 3840,
+    "endMs": 4480,
+    "timestampMs": 4020,
+    "confidence": 0.970256
+  },
+  {
+    "text": " burn",
+    "startMs": 4480,
+    "endMs": 4900,
+    "timestampMs": 4440,
+    "confidence": 0.988517
+  },
+  {
+    "text": " away",
+    "startMs": 4900,
+    "endMs": 5360,
+    "timestampMs": 4760,
+    "confidence": 0.991376
+  },
+  {
+    "text": ",",
+    "startMs": 5360,
+    "endMs": 5810,
+    "timestampMs": 5700,
+    "confidence": 0.226342
+  },
+  {
+    "text": " it",
+    "startMs": 5810,
+    "endMs": 5870,
+    "timestampMs": 5960,
+    "confidence": 0.661113
+  },
+  {
+    "text": " melted",
+    "startMs": 5870,
+    "endMs": 6740,
+    "timestampMs": 6200,
+    "confidence": 0.998516
+  },
+  {
+    "text": " downward",
+    "startMs": 6740,
+    "endMs": 7810,
+    "timestampMs": 7040,
+    "confidence": 0.994509
+  },
+  {
+    "text": ".",
+    "startMs": 7810,
+    "endMs": 8000,
+    "timestampMs": 8160,
+    "confidence": 0.932204
+  },
+  {
+    "text": " Mixing",
+    "startMs": 8000,
+    "endMs": 8780,
+    "timestampMs": 8900,
+    "confidence": 0.929596
+  },
+  {
+    "text": " with",
+    "startMs": 8780,
+    "endMs": 9170,
+    "timestampMs": 9340,
+    "confidence": 0.998382
+  },
+  {
+    "text": " concrete",
+    "startMs": 9170,
+    "endMs": 10090,
+    "timestampMs": 10020,
+    "confidence": 0.9985
+  },
+  {
+    "text": ",",
+    "startMs": 10090,
+    "endMs": 10670,
+    "timestampMs": 10540,
+    "confidence": 0.982502
+  },
+  {
+    "text": " steel",
+    "startMs": 10670,
+    "endMs": 10940,
+    "timestampMs": 11020,
+    "confidence": 0.981771
+  },
+  {
+    "text": ",",
+    "startMs": 10940,
+    "endMs": 11170,
+    "timestampMs": 11560,
+    "confidence": 0.652075
+  },
+  {
+    "text": " and",
+    "startMs": 11170,
+    "endMs": 11570,
+    "timestampMs": 11620,
+    "confidence": 0.991123
+  },
+  {
+    "text": " sand",
+    "startMs": 11570,
+    "endMs": 11990,
+    "timestampMs": 12000,
+    "confidence": 0.999455
+  },
+  {
+    "text": " as",
+    "startMs": 11990,
+    "endMs": 12220,
+    "timestampMs": 12360,
+    "confidence": 0.980187
+  },
+  {
+    "text": " it",
+    "startMs": 12220,
+    "endMs": 12470,
+    "timestampMs": 12460,
+    "confidence": 0.998685
+  },
+  {
+    "text": " went",
+    "startMs": 12470,
+    "endMs": 12940,
+    "timestampMs": 12700,
+    "confidence": 0.99834
+  },
+  {
+    "text": ",",
+    "startMs": 12940,
+    "endMs": 13600,
+    "timestampMs": 13460,
+    "confidence": 0.907703
+  },
+  {
+    "text": " it",
+    "startMs": 13600,
+    "endMs": 13680,
+    "timestampMs": 13720,
+    "confidence": 0.878612
+  },
+  {
+    "text": " formed",
+    "startMs": 13680,
+    "endMs": 14520,
+    "timestampMs": 14060,
+    "confidence": 0.999438
+  },
+  {
+    "text": " a",
+    "startMs": 14520,
+    "endMs": 14670,
+    "timestampMs": 14380,
+    "confidence": 0.998597
+  },
+  {
+    "text": " new",
+    "startMs": 14670,
+    "endMs": 15130,
+    "timestampMs": 14680,
+    "confidence": 0.998527
+  },
+  {
+    "text": " substance",
+    "startMs": 15130,
+    "endMs": 16520,
+    "timestampMs": 15260,
+    "confidence": 0.999384
+  },
+  {
+    "text": ".",
+    "startMs": 16520,
+    "endMs": 17000,
+    "timestampMs": 16620,
+    "confidence": 0.94888
+  },
+  {
+    "text": " Scientists",
+    "startMs": 17000,
+    "endMs": 17930,
+    "timestampMs": 17580,
+    "confidence": 0.975969
+  },
+  {
+    "text": " eventually",
+    "startMs": 17930,
+    "endMs": 18860,
+    "timestampMs": 18120,
+    "confidence": 0.993716
+  },
+  {
+    "text": " named",
+    "startMs": 18860,
+    "endMs": 19300,
+    "timestampMs": 18680,
+    "confidence": 0.998854
+  },
+  {
+    "text": " it",
+    "startMs": 19300,
+    "endMs": 19520,
+    "timestampMs": 19000,
+    "confidence": 0.999049
+  },
+  {
+    "text": "...",
+    "startMs": 19520,
+    "endMs": 20160,
+    "timestampMs": 20080,
+    "confidence": 0.087118
+  },
+  {
+    "text": " corium",
+    "startMs": 20160,
+    "endMs": 21360,
+    "timestampMs": 20240,
+    "confidence": 0.296134
+  },
+  {
+    "text": ".",
+    "startMs": 21360,
+    "endMs": 22000,
+    "timestampMs": 21980,
+    "confidence": 0.899515
+  },
+  {
+    "text": " The",
+    "startMs": 22000,
+    "endMs": 22670,
+    "timestampMs": 22700,
+    "confidence": 0.986094
+  },
+  {
+    "text": " most",
+    "startMs": 22670,
+    "endMs": 22790,
+    "timestampMs": 22860,
+    "confidence": 0.995395
+  },
+  {
+    "text": " famous",
+    "startMs": 22790,
+    "endMs": 23450,
+    "timestampMs": 23400,
+    "confidence": 0.997636
+  },
+  {
+    "text": " deposit",
+    "startMs": 23450,
+    "endMs": 24480,
+    "timestampMs": 23700,
+    "confidence": 0.998317
+  },
+  {
+    "text": " in",
+    "startMs": 24480,
+    "endMs": 24530,
+    "timestampMs": 24580,
+    "confidence": 0.600016
+  },
+  {
+    "text": " Chernobyl's",
+    "startMs": 24530,
+    "endMs": 25770,
+    "timestampMs": 24760,
+    "confidence": 0.990427
+  },
+  {
+    "text": " basement",
+    "startMs": 25770,
+    "endMs": 26630,
+    "timestampMs": 25440,
+    "confidence": 0.993626
+  },
+  {
+    "text": " is",
+    "startMs": 26630,
+    "endMs": 26850,
+    "timestampMs": 26480,
+    "confidence": 0.950875
+  },
+  {
+    "text": " known",
+    "startMs": 26850,
+    "endMs": 27410,
+    "timestampMs": 26720,
+    "confidence": 0.997832
+  },
+  {
+    "text": " as",
+    "startMs": 27410,
+    "endMs": 27780,
+    "timestampMs": 27420,
+    "confidence": 0.998121
+  },
+  {
+    "text": " the",
+    "startMs": 27780,
+    "endMs": 27980,
+    "timestampMs": 27560,
+    "confidence": 0.966306
+  },
+  {
+    "text": " elephant's",
+    "startMs": 27980,
+    "endMs": 29110,
+    "timestampMs": 28000,
+    "confidence": 0.301174
+  },
+  {
+    "text": " foot",
+    "startMs": 29110,
+    "endMs": 29560,
+    "timestampMs": 28520,
+    "confidence": 0.997322
+  },
+  {
+    "text": ".",
+    "startMs": 29560,
+    "endMs": 30000,
+    "timestampMs": 29880,
+    "confidence": 0.993347
+  },
+  {
+    "text": " In",
+    "startMs": 30000,
+    "endMs": 30330,
+    "timestampMs": 30380,
+    "confidence": 0.995494
+  },
+  {
+    "text": " 1986",
+    "startMs": 30330,
+    "endMs": 31390,
+    "timestampMs": 31120,
+    "confidence": 0.998492
+  },
+  {
+    "text": ",",
+    "startMs": 31390,
+    "endMs": 31580,
+    "timestampMs": 31380,
+    "confidence": 0.980853
+  },
+  {
+    "text": " standing",
+    "startMs": 31580,
+    "endMs": 32370,
+    "timestampMs": 32520,
+    "confidence": 0.986229
+  },
+  {
+    "text": " next",
+    "startMs": 32370,
+    "endMs": 32770,
+    "timestampMs": 32820,
+    "confidence": 0.998108
+  },
+  {
+    "text": " to",
+    "startMs": 32770,
+    "endMs": 32990,
+    "timestampMs": 33080,
+    "confidence": 0.998272
+  },
+  {
+    "text": " it",
+    "startMs": 32990,
+    "endMs": 33170,
+    "timestampMs": 33180,
+    "confidence": 0.996637
+  },
+  {
+    "text": " for",
+    "startMs": 33170,
+    "endMs": 33520,
+    "timestampMs": 33380,
+    "confidence": 0.992894
+  },
+  {
+    "text": " just",
+    "startMs": 33520,
+    "endMs": 34050,
+    "timestampMs": 33680,
+    "confidence": 0.981218
+  },
+  {
+    "text": " four",
+    "startMs": 34050,
+    "endMs": 34270,
+    "timestampMs": 34180,
+    "confidence": 0.793901
+  },
+  {
+    "text": " minutes",
+    "startMs": 34270,
+    "endMs": 35400,
+    "timestampMs": 34660,
+    "confidence": 0.998607
+  },
+  {
+    "text": " would",
+    "startMs": 35400,
+    "endMs": 35540,
+    "timestampMs": 35460,
+    "confidence": 0.882112
+  },
+  {
+    "text": " have",
+    "startMs": 35540,
+    "endMs": 36060,
+    "timestampMs": 35560,
+    "confidence": 0.930133
+  },
+  {
+    "text": " been",
+    "startMs": 36060,
+    "endMs": 36400,
+    "timestampMs": 35720,
+    "confidence": 0.99867
+  },
+  {
+    "text": " a",
+    "startMs": 36400,
+    "endMs": 36500,
+    "timestampMs": 35800,
+    "confidence": 0.99537
+  },
+  {
+    "text": " fatal",
+    "startMs": 36500,
+    "endMs": 37040,
+    "timestampMs": 36140,
+    "confidence": 0.999472
+  },
+  {
+    "text": " dose",
+    "startMs": 37040,
+    "endMs": 37470,
+    "timestampMs": 36620,
+    "confidence": 0.991952
+  },
+  {
+    "text": " of",
+    "startMs": 37470,
+    "endMs": 37630,
+    "timestampMs": 36900,
+    "confidence": 0.998942
+  },
+  {
+    "text": " radiation",
+    "startMs": 37630,
+    "endMs": 38660,
+    "timestampMs": 37280,
+    "confidence": 0.998383
+  },
+  {
+    "text": ".",
+    "startMs": 38660,
+    "endMs": 39000,
+    "timestampMs": 38740,
+    "confidence": 0.975491
+  },
+  {
+    "text": " Today",
+    "startMs": 39000,
+    "endMs": 39510,
+    "timestampMs": 39360,
+    "confidence": 0.900282
+  },
+  {
+    "text": ",",
+    "startMs": 39510,
+    "endMs": 40070,
+    "timestampMs": 39920,
+    "confidence": 0.944242
+  },
+  {
+    "text": " that",
+    "startMs": 40070,
+    "endMs": 40120,
+    "timestampMs": 40200,
+    "confidence": 0.992044
+  },
+  {
+    "text": " same",
+    "startMs": 40120,
+    "endMs": 40530,
+    "timestampMs": 40520,
+    "confidence": 0.999016
+  },
+  {
+    "text": " mass",
+    "startMs": 40530,
+    "endMs": 40930,
+    "timestampMs": 40980,
+    "confidence": 0.993256
+  },
+  {
+    "text": " is",
+    "startMs": 40930,
+    "endMs": 41130,
+    "timestampMs": 41300,
+    "confidence": 0.998506
+  },
+  {
+    "text": " still",
+    "startMs": 41130,
+    "endMs": 41650,
+    "timestampMs": 41640,
+    "confidence": 0.998494
+  },
+  {
+    "text": " sitting",
+    "startMs": 41650,
+    "endMs": 42360,
+    "timestampMs": 42200,
+    "confidence": 0.996757
+  },
+  {
+    "text": " in",
+    "startMs": 42360,
+    "endMs": 42570,
+    "timestampMs": 42460,
+    "confidence": 0.997484
+  },
+  {
+    "text": " the",
+    "startMs": 42570,
+    "endMs": 42880,
+    "timestampMs": 42560,
+    "confidence": 0.999161
+  },
+  {
+    "text": " basement",
+    "startMs": 42880,
+    "endMs": 43700,
+    "timestampMs": 42900,
+    "confidence": 0.998616
+  },
+  {
+    "text": " of",
+    "startMs": 43700,
+    "endMs": 43900,
+    "timestampMs": 43180,
+    "confidence": 0.999001
+  },
+  {
+    "text": " reactor 4",
+    "startMs": 43900,
+    "endMs": 45000,
+    "timestampMs": 43440,
+    "confidence": 0.896395
+  },
+  {
+    "text": " Exactly",
+    "startMs": 45000,
+    "endMs": 45910,
+    "timestampMs": 45800,
+    "confidence": 0.813198
+  },
+  {
+    "text": " where",
+    "startMs": 45910,
+    "endMs": 46560,
+    "timestampMs": 46600,
+    "confidence": 0.993794
+  },
+  {
+    "text": " it",
+    "startMs": 46560,
+    "endMs": 46820,
+    "timestampMs": 46740,
+    "confidence": 0.999497
+  },
+  {
+    "text": " landed",
+    "startMs": 46820,
+    "endMs": 47540,
+    "timestampMs": 47060,
+    "confidence": 0.997978
+  },
+  {
+    "text": ".",
+    "startMs": 47540,
+    "endMs": 48000,
+    "timestampMs": 47600,
+    "confidence": 0.772734
+  }
+]

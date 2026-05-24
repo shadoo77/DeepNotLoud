@@ -8,7 +8,9 @@ import { T, SCENES, C, TOTAL_FRAMES, ASSET_PATH } from "./constants";
 import { Intro, SCENE_DURATION as INTRO_DURATION } from "./scenes/intro";
 import { Scene1Hook } from "./scenes/scene1-hook";
 import { Scene2Stats } from "./scenes/scene2-stats";
+import { Scene3Corium } from "./scenes/scene3-corium";
 import { MG02RadiationChart } from "./components/MG02RadiationChart";
+import { MG03ReactorDiagram } from "./components/MG03ReactorDiagram";
 
 const ScenePlaceholder = ({ label }: { label: string }) => (
   <AbsoluteFill className="bg-ash items-center justify-center">
@@ -30,7 +32,7 @@ function interpolateLocal(
 export const ForeverLostEp2 = () => {
   return (
     <AbsoluteFill style={{ backgroundColor: C.bg }}>
-      <Audio
+      {/* <Audio
         src={staticFile(`${ASSET_PATH}/audio/bgm/ep02_bgm.mp3`)}
         volume={(f) => {
           if (f < 450) return 0.12;
@@ -42,7 +44,7 @@ export const ForeverLostEp2 = () => {
           return Math.max(0, interpolateLocal(f, 8400, 9600, 0.25, 0));
         }}
         loop
-      />
+      /> */}
 
       <TransitionSeries>
         {/* INTRO */}
@@ -95,7 +97,7 @@ export const ForeverLostEp2 = () => {
           durationInFrames={SCENES.s3.durationInFrames}
           premountFor={30}
         >
-          <ScenePlaceholder label="S3 · Physically Inaccessible" />
+          <Scene3Corium />
         </TransitionSeries.Sequence>
         <TransitionSeries.Transition
           presentation={slide({ direction: "from-right" })}
@@ -107,7 +109,7 @@ export const ForeverLostEp2 = () => {
           durationInFrames={SCENES.mg03.durationInFrames}
           premountFor={30}
         >
-          <ScenePlaceholder label="MG·03 · Reactor Diagram" />
+          <MG03ReactorDiagram />
         </TransitionSeries.Sequence>
         <TransitionSeries.Transition
           presentation={fade()}
