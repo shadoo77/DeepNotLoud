@@ -6,8 +6,7 @@ import { slide } from "@remotion/transitions/slide";
 import { wipe } from "@remotion/transitions/wipe";
 import { T, SCENES, C, TOTAL_FRAMES, ASSET_PATH } from "./constants";
 import { Intro, SCENE_DURATION as INTRO_DURATION } from "./scenes/intro";
-import { Scene1Hook, SCENE_DURATION as S1_DURATION } from "./scenes/scene1-hook";
-import { MG01Timeline } from "./components/MG01Timeline";
+import { Scene1Hook } from "./scenes/scene1-hook";
 
 const ScenePlaceholder = ({ label }: { label: string }) => (
   <AbsoluteFill className="bg-ash items-center justify-center">
@@ -58,23 +57,12 @@ export const ForeverLostEp2 = () => {
 
         {/* SCENE 1 */}
         <TransitionSeries.Sequence
-          durationInFrames={S1_DURATION}
+          durationInFrames={SCENES.s1.durationInFrames}
           premountFor={30}
         >
           <Scene1Hook />
         </TransitionSeries.Sequence>
-        <TransitionSeries.Transition
-          presentation={slide({ direction: "from-bottom" })}
-          timing={linearTiming({ durationInFrames: T.slide })}
-        />
-
-        {/* MG-01 TIMELINE */}
-        <TransitionSeries.Sequence
-          durationInFrames={SCENES.mg01.durationInFrames}
-          premountFor={30}
-        >
-          <MG01Timeline />
-        </TransitionSeries.Sequence>
+        {/* Note: MG01Timeline is technically part of the SCENE 1 hook, but we want to start it at a specific frame (570) to sync with the audio. */}
         <TransitionSeries.Transition
           presentation={fade()}
           timing={linearTiming({ durationInFrames: T.fade })}

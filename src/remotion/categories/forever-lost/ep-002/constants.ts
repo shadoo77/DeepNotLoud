@@ -33,8 +33,11 @@ const estimateDuration = (seconds: number) => Math.ceil(seconds * FPS);
 
 export const SCENES = {
   intro: { durationInFrames: getSceneDuration(lastEndMsIntro) },
-  s1: { durationInFrames: getSceneDuration(lastEndMsS1) },
-  mg01: { durationInFrames: estimateDuration(12) },
+  s1: {
+    // Add 11 seconds buffer for the MG01Timeline visuals to play after the VO ends
+    durationInFrames: getSceneDuration(lastEndMsS1) + estimateDuration(11),
+  },
+  mg01: { durationInFrames: estimateDuration(11) },
   s2: { durationInFrames: estimateDuration(30) },
   mg02: { durationInFrames: estimateDuration(35) },
   s3: { durationInFrames: estimateDuration(35) },

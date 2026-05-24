@@ -41,7 +41,7 @@ const CaptionPage = ({
   return (
     <AbsoluteFill className={cn(captionPosition({ position }))}>
       <div
-        className="font-patua max-w-4xl text-6xl font-bold whitespace-pre"
+        className="font-patua max-w-4xl text-5xl font-bold whitespace-pre"
         style={{
           textShadow: "0 2px 12px rgba(0,0,0,0.9)",
         }}
