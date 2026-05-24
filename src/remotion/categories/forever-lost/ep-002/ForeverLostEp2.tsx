@@ -9,8 +9,11 @@ import { Intro, SCENE_DURATION as INTRO_DURATION } from "./scenes/intro";
 import { Scene1Hook } from "./scenes/scene1-hook";
 import { Scene2Stats } from "./scenes/scene2-stats";
 import { Scene3Corium } from "./scenes/scene3-corium";
+import { Scene4Sarcophagus } from "./scenes/scene4-sarcophagus";
+import { Scene5HumanCost } from "./scenes/scene5-human-cost";
 import { MG02RadiationChart } from "./components/MG02RadiationChart";
 import { MG03ReactorDiagram } from "./components/MG03ReactorDiagram";
+import { MG04CostChart } from "./components/MG04CostChart";
 
 const ScenePlaceholder = ({ label }: { label: string }) => (
   <AbsoluteFill className="bg-ash items-center justify-center">
@@ -32,7 +35,7 @@ function interpolateLocal(
 export const ForeverLostEp2 = () => {
   return (
     <AbsoluteFill style={{ backgroundColor: C.bg }}>
-      <Audio
+      {/* <Audio
         src={staticFile(`${ASSET_PATH}/audio/bgm/ep02_bgm.mp3`)}
         volume={(f) => {
           if (f < 450) return 0.12;
@@ -44,7 +47,7 @@ export const ForeverLostEp2 = () => {
           return Math.max(0, interpolateLocal(f, 8400, 9600, 0.25, 0));
         }}
         loop
-      />
+      /> */}
 
       <TransitionSeries>
         {/* INTRO */}
@@ -117,7 +120,7 @@ export const ForeverLostEp2 = () => {
           durationInFrames={SCENES.s4.durationInFrames}
           premountFor={30}
         >
-          <ScenePlaceholder label="S4 · The Cage Cannot Be Opened" />
+          <Scene4Sarcophagus />
         </TransitionSeries.Sequence>
         <TransitionSeries.Transition
           presentation={wipe({ direction: "from-top" })}
@@ -129,7 +132,7 @@ export const ForeverLostEp2 = () => {
           durationInFrames={SCENES.mg04.durationInFrames}
           premountFor={30}
         >
-          <ScenePlaceholder label="MG·04 · Cost Chart" />
+          <MG04CostChart />
         </TransitionSeries.Sequence>
         <TransitionSeries.Transition
           presentation={fade()}
@@ -141,7 +144,7 @@ export const ForeverLostEp2 = () => {
           durationInFrames={SCENES.s5.durationInFrames}
           premountFor={30}
         >
-          <ScenePlaceholder label="S5 · The Liquidators" />
+          <Scene5HumanCost />
         </TransitionSeries.Sequence>
         <TransitionSeries.Transition
           presentation={slide({ direction: "from-bottom" })}

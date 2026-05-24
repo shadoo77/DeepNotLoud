@@ -1,0 +1,842 @@
+[
+  {
+    "text": "The",
+    "startMs": 250,
+    "endMs": 280,
+    "timestampMs": 300,
+    "confidence": 0.7806
+  },
+  {
+    "text": " men",
+    "startMs": 280,
+    "endMs": 560,
+    "timestampMs": 560,
+    "confidence": 0.994676
+  },
+  {
+    "text": " who",
+    "startMs": 560,
+    "endMs": 840,
+    "timestampMs": 860,
+    "confidence": 0.982695
+  },
+  {
+    "text": " tried",
+    "startMs": 840,
+    "endMs": 1310,
+    "timestampMs": 1180,
+    "confidence": 0.99725
+  },
+  {
+    "text": " to",
+    "startMs": 1310,
+    "endMs": 1490,
+    "timestampMs": 1340,
+    "confidence": 0.995704
+  },
+  {
+    "text": " clean",
+    "startMs": 1490,
+    "endMs": 1960,
+    "timestampMs": 1700,
+    "confidence": 0.980218
+  },
+  {
+    "text": " Chernobyl",
+    "startMs": 1960,
+    "endMs": 3060,
+    "timestampMs": 2040,
+    "confidence": 0.993401
+  },
+  {
+    "text": " were",
+    "startMs": 3060,
+    "endMs": 3200,
+    "timestampMs": 3100,
+    "confidence": 0.776114
+  },
+  {
+    "text": " called",
+    "startMs": 3200,
+    "endMs": 3670,
+    "timestampMs": 3380,
+    "confidence": 0.99591
+  },
+  {
+    "text": " liquidators",
+    "startMs": 3670,
+    "endMs": 4580,
+    "timestampMs": 3720,
+    "confidence": 0.941815
+  },
+  {
+    "text": ".",
+    "startMs": 4580,
+    "endMs": 4900,
+    "timestampMs": 5080,
+    "confidence": 0.969466
+  },
+  {
+    "text": " Between",
+    "startMs": 4900,
+    "endMs": 5570,
+    "timestampMs": 5400,
+    "confidence": 0.998013
+  },
+  {
+    "text": " 1986",
+    "startMs": 5570,
+    "endMs": 6730,
+    "timestampMs": 6140,
+    "confidence": 0.999134
+  },
+  {
+    "text": " and",
+    "startMs": 6730,
+    "endMs": 7020,
+    "timestampMs": 6880,
+    "confidence": 0.981547
+  },
+  {
+    "text": " 1990",
+    "startMs": 7020,
+    "endMs": 8190,
+    "timestampMs": 7520,
+    "confidence": 0.998159
+  },
+  {
+    "text": ",",
+    "startMs": 8190,
+    "endMs": 8200,
+    "timestampMs": 8160,
+    "confidence": 0.901808
+  },
+  {
+    "text": " the",
+    "startMs": 8200,
+    "endMs": 8480,
+    "timestampMs": 8500,
+    "confidence": 0.986233
+  },
+  {
+    "text": " Soviet",
+    "startMs": 8480,
+    "endMs": 8900,
+    "timestampMs": 8820,
+    "confidence": 0.994471
+  },
+  {
+    "text": " government",
+    "startMs": 8900,
+    "endMs": 9710,
+    "timestampMs": 9300,
+    "confidence": 0.985671
+  },
+  {
+    "text": " deployed",
+    "startMs": 9710,
+    "endMs": 10300,
+    "timestampMs": 9600,
+    "confidence": 0.99563
+  },
+  {
+    "text": " over",
+    "startMs": 10300,
+    "endMs": 10610,
+    "timestampMs": 10160,
+    "confidence": 0.991127
+  },
+  {
+    "text": " 600,000",
+    "startMs": 10610,
+    "endMs": 12310,
+    "timestampMs": 10500,
+    "confidence": 0.968546
+  },
+  {
+    "text": " of",
+    "startMs": 12310,
+    "endMs": 12530,
+    "timestampMs": 11900,
+    "confidence": 0.991726
+  },
+  {
+    "text": " them",
+    "startMs": 12310,
+    "endMs": 12620,
+    "timestampMs": 12040,
+    "confidence": 0.999367
+  },
+  {
+    "text": ".",
+    "startMs": 12620,
+    "endMs": 12900,
+    "timestampMs": 12860,
+    "confidence": 0.993093
+  },
+  {
+    "text": " Many",
+    "startMs": 12900,
+    "endMs": 13270,
+    "timestampMs": 13360,
+    "confidence": 0.995928
+  },
+  {
+    "text": " came",
+    "startMs": 13270,
+    "endMs": 13500,
+    "timestampMs": 13660,
+    "confidence": 0.998767
+  },
+  {
+    "text": " from",
+    "startMs": 13500,
+    "endMs": 13800,
+    "timestampMs": 13860,
+    "confidence": 0.999561
+  },
+  {
+    "text": " the",
+    "startMs": 13800,
+    "endMs": 14030,
+    "timestampMs": 14000,
+    "confidence": 0.998698
+  },
+  {
+    "text": " military",
+    "startMs": 14030,
+    "endMs": 14660,
+    "timestampMs": 14280,
+    "confidence": 0.998864
+  },
+  {
+    "text": ".",
+    "startMs": 14660,
+    "endMs": 14900,
+    "timestampMs": 15240,
+    "confidence": 0.841341
+  },
+  {
+    "text": " Many",
+    "startMs": 14900,
+    "endMs": 15300,
+    "timestampMs": 15400,
+    "confidence": 0.998104
+  },
+  {
+    "text": " were",
+    "startMs": 15300,
+    "endMs": 15700,
+    "timestampMs": 15600,
+    "confidence": 0.998603
+  },
+  {
+    "text": " civilians",
+    "startMs": 15700,
+    "endMs": 16580,
+    "timestampMs": 15840,
+    "confidence": 0.9981
+  },
+  {
+    "text": ".",
+    "startMs": 16580,
+    "endMs": 16900,
+    "timestampMs": 17080,
+    "confidence": 0.965919
+  },
+  {
+    "text": " Many",
+    "startMs": 16900,
+    "endMs": 17220,
+    "timestampMs": 17260,
+    "confidence": 0.99842
+  },
+  {
+    "text": " were",
+    "startMs": 17220,
+    "endMs": 17540,
+    "timestampMs": 17540,
+    "confidence": 0.993239
+  },
+  {
+    "text": " told",
+    "startMs": 17540,
+    "endMs": 17860,
+    "timestampMs": 17780,
+    "confidence": 0.999876
+  },
+  {
+    "text": " the",
+    "startMs": 17860,
+    "endMs": 18100,
+    "timestampMs": 17960,
+    "confidence": 0.979606
+  },
+  {
+    "text": " danger",
+    "startMs": 18100,
+    "endMs": 18580,
+    "timestampMs": 18280,
+    "confidence": 0.99954
+  },
+  {
+    "text": " was",
+    "startMs": 18580,
+    "endMs": 18820,
+    "timestampMs": 18540,
+    "confidence": 0.998477
+  },
+  {
+    "text": " manageable",
+    "startMs": 18820,
+    "endMs": 19620,
+    "timestampMs": 18920,
+    "confidence": 0.998571
+  },
+  {
+    "text": ".",
+    "startMs": 19620,
+    "endMs": 19900,
+    "timestampMs": 20340,
+    "confidence": 0.95497
+  },
+  {
+    "text": " It",
+    "startMs": 19900,
+    "endMs": 20370,
+    "timestampMs": 20420,
+    "confidence": 0.997427
+  },
+  {
+    "text": " was",
+    "startMs": 20370,
+    "endMs": 20600,
+    "timestampMs": 20580,
+    "confidence": 0.995828
+  },
+  {
+    "text": " not",
+    "startMs": 20600,
+    "endMs": 21010,
+    "timestampMs": 20940,
+    "confidence": 0.98509
+  },
+  {
+    "text": " manageable",
+    "startMs": 21010,
+    "endMs": 22350,
+    "timestampMs": 21620,
+    "confidence": 0.998729
+  },
+  {
+    "text": ".",
+    "startMs": 22350,
+    "endMs": 22900,
+    "timestampMs": 23040,
+    "confidence": 0.994499
+  },
+  {
+    "text": " Hundreds",
+    "startMs": 22900,
+    "endMs": 23570,
+    "timestampMs": 23400,
+    "confidence": 0.982433
+  },
+  {
+    "text": " of",
+    "startMs": 23570,
+    "endMs": 23750,
+    "timestampMs": 23680,
+    "confidence": 0.9995
+  },
+  {
+    "text": " thousands",
+    "startMs": 23750,
+    "endMs": 24540,
+    "timestampMs": 24180,
+    "confidence": 0.996698
+  },
+  {
+    "text": " experienced",
+    "startMs": 24540,
+    "endMs": 25350,
+    "timestampMs": 24840,
+    "confidence": 0.970054
+  },
+  {
+    "text": " lasting",
+    "startMs": 25350,
+    "endMs": 25890,
+    "timestampMs": 25400,
+    "confidence": 0.990106
+  },
+  {
+    "text": " health",
+    "startMs": 25890,
+    "endMs": 26350,
+    "timestampMs": 25900,
+    "confidence": 0.994888
+  },
+  {
+    "text": " effects",
+    "startMs": 26350,
+    "endMs": 26890,
+    "timestampMs": 26220,
+    "confidence": 0.962946
+  },
+  {
+    "text": ",",
+    "startMs": 26890,
+    "endMs": 26900,
+    "timestampMs": 26880,
+    "confidence": 0.231817
+  },
+  {
+    "text": " thyroid",
+    "startMs": 27230,
+    "endMs": 27620,
+    "timestampMs": 27320,
+    "confidence": 0.909806
+  },
+  {
+    "text": " cancer",
+    "startMs": 27620,
+    "endMs": 28400,
+    "timestampMs": 27800,
+    "confidence": 0.997314
+  },
+  {
+    "text": ",",
+    "startMs": 28400,
+    "endMs": 28420,
+    "timestampMs": 28360,
+    "confidence": 0.997938
+  },
+  {
+    "text": " leukemia",
+    "startMs": 28420,
+    "endMs": 29410,
+    "timestampMs": 28480,
+    "confidence": 0.988552
+  },
+  {
+    "text": ",",
+    "startMs": 29410,
+    "endMs": 29430,
+    "timestampMs": 29580,
+    "confidence": 0.998266
+  },
+  {
+    "text": " chronic",
+    "startMs": 29430,
+    "endMs": 30140,
+    "timestampMs": 29580,
+    "confidence": 0.99903
+  },
+  {
+    "text": " illness",
+    "startMs": 30140,
+    "endMs": 30830,
+    "timestampMs": 29920,
+    "confidence": 0.999188
+  },
+  {
+    "text": ".",
+    "startMs": 30830,
+    "endMs": 31200,
+    "timestampMs": 31140,
+    "confidence": 0.550574
+  },
+  {
+    "text": " Many",
+    "startMs": 31200,
+    "endMs": 31810,
+    "timestampMs": 31480,
+    "confidence": 0.560473
+  },
+  {
+    "text": " are",
+    "startMs": 31810,
+    "endMs": 32220,
+    "timestampMs": 31680,
+    "confidence": 0.992309
+  },
+  {
+    "text": " gone",
+    "startMs": 32220,
+    "endMs": 32330,
+    "timestampMs": 31940,
+    "confidence": 0.999266
+  },
+  {
+    "text": " now",
+    "startMs": 32330,
+    "endMs": 33240,
+    "timestampMs": 32240,
+    "confidence": 0.992074
+  },
+  {
+    "text": ".",
+    "startMs": 33240,
+    "endMs": 33700,
+    "timestampMs": 33820,
+    "confidence": 0.978021
+  },
+  {
+    "text": " The",
+    "startMs": 33700,
+    "endMs": 33920,
+    "timestampMs": 33940,
+    "confidence": 0.998298
+  },
+  {
+    "text": " Soviet",
+    "startMs": 33920,
+    "endMs": 34250,
+    "timestampMs": 34280,
+    "confidence": 0.996204
+  },
+  {
+    "text": " government",
+    "startMs": 34250,
+    "endMs": 34900,
+    "timestampMs": 34660,
+    "confidence": 0.991739
+  },
+  {
+    "text": " classified",
+    "startMs": 34900,
+    "endMs": 35400,
+    "timestampMs": 35100,
+    "confidence": 0.990052
+  },
+  {
+    "text": " the",
+    "startMs": 35400,
+    "endMs": 35630,
+    "timestampMs": 35560,
+    "confidence": 0.944348
+  },
+  {
+    "text": " true",
+    "startMs": 35630,
+    "endMs": 36000,
+    "timestampMs": 35800,
+    "confidence": 0.989393
+  },
+  {
+    "text": " casualty",
+    "startMs": 36000,
+    "endMs": 36570,
+    "timestampMs": 36220,
+    "confidence": 0.979317
+  },
+  {
+    "text": " data",
+    "startMs": 36570,
+    "endMs": 37180,
+    "timestampMs": 36720,
+    "confidence": 0.989408
+  },
+  {
+    "text": " for",
+    "startMs": 37180,
+    "endMs": 37440,
+    "timestampMs": 37220,
+    "confidence": 0.832331
+  },
+  {
+    "text": " decades",
+    "startMs": 37440,
+    "endMs": 38640,
+    "timestampMs": 37580,
+    "confidence": 0.999392
+  },
+  {
+    "text": ".",
+    "startMs": 38640,
+    "endMs": 39200,
+    "timestampMs": 39040,
+    "confidence": 0.994122
+  },
+  {
+    "text": " Independent",
+    "startMs": 39200,
+    "endMs": 39990,
+    "timestampMs": 39540,
+    "confidence": 0.980151
+  },
+  {
+    "text": " estimates",
+    "startMs": 39990,
+    "endMs": 40760,
+    "timestampMs": 40160,
+    "confidence": 0.997624
+  },
+  {
+    "text": " put",
+    "startMs": 40760,
+    "endMs": 40810,
+    "timestampMs": 40840,
+    "confidence": 0.990692
+  },
+  {
+    "text": " long-term",
+    "startMs": 40810,
+    "endMs": 41360,
+    "timestampMs": 41120,
+    "confidence": 0.996862
+  },
+  {
+    "text": " deaths",
+    "startMs": 41360,
+    "endMs": 41830,
+    "timestampMs": 41740,
+    "confidence": 0.997286
+  },
+  {
+    "text": " from",
+    "startMs": 41830,
+    "endMs": 42100,
+    "timestampMs": 42000,
+    "confidence": 0.897796
+  },
+  {
+    "text": " radiation",
+    "startMs": 42100,
+    "endMs": 42790,
+    "timestampMs": 42240,
+    "confidence": 0.995195
+  },
+  {
+    "text": " exposure",
+    "startMs": 42790,
+    "endMs": 43400,
+    "timestampMs": 42940,
+    "confidence": 0.997939
+  },
+  {
+    "text": " at",
+    "startMs": 43400,
+    "endMs": 43600,
+    "timestampMs": 43620,
+    "confidence": 0.992873
+  },
+  {
+    "text": " anywhere",
+    "startMs": 43600,
+    "endMs": 44070,
+    "timestampMs": 43980,
+    "confidence": 0.995968
+  },
+  {
+    "text": " between",
+    "startMs": 44070,
+    "endMs": 44560,
+    "timestampMs": 44280,
+    "confidence": 0.998616
+  },
+  {
+    "text": " 4,000",
+    "startMs": 44560,
+    "endMs": 45660,
+    "timestampMs": 44700,
+    "confidence": 0.833076
+  },
+  {
+    "text": " and",
+    "startMs": 45660,
+    "endMs": 45770,
+    "timestampMs": 45680,
+    "confidence": 0.964352
+  },
+  {
+    "text": " nearly",
+    "startMs": 45770,
+    "endMs": 46310,
+    "timestampMs": 45880,
+    "confidence": 0.998416
+  },
+  {
+    "text": " 1",
+    "startMs": 46310,
+    "endMs": 46580,
+    "timestampMs": 46340,
+    "confidence": 0.873524
+  },
+  {
+    "text": " million",
+    "startMs": 46580,
+    "endMs": 46950,
+    "timestampMs": 46660,
+    "confidence": 0.816971
+  },
+  {
+    "text": ",",
+    "startMs": 46950,
+    "endMs": 47400,
+    "timestampMs": 47140,
+    "confidence": 0.744907
+  },
+  {
+    "text": " depending",
+    "startMs": 47400,
+    "endMs": 48270,
+    "timestampMs": 47740,
+    "confidence": 0.998955
+  },
+  {
+    "text": " on",
+    "startMs": 48270,
+    "endMs": 48460,
+    "timestampMs": 48080,
+    "confidence": 0.997341
+  },
+  {
+    "text": " which",
+    "startMs": 48460,
+    "endMs": 48850,
+    "timestampMs": 48220,
+    "confidence": 0.99787
+  },
+  {
+    "text": " study",
+    "startMs": 48850,
+    "endMs": 49410,
+    "timestampMs": 48540,
+    "confidence": 0.999428
+  },
+  {
+    "text": " you",
+    "startMs": 49410,
+    "endMs": 49710,
+    "timestampMs": 48740,
+    "confidence": 0.998685
+  },
+  {
+    "text": " read",
+    "startMs": 49710,
+    "endMs": 50090,
+    "timestampMs": 48940,
+    "confidence": 0.999251
+  },
+  {
+    "text": ".",
+    "startMs": 50090,
+    "endMs": 50400,
+    "timestampMs": 50060,
+    "confidence": 0.997794
+  },
+  {
+    "text": " We",
+    "startMs": 50400,
+    "endMs": 50680,
+    "timestampMs": 50720,
+    "confidence": 0.943612
+  },
+  {
+    "text": " may",
+    "startMs": 50680,
+    "endMs": 50900,
+    "timestampMs": 50860,
+    "confidence": 0.998744
+  },
+  {
+    "text": " never",
+    "startMs": 50900,
+    "endMs": 51410,
+    "timestampMs": 51160,
+    "confidence": 0.996896
+  },
+  {
+    "text": " have",
+    "startMs": 51410,
+    "endMs": 51910,
+    "timestampMs": 51500,
+    "confidence": 0.999508
+  },
+  {
+    "text": " a",
+    "startMs": 51910,
+    "endMs": 51920,
+    "timestampMs": 51700,
+    "confidence": 0.998502
+  },
+  {
+    "text": " definitive",
+    "startMs": 51920,
+    "endMs": 52920,
+    "timestampMs": 51920,
+    "confidence": 0.999039
+  },
+  {
+    "text": " number",
+    "startMs": 52920,
+    "endMs": 53550,
+    "timestampMs": 52380,
+    "confidence": 0.999811
+  },
+  {
+    "text": ".",
+    "startMs": 53550,
+    "endMs": 53900,
+    "timestampMs": 53620,
+    "confidence": 0.981553
+  },
+  {
+    "text": " That",
+    "startMs": 54120,
+    "endMs": 54200,
+    "timestampMs": 54200,
+    "confidence": 0.891147
+  },
+  {
+    "text": " is",
+    "startMs": 54200,
+    "endMs": 54350,
+    "timestampMs": 54320,
+    "confidence": 0.966438
+  },
+  {
+    "text": " also",
+    "startMs": 54350,
+    "endMs": 54690,
+    "timestampMs": 54620,
+    "confidence": 0.991692
+  },
+  {
+    "text": " a",
+    "startMs": 54690,
+    "endMs": 54720,
+    "timestampMs": 54720,
+    "confidence": 0.931633
+  },
+  {
+    "text": " kind",
+    "startMs": 54720,
+    "endMs": 55070,
+    "timestampMs": 54920,
+    "confidence": 0.994778
+  },
+  {
+    "text": " of",
+    "startMs": 55070,
+    "endMs": 55170,
+    "timestampMs": 55060,
+    "confidence": 0.998378
+  },
+  {
+    "text": " loss",
+    "startMs": 55170,
+    "endMs": 55460,
+    "timestampMs": 55260,
+    "confidence": 0.973987
+  },
+  {
+    "text": ".",
+    "startMs": 55460,
+    "endMs": 55740,
+    "timestampMs": 55720,
+    "confidence": 0.885716
+  }
+]
