@@ -7,6 +7,7 @@ import { wipe } from "@remotion/transitions/wipe";
 import { T, SCENES, C, TOTAL_FRAMES, ASSET_PATH } from "./constants";
 import { Intro, SCENE_DURATION as INTRO_DURATION } from "./scenes/intro";
 import { Scene1Hook } from "./scenes/scene1-hook";
+import { Scene2Stats } from "./scenes/scene2-stats";
 
 const ScenePlaceholder = ({ label }: { label: string }) => (
   <AbsoluteFill className="bg-ash items-center justify-center">
@@ -73,7 +74,7 @@ export const ForeverLostEp2 = () => {
           durationInFrames={SCENES.s2.durationInFrames}
           premountFor={30}
         >
-          <ScenePlaceholder label="S2 · What the Core Became" />
+          <Scene2Stats />
         </TransitionSeries.Sequence>
         <TransitionSeries.Transition
           presentation={wipe({ direction: "from-left" })}
