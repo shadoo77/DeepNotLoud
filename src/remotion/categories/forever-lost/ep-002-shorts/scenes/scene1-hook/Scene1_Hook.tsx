@@ -8,8 +8,8 @@ import {
 } from "remotion";
 import { Audio } from "@remotion/media";
 import { TRASCRIPT_DATA, SCENE_DURATION } from "./constants";
-import { TiktokCaptions } from "@/components/atoms/TiktokCaptions";
 import { ASSET_PATH } from "../../constants";
+import { YouTubeCaptions } from "@/components/atoms/YouTubeCaptions";
 
 export const Scene1Hook: React.FC = () => {
   const frame = useCurrentFrame();
@@ -41,9 +41,7 @@ export const Scene1Hook: React.FC = () => {
       {frame < 6 ? (
         <AbsoluteFill>
           <Img
-            src={staticFile(
-              `${ASSET_PATH}/images/short/thumbnail-9:16.jpeg`,
-            )}
+            src={staticFile(`${ASSET_PATH}/images/short/thumbnail-9:16.jpeg`)}
             className="h-full w-full object-cover"
           />
         </AbsoluteFill>
@@ -79,12 +77,12 @@ export const Scene1Hook: React.FC = () => {
         </>
       )}
 
-      <TiktokCaptions
+      <YouTubeCaptions
         transcript={TRASCRIPT_DATA}
         highlightedWords={["exploded", "forever"]}
         position="youtube-shorts"
         startFrame={0}
-        switchCaptionsEveryMs={1500}
+        mode="sentence"
       />
     </AbsoluteFill>
   );

@@ -8,7 +8,7 @@ import {
   interpolate,
 } from "remotion";
 import { Audio } from "@remotion/media";
-import { TiktokCaptions } from "@/components/atoms/TiktokCaptions";
+import { YouTubeCaptions } from "@/components/atoms/YouTubeCaptions";
 import { getPhraseFrames } from "@/lib/utils";
 import { TRASCRIPT_DATA } from "./constants";
 import { ASSET_PATH } from "../../constants";
@@ -159,12 +159,13 @@ export const Scene3Corium: React.FC = () => {
         </div>
       )}
 
-      <TiktokCaptions
+      <YouTubeCaptions
         transcript={TRASCRIPT_DATA}
         highlightedWords={["elephant", "foot", "Four", "minutes"]}
         position="youtube-shorts"
         startFrame={0}
-        switchCaptionsEveryMs={1800}
+        mode="sentence"
+        showOverlay
       />
     </AbsoluteFill>
   );

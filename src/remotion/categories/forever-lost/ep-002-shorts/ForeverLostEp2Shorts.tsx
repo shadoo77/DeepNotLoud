@@ -85,7 +85,8 @@ export const ForeverLostEp2Shorts = () => {
           const s4End = s3End + SCENE_DURATIONS[3];
           const s5End = s4End + SCENE_DURATIONS[4];
           if (f < s1End) return 0.35;
-          if (f < s2End) return 0.35 + ((f - s1End) / SCENE_DURATIONS[1]) * 0.35;
+          if (f < s2End)
+            return 0.35 + ((f - s1End) / SCENE_DURATIONS[1]) * 0.35;
           if (f < s3End) return 0.7;
           if (f < s5End) return 0.25;
           return Math.max(0, 0.25 - ((f - s5End) / SCENE_DURATIONS[5]) * 0.25);

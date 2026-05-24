@@ -8,7 +8,7 @@ import {
   interpolate,
 } from "remotion";
 import { Audio } from "@remotion/media";
-import { TiktokCaptions } from "@/components/atoms/TiktokCaptions";
+import { YouTubeCaptions } from "@/components/atoms/YouTubeCaptions";
 import { getPhraseFrames } from "@/lib/utils";
 import { SCENE_DURATION, TRASCRIPT_DATA } from "./constants";
 import { ASSET_PATH } from "@/remotion/categories/forever-lost/ep-002-shorts/constants";
@@ -214,12 +214,12 @@ export const Scene2Stats: React.FC = () => {
         </div>
       )}
 
-      <TiktokCaptions
+      <YouTubeCaptions
         transcript={TRASCRIPT_DATA}
         highlightedWords={["400", "200"]}
         position="youtube-shorts"
         startFrame={0}
-        switchCaptionsEveryMs={1500}
+        mode="sentence"
       />
     </AbsoluteFill>
   );

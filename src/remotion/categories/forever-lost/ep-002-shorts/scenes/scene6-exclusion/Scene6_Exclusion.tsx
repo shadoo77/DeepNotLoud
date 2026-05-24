@@ -8,11 +8,11 @@ import {
   interpolate,
 } from "remotion";
 import { Audio } from "@remotion/media";
-import { TiktokCaptions } from "@/components/atoms/TiktokCaptions";
 import { CountUp } from "@/components/atoms/CountUp";
 import { getPhraseFrames } from "@/lib/utils";
 import { TRASCRIPT_DATA, VO_START_FRAME } from "./constants";
 import { ASSET_PATH } from "../../constants";
+import { YouTubeCaptions } from "@/components/atoms/YouTubeCaptions";
 
 export const Scene6Exclusion: React.FC = () => {
   const frame = useCurrentFrame();
@@ -161,12 +161,12 @@ export const Scene6Exclusion: React.FC = () => {
         </div>
       </AbsoluteFill>
 
-      <TiktokCaptions
+      <YouTubeCaptions
         transcript={TRASCRIPT_DATA}
         highlightedWords={["50", "000", "three", "days", "20", "years"]}
         position="youtube-shorts"
         startFrame={VO_START_FRAME}
-        switchCaptionsEveryMs={1800}
+        mode="sentence"
       />
     </AbsoluteFill>
   );

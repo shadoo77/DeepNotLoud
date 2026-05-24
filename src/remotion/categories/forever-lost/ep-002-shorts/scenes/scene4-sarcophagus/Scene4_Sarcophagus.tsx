@@ -9,7 +9,7 @@ import {
   interpolate,
 } from "remotion";
 import { Audio } from "@remotion/media";
-import { TiktokCaptions } from "@/components/atoms/TiktokCaptions";
+import { YouTubeCaptions } from "@/components/atoms/YouTubeCaptions";
 import { getPhraseFrames } from "@/lib/utils";
 import { TRASCRIPT_DATA, VO_START_FRAME } from "./constants";
 import { ASSET_PATH } from "../../constants";
@@ -177,12 +177,12 @@ export const Scene4Sarcophagus: React.FC = () => {
         </div>
       </div>
 
-      <TiktokCaptions
+      <YouTubeCaptions
         transcript={TRASCRIPT_DATA}
         highlightedWords={["robot", "radiation", "billion", "600", "men"]}
         position="youtube-shorts"
         startFrame={VO_START_FRAME}
-        switchCaptionsEveryMs={1800}
+        mode="sentence"
       />
     </AbsoluteFill>
   );

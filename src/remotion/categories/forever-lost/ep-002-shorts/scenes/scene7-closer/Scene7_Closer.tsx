@@ -7,7 +7,7 @@ import {
   interpolate,
 } from "remotion";
 import { Audio } from "@remotion/media";
-import { TiktokCaptions } from "@/components/atoms/TiktokCaptions";
+import { YouTubeCaptions } from "@/components/atoms/YouTubeCaptions";
 import { TRASCRIPT_DATA, VO_START_FRAME, SCENE_DURATION } from "./constants";
 import { ASSET_PATH } from "../../constants";
 
@@ -93,12 +93,13 @@ export const Scene7Closer: React.FC = () => {
         }}
       />
 
-      <TiktokCaptions
+      <YouTubeCaptions
         transcript={TRASCRIPT_DATA}
         highlightedWords={["outlive", "children", "problem", "fact", "earth"]}
         position="youtube-shorts"
         startFrame={VO_START_FRAME}
-        switchCaptionsEveryMs={2200}
+        mode="sentence"
+        showOverlay
       />
     </AbsoluteFill>
   );
