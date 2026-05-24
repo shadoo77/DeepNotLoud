@@ -79,7 +79,7 @@ export const Scene2Stats: React.FC = () => {
   const triggerByPhrase = [frame400, frame200, frame600];
   const triggerByStagger = [0, 60, 120];
 
-  const bgOpacity = 0.12;
+  const bgOpacity = 0.22;
 
   return (
     <AbsoluteFill style={{ backgroundColor: C.bg }}>
@@ -101,7 +101,7 @@ export const Scene2Stats: React.FC = () => {
       <AbsoluteFill
         style={{
           background:
-            "linear-gradient(to right, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.25) 40%, rgba(0,0,0,0.15) 100%)",
+            "linear-gradient(to right, rgba(0,0,0,0.30) 0%, rgba(0,0,0,0.16) 40%, rgba(0,0,0,0.08) 100%)",
         }}
       />
 

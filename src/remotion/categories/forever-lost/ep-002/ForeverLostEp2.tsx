@@ -8,6 +8,7 @@ import { T, SCENES, C, TOTAL_FRAMES, ASSET_PATH } from "./constants";
 import { Intro, SCENE_DURATION as INTRO_DURATION } from "./scenes/intro";
 import { Scene1Hook } from "./scenes/scene1-hook";
 import { Scene2Stats } from "./scenes/scene2-stats";
+import { MG02RadiationChart } from "./components/MG02RadiationChart";
 
 const ScenePlaceholder = ({ label }: { label: string }) => (
   <AbsoluteFill className="bg-ash items-center justify-center">
@@ -27,6 +28,7 @@ function interpolateLocal(
 }
 
 export const ForeverLostEp2 = () => {
+  console.log("scene2: ", SCENES.s2.durationInFrames);
   return (
     <AbsoluteFill style={{ backgroundColor: C.bg }}>
       <Audio
@@ -86,7 +88,7 @@ export const ForeverLostEp2 = () => {
           durationInFrames={SCENES.mg02.durationInFrames}
           premountFor={30}
         >
-          <ScenePlaceholder label="MG·02 · Radiation Chart" />
+          <MG02RadiationChart />
         </TransitionSeries.Sequence>
         <TransitionSeries.Transition
           presentation={fade()}
