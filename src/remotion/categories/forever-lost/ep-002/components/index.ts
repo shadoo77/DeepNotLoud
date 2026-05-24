@@ -4,6 +4,7 @@ export * from "./MG02RadiationChart";
 export * from "./MG03ReactorDiagram";
 export * from "./MG04CostChart";
 export * from "./MG05LiquidatorStats";
+export * from "./MG06HalfLife";
 export * from "./AnimatedBanner";
 export * from "./DataTicker";
 export * from "./KineticText";

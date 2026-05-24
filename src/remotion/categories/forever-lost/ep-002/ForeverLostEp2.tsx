@@ -2,7 +2,6 @@ import { AbsoluteFill, staticFile } from "remotion";
 import { Audio } from "@remotion/media";
 import { TransitionSeries, linearTiming } from "@remotion/transitions";
 import { fade } from "@remotion/transitions/fade";
-import { slide } from "@remotion/transitions/slide";
 import { wipe } from "@remotion/transitions/wipe";
 import { T, SCENES, C, TOTAL_FRAMES, ASSET_PATH } from "./constants";
 import { Intro, SCENE_DURATION as INTRO_DURATION } from "./scenes/intro";
@@ -11,16 +10,14 @@ import { Scene2Stats } from "./scenes/scene2-stats";
 import { Scene3Corium } from "./scenes/scene3-corium";
 import { Scene4Sarcophagus } from "./scenes/scene4-sarcophagus";
 import { Scene5HumanCost } from "./scenes/scene5-human-cost";
+import { Scene6Exclusion } from "./scenes/scene6-exclusion";
+import { Scene7Closer } from "./scenes/scene7-closer";
+import { Outro } from "./scenes/outro";
 import { MG02RadiationChart } from "./components/MG02RadiationChart";
 import { MG03ReactorDiagram } from "./components/MG03ReactorDiagram";
 import { MG04CostChart } from "./components/MG04CostChart";
 import { MG05LiquidatorStats } from "./components/MG05LiquidatorStats";
-
-const ScenePlaceholder = ({ label }: { label: string }) => (
-  <AbsoluteFill className="bg-ash items-center justify-center">
-    <div className="font-inter text-4xl font-bold text-white/40">{label}</div>
-  </AbsoluteFill>
-);
+import { MG06HalfLife } from "./components/MG06HalfLife";
 
 function interpolateLocal(
   f: number,
@@ -165,7 +162,7 @@ export const ForeverLostEp2 = () => {
           durationInFrames={SCENES.s6.durationInFrames}
           premountFor={30}
         >
-          <ScenePlaceholder label="S6 · The Exclusion Zone" />
+          <Scene6Exclusion />
         </TransitionSeries.Sequence>
         <TransitionSeries.Transition
           presentation={wipe({ direction: "from-right" })}
@@ -177,7 +174,7 @@ export const ForeverLostEp2 = () => {
           durationInFrames={SCENES.mg06.durationInFrames}
           premountFor={30}
         >
-          <ScenePlaceholder label="MG·06 · Half Life" />
+          <MG06HalfLife />
         </TransitionSeries.Sequence>
         <TransitionSeries.Transition
           presentation={fade()}
@@ -189,7 +186,7 @@ export const ForeverLostEp2 = () => {
           durationInFrames={SCENES.s7.durationInFrames}
           premountFor={30}
         >
-          <ScenePlaceholder label="S7 · A 20,000-Year Promise" />
+          <Scene7Closer />
         </TransitionSeries.Sequence>
         <TransitionSeries.Transition
           presentation={fade()}
@@ -201,7 +198,7 @@ export const ForeverLostEp2 = () => {
           durationInFrames={SCENES.outro.durationInFrames}
           premountFor={30}
         >
-          <ScenePlaceholder label="OUTRO · Subscribe / End Card" />
+          <Outro />
         </TransitionSeries.Sequence>
       </TransitionSeries>
     </AbsoluteFill>

@@ -4,6 +4,8 @@ import transcriptS2 from "./scenes/scene2-stats/transcript_scene2.json";
 import transcriptS3 from "./scenes/scene3-corium/transcript_scene3.json";
 import transcriptS4 from "./scenes/scene4-sarcophagus/transcript_scene4.json";
 import transcriptS5 from "./scenes/scene5-human-cost/transcript_scene5.json";
+import transcriptS6 from "./scenes/scene6-exclusion/transcript_scene6.json";
+import transcriptS7 from "./scenes/scene7-closer/transcript_scene7.json";
 
 export const FPS = 30;
 export const WIDTH = 1920;
@@ -33,6 +35,8 @@ const lastEndMsS2 = transcriptS2[transcriptS2.length - 1]?.endMs ?? 0;
 const lastEndMsS3 = transcriptS3[transcriptS3.length - 1]?.endMs ?? 0;
 const lastEndMsS4 = transcriptS4[transcriptS4.length - 1]?.endMs ?? 0;
 const lastEndMsS5 = transcriptS5[transcriptS5.length - 1]?.endMs ?? 0;
+const lastEndMsS6 = transcriptS6[transcriptS6.length - 1]?.endMs ?? 0;
+const lastEndMsS7 = transcriptS7[transcriptS7.length - 1]?.endMs ?? 0;
 
 const getSceneDuration = (lastEndMs: number) =>
   Math.ceil((lastEndMs / 1000) * FPS) + BLACK_HOLD_FRAMES;
@@ -51,12 +55,12 @@ export const SCENES = {
   s3: { durationInFrames: getSceneDuration(lastEndMsS3) },
   mg03: { durationInFrames: estimateDuration(18) },
   s4: { durationInFrames: getSceneDuration(lastEndMsS4) },
-  mg04: { durationInFrames: estimateDuration(14) },
+  mg04: { durationInFrames: estimateDuration(11) },
   s5: { durationInFrames: getSceneDuration(lastEndMsS5) },
-  mg05: { durationInFrames: estimateDuration(10) },
-  s6: { durationInFrames: estimateDuration(35) },
-  mg06: { durationInFrames: estimateDuration(35) },
-  s7: { durationInFrames: estimateDuration(25) },
+  mg05: { durationInFrames: estimateDuration(9) },
+  s6: { durationInFrames: getSceneDuration(lastEndMsS6) },
+  mg06: { durationInFrames: estimateDuration(13) },
+  s7: { durationInFrames: getSceneDuration(lastEndMsS7) },
   outro: { durationInFrames: estimateDuration(15) },
 } as const;
 

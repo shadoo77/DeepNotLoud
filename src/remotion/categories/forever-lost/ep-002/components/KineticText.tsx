@@ -9,6 +9,7 @@ interface Props {
   highlightWords?: string[];
   staggerFrames?: number;
   center?: boolean;
+  showOverlay?: boolean;
 }
 
 export const KineticText: React.FC<Props> = ({
@@ -19,6 +20,7 @@ export const KineticText: React.FC<Props> = ({
   highlightWords = [],
   staggerFrames = 4,
   center = false,
+  showOverlay = false,
 }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
@@ -31,6 +33,14 @@ export const KineticText: React.FC<Props> = ({
         flexWrap: "wrap",
         gap: "0 12px",
         justifyContent: center ? "center" : "flex-start",
+        ...(showOverlay
+          ? {
+              backgroundColor: "rgba(17,17,17,0.72)",
+              border: "1px solid rgba(240,238,228,0.22)",
+              borderRadius: 10,
+              padding: "14px 18px",
+            }
+          : {}),
       }}
     >
       {words.map((word, i) => {

@@ -1,4 +1,10 @@
-import { AbsoluteFill, Img, interpolate, staticFile, useCurrentFrame } from "remotion";
+import {
+  AbsoluteFill,
+  Img,
+  interpolate,
+  staticFile,
+  useCurrentFrame,
+} from "remotion";
 import { Audio } from "@remotion/media";
 import { YouTubeCaptions } from "@/components/atoms/YouTubeCaptions";
 import { getPhraseFrames } from "@/lib/utils";
@@ -62,7 +68,7 @@ export const Scene5HumanCost: React.FC = () => {
       />
 
       <div
-        className="absolute right-0 top-0 h-full border-l border-white/15 px-8 py-28"
+        className="absolute top-0 right-0 h-full border-l border-white/15 px-8 py-28"
         style={{
           width: `${rightPanelWidthPct}%`,
           opacity: rightPanelOpacity,
@@ -89,36 +95,52 @@ export const Scene5HumanCost: React.FC = () => {
             fontSize={96}
             color={C.white}
           />
-          <div className="font-inter mt-2 text-3xl text-white/90">Workers deployed</div>
+          <div className="font-inter mt-2 text-3xl text-white/90">
+            Workers deployed
+          </div>
         </div>
 
         <div
           className="mt-8 h-[2px]"
           style={{
             backgroundColor: C.green,
-            width: `${interpolate(frame, [frameDeaths - 20, frameDeaths + 10], [0, 100], {
-              extrapolateLeft: "clamp",
-              extrapolateRight: "clamp",
-            })}%`,
+            width: `${interpolate(
+              frame,
+              [frameDeaths - 20, frameDeaths + 10],
+              [0, 100],
+              {
+                extrapolateLeft: "clamp",
+                extrapolateRight: "clamp",
+              },
+            )}%`,
           }}
         />
 
         <div
           className="mt-7"
           style={{
-            opacity: interpolate(frame, [frameDeaths, frameDeaths + 30], [0, 1], {
-              extrapolateLeft: "clamp",
-              extrapolateRight: "clamp",
-            }),
+            opacity: interpolate(
+              frame,
+              [frameDeaths, frameDeaths + 30],
+              [0, 1],
+              {
+                extrapolateLeft: "clamp",
+                extrapolateRight: "clamp",
+              },
+            ),
           }}
         >
-          <div className="font-mono text-5xl text-bloodRed">~4,000 - 1,000,000</div>
-          <div className="font-inter mt-2 text-2xl text-white/85">Estimated deaths (disputed)</div>
+          <div className="text-bloodRed font-mono text-5xl">
+            ~4,000 - 1,000,000
+          </div>
+          <div className="font-inter mt-2 text-2xl text-white/85">
+            Estimated deaths (disputed)
+          </div>
         </div>
       </div>
 
       <div
-        className="absolute left-[8%] right-[45%] top-[40%] rounded-lg border border-white/20 bg-black/35 p-5"
+        className="absolute top-[40%] right-[45%] left-[8%] rounded-lg border border-white/20 bg-black/35 p-5"
         style={{
           opacity: interpolate(frame, [0, 30], [0, 1], {
             extrapolateLeft: "clamp",
@@ -138,9 +160,17 @@ export const Scene5HumanCost: React.FC = () => {
 
       <YouTubeCaptions
         transcript={TRASCRIPT_DATA}
-        highlightedWords={["liquidators", "600,000", "4,000", "1", "million", "loss"]}
+        highlightedWords={[
+          "liquidators",
+          "600,000",
+          "4,000",
+          "1",
+          "million",
+          "loss",
+        ]}
         position="bottom-center"
         mode="sentence"
+        showOverlay
       />
     </AbsoluteFill>
   );
