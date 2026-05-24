@@ -6,11 +6,13 @@ import {
   spring,
   Easing,
   staticFile,
+  Sequence,
 } from "remotion";
 import { Audio } from "@remotion/media";
 import { AnimatedBanner } from "./AnimatedBanner";
 import { DataTicker } from "./DataTicker";
 import { ASSET_PATH, C } from "../constants";
+import { ProgressBar } from "./ProgressBar"; // Added ProgressBar
 
 const BAR_DATA: ReadonlyArray<{
   label: string;
@@ -40,18 +42,24 @@ const BAR_WIDTH = 180;
 
 export const MG02RadiationChart: React.FC = () => {
   const frame = useCurrentFrame();
-  const { fps } = useVideoConfig();
+  const { fps, durationInFrames } = useVideoConfig();
 
   const panelOpacity = interpolate(frame, [0, 20], [0, 1], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
   });
 
-  const panelTranslateY = interpolate(frame, [300, 360], [0, 1080], {
-    extrapolateLeft: "clamp",
-    extrapolateRight: "clamp",
-    easing: Easing.bezier(0.16, 1, 0.3, 1),
-  });
+  const holdStart = Math.max(300, durationInFrames - 90);
+  const panelTranslateY = interpolate(
+    frame,
+    [holdStart, durationInFrames],
+    [0, 1080],
+    {
+      extrapolateLeft: "clamp",
+      extrapolateRight: "clamp",
+      easing: Easing.bezier(0.16, 1, 0.3, 1),
+    },
+  );
 
   const titleSweepX = interpolate(frame, [0, 20], [-80, 0], {
     extrapolateLeft: "clamp",
@@ -61,10 +69,14 @@ export const MG02RadiationChart: React.FC = () => {
 
   return (
     <AbsoluteFill style={{ backgroundColor: C.bg }}>
-      <Audio
-        src={staticFile(`${ASSET_PATH}/audio/sfx/chart_build.wav`)}
-        volume={(f) => (f >= 30 && f < 70 ? 0.4 : 0)}
-      />
+      {/* FIX 3: Use Sequence to start the SFX exactly at frame 30 */}
+      <Sequence from={30} durationInFrames={40}>
+        <Audio
+          src={staticFile(`${ASSET_PATH}/audio/sfx/chart_build.wav`)}
+          volume={0.4}
+        />
+      </Sequence>
+
       <Audio
         src={staticFile(`${ASSET_PATH}/audio/sfx/geiger_loop.wav`)}
         volume={0.15}
@@ -77,8 +89,9 @@ export const MG02RadiationChart: React.FC = () => {
           transform: `translateY(${panelTranslateY}px)`,
         }}
       >
+        {/* Title area */}
         <div
-          className="absolute left-0 right-0 top-14 text-center"
+          className="absolute top-14 right-0 left-0 text-center"
           style={{ transform: `translateX(${titleSweepX}px)` }}
         >
           <div
@@ -88,29 +101,31 @@ export const MG02RadiationChart: React.FC = () => {
             RADIATION COMPARISON
           </div>
           <div
-            className="font-mono text-toxicGreen mt-1"
-            style={{ fontSize: 20, fontWeight: 500 }}
+            className="mt-1 font-mono text-2xl font-semibold"
+            style={{ color: C.green }}
           >
             Hiroshima = baseline
           </div>
         </div>
 
+        {/* Chart Area Container */}
         <AbsoluteFill
           className="items-center"
           style={{
             justifyContent: "flex-end",
             flexDirection: "row",
             gap: 80,
-            paddingBottom: 120,
+            paddingBottom: 180, // Increased padding to make room for ProgressBars
             paddingTop: 160,
           }}
         >
           {BAR_DATA.map((bar, i) => {
+            // FIX 1b: MD requested damping: 200 for a snappy chart build
             const barProgress = spring({
               fps,
               frame,
               delay: i * 20 + 30,
-              config: { damping: 200 },
+              config: { damping: 200, stiffness: 130 },
             });
             const barHeight = barProgress * (bar.value / 400) * MAX_HEIGHT;
 
@@ -157,26 +172,83 @@ export const MG02RadiationChart: React.FC = () => {
                 >
                   {bar.label}
                 </div>
-                <div className="font-mono text-steelGrey mt-1 text-sm">{bar.unit}</div>
+                <div
+                  className="mt-1 font-mono text-sm"
+                  style={{ color: "rgba(240,238,228,0.5)" }}
+                >
+                  {bar.unit}
+                </div>
+
+                {/* FIX 2: Added ProgressBars under each bar for proportional scale comparison */}
+                <div className="mt-4" style={{ opacity: labelOpacity }}>
+                  <ProgressBar
+                    startFrame={i * 20 + 50}
+                    duration={45}
+                    fillColor={bar.color}
+                    height={8}
+                    width={BAR_WIDTH}
+                    targetPercent={(bar.value / 400) * 100} // Normalized to Chernobyl's 100%
+                  />
+                </div>
               </div>
             );
           })}
         </AbsoluteFill>
 
+        {/* Callout box with Arrow */}
         {frame > 200 && (
           <div
-            className="absolute right-60 top-48 rounded px-5 py-2"
+            className="absolute top-48 right-60"
             style={{
-              opacity: interpolate(frame, [200, 240], [0, 1], {
-                extrapolateLeft: "clamp",
-                extrapolateRight: "clamp",
-              }),
-              background: C.red,
+              opacity: interpolate(
+                frame,
+                [200, 240, holdStart, durationInFrames],
+                [0, 1, 1, 0],
+                {
+                  extrapolateLeft: "clamp",
+                  extrapolateRight: "clamp",
+                },
+              ),
             }}
           >
-            <div className="font-bebas text-white" style={{ fontSize: 36 }}>
-              400x MORE THAN HIROSHIMA
+            {/* The "Bold" Callout Box */}
+            <div
+              className="rounded-md px-6 py-3" // Increased padding
+              style={{
+                background: C.red,
+                border: "3px solid #F0EEE4", // Thick white border adds massive weight
+                boxShadow:
+                  "0 0 30px rgba(139, 0, 0, 0.6), 0 10px 20px rgba(0,0,0,0.5)", // Heavy red glow + dark shadow to lift it
+              }}
+            >
+              <div
+                className="font-bebas text-white"
+                style={{
+                  fontSize: 40, // Bumped from 36 to 40
+                  letterSpacing: 2, // Added letter spacing for impact
+                  fontWeight: 700, // Force max bold
+                  textShadow: "2px 2px 4px rgba(0,0,0,0.5)", // Text shadow for depth
+                }}
+              >
+                400x MORE THAN HIROSHIMA
+              </div>
             </div>
+
+            {/* Arrow pointing to the bar */}
+            <svg
+              width="60"
+              height="40"
+              viewBox="0 0 60 40"
+              style={{ position: "absolute", bottom: -37, left: 20 }}
+            >
+              <path
+                d="M10 0 L30 30 L50 0"
+                fill="#F0EEE4"
+                stroke="#F0EEE4" // Match the white border
+                strokeWidth="4"
+                strokeLinejoin="round"
+              />
+            </svg>
           </div>
         )}
       </AbsoluteFill>
@@ -186,7 +258,6 @@ export const MG02RadiationChart: React.FC = () => {
           "HIROSHIMA x 400",
           "200T FUEL STILL INSIDE",
           "600,000 WORKERS DEPLOYED",
-          "REACTOR 4 EXPLODED 1986",
         ]}
         bgColor={C.red}
         position="bottom"

@@ -28,7 +28,6 @@ function interpolateLocal(
 }
 
 export const ForeverLostEp2 = () => {
-  console.log("scene2: ", SCENES.s2.durationInFrames);
   return (
     <AbsoluteFill style={{ backgroundColor: C.bg }}>
       <Audio

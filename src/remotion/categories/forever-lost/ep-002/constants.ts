@@ -41,7 +41,7 @@ export const SCENES = {
   },
   mg01: { durationInFrames: estimateDuration(11) },
   s2: { durationInFrames: getSceneDuration(lastEndMsS2) },
-  mg02: { durationInFrames: estimateDuration(35) },
+  mg02: { durationInFrames: estimateDuration(20) },
   s3: { durationInFrames: estimateDuration(35) },
   mg03: { durationInFrames: estimateDuration(40) },
   s4: { durationInFrames: estimateDuration(40) },

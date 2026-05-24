@@ -178,7 +178,7 @@ export const Scene2Stats: React.FC = () => {
             startFrame={0}
             fontSize={28}
             color={C.white}
-            staggerFrames={2}
+            staggerFrames={10}
           />
         </div>
       </div>
