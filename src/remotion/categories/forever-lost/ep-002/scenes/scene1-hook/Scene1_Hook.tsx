@@ -10,7 +10,6 @@ import {
   Easing,
 } from "remotion";
 import { Audio } from "@remotion/media";
-import { TiktokCaptions } from "@/components/atoms/TiktokCaptions";
 import {
   LowerThird,
   AnimatedBanner,
@@ -25,6 +24,7 @@ import { TRASCRIPT_DATA } from "./constants";
 // Import the untouched MG component!
 import { MG01Timeline } from "@/remotion/categories/forever-lost/ep-002/components/MG01Timeline";
 import { SCENES } from "@/remotion/categories/forever-lost/ep-002/constants";
+import { YouTubeCaptions } from "@/components/atoms/YouTubeCaptions";
 
 export const Scene1Hook: React.FC = () => {
   const frame = useCurrentFrame();
@@ -165,12 +165,11 @@ export const Scene1Hook: React.FC = () => {
         </div>
 
         {/* Captions & Top Banner */}
-        <TiktokCaptions
+        <YouTubeCaptions
           transcript={TRASCRIPT_DATA}
           position="bottom-center"
           startFrame={0}
-          switchCaptionsEveryMs={1800}
-          showOverlay
+          mode="sentence"
         />
         <AnimatedBanner
           items={["CHERNOBYL · REACTOR 4 · FOREVER LOST · EPISODE 02"]}

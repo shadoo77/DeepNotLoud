@@ -10,11 +10,11 @@ import {
 } from "remotion";
 import { Audio } from "@remotion/media";
 import { getPhraseFrames } from "@/lib/utils";
-import { TiktokCaptions } from "@/components/atoms/TiktokCaptions";
 import { KineticText } from "../../components/KineticText";
 import { AnimatedBanner } from "../../components/AnimatedBanner";
 import { ASSET_PATH } from "../../constants";
 import { TRASCRIPT_DATA } from "./constants";
+import { YouTubeCaptions } from "@/components/atoms/YouTubeCaptions";
 
 export const Intro: React.FC = () => {
   const frame = useCurrentFrame();
@@ -243,12 +243,11 @@ export const Intro: React.FC = () => {
       </AbsoluteFill>
 
       {/* Captions */}
-      <TiktokCaptions
+      <YouTubeCaptions
         transcript={TRASCRIPT_DATA}
         position="bottom-center"
         startFrame={0}
-        switchCaptionsEveryMs={1800}
-        showOverlay
+        mode="sentence"
       />
 
       {/* Top scrolling banner */}

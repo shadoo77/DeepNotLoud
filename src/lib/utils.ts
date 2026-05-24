@@ -1,4 +1,5 @@
 import { clsx, type ClassValue } from "clsx";
+import { Caption } from "@remotion/captions";
 import { twMerge } from "tailwind-merge";
 import { TranscriptEntry } from "@/types";
 
@@ -67,3 +68,74 @@ export const getPhraseFrames = ({
     duration: Math.max(1, endFrame - startFrame + bufferFrames),
   };
 };
+
+// Utility to merge standalone punctuation tokens back into their neighboring word tokens
+export function mergePunctuation(transcript: Caption[]): Caption[] {
+  const result: Caption[] = [];
+  for (let i = 0; i < transcript.length; i++) {
+    const token = transcript[i];
+    const trimmed = token.text.trim();
+
+    if (trimmed.match(/^[.,!?;:]$/)) {
+      const prev = result.length > 0 ? result[result.length - 1] : null;
+      const next = i < transcript.length - 1 ? transcript[i + 1] : null;
+
+      const isDecimal =
+        trimmed === "." &&
+        prev &&
+        /\d$/.test(prev.text.trim()) &&
+        next &&
+        /^\d/.test(next.text.trim()) &&
+        !next.text.startsWith(" ");
+
+      if (isDecimal || prev) {
+        result[result.length - 1] = {
+          ...prev!,
+          text: prev!.text + trimmed,
+          endMs: token.endMs,
+        };
+      } else {
+        result.push({ ...token });
+      }
+    } else {
+      const prev = result.length > 0 ? result[result.length - 1] : null;
+      if (
+        prev &&
+        /\.$/.test(prev.text.trim()) &&
+        /^\d/.test(trimmed) &&
+        !token.text.startsWith(" ")
+      ) {
+        result[result.length - 1] = {
+          ...prev,
+          text: prev.text + trimmed,
+          endMs: token.endMs,
+        };
+      } else {
+        result.push({ ...token });
+      }
+    }
+  }
+  return result;
+}
+
+// Utility to split a transcript into sentences, based on punctuation.
+// This is used for the "sentence mode" in YouTubeCaptions,
+// where we want to show one full sentence at a time instead of switching every few words.
+export function splitIntoSentences(tokens: Caption[]): Caption[][] {
+  const sentences: Caption[][] = [];
+  let current: Caption[] = [];
+
+  for (const token of tokens) {
+    current.push(token);
+    if (token.text.match(/[.!?]\s*$/) && !token.text.match(/^\d+\.[\d.]*$/)) {
+      sentences.push(current);
+      current = [];
+    }
+  }
+
+  if (current.length > 0) {
+    sentences.push(current);
+  }
+
+  return sentences;
+}
