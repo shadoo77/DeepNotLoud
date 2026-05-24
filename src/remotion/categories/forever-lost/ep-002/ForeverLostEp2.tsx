@@ -14,6 +14,7 @@ import { Scene5HumanCost } from "./scenes/scene5-human-cost";
 import { MG02RadiationChart } from "./components/MG02RadiationChart";
 import { MG03ReactorDiagram } from "./components/MG03ReactorDiagram";
 import { MG04CostChart } from "./components/MG04CostChart";
+import { MG05LiquidatorStats } from "./components/MG05LiquidatorStats";
 
 const ScenePlaceholder = ({ label }: { label: string }) => (
   <AbsoluteFill className="bg-ash items-center justify-center">
@@ -35,7 +36,7 @@ function interpolateLocal(
 export const ForeverLostEp2 = () => {
   return (
     <AbsoluteFill style={{ backgroundColor: C.bg }}>
-      {/* <Audio
+      <Audio
         src={staticFile(`${ASSET_PATH}/audio/bgm/ep02_bgm.mp3`)}
         volume={(f) => {
           if (f < 450) return 0.12;
@@ -47,7 +48,7 @@ export const ForeverLostEp2 = () => {
           return Math.max(0, interpolateLocal(f, 8400, 9600, 0.25, 0));
         }}
         loop
-      /> */}
+      />
 
       <TransitionSeries>
         {/* INTRO */}
@@ -146,17 +147,13 @@ export const ForeverLostEp2 = () => {
         >
           <Scene5HumanCost />
         </TransitionSeries.Sequence>
-        <TransitionSeries.Transition
-          presentation={slide({ direction: "from-bottom" })}
-          timing={linearTiming({ durationInFrames: T.slide })}
-        />
 
         {/* MG-05 LIQUIDATOR STATS */}
         <TransitionSeries.Sequence
           durationInFrames={SCENES.mg05.durationInFrames}
           premountFor={30}
         >
-          <ScenePlaceholder label="MG·05 · Liquidator Stats" />
+          <MG05LiquidatorStats />
         </TransitionSeries.Sequence>
         <TransitionSeries.Transition
           presentation={fade()}

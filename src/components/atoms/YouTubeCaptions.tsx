@@ -43,7 +43,7 @@ const SentencePage = ({
   return (
     <AbsoluteFill className={cn(captionPosition({ position }))}>
       <div
-        className="font-patua max-w-5xl text-5xl font-bold whitespace-pre-wrap"
+        className="font-patua max-w-7xl text-5xl font-bold whitespace-pre-wrap"
         style={{ textShadow: "0 2px 12px rgba(0,0,0,0.9)" }}
       >
         <div

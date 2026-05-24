@@ -9,9 +9,10 @@ import {
 } from "remotion";
 import { Audio } from "@remotion/media";
 import { YouTubeCaptions } from "@/components/atoms/YouTubeCaptions";
+import { getPhraseFrames } from "@/lib/utils";
 import { KineticText, LowerThird } from "../../components";
 import { ASSET_PATH, C } from "../../constants";
-import { TRASCRIPT_DATA } from "./constants";
+import { TRASCRIPT_DATA, VO_START_FRAME } from "./constants";
 
 const VO_TEXT =
   "When the reactor core melted, the nuclear fuel didn't burn away. It melted downward. Mixing with concrete, steel, and sand as it went, it formed a new substance. Scientists eventually named it corium. The most famous deposit in Chernobyl's basement is known as the elephant's foot. In 1986, standing next to it for just four minutes would have been a fatal dose of radiation. Today, that same mass is still sitting in the basement of reactor 4. Exactly where it landed.";
@@ -19,6 +20,27 @@ const VO_TEXT =
 export const Scene3Corium: React.FC = () => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
+
+  const badge1Frame = getPhraseFrames({
+    phrase: "formed a new substance",
+    transcriptData: TRASCRIPT_DATA,
+    fps,
+    voiceOverStartFrame: VO_START_FRAME,
+  }).from;
+
+  const badge2Frame = getPhraseFrames({
+    phrase: "fatal dose of radiation",
+    transcriptData: TRASCRIPT_DATA,
+    fps,
+    voiceOverStartFrame: VO_START_FRAME,
+  }).from;
+
+  const badge3Frame = getPhraseFrames({
+    phrase: "four minutes",
+    transcriptData: TRASCRIPT_DATA,
+    fps,
+    voiceOverStartFrame: VO_START_FRAME,
+  }).from;
 
   const imagePulse = interpolate(
     frame % (fps * 4),
@@ -35,7 +57,22 @@ export const Scene3Corium: React.FC = () => {
     extrapolateRight: "clamp",
   });
 
-  const badgeFrames = [60, 120, 200] as const;
+  const leftPanelWidthPct = interpolate(frame, [0, 45], [0, 40], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+
+  const rightPanelWidthPct = interpolate(frame, [0, 45], [100, 60], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+
+  const leftPanelOpacity = interpolate(frame, [0, 38], [0, 1], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+
+  const badgeFrames = [badge1Frame, badge2Frame, badge3Frame] as const;
   const badgePops = badgeFrames.map((start) =>
     spring({
       fps,
@@ -64,7 +101,7 @@ export const Scene3Corium: React.FC = () => {
           position: "absolute",
           right: 0,
           top: 0,
-          width: "60%",
+          width: `${rightPanelWidthPct}%`,
           height: "100%",
         }}
       >
@@ -81,7 +118,7 @@ export const Scene3Corium: React.FC = () => {
           position: "absolute",
           left: 0,
           top: 0,
-          width: "40%",
+          width: `${leftPanelWidthPct}%`,
           height: "100%",
           background:
             "linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.35), rgba(0,0,0,0))",
@@ -90,8 +127,9 @@ export const Scene3Corium: React.FC = () => {
 
       {/* Divider line draw */}
       <div
-        className="absolute left-[40%] top-0 w-[2px]"
+        className="absolute top-0 w-[2px]"
         style={{
+          left: `${leftPanelWidthPct}%`,
           height: `${dividerH}%`,
           backgroundColor: C.green,
           boxShadow: `0 0 12px ${C.green}`,
@@ -105,7 +143,17 @@ export const Scene3Corium: React.FC = () => {
       />
 
       {/* Left VO kinetic text */}
-      <div className="absolute left-0 top-0 h-full w-[40%] px-10 pt-36 pb-28">
+      <div
+        className="absolute left-0 top-0 h-full px-10 pt-36 pb-28"
+        style={{
+          width: `${leftPanelWidthPct}%`,
+          opacity: leftPanelOpacity,
+          transform: `translateX(${interpolate(frame, [0, 45], [-20, 0], {
+            extrapolateLeft: "clamp",
+            extrapolateRight: "clamp",
+          })}px)`,
+        }}
+      >
         <div className="rounded-xl border border-white/15 bg-black/30 p-6 backdrop-blur-[2px]">
           <KineticText
             text={VO_TEXT}
@@ -125,7 +173,7 @@ export const Scene3Corium: React.FC = () => {
             borderColor: C.red,
             backgroundColor: "rgba(17,17,17,0.8)",
             transform: `scale(${badgePops[0]})`,
-            opacity: interpolate(frame, [60, 80], [0, 1], {
+            opacity: interpolate(frame, [badge1Frame, badge1Frame + 20], [0, 1], {
               extrapolateLeft: "clamp",
               extrapolateRight: "clamp",
             }),
@@ -143,7 +191,7 @@ export const Scene3Corium: React.FC = () => {
             borderColor: C.green,
             backgroundColor: "rgba(17,17,17,0.8)",
             transform: `scale(${badgePops[1]})`,
-            opacity: interpolate(frame, [120, 140], [0, 1], {
+            opacity: interpolate(frame, [badge2Frame, badge2Frame + 20], [0, 1], {
               extrapolateLeft: "clamp",
               extrapolateRight: "clamp",
             }),
@@ -161,7 +209,7 @@ export const Scene3Corium: React.FC = () => {
             borderColor: C.red,
             backgroundColor: "rgba(17,17,17,0.8)",
             transform: `scale(${badgePops[2]})`,
-            opacity: interpolate(frame, [200, 220], [0, 1], {
+            opacity: interpolate(frame, [badge3Frame, badge3Frame + 20], [0, 1], {
               extrapolateLeft: "clamp",
               extrapolateRight: "clamp",
             }),

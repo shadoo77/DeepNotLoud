@@ -1,14 +1,40 @@
 import { AbsoluteFill, Img, interpolate, staticFile, useCurrentFrame } from "remotion";
 import { Audio } from "@remotion/media";
 import { YouTubeCaptions } from "@/components/atoms/YouTubeCaptions";
+import { getPhraseFrames } from "@/lib/utils";
 import { DataTicker, KineticText, LowerThird } from "../../components";
 import { ASSET_PATH, C } from "../../constants";
-import { TRASCRIPT_DATA } from "./constants";
+import { TRASCRIPT_DATA, VO_START_FRAME } from "./constants";
 
 export const Scene5HumanCost: React.FC = () => {
   const frame = useCurrentFrame();
+  const fps = 30;
+
+  const frame600k = getPhraseFrames({
+    phrase: "600000",
+    transcriptData: TRASCRIPT_DATA,
+    fps,
+    voiceOverStartFrame: VO_START_FRAME,
+  }).from;
+
+  const frameDeaths = getPhraseFrames({
+    phrase: "4000 and nearly 1 million",
+    transcriptData: TRASCRIPT_DATA,
+    fps,
+    voiceOverStartFrame: VO_START_FRAME,
+  }).from;
 
   const vignetteOpacity = interpolate(frame, [0, 30], [0.2, 0.72], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+
+  const rightPanelWidthPct = interpolate(frame, [0, 45], [0, 40], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+
+  const rightPanelOpacity = interpolate(frame, [0, 36], [0, 1], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
   });
@@ -36,12 +62,20 @@ export const Scene5HumanCost: React.FC = () => {
       />
 
       <div
-        className="absolute right-0 top-0 h-full w-[40%] border-l border-white/15 px-8 py-28"
-        style={{ backgroundColor: "rgba(0,0,0,0.66)" }}
+        className="absolute right-0 top-0 h-full border-l border-white/15 px-8 py-28"
+        style={{
+          width: `${rightPanelWidthPct}%`,
+          opacity: rightPanelOpacity,
+          backgroundColor: "rgba(0,0,0,0.66)",
+          transform: `translateX(${interpolate(frame, [0, 45], [20, 0], {
+            extrapolateLeft: "clamp",
+            extrapolateRight: "clamp",
+          })}px)`,
+        }}
       >
         <div
           style={{
-            opacity: interpolate(frame, [55, 80], [0, 1], {
+            opacity: interpolate(frame, [frame600k, frame600k + 25], [0, 1], {
               extrapolateLeft: "clamp",
               extrapolateRight: "clamp",
             }),
@@ -49,7 +83,7 @@ export const Scene5HumanCost: React.FC = () => {
         >
           <DataTicker
             to={600000}
-            startFrame={55}
+            startFrame={frame600k}
             duration={70}
             suffix="+"
             fontSize={96}
@@ -62,7 +96,7 @@ export const Scene5HumanCost: React.FC = () => {
           className="mt-8 h-[2px]"
           style={{
             backgroundColor: C.green,
-            width: `${interpolate(frame, [105, 130], [0, 100], {
+            width: `${interpolate(frame, [frameDeaths - 20, frameDeaths + 10], [0, 100], {
               extrapolateLeft: "clamp",
               extrapolateRight: "clamp",
             })}%`,
@@ -72,7 +106,7 @@ export const Scene5HumanCost: React.FC = () => {
         <div
           className="mt-7"
           style={{
-            opacity: interpolate(frame, [135, 165], [0, 1], {
+            opacity: interpolate(frame, [frameDeaths, frameDeaths + 30], [0, 1], {
               extrapolateLeft: "clamp",
               extrapolateRight: "clamp",
             }),
@@ -86,7 +120,7 @@ export const Scene5HumanCost: React.FC = () => {
       <div
         className="absolute left-[8%] right-[45%] top-[40%] rounded-lg border border-white/20 bg-black/35 p-5"
         style={{
-          opacity: interpolate(frame, [200, 230], [0, 1], {
+          opacity: interpolate(frame, [0, 30], [0, 1], {
             extrapolateLeft: "clamp",
             extrapolateRight: "clamp",
           }),
@@ -94,7 +128,7 @@ export const Scene5HumanCost: React.FC = () => {
       >
         <KineticText
           text="We may never have a definitive number."
-          startFrame={200}
+          startFrame={0}
           fontSize={48}
           color={C.white}
           staggerFrames={10}

@@ -10,13 +10,69 @@ import {
 } from "remotion";
 import { Audio } from "@remotion/media";
 import { YouTubeCaptions } from "@/components/atoms/YouTubeCaptions";
-import { DataTicker, LowerThird, ProgressBar, AnimatedBanner } from "../../components";
+import { getPhraseFrames } from "@/lib/utils";
+import {
+  DataTicker,
+  LowerThird,
+  ProgressBar,
+  AnimatedBanner,
+} from "../../components";
 import { ASSET_PATH, C } from "../../constants";
-import { TRASCRIPT_DATA } from "./constants";
+import { TRASCRIPT_DATA, VO_START_FRAME } from "./constants";
 
 export const Scene4Sarcophagus: React.FC = () => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
+
+  const frameRadiation = getPhraseFrames({
+    phrase: "10000 roentgens per hour",
+    transcriptData: TRASCRIPT_DATA,
+    fps,
+    voiceOverStartFrame: VO_START_FRAME,
+  }).from;
+
+  const frameFatal = getPhraseFrames({
+    phrase: "less than a minute",
+    transcriptData: TRASCRIPT_DATA,
+    fps,
+    voiceOverStartFrame: VO_START_FRAME,
+  }).from;
+
+  const frameElectronics = getPhraseFrames({
+    phrase: "disables electronics within hours",
+    transcriptData: TRASCRIPT_DATA,
+    fps,
+    voiceOverStartFrame: VO_START_FRAME,
+  }).from;
+
+  const frameBillion = getPhraseFrames({
+    phrase: "$1.5 billion",
+    transcriptData: TRASCRIPT_DATA,
+    fps,
+    voiceOverStartFrame: VO_START_FRAME,
+  }).from;
+
+  const frame100Years = getPhraseFrames({
+    phrase: "100 years",
+    transcriptData: TRASCRIPT_DATA,
+    fps,
+    voiceOverStartFrame: VO_START_FRAME,
+  }).from;
+
+  const leftPanelWidthPct = interpolate(frame, [0, 45], [0, 35], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+
+  const rightPanelWidthPct = interpolate(frame, [0, 45], [100, 65], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+
+  const leftPanelOpacity = interpolate(frame, [0, 36], [0, 1], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
 
   const parallaxY = interpolate(frame, [0, 45], [-30, 0], {
     extrapolateLeft: "clamp",
@@ -25,13 +81,13 @@ export const Scene4Sarcophagus: React.FC = () => {
 
   const centerBillionsPop = spring({
     fps,
-    frame: Math.max(0, frame - 120),
+    frame: Math.max(0, frame - frameBillion),
     config: { damping: 14, stiffness: 180 },
   });
 
   const lifespanPop = spring({
     fps,
-    frame: Math.max(0, frame - 180),
+    frame: Math.max(0, frame - frame100Years),
     config: { damping: 14, stiffness: 180 },
   });
 
@@ -57,7 +113,7 @@ export const Scene4Sarcophagus: React.FC = () => {
           position: "absolute",
           right: 0,
           top: 0,
-          width: "65%",
+          width: `${rightPanelWidthPct}%`,
           height: "100%",
           transform: `translateY(${parallaxY}px)`,
         }}
@@ -74,11 +130,16 @@ export const Scene4Sarcophagus: React.FC = () => {
           position: "absolute",
           left: 0,
           top: 0,
-          width: "35%",
+          width: `${leftPanelWidthPct}%`,
           height: "100%",
           background:
             "linear-gradient(to right, rgba(0,0,0,0.88), rgba(0,0,0,0.72), rgba(0,0,0,0.45))",
           padding: "150px 34px 120px",
+          opacity: leftPanelOpacity,
+          transform: `translateX(${interpolate(frame, [0, 45], [-20, 0], {
+            extrapolateLeft: "clamp",
+            extrapolateRight: "clamp",
+          })}px)`,
         }}
       >
         <div className="rounded-xl border border-white/15 bg-black/25 p-5">
@@ -88,7 +149,7 @@ export const Scene4Sarcophagus: React.FC = () => {
           <div className="mt-2 leading-none">
             <DataTicker
               to={10000}
-              startFrame={60}
+              startFrame={frameRadiation}
               duration={55}
               suffix=" R/hr"
               fontSize={64}
@@ -98,7 +159,7 @@ export const Scene4Sarcophagus: React.FC = () => {
 
           <div className="mt-7">
             <ProgressBar
-              startFrame={105}
+              startFrame={frameFatal}
               duration={45}
               fillColor={C.red}
               width={520}
@@ -107,7 +168,7 @@ export const Scene4Sarcophagus: React.FC = () => {
           </div>
           <div className="mt-6">
             <ProgressBar
-              startFrame={135}
+              startFrame={frameElectronics}
               duration={45}
               fillColor={C.green}
               width={520}
@@ -125,33 +186,49 @@ export const Scene4Sarcophagus: React.FC = () => {
 
       {/* Center callouts */}
       <div
-        className="absolute left-1/2 top-[34%] -translate-x-1/2 rounded-lg border border-white/25 px-8 py-4"
+        className="absolute top-[34%] left-1/2 -translate-x-1/2 rounded-lg border border-white/25 px-8 py-4"
         style={{
           backgroundColor: "rgba(17,17,17,0.74)",
-          opacity: interpolate(frame, [120, 138], [0, 1], {
-            extrapolateLeft: "clamp",
-            extrapolateRight: "clamp",
-          }),
+          opacity: interpolate(
+            frame,
+            [frameBillion, frameBillion + 18],
+            [0, 1],
+            {
+              extrapolateLeft: "clamp",
+              extrapolateRight: "clamp",
+            },
+          ),
           transform: `translateX(-50%) scale(${centerBillionsPop})`,
         }}
       >
-        <div className="font-bebas text-center text-white" style={{ fontSize: 120, lineHeight: 1 }}>
+        <div
+          className="font-bebas text-center text-white"
+          style={{ fontSize: 120, lineHeight: 1 }}
+        >
           $1.5 BILLION
         </div>
       </div>
 
       <div
-        className="absolute left-1/2 top-[49%] -translate-x-1/2 rounded-md border border-bloodRed px-6 py-3"
+        className="border-bloodRed absolute top-[49%] left-1/2 -translate-x-1/2 rounded-md border px-6 py-3"
         style={{
           backgroundColor: "rgba(17,17,17,0.78)",
-          opacity: interpolate(frame, [180, 198], [0, 1], {
-            extrapolateLeft: "clamp",
-            extrapolateRight: "clamp",
-          }),
+          opacity: interpolate(
+            frame,
+            [frame100Years, frame100Years + 18],
+            [0, 1],
+            {
+              extrapolateLeft: "clamp",
+              extrapolateRight: "clamp",
+            },
+          ),
           transform: `translateX(-50%) scale(${lifespanPop})`,
         }}
       >
-        <div className="font-bebas text-bloodRed text-center" style={{ fontSize: 72, lineHeight: 1 }}>
+        <div
+          className="font-bebas text-bloodRed text-center"
+          style={{ fontSize: 72, lineHeight: 1 }}
+        >
           100-YEAR LIFESPAN
         </div>
       </div>
@@ -170,6 +247,7 @@ export const Scene4Sarcophagus: React.FC = () => {
         position="bottom-center"
         startFrame={0}
         mode="sentence"
+        showOverlay
       />
 
       <AnimatedBanner
