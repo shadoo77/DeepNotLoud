@@ -25,6 +25,12 @@ export const KineticText: React.FC<Props> = ({
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const words = text.split(" ");
+  const overlayOpacity = showOverlay
+    ? interpolate(frame, [startFrame, startFrame + 8], [0, 1], {
+        extrapolateLeft: "clamp",
+        extrapolateRight: "clamp",
+      })
+    : 1;
 
   return (
     <div
@@ -39,6 +45,7 @@ export const KineticText: React.FC<Props> = ({
               border: "1px solid rgba(240,238,228,0.22)",
               borderRadius: 10,
               padding: "14px 18px",
+              opacity: overlayOpacity,
             }
           : {}),
       }}

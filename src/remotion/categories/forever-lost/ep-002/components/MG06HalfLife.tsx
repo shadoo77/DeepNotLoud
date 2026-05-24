@@ -35,9 +35,8 @@ export const MG06HalfLife: React.FC = () => {
     extrapolateRight: "clamp",
   });
 
-  // IMPROVEMENT: Use 0 to 1 logic for pathLength
-  const lineDrawProgress = (start: number) =>
-    interpolate(frame, [start, start + 70], [1, 0], {
+  const lineDraw = (start: number) =>
+    interpolate(frame, [start, start + 70], [1000, 0], {
       extrapolateLeft: "clamp",
       extrapolateRight: "clamp",
     });
@@ -52,7 +51,10 @@ export const MG06HalfLife: React.FC = () => {
     frame,
     [Math.max(0, durationInFrames - 60), durationInFrames],
     [0, 1],
-    { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
+    {
+      extrapolateLeft: "clamp",
+      extrapolateRight: "clamp",
+    },
   );
 
   return (
@@ -126,42 +128,37 @@ export const MG06HalfLife: React.FC = () => {
             );
           })}
 
-          {/* IMPROVEMENT: Added pathLength="1" and strokeDasharray="1" for mathematically perfect line draws */}
           <path
             d={linePath.iodine}
             fill="none"
             stroke="#6fa8ff"
             strokeWidth="4"
-            pathLength="1"
-            strokeDasharray="1"
-            strokeDashoffset={lineDrawProgress(40)}
+            strokeDasharray="1000"
+            strokeDashoffset={lineDraw(40)}
           />
           <path
             d={linePath.cesium}
             fill="none"
             stroke="#f7d24f"
             strokeWidth="4"
-            pathLength="1"
-            strokeDasharray="1"
-            strokeDashoffset={lineDrawProgress(70)}
+            strokeDasharray="1000"
+            strokeDashoffset={lineDraw(70)}
           />
           <path
             d={linePath.strontium}
             fill="none"
             stroke="#f4a460"
             strokeWidth="4"
-            pathLength="1"
-            strokeDasharray="1"
-            strokeDashoffset={lineDrawProgress(100)}
+            strokeDasharray="1000"
+            strokeDashoffset={lineDraw(100)}
           />
           <path
             d={linePath.plutonium}
             fill="none"
             stroke={C.red}
             strokeWidth="5"
-            pathLength="1"
-            strokeDasharray="1"
-            strokeDashoffset={lineDrawProgress(130)}
+            strokeDasharray="1000"
+            strokeDashoffset={lineDraw(130)}
           />
 
           <line
@@ -206,33 +203,17 @@ export const MG06HalfLife: React.FC = () => {
         </div>
       </div>
 
-      {/* FIX 1: Split into two parts to match the MD's dramatic punchline */}
       <div className="absolute top-[70%] right-[12%] left-[12%]">
         <KineticText
-          text="HALF OF CHERNOBYL'S PLUTONIUM-239"
+          text="HALF OF CHERNOBYL'S PLUTONIUM-239 WILL STILL BE RADIOACTIVE"
           startFrame={220}
           fontSize={46}
           color={C.white}
-          highlightWords={["PLUTONIUM-239"]}
+          highlightWords={["PLUTONIUM-239", "RADIOACTIVE"]}
           staggerFrames={3}
           center
           showOverlay
         />
-
-        {/* The dramatic final line at Frame 260 */}
-        <div
-          className="font-bebas mt-3 text-center text-white"
-          style={{
-            fontSize: 48,
-            letterSpacing: 2,
-            opacity: interpolate(frame, [260, 290], [0, 1], {
-              extrapolateLeft: "clamp",
-              extrapolateRight: "clamp",
-            }),
-          }}
-        >
-          WILL STILL BE RADIOACTIVE WHEN THIS STAR DIES
-        </div>
       </div>
 
       <AnimatedBanner

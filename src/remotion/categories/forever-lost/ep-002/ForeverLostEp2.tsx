@@ -36,13 +36,13 @@ export const ForeverLostEp2 = () => {
       <Audio
         src={staticFile(`${ASSET_PATH}/audio/bgm/ep02_bgm.mp3`)}
         volume={(f) => {
-          if (f < 450) return 0.12;
-          if (f < 1050) return 0.15;
-          if (f < 2400) return interpolateLocal(f, 1050, 2400, 0.15, 0.3);
-          if (f < 4800) return 0.3;
-          if (f < 6600) return 0.2;
-          if (f < 8400) return 0.25;
-          return Math.max(0, interpolateLocal(f, 8400, 9600, 0.25, 0));
+          if (f < 450) return 0.18;
+          if (f < 1050) return 0.22;
+          if (f < 2400) return interpolateLocal(f, 1050, 2400, 0.22, 0.38);
+          if (f < 4800) return 0.38;
+          if (f < 6600) return 0.27;
+          if (f < 8400) return 0.32;
+          return Math.max(0, interpolateLocal(f, 8400, 9600, 0.32, 0));
         }}
         loop
       />

@@ -1,30 +1,35 @@
-import { AbsoluteFill, interpolate, useCurrentFrame } from "remotion";
+import { AbsoluteFill, interpolate, useCurrentFrame, useVideoConfig } from "remotion";
 import { AnimatedBanner } from "../../components";
 import { C } from "../../constants";
-import { SCENE_DURATION } from "./constants";
 
 export const Outro: React.FC = () => {
   const frame = useCurrentFrame();
+  const { durationInFrames } = useVideoConfig();
 
-  const titleOpacity = interpolate(frame, [15, 45], [0, 1], {
+  const titleOpacity = interpolate(frame, [8, 30], [0, 1], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
   });
 
-  const listOpacity = interpolate(frame, [45, 90], [0, 1], {
+  const listOpacity = interpolate(frame, [28, 70], [0, 1], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
   });
 
-  const followOpacity = interpolate(frame, [90, 120], [0, 1], {
+  const followOpacity = interpolate(frame, [58, 95], [0, 1], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
   });
 
-  const fadeOut = interpolate(frame, [SCENE_DURATION - 40, SCENE_DURATION], [0, 1], {
-    extrapolateLeft: "clamp",
-    extrapolateRight: "clamp",
-  });
+  const fadeOut = interpolate(
+    frame,
+    [Math.max(0, durationInFrames - 24), durationInFrames],
+    [0, 1],
+    {
+      extrapolateLeft: "clamp",
+      extrapolateRight: "clamp",
+    },
+  );
 
   return (
     <AbsoluteFill style={{ backgroundColor: C.bg }}>
