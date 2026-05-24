@@ -77,10 +77,6 @@ export const ForeverLostEp2 = () => {
         >
           <Scene2Stats />
         </TransitionSeries.Sequence>
-        <TransitionSeries.Transition
-          presentation={wipe({ direction: "from-left" })}
-          timing={linearTiming({ durationInFrames: T.wipe })}
-        />
 
         {/* MG-02 RADIATION CHART */}
         <TransitionSeries.Sequence

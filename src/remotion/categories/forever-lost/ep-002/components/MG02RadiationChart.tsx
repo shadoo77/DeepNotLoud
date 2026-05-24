@@ -1,5 +1,6 @@
 import {
   AbsoluteFill,
+  Img,
   interpolate,
   useCurrentFrame,
   useVideoConfig,
@@ -49,10 +50,12 @@ export const MG02RadiationChart: React.FC = () => {
     extrapolateRight: "clamp",
   });
 
-  const holdStart = Math.max(300, durationInFrames - 90);
+  const holdStart = Math.max(241, durationInFrames - 90);
+  const exitEnd = Math.max(holdStart + 1, durationInFrames);
+
   const panelTranslateY = interpolate(
     frame,
-    [holdStart, durationInFrames],
+    [holdStart, exitEnd],
     [0, 1080],
     {
       extrapolateLeft: "clamp",
@@ -69,6 +72,21 @@ export const MG02RadiationChart: React.FC = () => {
 
   return (
     <AbsoluteFill style={{ backgroundColor: C.bg }}>
+      {/* Reuse Scene 2 texture for continuity */}
+      <AbsoluteFill style={{ opacity: 0.2 }}>
+        <Img
+          src={staticFile(`${ASSET_PATH}/images/ep02L_s2_texture.jpeg`)}
+          className="h-full w-full object-cover"
+        />
+      </AbsoluteFill>
+
+      <AbsoluteFill
+        style={{
+          background:
+            "linear-gradient(to right, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.2) 45%, rgba(0,0,0,0.1) 100%)",
+        }}
+      />
+
       {/* FIX 3: Use Sequence to start the SFX exactly at frame 30 */}
       <Sequence from={30} durationInFrames={40}>
         <Audio
@@ -202,7 +220,7 @@ export const MG02RadiationChart: React.FC = () => {
             style={{
               opacity: interpolate(
                 frame,
-                [200, 240, holdStart, durationInFrames],
+                [200, 240, holdStart, exitEnd],
                 [0, 1, 1, 0],
                 {
                   extrapolateLeft: "clamp",
