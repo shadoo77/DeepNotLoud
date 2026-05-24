@@ -1,5 +1,6 @@
 import {
   AbsoluteFill,
+  Img,
   Sequence,
   interpolate,
   useCurrentFrame,
@@ -75,7 +76,7 @@ const LabelCallout: React.FC<LabelDef & { frame: number }> = ({
         }}
       />
       <div
-        className="font-inter text-lg font-semibold"
+        className="font-inter text-2xl font-semibold"
         style={{ color, opacity: textOpacity * pulseOpacity }}
       >
         {text}
@@ -115,6 +116,21 @@ export const MG03ReactorDiagram: React.FC = () => {
 
   return (
     <AbsoluteFill style={{ backgroundColor: C.bg }}>
+      {/* Reuse Scene 3 texture/image for continuity */}
+      <AbsoluteFill style={{ opacity: 0.22 }}>
+        <Img
+          src={staticFile(`${ASSET_PATH}/images/ep02L_s3_corium.jpeg`)}
+          className="h-full w-full object-cover"
+        />
+      </AbsoluteFill>
+
+      <AbsoluteFill
+        style={{
+          background:
+            "linear-gradient(to right, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.35) 45%, rgba(0,0,0,0.2) 100%)",
+        }}
+      />
+
       {LABELS.map((l) => (
         <Sequence key={`sfx-${l.start}`} from={l.start} durationInFrames={6}>
           <Audio

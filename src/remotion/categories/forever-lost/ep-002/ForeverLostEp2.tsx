@@ -32,7 +32,7 @@ function interpolateLocal(
 export const ForeverLostEp2 = () => {
   return (
     <AbsoluteFill style={{ backgroundColor: C.bg }}>
-      {/* <Audio
+      <Audio
         src={staticFile(`${ASSET_PATH}/audio/bgm/ep02_bgm.mp3`)}
         volume={(f) => {
           if (f < 450) return 0.12;
@@ -44,7 +44,7 @@ export const ForeverLostEp2 = () => {
           return Math.max(0, interpolateLocal(f, 8400, 9600, 0.25, 0));
         }}
         loop
-      /> */}
+      />
 
       <TransitionSeries>
         {/* INTRO */}
@@ -99,10 +99,6 @@ export const ForeverLostEp2 = () => {
         >
           <Scene3Corium />
         </TransitionSeries.Sequence>
-        <TransitionSeries.Transition
-          presentation={slide({ direction: "from-right" })}
-          timing={linearTiming({ durationInFrames: T.slide })}
-        />
 
         {/* MG-03 REACTOR DIAGRAM */}
         <TransitionSeries.Sequence

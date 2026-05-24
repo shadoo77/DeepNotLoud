@@ -45,7 +45,7 @@ export const SCENES = {
   s2: { durationInFrames: getSceneDuration(lastEndMsS2) },
   mg02: { durationInFrames: estimateDuration(10) },
   s3: { durationInFrames: getSceneDuration(lastEndMsS3) },
-  mg03: { durationInFrames: estimateDuration(40) },
+  mg03: { durationInFrames: estimateDuration(18) },
   s4: { durationInFrames: estimateDuration(40) },
   mg04: { durationInFrames: estimateDuration(30) },
   s5: { durationInFrames: estimateDuration(35) },
@@ -58,7 +58,7 @@ export const SCENES = {
 
 export const TOTAL_FRAMES =
   Object.values(SCENES).reduce((a, b) => a + b.durationInFrames, 0) -
-  (8 * T.fade + 3 * T.slide + 2 * T.wipe);
+  (8 * T.fade + 2 * T.slide + 2 * T.wipe);
 
 export const mg01StartFrame =
   SCENES.s1.durationInFrames - SCENES.mg01.durationInFrames;
