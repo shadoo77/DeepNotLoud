@@ -26,15 +26,24 @@ public/
 │   ├── ep003_L_s7_theories.wav
 │   └── ep003_L_s8_closer.wav
 ├── images/
-│   ├── ep003_manuscript_spread.png        ← wide landscape crop
-│   ├── ep003_plant_drawings.png
-│   ├── ep003_astronomical_wheel.png
-│   ├── ep003_cipher_closeup.png
-│   ├── ep003_wilfrid_portrait.png         ← cutout PNG
-│   ├── ep003_yale_beinecke.png
-│   ├── ep003_scribe_hand.png
-│   ├── ep003_codebreakers_room.png
-│   └── ep003_map_italy.png                ← illustrative map
+│   ├── ep003_manuscript_spread.png       ← S1+S4+S5 BG (wide landscape, reused)
+│   ├── ep003_astronomical_wheel.png      ← S1 crossfade + S3 section card
+│   ├── ep003_yale_beinecke_interior.png  ← S1 crossfade (Beinecke interior)
+│   ├── ep003_villa_mondragone.png        ← S2 BG (Italian villa exterior)
+│   ├── ep003_wilfrid_portrait.png        ← S2 cutout PNG
+│   ├── ep003_plant_illustrations.png     ← S2 + S3 right panel
+│   ├── ep003_map_italy.png               ← S2 map overlay
+│   ├── ep003_biological_section.png      ← S3 right panel (bathing figures)
+│   ├── ep003_cipher_closeup.png          ← S5 BG (glyph close-up)
+│   ├── ep003_wwii_codebreakers.png       ← S6 right panel
+│   ├── ep003_nsa_building.png            ← S6 right panel
+│   ├── ep003_ai_server_room.png          ← S6 right panel
+│   ├── ep003_roger_bacon.png             ← S7 suspect portrait
+│   ├── ep003_john_dee.png                ← S7 suspect portrait
+│   ├── ep003_message_bottle.png          ← S7 final closer image
+│   ├── ep003_scribe_hand.png             ← S8 BG (hero closer)
+│   ├── ep003_empty_library.png           ← S8 crossfade
+│   └── ep003_manuscript_in_case.png      ← S8 crossfade (museum display)
 ├── sfx/
 │   ├── paper_rustle.mp3
 │   ├── quill_scratch.mp3
@@ -105,25 +114,25 @@ Six hundred years of silence.
 
 #### 🖼️ IMAGE PROMPTS (Nano Banana 2)
 
-**Image A — Hero wide shot (full frame)**
+**Image A — `ep003_manuscript_spread.png` — Hero BG (full frame, reused S4+S5)**
 > Cinematic wide establishing shot of an ancient manuscript open on a dark stone reading desk, single dramatic shaft of light from above illuminating the pages, surrounded by deep shadow, photorealistic, 16:9 landscape, epic documentary style
 
-**Image B — Astronomical wheel detail**
+**Image B — `ep003_astronomical_wheel.png` — S1 crossfade + S3 section card**
 > Close-up of a medieval astronomical diagram wheel with circular text and celestial markings, aged parchment texture, warm amber tones, photorealistic, 16:9
 
-**Image C — Yale Beinecke Library interior**
+**Image C — `ep003_yale_beinecke_interior.png` — S1 crossfade**
 > Interior of Yale Beinecke Rare Book Library, marble translucent walls glowing warm, tall bookshelves, dramatic architecture, cinematic photography, 16:9 landscape
 
 #### 🎬 MOTION DIRECTION (LANDSCAPE — Motion Graphics Active Throughout)
 
 **Layer stack (bottom → top):**
-1. BG image: manuscript spread — Ken Burns, 1.0 → 1.1 over 1350 frames, very slow
+1. BG image: manuscript spread — Ken Burns, 1.0 → 1.1 over scene duration, very slow
 2. Dark vignette overlay: radial, 70% opacity on edges
-3. Animated particle system: tiny dust motes floating upward (CSS: random translate + fade, ~20 elements)
-4. **LOWER THIRD TICKER** (frame 0–1350, always visible): scrolling text at bottom
+3. Animated particle system: tiny dust motes floating upward (**use `interpolate()` with `Easing` and per-mote random offsets, NOT CSS animations** — CSS transitions/animations are FORBIDDEN in Remotion)
+4. **LOWER THIRD TICKER** (frame 0–scene end, always visible): scrolling text at bottom
    > `"BEINECKE RARE BOOK LIBRARY · YALE UNIVERSITY · MS 408 · CARBON DATED: 1404–1438 CE · PAGES: 240 · STATUS: UNDECIPHERED · LANGUAGE: UNKNOWN · ..."`
    - Font: Courier New, 16px, color #C8A96E, background: rgba(0,0,0,0.7), height 36px
-   - Animation: `translateX(100% → -200%)` continuous, speed: 80px/sec
+   - Animation: `translateX()` driven by `useCurrentFrame()` — continuous, speed: 80px/sec
 
 5. **EPISODE TITLE CARD** (frame 120–400):
    - "FOREVER LOST" — 48px Cinzel, gold, top-left, fade in
@@ -183,16 +192,16 @@ And somehow, one of them wrote something nobody else could understand.
 
 #### 🖼️ IMAGE PROMPTS (Nano Banana 2)
 
-**Image A — Villa Mondragone exterior**
+**Image A — `ep003_villa_mondragone.png` — BG**
 > Italian renaissance villa exterior at golden hour, overgrown garden, baroque architecture, slightly dramatic moody sky, cinematic photography, 16:9 landscape, warm amber tones
 
-**Image B — Wilfrid Voynich portrait (cutout)**
+**Image B — `ep003_wilfrid_portrait.png` — Cutout PNG**
 > Vintage black and white photograph style, mustachioed Eastern European man circa 1910, formal suit, isolated on transparent background, aged film grain effect
 
-**Image C — Manuscript plant illustrations**
+**Image C — `ep003_plant_illustrations.png` — Right panel (reused S3)**
 > Page from a medieval herbal manuscript showing fantastical plant drawings with unknown root systems and unfamiliar leaf shapes, warm parchment tone, cinematic close-up, 16:9
 
-**Image D — Map of Italy (illustrative)**
+**Image D — `ep003_map_italy.png` — Map overlay**
 > Stylized dark vintage map of central Italy with Rome highlighted, parchment texture overlay, cinematic color grade, 16:9
 
 #### 🎬 MOTION DIRECTION
@@ -226,7 +235,7 @@ And somehow, one of them wrote something nobody else could understand.
   - "Unknown plant species"
   - "Invented root system"
   - "Script flows right-to-left in some sections"
-- Each arrow draws on sequentially (SVG path animation)
+- Each arrow draws on sequentially (SVG path animation driven by `interpolate()`)
 
 ---
 
@@ -273,13 +282,13 @@ We just can't hear it.
 
 #### 🖼️ IMAGE PROMPTS (Nano Banana 2)
 
-**Image A — Herbal page close-up**
-> Medieval manuscript herbal page showing unknown plant species with elaborate root systems and small handwritten text, warm amber parchment, macro photorealistic detail, 16:9
+**Image A — `ep003_plant_illustrations.png` — Right panel (reused from S2)**
+> Same file. Shown in right panel alongside herbal section card.
 
-**Image B — Astronomical wheel**
-> Medieval astronomical circular diagram, concentric rings with text and small illustrations, unknown celestial symbols, aged manuscript style, photorealistic parchment, 16:9
+**Image B — `ep003_astronomical_wheel.png` — Right panel (reused from S1)**
+> Same file. Shown in right panel alongside astronomical section card.
 
-**Image C — Biological section**
+**Image C — `ep003_biological_section.png` — Right panel**
 > Medieval manuscript page showing small human figures bathing in tube systems and pools, unusual medieval illustration style, warm ink-on-parchment, 16:9
 
 #### 🎬 MOTION DIRECTION
@@ -354,8 +363,8 @@ And the book is valued today at conservatively over one hundred million dollars.
 
 #### 🖼️ IMAGE PROMPTS (Nano Banana 2)
 
-**Image A — Dense text page**
-> Full page of Voynich manuscript showing dense columns of unknown script, no illustrations, just text rows, aged parchment, dramatic top-lighting, 16:9
+**Image A — `ep003_manuscript_spread.png` — BG (reused from S1)**
+> Same file. Used at 40% opacity behind stat dashboard.
 
 #### 🎬 MOTION DIRECTION
 
@@ -430,11 +439,11 @@ The manuscript may be — in the technical linguistic sense — not a language a
 
 #### 🖼️ IMAGE PROMPTS (Nano Banana 2)
 
-**Image A — Cipher comparison display**
+**Image A — `ep003_cipher_closeup.png` — BG**
 > Dark background showing three rows of script: a line of Latin text, a line of Arabic text, and a line of Voynich-style unknown glyphs, cinematic layout, white text on dark, slightly glowing, 16:9
 
-**Image B — Close-up Voynich glyphs**
-> Extreme macro of individual Voynich manuscript characters, each glyph unique and strange, parchment texture visible beneath, dramatic raking light, 16:9
+**Image B — `ep003_manuscript_spread.png` — Secondary BG (reused)**
+> Same file. Used during entropy visualization section.
 
 #### 🎬 MOTION DIRECTION
 
@@ -508,13 +517,13 @@ The manuscript had fooled the machine.
 
 #### 🖼️ IMAGE PROMPTS (Nano Banana 2)
 
-**Image A — WWII codebreaker room**
+**Image A — `ep003_wwii_codebreakers.png` — Right panel**
 > Vintage 1940s intelligence office scene, men in military uniforms around large tables covered in papers and telegraph equipment, black and white photography style, dramatic lighting, 16:9
 
-**Image B — Server room / AI visualization**
+**Image B — `ep003_ai_server_room.png` — Right panel**
 > Modern server room with blue glowing racks of computers, dark environment, dramatic lens flare, cinematic, 16:9
 
-**Image C — NSA building exterior**
+**Image C — `ep003_nsa_building.png` — Right panel**
 > NSA headquarters exterior, Fort Meade Maryland, dramatic sky, architectural photography, slightly ominous, 16:9
 
 #### 🎬 MOTION DIRECTION
@@ -602,13 +611,13 @@ A message in a bottle. Thrown into time. Never received.
 
 #### 🖼️ IMAGE PROMPTS (Nano Banana 2)
 
-**Image A — Roger Bacon portrait style**
+**Image A — `ep003_roger_bacon.png` — Suspect portrait (right panel)**
 > Medieval-style illuminated manuscript portrait of a hooded Franciscan monk scholar, writing at a desk, candlelight, intricate border decoration, warm parchment colors, 16:9
 
-**Image B — John Dee portrait style**
+**Image B — `ep003_john_dee.png` — Suspect portrait (right panel)**
 > Dramatic Renaissance-era portrait of an Elizabethan court scholar with long beard, dark robes, holding a celestial globe, candlelit background, oil painting style, 16:9
 
-**Image C — Message in a bottle (atmospheric)**
+**Image C — `ep003_message_bottle.png` — Final closing image**
 > Lone glass bottle floating in dark still water, single folded paper visible inside, moody blue-gray tones, long exposure photography style, cinematic, 16:9
 
 #### 🎬 MOTION DIRECTION
@@ -691,13 +700,13 @@ Billions of human eyes have now looked at it. The most powerful thinking machine
 
 #### 🖼️ IMAGE PROMPTS (Nano Banana 2)
 
-**Image A — Scribe hand at candle (hero closer shot)**
+**Image A — `ep003_scribe_hand.png` — Hero BG**
 > Dark, intimate cinematic shot, a single hand holding a quill writing on parchment by candlelight, deep shadow surrounding, warm amber glow, photorealistic, 16:9 landscape, emotionally resonant
 
-**Image B — Empty reading room**
+**Image B — `ep003_empty_library.png` — Crossfade**
 > Grand empty library reading room, single shaft of light through high window illuminating an empty reading table, dust motes visible, deep shadow, cinematic, 16:9, melancholic
 
-**Image C — Manuscript page in glass case**
+**Image C — `ep003_manuscript_in_case.png` — Crossfade**
 > Museum display case containing an open ancient manuscript, protective glass visible, soft gallery lighting, small information placard visible, 16:9
 
 #### 🎬 MOTION DIRECTION
@@ -734,19 +743,18 @@ Vignette: heavy, 80% opacity
 export const FPS = 30;
 
 export const SCENES_L = {
-  s1_intro:      { start: 0,     durationSec: 43  },
-  s2_discovery:  { start: 1290,  durationSec: 63  },
-  s3_what:       { start: 3180,  durationSec: 75  },
-  s4_stats:      { start: 5430,  durationSec: 55  },
-  s5_language:   { start: 7080,  durationSec: 80  },
-  s6_attempts:   { start: 9480,  durationSec: 110 },
-  s7_theories:   { start: 12780, durationSec: 80  },
-  s8_closer:     { start: 15180, durationSec: 70  },
+  s1_intro:      { start: 0,   durationSec: 43  },
+  s2_discovery:  { start: 43,  durationSec: 63  },
+  s3_what:       { start: 106, durationSec: 75  },
+  s4_stats:      { start: 181, durationSec: 55  },
+  s5_language:   { start: 236, durationSec: 80  },
+  s6_attempts:   { start: 316, durationSec: 110 },
+  s7_theories:   { start: 426, durationSec: 80  },
+  s8_closer:     { start: 506, durationSec: 70  },
 } as const;
 
 export const secToFrames = (sec: number) => Math.round(sec * FPS);
-export const totalFramesL =
-  SCENES_L.s8_closer.start + secToFrames(SCENES_L.s8_closer.durationSec);
+export const totalFramesL = secToFrames(SCENES_L.s8_closer.start + SCENES_L.s8_closer.durationSec);
 // → 17280 frames ≈ 576 seconds ≈ 9.6 minutes
 ```
 
@@ -777,8 +785,9 @@ import { SCENES_L, FPS, totalFramesL } from './constants.landscape';
 
 ```tsx
 // src/compositions/VoynichLandscape.tsx
-import { AbsoluteFill, Audio, staticFile, Sequence } from 'remotion';
-import { SCENES_L, FPS, secToFrames } from '../constants.landscape';
+import { AbsoluteFill, Sequence, staticFile } from 'remotion';
+import { Audio } from '@remotion/media';
+import { SCENES_L, secToFrames } from '../constants.landscape';
 import { LScene1Intro } from '../scenes/landscape/LScene1Intro';
 import { LScene2Discovery } from '../scenes/landscape/LScene2Discovery';
 import { LScene3WhatIsIt } from '../scenes/landscape/LScene3WhatIsIt';
@@ -788,7 +797,7 @@ import { LScene6Attempts } from '../scenes/landscape/LScene6Attempts';
 import { LScene7Theories } from '../scenes/landscape/LScene7Theories';
 import { LScene8Closer } from '../scenes/landscape/LScene8Closer';
 
-const SCENE_MAP = {
+const SCENE_COMPONENTS: Record<keyof typeof SCENES_L, React.FC> = {
   s1_intro:     LScene1Intro,
   s2_discovery: LScene2Discovery,
   s3_what:      LScene3WhatIsIt,
@@ -804,10 +813,15 @@ export const VoynichLandscape: React.FC = () => {
     <AbsoluteFill style={{ backgroundColor: '#0A0A0A' }}>
       <Audio src={staticFile('music/ep003_bgm_landscape.mp3')} volume={0.12} />
 
-      {Object.entries(SCENES_L).map(([key, s]) => {
-        const Component = SCENE_MAP[key as keyof typeof SCENE_MAP];
+      {(Object.keys(SCENES_L) as Array<keyof typeof SCENES_L>).map((key) => {
+        const scene = SCENES_L[key];
+        const Component = SCENE_COMPONENTS[key];
         return (
-          <Sequence key={key} from={s.start} durationInFrames={secToFrames(s.durationSec)}>
+          <Sequence
+            key={key}
+            from={secToFrames(scene.start)}
+            durationInFrames={secToFrames(scene.durationSec)}
+          >
             <Component />
             <Audio src={staticFile(`audio/ep003_L_${key}.wav`)} />
           </Sequence>
@@ -826,7 +840,7 @@ export const VoynichLandscape: React.FC = () => {
 
 ```tsx
 // src/components/TickerBar.tsx
-import { useCurrentFrame, interpolate } from 'remotion';
+import { useCurrentFrame, useVideoConfig, interpolate } from 'remotion';
 
 const TICKER_TEXT = "BEINECKE RARE BOOK LIBRARY · YALE UNIVERSITY · MS 408 · CARBON DATED: 1404–1438 CE · PAGES: 240 · STATUS: UNDECIPHERED · LANGUAGE: UNKNOWN · ESTIMATED VALUE: $100M+ · ";
 
@@ -861,7 +875,13 @@ export const TickerBar: React.FC<{ opacity?: number }> = ({ opacity = 1 }) => {
 
 ```tsx
 // src/components/SidebarPanel.tsx
-import { spring, useCurrentFrame } from 'remotion';
+import { spring, useCurrentFrame, useVideoConfig, interpolate } from 'remotion';
+import { loadFont } from '@remotion/google-fonts/Cinzel';
+
+const { fontFamily: cinzelFont } = loadFont('normal', {
+  weights: ['400', '700'],
+  subsets: ['latin'],
+});
 
 interface SidebarField { label: string; value: string }
 
@@ -870,7 +890,8 @@ export const SidebarPanel: React.FC<{
   delayFrames?: number;
 }> = ({ fields, delayFrames = 0 }) => {
   const frame = useCurrentFrame();
-  const progress = spring({ frame: frame - delayFrames, fps: 30, config: { damping: 14 } });
+  const { fps } = useVideoConfig();
+  const progress = spring({ frame: frame - delayFrames, fps, config: { damping: 14 } });
   const x = interpolate(progress, [0, 1], [-300, 0]);
 
   return (
@@ -885,7 +906,7 @@ export const SidebarPanel: React.FC<{
       {fields.map(({ label, value }) => (
         <div key={label} style={{ marginBottom: 16 }}>
           <div style={{ fontSize: 11, color: '#C8A96E', letterSpacing: 2, textTransform: 'uppercase', fontFamily: 'Courier New' }}>{label}</div>
-          <div style={{ fontSize: 16, color: '#FFFFFF', fontFamily: 'Cinzel, serif', marginTop: 4 }}>{value}</div>
+          <div style={{ fontSize: 16, color: '#FFFFFF', fontFamily: cinzelFont, marginTop: 4 }}>{value}</div>
         </div>
       ))}
     </div>
@@ -897,7 +918,19 @@ export const SidebarPanel: React.FC<{
 
 ```tsx
 // src/components/StatCounter.tsx
-import { useCurrentFrame, spring, interpolate } from 'remotion';
+import { useCurrentFrame, useVideoConfig, spring, interpolate } from 'remotion';
+import { loadFont } from '@remotion/google-fonts/Cinzel';
+import { loadFont as loadInterFont } from '@remotion/google-fonts/Inter';
+
+const { fontFamily: cinzelFont } = loadFont('normal', {
+  weights: ['400', '700', '900'],
+  subsets: ['latin'],
+});
+
+const { fontFamily: interFont } = loadInterFont('normal', {
+  weights: ['400'],
+  subsets: ['latin'],
+});
 
 export const StatCounter: React.FC<{
   target: number;
@@ -908,15 +941,16 @@ export const StatCounter: React.FC<{
   delayFrames?: number;
 }> = ({ target, label, prefix = '', suffix = '', color = '#FFFFFF', delayFrames = 0 }) => {
   const frame = useCurrentFrame();
-  const progress = spring({ frame: frame - delayFrames, fps: 30, config: { damping: 18, stiffness: 60 } });
+  const { fps } = useVideoConfig();
+  const progress = spring({ frame: frame - delayFrames, fps, config: { damping: 18, stiffness: 60 } });
   const current = Math.round(interpolate(progress, [0, 1], [0, target]));
 
   return (
     <div style={{ textAlign: 'center', padding: '24px 20px' }}>
-      <div style={{ fontFamily: 'Cinzel, serif', fontSize: 80, fontWeight: 900, color, lineHeight: 1 }}>
+      <div style={{ fontFamily: cinzelFont, fontSize: 80, fontWeight: 900, color, lineHeight: 1 }}>
         {prefix}{current.toLocaleString()}{suffix}
       </div>
-      <div style={{ fontFamily: 'Inter, sans-serif', fontSize: 16, color: '#AAAAAA', marginTop: 12 }}>
+      <div style={{ fontFamily: interFont, fontSize: 16, color: '#AAAAAA', marginTop: 12 }}>
         {label}
       </div>
       <div style={{ width: '60%', height: 2, backgroundColor: '#C8A96E', margin: '12px auto 0', transform: `scaleX(${progress})`, transformOrigin: 'left' }} />
@@ -929,7 +963,13 @@ export const StatCounter: React.FC<{
 
 ```tsx
 // src/components/FailureCard.tsx
-import { spring, useCurrentFrame, interpolate } from 'remotion';
+import { spring, useCurrentFrame, useVideoConfig, interpolate } from 'remotion';
+import { loadFont } from '@remotion/google-fonts/Cinzel';
+
+const { fontFamily: cinzelFont } = loadFont('normal', {
+  weights: ['400', '700'],
+  subsets: ['latin'],
+});
 
 export const FailureCard: React.FC<{
   year: string;
@@ -939,9 +979,12 @@ export const FailureCard: React.FC<{
   delayFrames?: number;
 }> = ({ year, institution, description, result, delayFrames = 0 }) => {
   const frame = useCurrentFrame();
-  const progress = spring({ frame: frame - delayFrames, fps: 30, config: { damping: 14 } });
+  const { fps } = useVideoConfig();
+  const progress = spring({ frame: frame - delayFrames, fps, config: { damping: 14 } });
   const y = interpolate(progress, [0, 1], [40, 0]);
-  const opacity = interpolate(progress, [0, 0.3], [0, 1]);
+  const opacity = interpolate(progress, [0, 0.3], [0, 1], {
+    extrapolateRight: 'clamp',
+  });
 
   return (
     <div style={{
@@ -954,14 +997,13 @@ export const FailureCard: React.FC<{
     }}>
       <div>
         <div style={{ fontSize: 12, color: '#C8A96E', fontFamily: 'Courier New', letterSpacing: 2 }}>{year}</div>
-        <div style={{ fontSize: 20, color: '#FFFFFF', fontFamily: 'Cinzel, serif', fontWeight: 700 }}>{institution}</div>
+        <div style={{ fontSize: 20, color: '#FFFFFF', fontFamily: cinzelFont, fontWeight: 700 }}>{institution}</div>
         <div style={{ fontSize: 13, color: '#AAAAAA', marginTop: 4 }}>{description}</div>
       </div>
       <div style={{
         backgroundColor: '#CC3333', color: 'white',
         padding: '6px 14px', borderRadius: 20,
         fontFamily: 'Courier New', fontSize: 12, letterSpacing: 1,
-        whiteSpace: 'nowrap', marginLeft: 20,
       }}>
         {result}
       </div>
@@ -972,64 +1014,36 @@ export const FailureCard: React.FC<{
 
 ---
 
-## 🎨 DESIGN TOKENS (LANDSCAPE)
+## 🎨 DESIGN TOKENS
 
 ```
-Canvas:            1920×1080
-Background:        #0A0A0A
+Background base:   #0A0A0A
 Gold accent:       #C8A96E
 Red danger:        #CC3333
-Alert orange:      #CC7733
 Text primary:      #FFFFFF
 Text secondary:    #AAAAAA
-Panel bg:          rgba(10,10,10,0.88)
-Border subtle:     #333333
-Font — Display:    Cinzel Decorative (Google Fonts)
-Font — Body:       Inter
-Font — Mono:       Courier New
-Font — Data:       Cinzel Bold (for numbers)
+Panel bg:          rgba(26,26,26,0.88)
+Font — Display:    Cinzel (via @remotion/google-fonts/Cinzel)
+Font — Body:       Inter (via @remotion/google-fonts/Inter)
+Font — Mono:       Courier New (cipher text / tickers)
 ```
 
 ---
 
-## 🔢 TIMING WORKFLOW (LANDSCAPE)
+## ⚠️ REMOTION GOTCHAS
 
-```
-1. Generate 8 WAV files (voice: Charon) via Next.js TTS route
-2. Measure exact seconds per file (use ffprobe or audio API)
-3. Update SCENES_L in constants.landscape.ts with real durations
-4. Recalculate start frame per scene:
-   s2.start = s1.start + secToFrames(s1.durationSec)
-   s3.start = s2.start + secToFrames(s2.durationSec)
-   ... and so on
-5. All Sequence / component frame math auto-adjusts
-6. Target total: ~9.5–10 min
-```
-
----
-
-## 📋 YOUTUBE METADATA
-
-**Title:** `The Voynich Manuscript: Why Nobody Can Decode It | FOREVER LOST Ep.3`
-**Description:**
-```
-A 600-year-old book. 240 pages of unknown text. Illustrations of plants that don't exist.
-The NSA tried to decode it. WWII codebreakers tried. AI tried. All failed.
-
-This is the Voynich Manuscript — and why it may be forever lost.
-
-FOREVER LOST is a documentary series about things that can never be recovered, solved, or understood.
-
-0:00 — Introduction
-0:43 — The Discovery (1912)
-1:50 — What's Inside the Book
-3:05 — The Numbers
-3:55 — Why It Defies Linguistic Analysis
-5:20 — Everyone Who Failed to Decode It
-8:35 — The Theories
-9:10 — The Human Cost of Silence
-
-#VoynichManuscript #Mystery #Documentary #ForeverLost #Unsolved
-```
-
-**Thumbnail concept:** Close-up of manuscript page + "NEVER DECODED" in red + "600 YEARS" — dark, cinematic treatment
+> **CSS transitions/animations are FORBIDDEN** — they will not render correctly in Remotion. All animation must use `interpolate()`, `spring()`, or `Easing`. This includes particle systems, ticker scrolls, and any motion — drive everything from `useCurrentFrame()`.
+>
+> **Tailwind animation class names are FORBIDDEN** — they will not render correctly.
+>
+> **Fonts must be loaded via `@remotion/google-fonts`** — CSS `fontFamily` strings like `'Cinzel, serif'` will not guarantee the font is available at render time. Use `loadFont()` and the returned `fontFamily` value.
+>
+> **Audio must be imported from `@remotion/media`** — not from `remotion` directly. Run `npx remotion add @remotion/media` if not installed.
+>
+> **Images must use the `<Img>` component** — not a plain `<img>` tag, for proper loading behavior during rendering.
+>
+> **Sequence `from` values are in frames** — when `start` is stored in seconds, always convert via `secToFrames()` before passing to `<Sequence from={...}>`.
+>
+> **`useVideoConfig()` is preferred** over hardcoding `fps = 30` inside components. This ensures components stay in sync with the composition definition.
+>
+> **Always add `extrapolateRight: 'clamp'`** to opacity `interpolate()` calls — by default, Remotion does not clamp interpolation values, so opacity can exceed 1.0 or go below 0.

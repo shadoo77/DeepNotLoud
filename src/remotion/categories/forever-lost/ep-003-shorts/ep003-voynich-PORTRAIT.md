@@ -24,12 +24,13 @@ public/
 │   ├── ep003_s6_theories.wav
 │   └── ep003_s7_closer.wav
 ├── images/
-│   ├── ep003_manuscript_page.png
-│   ├── ep003_plant_drawings.png
-│   ├── ep003_astronomical_wheel.png
-│   ├── ep003_cipher_text.png
-│   ├── ep003_wilfrid_voynich.png
-│   └── ep003_yale_beinecke.png
+│   ├── ep003_manuscript_page.png         ← S1 BG + S3 BG (reused)
+│   ├── ep003_castle_exterior.png         ← S2 BG (Italian castle)
+│   ├── ep003_wilfrid_voynich.png         ← S2 cutout portrait PNG
+│   ├── ep003_cipher_closeup.png          ← S4 BG (glyph close-up)
+│   ├── ep003_yale_beinecke.png           ← S5 BG (Yale exterior)
+│   ├── ep003_plant_botanical.png         ← S6 BG (herbal illustration)
+│   └── ep003_scribe_hand.png             ← S7 BG (hand + quill)
 ├── sfx/
 │   ├── paper_rustle.mp3
 │   ├── quill_scratch.mp3
@@ -84,11 +85,10 @@ Pacing: Slow and deliberate. Each word lands.
 
 #### 🖼️ IMAGE PROMPTS (Nano Banana 2)
 
-**Image A — Background layer (full frame)**
+**Image A — `ep003_manuscript_page.png` — Background layer (full frame)**
 > Extreme close-up of aged yellowed manuscript pages covered in unknown script, candlelight glow from left, deep shadow on right, cinematic, photorealistic, moody, mysterious, 9:16 vertical
 
-**Image B — Text overlay layer**
-> No image needed — motion graphic text only
+**Image B — none** — Text overlay is motion graphics only
 
 #### 🎬 MOTION DIRECTION
 - Background image: slow Ken Burns — scale from 1.0 → 1.08 over full scene
@@ -126,10 +126,10 @@ Pacing: Medium. Conversational but weighted.
 
 #### 🖼️ IMAGE PROMPTS (Nano Banana 2)
 
-**Image A — Portrait of Voynich (cutout PNG)**
+**Image A — `ep003_wilfrid_voynich.png` — Cutout portrait PNG**
 > Black and white vintage portrait photo style, mustachioed man in early 1900s formal attire, dramatic side lighting, isolated on transparent background, slightly worn photograph effect
 
-**Image B — Castle background**
+**Image B — `ep003_castle_exterior.png` — Background**
 > Italian renaissance castle exterior, overcast sky, moody, cinematic, photorealistic, desaturated green-brown tones, 9:16 vertical composition
 
 #### 🎬 MOTION DIRECTION
@@ -168,8 +168,8 @@ Pacing: Each number gets its own beat. No rushing.
 
 #### 🖼️ IMAGE PROMPTS (Nano Banana 2)
 
-**Image A — Manuscript pages spread (background)**
-> Top-down aerial view of multiple open manuscript pages spread on dark wooden table, unusual botanical illustrations visible, some pages overlapping, dramatic overhead lighting, photorealistic, 9:16 vertical
+**Image A — `ep003_manuscript_page.png` — Background (reused from S1)**
+> Same file. Used at 40% opacity behind stat cards.
 
 #### 🎬 MOTION DIRECTION (STAT CARDS — Primary motion graphics)
 
@@ -220,7 +220,7 @@ Pacing: Medium. Building unease.
 
 #### 🖼️ IMAGE PROMPTS (Nano Banana 2)
 
-**Image A — Close-up cipher text**
+**Image A — `ep003_cipher_closeup.png` — Background**
 > Extreme macro close-up of Voynich manuscript text, individual unknown glyphs visible, shallow depth of field, warm parchment color, mysterious, photorealistic texture detail, portrait orientation
 
 #### 🎬 MOTION DIRECTION
@@ -265,7 +265,7 @@ Pacing: Slightly faster. Rhythmic. Almost percussive.
 
 #### 🖼️ IMAGE PROMPTS (Nano Banana 2)
 
-**Image A — Yale Beinecke Library exterior**
+**Image A — `ep003_yale_beinecke.png` — Background**
 > Yale Beinecke Rare Book Library exterior at dusk, dramatic sky, architectural photography, slightly desaturated cinematic look, 9:16 portrait crop
 
 #### 🎬 MOTION DIRECTION
@@ -309,7 +309,7 @@ Pacing: Slower. Each theory is a shrug.
 
 #### 🖼️ IMAGE PROMPTS (Nano Banana 2)
 
-**Image A — Botanical/herbal illustration from manuscript**
+**Image A — `ep003_plant_botanical.png` — Background**
 > Stylized medieval herbal manuscript illustration of an unidentifiable plant with roots, in warm ink-on-parchment style, photorealistic aged paper texture, full frame portrait
 
 #### 🎬 MOTION DIRECTION
@@ -351,7 +351,7 @@ Pacing: Slow. Deliberate pauses.
 
 #### 🖼️ IMAGE PROMPTS (Nano Banana 2)
 
-**Image A — Single hand writing on parchment (atmospheric)**
+**Image A — `ep003_scribe_hand.png` — Background (hero closer)**
 > Dark cinematic shot of a medieval scribe's hand holding a quill, writing on candlelit parchment, only hand and page visible, deep shadows, warm amber candlelight, photorealistic, 9:16 vertical, emotional, lonely
 
 #### 🎬 MOTION DIRECTION
@@ -373,17 +373,17 @@ export const FPS = 30;
 
 export const SCENES = {
   s1_hook:       { start: 0,    durationSec: 8  },
-  s2_discovery:  { start: 240,  durationSec: 10 },
-  s3_stats:      { start: 540,  durationSec: 12 },
-  s4_language:   { start: 900,  durationSec: 12 },
-  s5_attempts:   { start: 1260, durationSec: 10 },
-  s6_theories:   { start: 1560, durationSec: 6  },
-  s7_closer:     { start: 1740, durationSec: 9  },
+  s2_discovery:  { start: 8,    durationSec: 10 },
+  s3_stats:      { start: 18,   durationSec: 12 },
+  s4_language:   { start: 30,   durationSec: 12 },
+  s5_attempts:   { start: 42,   durationSec: 10 },
+  s6_theories:   { start: 52,   durationSec: 6  },
+  s7_closer:     { start: 58,   durationSec: 9  },
 } as const;
 
 // Helper
 export const secToFrames = (sec: number) => Math.round(sec * FPS);
-export const totalFrames = SCENES.s7_closer.start + secToFrames(SCENES.s7_closer.durationSec);
+export const totalFrames = secToFrames(SCENES.s7_closer.start + SCENES.s7_closer.durationSec);
 // → 2010 frames ≈ 67 seconds
 ```
 
@@ -419,8 +419,9 @@ export const RemotionRoot: React.FC = () => {
 
 ```tsx
 // src/compositions/VoynichShort.tsx
-import { AbsoluteFill, Audio, staticFile, Sequence } from 'remotion';
-import { SCENES, FPS, secToFrames } from '../constants';
+import { AbsoluteFill, Sequence, staticFile } from 'remotion';
+import { Audio } from '@remotion/media';
+import { SCENES, secToFrames } from '../constants';
 import { Scene1Hook } from '../scenes/portrait/Scene1Hook';
 import { Scene2Discovery } from '../scenes/portrait/Scene2Discovery';
 import { Scene3Stats } from '../scenes/portrait/Scene3Stats';
@@ -429,6 +430,16 @@ import { Scene5Attempts } from '../scenes/portrait/Scene5Attempts';
 import { Scene6Theories } from '../scenes/portrait/Scene6Theories';
 import { Scene7Closer } from '../scenes/portrait/Scene7Closer';
 
+const SCENE_COMPONENTS: Record<keyof typeof SCENES, React.FC> = {
+  s1_hook: Scene1Hook,
+  s2_discovery: Scene2Discovery,
+  s3_stats: Scene3Stats,
+  s4_language: Scene4Language,
+  s5_attempts: Scene5Attempts,
+  s6_theories: Scene6Theories,
+  s7_closer: Scene7Closer,
+};
+
 export const VoynichShort: React.FC = () => {
   return (
     <AbsoluteFill style={{ backgroundColor: '#0A0A0A' }}>
@@ -436,20 +447,17 @@ export const VoynichShort: React.FC = () => {
       <Audio src={staticFile('music/ep003_bgm_shorts.mp3')} volume={0.12} />
 
       {/* SCENES */}
-      {Object.entries(SCENES).map(([key, s]) => {
-        const Component = {
-          s1_hook: Scene1Hook,
-          s2_discovery: Scene2Discovery,
-          s3_stats: Scene3Stats,
-          s4_language: Scene4Language,
-          s5_attempts: Scene5Attempts,
-          s6_theories: Scene6Theories,
-          s7_closer: Scene7Closer,
-        }[key]!;
+      {(Object.keys(SCENES) as Array<keyof typeof SCENES>).map((key) => {
+        const scene = SCENES[key];
+        const Component = SCENE_COMPONENTS[key];
         return (
-          <Sequence key={key} from={s.start} durationInFrames={secToFrames(s.durationSec)}>
+          <Sequence
+            key={key}
+            from={secToFrames(scene.start)}
+            durationInFrames={secToFrames(scene.durationSec)}
+          >
             <Component />
-            <Audio src={staticFile(`audio/ep003_${key.replace('s', 's')}.wav`)} />
+            <Audio src={staticFile(`audio/ep003_${key}.wav`)} />
           </Sequence>
         );
       })}
@@ -465,15 +473,32 @@ export const VoynichShort: React.FC = () => {
 ### Scene1Hook.tsx
 
 ```tsx
-import { AbsoluteFill, Img, staticFile, useCurrentFrame, interpolate, spring } from 'remotion';
+import { AbsoluteFill, Img, staticFile, useCurrentFrame, useVideoConfig, interpolate, Easing } from 'remotion';
+import { loadFont } from '@remotion/google-fonts/Cinzel';
+
+const { fontFamily: cinzelFont } = loadFont('normal', {
+  weights: ['400', '700', '900'],
+  subsets: ['latin'],
+});
 
 export const Scene1Hook: React.FC = () => {
   const frame = useCurrentFrame();
-  const fps = 30;
+  const { fps } = useVideoConfig();
 
-  const bgScale = interpolate(frame, [0, 240], [1.0, 1.08], { extrapolateRight: 'clamp' });
-  const titleOpacity = interpolate(frame, [20, 50], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
-  const hookOpacity = interpolate(frame, [40, 70], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
+  const bgScale = interpolate(frame, [0, 8 * fps], [1.0, 1.08], {
+    extrapolateRight: 'clamp',
+    easing: Easing.bezier(0.16, 1, 0.3, 1),
+  });
+  const titleOpacity = interpolate(frame, [20, 50], [0, 1], {
+    extrapolateLeft: 'clamp',
+    extrapolateRight: 'clamp',
+    easing: Easing.bezier(0.16, 1, 0.3, 1),
+  });
+  const hookOpacity = interpolate(frame, [40, 70], [0, 1], {
+    extrapolateLeft: 'clamp',
+    extrapolateRight: 'clamp',
+    easing: Easing.bezier(0.16, 1, 0.3, 1),
+  });
   const impactY = spring({ frame: frame - 80, fps, config: { damping: 12, stiffness: 180 } });
   const impactTranslate = interpolate(impactY, [0, 1], [60, 0]);
 
@@ -491,7 +516,7 @@ export const Scene1Hook: React.FC = () => {
 
       {/* FOREVER LOST label */}
       <AbsoluteFill style={{ alignItems: 'center', justifyContent: 'flex-start', paddingTop: 80 }}>
-        <div style={{ opacity: titleOpacity, fontFamily: 'Cinzel, serif', fontSize: 22, color: '#C8A96E', letterSpacing: 6 }}>
+        <div style={{ opacity: titleOpacity, fontFamily: cinzelFont, fontSize: 22, color: '#C8A96E', letterSpacing: 6 }}>
           FOREVER LOST
         </div>
       </AbsoluteFill>
@@ -499,7 +524,7 @@ export const Scene1Hook: React.FC = () => {
       {/* Hook text */}
       <AbsoluteFill style={{ alignItems: 'center', justifyContent: 'center' }}>
         <div style={{ opacity: hookOpacity, textAlign: 'center', padding: '0 60px' }}>
-          <p style={{ fontFamily: 'Cinzel, serif', fontSize: 32, color: 'white', lineHeight: 1.4, margin: 0 }}>
+          <p style={{ fontFamily: cinzelFont, fontSize: 32, color: 'white', lineHeight: 1.4, margin: 0 }}>
             A book exists that no human has ever decoded.
           </p>
         </div>
@@ -508,10 +533,10 @@ export const Scene1Hook: React.FC = () => {
       {/* Impact line */}
       <AbsoluteFill style={{ alignItems: 'center', justifyContent: 'flex-end', paddingBottom: 180 }}>
         <div style={{ transform: `translateY(${impactTranslate}px)`, textAlign: 'center' }}>
-          <p style={{ fontFamily: 'Cinzel, serif', fontSize: 52, fontWeight: 900, color: 'white', margin: 0 }}>
+          <p style={{ fontFamily: cinzelFont, fontSize: 52, fontWeight: 900, color: 'white', margin: 0 }}>
             Not one word.
           </p>
-          <p style={{ fontFamily: 'Cinzel, serif', fontSize: 28, color: '#C8A96E', margin: '8px 0 0' }}>
+          <p style={{ fontFamily: cinzelFont, fontSize: 28, color: '#C8A96E', margin: '8px 0 0' }}>
             In 600 years.
           </p>
         </div>
@@ -524,7 +549,19 @@ export const Scene1Hook: React.FC = () => {
 ### Scene3Stats.tsx (stat cards example)
 
 ```tsx
-import { AbsoluteFill, Img, staticFile, useCurrentFrame, spring, interpolate } from 'remotion';
+import { AbsoluteFill, Img, staticFile, useCurrentFrame, useVideoConfig, spring, interpolate, Easing } from 'remotion';
+import { loadFont } from '@remotion/google-fonts/Cinzel';
+import { loadFont as loadInterFont } from '@remotion/google-fonts/Inter';
+
+const { fontFamily: cinzelFont } = loadFont('normal', {
+  weights: ['400', '700', '900'],
+  subsets: ['latin'],
+});
+
+const { fontFamily: interFont } = loadInterFont('normal', {
+  weights: ['400'],
+  subsets: ['latin'],
+});
 
 const stats = [
   { number: '240', label: 'pages of unknown text', color: '#FFFFFF', delay: 0 },
@@ -534,7 +571,7 @@ const stats = [
 
 export const Scene3Stats: React.FC = () => {
   const frame = useCurrentFrame();
-  const fps = 30;
+  const { fps } = useVideoConfig();
 
   return (
     <AbsoluteFill>
@@ -547,11 +584,13 @@ export const Scene3Stats: React.FC = () => {
         {stats.map(({ number, label, color, delay }) => {
           const progress = spring({ frame: frame - delay, fps, config: { damping: 14, stiffness: 120 } });
           const scale = interpolate(progress, [0, 1], [0.6, 1]);
-          const opacity = interpolate(progress, [0, 0.3], [0, 1]);
+          const opacity = interpolate(progress, [0, 0.3], [0, 1], {
+            extrapolateRight: 'clamp',
+          });
           return (
             <div key={number} style={{ transform: `scale(${scale})`, opacity, backgroundColor: 'rgba(26,26,26,0.88)', borderRadius: 16, padding: '24px 40px', width: '100%', textAlign: 'center' }}>
-              <div style={{ fontFamily: 'Cinzel, serif', fontSize: 72, fontWeight: 900, color, lineHeight: 1 }}>{number}</div>
-              <div style={{ fontFamily: 'Inter, sans-serif', fontSize: 18, color: '#AAAAAA', marginTop: 8 }}>{label}</div>
+              <div style={{ fontFamily: cinzelFont, fontSize: 72, fontWeight: 900, color, lineHeight: 1 }}>{number}</div>
+              <div style={{ fontFamily: interFont, fontSize: 18, color: '#AAAAAA', marginTop: 8 }}>{label}</div>
             </div>
           );
         })}
@@ -566,13 +605,13 @@ export const Scene3Stats: React.FC = () => {
 ## 🔢 TIMING WORKFLOW
 
 ```
-1. Generate 7 WAV files via Next.js TTS route (voice: Charon)
+1. Generate 7 WAV files via TTS (voice: Charon)
 2. Note exact duration in seconds for each
 3. Update SCENES object in constants.ts:
    s1_hook.durationSec = [actual WAV duration]
    s2_discovery.durationSec = [actual WAV duration]
    ... etc
-4. Recalculate start frames: each scene.start = previous.start + secToFrames(previous.durationSec)
+4. Recalculate start values: each scene.start = previous.start + previous.durationSec
 5. All Sequence components auto-adjust — no other changes needed
 ```
 
@@ -587,7 +626,25 @@ Red danger:        #CC3333
 Text primary:      #FFFFFF
 Text secondary:    #AAAAAA
 Panel bg:          rgba(26,26,26,0.88)
-Font — Display:    Cinzel (Google Fonts)
-Font — Body:       Inter
+Font — Display:    Cinzel (via @remotion/google-fonts/Cinzel)
+Font — Body:       Inter (via @remotion/google-fonts/Inter)
 Font — Mono:       Courier New (cipher text)
 ```
+
+---
+
+## ⚠️ REMOTION GOTCHAS
+
+> **CSS transitions/animations are FORBIDDEN** — they will not render correctly in Remotion. All animation must use `interpolate()`, `spring()`, or `Easing`.
+>
+> **Tailwind animation class names are FORBIDDEN** — they will not render correctly.
+>
+> **Fonts must be loaded via `@remotion/google-fonts`** — CSS `fontFamily` strings like `'Cinzel, serif'` will not guarantee the font is available at render time. Use `loadFont()` and the returned `fontFamily` value.
+>
+> **Audio must be imported from `@remotion/media`** — not from `remotion` directly. Run `npx remotion add @remotion/media` if not installed.
+>
+> **Images must use the `<Img>` component** — not a plain `<img>` tag, for proper loading behavior during rendering.
+>
+> **Sequence `from` values are in frames** — when `start` is stored in seconds, always convert via `secToFrames()` before passing to `<Sequence from={...}>`.
+>
+> **`useVideoConfig()` is preferred** over hardcoding `fps = 30` inside components. This ensures components stay in sync with the composition definition.
