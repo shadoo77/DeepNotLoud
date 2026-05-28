@@ -137,8 +137,45 @@ export const Scene1Intro: React.FC = () => {
 
   const impactFlash = Math.max(silenceFlash, finalFlash);
 
+  const badgeSpring = (trigger: number) =>
+    spring({
+      frame: Math.max(0, frame - trigger),
+      fps,
+      config: { damping: 12, stiffness: 200 },
+    });
+
+  const badgeOpacity = (trigger: number) =>
+    interpolate(Math.max(0, frame - trigger), [0, 20], [0, 1], {
+      extrapolateLeft: "clamp",
+      extrapolateRight: "clamp",
+    });
+
+  const badge240 = getPhraseFrames({
+    phrase: "two hundred and forty",
+    transcriptData: TRASCRIPT_DATA,
+    fps,
+    voiceOverStartFrame: VO_START_FRAME,
+  });
+  const badge240Frame = badge240.from > 0 ? badge240.from : 338;
+
+  const badgeLanguage = getPhraseFrames({
+    phrase: "never been identified",
+    transcriptData: TRASCRIPT_DATA,
+    fps,
+    voiceOverStartFrame: VO_START_FRAME,
+  });
+  const badgeLanguageFrame = badgeLanguage.from > 0 ? badgeLanguage.from : 960;
+
+  const badge600 = getPhraseFrames({
+    phrase: "six hundred",
+    transcriptData: TRASCRIPT_DATA,
+    fps,
+    voiceOverStartFrame: VO_START_FRAME,
+  });
+  const badge600Frame = badge600.from > 0 ? badge600.from : impactFrame;
+
   return (
-    <AbsoluteFill style={{ overflow: "hidden", backgroundColor: C.bg }}>
+    <AbsoluteFill className="overflow-hidden" style={{ backgroundColor: C.bg }}>
       {/* <Audio
         src={staticFile(`${ASSET}/audio/bgm/ep003_bgm_landscape.mp3`)}
         volume={(f) => {
@@ -148,20 +185,19 @@ export const Scene1Intro: React.FC = () => {
         loop
       /> */}
 
-      {/* Wrapping all images in one Ken Burns container */}
       <div
         className="absolute inset-0 overflow-hidden"
         style={{ transform: `scale(${kenBurns})` }}
       >
         <Img
           src={staticFile(`${ASSET}/images/ep003_manuscript_spread.jpeg`)}
-          style={{ width: "100%", height: "100%", objectFit: "cover" }}
+          className="size-full object-cover"
         />
 
         <div className="absolute inset-0" style={{ opacity: wheelOpacity }}>
           <Img
             src={staticFile(`${ASSET}/images/ep003_astronomical_wheel.jpeg`)}
-            style={{ width: "100%", height: "100%", objectFit: "cover" }}
+            className="size-full object-cover"
           />
         </div>
 
@@ -170,7 +206,7 @@ export const Scene1Intro: React.FC = () => {
             src={staticFile(
               `${ASSET}/images/ep003_yale_beinecke_interior.jpeg`,
             )}
-            style={{ width: "100%", height: "100%", objectFit: "cover" }}
+            className="size-full object-cover"
           />
         </div>
       </div>
@@ -183,7 +219,7 @@ export const Scene1Intro: React.FC = () => {
         }}
       />
 
-      <DustParticles count={40} />
+      <DustParticles count={180} />
 
       <div
         className="pointer-events-none absolute inset-0"
@@ -193,89 +229,145 @@ export const Scene1Intro: React.FC = () => {
         }}
       />
 
+      {badge240Frame > 0 && (
+        <div
+          className="pointer-events-none absolute rounded-xl px-6 py-4"
+          style={{
+            right: 40,
+            top: "28%",
+            opacity: badgeOpacity(badge240Frame),
+            transform: `scale(${badgeSpring(badge240Frame)})`,
+            backgroundColor: "rgba(10,10,10,0.88)",
+            border: `1px solid ${C.gold}`,
+          }}
+        >
+          <div
+            className="text-4xl font-black tracking-wider"
+            style={{ fontFamily: cinzelFont, color: C.gold }}
+          >
+            240 PAGES
+          </div>
+          <div
+            className="mt-1.5 text-[22px]"
+            style={{ fontFamily: interFont, color: C.gray }}
+          >
+            More text than a short novel
+          </div>
+        </div>
+      )}
+
+      {badgeLanguageFrame > 0 && (
+        <div
+          className="pointer-events-none absolute rounded-xl px-6 py-4"
+          style={{
+            right: 40,
+            top: "48%",
+            opacity: badgeOpacity(badgeLanguageFrame),
+            transform: `scale(${badgeSpring(badgeLanguageFrame)})`,
+            backgroundColor: "rgba(10,10,10,0.88)",
+            border: `1px solid ${C.red}`,
+          }}
+        >
+          <div
+            className="text-[28px] font-black tracking-wider"
+            style={{ fontFamily: cinzelFont, color: C.red }}
+          >
+            LANGUAGE: UNKNOWN
+          </div>
+          <div
+            className="mt-1.5 text-[22px]"
+            style={{ fontFamily: interFont, color: C.gray }}
+          >
+            No known match on earth
+          </div>
+        </div>
+      )}
+
+      {badge600Frame > 0 && (
+        <div
+          className="pointer-events-none absolute rounded-xl px-6 py-4"
+          style={{
+            right: 40,
+            top: "68%",
+            opacity: badgeOpacity(badge600Frame),
+            transform: `scale(${badgeSpring(badge600Frame)})`,
+            backgroundColor: "rgba(10,10,10,0.88)",
+            border: `1px solid ${C.gold}`,
+          }}
+        >
+          <div
+            className="text-4xl font-black tracking-wider"
+            style={{ fontFamily: cinzelFont, color: C.gold }}
+          >
+            600 YEARS
+          </div>
+          <div
+            className="mt-1.5 text-[22px]"
+            style={{ fontFamily: interFont, color: C.gray }}
+          >
+            Of silence
+          </div>
+        </div>
+      )}
+
       <div
-        className="absolute rounded-lg"
+        className="absolute rounded-lg px-5 py-3"
         style={{
           top: 50,
           left: 50,
           opacity: Math.min(titleOpacity, 1 - titleExitOpacity),
           transform: `translateY(${interpolate(titleSpring, [0, 1], [-20, 0])}px)`,
           backgroundColor: "rgba(0,0,0,0.55)",
-          padding: "12px 20px",
         }}
       >
         <div
-          style={{
-            fontFamily: cinzelFont,
-            fontSize: 48,
-            fontWeight: 900,
-            color: C.gold,
-            letterSpacing: 4,
-          }}
+          className="text-5xl font-black tracking-widest"
+          style={{ fontFamily: cinzelFont, color: C.gold }}
         >
           FOREVER LOST
         </div>
         <div
-          style={{
-            fontFamily: interFont,
-            fontSize: 18,
-            color: C.gray,
-            marginTop: 4,
-            letterSpacing: 3,
-          }}
+          className="mt-1 text-3xl font-semibold tracking-wider"
+          style={{ fontFamily: interFont, color: C.gray }}
         >
           EPISODE 003
         </div>
         <div
+          className="mt-2 h-[3px] rounded-sm"
           style={{
-            height: 3,
             backgroundColor: C.gold,
             width: interpolate(underlineSpring, [0, 1], [0, 220]),
-            marginTop: 8,
-            borderRadius: 2,
           }}
         />
       </div>
 
       <div
-        className="pointer-events-none absolute"
+        className="pointer-events-none absolute text-center"
         style={{
           top: "50%",
           left: "50%",
           transform: `translate(-50%, -50%) scale(${chapterScale})`,
           opacity:
             Math.min(chapterOpacity, 1 - chapterExitOpacity) * chapterOpacity,
-          textAlign: "center",
         }}
       >
         <div
-          style={{
-            backgroundColor: "rgba(0,0,0,0.55)",
-            borderRadius: 12,
-            padding: "24px 40px",
-          }}
+          className="rounded-xl px-10 py-6"
+          style={{ backgroundColor: "rgba(0,0,0,0.55)" }}
         >
           <div
+            className="text-[56px] font-black tracking-wider"
             style={{
               fontFamily: cinzelFont,
-              fontSize: 56,
-              fontWeight: 900,
               color: C.white,
-              letterSpacing: 3,
               textShadow: `0 0 ${glowPulse}px ${C.gold}`,
             }}
           >
             The Voynich Manuscript
           </div>
           <div
-            style={{
-              fontFamily: interFont,
-              fontSize: 22,
-              color: C.gold,
-              marginTop: 16,
-              letterSpacing: 2,
-              fontWeight: 400,
-            }}
+            className="mt-4 text-4xl font-bold tracking-wider"
+            style={{ fontFamily: interFont, color: C.gold }}
           >
             Why Nobody Can Decode It
           </div>
