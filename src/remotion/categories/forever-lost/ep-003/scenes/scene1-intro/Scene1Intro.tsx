@@ -33,7 +33,7 @@ const ASSET = "assets/forever-lost/ep-003";
 
 export const Scene1Intro: React.FC = () => {
   const frame = useCurrentFrame();
-  const { fps } = useVideoConfig();
+  const { fps, durationInFrames } = useVideoConfig();
 
   const titleSpring = spring({
     frame: frame - 120,
@@ -53,13 +53,24 @@ export const Scene1Intro: React.FC = () => {
     config: { damping: 14, stiffness: 70 },
   });
 
-  const glowPulse = Math.sin(frame * 0.04) * 10 + 10;
+  const glowPhase = Math.min(Math.max(0, frame - 600), 600);
+  const glowPulse = interpolate(
+    Math.sin(glowPhase * 0.02094),
+    [-1, 1],
+    [0, 20],
+    { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
+  );
 
-  const kenBurns = interpolate(frame, [0, 1350], [1.0, 1.1], {
-    extrapolateLeft: "clamp",
-    extrapolateRight: "clamp",
-    easing: Easing.ease,
-  });
+  const kenBurns = interpolate(
+    frame,
+    [0, durationInFrames],
+    [1.0, 1.1],
+    {
+      extrapolateLeft: "clamp",
+      extrapolateRight: "clamp",
+      easing: Easing.ease,
+    },
+  );
 
   const wheelOpacity = interpolate(frame, [900, 930], [0, 1], {
     extrapolateLeft: "clamp",
@@ -111,23 +122,19 @@ export const Scene1Intro: React.FC = () => {
   const impactFrame = silencePhrase.from > 0 ? silencePhrase.from : 900;
 
   return (
-    <AbsoluteFill style={{ backgroundColor: C.bg }}>
+    <AbsoluteFill className="bg-[#0A0A0A]">
       <Audio
         src={staticFile(`${ASSET}/audio/bgm/ep003_bgm_landscape.mp3`)}
         volume={(f) => {
-          if (f < 1350) return 0.18;
+          if (f < durationInFrames) return 0.18;
           return 0;
         }}
         loop
       />
 
       <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          transform: `scale(${kenBurns})`,
-          overflow: "hidden",
-        }}
+        className="absolute inset-0 overflow-hidden"
+        style={{ transform: `scale(${kenBurns})` }}
       >
         <Img
           src={staticFile(`${ASSET}/images/ep003_manuscript_spread.jpeg`)}
@@ -136,23 +143,16 @@ export const Scene1Intro: React.FC = () => {
       </div>
 
       <div
+        className="pointer-events-none absolute inset-0"
         style={{
-          position: "absolute",
-          inset: 0,
           background:
             "radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.70) 100%)",
-          pointerEvents: "none",
         }}
       />
 
       <DustParticles count={40} />
 
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-        }}
-      >
+      <div className="absolute inset-0">
         <Img
           src={staticFile(`${ASSET}/images/ep003_astronomical_wheel.jpeg`)}
           style={{
@@ -164,12 +164,7 @@ export const Scene1Intro: React.FC = () => {
         />
       </div>
 
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-        }}
-      >
+      <div className="absolute inset-0">
         <Img
           src={staticFile(`${ASSET}/images/ep003_yale_beinecke_interior.jpeg`)}
           style={{
@@ -182,18 +177,16 @@ export const Scene1Intro: React.FC = () => {
       </div>
 
       <div
+        className="pointer-events-none absolute inset-0"
         style={{
-          position: "absolute",
-          inset: 0,
           background:
-            "radial-gradient(ellipse at center, transparent 30%, rgba(0,0,0,0.60) 100%)",
-          pointerEvents: "none",
+            "radial-gradient(ellipse at center, transparent 30%, rgba(0,0,0,0.70) 100%)",
         }}
       />
 
       <div
+        className="absolute"
         style={{
-          position: "absolute",
           top: 60,
           left: 60,
           opacity: Math.min(titleOpacity, 1 - titleExitOpacity),
@@ -234,15 +227,14 @@ export const Scene1Intro: React.FC = () => {
       </div>
 
       <div
+        className="pointer-events-none absolute"
         style={{
-          position: "absolute",
           top: "50%",
           left: "50%",
           transform: `translate(-50%, -50%) scale(${chapterScale})`,
           opacity:
             Math.min(chapterOpacity, 1 - chapterExitOpacity) * chapterOpacity,
           textAlign: "center",
-          pointerEvents: "none",
         }}
       >
         <div
@@ -283,6 +275,7 @@ export const Scene1Intro: React.FC = () => {
           highlightedWords={[]}
           position="bottom-center"
           startFrame={VO_START_FRAME}
+          showOverlay
         />
       </Sequence>
 
