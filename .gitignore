@@ -21,3 +21,6 @@ logs
 
 # whisper
 whisper.cpp
+
+# graphify
+/graphify-out/
