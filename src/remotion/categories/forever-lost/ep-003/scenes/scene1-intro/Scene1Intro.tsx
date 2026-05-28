@@ -67,17 +67,12 @@ export const Scene1Intro: React.FC = () => {
     easing: Easing.ease,
   });
 
-  const wheelOpacity = interpolate(frame, [900, 930], [0, 1], {
+  const wheelOpacity = interpolate(frame, [450, 480], [0, 1], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
   });
 
-  const wheelOutOpacity = interpolate(frame, [1170, 1200], [1, 0], {
-    extrapolateLeft: "clamp",
-    extrapolateRight: "clamp",
-  });
-
-  const beineckeOpacity = interpolate(frame, [1200, 1230], [0, 1], {
+  const beineckeOpacity = interpolate(frame, [900, 930], [0, 1], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
   });
@@ -154,27 +149,17 @@ export const Scene1Intro: React.FC = () => {
 
       <DustParticles count={40} />
 
-      <div className="absolute inset-0">
+      <div className="absolute inset-0" style={{ opacity: wheelOpacity }}>
         <Img
           src={staticFile(`${ASSET}/images/ep003_astronomical_wheel.jpeg`)}
-          style={{
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-            opacity: wheelOpacity * (1 - wheelOutOpacity),
-          }}
+          style={{ width: "100%", height: "100%", objectFit: "cover" }}
         />
       </div>
 
-      <div className="absolute inset-0">
+      <div className="absolute inset-0" style={{ opacity: beineckeOpacity }}>
         <Img
           src={staticFile(`${ASSET}/images/ep003_yale_beinecke_interior.jpeg`)}
-          style={{
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-            opacity: beineckeOpacity,
-          }}
+          style={{ width: "100%", height: "100%", objectFit: "cover" }}
         />
       </div>
 
@@ -187,12 +172,14 @@ export const Scene1Intro: React.FC = () => {
       />
 
       <div
-        className="absolute"
+        className="absolute rounded-lg"
         style={{
-          top: 60,
-          left: 60,
+          top: 50,
+          left: 50,
           opacity: Math.min(titleOpacity, 1 - titleExitOpacity),
           transform: `translateY(${interpolate(titleSpring, [0, 1], [-20, 0])}px)`,
+          backgroundColor: "rgba(0,0,0,0.55)",
+          padding: "12px 20px",
         }}
       >
         <div
@@ -241,27 +228,35 @@ export const Scene1Intro: React.FC = () => {
       >
         <div
           style={{
-            fontFamily: cinzelFont,
-            fontSize: 56,
-            fontWeight: 900,
-            color: C.white,
-            letterSpacing: 3,
-            textShadow: `0 0 ${glowPulse}px ${C.gold}`,
+            backgroundColor: "rgba(0,0,0,0.55)",
+            borderRadius: 12,
+            padding: "24px 40px",
           }}
         >
-          The Voynich Manuscript
-        </div>
-        <div
-          style={{
-            fontFamily: interFont,
-            fontSize: 22,
-            color: C.gold,
-            marginTop: 16,
-            letterSpacing: 2,
-            fontWeight: 400,
-          }}
-        >
-          Why Nobody Can Decode It
+          <div
+            style={{
+              fontFamily: cinzelFont,
+              fontSize: 56,
+              fontWeight: 900,
+              color: C.white,
+              letterSpacing: 3,
+              textShadow: `0 0 ${glowPulse}px ${C.gold}`,
+            }}
+          >
+            The Voynich Manuscript
+          </div>
+          <div
+            style={{
+              fontFamily: interFont,
+              fontSize: 22,
+              color: C.gold,
+              marginTop: 16,
+              letterSpacing: 2,
+              fontWeight: 400,
+            }}
+          >
+            Why Nobody Can Decode It
+          </div>
         </div>
       </div>
 
@@ -269,10 +264,7 @@ export const Scene1Intro: React.FC = () => {
 
       <div
         className="pointer-events-none absolute inset-0"
-        style={{
-          backgroundColor: C.gold,
-          opacity: impactFlash,
-        }}
+        style={{ backgroundColor: C.gold, opacity: impactFlash }}
       />
 
       <Sequence from={VO_START_FRAME}>
@@ -318,7 +310,7 @@ export const Scene1Intro: React.FC = () => {
       <Sequence from={60}>
         <Audio
           src={staticFile(`${ASSET}/audio/sfx/paper_rustle.wav`)}
-          volume={0.4}
+          volume={0.6}
         />
       </Sequence>
 
