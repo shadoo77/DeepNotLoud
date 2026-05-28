@@ -1,0 +1,468 @@
+import {
+  AbsoluteFill,
+  Img,
+  Sequence,
+  spring,
+  staticFile,
+  useCurrentFrame,
+  useVideoConfig,
+  interpolate,
+  Easing,
+} from "remotion";
+import { Audio } from "@remotion/media";
+import { loadFont } from "@remotion/google-fonts/Cinzel";
+import { loadFont as loadInterFont } from "@remotion/google-fonts/Inter";
+import { getPhraseFrames } from "@/lib/utils";
+import { TickerBar } from "@/components/atoms/TickerBar";
+import { SidebarPanel } from "@/components/atoms/SidebarPanel";
+import { TimelineBar } from "@/components/atoms/TimelineBar";
+import { DustParticles } from "@/components/atoms/DustParticles";
+import { YouTubeCaptions } from "@/components/atoms/YouTubeCaptions";
+import { C } from "@/remotion/categories/forever-lost/ep-003/constants";
+import { TRASCRIPT_DATA, VO_START_FRAME } from "./constants";
+import { Scene2Annotations } from "./Scene2Annotations";
+
+const { fontFamily: cinzelFont } = loadFont("normal", {
+  weights: ["400", "700", "900"],
+  subsets: ["latin"],
+});
+
+const { fontFamily: interFont } = loadInterFont("normal", {
+  weights: ["400", "600"],
+  subsets: ["latin"],
+});
+
+const ASSET = "assets/forever-lost/ep-003";
+
+const MILESTONES = [
+  { year: "1404", frame: 0 },
+  { year: "1440", frame: 60 },
+  { year: "1912", frame: 90 },
+  { year: "1930", frame: 1800 },
+  { year: "2009", frame: 1885 },
+];
+
+export const Scene2Discovery: React.FC = () => {
+  const frame = useCurrentFrame();
+  const { fps, durationInFrames } = useVideoConfig();
+
+  const kenBurns = interpolate(frame, [0, durationInFrames], [1.0, 1.1], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+    easing: Easing.ease,
+  });
+
+  const mapOpacity = interpolate(
+    frame,
+    [30, 50, 290, 310],
+    [0, 0.35, 0.35, 0],
+    {
+      extrapolateLeft: "clamp",
+      extrapolateRight: "clamp",
+    },
+  );
+
+  const portraitSpring = spring({
+    frame: Math.max(0, frame - 450),
+    fps,
+    config: { damping: 14, stiffness: 80 },
+  });
+  const portraitX = interpolate(portraitSpring, [0, 1], [400, 0]);
+  const portraitOpacity = interpolate(
+    Math.max(0, frame - 450),
+    [0, 20],
+    [0, 1],
+    { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
+  );
+  const portraitExit = interpolate(Math.max(0, frame - 1050), [0, 40], [1, 0], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+
+  const illustrationOpacity = interpolate(
+    Math.max(0, frame - 1050),
+    [0, 30],
+    [0, 1],
+    { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
+  );
+
+  const underlineSpring = spring({
+    frame: Math.max(0, frame - 480),
+    fps,
+    config: { damping: 18, stiffness: 100 },
+  });
+
+  const badgeSpringFn = (trigger: number) =>
+    spring({
+      frame: Math.max(0, frame - trigger),
+      fps,
+      config: { damping: 12, stiffness: 200 },
+    });
+
+  const badgeOpacityFn = (trigger: number) =>
+    interpolate(Math.max(0, frame - trigger), [0, 20], [0, 1], {
+      extrapolateLeft: "clamp",
+      extrapolateRight: "clamp",
+    });
+
+  const badge1912 = getPhraseFrames({
+    phrase: "1912",
+    transcriptData: TRASCRIPT_DATA,
+    fps,
+    voiceOverStartFrame: VO_START_FRAME,
+  });
+  const badge1912Frame = badge1912.from > 0 ? badge1912.from : 90;
+
+  const badgeNeverBefore = getPhraseFrames({
+    phrase: "never seen before",
+    transcriptData: TRASCRIPT_DATA,
+    fps,
+    voiceOverStartFrame: VO_START_FRAME,
+  });
+  const badgeNeverFrame =
+    badgeNeverBefore.from > 0 ? badgeNeverBefore.from : 620;
+
+  const badgeFailed = getPhraseFrames({
+    phrase: "dies having failed",
+    transcriptData: TRASCRIPT_DATA,
+    fps,
+    voiceOverStartFrame: VO_START_FRAME,
+  });
+  const badgeFailedFrame = badgeFailed.from > 0 ? badgeFailed.from : 1800;
+
+  const badgeCarbon = getPhraseFrames({
+    phrase: "carbon dating",
+    transcriptData: TRASCRIPT_DATA,
+    fps,
+    voiceOverStartFrame: VO_START_FRAME,
+  });
+  const badgeCarbonFrame = badgeCarbon.from > 0 ? badgeCarbon.from : 1885;
+
+  return (
+    <AbsoluteFill className="overflow-hidden" style={{ backgroundColor: C.bg }}>
+      <div
+        className="absolute inset-0 overflow-hidden"
+        style={{ transform: `scale(${kenBurns})` }}
+      >
+        <Img
+          src={staticFile(`${ASSET}/images/ep003_villa_mondragone.jpeg`)}
+          className="size-full object-cover"
+        />
+      </div>
+
+      <div
+        className="pointer-events-none absolute"
+        style={{
+          right: 40,
+          bottom: 100,
+          width: 300,
+          height: 200,
+          opacity: mapOpacity,
+        }}
+      >
+        <Img
+          src={staticFile(`${ASSET}/images/ep003_map_italy.jpeg`)}
+          className="size-full rounded-lg object-cover"
+          style={{ border: "1px solid rgba(200,169,110,0.4)" }}
+        />
+      </div>
+
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.70) 100%)",
+        }}
+      />
+
+      <DustParticles count={40} />
+
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(ellipse at center, transparent 30%, rgba(0,0,0,0.70) 100%)",
+        }}
+      />
+
+      <div
+        className="pointer-events-none absolute"
+        style={{
+          left: 370,
+          top: 80,
+          opacity: badgeOpacityFn(badge1912Frame),
+          transform: `scale(${badgeSpringFn(badge1912Frame)})`,
+        }}
+      >
+        <div
+          className="rounded-xl px-6 py-4"
+          style={{
+            backgroundColor: "rgba(10,10,10,0.88)",
+            border: `1px solid ${C.gold}`,
+          }}
+        >
+          <div
+            className="text-4xl font-black tracking-wider"
+            style={{ fontFamily: cinzelFont, color: C.gold }}
+          >
+            1912
+          </div>
+          <div
+            className="mt-1.5 text-2xl"
+            style={{ fontFamily: interFont, color: C.gray }}
+          >
+            Discovery at Villa Mondragone
+          </div>
+        </div>
+      </div>
+
+      {badgeNeverFrame > 0 && (
+        <div
+          className="pointer-events-none absolute"
+          style={{
+            left: 370,
+            top: 220,
+            opacity: badgeOpacityFn(badgeNeverFrame),
+            transform: `scale(${badgeSpringFn(badgeNeverFrame)})`,
+          }}
+        >
+          <div
+            className="rounded-xl px-6 py-4"
+            style={{
+              backgroundColor: "rgba(10,10,10,0.88)",
+              border: `1px solid ${C.red}`,
+            }}
+          >
+            <div
+              className="text-3xl font-black tracking-wider"
+              style={{ fontFamily: cinzelFont, color: C.red }}
+            >
+              NEVER BEFORE SEEN
+            </div>
+            <div
+              className="mt-1.5 text-2xl"
+              style={{ fontFamily: interFont, color: C.gray }}
+            >
+              Unlike anything found before
+            </div>
+          </div>
+        </div>
+      )}
+
+      {badgeFailedFrame > 0 && (
+        <div
+          className="pointer-events-none absolute"
+          style={{
+            left: 370,
+            top: 380,
+            opacity: badgeOpacityFn(badgeFailedFrame),
+            transform: `scale(${badgeSpringFn(badgeFailedFrame)})`,
+          }}
+        >
+          <div
+            className="rounded-xl px-6 py-4"
+            style={{
+              backgroundColor: "rgba(10,10,10,0.88)",
+              border: `1px solid ${C.gold}`,
+            }}
+          >
+            <div
+              className="text-3xl font-black tracking-wider"
+              style={{ fontFamily: cinzelFont, color: C.gold }}
+            >
+              1930
+            </div>
+            <div
+              className="mt-1.5 text-2xl"
+              style={{ fontFamily: interFont, color: C.gray }}
+            >
+              Voynich died without an answer
+            </div>
+          </div>
+        </div>
+      )}
+
+      {badgeCarbonFrame > 0 && (
+        <div
+          className="pointer-events-none absolute"
+          style={{
+            left: 370,
+            top: 540,
+            opacity: badgeOpacityFn(badgeCarbonFrame),
+            transform: `scale(${badgeSpringFn(badgeCarbonFrame)})`,
+          }}
+        >
+          <div
+            className="rounded-xl px-6 py-4"
+            style={{
+              backgroundColor: "rgba(10,10,10,0.88)",
+              border: `1px solid ${C.gold}`,
+            }}
+          >
+            <div
+              className="text-4xl font-black tracking-wider"
+              style={{ fontFamily: cinzelFont, color: C.gold }}
+            >
+              2009
+            </div>
+            <div
+              className="mt-1.5 text-2xl"
+              style={{ fontFamily: interFont, color: C.gray }}
+            >
+              Carbon dated: 1404–1438 CE
+            </div>
+          </div>
+        </div>
+      )}
+
+      <SidebarPanel
+        fields={[
+          { label: "Location", value: "Villa Mondragone" },
+          { label: "Year", value: "1912" },
+          { label: "Discoverer", value: "Wilfrid Voynich" },
+          { label: "Status", value: "UNDECIPHERED" },
+        ]}
+        delayFrames={30}
+        color={C.gold}
+      />
+
+      <TimelineBar milestones={MILESTONES} startFrame={150} color={C.gold} />
+
+      <div
+        className="pointer-events-none absolute flex items-center"
+        style={{
+          right: 40,
+          top: "20%",
+          opacity: portraitOpacity * portraitExit,
+          transform: `translateX(${portraitX}px)`,
+          maxWidth: 280,
+        }}
+      >
+        <div className="flex flex-col items-center">
+          <div
+            className="overflow-hidden rounded-xl"
+            style={{
+              width: 300,
+              height: 360,
+              border: "2px solid rgba(200,169,110,0.5)",
+            }}
+          >
+            <Img
+              src={staticFile(`${ASSET}/images/ep003_wilfrid_portrait.png`)}
+              className="size-full object-cover"
+            />
+          </div>
+          <div
+            className="mt-4 text-center"
+            style={{
+              fontFamily: cinzelFont,
+              color: C.white,
+            }}
+          >
+            <div className="text-4xl font-bold tracking-wider">
+              WILFRID VOYNICH
+            </div>
+            <div
+              className="mt-1 text-2xl font-semibold tracking-wide"
+              style={{ fontFamily: interFont, color: C.gray }}
+            >
+              1865–1930
+            </div>
+            <div
+              className="mx-auto mt-2 h-[2px]"
+              style={{
+                backgroundColor: C.gold,
+                width: interpolate(underlineSpring, [0, 1], [0, 120]),
+                borderRadius: 1,
+              }}
+            />
+          </div>
+        </div>
+      </div>
+
+      <div
+        className="pointer-events-none absolute"
+        style={{
+          right: 40,
+          top: "15%",
+          width: "55%",
+          height: "70%",
+          opacity: illustrationOpacity,
+        }}
+      >
+        <Img
+          src={staticFile(`${ASSET}/images/ep003_plant_illustrations.jpeg`)}
+          className="size-full rounded-xl object-cover"
+          style={{ border: "1px solid rgba(200,169,110,0.3)" }}
+        />
+        <Scene2Annotations startFrame={1050} />
+      </div>
+
+      <TickerBar opacity={1} color={C.gold} />
+
+      <Sequence from={VO_START_FRAME}>
+        <Audio
+          src={staticFile(`${ASSET}/audio/vo/ep003_L_s2_discovery.wav`)}
+          volume={1}
+        />
+        <YouTubeCaptions
+          transcript={TRASCRIPT_DATA}
+          highlightedWords={[
+            "1912",
+            "Villa",
+            "Mondragone",
+            "Wilfrid",
+            "Voynich",
+            "Jesuit",
+            "Rome",
+            "chest",
+            "manuscripts",
+            "parchment",
+            "illustrated",
+            "plants",
+            "women",
+            "bathing",
+            "star",
+            "charts",
+            "constellation",
+            "Renaissance",
+            "1404",
+            "1438",
+            "2009",
+            "carbon",
+            "America",
+            "failed",
+            "Europe",
+            "decoded",
+            "nobody",
+            "understand",
+          ]}
+          position="bottom-center"
+          startFrame={0}
+          showOverlay
+        />
+      </Sequence>
+
+      <Sequence>
+        <Audio
+          src={staticFile(`${ASSET}/audio/sfx/paper_rustle.wav`)}
+          volume={0.35}
+        />
+      </Sequence>
+
+      <Sequence from={450}>
+        <Audio
+          src={staticFile(`${ASSET}/audio/sfx/quill_scratch.wav`)}
+          volume={0.25}
+        />
+      </Sequence>
+
+      <Sequence from={1050}>
+        <Audio
+          src={staticFile(`${ASSET}/audio/sfx/whoosh_in.wav`)}
+          volume={0.3}
+        />
+      </Sequence>
+    </AbsoluteFill>
+  );
+};

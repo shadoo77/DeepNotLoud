@@ -119,23 +119,57 @@ export function mergePunctuation(transcript: Caption[]): Caption[] {
 }
 
 // Utility to split a transcript into sentences, based on punctuation.
-// This is used for the "sentence mode" in YouTubeCaptions,
-// where we want to show one full sentence at a time instead of switching every few words.
+// If a sentence's text exceeds ~130 characters (≈3 lines at 48px / 1280px),
+// it gets further split on commas, em-dashes, and semicolons to keep
+// each caption page short enough for 2-3 lines at landscape resolution.
 export function splitIntoSentences(tokens: Caption[]): Caption[][] {
-  const sentences: Caption[][] = [];
+  // First pass: split on strong boundaries (. ! ?)
+  const strongSentences: Caption[][] = [];
   let current: Caption[] = [];
 
   for (const token of tokens) {
     current.push(token);
-    if (token.text.match(/[.!?]\s*$/) && !token.text.match(/^\d+\.[\d.]*$/)) {
-      sentences.push(current);
+    if (
+      token.text.match(/[.!?]\s*$/) &&
+      !token.text.match(/^\d+\.[\d.]*$/)
+    ) {
+      strongSentences.push(current);
       current = [];
     }
   }
+  if (current.length > 0) strongSentences.push(current);
 
-  if (current.length > 0) {
-    sentences.push(current);
+  // Second pass: if a sentence would exceed 3 lines at text-5xl,
+  // split on commas, dashes, semicolons to keep it readable
+  const MAX_3_LINE_CHARS = 130;
+
+  const result: Caption[][] = [];
+
+  for (const sentence of strongSentences) {
+    const totalChars = sentence.reduce(
+      (sum, t) => sum + t.text.trim().length,
+      0,
+    );
+
+    if (totalChars <= MAX_3_LINE_CHARS) {
+      result.push(sentence);
+    } else {
+      let weakCurrent: Caption[] = [];
+      for (const token of sentence) {
+        weakCurrent.push(token);
+        const trimmed = token.text.trim();
+        if (
+          weakCurrent.length >= 3 &&
+          (/[,;]$/.test(trimmed) || /[\u2014\u2013]/.test(token.text)) &&
+          !/^\d+,\d+$/.test(trimmed)
+        ) {
+          result.push(weakCurrent);
+          weakCurrent = [];
+        }
+      }
+      if (weakCurrent.length > 0) result.push(weakCurrent);
+    }
   }
 
-  return sentences;
+  return result;
 }
