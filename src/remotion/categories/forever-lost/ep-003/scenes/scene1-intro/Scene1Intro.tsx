@@ -174,6 +174,14 @@ export const Scene1Intro: React.FC = () => {
   });
   const badge600Frame = badge600.from > 0 ? badge600.from : impactFrame;
 
+  const badge1400s = getPhraseFrames({
+    phrase: "1400s",
+    transcriptData: TRASCRIPT_DATA,
+    fps,
+    voiceOverStartFrame: VO_START_FRAME,
+  });
+  const badge1400sFrame = badge1400s.from > 0 ? badge1400s.from : 500;
+
   return (
     <AbsoluteFill className="overflow-hidden" style={{ backgroundColor: C.bg }}>
       {/* <Audio
@@ -228,6 +236,33 @@ export const Scene1Intro: React.FC = () => {
             "radial-gradient(ellipse at center, transparent 30%, rgba(0,0,0,0.70) 100%)",
         }}
       />
+
+      {badge1400sFrame > 0 && (
+        <div
+          className="pointer-events-none absolute rounded-xl px-6 py-4"
+          style={{
+            left: 50,
+            top: 200,
+            opacity: badgeOpacity(badge1400sFrame),
+            transform: `scale(${badgeSpring(badge1400sFrame)})`,
+            backgroundColor: "rgba(10,10,10,0.88)",
+            border: `1px solid ${C.red}`,
+          }}
+        >
+          <div
+            className="text-3xl font-black tracking-wider"
+            style={{ fontFamily: cinzelFont, color: C.red }}
+          >
+            1404–1438 CE
+          </div>
+          <div
+            className="mt-1.5 text-2xl"
+            style={{ fontFamily: interFont, color: C.gray }}
+          >
+            Carbon dated
+          </div>
+        </div>
+      )}
 
       {badge240Frame > 0 && (
         <div
