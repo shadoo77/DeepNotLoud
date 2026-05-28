@@ -61,16 +61,11 @@ export const Scene1Intro: React.FC = () => {
     { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
   );
 
-  const kenBurns = interpolate(
-    frame,
-    [0, durationInFrames],
-    [1.0, 1.1],
-    {
-      extrapolateLeft: "clamp",
-      extrapolateRight: "clamp",
-      easing: Easing.ease,
-    },
-  );
+  const kenBurns = interpolate(frame, [0, durationInFrames], [1.0, 1.1], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+    easing: Easing.ease,
+  });
 
   const wheelOpacity = interpolate(frame, [900, 930], [0, 1], {
     extrapolateLeft: "clamp",
@@ -121,8 +116,15 @@ export const Scene1Intro: React.FC = () => {
 
   const impactFrame = silencePhrase.from > 0 ? silencePhrase.from : 900;
 
+  const impactFlash = interpolate(
+    frame,
+    [impactFrame, impactFrame + 4, impactFrame + 12],
+    [0, 0.18, 0],
+    { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
+  );
+
   return (
-    <AbsoluteFill className="bg-[#0A0A0A]">
+    <AbsoluteFill style={{ overflow: "hidden", backgroundColor: C.bg }}>
       <Audio
         src={staticFile(`${ASSET}/audio/bgm/ep003_bgm_landscape.mp3`)}
         volume={(f) => {
@@ -265,6 +267,14 @@ export const Scene1Intro: React.FC = () => {
 
       <TickerBar opacity={1} color={C.gold} />
 
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{
+          backgroundColor: C.gold,
+          opacity: impactFlash,
+        }}
+      />
+
       <Sequence from={VO_START_FRAME}>
         <Audio
           src={staticFile(`${ASSET}/audio/vo/ep003_L_s1_intro.wav`)}
@@ -272,9 +282,23 @@ export const Scene1Intro: React.FC = () => {
         />
         <YouTubeCaptions
           transcript={TRASCRIPT_DATA}
-          highlightedWords={[]}
+          highlightedWords={[
+            "1400s",
+            "Six",
+            "hundred",
+            "years",
+            "Voynich",
+            "manuscript",
+            "Beinecke",
+            "Rare",
+            "Book",
+            "Yale",
+            "University",
+            "forever",
+            "lost",
+          ]}
           position="bottom-center"
-          startFrame={VO_START_FRAME}
+          startFrame={0}
           showOverlay
         />
       </Sequence>
@@ -294,7 +318,7 @@ export const Scene1Intro: React.FC = () => {
       <Sequence from={60}>
         <Audio
           src={staticFile(`${ASSET}/audio/sfx/paper_rustle.wav`)}
-          volume={0.3}
+          volume={0.4}
         />
       </Sequence>
 
