@@ -16,6 +16,10 @@ import {
   ForeverLostEp2Shorts,
   TOTAL_FRAMES as EP2_SHORTS_TOTAL_FRAMES,
 } from "@/remotion/categories/forever-lost/ep-002-shorts/ForeverLostEp2Shorts";
+import {
+  ForeverLostEp3,
+  TOTAL_FRAMES as EP3_TOTAL_FRAMES,
+} from "@/remotion/categories/forever-lost/ep-003/ForeverLostEp3";
 
 import TestEp02 from "@/remotion/categories/forever-lost/ep-002-shorts/TestEp02";
 import {
@@ -68,6 +72,14 @@ export function RemotionRoot() {
           fps={FPS}
           width={WIDTH}
           height={HEIGHT}
+        />
+        <Composition
+          id="ForeverLost-Ep3-Landscape"
+          component={ForeverLostEp3}
+          durationInFrames={EP3_TOTAL_FRAMES}
+          fps={30}
+          width={1920}
+          height={1080}
         />
       </Folder>
     </>
