@@ -52,10 +52,28 @@ export const Scene2Discovery: React.FC = () => {
     easing: Easing.ease,
   });
 
-  const mapOpacity = interpolate(frame, [30, 50, 390, 420], [0, 0.5, 0.5, 0], {
-    extrapolateLeft: "clamp",
-    extrapolateRight: "clamp",
+  const badgeRome = getPhraseFrames({
+    phrase: "outside Rome",
+    transcriptData: TRASCRIPT_DATA,
+    fps,
+    voiceOverStartFrame: VO_START_FRAME,
   });
+  const mapStartFrame = badgeRome.from > 0 ? badgeRome.from : 150;
+
+  const mapOpacity = interpolate(
+    frame,
+    [
+      mapStartFrame,
+      mapStartFrame + 30,
+      mapStartFrame + 270,
+      mapStartFrame + 300,
+    ],
+    [0, 1, 1, 0],
+    {
+      extrapolateLeft: "clamp",
+      extrapolateRight: "clamp",
+    },
+  );
 
   const portraitSpring = spring({
     frame: Math.max(0, frame - 450),
@@ -145,30 +163,24 @@ export const Scene2Discovery: React.FC = () => {
         />
       </div>
 
+      {/* --- UPDATED MAP CONTAINER --- */}
       <div
         className="pointer-events-none absolute"
         style={{
-          right: 40,
-          bottom: 100,
-          width: 300,
-          height: 200,
+          right: 80, // Moved in from the absolute corner
+          bottom: 140, // Moved up above the timeline/ticker
+          width: 340, // Slightly larger
+          height: 220,
           opacity: mapOpacity,
+          zIndex: 10, // Forces it ABOVE the vignette
         }}
       >
         <Img
           src={staticFile(`${ASSET}/images/ep003_map_italy.jpeg`)}
           className="size-full rounded-lg object-cover"
-          style={{ border: "1px solid rgba(200,169,110,0.4)" }}
+          style={{ border: "1px solid rgba(200,169,110,0.6)" }} // Brighter border
         />
       </div>
-
-      <div
-        className="pointer-events-none absolute inset-0"
-        style={{
-          background:
-            "radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.70) 100%)",
-        }}
-      />
 
       <DustParticles count={40} />
 
@@ -332,7 +344,7 @@ export const Scene2Discovery: React.FC = () => {
         className="pointer-events-none absolute flex items-center"
         style={{
           right: 60, // Moved in slightly from edge
-          top: "15%", // Moved up slightly for better vertical centering
+          top: "5%", // Moved up slightly for better vertical centering
           opacity: portraitOpacity * portraitExit,
           transform: `translateX(${portraitX}px)`,
         }}
