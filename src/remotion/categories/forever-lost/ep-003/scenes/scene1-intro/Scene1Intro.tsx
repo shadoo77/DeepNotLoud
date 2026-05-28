@@ -248,7 +248,7 @@ export const Scene1Intro: React.FC = () => {
             240 PAGES
           </div>
           <div
-            className="mt-1.5 text-[22px]"
+            className="mt-1.5 text-2xl"
             style={{ fontFamily: interFont, color: C.gray }}
           >
             More text than a short novel
@@ -269,13 +269,13 @@ export const Scene1Intro: React.FC = () => {
           }}
         >
           <div
-            className="text-[28px] font-black tracking-wider"
+            className="text-3xl font-black tracking-wider"
             style={{ fontFamily: cinzelFont, color: C.red }}
           >
             LANGUAGE: UNKNOWN
           </div>
           <div
-            className="mt-1.5 text-[22px]"
+            className="mt-1.5 text-2xl"
             style={{ fontFamily: interFont, color: C.gray }}
           >
             No known match on earth
@@ -302,7 +302,7 @@ export const Scene1Intro: React.FC = () => {
             600 YEARS
           </div>
           <div
-            className="mt-1.5 text-[22px]"
+            className="mt-1.5 text-2xl"
             style={{ fontFamily: interFont, color: C.gray }}
           >
             Of silence
@@ -356,7 +356,7 @@ export const Scene1Intro: React.FC = () => {
           style={{ backgroundColor: "rgba(0,0,0,0.55)" }}
         >
           <div
-            className="text-[56px] font-black tracking-wider"
+            className="text-5xl font-black tracking-wider"
             style={{
               fontFamily: cinzelFont,
               color: C.white,
