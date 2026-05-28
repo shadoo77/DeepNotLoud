@@ -52,15 +52,10 @@ export const Scene2Discovery: React.FC = () => {
     easing: Easing.ease,
   });
 
-  const mapOpacity = interpolate(
-    frame,
-    [30, 50, 290, 310],
-    [0, 0.35, 0.35, 0],
-    {
-      extrapolateLeft: "clamp",
-      extrapolateRight: "clamp",
-    },
-  );
+  const mapOpacity = interpolate(frame, [30, 50, 390, 420], [0, 0.5, 0.5, 0], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
 
   const portraitSpring = spring({
     frame: Math.max(0, frame - 450),
@@ -189,7 +184,7 @@ export const Scene2Discovery: React.FC = () => {
         className="pointer-events-none absolute"
         style={{
           left: 370,
-          top: 80,
+          top: 230,
           opacity: badgeOpacityFn(badge1912Frame),
           transform: `scale(${badgeSpringFn(badge1912Frame)})`,
         }}
@@ -202,7 +197,7 @@ export const Scene2Discovery: React.FC = () => {
           }}
         >
           <div
-            className="text-4xl font-black tracking-wider"
+            className="text-3xl font-black tracking-wider"
             style={{ fontFamily: cinzelFont, color: C.gold }}
           >
             1912
@@ -221,7 +216,7 @@ export const Scene2Discovery: React.FC = () => {
           className="pointer-events-none absolute"
           style={{
             left: 370,
-            top: 220,
+            top: 370,
             opacity: badgeOpacityFn(badgeNeverFrame),
             transform: `scale(${badgeSpringFn(badgeNeverFrame)})`,
           }}
@@ -254,7 +249,7 @@ export const Scene2Discovery: React.FC = () => {
           className="pointer-events-none absolute"
           style={{
             left: 370,
-            top: 380,
+            top: 530,
             opacity: badgeOpacityFn(badgeFailedFrame),
             transform: `scale(${badgeSpringFn(badgeFailedFrame)})`,
           }}
@@ -287,7 +282,7 @@ export const Scene2Discovery: React.FC = () => {
           className="pointer-events-none absolute"
           style={{
             left: 370,
-            top: 540,
+            top: 690,
             opacity: badgeOpacityFn(badgeCarbonFrame),
             transform: `scale(${badgeSpringFn(badgeCarbonFrame)})`,
           }}
@@ -300,7 +295,7 @@ export const Scene2Discovery: React.FC = () => {
             }}
           >
             <div
-              className="text-4xl font-black tracking-wider"
+              className="text-3xl font-black tracking-wider"
               style={{ fontFamily: cinzelFont, color: C.gold }}
             >
               2009
@@ -326,25 +321,30 @@ export const Scene2Discovery: React.FC = () => {
         color={C.gold}
       />
 
-      <TimelineBar milestones={MILESTONES} startFrame={150} color={C.gold} />
+      <TimelineBar
+        milestones={MILESTONES}
+        startFrame={150}
+        color={C.gold}
+        trackFontSize={36}
+      />
 
       <div
         className="pointer-events-none absolute flex items-center"
         style={{
-          right: 40,
-          top: "20%",
+          right: 60, // Moved in slightly from edge
+          top: "15%", // Moved up slightly for better vertical centering
           opacity: portraitOpacity * portraitExit,
           transform: `translateX(${portraitX}px)`,
-          maxWidth: 280,
         }}
       >
         <div className="flex flex-col items-center">
           <div
             className="overflow-hidden rounded-xl"
             style={{
-              width: 300,
-              height: 360,
+              width: 420, // Increased from 300
+              height: 500, // Increased from 360
               border: "2px solid rgba(200,169,110,0.5)",
+              boxShadow: "0 10px 30px rgba(0,0,0,0.6)", // Added cinematic drop shadow
             }}
           >
             <Img
@@ -353,26 +353,29 @@ export const Scene2Discovery: React.FC = () => {
             />
           </div>
           <div
-            className="mt-4 text-center"
+            className="mt-5 text-center"
             style={{
               fontFamily: cinzelFont,
               color: C.white,
             }}
           >
-            <div className="text-4xl font-bold tracking-wider">
+            <div
+              className="font-bold tracking-wider"
+              style={{ fontSize: 42 }} // Increased from text-4xl (36px) to 42px
+            >
               WILFRID VOYNICH
             </div>
             <div
-              className="mt-1 text-2xl font-semibold tracking-wide"
-              style={{ fontFamily: interFont, color: C.gray }}
+              className="mt-2 font-semibold tracking-wide"
+              style={{ fontFamily: interFont, color: C.gray, fontSize: 26 }} // Increased from text-2xl to 26px
             >
               1865–1930
             </div>
             <div
-              className="mx-auto mt-2 h-[2px]"
+              className="mx-auto mt-3 h-[3px]" // Increased line thickness from 2px to 3px
               style={{
                 backgroundColor: C.gold,
-                width: interpolate(underlineSpring, [0, 1], [0, 120]),
+                width: interpolate(underlineSpring, [0, 1], [0, 180]), // Widened underline to match bigger text
                 borderRadius: 1,
               }}
             />
@@ -437,7 +440,8 @@ export const Scene2Discovery: React.FC = () => {
             "nobody",
             "understand",
           ]}
-          position="bottom-center"
+          position="top-center"
+          fontSize="small"
           startFrame={0}
           showOverlay
         />

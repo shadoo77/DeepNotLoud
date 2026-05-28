@@ -17,6 +17,12 @@ const captionPosition = cva("", {
       "bottom-left": "justify-end items-start pb-16 pl-10",
       center: "justify-center items-center",
       "youtube-shorts": "justify-end items-center pb-110",
+      "top-center": "justify-start items-center pt-10",
+    },
+    fontSize: {
+      small: "text-4xl",
+      medium: "text-5xl",
+      large: "text-6xl",
     },
   },
 });
@@ -27,12 +33,19 @@ const SentencePage = ({
   pageStartMs,
   highlightedWords,
   position,
+  fontSize = "medium",
   showOverlay,
 }: {
   tokens: Caption[];
   pageStartMs: number;
   highlightedWords: string[];
-  position: "bottom-center" | "bottom-left" | "center" | "youtube-shorts";
+  position:
+    | "bottom-center"
+    | "bottom-left"
+    | "center"
+    | "youtube-shorts"
+    | "top-center";
+  fontSize: "small" | "medium" | "large";
   showOverlay: boolean;
 }) => {
   const frame = useCurrentFrame();
@@ -41,14 +54,18 @@ const SentencePage = ({
   const currentTimeMs = pageStartMs + (frame / fps) * 1000;
 
   return (
-    <AbsoluteFill className={cn(captionPosition({ position }))}>
+    <AbsoluteFill className={cn(captionPosition({ position, fontSize }))}>
       <div
-        className="font-patua max-w-7xl text-5xl font-bold whitespace-pre-wrap"
+        className={cn("font-patua max-w-4xl font-bold whitespace-pre-wrap", {
+          "text-4xl tracking-wide": fontSize === "small",
+          "text-5xl": fontSize === "medium",
+          "text-6xl": fontSize === "large",
+        })}
         style={{ textShadow: "0 2px 12px rgba(0,0,0,0.9)" }}
       >
-          <div
-            className="relative inline-block rounded-xl px-6 py-3 text-center line-clamp-3"
-            style={
+        <div
+          className="relative line-clamp-3 inline-block rounded-xl px-6 py-3 text-center"
+          style={
             showOverlay ? { backgroundColor: "oklch(0.15 0.02 260 / 0.7)" } : {}
           }
         >
@@ -101,12 +118,19 @@ const CaptionPage = ({
   page,
   highlightedWords,
   position,
+  fontSize = "medium",
   showOverlay,
 }: {
   page: TikTokPage;
   highlightedWords: string[];
-  position: "bottom-center" | "bottom-left" | "center" | "youtube-shorts";
+  position:
+    | "bottom-center"
+    | "bottom-left"
+    | "center"
+    | "youtube-shorts"
+    | "top-center";
   showOverlay: boolean;
+  fontSize: "small" | "medium" | "large";
 }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
@@ -117,12 +141,16 @@ const CaptionPage = ({
   return (
     <AbsoluteFill className={cn(captionPosition({ position }))}>
       <div
-        className="font-patua max-w-4xl text-5xl font-bold whitespace-pre-wrap"
+        className={cn("font-patua max-w-4xl font-bold whitespace-pre-wrap", {
+          "text-4xl": fontSize === "small",
+          "text-5xl": fontSize === "medium",
+          "text-6xl": fontSize === "large",
+        })}
         style={{ textShadow: "0 2px 12px rgba(0,0,0,0.9)" }}
       >
-          <div
-            className="relative inline-block rounded-xl px-6 py-3 line-clamp-3"
-            style={
+        <div
+          className="relative line-clamp-3 inline-block rounded-xl px-6 py-3"
+          style={
             showOverlay ? { backgroundColor: "oklch(0.15 0.02 260 / 0.7)" } : {}
           }
         >
@@ -174,7 +202,13 @@ const CaptionPage = ({
 type CaptionProps = ComponentPropsWithRef<"div"> & {
   transcript: Caption[];
   highlightedWords?: string[];
-  position?: "bottom-center" | "bottom-left" | "center" | "youtube-shorts";
+  position?:
+    | "bottom-center"
+    | "bottom-left"
+    | "center"
+    | "youtube-shorts"
+    | "top-center";
+  fontSize?: "small" | "medium" | "large";
   startFrame?: number;
   switchCaptionsEveryMs?: number;
   showOverlay?: boolean;
@@ -185,6 +219,7 @@ export const YouTubeCaptions: React.FC<CaptionProps> = ({
   transcript,
   highlightedWords = [],
   position = "bottom-center",
+  fontSize = "medium",
   startFrame = 0,
   switchCaptionsEveryMs = 1500,
   showOverlay = false,
@@ -244,6 +279,7 @@ export const YouTubeCaptions: React.FC<CaptionProps> = ({
             page={page}
             highlightedWords={highlightedWords}
             position={position}
+            fontSize={fontSize}
             showOverlay={showOverlay}
           />
         </Sequence>
@@ -294,6 +330,7 @@ export const YouTubeCaptions: React.FC<CaptionProps> = ({
           pageStartMs={firstToken.startMs}
           highlightedWords={highlightedWords}
           position={position}
+          fontSize={fontSize}
           showOverlay={showOverlay}
         />
       </Sequence>

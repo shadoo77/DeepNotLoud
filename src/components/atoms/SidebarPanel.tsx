@@ -26,34 +26,34 @@ export const SidebarPanel: React.FC<{
   const x = interpolate(progress, [0, 1], [-300, 0]);
 
   return (
-      <div
-        className="pointer-events-none absolute left-0 top-20 w-[340px] rounded-r-xl px-6 py-7"
-        style={{
-          transform: `translateX(${x}px)`,
-          backgroundColor: "rgba(10,10,10,0.88)",
-          borderLeft: `3px solid ${color}`,
-          borderRight: "1px solid #333",
-        }}
-      >
-        {fields.map(({ label, value }) => (
-          <div key={label} className="mb-6">
-            <div
-              className="text-lg font-bold tracking-widest uppercase"
-              style={{
-                fontFamily: "Courier New, monospace",
-                color,
-              }}
-            >
-              {label}
-            </div>
-            <div
-              className="text-3xl font-bold mt-1"
-              style={{ fontFamily: cinzelFont, color: "#FFFFFF" }}
-            >
-              {value}
-            </div>
+    <div
+      className="pointer-events-none absolute top-20 left-0 w-[340px] rounded-r-xl px-6 py-7"
+      style={{
+        transform: `translateX(${x}px)`,
+        backgroundColor: "rgba(10,10,10,0.88)",
+        borderLeft: `3px solid ${color}`,
+        borderRight: "1px solid #333",
+      }}
+    >
+      {fields.map(({ label, value }) => (
+        <div key={label} className="mb-6">
+          <div
+            className="text-xl font-bold tracking-widest uppercase"
+            style={{
+              fontFamily: "Courier New, monospace",
+              color,
+            }}
+          >
+            {label}
           </div>
-        ))}
-      </div>
+          <div
+            className="mt-1 text-3xl font-bold"
+            style={{ fontFamily: cinzelFont, color: "#FFFFFF" }}
+          >
+            {value}
+          </div>
+        </div>
+      ))}
+    </div>
   );
 };
