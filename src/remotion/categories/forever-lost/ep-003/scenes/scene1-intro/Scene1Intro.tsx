@@ -111,24 +111,44 @@ export const Scene1Intro: React.FC = () => {
 
   const impactFrame = silencePhrase.from > 0 ? silencePhrase.from : 900;
 
-  const impactFlash = interpolate(
+  const finalPhrase = getPhraseFrames({
+    phrase: "forever lost",
+    transcriptData: TRASCRIPT_DATA,
+    fps,
+    voiceOverStartFrame: VO_START_FRAME,
+  });
+
+  const finalImpactFrame =
+    finalPhrase.from > 0 ? finalPhrase.from : impactFrame + 600;
+
+  const silenceFlash = interpolate(
     frame,
     [impactFrame, impactFrame + 4, impactFrame + 12],
     [0, 0.18, 0],
     { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
   );
 
+  const finalFlash = interpolate(
+    frame,
+    [finalImpactFrame, finalImpactFrame + 4, finalImpactFrame + 12],
+    [0, 0.18, 0],
+    { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
+  );
+
+  const impactFlash = Math.max(silenceFlash, finalFlash);
+
   return (
     <AbsoluteFill style={{ overflow: "hidden", backgroundColor: C.bg }}>
-      <Audio
+      {/* <Audio
         src={staticFile(`${ASSET}/audio/bgm/ep003_bgm_landscape.mp3`)}
         volume={(f) => {
           if (f < durationInFrames) return 0.18;
           return 0;
         }}
         loop
-      />
+      /> */}
 
+      {/* Wrapping all images in one Ken Burns container */}
       <div
         className="absolute inset-0 overflow-hidden"
         style={{ transform: `scale(${kenBurns})` }}
@@ -137,6 +157,22 @@ export const Scene1Intro: React.FC = () => {
           src={staticFile(`${ASSET}/images/ep003_manuscript_spread.jpeg`)}
           style={{ width: "100%", height: "100%", objectFit: "cover" }}
         />
+
+        <div className="absolute inset-0" style={{ opacity: wheelOpacity }}>
+          <Img
+            src={staticFile(`${ASSET}/images/ep003_astronomical_wheel.jpeg`)}
+            style={{ width: "100%", height: "100%", objectFit: "cover" }}
+          />
+        </div>
+
+        <div className="absolute inset-0" style={{ opacity: beineckeOpacity }}>
+          <Img
+            src={staticFile(
+              `${ASSET}/images/ep003_yale_beinecke_interior.jpeg`,
+            )}
+            style={{ width: "100%", height: "100%", objectFit: "cover" }}
+          />
+        </div>
       </div>
 
       <div
@@ -148,20 +184,6 @@ export const Scene1Intro: React.FC = () => {
       />
 
       <DustParticles count={40} />
-
-      <div className="absolute inset-0" style={{ opacity: wheelOpacity }}>
-        <Img
-          src={staticFile(`${ASSET}/images/ep003_astronomical_wheel.jpeg`)}
-          style={{ width: "100%", height: "100%", objectFit: "cover" }}
-        />
-      </div>
-
-      <div className="absolute inset-0" style={{ opacity: beineckeOpacity }}>
-        <Img
-          src={staticFile(`${ASSET}/images/ep003_yale_beinecke_interior.jpeg`)}
-          style={{ width: "100%", height: "100%", objectFit: "cover" }}
-        />
-      </div>
 
       <div
         className="pointer-events-none absolute inset-0"
@@ -295,11 +317,11 @@ export const Scene1Intro: React.FC = () => {
         />
       </Sequence>
 
-      <Sequence durationInFrames={90}>
+      <Sequence durationInFrames={120}>
         <Audio
           src={staticFile(`${ASSET}/audio/sfx/deep_rumble.wav`)}
           volume={(f) =>
-            interpolate(f, [0, 90], [0.5, 0], {
+            interpolate(f, [0, 120], [0.5, 0], {
               extrapolateLeft: "clamp",
               extrapolateRight: "clamp",
             })
@@ -310,11 +332,18 @@ export const Scene1Intro: React.FC = () => {
       <Sequence from={60}>
         <Audio
           src={staticFile(`${ASSET}/audio/sfx/paper_rustle.wav`)}
-          volume={0.6}
+          volume={0.5}
         />
       </Sequence>
 
       <Sequence from={impactFrame}>
+        <Audio
+          src={staticFile(`${ASSET}/audio/sfx/impact_thud.wav`)}
+          volume={0.6}
+        />
+      </Sequence>
+
+      <Sequence from={finalImpactFrame}>
         <Audio
           src={staticFile(`${ASSET}/audio/sfx/impact_thud.wav`)}
           volume={0.6}
