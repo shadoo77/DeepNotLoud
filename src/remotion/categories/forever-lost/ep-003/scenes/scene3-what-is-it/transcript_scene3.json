@@ -126,8 +126,15 @@
     "confidence": 0.948718
   },
   {
-    "text": " ofplants.",
+    "text": " of",
     "startMs": 10960,
+    "endMs": 11242,
+    "timestampMs": 10620,
+    "confidence": 0.998346
+  },
+  {
+    "text": " plants.",
+    "startMs": 11242,
     "endMs": 11900,
     "timestampMs": 10620,
     "confidence": 0.998346
@@ -182,8 +189,15 @@
     "confidence": 0.996081
   },
   {
-    "text": " ofthem",
+    "text": " of",
     "startMs": 15440,
+    "endMs": 15736,
+    "timestampMs": 15240,
+    "confidence": 0.995598
+  },
+  {
+    "text": " them",
+    "startMs": 15736,
     "endMs": 16130,
     "timestampMs": 15240,
     "confidence": 0.995598
@@ -231,15 +245,15 @@
     "confidence": 0.995742
   },
   {
-    "text": " Botan",
+    "text": " Botanists",
     "startMs": 19120,
-    "endMs": 19500,
+    "endMs": 19844,
     "timestampMs": 19320,
     "confidence": 0.879894
   },
   {
-    "text": " istsfrom",
-    "startMs": 19500,
+    "text": " from",
+    "startMs": 19844,
     "endMs": 20120,
     "timestampMs": 19620,
     "confidence": 0.987621
@@ -476,8 +490,15 @@
     "confidence": 0.99577
   },
   {
-    "text": " oranywhere",
+    "text": " or",
     "startMs": 39200,
+    "endMs": 39440,
+    "timestampMs": 39280,
+    "confidence": 0.956421
+  },
+  {
+    "text": " anywhere",
+    "startMs": 39440,
     "endMs": 40080,
     "timestampMs": 39280,
     "confidence": 0.956421
@@ -539,8 +560,15 @@
     "confidence": 0.997712
   },
   {
-    "text": " rowsof",
+    "text": " rows",
     "startMs": 46380,
+    "endMs": 46880,
+    "timestampMs": 46620,
+    "confidence": 0.704592
+  },
+  {
+    "text": " of",
+    "startMs": 46880,
     "endMs": 47080,
     "timestampMs": 46620,
     "confidence": 0.704592
@@ -581,8 +609,15 @@
     "confidence": 0.577692
   },
   {
-    "text": " inan",
+    "text": " in",
     "startMs": 50840,
+    "endMs": 51056,
+    "timestampMs": 50920,
+    "confidence": 0.644403
+  },
+  {
+    "text": " an",
+    "startMs": 51056,
     "endMs": 51200,
     "timestampMs": 50920,
     "confidence": 0.644403
@@ -602,8 +637,15 @@
     "confidence": 0.997569
   },
   {
-    "text": " oftubes,",
+    "text": " of",
     "startMs": 52650,
+    "endMs": 52920,
+    "timestampMs": 52240,
+    "confidence": 0.998233
+  },
+  {
+    "text": " tubes,",
+    "startMs": 52920,
     "endMs": 53460,
     "timestampMs": 52240,
     "confidence": 0.998233
@@ -770,8 +812,15 @@
     "confidence": 0.997149
   },
   {
-    "text": " jarsand",
+    "text": " jars",
     "startMs": 67940,
+    "endMs": 68565,
+    "timestampMs": 67280,
+    "confidence": 0.986811
+  },
+  {
+    "text": " and",
+    "startMs": 68565,
     "endMs": 68940,
     "timestampMs": 67280,
     "confidence": 0.986811
