@@ -25,6 +25,41 @@ const { fontFamily: cinzelFont } = loadFont("normal", {
   subsets: ["latin"],
 });
 
+const CardContent: React.FC<{ card: CardDef }> = ({ card }) => (
+  <div
+    className="relative flex h-full items-center justify-between px-16"
+    style={{
+      backgroundColor: "rgba(10,10,10,0.92)",
+      borderTop: `2px solid ${C.gold}`,
+    }}
+  >
+    <div className="flex items-center gap-8">
+      <div className="text-7xl">{card.emoji}</div>
+      <div>
+        <div
+          className="text-4xl font-black tracking-wider"
+          style={{ fontFamily: cinzelFont, color: C.gold }}
+        >
+          {card.name}
+        </div>
+        <div className="mt-2 text-xl" style={{ color: C.gray }}>
+          {card.desc}
+        </div>
+      </div>
+    </div>
+    <div
+      className="rounded-full px-6 py-4 text-2xl font-bold tracking-wider"
+      style={{
+        backgroundColor: C.red,
+        color: C.white,
+        fontFamily: cinzelFont,
+      }}
+    >
+      STATUS: UNEXPLAINED
+    </div>
+  </div>
+);
+
 const ASSET = "assets/forever-lost/ep-003";
 
 interface CardDef {
@@ -189,11 +224,50 @@ export const Scene3WhatIsIt: React.FC = () => {
 
   const renderSectionCard = (card: CardDef, index: number) => {
     const triggerFrame = cardTriggers[index];
-    const localFrame = Math.max(0, frame - triggerFrame);
-    const totalDuration = SLIDE_DURATION + HOLD_FRAMES + EXIT_DURATION;
 
-    if (localFrame > totalDuration) return null;
+    // Not yet triggered
+    if (frame < triggerFrame) return null;
 
+    const localFrame = frame - triggerFrame;
+
+    // Is there a newer card that's already started?
+    const nextTrigger =
+      index < SECTION_CARDS.length - 1 ? cardTriggers[index + 1] : Infinity;
+    const isSuperseded = frame >= nextTrigger;
+
+    // ── SUPERSDED: forced quick exit ──
+    if (isSuperseded) {
+      const exitLocalFrame = frame - nextTrigger;
+      if (exitLocalFrame > EXIT_DURATION) return null; // fully gone
+
+      const exitProgress = exitLocalFrame / EXIT_DURATION;
+      const yExit = interpolate(exitProgress, [0, 1], [0, -80], {
+        extrapolateLeft: "clamp",
+        extrapolateRight: "clamp",
+      });
+      const opacity = interpolate(exitProgress, [0, 0.5, 1], [1, 1, 0], {
+        extrapolateLeft: "clamp",
+        extrapolateRight: "clamp",
+      });
+
+      return (
+        <div
+          key={card.name}
+          className="pointer-events-none absolute right-0 left-0"
+          style={{
+            bottom: 44,
+            height: 240,
+            transform: `translateY(${yExit}px)`,
+            opacity,
+          }}
+        >
+          {/* same card content JSX as below */}
+          <CardContent card={card} />
+        </div>
+      );
+    }
+
+    // ── NORMAL: entry → hold → natural exit ──
     const slideIn = spring({
       frame: localFrame,
       fps,
@@ -202,17 +276,25 @@ export const Scene3WhatIsIt: React.FC = () => {
     const yEntry = interpolate(slideIn, [0, 1], [100, 0]);
 
     const exitStart = SLIDE_DURATION + HOLD_FRAMES;
-    const exitProgress = Math.max(0, (localFrame - exitStart) / EXIT_DURATION);
-    const yExit = interpolate(Math.min(exitProgress, 1), [0, 1], [0, -80], {
-      extrapolateLeft: "clamp",
-      extrapolateRight: "clamp",
-    });
-    const opacity = interpolate(
-      Math.min(exitProgress, 1),
-      [0, 0.5, 1],
-      [1, 1, 0],
-      { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
-    );
+    let yExit = 0;
+    let opacity = 1;
+
+    if (localFrame > exitStart) {
+      const exitProgress = Math.min(
+        (localFrame - exitStart) / EXIT_DURATION,
+        1,
+      );
+      yExit = interpolate(exitProgress, [0, 1], [0, -80], {
+        extrapolateLeft: "clamp",
+        extrapolateRight: "clamp",
+      });
+      opacity = interpolate(exitProgress, [0, 0.5, 1], [1, 1, 0], {
+        extrapolateLeft: "clamp",
+        extrapolateRight: "clamp",
+      });
+    }
+
+    if (localFrame > SLIDE_DURATION + HOLD_FRAMES + EXIT_DURATION) return null;
 
     return (
       <div
@@ -225,40 +307,7 @@ export const Scene3WhatIsIt: React.FC = () => {
           opacity,
         }}
       >
-        <div
-          className="relative flex h-full items-center justify-between px-16"
-          style={{
-            backgroundColor: "rgba(10,10,10,0.92)",
-            borderTop: `2px solid ${C.gold}`,
-          }}
-        >
-          <div className="flex items-center gap-8">
-            <div>
-              <div
-                className="text-4xl font-black tracking-wider"
-                style={{ fontFamily: cinzelFont, color: C.gold }}
-              >
-                {card.name}
-              </div>
-              <div className="mt-2 text-base" style={{ color: C.gray }}>
-                {card.desc}
-              </div>
-            </div>
-          </div>
-          <div className="flex items-center gap-6">
-            <div className="text-7xl">{card.emoji}</div>
-            <div
-              className="rounded-full px-5 py-2 text-sm font-bold tracking-wider"
-              style={{
-                backgroundColor: C.red,
-                color: C.white,
-                fontFamily: cinzelFont,
-              }}
-            >
-              STATUS: UNEXPLAINED
-            </div>
-          </div>
-        </div>
+        <CardContent card={card} />
       </div>
     );
   };
@@ -297,13 +346,13 @@ export const Scene3WhatIsIt: React.FC = () => {
             x2={drawProgress + "%"}
             y2={0}
             stroke={C.gold}
-            strokeWidth={2}
+            strokeWidth={8}
             strokeOpacity={0.6}
           />
         </svg>
         {drawProgress > 80 && (
           <div
-            className="mt-1 rounded-sm px-2 py-0.5 text-xs font-bold tracking-wider whitespace-nowrap"
+            className="mt-1 rounded-sm px-2 py-0.5 text-xl font-bold tracking-wider whitespace-nowrap"
             style={{
               color: C.gold,
               opacity: labelOpacity,
@@ -420,7 +469,7 @@ export const Scene3WhatIsIt: React.FC = () => {
         />
       </Sequence>
 
-      <Sequence from={bioRumbleFrame}>
+      <Sequence from={bioRumbleFrame} durationInFrames={120}>
         <Audio
           src={staticFile(`${ASSET}/audio/sfx/deep_rumble.wav`)}
           volume={(f) =>
