@@ -38,26 +38,19 @@ export const Scene2Annotations: React.FC<{
     <div className="pointer-events-none absolute inset-0">
       {ARROWS.map((arrow) => {
         const localFrame = Math.max(0, frame - startFrame - arrow.delay);
-        const progress = Math.min(
-          1,
-          localFrame / 40,
-        );
-        const opacity = interpolate(
-          progress,
-          [0, 0.3, 1],
-          [0, 1, 1],
-          { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
-        );
+        const progress = Math.min(1, localFrame / 40);
+        const opacity = interpolate(progress, [0, 0.3, 1], [0, 1, 1], {
+          extrapolateLeft: "clamp",
+          extrapolateRight: "clamp",
+        });
         const drawLength = interpolate(progress, [0, 1], [0, 90], {
           extrapolateLeft: "clamp",
           extrapolateRight: "clamp",
         });
-        const labelOpacity = interpolate(
-          progress,
-          [0.5, 0.8],
-          [0, 1],
-          { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
-        );
+        const labelOpacity = interpolate(progress, [0.5, 0.8], [0, 1], {
+          extrapolateLeft: "clamp",
+          extrapolateRight: "clamp",
+        });
 
         const angleRad = (arrow.angle * Math.PI) / 180;
         const endX = arrow.x + drawLength * Math.cos(angleRad);
@@ -101,11 +94,14 @@ export const Scene2Annotations: React.FC<{
               <polygon
                 points={`${endX},${endY} ${endX - 12},${endY - 6} ${endX - 12},${endY + 6}`}
                 fill="#C8A96E"
-                style={{ transform: `rotate(${arrow.angle}deg)`, transformOrigin: `${endX}px ${endY}px` }}
+                style={{
+                  transform: `rotate(${arrow.angle}deg)`,
+                  transformOrigin: `${endX}px ${endY}px`,
+                }}
               />
             </svg>
             <div
-              className="absolute rounded-xl px-5 py-3 text-2xl font-bold whitespace-nowrap"
+              className="absolute rounded-xl px-5 py-3 text-xl font-bold whitespace-nowrap"
               style={{
                 left: arrow.x + 100,
                 top: arrow.y - 14,

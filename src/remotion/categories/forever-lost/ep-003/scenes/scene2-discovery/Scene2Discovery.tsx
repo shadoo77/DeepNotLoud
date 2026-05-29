@@ -163,16 +163,15 @@ export const Scene2Discovery: React.FC = () => {
         />
       </div>
 
-      {/* --- UPDATED MAP CONTAINER --- */}
       <div
         className="pointer-events-none absolute"
         style={{
-          right: 80, // Moved in from the absolute corner
-          bottom: 140, // Moved up above the timeline/ticker
-          width: 340, // Slightly larger
-          height: 220,
+          left: 60,
+          bottom: 160,
+          width: 500,
+          height: 320,
           opacity: mapOpacity,
-          zIndex: 10, // Forces it ABOVE the vignette
+          zIndex: 10,
         }}
       >
         <Img
