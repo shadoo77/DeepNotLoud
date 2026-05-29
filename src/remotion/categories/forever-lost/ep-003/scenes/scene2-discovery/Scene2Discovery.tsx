@@ -18,10 +18,8 @@ import { SidebarPanel } from "@/components/atoms/SidebarPanel";
 import { TimelineBar } from "@/components/atoms/TimelineBar";
 import { DustParticles } from "@/components/atoms/DustParticles";
 import { YouTubeCaptions } from "@/components/atoms/YouTubeCaptions";
-// import { SceneBadges } from "@/components/atoms/SceneBadges";
 import { C } from "@/remotion/categories/forever-lost/ep-003/constants";
 import { TRASCRIPT_DATA, VO_START_FRAME } from "./constants";
-// import { BADGES } from "./badges";
 import { Scene2Annotations } from "./Scene2Annotations";
 
 const { fontFamily: cinzelFont } = loadFont("normal", {
@@ -62,6 +60,14 @@ export const Scene2Discovery: React.FC = () => {
   });
   const mapStartFrame = badgeRome.from > 0 ? badgeRome.from : 150;
 
+  const portraitPhrase = getPhraseFrames({
+    phrase: "Wilfred Voynich",
+    transcriptData: TRASCRIPT_DATA,
+    fps,
+    voiceOverStartFrame: VO_START_FRAME,
+  });
+  const portraitTrigger = portraitPhrase.from > 0 ? portraitPhrase.from : 450;
+
   const mapOpacity = interpolate(
     frame,
     [
@@ -78,13 +84,13 @@ export const Scene2Discovery: React.FC = () => {
   );
 
   const portraitSpring = spring({
-    frame: Math.max(0, frame - 450),
+    frame: Math.max(0, frame - portraitTrigger),
     fps,
     config: { damping: 14, stiffness: 80 },
   });
   const portraitX = interpolate(portraitSpring, [0, 1], [400, 0]);
   const portraitOpacity = interpolate(
-    Math.max(0, frame - 450),
+    Math.max(0, frame - portraitTrigger),
     [0, 20],
     [0, 1],
     { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
@@ -102,7 +108,7 @@ export const Scene2Discovery: React.FC = () => {
   );
 
   const underlineSpring = spring({
-    frame: Math.max(0, frame - 480),
+    frame: Math.max(0, frame - portraitTrigger - 30),
     fps,
     config: { damping: 18, stiffness: 100 },
   });
@@ -146,12 +152,6 @@ export const Scene2Discovery: React.FC = () => {
             "radial-gradient(ellipse at center, transparent 30%, rgba(0,0,0,0.70) 100%)",
         }}
       />
-
-      {/* <SceneBadges
-        badges={BADGES}
-        transcriptData={TRASCRIPT_DATA}
-        voiceOverStartFrame={VO_START_FRAME}
-      /> */}
 
       <SidebarPanel
         fields={[
@@ -297,7 +297,7 @@ export const Scene2Discovery: React.FC = () => {
         />
       </Sequence>
 
-      <Sequence from={450}>
+      <Sequence from={portraitTrigger}>
         <Audio
           src={staticFile(`${ASSET}/audio/sfx/quill_scratch.wav`)}
           volume={0.25}
