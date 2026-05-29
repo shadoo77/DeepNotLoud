@@ -1,5 +1,6 @@
 import { SCENE_DURATION as S1_DURATION } from "./scenes/scene1-intro";
 import { SCENE_DURATION as S2_DURATION } from "./scenes/scene2-discovery";
+import { SCENE_DURATION as S3_DURATION } from "./scenes/scene3-what-is-it";
 
 export const FPS = 30;
 export const WIDTH = 1920;
@@ -27,6 +28,7 @@ export const BLACK_HOLD_FRAMES = 30;
 export const SCENES = {
   s1: { durationInFrames: S1_DURATION },
   s2: { durationInFrames: S2_DURATION },
+  s3: { durationInFrames: S3_DURATION },
 } as const;
 
 export const TOTAL_FRAMES =
