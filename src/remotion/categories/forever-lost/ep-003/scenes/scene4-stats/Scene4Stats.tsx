@@ -142,6 +142,7 @@ export const Scene4Stats: React.FC = () => {
             "unreadable",
           ]}
           position="top-center"
+          fontSize="small"
           startFrame={0}
           showOverlay
         />
