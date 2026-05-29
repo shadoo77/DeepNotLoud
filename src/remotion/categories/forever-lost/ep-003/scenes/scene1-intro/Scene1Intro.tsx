@@ -141,15 +141,6 @@ export const Scene1Intro: React.FC = () => {
 
   return (
     <AbsoluteFill className="overflow-hidden" style={{ backgroundColor: C.bg }}>
-      {/* <Audio
-        src={staticFile(`${ASSET}/audio/bgm/ep003_bgm_landscape.mp3`)}
-        volume={(f) => {
-          if (f < durationInFrames) return 0.18;
-          return 0;
-        }}
-        loop
-      /> */}
-
       <div
         className="absolute inset-0 overflow-hidden"
         style={{ transform: `scale(${kenBurns})` }}

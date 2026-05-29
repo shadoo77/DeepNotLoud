@@ -56,6 +56,13 @@ export const Scene4Stats: React.FC = () => {
   const terrifyingFrame =
     terrifyingResult.from > 0 ? terrifyingResult.from : 1700;
 
+  const terrifyingFlash = interpolate(
+    frame,
+    [terrifyingFrame, terrifyingFrame + 4, terrifyingFrame + 12],
+    [0, 0.18, 0],
+    { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
+  );
+
   return (
     <AbsoluteFill className="overflow-hidden" style={{ backgroundColor: C.bg }}>
       <div
@@ -158,6 +165,11 @@ export const Scene4Stats: React.FC = () => {
           }
         />
       </Sequence>
+
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{ backgroundColor: C.gold, opacity: terrifyingFlash }}
+      />
     </AbsoluteFill>
   );
 };

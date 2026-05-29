@@ -28,7 +28,7 @@ export const ZipfChart: React.FC<{
   const localFrame = Math.max(0, frame - triggerFrame);
   const totalBars = 30;
   const chartW = 140 + totalBars * (BAR_W + BAR_GAP) + 9 * GROUP_GAP;
-  const chartH = 450;
+  const chartH = 350;
   const yAxis = chartH - 50;
   const barBaseY = yAxis - 10;
 
@@ -37,7 +37,7 @@ export const ZipfChart: React.FC<{
       className="pointer-events-none absolute top-1/2 left-1/2 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center rounded-2xl px-8 pt-6 pb-8"
       style={{
         opacity,
-        backgroundColor: "rgba(10,10,10,0.92)",
+        backgroundColor: "rgba(10,10,10,0.94)",
         border: `1px solid ${C.gold}`,
         width: "78%",
       }}
@@ -45,7 +45,7 @@ export const ZipfChart: React.FC<{
       <svg
         viewBox={`0 0 ${chartW} ${chartH}`}
         className="w-full"
-        style={{ height: "auto", maxHeight: 480 }}
+        style={{ height: "auto", maxHeight: 580 }}
       >
         <text
           x={chartW / 2}
@@ -128,6 +128,7 @@ export const ZipfChart: React.FC<{
               x={x}
               y={chartH}
               fill={BAR_COLORS[i]}
+              className="text-lg font-bold tracking-wide"
               fontFamily="Courier New, monospace"
             >
               {lang.flag} {lang.label}
@@ -137,7 +138,7 @@ export const ZipfChart: React.FC<{
       </svg>
 
       <div
-        className="mt-4 text-center text-xl font-bold tracking-wider"
+        className="mt-4 text-center text-2xl font-bold tracking-wider"
         style={{
           fontFamily: cinzelFont,
           color: C.gold,
@@ -152,7 +153,7 @@ export const ZipfChart: React.FC<{
         Matches natural language patterns
       </div>
       <div
-        className="mt-1 text-center text-lg tracking-widest"
+        className="mt-1 text-center text-xl tracking-widest"
         style={{
           fontFamily: "Courier New, monospace",
           color: C.gray,
