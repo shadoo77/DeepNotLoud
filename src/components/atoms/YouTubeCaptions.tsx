@@ -19,11 +19,6 @@ const captionPosition = cva("", {
       "youtube-shorts": "justify-end items-center pb-110",
       "top-center": "justify-start items-center pt-10",
     },
-    fontSize: {
-      small: "text-4xl",
-      medium: "text-5xl",
-      large: "text-6xl",
-    },
   },
 });
 
@@ -34,6 +29,7 @@ const SentencePage = ({
   highlightedWords,
   position,
   fontSize = "medium",
+  captionWidth,
   showOverlay,
 }: {
   tokens: Caption[];
@@ -46,6 +42,7 @@ const SentencePage = ({
     | "youtube-shorts"
     | "top-center";
   fontSize: "small" | "medium" | "large";
+  captionWidth?: "60%" | "70%" | "80%" | "90%";
   showOverlay: boolean;
 }) => {
   const frame = useCurrentFrame();
@@ -54,17 +51,24 @@ const SentencePage = ({
   const currentTimeMs = pageStartMs + (frame / fps) * 1000;
 
   return (
-    <AbsoluteFill className={cn(captionPosition({ position, fontSize }))}>
+    <AbsoluteFill className={cn(captionPosition({ position }))}>
       <div
-        className={cn("font-patua max-w-4xl font-bold whitespace-pre-wrap", {
-          "text-4xl tracking-wide": fontSize === "small",
-          "text-5xl": fontSize === "medium",
-          "text-6xl": fontSize === "large",
-        })}
-        style={{ textShadow: "0 2px 12px rgba(0,0,0,0.9)" }}
+        className={cn(
+          // 90% wide on phones/tablets, but NEVER wider than 1700px on TVs
+          `font-patua max-w-tv text-center font-bold tracking-wide whitespace-pre-wrap`,
+          {
+            "text-4xl": fontSize === "small",
+            "text-5xl": fontSize === "medium",
+            "text-6xl": fontSize === "large",
+          },
+        )}
+        style={{
+          textShadow: "0 2px 12px rgba(0,0,0,0.9)",
+          width: captionWidth,
+        }}
       >
         <div
-          className="relative line-clamp-3 inline-block rounded-xl px-6 py-3 text-center"
+          className="relative inline-block rounded-xl px-6 py-3 text-center"
           style={
             showOverlay ? { backgroundColor: "oklch(0.15 0.02 260 / 0.7)" } : {}
           }
@@ -209,6 +213,7 @@ type CaptionProps = ComponentPropsWithRef<"div"> & {
     | "youtube-shorts"
     | "top-center";
   fontSize?: "small" | "medium" | "large";
+  captionWidth?: "60%" | "70%" | "80%" | "90%";
   startFrame?: number;
   switchCaptionsEveryMs?: number;
   showOverlay?: boolean;
@@ -220,6 +225,7 @@ export const YouTubeCaptions: React.FC<CaptionProps> = ({
   highlightedWords = [],
   position = "bottom-center",
   fontSize = "medium",
+  captionWidth = "90%",
   startFrame = 0,
   switchCaptionsEveryMs = 1500,
   showOverlay = false,
@@ -331,6 +337,7 @@ export const YouTubeCaptions: React.FC<CaptionProps> = ({
           highlightedWords={highlightedWords}
           position={position}
           fontSize={fontSize}
+          captionWidth={captionWidth}
           showOverlay={showOverlay}
         />
       </Sequence>

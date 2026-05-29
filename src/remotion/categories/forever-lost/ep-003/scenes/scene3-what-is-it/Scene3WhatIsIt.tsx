@@ -179,21 +179,13 @@ export const Scene3WhatIsIt: React.FC = () => {
     );
   };
 
-  const quillRecurring = interpolate(
-    frame % 450,
-    [0, 15, 430, 450],
-    [0, 0.12, 0.12, 0],
-    { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
-  );
-
   const bioRumble = getPhraseFrames({
     phrase: "biological section",
     transcriptData: TRASCRIPT_DATA,
     fps,
     voiceOverStartFrame: VO_START_FRAME,
   });
-  const bioRumbleFrame =
-    bioRumble.from > 0 ? bioRumble.from - 15 : 1309;
+  const bioRumbleFrame = bioRumble.from > 0 ? bioRumble.from - 15 : 1309;
 
   const renderSectionCard = (card: CardDef, index: number) => {
     const triggerFrame = cardTriggers[index];
@@ -210,16 +202,11 @@ export const Scene3WhatIsIt: React.FC = () => {
     const yEntry = interpolate(slideIn, [0, 1], [100, 0]);
 
     const exitStart = SLIDE_DURATION + HOLD_FRAMES;
-    const exitProgress = Math.max(
-      0,
-      (localFrame - exitStart) / EXIT_DURATION,
-    );
-    const yExit = interpolate(
-      Math.min(exitProgress, 1),
-      [0, 1],
-      [0, -80],
-      { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
-    );
+    const exitProgress = Math.max(0, (localFrame - exitStart) / EXIT_DURATION);
+    const yExit = interpolate(Math.min(exitProgress, 1), [0, 1], [0, -80], {
+      extrapolateLeft: "clamp",
+      extrapolateRight: "clamp",
+    });
     const opacity = interpolate(
       Math.min(exitProgress, 1),
       [0, 0.5, 1],
@@ -230,7 +217,7 @@ export const Scene3WhatIsIt: React.FC = () => {
     return (
       <div
         key={card.name}
-        className="pointer-events-none absolute left-0 right-0"
+        className="pointer-events-none absolute right-0 left-0"
         style={{
           bottom: 44,
           height: 240,
@@ -246,7 +233,6 @@ export const Scene3WhatIsIt: React.FC = () => {
           }}
         >
           <div className="flex items-center gap-8">
-            <div className="text-7xl">{card.emoji}</div>
             <div>
               <div
                 className="text-4xl font-black tracking-wider"
@@ -254,23 +240,23 @@ export const Scene3WhatIsIt: React.FC = () => {
               >
                 {card.name}
               </div>
-              <div
-                className="mt-2 text-xl"
-                style={{ color: C.gray }}
-              >
+              <div className="mt-2 text-base" style={{ color: C.gray }}>
                 {card.desc}
               </div>
             </div>
           </div>
-          <div
-            className="rounded-full px-5 py-2 text-sm font-bold tracking-wider"
-            style={{
-              backgroundColor: C.red,
-              color: C.white,
-              fontFamily: cinzelFont,
-            }}
-          >
-            STATUS: UNEXPLAINED
+          <div className="flex items-center gap-6">
+            <div className="text-7xl">{card.emoji}</div>
+            <div
+              className="rounded-full px-5 py-2 text-sm font-bold tracking-wider"
+              style={{
+                backgroundColor: C.red,
+                color: C.white,
+                fontFamily: cinzelFont,
+              }}
+            >
+              STATUS: UNEXPLAINED
+            </div>
           </div>
         </div>
       </div>
@@ -317,7 +303,7 @@ export const Scene3WhatIsIt: React.FC = () => {
         </svg>
         {drawProgress > 80 && (
           <div
-            className="mt-1 whitespace-nowrap rounded-sm px-2 py-0.5 text-xs font-bold tracking-wider"
+            className="mt-1 rounded-sm px-2 py-0.5 text-xs font-bold tracking-wider whitespace-nowrap"
             style={{
               color: C.gold,
               opacity: labelOpacity,
@@ -352,14 +338,6 @@ export const Scene3WhatIsIt: React.FC = () => {
 
       <DustParticles count={120} />
 
-      <div
-        className="pointer-events-none absolute inset-0"
-        style={{
-          background:
-            "radial-gradient(ellipse at center, transparent 30%, rgba(0,0,0,0.70) 100%)",
-        }}
-      />
-
       <SceneBadges
         badges={BADGES}
         transcriptData={TRASCRIPT_DATA}
@@ -389,16 +367,11 @@ export const Scene3WhatIsIt: React.FC = () => {
         ))}
       </div>
 
+      <TickerBar opacity={1} color={C.gold} />
+
       {ANNOTATIONS.map((ann, i) => renderAnnotation(ann, i))}
 
       {SECTION_CARDS.map((card, i) => renderSectionCard(card, i))}
-
-      <TickerBar opacity={1} color={C.gold} />
-
-      <div
-        className="pointer-events-none absolute inset-0"
-        style={{ backgroundColor: C.gold, opacity: 0 }}
-      />
 
       <Sequence from={VO_START_FRAME}>
         <Audio
@@ -427,7 +400,9 @@ export const Scene3WhatIsIt: React.FC = () => {
             "text",
             "silence",
           ]}
-          position="bottom-center"
+          position="top-center"
+          fontSize="small"
+          captionWidth="70%"
           startFrame={0}
           showOverlay
         />
@@ -436,7 +411,12 @@ export const Scene3WhatIsIt: React.FC = () => {
       <Sequence durationInFrames={durationInFrames}>
         <Audio
           src={staticFile(`${ASSET}/audio/sfx/quill_scratch.wav`)}
-          volume={quillRecurring}
+          volume={(f) =>
+            interpolate(f % 450, [0, 15, 430, 450], [0, 0.12, 0.12, 0], {
+              extrapolateLeft: "clamp",
+              extrapolateRight: "clamp",
+            })
+          }
         />
       </Sequence>
 

@@ -285,6 +285,7 @@ export const Scene2Discovery: React.FC = () => {
           ]}
           position="top-center"
           fontSize="small"
+          captionWidth="70%"
           startFrame={0}
           showOverlay
         />
