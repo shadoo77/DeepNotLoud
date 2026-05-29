@@ -18,8 +18,10 @@ import { SidebarPanel } from "@/components/atoms/SidebarPanel";
 import { TimelineBar } from "@/components/atoms/TimelineBar";
 import { DustParticles } from "@/components/atoms/DustParticles";
 import { YouTubeCaptions } from "@/components/atoms/YouTubeCaptions";
+// import { SceneBadges } from "@/components/atoms/SceneBadges";
 import { C } from "@/remotion/categories/forever-lost/ep-003/constants";
 import { TRASCRIPT_DATA, VO_START_FRAME } from "./constants";
+// import { BADGES } from "./badges";
 import { Scene2Annotations } from "./Scene2Annotations";
 
 const { fontFamily: cinzelFont } = loadFont("normal", {
@@ -105,52 +107,6 @@ export const Scene2Discovery: React.FC = () => {
     config: { damping: 18, stiffness: 100 },
   });
 
-  const badgeSpringFn = (trigger: number) =>
-    spring({
-      frame: Math.max(0, frame - trigger),
-      fps,
-      config: { damping: 12, stiffness: 200 },
-    });
-
-  const badgeOpacityFn = (trigger: number) =>
-    interpolate(Math.max(0, frame - trigger), [0, 20], [0, 1], {
-      extrapolateLeft: "clamp",
-      extrapolateRight: "clamp",
-    });
-
-  const badge1912 = getPhraseFrames({
-    phrase: "1912",
-    transcriptData: TRASCRIPT_DATA,
-    fps,
-    voiceOverStartFrame: VO_START_FRAME,
-  });
-  const badge1912Frame = badge1912.from > 0 ? badge1912.from : 90;
-
-  const badgeNeverBefore = getPhraseFrames({
-    phrase: "never seen before",
-    transcriptData: TRASCRIPT_DATA,
-    fps,
-    voiceOverStartFrame: VO_START_FRAME,
-  });
-  const badgeNeverFrame =
-    badgeNeverBefore.from > 0 ? badgeNeverBefore.from : 620;
-
-  const badgeFailed = getPhraseFrames({
-    phrase: "dies having failed",
-    transcriptData: TRASCRIPT_DATA,
-    fps,
-    voiceOverStartFrame: VO_START_FRAME,
-  });
-  const badgeFailedFrame = badgeFailed.from > 0 ? badgeFailed.from : 1800;
-
-  const badgeCarbon = getPhraseFrames({
-    phrase: "carbon dating",
-    transcriptData: TRASCRIPT_DATA,
-    fps,
-    voiceOverStartFrame: VO_START_FRAME,
-  });
-  const badgeCarbonFrame = badgeCarbon.from > 0 ? badgeCarbon.from : 1885;
-
   return (
     <AbsoluteFill className="overflow-hidden" style={{ backgroundColor: C.bg }}>
       <div
@@ -191,135 +147,11 @@ export const Scene2Discovery: React.FC = () => {
         }}
       />
 
-      <div
-        className="pointer-events-none absolute"
-        style={{
-          left: 370,
-          top: 230,
-          opacity: badgeOpacityFn(badge1912Frame),
-          transform: `scale(${badgeSpringFn(badge1912Frame)})`,
-        }}
-      >
-        <div
-          className="rounded-xl px-6 py-4"
-          style={{
-            backgroundColor: "rgba(10,10,10,0.88)",
-            border: `1px solid ${C.gold}`,
-          }}
-        >
-          <div
-            className="text-3xl font-black tracking-wider"
-            style={{ fontFamily: cinzelFont, color: C.gold }}
-          >
-            1912
-          </div>
-          <div
-            className="mt-1.5 text-2xl"
-            style={{ fontFamily: interFont, color: C.gray }}
-          >
-            Discovery at Villa Mondragone
-          </div>
-        </div>
-      </div>
-
-      {badgeNeverFrame > 0 && (
-        <div
-          className="pointer-events-none absolute"
-          style={{
-            left: 370,
-            top: 370,
-            opacity: badgeOpacityFn(badgeNeverFrame),
-            transform: `scale(${badgeSpringFn(badgeNeverFrame)})`,
-          }}
-        >
-          <div
-            className="rounded-xl px-6 py-4"
-            style={{
-              backgroundColor: "rgba(10,10,10,0.88)",
-              border: `1px solid ${C.red}`,
-            }}
-          >
-            <div
-              className="text-3xl font-black tracking-wider"
-              style={{ fontFamily: cinzelFont, color: C.red }}
-            >
-              NEVER BEFORE SEEN
-            </div>
-            <div
-              className="mt-1.5 text-2xl"
-              style={{ fontFamily: interFont, color: C.gray }}
-            >
-              Unlike anything found before
-            </div>
-          </div>
-        </div>
-      )}
-
-      {badgeFailedFrame > 0 && (
-        <div
-          className="pointer-events-none absolute"
-          style={{
-            left: 370,
-            top: 530,
-            opacity: badgeOpacityFn(badgeFailedFrame),
-            transform: `scale(${badgeSpringFn(badgeFailedFrame)})`,
-          }}
-        >
-          <div
-            className="rounded-xl px-6 py-4"
-            style={{
-              backgroundColor: "rgba(10,10,10,0.88)",
-              border: `1px solid ${C.gold}`,
-            }}
-          >
-            <div
-              className="text-3xl font-black tracking-wider"
-              style={{ fontFamily: cinzelFont, color: C.gold }}
-            >
-              1930
-            </div>
-            <div
-              className="mt-1.5 text-2xl"
-              style={{ fontFamily: interFont, color: C.gray }}
-            >
-              Voynich died without an answer
-            </div>
-          </div>
-        </div>
-      )}
-
-      {badgeCarbonFrame > 0 && (
-        <div
-          className="pointer-events-none absolute"
-          style={{
-            left: 370,
-            top: 690,
-            opacity: badgeOpacityFn(badgeCarbonFrame),
-            transform: `scale(${badgeSpringFn(badgeCarbonFrame)})`,
-          }}
-        >
-          <div
-            className="rounded-xl px-6 py-4"
-            style={{
-              backgroundColor: "rgba(10,10,10,0.88)",
-              border: `1px solid ${C.gold}`,
-            }}
-          >
-            <div
-              className="text-3xl font-black tracking-wider"
-              style={{ fontFamily: cinzelFont, color: C.gold }}
-            >
-              2009
-            </div>
-            <div
-              className="mt-1.5 text-2xl"
-              style={{ fontFamily: interFont, color: C.gray }}
-            >
-              Carbon dated: 1404–1438 CE
-            </div>
-          </div>
-        </div>
-      )}
+      {/* <SceneBadges
+        badges={BADGES}
+        transcriptData={TRASCRIPT_DATA}
+        voiceOverStartFrame={VO_START_FRAME}
+      /> */}
 
       <SidebarPanel
         fields={[
