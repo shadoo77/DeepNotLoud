@@ -48,7 +48,7 @@ export const BADGES: BadgeDef[] = [
     subtitleFontFamily: interFont,
   },
   {
-    phrase: "100 million",
+    phrase: "hundred million",
     fallbackFrame: 1900,
     position: { left: 50, top: "60%" },
     borderColor: C.red,

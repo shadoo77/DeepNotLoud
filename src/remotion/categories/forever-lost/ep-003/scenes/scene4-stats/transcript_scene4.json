@@ -784,18 +784,32 @@
     "confidence": 0.980436
   },
   {
-    "text": " $100",
+    "text": " one",
     "startMs": 60070,
-    "endMs": 61050,
-    "timestampMs": 59740,
-    "confidence": 0.591675
+    "endMs": 60346,
+    "confidence": 0.95,
+    "timestampMs": 60208
   },
   {
-    "text": " million.",
-    "startMs": 61050,
+    "text": " hundred",
+    "startMs": 60346,
+    "endMs": 60897,
+    "confidence": 0.95,
+    "timestampMs": 60622
+  },
+  {
+    "text": " million",
+    "startMs": 60897,
+    "endMs": 61448,
+    "confidence": 0.95,
+    "timestampMs": 61172
+  },
+  {
+    "text": " dollars.",
+    "startMs": 61448,
     "endMs": 62000,
-    "timestampMs": 60660,
-    "confidence": 0.964239
+    "confidence": 0.95,
+    "timestampMs": 61724
   },
   {
     "text": " It",
