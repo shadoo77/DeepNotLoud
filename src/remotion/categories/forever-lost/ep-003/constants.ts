@@ -3,6 +3,7 @@ import { SCENE_DURATION as S2_DURATION } from "./scenes/scene2-discovery";
 import { SCENE_DURATION as S3_DURATION } from "./scenes/scene3-what-is-it";
 import { SCENE_DURATION as S4_DURATION } from "./scenes/scene4-stats";
 import { SCENE_DURATION as S5_DURATION } from "./scenes/scene5-language";
+import { SCENE_DURATION as S6_DURATION } from "./scenes/scene6-attempts";
 
 export const FPS = 30;
 export const WIDTH = 1920;
@@ -33,6 +34,7 @@ export const SCENES = {
   s3: { durationInFrames: S3_DURATION },
   s4: { durationInFrames: S4_DURATION },
   s5: { durationInFrames: S5_DURATION },
+  s6: { durationInFrames: S6_DURATION },
 } as const;
 
 export const TOTAL_FRAMES =

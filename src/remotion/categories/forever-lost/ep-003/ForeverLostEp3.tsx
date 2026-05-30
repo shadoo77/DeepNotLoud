@@ -8,12 +8,14 @@ import { Scene2Discovery } from "./scenes/scene2-discovery";
 import { Scene3WhatIsIt } from "./scenes/scene3-what-is-it";
 import { Scene4Stats } from "./scenes/scene4-stats";
 import { Scene5Language } from "./scenes/scene5-language";
+import { Scene6Attempts } from "./scenes/scene6-attempts";
 export { TOTAL_FRAMES };
 
 const S1_END = SCENES.s1.durationInFrames;
 const S2_END = S1_END + T.fade + SCENES.s2.durationInFrames;
 const S3_END = S2_END + T.fade + SCENES.s3.durationInFrames;
 const S4_END = S3_END + T.fade + SCENES.s4.durationInFrames;
+const S5_END = S4_END + T.fade + SCENES.s5.durationInFrames;
 
 export const ForeverLostEp3 = () => {
   return (
@@ -22,10 +24,8 @@ export const ForeverLostEp3 = () => {
         src={staticFile(`${ASSET_PATH}/audio/bgm/ep003_bgm_landscape.mp3`)}
         volume={(f) => {
           if (f < S1_END) return 0.18;
-          if (f < S2_END) return 0.12;
-          if (f < S3_END) return 0.12;
-          if (f < S4_END) return 0.12;
-          return 0.12;
+          if (f < S5_END) return 0.12;
+          return 0.08;
         }}
         loop
       />
@@ -83,6 +83,18 @@ export const ForeverLostEp3 = () => {
           premountFor={30}
         >
           <Scene5Language />
+        </TransitionSeries.Sequence>
+
+        <TransitionSeries.Transition
+          presentation={fade()}
+          timing={linearTiming({ durationInFrames: T.fade })}
+        />
+
+        <TransitionSeries.Sequence
+          durationInFrames={SCENES.s6.durationInFrames}
+          premountFor={30}
+        >
+          <Scene6Attempts />
         </TransitionSeries.Sequence>
       </TransitionSeries>
     </AbsoluteFill>
