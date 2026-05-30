@@ -5,6 +5,7 @@ import { SCENE_DURATION as S4_DURATION } from "./scenes/scene4-stats";
 import { SCENE_DURATION as S5_DURATION } from "./scenes/scene5-language";
 import { SCENE_DURATION as S6_DURATION } from "./scenes/scene6-attempts";
 import { SCENE_DURATION as S7_DURATION } from "./scenes/scene7-theories";
+import { SCENE_DURATION as S8_DURATION } from "./scenes/scene8-closer";
 
 export const FPS = 30;
 export const WIDTH = 1920;
@@ -37,6 +38,7 @@ export const SCENES = {
   s5: { durationInFrames: S5_DURATION },
   s6: { durationInFrames: S6_DURATION },
   s7: { durationInFrames: S7_DURATION },
+  s8: { durationInFrames: S8_DURATION },
 } as const;
 
 export const TOTAL_FRAMES =

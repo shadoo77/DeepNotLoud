@@ -71,5 +71,6 @@ export const BADGES: BadgeDef[] = [
     titleFontFamily: cinzelFont,
     subtitleFontFamily: interFont,
     titleSize: "text-2xl",
+    hideAfterFrames: 120,
   },
 ];
