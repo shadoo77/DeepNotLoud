@@ -176,10 +176,15 @@ export const Scene1Intro: React.FC = () => {
     [0, 0.6, 0.6, 0],
     { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
   );
-  const voynichFade = interpolate(frame, [1280, 1310, 1370, 1400], [0, 1, 1, 0], {
-    extrapolateLeft: "clamp",
-    extrapolateRight: "clamp",
-  });
+  const voynichFade = interpolate(
+    frame,
+    [1280, 1310, 1370, 1400],
+    [0, 1, 1, 0],
+    {
+      extrapolateLeft: "clamp",
+      extrapolateRight: "clamp",
+    },
+  );
   const lineDraw1420 = interpolate(
     Math.max(0, frame - 1420),
     [0, 40],
@@ -248,7 +253,16 @@ export const Scene1Intro: React.FC = () => {
         className="pointer-events-none absolute"
         style={{ top: "35%", right: "15%", opacity: glyph1Opacity }}
       >
-        <span style={{ color: C.gold, fontSize: 64, fontFamily: "serif" }}>
+        <span
+          style={{
+            color: C.gold,
+            fontSize: 64,
+            fontFamily: "serif",
+            textShadow:
+              "0 0 8px rgba(200,169,110,0.6), 0 0 24px rgba(200,169,110,0.3)",
+            filter: "brightness(1.3)",
+          }}
+        >
           ꝏ
         </span>
       </div>
@@ -256,7 +270,16 @@ export const Scene1Intro: React.FC = () => {
         className="pointer-events-none absolute"
         style={{ top: "45%", right: "20%", opacity: glyph2Opacity }}
       >
-        <span style={{ color: C.gold, fontSize: 48, fontFamily: "serif" }}>
+        <span
+          style={{
+            color: C.gold,
+            fontSize: 48,
+            fontFamily: "serif",
+            textShadow:
+              "0 0 8px rgba(200,169,110,0.6), 0 0 24px rgba(200,169,110,0.3)",
+            filter: "brightness(1.3)",
+          }}
+        >
           ⴀ
         </span>
       </div>
@@ -264,20 +287,30 @@ export const Scene1Intro: React.FC = () => {
         className="pointer-events-none absolute"
         style={{ top: "55%", right: "10%", opacity: glyph3Opacity }}
       >
-        <span style={{ color: C.gold, fontSize: 56, fontFamily: "serif" }}>
+        <span
+          style={{
+            color: C.gold,
+            fontSize: 56,
+            fontFamily: "serif",
+            textShadow:
+              "0 0 8px rgba(200,169,110,0.6), 0 0 24px rgba(200,169,110,0.3)",
+            filter: "brightness(1.3)",
+          }}
+        >
           ꝑ
         </span>
       </div>
 
       <div
-        className="pointer-events-none absolute"
+        className="pointer-events-none absolute flex items-center gap-3"
         style={{ top: "40%", left: "8%", opacity: carbonDateFade }}
       >
+        <div style={{ width: 20, height: 2, backgroundColor: C.gold }} />
         <span
+          className="text-3xl font-semibold tracking-wider"
           style={{
             fontFamily: cinzelFont,
-            color: C.gold,
-            fontSize: 32,
+            color: C.white,
             letterSpacing: 4,
           }}
         >
@@ -285,16 +318,13 @@ export const Scene1Intro: React.FC = () => {
         </span>
       </div>
       <div
-        className="pointer-events-none absolute"
+        className="pointer-events-none absolute flex items-center gap-3"
         style={{ top: "35%", left: "8%", opacity: carbonRangeFade }}
       >
+        <div style={{ width: 20, height: 2, backgroundColor: C.gold }} />
         <span
-          style={{
-            fontFamily: cinzelFont,
-            color: C.gold,
-            fontSize: 32,
-            letterSpacing: 4,
-          }}
+          className="text-3xl font-semibold tracking-wider"
+          style={{ fontFamily: cinzelFont, color: C.white }}
         >
           1404 – 1438
         </span>
@@ -308,22 +338,19 @@ export const Scene1Intro: React.FC = () => {
           width: 300,
           height: 300,
           background:
-            "radial-gradient(circle at top right, rgba(200,169,110,0.15), transparent 70%)",
+            "radial-gradient(circle at top right, rgba(200,169,110,0.28), transparent 70%)",
           opacity: cornerFlare1250,
         }}
       />
 
       <div
-        className="pointer-events-none absolute"
+        className="pointer-events-none absolute flex items-center gap-3"
         style={{ top: "40%", left: "8%", opacity: voynichFade }}
       >
+        <div style={{ width: 20, height: 2, backgroundColor: C.gold }} />
         <span
-          style={{
-            fontFamily: cinzelFont,
-            color: C.gold,
-            fontSize: 28,
-            letterSpacing: 6,
-          }}
+          className="text-3xl font-semibold tracking-wider"
+          style={{ fontFamily: cinzelFont, color: C.white }}
         >
           VOYNICH
         </span>
@@ -345,8 +372,8 @@ export const Scene1Intro: React.FC = () => {
             x2={`${lineDraw1420}%`}
             y2={0}
             stroke={C.gold}
-            strokeWidth={1}
-            strokeOpacity={0.4}
+            strokeWidth={2}
+            strokeOpacity={0.7}
           />
         </svg>
       </div>

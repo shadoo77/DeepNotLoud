@@ -176,7 +176,7 @@ export const Scene4Stats: React.FC = () => {
           width: 250,
           height: 250,
           background:
-            "radial-gradient(circle at top left, rgba(200,169,110,0.12), transparent 70%)",
+            "radial-gradient(circle at top left, rgba(200,169,110,0.28), transparent 70%)",
           opacity: flare400,
         }}
       />
@@ -184,19 +184,26 @@ export const Scene4Stats: React.FC = () => {
         className="pointer-events-none absolute"
         style={{ top: "35%", left: "12%", opacity: glyph500 }}
       >
-        <span style={{ color: C.gold, fontSize: 56, fontFamily: "serif" }}>ꝏ</span>
-      </div>
-      <div
-        className="pointer-events-none absolute"
-        style={{ top: "25%", left: "5%", opacity: alphabetFade }}
-      >
         <span
           style={{
-            fontFamily: cinzelFont,
             color: C.gold,
-            fontSize: 28,
-            letterSpacing: 6,
+            fontSize: 56,
+            fontFamily: "serif",
+            textShadow: "0 0 8px rgba(200,169,110,0.6), 0 0 24px rgba(200,169,110,0.3)",
+            filter: "brightness(1.3)",
           }}
+        >
+          ꝏ
+        </span>
+      </div>
+      <div
+        className="pointer-events-none absolute flex items-center gap-3"
+        style={{ top: "25%", left: "5%", opacity: alphabetFade }}
+      >
+        <div style={{ width: 20, height: 2, backgroundColor: C.gold }} />
+        <span
+          className="text-3xl font-semibold tracking-wider"
+          style={{ fontFamily: cinzelFont, color: C.white }}
         >
           ALPHABET: 26
         </span>
@@ -217,8 +224,8 @@ export const Scene4Stats: React.FC = () => {
             x2={`${line850}%`}
             y2={0}
             stroke={C.gold}
-            strokeWidth={1}
-            strokeOpacity={0.3}
+            strokeWidth={2}
+            strokeOpacity={0.7}
           />
         </svg>
       </div>
@@ -230,7 +237,7 @@ export const Scene4Stats: React.FC = () => {
           width: 300,
           height: 300,
           background:
-            "radial-gradient(circle at top right, rgba(200,169,110,0.15), transparent 70%)",
+            "radial-gradient(circle at top right, rgba(200,169,110,0.28), transparent 70%)",
           opacity: flare1000,
         }}
       />
@@ -238,10 +245,20 @@ export const Scene4Stats: React.FC = () => {
         className="pointer-events-none absolute"
         style={{ top: "45%", right: "15%", opacity: glyph1100 }}
       >
-        <span style={{ color: C.gold, fontSize: 64, fontFamily: "serif" }}>ⴀ</span>
+        <span
+          style={{
+            color: C.gold,
+            fontSize: 64,
+            fontFamily: "serif",
+            textShadow: "0 0 8px rgba(200,169,110,0.6), 0 0 24px rgba(200,169,110,0.3)",
+            filter: "brightness(1.3)",
+          }}
+        >
+          ⴀ
+        </span>
       </div>
       <div
-        className="pointer-events-none absolute"
+        className="pointer-events-none absolute flex items-center gap-3"
         style={{
           top: "15%",
           left: "50%",
@@ -249,13 +266,10 @@ export const Scene4Stats: React.FC = () => {
           transform: "translateX(-50%)",
         }}
       >
+        <div style={{ width: 16, height: 2, backgroundColor: C.gold }} />
         <span
-          style={{
-            fontFamily: cinzelFont,
-            color: C.gray,
-            fontSize: 22,
-            letterSpacing: 4,
-          }}
+          className="text-2xl font-semibold tracking-wider"
+          style={{ fontFamily: cinzelFont, color: C.white }}
         >
           MATHEMATICAL FINGERPRINT
         </span>
@@ -268,7 +282,7 @@ export const Scene4Stats: React.FC = () => {
           width: 250,
           height: 250,
           background:
-            "radial-gradient(circle at bottom right, rgba(200,169,110,0.12), transparent 70%)",
+            "radial-gradient(circle at bottom right, rgba(200,169,110,0.28), transparent 70%)",
           opacity: flare1550,
         }}
       />
@@ -276,7 +290,17 @@ export const Scene4Stats: React.FC = () => {
         className="pointer-events-none absolute"
         style={{ top: "55%", left: "8%", opacity: glyph1650 }}
       >
-        <span style={{ color: C.gold, fontSize: 48, fontFamily: "serif" }}>ꝑ</span>
+        <span
+          style={{
+            color: C.gold,
+            fontSize: 48,
+            fontFamily: "serif",
+            textShadow: "0 0 8px rgba(200,169,110,0.6), 0 0 24px rgba(200,169,110,0.3)",
+            filter: "brightness(1.3)",
+          }}
+        >
+          ꝑ
+        </span>
       </div>
       <div
         className="pointer-events-none absolute"
@@ -286,25 +310,22 @@ export const Scene4Stats: React.FC = () => {
           width: 250,
           height: 250,
           background:
-            "radial-gradient(circle at top left, rgba(200,169,110,0.12), transparent 70%)",
+            "radial-gradient(circle at top left, rgba(200,169,110,0.28), transparent 70%)",
           opacity: flare1950,
         }}
       />
       <div
-        className="pointer-events-none absolute"
+        className="pointer-events-none absolute flex items-center gap-3"
         style={{
           top: "20%",
           right: "8%",
           opacity: unreadableFade,
         }}
       >
+        <div style={{ width: 20, height: 2, backgroundColor: C.gold }} />
         <span
-          style={{
-            fontFamily: cinzelFont,
-            color: C.white,
-            fontSize: 24,
-            letterSpacing: 6,
-          }}
+          className="text-2xl font-semibold tracking-wider"
+          style={{ fontFamily: cinzelFont, color: C.white }}
         >
           UTTERLY UNREADABLE
         </span>

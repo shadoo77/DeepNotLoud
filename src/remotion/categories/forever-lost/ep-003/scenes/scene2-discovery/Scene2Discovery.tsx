@@ -160,16 +160,13 @@ export const Scene2Discovery: React.FC = () => {
 
       {/* micro-reveal: 1912 */}
       <div
-        className="pointer-events-none absolute"
+        className="pointer-events-none absolute flex items-center gap-3"
         style={{ top: "15%", left: "8%", opacity: yr1912Fade }}
       >
+        <div style={{ width: 20, height: 2, backgroundColor: C.gold }} />
         <span
-          style={{
-            fontFamily: cinzelFont,
-            color: C.gold,
-            fontSize: 40,
-            letterSpacing: 8,
-          }}
+          className="text-4xl font-semibold tracking-wider"
+          style={{ fontFamily: cinzelFont, color: C.white }}
         >
           1912
         </span>
@@ -220,8 +217,8 @@ export const Scene2Discovery: React.FC = () => {
             x2={`${lineDraw1100}%`}
             y2={0}
             stroke={C.gold}
-            strokeWidth={1}
-            strokeOpacity={0.4}
+            strokeWidth={2}
+            strokeOpacity={0.7}
           />
         </svg>
       </div>
@@ -235,14 +232,14 @@ export const Scene2Discovery: React.FC = () => {
           width: 300,
           height: 300,
           background:
-            "radial-gradient(circle at top right, rgba(200,169,110,0.15), transparent 70%)",
+            "radial-gradient(circle at top right, rgba(200,169,110,0.28), transparent 70%)",
           opacity: cornerFlare1450,
         }}
       />
 
       {/* micro-reveal: STILL UNDECIPHERED @1520 */}
       <div
-        className="pointer-events-none absolute"
+        className="pointer-events-none absolute flex items-center gap-3"
         style={{
           top: "15%",
           left: "50%",
@@ -250,13 +247,10 @@ export const Scene2Discovery: React.FC = () => {
           transform: "translateX(-50%)",
         }}
       >
+        <div style={{ width: 16, height: 2, backgroundColor: C.gold }} />
         <span
-          style={{
-            fontFamily: cinzelFont,
-            color: C.white,
-            fontSize: 24,
-            letterSpacing: 6,
-          }}
+          className="text-3xl font-semibold tracking-wider"
+          style={{ fontFamily: cinzelFont, color: C.white }}
         >
           STILL UNDECIPHERED
         </span>

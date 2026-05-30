@@ -430,16 +430,13 @@ export const Scene3WhatIsIt: React.FC = () => {
 
       {/* micro-reveals */}
       <div
-        className="pointer-events-none absolute"
+        className="pointer-events-none absolute flex items-center gap-3"
         style={{ top: "30%", left: "5%", opacity: starMarkedFade }}
       >
+        <div style={{ width: 20, height: 2, backgroundColor: C.gold }} />
         <span
-          style={{
-            fontFamily: cinzelFont,
-            color: C.gold,
-            fontSize: 28,
-            letterSpacing: 6,
-          }}
+          className="text-3xl font-semibold tracking-wider"
+          style={{ fontFamily: cinzelFont, color: C.white }}
         >
           STAR-MARKED
         </span>
@@ -453,7 +450,7 @@ export const Scene3WhatIsIt: React.FC = () => {
           width: 300,
           height: 300,
           background:
-            "radial-gradient(circle at top right, rgba(200,169,110,0.15), transparent 70%)",
+            "radial-gradient(circle at top right, rgba(200,169,110,0.28), transparent 70%)",
           opacity: cornerFlare2450,
         }}
       />
@@ -474,8 +471,8 @@ export const Scene3WhatIsIt: React.FC = () => {
             x2={`${lineDraw2600}%`}
             y2={0}
             stroke={C.gold}
-            strokeWidth={1}
-            strokeOpacity={0.4}
+            strokeWidth={2}
+            strokeOpacity={0.7}
           />
         </svg>
       </div>
@@ -484,11 +481,21 @@ export const Scene3WhatIsIt: React.FC = () => {
         className="pointer-events-none absolute"
         style={{ top: "70%", right: "10%", opacity: glyphSilenceOpacity }}
       >
-        <span style={{ color: C.gold, fontSize: 72, fontFamily: "serif" }}>ⴀ</span>
+        <span
+          style={{
+            color: C.gold,
+            fontSize: 72,
+            fontFamily: "serif",
+            textShadow: "0 0 8px rgba(200,169,110,0.6), 0 0 24px rgba(200,169,110,0.3)",
+            filter: "brightness(1.3)",
+          }}
+        >
+          ⴀ
+        </span>
       </div>
 
       <div
-        className="pointer-events-none absolute"
+        className="pointer-events-none absolute flex items-center gap-3"
         style={{
           top: "20%",
           left: "50%",
@@ -496,13 +503,10 @@ export const Scene3WhatIsIt: React.FC = () => {
           transform: "translateX(-50%)",
         }}
       >
+        <div style={{ width: 20, height: 2, backgroundColor: C.gold }} />
         <span
-          style={{
-            fontFamily: cinzelFont,
-            color: C.gray,
-            fontSize: 26,
-            letterSpacing: 8,
-          }}
+          className="text-3xl font-semibold tracking-wider"
+          style={{ fontFamily: cinzelFont, color: C.white }}
         >
           SILENCE
         </span>
