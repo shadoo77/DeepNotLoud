@@ -226,10 +226,15 @@ export const Scene3WhatIsIt: React.FC = () => {
   const bioRumbleFrame = bioRumble.from > 0 ? bioRumble.from - 15 : 1309;
 
   // ── MICRO-REVEALS (pacing) ──
-  const starMarkedFade = interpolate(frame, [2370, 2400, 2460, 2480], [0, 1, 1, 0], {
-    extrapolateLeft: "clamp",
-    extrapolateRight: "clamp",
-  });
+  const starMarkedFade = interpolate(
+    frame,
+    [2370, 2400, 2460, 2480],
+    [0, 1, 1, 0],
+    {
+      extrapolateLeft: "clamp",
+      extrapolateRight: "clamp",
+    },
+  );
   const cornerFlare2450 = interpolate(
     frame,
     [2450, 2480, 2680, 2710],
@@ -242,20 +247,30 @@ export const Scene3WhatIsIt: React.FC = () => {
     [0, 100],
     { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
   );
-  const line2600Opacity = interpolate(Math.max(0, frame - 2640), [0, 10], [1, 0], {
-    extrapolateLeft: "clamp",
-    extrapolateRight: "clamp",
-  });
+  const line2600Opacity = interpolate(
+    Math.max(0, frame - 2640),
+    [0, 10],
+    [1, 0],
+    {
+      extrapolateLeft: "clamp",
+      extrapolateRight: "clamp",
+    },
+  );
   const glyphSilenceOpacity = interpolate(
     frame,
     [2820, 2830, 2860, 2870],
     [0, 1, 1, 0],
     { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
   );
-  const silenceFade = interpolate(frame, [2900, 2930, 2960, 2980], [0, 1, 1, 0], {
-    extrapolateLeft: "clamp",
-    extrapolateRight: "clamp",
-  });
+  const silenceFade = interpolate(
+    frame,
+    [2900, 2930, 2960, 2980],
+    [0, 1, 1, 0],
+    {
+      extrapolateLeft: "clamp",
+      extrapolateRight: "clamp",
+    },
+  );
 
   const renderSectionCard = (card: CardDef, index: number) => {
     const triggerFrame = cardTriggers[index];
@@ -426,6 +441,7 @@ export const Scene3WhatIsIt: React.FC = () => {
         badges={BADGES}
         transcriptData={TRASCRIPT_DATA}
         voiceOverStartFrame={VO_START_FRAME}
+        defaultAutoHideFrames={210}
       />
 
       {/* micro-reveals */}
@@ -486,7 +502,8 @@ export const Scene3WhatIsIt: React.FC = () => {
             color: C.gold,
             fontSize: 72,
             fontFamily: "serif",
-            textShadow: "0 0 8px rgba(200,169,110,0.6), 0 0 24px rgba(200,169,110,0.3)",
+            textShadow:
+              "0 0 8px rgba(200,169,110,0.6), 0 0 24px rgba(200,169,110,0.3)",
             filter: "brightness(1.3)",
           }}
         >

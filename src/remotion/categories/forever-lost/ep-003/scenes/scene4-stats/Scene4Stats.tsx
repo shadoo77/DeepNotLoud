@@ -86,14 +86,24 @@ export const Scene4Stats: React.FC = () => {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
   });
-  const line850Opacity = interpolate(Math.max(0, frame - 890), [0, 10], [1, 0], {
-    extrapolateLeft: "clamp",
-    extrapolateRight: "clamp",
-  });
-  const flare1000 = interpolate(frame, [1000, 1030, 1230, 1260], [0, 0.6, 0.6, 0], {
-    extrapolateLeft: "clamp",
-    extrapolateRight: "clamp",
-  });
+  const line850Opacity = interpolate(
+    Math.max(0, frame - 890),
+    [0, 10],
+    [1, 0],
+    {
+      extrapolateLeft: "clamp",
+      extrapolateRight: "clamp",
+    },
+  );
+  const flare1000 = interpolate(
+    frame,
+    [1000, 1030, 1230, 1260],
+    [0, 0.6, 0.6, 0],
+    {
+      extrapolateLeft: "clamp",
+      extrapolateRight: "clamp",
+    },
+  );
   const glyph1100 = interpolate(frame, [1100, 1110, 1140, 1150], [0, 1, 1, 0], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
@@ -104,18 +114,28 @@ export const Scene4Stats: React.FC = () => {
     [0, 1, 1, 0],
     { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
   );
-  const flare1550 = interpolate(frame, [1550, 1580, 1780, 1810], [0, 0.6, 0.6, 0], {
-    extrapolateLeft: "clamp",
-    extrapolateRight: "clamp",
-  });
+  const flare1550 = interpolate(
+    frame,
+    [1550, 1580, 1780, 1810],
+    [0, 0.6, 0.6, 0],
+    {
+      extrapolateLeft: "clamp",
+      extrapolateRight: "clamp",
+    },
+  );
   const glyph1650 = interpolate(frame, [1650, 1660, 1690, 1700], [0, 1, 1, 0], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
   });
-  const flare1950 = interpolate(frame, [1950, 1980, 2180, 2210], [0, 0.6, 0.6, 0], {
-    extrapolateLeft: "clamp",
-    extrapolateRight: "clamp",
-  });
+  const flare1950 = interpolate(
+    frame,
+    [1950, 1980, 2180, 2210],
+    [0, 0.6, 0.6, 0],
+    {
+      extrapolateLeft: "clamp",
+      extrapolateRight: "clamp",
+    },
+  );
   const unreadableFade = interpolate(
     frame,
     [2100, 2130, 2160, 2180],
@@ -165,6 +185,7 @@ export const Scene4Stats: React.FC = () => {
         badges={BADGES}
         transcriptData={TRASCRIPT_DATA}
         voiceOverStartFrame={VO_START_FRAME}
+        defaultAutoHideFrames={300}
       />
 
       {/* micro-reveals */}
@@ -189,7 +210,8 @@ export const Scene4Stats: React.FC = () => {
             color: C.gold,
             fontSize: 56,
             fontFamily: "serif",
-            textShadow: "0 0 8px rgba(200,169,110,0.6), 0 0 24px rgba(200,169,110,0.3)",
+            textShadow:
+              "0 0 8px rgba(200,169,110,0.6), 0 0 24px rgba(200,169,110,0.3)",
             filter: "brightness(1.3)",
           }}
         >
@@ -250,7 +272,8 @@ export const Scene4Stats: React.FC = () => {
             color: C.gold,
             fontSize: 64,
             fontFamily: "serif",
-            textShadow: "0 0 8px rgba(200,169,110,0.6), 0 0 24px rgba(200,169,110,0.3)",
+            textShadow:
+              "0 0 8px rgba(200,169,110,0.6), 0 0 24px rgba(200,169,110,0.3)",
             filter: "brightness(1.3)",
           }}
         >
@@ -295,7 +318,8 @@ export const Scene4Stats: React.FC = () => {
             color: C.gold,
             fontSize: 48,
             fontFamily: "serif",
-            textShadow: "0 0 8px rgba(200,169,110,0.6), 0 0 24px rgba(200,169,110,0.3)",
+            textShadow:
+              "0 0 8px rgba(200,169,110,0.6), 0 0 24px rgba(200,169,110,0.3)",
             filter: "brightness(1.3)",
           }}
         >

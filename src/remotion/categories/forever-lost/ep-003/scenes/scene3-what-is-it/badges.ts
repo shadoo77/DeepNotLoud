@@ -72,7 +72,7 @@ export const BADGES: BadgeDef[] = [
   {
     phrase: "dense columns",
     fallbackFrame: 2960,
-    position: { left: 50, top: "75%" },
+    position: { left: 50, top: "50%" },
     borderColor: C.red,
     title: "DENSE SILENCE",
     subtitle: "Page after page of unreadable text",
