@@ -9,6 +9,7 @@ import { Scene3WhatIsIt } from "./scenes/scene3-what-is-it";
 import { Scene4Stats } from "./scenes/scene4-stats";
 import { Scene5Language } from "./scenes/scene5-language";
 import { Scene6Attempts } from "./scenes/scene6-attempts";
+import { Scene7Theories } from "./scenes/scene7-theories";
 export { TOTAL_FRAMES };
 
 const S1_END = SCENES.s1.durationInFrames;
@@ -16,6 +17,7 @@ const S2_END = S1_END + T.fade + SCENES.s2.durationInFrames;
 const S3_END = S2_END + T.fade + SCENES.s3.durationInFrames;
 const S4_END = S3_END + T.fade + SCENES.s4.durationInFrames;
 const S5_END = S4_END + T.fade + SCENES.s5.durationInFrames;
+const S6_END = S5_END + T.fade + SCENES.s6.durationInFrames;
 
 export const ForeverLostEp3 = () => {
   return (
@@ -25,7 +27,8 @@ export const ForeverLostEp3 = () => {
         volume={(f) => {
           if (f < S1_END) return 0.18;
           if (f < S5_END) return 0.12;
-          return 0.08;
+          if (f < S6_END) return 0.08;
+          return 0.15;
         }}
         loop
       />
@@ -95,6 +98,18 @@ export const ForeverLostEp3 = () => {
           premountFor={30}
         >
           <Scene6Attempts />
+        </TransitionSeries.Sequence>
+
+        <TransitionSeries.Transition
+          presentation={fade()}
+          timing={linearTiming({ durationInFrames: T.fade })}
+        />
+
+        <TransitionSeries.Sequence
+          durationInFrames={SCENES.s7.durationInFrames}
+          premountFor={30}
+        >
+          <Scene7Theories />
         </TransitionSeries.Sequence>
       </TransitionSeries>
     </AbsoluteFill>
