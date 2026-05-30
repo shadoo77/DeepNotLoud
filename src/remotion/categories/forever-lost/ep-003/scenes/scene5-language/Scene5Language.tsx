@@ -203,10 +203,10 @@ export const Scene5Language: React.FC = () => {
     extrapolateRight: "clamp",
   });
 
-  // Text fragment "FOREVER LOST" 3200
+  // Text fragment "FOREVER LOST" — sustains through post-VO hold
   const foreverLostFade = interpolate(
     frame,
-    [3200, 3230, 3260, 3290],
+    [3220, 3250, 3340, 3360],
     [0, 1, 1, 0],
     { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
   );

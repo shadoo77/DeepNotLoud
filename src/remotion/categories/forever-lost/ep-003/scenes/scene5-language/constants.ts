@@ -6,4 +6,4 @@ const lastEndMs = transcriptData[transcriptData.length - 1]?.endMs ?? 108000;
 export const TRASCRIPT_DATA = transcriptData;
 export const VO_START_FRAME = 60;
 export const SCENE_DURATION =
-  VO_START_FRAME + Math.ceil((lastEndMs / 1000) * FPS) + FPS;
+  VO_START_FRAME + Math.ceil((lastEndMs / 1000) * FPS) + 60;
