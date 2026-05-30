@@ -150,7 +150,6 @@ export const MessageBottleText: React.FC<{
           width: "100%",
           paddingTop: 48,
           paddingBottom: 48,
-          backgroundColor: "rgba(10,10,10,0.90)",
           borderTop: "1px solid rgba(200,169,110,0.15)",
           borderBottom: "1px solid rgba(200,169,110,0.15)",
           opacity: line1Fade,
