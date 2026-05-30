@@ -200,7 +200,7 @@ export const Scene2Discovery: React.FC = () => {
         />
       </div>
 
-      <DustParticles count={40} />
+      <DustParticles count={120} />
 
       <div
         className="pointer-events-none absolute inset-0"

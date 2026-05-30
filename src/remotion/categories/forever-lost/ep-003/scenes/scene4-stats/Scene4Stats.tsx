@@ -164,7 +164,7 @@ export const Scene4Stats: React.FC = () => {
         }}
       />
 
-      <DustParticles count={50} />
+      <DustParticles count={120} />
 
       <div
         className="pointer-events-none absolute right-0 bottom-0 left-0"
