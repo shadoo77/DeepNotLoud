@@ -119,10 +119,15 @@ export const Scene2Discovery: React.FC = () => {
     extrapolateRight: "clamp",
   });
   const yrPulse = interpolate(Math.sin(frame * 0.1), [-1, 1], [0.3, 1]);
-  const yrPulseOpacity = interpolate(frame, [650, 670, 900, 920], [0, 1, 1, 0], {
-    extrapolateLeft: "clamp",
-    extrapolateRight: "clamp",
-  });
+  const yrPulseOpacity = interpolate(
+    frame,
+    [650, 670, 900, 920],
+    [0, 1, 1, 0],
+    {
+      extrapolateLeft: "clamp",
+      extrapolateRight: "clamp",
+    },
+  );
   const lineDraw1100 = interpolate(
     Math.max(0, frame - 1100),
     [0, 40],
@@ -141,10 +146,15 @@ export const Scene2Discovery: React.FC = () => {
     [0, 0.6, 0.6, 0],
     { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
   );
-  const undecipheredFade = interpolate(frame, [1520, 1550, 1580, 1600], [0, 1, 1, 0], {
-    extrapolateLeft: "clamp",
-    extrapolateRight: "clamp",
-  });
+  const undecipheredFade = interpolate(
+    frame,
+    [1520, 1550, 1640, 1670],
+    [0, 1, 1, 0],
+    {
+      extrapolateLeft: "clamp",
+      extrapolateRight: "clamp",
+    },
+  );
 
   return (
     <AbsoluteFill className="overflow-hidden" style={{ backgroundColor: C.bg }}>
@@ -161,7 +171,7 @@ export const Scene2Discovery: React.FC = () => {
       {/* micro-reveal: 1912 */}
       <div
         className="pointer-events-none absolute flex items-center gap-3"
-        style={{ top: "15%", left: "8%", opacity: yr1912Fade }}
+        style={{ bottom: "15%", left: "8%", opacity: yr1912Fade }}
       >
         <div style={{ width: 20, height: 2, backgroundColor: C.gold }} />
         <span
@@ -241,10 +251,9 @@ export const Scene2Discovery: React.FC = () => {
       <div
         className="pointer-events-none absolute flex items-center gap-3"
         style={{
-          top: "15%",
-          left: "50%",
+          left: "8%",
+          bottom: "30%",
           opacity: undecipheredFade,
-          transform: "translateX(-50%)",
         }}
       >
         <div style={{ width: 16, height: 2, backgroundColor: C.gold }} />
@@ -258,28 +267,28 @@ export const Scene2Discovery: React.FC = () => {
 
       {/* micro-reveal: year pulse @650 */}
       <div
-        className="pointer-events-none absolute"
+        className="pointer-events-none absolute flex items-center gap-3"
         style={{
-          left: "8%",
-          bottom: "30%",
+          top: "15%",
+          left: "50%",
           opacity: yrPulseOpacity * yrPulse,
+          transform: "translateX(-50%)",
         }}
       >
         <span
+          className="text-5xl font-bold tracking-wider"
           style={{
             color: C.gold,
-            fontSize: 48,
             fontFamily: cinzelFont,
-            textShadow: `0 0 ${interpolate(yrPulse, [0.3, 1], [5, 20])}px ${C.gold}`,
+            textShadow: `0 0 ${interpolate(yrPulse, [0.3, 1], [5, 30])}px ${C.gold}`,
           }}
         >
           1865
         </span>
         <span
+          className="text-xl font-semibold tracking-wider"
           style={{
-            color: C.gray,
-            fontSize: 20,
-            marginLeft: 10,
+            color: C.white,
             fontFamily: interFont,
           }}
         >
