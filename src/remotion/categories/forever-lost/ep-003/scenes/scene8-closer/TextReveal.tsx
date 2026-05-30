@@ -17,10 +17,7 @@ export const TextReveal: React.FC<{
   lines: RevealLine[];
 }> = ({ frame, lines }) => {
   return (
-    <div
-      className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center"
-      style={{ paddingBottom: 80 }}
-    >
+    <div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-start pt-20">
       {lines.map((line, i) => {
         const local = Math.max(0, frame - line.triggerFrame);
         const fade = interpolate(local, [0, 30], [0, 1], {

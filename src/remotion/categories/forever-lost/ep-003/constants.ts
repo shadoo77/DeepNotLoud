@@ -41,6 +41,8 @@ export const SCENES = {
   s8: { durationInFrames: S8_DURATION },
 } as const;
 
+const NUM_SCENES = Object.keys(SCENES).length;
+
 export const TOTAL_FRAMES =
   Object.values(SCENES).reduce((a, b) => a + b.durationInFrames, 0) -
-  T.fade;
+  (NUM_SCENES - 1) * T.fade;
