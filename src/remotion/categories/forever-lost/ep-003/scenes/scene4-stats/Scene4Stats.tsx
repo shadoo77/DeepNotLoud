@@ -10,6 +10,7 @@ import {
 } from "remotion";
 import { Audio } from "@remotion/media";
 import { getPhraseFrames } from "@/lib/utils";
+import { loadFont } from "@remotion/google-fonts/Cinzel";
 import { TickerBar } from "@/components/atoms/TickerBar";
 import { DustParticles } from "@/components/atoms/DustParticles";
 import { YouTubeCaptions } from "@/components/atoms/YouTubeCaptions";
@@ -18,6 +19,11 @@ import {
   C,
   ASSET_PATH,
 } from "@/remotion/categories/forever-lost/ep-003/constants";
+
+const { fontFamily: cinzelFont } = loadFont("normal", {
+  weights: ["400", "700", "900"],
+  subsets: ["latin"],
+});
 import { TRASCRIPT_DATA, VO_START_FRAME } from "./constants";
 import { BADGES } from "./badges";
 import { StatCounter, STATS } from "./StatCounter";
@@ -60,6 +66,60 @@ export const Scene4Stats: React.FC = () => {
     frame,
     [terrifyingFrame, terrifyingFrame + 4, terrifyingFrame + 12],
     [0, 0.18, 0],
+    { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
+  );
+
+  // ── MICRO-REVEALS (pacing) ──
+  const flare400 = interpolate(frame, [400, 430, 630, 660], [0, 0.6, 0.6, 0], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+  const glyph500 = interpolate(frame, [500, 510, 540, 550], [0, 1, 1, 0], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+  const alphabetFade = interpolate(frame, [750, 780, 810, 830], [0, 1, 1, 0], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+  const line850 = interpolate(Math.max(0, frame - 850), [0, 40], [0, 100], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+  const line850Opacity = interpolate(Math.max(0, frame - 890), [0, 10], [1, 0], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+  const flare1000 = interpolate(frame, [1000, 1030, 1230, 1260], [0, 0.6, 0.6, 0], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+  const glyph1100 = interpolate(frame, [1100, 1110, 1140, 1150], [0, 1, 1, 0], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+  const fingerprintFade = interpolate(
+    frame,
+    [1400, 1430, 1460, 1480],
+    [0, 1, 1, 0],
+    { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
+  );
+  const flare1550 = interpolate(frame, [1550, 1580, 1780, 1810], [0, 0.6, 0.6, 0], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+  const glyph1650 = interpolate(frame, [1650, 1660, 1690, 1700], [0, 1, 1, 0], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+  const flare1950 = interpolate(frame, [1950, 1980, 2180, 2210], [0, 0.6, 0.6, 0], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+  const unreadableFade = interpolate(
+    frame,
+    [2100, 2130, 2160, 2180],
+    [0, 1, 1, 0],
     { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
   );
 
@@ -106,6 +166,149 @@ export const Scene4Stats: React.FC = () => {
         transcriptData={TRASCRIPT_DATA}
         voiceOverStartFrame={VO_START_FRAME}
       />
+
+      {/* micro-reveals */}
+      <div
+        className="pointer-events-none absolute"
+        style={{
+          top: 0,
+          left: 0,
+          width: 250,
+          height: 250,
+          background:
+            "radial-gradient(circle at top left, rgba(200,169,110,0.12), transparent 70%)",
+          opacity: flare400,
+        }}
+      />
+      <div
+        className="pointer-events-none absolute"
+        style={{ top: "35%", left: "12%", opacity: glyph500 }}
+      >
+        <span style={{ color: C.gold, fontSize: 56, fontFamily: "serif" }}>ꝏ</span>
+      </div>
+      <div
+        className="pointer-events-none absolute"
+        style={{ top: "25%", left: "5%", opacity: alphabetFade }}
+      >
+        <span
+          style={{
+            fontFamily: cinzelFont,
+            color: C.gold,
+            fontSize: 28,
+            letterSpacing: 6,
+          }}
+        >
+          ALPHABET: 26
+        </span>
+      </div>
+      <div
+        className="pointer-events-none absolute"
+        style={{
+          top: "65%",
+          left: 0,
+          width: "100%",
+          opacity: line850Opacity,
+        }}
+      >
+        <svg width="100%" height={2}>
+          <line
+            x1={0}
+            y1={0}
+            x2={`${line850}%`}
+            y2={0}
+            stroke={C.gold}
+            strokeWidth={1}
+            strokeOpacity={0.3}
+          />
+        </svg>
+      </div>
+      <div
+        className="pointer-events-none absolute"
+        style={{
+          top: 0,
+          right: 0,
+          width: 300,
+          height: 300,
+          background:
+            "radial-gradient(circle at top right, rgba(200,169,110,0.15), transparent 70%)",
+          opacity: flare1000,
+        }}
+      />
+      <div
+        className="pointer-events-none absolute"
+        style={{ top: "45%", right: "15%", opacity: glyph1100 }}
+      >
+        <span style={{ color: C.gold, fontSize: 64, fontFamily: "serif" }}>ⴀ</span>
+      </div>
+      <div
+        className="pointer-events-none absolute"
+        style={{
+          top: "15%",
+          left: "50%",
+          opacity: fingerprintFade,
+          transform: "translateX(-50%)",
+        }}
+      >
+        <span
+          style={{
+            fontFamily: cinzelFont,
+            color: C.gray,
+            fontSize: 22,
+            letterSpacing: 4,
+          }}
+        >
+          MATHEMATICAL FINGERPRINT
+        </span>
+      </div>
+      <div
+        className="pointer-events-none absolute"
+        style={{
+          bottom: 0,
+          right: 0,
+          width: 250,
+          height: 250,
+          background:
+            "radial-gradient(circle at bottom right, rgba(200,169,110,0.12), transparent 70%)",
+          opacity: flare1550,
+        }}
+      />
+      <div
+        className="pointer-events-none absolute"
+        style={{ top: "55%", left: "8%", opacity: glyph1650 }}
+      >
+        <span style={{ color: C.gold, fontSize: 48, fontFamily: "serif" }}>ꝑ</span>
+      </div>
+      <div
+        className="pointer-events-none absolute"
+        style={{
+          top: 0,
+          left: 0,
+          width: 250,
+          height: 250,
+          background:
+            "radial-gradient(circle at top left, rgba(200,169,110,0.12), transparent 70%)",
+          opacity: flare1950,
+        }}
+      />
+      <div
+        className="pointer-events-none absolute"
+        style={{
+          top: "20%",
+          right: "8%",
+          opacity: unreadableFade,
+        }}
+      >
+        <span
+          style={{
+            fontFamily: cinzelFont,
+            color: C.white,
+            fontSize: 24,
+            letterSpacing: 6,
+          }}
+        >
+          UTTERLY UNREADABLE
+        </span>
+      </div>
 
       <ZipfChart
         frame={frame}

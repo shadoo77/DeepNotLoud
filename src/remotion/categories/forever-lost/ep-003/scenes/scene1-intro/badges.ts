@@ -23,6 +23,7 @@ export const BADGES: BadgeDef[] = [
     subtitle: "Carbon dated",
     titleFontFamily: cinzelFont,
     subtitleFontFamily: interFont,
+    hideAfterFrames: 500,
   },
   {
     phrase: "two hundred and forty",
@@ -34,6 +35,7 @@ export const BADGES: BadgeDef[] = [
     titleSize: "text-4xl",
     titleFontFamily: cinzelFont,
     subtitleFontFamily: interFont,
+    hideAfterFrames: 700,
   },
   {
     phrase: "never been identified",
@@ -44,6 +46,7 @@ export const BADGES: BadgeDef[] = [
     subtitle: "No known match on earth",
     titleFontFamily: cinzelFont,
     subtitleFontFamily: interFont,
+    hideAfterFrames: 400,
   },
   {
     phrase: "six hundred",

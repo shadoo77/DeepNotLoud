@@ -17,13 +17,15 @@ export type BadgeDef = {
   titleFontFamily: string;
   subtitleFontFamily: string;
   titleSize?: "text-xl" | "text-2xl" | "text-3xl" | "text-4xl";
+  hideAfterFrames?: number;
 };
 
 export const SceneBadges: React.FC<{
   badges: BadgeDef[];
   transcriptData: TranscriptEntry[];
   voiceOverStartFrame: number;
-}> = ({ badges, transcriptData, voiceOverStartFrame }) => {
+  defaultAutoHideFrames?: number;
+}> = ({ badges, transcriptData, voiceOverStartFrame, defaultAutoHideFrames }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
@@ -34,11 +36,21 @@ export const SceneBadges: React.FC<{
       config: { damping: 12, stiffness: 200 },
     });
 
-  const badgeOpacity = (trigger: number) =>
-    interpolate(Math.max(0, frame - trigger), [0, 20], [0, 1], {
+  const badgeOpacity = (trigger: number, hideAfter?: number) => {
+    const entry = interpolate(Math.max(0, frame - trigger), [0, 20], [0, 1], {
       extrapolateLeft: "clamp",
       extrapolateRight: "clamp",
     });
+    const hideFrames = hideAfter ?? defaultAutoHideFrames;
+    if (!hideFrames) return entry;
+    const exit = interpolate(
+      Math.max(0, frame - (trigger + hideFrames)),
+      [0, 30],
+      [1, 0],
+      { extrapolateRight: "clamp" },
+    );
+    return entry * exit;
+  };
 
   return badges.map((badge) => {
     const result = getPhraseFrames({
@@ -59,7 +71,7 @@ export const SceneBadges: React.FC<{
           left: badge.position.left,
           right: badge.position.right,
           top: badge.position.top,
-          opacity: badgeOpacity(triggerFrame),
+          opacity: badgeOpacity(triggerFrame, badge.hideAfterFrames),
           transform: `scale(${badgeSpring(triggerFrame)})`,
           backgroundColor: "rgba(10,10,10,0.88)",
           border: `1px solid ${badge.borderColor}`,

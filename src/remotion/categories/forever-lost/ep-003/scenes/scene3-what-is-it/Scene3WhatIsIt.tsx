@@ -196,6 +196,8 @@ export const Scene3WhatIsIt: React.FC = () => {
   const image2Start = image1Start + imageHoldDuration;
   const image3Start = image2Start + imageHoldDuration;
 
+  const imageBreath = interpolate(Math.sin(frame * 0.03), [-1, 1], [0.85, 1]);
+
   const getImageOpacity = (imgIndex: number) => {
     const starts = [image1Start, image2Start, image3Start];
     const enterFrame = starts[imgIndex];
@@ -210,7 +212,8 @@ export const Scene3WhatIsIt: React.FC = () => {
       interpolate(frame, [exitFrame - fadeOut, exitFrame], [1, 0], {
         extrapolateLeft: "clamp",
         extrapolateRight: "clamp",
-      })
+      }) *
+      imageBreath
     );
   };
 
@@ -221,6 +224,38 @@ export const Scene3WhatIsIt: React.FC = () => {
     voiceOverStartFrame: VO_START_FRAME,
   });
   const bioRumbleFrame = bioRumble.from > 0 ? bioRumble.from - 15 : 1309;
+
+  // ── MICRO-REVEALS (pacing) ──
+  const starMarkedFade = interpolate(frame, [2370, 2400, 2460, 2480], [0, 1, 1, 0], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+  const cornerFlare2450 = interpolate(
+    frame,
+    [2450, 2480, 2680, 2710],
+    [0, 0.6, 0.6, 0],
+    { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
+  );
+  const lineDraw2600 = interpolate(
+    Math.max(0, frame - 2600),
+    [0, 40],
+    [0, 100],
+    { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
+  );
+  const line2600Opacity = interpolate(Math.max(0, frame - 2640), [0, 10], [1, 0], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+  const glyphSilenceOpacity = interpolate(
+    frame,
+    [2820, 2830, 2860, 2870],
+    [0, 1, 1, 0],
+    { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
+  );
+  const silenceFade = interpolate(frame, [2900, 2930, 2960, 2980], [0, 1, 1, 0], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
 
   const renderSectionCard = (card: CardDef, index: number) => {
     const triggerFrame = cardTriggers[index];
@@ -393,6 +428,86 @@ export const Scene3WhatIsIt: React.FC = () => {
         voiceOverStartFrame={VO_START_FRAME}
       />
 
+      {/* micro-reveals */}
+      <div
+        className="pointer-events-none absolute"
+        style={{ top: "30%", left: "5%", opacity: starMarkedFade }}
+      >
+        <span
+          style={{
+            fontFamily: cinzelFont,
+            color: C.gold,
+            fontSize: 28,
+            letterSpacing: 6,
+          }}
+        >
+          STAR-MARKED
+        </span>
+      </div>
+
+      <div
+        className="pointer-events-none absolute"
+        style={{
+          top: 0,
+          right: 0,
+          width: 300,
+          height: 300,
+          background:
+            "radial-gradient(circle at top right, rgba(200,169,110,0.15), transparent 70%)",
+          opacity: cornerFlare2450,
+        }}
+      />
+
+      <div
+        className="pointer-events-none absolute"
+        style={{
+          top: "60%",
+          left: 0,
+          width: "100%",
+          opacity: line2600Opacity,
+        }}
+      >
+        <svg width="100%" height={2}>
+          <line
+            x1={0}
+            y1={0}
+            x2={`${lineDraw2600}%`}
+            y2={0}
+            stroke={C.gold}
+            strokeWidth={1}
+            strokeOpacity={0.4}
+          />
+        </svg>
+      </div>
+
+      <div
+        className="pointer-events-none absolute"
+        style={{ top: "70%", right: "10%", opacity: glyphSilenceOpacity }}
+      >
+        <span style={{ color: C.gold, fontSize: 72, fontFamily: "serif" }}>ⴀ</span>
+      </div>
+
+      <div
+        className="pointer-events-none absolute"
+        style={{
+          top: "20%",
+          left: "50%",
+          opacity: silenceFade,
+          transform: "translateX(-50%)",
+        }}
+      >
+        <span
+          style={{
+            fontFamily: cinzelFont,
+            color: C.gray,
+            fontSize: 26,
+            letterSpacing: 8,
+          }}
+        >
+          SILENCE
+        </span>
+      </div>
+
       <div
         className="pointer-events-none absolute"
         style={{
@@ -474,6 +589,18 @@ export const Scene3WhatIsIt: React.FC = () => {
           src={staticFile(`${ASSET}/audio/sfx/deep_rumble.wav`)}
           volume={(f) =>
             interpolate(f, [0, 120], [0.25, 0], {
+              extrapolateLeft: "clamp",
+              extrapolateRight: "clamp",
+            })
+          }
+        />
+      </Sequence>
+
+      <Sequence from={2520} durationInFrames={60}>
+        <Audio
+          src={staticFile(`${ASSET}/audio/sfx/impact_thud.wav`)}
+          volume={(f) =>
+            interpolate(f, [0, 60], [0.3, 0], {
               extrapolateLeft: "clamp",
               extrapolateRight: "clamp",
             })

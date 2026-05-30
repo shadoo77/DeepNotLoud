@@ -139,6 +139,58 @@ export const Scene1Intro: React.FC = () => {
 
   const impactFlash = Math.max(silenceFlash, finalFlash);
 
+  // ── MICRO-REVEALS (pacing) ──
+  const glyph1Opacity = interpolate(frame, [750, 760, 790, 800], [0, 1, 1, 0], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+  const glyph2Opacity = interpolate(frame, [810, 820, 850, 860], [0, 1, 1, 0], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+  const glyph3Opacity = interpolate(frame, [870, 880, 910, 920], [0, 1, 1, 0], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+  const carbonDateFade = interpolate(
+    frame,
+    [960, 990, 1050, 1070],
+    [0, 1, 1, 0],
+    {
+      extrapolateLeft: "clamp",
+      extrapolateRight: "clamp",
+    },
+  );
+  const carbonRangeFade = interpolate(
+    frame,
+    [1080, 1100, 1140, 1150],
+    [0, 1, 1, 0],
+    {
+      extrapolateLeft: "clamp",
+      extrapolateRight: "clamp",
+    },
+  );
+  const cornerFlare1250 = interpolate(
+    frame,
+    [1250, 1280, 1480, 1510],
+    [0, 0.6, 0.6, 0],
+    { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
+  );
+  const voynichFade = interpolate(frame, [1280, 1310, 1370, 1400], [0, 1, 1, 0], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+  const lineDraw1420 = interpolate(
+    Math.max(0, frame - 1420),
+    [0, 40],
+    [0, 100],
+    { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
+  );
+  const lineOpacity = interpolate(Math.max(0, frame - 1460), [0, 10], [1, 0], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+
   return (
     <AbsoluteFill className="overflow-hidden" style={{ backgroundColor: C.bg }}>
       <div
@@ -190,6 +242,114 @@ export const Scene1Intro: React.FC = () => {
         transcriptData={TRASCRIPT_DATA}
         voiceOverStartFrame={VO_START_FRAME}
       />
+
+      {/* micro-reveals */}
+      <div
+        className="pointer-events-none absolute"
+        style={{ top: "35%", right: "15%", opacity: glyph1Opacity }}
+      >
+        <span style={{ color: C.gold, fontSize: 64, fontFamily: "serif" }}>
+          ꝏ
+        </span>
+      </div>
+      <div
+        className="pointer-events-none absolute"
+        style={{ top: "45%", right: "20%", opacity: glyph2Opacity }}
+      >
+        <span style={{ color: C.gold, fontSize: 48, fontFamily: "serif" }}>
+          ⴀ
+        </span>
+      </div>
+      <div
+        className="pointer-events-none absolute"
+        style={{ top: "55%", right: "10%", opacity: glyph3Opacity }}
+      >
+        <span style={{ color: C.gold, fontSize: 56, fontFamily: "serif" }}>
+          ꝑ
+        </span>
+      </div>
+
+      <div
+        className="pointer-events-none absolute"
+        style={{ top: "40%", left: "8%", opacity: carbonDateFade }}
+      >
+        <span
+          style={{
+            fontFamily: cinzelFont,
+            color: C.gold,
+            fontSize: 32,
+            letterSpacing: 4,
+          }}
+        >
+          CARBON DATED
+        </span>
+      </div>
+      <div
+        className="pointer-events-none absolute"
+        style={{ top: "35%", left: "8%", opacity: carbonRangeFade }}
+      >
+        <span
+          style={{
+            fontFamily: cinzelFont,
+            color: C.gold,
+            fontSize: 32,
+            letterSpacing: 4,
+          }}
+        >
+          1404 – 1438
+        </span>
+      </div>
+
+      <div
+        className="pointer-events-none absolute"
+        style={{
+          top: 0,
+          right: 0,
+          width: 300,
+          height: 300,
+          background:
+            "radial-gradient(circle at top right, rgba(200,169,110,0.15), transparent 70%)",
+          opacity: cornerFlare1250,
+        }}
+      />
+
+      <div
+        className="pointer-events-none absolute"
+        style={{ top: "40%", left: "8%", opacity: voynichFade }}
+      >
+        <span
+          style={{
+            fontFamily: cinzelFont,
+            color: C.gold,
+            fontSize: 28,
+            letterSpacing: 6,
+          }}
+        >
+          VOYNICH
+        </span>
+      </div>
+
+      <div
+        className="pointer-events-none absolute"
+        style={{
+          top: "45%",
+          left: 0,
+          width: "100%",
+          opacity: lineOpacity,
+        }}
+      >
+        <svg width="100%" height={2}>
+          <line
+            x1={0}
+            y1={0}
+            x2={`${lineDraw1420}%`}
+            y2={0}
+            stroke={C.gold}
+            strokeWidth={1}
+            strokeOpacity={0.4}
+          />
+        </svg>
+      </div>
 
       <div
         className="absolute rounded-lg px-5 py-3"

@@ -1030,6 +1030,30 @@ Font — Mono:       Courier New (cipher text / tickers)
 
 ---
 
+## ⏱️ MICRO-PACING RULE
+
+No more than **90–120 frames (3–4 seconds)** shall pass without a visual event — a change, movement, highlight, flash, or reveal. Every gap in VO or static exposition must be filled with a micro-reveal.
+
+**Micro-reveal palette** (pick one, rotate through them):
+- **Ken Burns drift** — continuous slow zoom/pan on BG (always on ✓)
+- **Dust particle gust** — brief burst of particles from edge
+- **Gold flash** — 0→0.18→0 opacity over 12 frames (C.gold overlay)
+- **Badge pop** — SceneBadge animates in with spring/scale
+- **Count/pulse** — number highlights, pulsing glow with `Math.sin`
+- **Glyph highlight** — individual Voynich glyph illuminates in sequence
+- **Text fragment** — single word fades in overlaying the BG
+- **Corner flare** — radial-gradient gold flare in top/bottom corner
+- **Line draw** — horizontal gold line draws from edge toward center
+- **Image pulse** — slow `Math.sin` breath on BG image opacity
+- **Annotation/tag** — callout appears pointing to image detail
+- **SFX spike** — short sound effect punctuates a visual event
+
+A scene with zero visual events for >120 frames is considered **dead**. Dead scenes must be restructured before proceeding to rendering.
+
+See `.opencode/agents/pacing.md` for the dedicated pacing sub-agent with concrete code patterns for each reveal type.
+
+---
+
 ## ⚠️ REMOTION GOTCHAS
 
 > **CSS transitions/animations are FORBIDDEN** — they will not render correctly in Remotion. All animation must use `interpolate()`, `spring()`, or `Easing`. This includes particle systems, ticker scrolls, and any motion — drive everything from `useCurrentFrame()`.

@@ -113,6 +113,39 @@ export const Scene2Discovery: React.FC = () => {
     config: { damping: 18, stiffness: 100 },
   });
 
+  // ── MICRO-REVEALS (pacing) ──
+  const yr1912Fade = interpolate(frame, [60, 80, 110, 130], [0, 1, 1, 0], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+  const yrPulse = interpolate(Math.sin(frame * 0.1), [-1, 1], [0.3, 1]);
+  const yrPulseOpacity = interpolate(frame, [650, 670, 900, 920], [0, 1, 1, 0], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+  const lineDraw1100 = interpolate(
+    Math.max(0, frame - 1100),
+    [0, 40],
+    [0, 100],
+    { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
+  );
+  const line1100Opacity = interpolate(
+    Math.max(0, frame - 1140),
+    [0, 10],
+    [1, 0],
+    { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
+  );
+  const cornerFlare1450 = interpolate(
+    frame,
+    [1450, 1480, 1680, 1710],
+    [0, 0.6, 0.6, 0],
+    { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
+  );
+  const undecipheredFade = interpolate(frame, [1520, 1550, 1580, 1600], [0, 1, 1, 0], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+
   return (
     <AbsoluteFill className="overflow-hidden" style={{ backgroundColor: C.bg }}>
       <div
@@ -123,6 +156,23 @@ export const Scene2Discovery: React.FC = () => {
           src={staticFile(`${ASSET}/images/ep003_villa_mondragone.jpeg`)}
           className="size-full object-cover"
         />
+      </div>
+
+      {/* micro-reveal: 1912 */}
+      <div
+        className="pointer-events-none absolute"
+        style={{ top: "15%", left: "8%", opacity: yr1912Fade }}
+      >
+        <span
+          style={{
+            fontFamily: cinzelFont,
+            color: C.gold,
+            fontSize: 40,
+            letterSpacing: 8,
+          }}
+        >
+          1912
+        </span>
       </div>
 
       <div
@@ -152,6 +202,96 @@ export const Scene2Discovery: React.FC = () => {
             "radial-gradient(ellipse at center, transparent 30%, rgba(0,0,0,0.70) 100%)",
         }}
       />
+
+      {/* micro-reveal: line draw @1100 */}
+      <div
+        className="pointer-events-none absolute"
+        style={{
+          top: "12%",
+          left: "35%",
+          width: "65%",
+          opacity: line1100Opacity,
+        }}
+      >
+        <svg width="100%" height={2}>
+          <line
+            x1={0}
+            y1={0}
+            x2={`${lineDraw1100}%`}
+            y2={0}
+            stroke={C.gold}
+            strokeWidth={1}
+            strokeOpacity={0.4}
+          />
+        </svg>
+      </div>
+
+      {/* micro-reveal: corner flare @1450 */}
+      <div
+        className="pointer-events-none absolute"
+        style={{
+          top: 0,
+          right: 0,
+          width: 300,
+          height: 300,
+          background:
+            "radial-gradient(circle at top right, rgba(200,169,110,0.15), transparent 70%)",
+          opacity: cornerFlare1450,
+        }}
+      />
+
+      {/* micro-reveal: STILL UNDECIPHERED @1520 */}
+      <div
+        className="pointer-events-none absolute"
+        style={{
+          top: "15%",
+          left: "50%",
+          opacity: undecipheredFade,
+          transform: "translateX(-50%)",
+        }}
+      >
+        <span
+          style={{
+            fontFamily: cinzelFont,
+            color: C.white,
+            fontSize: 24,
+            letterSpacing: 6,
+          }}
+        >
+          STILL UNDECIPHERED
+        </span>
+      </div>
+
+      {/* micro-reveal: year pulse @650 */}
+      <div
+        className="pointer-events-none absolute"
+        style={{
+          left: "8%",
+          bottom: "30%",
+          opacity: yrPulseOpacity * yrPulse,
+        }}
+      >
+        <span
+          style={{
+            color: C.gold,
+            fontSize: 48,
+            fontFamily: cinzelFont,
+            textShadow: `0 0 ${interpolate(yrPulse, [0.3, 1], [5, 20])}px ${C.gold}`,
+          }}
+        >
+          1865
+        </span>
+        <span
+          style={{
+            color: C.gray,
+            fontSize: 20,
+            marginLeft: 10,
+            fontFamily: interFont,
+          }}
+        >
+          BORN
+        </span>
+      </div>
 
       <SidebarPanel
         fields={[
@@ -291,7 +431,7 @@ export const Scene2Discovery: React.FC = () => {
         />
       </Sequence>
 
-      <Sequence>
+      <Sequence from={60}>
         <Audio
           src={staticFile(`${ASSET}/audio/sfx/paper_rustle.wav`)}
           volume={0.35}
