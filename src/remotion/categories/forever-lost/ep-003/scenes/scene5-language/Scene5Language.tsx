@@ -150,7 +150,12 @@ export const Scene5Language: React.FC = () => {
   // Text fragment "SYSTEMATIC" — synced to VO "systematic structure"
   const systematicFade = interpolate(
     frame,
-    [systematicTrigger, systematicTrigger + 30, systematicTrigger + 60, systematicTrigger + 80],
+    [
+      systematicTrigger,
+      systematicTrigger + 30,
+      systematicTrigger + 60,
+      systematicTrigger + 80,
+    ],
     [0, 1, 1, 0],
     { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
   );
@@ -202,14 +207,6 @@ export const Scene5Language: React.FC = () => {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
   });
-
-  // Text fragment "FOREVER LOST" — sustains through post-VO hold
-  const foreverLostFade = interpolate(
-    frame,
-    [3220, 3250, 3340, 3360],
-    [0, 1, 1, 0],
-    { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
-  );
 
   return (
     <AbsoluteFill className="overflow-hidden" style={{ backgroundColor: C.bg }}>
@@ -479,24 +476,6 @@ export const Scene5Language: React.FC = () => {
         >
           ⴲ
         </span>
-      </div>
-
-      {/* Text fragment "FOREVER LOST" 3200 */}
-      <div
-        className="pointer-events-none absolute flex items-center gap-3"
-        style={{
-          top: "32%",
-          right: "8%",
-          opacity: foreverLostFade,
-        }}
-      >
-        <span
-          className="text-3xl font-semibold tracking-wider"
-          style={{ fontFamily: cinzelFont, color: C.white }}
-        >
-          FOREVER LOST
-        </span>
-        <div style={{ width: 16, height: 2, backgroundColor: C.gold }} />
       </div>
 
       {/* Badges */}

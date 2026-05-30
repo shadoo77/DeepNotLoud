@@ -18,7 +18,7 @@ const S4_END = S3_END + T.fade + SCENES.s4.durationInFrames;
 export const ForeverLostEp3 = () => {
   return (
     <AbsoluteFill style={{ backgroundColor: "#0A0A0A" }}>
-      {/* <Audio
+      <Audio
         src={staticFile(`${ASSET_PATH}/audio/bgm/ep003_bgm_landscape.mp3`)}
         volume={(f) => {
           if (f < S1_END) return 0.18;
@@ -28,7 +28,7 @@ export const ForeverLostEp3 = () => {
           return 0.12;
         }}
         loop
-      /> */}
+      />
       <TransitionSeries>
         <TransitionSeries.Sequence
           durationInFrames={SCENES.s1.durationInFrames}
