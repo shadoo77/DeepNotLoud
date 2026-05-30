@@ -29,14 +29,14 @@ export const BADGES: BadgeDef[] = [
   {
     phrase: "gave up",
     fallbackFrame: 1749,
-    position: { left: 50, top: "12%" },
+    position: { left: 50, bottom: "20%" },
     borderColor: C.red,
     title: "THEY GAVE UP",
     subtitle: "US Army codebreakers defeated",
     titleSize: "text-3xl",
     titleFontFamily: cinzelFont,
     subtitleFontFamily: interFont,
-    hideAfterFrames: 400,
+    hideAfterFrames: 180,
   },
   {
     phrase: "nonsense",

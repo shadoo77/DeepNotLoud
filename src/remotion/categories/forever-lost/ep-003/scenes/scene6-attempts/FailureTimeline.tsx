@@ -103,13 +103,13 @@ export const FailureTimeline: React.FC<{
                   {entry.year}
                 </div>
                 <div
-                  className="text-2xl font-bold leading-tight"
+                  className="text-3xl leading-tight font-bold"
                   style={{ fontFamily: cinzelFont, color: C.white }}
                 >
                   {entry.institution}
                 </div>
                 <div
-                  className="mt-1 inline-block self-start rounded-full px-3 py-0.5 text-lg font-bold"
+                  className="mt-1 inline-block self-start rounded-full px-3 py-1.5 text-xl font-bold"
                   style={{
                     backgroundColor: C.red,
                     color: C.white,

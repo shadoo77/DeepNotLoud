@@ -22,7 +22,16 @@ export const AttemptSpotlightCard: React.FC<{
   institution: string;
   description: string;
   result: string;
-}> = ({ frame, fps, triggerFrame, nextTriggerFrame, year, institution, description, result }) => {
+}> = ({
+  frame,
+  fps,
+  triggerFrame,
+  nextTriggerFrame,
+  year,
+  institution,
+  description,
+  result,
+}) => {
   const local = Math.max(0, frame - triggerFrame);
 
   const scale = spring({ frame: local, fps, config: { damping: 14 } });
@@ -33,7 +42,8 @@ export const AttemptSpotlightCard: React.FC<{
 
   const exitOpacity = Number.isFinite(nextTriggerFrame)
     ? interpolate(frame, [nextTriggerFrame - 40, nextTriggerFrame], [1, 0], {
-        extrapolateLeft: "clamp", extrapolateRight: "clamp",
+        extrapolateLeft: "clamp",
+        extrapolateRight: "clamp",
       })
     : 1;
 
@@ -60,14 +70,14 @@ export const AttemptSpotlightCard: React.FC<{
             {institution}
           </span>
           <span
-            className="text-lg tracking-widest"
+            className="text-2xl tracking-widest"
             style={{ fontFamily: "Courier New", color: C.gold }}
           >
             {year}
           </span>
         </div>
         <div
-          className="mt-3 text-lg"
+          className="mt-3 text-2xl"
           style={{ fontFamily: interFont, color: C.gray }}
         >
           {description}
