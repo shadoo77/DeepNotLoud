@@ -99,6 +99,16 @@ export const Scene5Language: React.FC = () => {
   const correctionsTrigger =
     correctionsResult.from > 0 ? correctionsResult.from : 1597;
 
+  // ── "systematic structure" text fragment ──
+  const systematicResult = getPhraseFrames({
+    phrase: "systematic structure",
+    transcriptData: TRASCRIPT_DATA,
+    fps,
+    voiceOverStartFrame: VO_START_FRAME,
+  });
+  const systematicTrigger =
+    systematicResult.from > 0 ? systematicResult.from : 1368;
+
   // ── MICRO-REVEALS ──
 
   // Flare 150 — top-right
@@ -137,10 +147,10 @@ export const Scene5Language: React.FC = () => {
     extrapolateRight: "clamp",
   });
 
-  // Text fragment 1200 — "SYSTEMATIC" at center
+  // Text fragment "SYSTEMATIC" — synced to VO "systematic structure"
   const systematicFade = interpolate(
     frame,
-    [1200, 1230, 1260, 1280],
+    [systematicTrigger, systematicTrigger + 30, systematicTrigger + 60, systematicTrigger + 80],
     [0, 1, 1, 0],
     { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
   );
@@ -349,7 +359,7 @@ export const Scene5Language: React.FC = () => {
       <div
         className="pointer-events-none absolute flex items-center gap-3"
         style={{
-          top: "22%",
+          bottom: "12%",
           left: "50%",
           opacity: systematicFade,
           transform: "translateX(-50%)",
@@ -401,7 +411,7 @@ export const Scene5Language: React.FC = () => {
       <div
         className="pointer-events-none absolute flex items-center gap-3"
         style={{
-          top: "28%",
+          bottom: "28%",
           left: "8%",
           opacity: sourceFade,
         }}

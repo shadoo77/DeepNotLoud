@@ -42,7 +42,7 @@ export const ReduplicationBanner: React.FC<{
 
   return (
     <div
-      className="pointer-events-none absolute flex flex-col items-center"
+      className="pointer-events-none absolute"
       style={{
         left: "50%",
         top: "35%",
@@ -50,43 +50,52 @@ export const ReduplicationBanner: React.FC<{
         opacity: opacity * exitOpacity,
       }}
     >
-      <div className="flex items-center gap-8">
-        {GLYPHS.map((glyph, i) => {
-          const isMiddle = i === 1;
-          return (
-            <span
-              key={i}
-              style={{
-                fontFamily: "serif",
-                fontSize: isMiddle ? 72 * middlePulse : 64,
-                color: isMiddle ? C.gold : C.white,
-                textShadow: isMiddle
-                  ? `0 0 ${interpolate(middlePulse, [1, 1.3], [8, 30])}px ${C.gold}`
-                  : "none",
-                opacity: isMiddle ? middlePulse : 0.6,
-              }}
-            >
-              {glyph}
-            </span>
-          );
-        })}
-      </div>
-
       <div
-        className="mt-4 text-center"
-        style={{ opacity: interpolate(local, [30, 50], [0, 1], { extrapolateRight: "clamp" }) }}
+        className="flex flex-col items-center rounded-xl px-12 py-8"
+        style={{ backgroundColor: "rgba(10,10,10,0.88)" }}
       >
-        <div
-          className="tracking-wider"
-          style={{ fontFamily: cinzelFont, color: C.white, fontSize: 16 }}
-        >
-          SAME WORD · 3× IN A ROW · APPEARS 1000+ TIMES
+        <div className="flex items-center gap-12">
+          {GLYPHS.map((glyph, i) => {
+            const isMiddle = i === 1;
+            return (
+              <span
+                key={i}
+                style={{
+                  fontFamily: "serif",
+                  fontSize: isMiddle ? 96 * middlePulse : 80,
+                  color: isMiddle ? C.gold : C.white,
+                  textShadow: isMiddle
+                    ? `0 0 ${interpolate(middlePulse, [1, 1.3], [8, 30])}px ${C.gold}`
+                    : "none",
+                  opacity: isMiddle ? middlePulse : 0.6,
+                }}
+              >
+                {glyph}
+              </span>
+            );
+          })}
         </div>
+
         <div
-          className="mt-1.5"
-          style={{ fontFamily: interFont, color: C.gray, fontSize: 13 }}
+          className="mt-5 text-center"
+          style={{
+            opacity: interpolate(local, [30, 50], [0, 1], {
+              extrapolateRight: "clamp",
+            }),
+          }}
         >
-          Linguistic reduplication — but far too frequent
+          <div
+            className="text-2xl tracking-wider"
+            style={{ fontFamily: cinzelFont, color: C.white }}
+          >
+            SAME WORD · 3× IN A ROW · APPEARS 1000+ TIMES
+          </div>
+          <div
+            className="mt-2 text-xl font-medium"
+            style={{ fontFamily: interFont, color: C.gray }}
+          >
+            Linguistic reduplication — but far too frequent
+          </div>
         </div>
       </div>
     </div>

@@ -8,7 +8,8 @@ export type BadgeDef = {
   position: {
     left?: number;
     right?: number;
-    top: number | string;
+    top?: number | string;
+    bottom?: number | string;
   };
   borderColor: string;
   title: string;
@@ -25,7 +26,12 @@ export const SceneBadges: React.FC<{
   transcriptData: TranscriptEntry[];
   voiceOverStartFrame: number;
   defaultAutoHideFrames?: number;
-}> = ({ badges, transcriptData, voiceOverStartFrame, defaultAutoHideFrames }) => {
+}> = ({
+  badges,
+  transcriptData,
+  voiceOverStartFrame,
+  defaultAutoHideFrames,
+}) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
@@ -71,6 +77,7 @@ export const SceneBadges: React.FC<{
           left: badge.position.left,
           right: badge.position.right,
           top: badge.position.top,
+          bottom: badge.position.bottom,
           opacity: badgeOpacity(triggerFrame, badge.hideAfterFrames),
           transform: `scale(${badgeSpring(triggerFrame)})`,
           backgroundColor: "rgba(10,10,10,0.88)",

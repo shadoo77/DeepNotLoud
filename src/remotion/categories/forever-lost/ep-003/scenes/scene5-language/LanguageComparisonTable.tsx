@@ -83,31 +83,31 @@ export const LanguageComparisonTable: React.FC<{
       }}
     >
       <div
-        className="rounded-xl px-6 pb-4 pt-3"
-        style={{ backgroundColor: C.panel }}
+        className="rounded-xl px-10 pb-6 pt-5"
+        style={{ backgroundColor: "rgba(10,10,10,0.94)" }}
       >
         {/* Header */}
-        <div className="mb-3 grid grid-cols-4 gap-2 border-b border-gray-700 pb-2">
+        <div className="mb-4 grid grid-cols-4 gap-4 border-b border-gray-700 pb-3">
           <span
-            className="text-xs font-bold uppercase tracking-widest"
+            className="text-2xl font-bold uppercase tracking-widest"
             style={{ fontFamily: "Courier New", color: C.gold }}
           >
             Script
           </span>
           <span
-            className="text-xs font-bold uppercase tracking-widest"
+            className="text-2xl font-bold uppercase tracking-widest"
             style={{ fontFamily: "Courier New", color: C.gold }}
           >
             Entropy
           </span>
           <span
-            className="text-xs font-bold uppercase tracking-widest"
+            className="text-2xl font-bold uppercase tracking-widest"
             style={{ fontFamily: "Courier New", color: C.gold }}
           >
             Word Length
           </span>
           <span
-            className="text-xs font-bold uppercase tracking-widest"
+            className="text-2xl font-bold uppercase tracking-widest"
             style={{ fontFamily: "Courier New", color: C.gold }}
           >
             Corrections
@@ -136,7 +136,7 @@ export const LanguageComparisonTable: React.FC<{
           return (
             <div
               key={row.label}
-              className="mt-3 grid grid-cols-4 items-center gap-2 rounded-lg px-3 py-2.5"
+              className="mt-4 grid grid-cols-4 items-center gap-4 rounded-lg px-4 py-5"
               style={{
                 transform: `translateX(${rowX}px)`,
                 opacity: rowOpacity,
@@ -148,10 +148,10 @@ export const LanguageComparisonTable: React.FC<{
                   : "1px solid transparent",
               }}
             >
-              <div className="flex items-center gap-2">
-                <span style={{ fontSize: 20 }}>{row.flag}</span>
+              <div className="flex items-center gap-3">
+                <span style={{ fontSize: 36 }}>{row.flag}</span>
                 <span
-                  className="text-base font-bold"
+                  className="text-4xl font-bold"
                   style={{ fontFamily: cinzelFont, color: C.white }}
                 >
                   {row.label}
@@ -159,11 +159,11 @@ export const LanguageComparisonTable: React.FC<{
               </div>
 
               <span
-                className="flex items-center gap-1.5 text-sm"
+                className="flex items-center gap-2 text-2xl"
                 style={{ fontFamily: interFont, color: C.gray }}
               >
                 <span
-                  className="inline-flex size-5 items-center justify-center rounded-full"
+                  className="inline-flex size-10 items-center justify-center rounded-full"
                   style={{ backgroundColor: "rgba(76,175,80,0.2)", color: "#4CAF50" }}
                 >
                   ✓
@@ -172,14 +172,14 @@ export const LanguageComparisonTable: React.FC<{
               </span>
 
               <span
-                className="text-sm"
+                className="text-2xl"
                 style={{ fontFamily: interFont, color: C.white }}
               >
                 {row.wordLength}
               </span>
 
               <span
-                className="text-sm"
+                className="text-2xl"
                 style={{
                   fontFamily: interFont,
                   color: showHighlight ? C.white : C.gray,
@@ -187,7 +187,7 @@ export const LanguageComparisonTable: React.FC<{
               >
                 {showHighlight ? (
                   <span
-                    className="inline-block rounded-md px-2 py-1 text-sm font-bold"
+                    className="inline-block rounded-md px-6 py-3 text-2xl font-bold"
                     style={{
                       backgroundColor: C.red,
                       color: C.white,
@@ -206,7 +206,7 @@ export const LanguageComparisonTable: React.FC<{
 
         {/* Conclusion row */}
         <div
-          className="mt-3 rounded-lg border border-gray-700 px-4 py-3 text-center"
+          className="mt-6 rounded-lg border border-gray-700 px-6 py-6 text-center"
           style={{
             opacity: interpolate(
               Math.max(0, frame - (triggerFrame + 160)),
@@ -225,7 +225,7 @@ export const LanguageComparisonTable: React.FC<{
           }}
         >
           <span
-            className="text-lg font-bold tracking-wide"
+            className="text-3xl font-bold tracking-wide"
             style={{ fontFamily: cinzelFont, color: C.gold }}
           >
             Matches real language — but isn't one we know
