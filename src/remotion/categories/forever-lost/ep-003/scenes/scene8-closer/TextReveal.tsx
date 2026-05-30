@@ -17,22 +17,29 @@ export const TextReveal: React.FC<{
   lines: RevealLine[];
 }> = ({ frame, lines }) => {
   return (
-    <div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center" style={{ paddingBottom: 80 }}>
+    <div
+      className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center"
+      style={{ paddingBottom: 80 }}
+    >
       {lines.map((line, i) => {
         const local = Math.max(0, frame - line.triggerFrame);
         const fade = interpolate(local, [0, 30], [0, 1], {
-          extrapolateLeft: "clamp", extrapolateRight: "clamp",
+          extrapolateLeft: "clamp",
+          extrapolateRight: "clamp",
         });
         const y = interpolate(local, [0, 30], [24, 0], {
-          extrapolateLeft: "clamp", extrapolateRight: "clamp",
+          extrapolateLeft: "clamp",
+          extrapolateRight: "clamp",
         });
 
         // Line 4 ("We may never know") slowly dims after appearing
-        const dim = i === 3
-          ? interpolate(local, [200, 400], [1, 0.2], {
-              extrapolateLeft: "clamp", extrapolateRight: "clamp",
-            })
-          : 1;
+        const dim =
+          i === 3
+            ? interpolate(local, [200, 400], [1, 0.2], {
+                extrapolateLeft: "clamp",
+                extrapolateRight: "clamp",
+              })
+            : 1;
 
         return (
           <div
@@ -44,7 +51,7 @@ export const TextReveal: React.FC<{
             }}
           >
             <span
-              className="text-4xl font-bold tracking-wide"
+              className="text-5xl font-bold tracking-wide"
               style={{
                 fontFamily: cinzelFont,
                 color: line.color,

@@ -17,7 +17,7 @@ export const BADGES: BadgeDef[] = [
   {
     phrase: "sat down",
     fallbackFrame: 278,
-    position: { right: 30, bottom: 80 },
+    position: { right: 30, top: 80 },
     borderColor: C.gold,
     title: "A REASON",
     subtitle: "Knowledge to preserve",
@@ -30,7 +30,7 @@ export const BADGES: BadgeDef[] = [
   {
     phrase: "castle",
     fallbackFrame: 1585,
-    position: { left: 30, bottom: 80 },
+    position: { left: 30, top: 80 },
     borderColor: C.gold,
     title: "FIVE CENTURIES",
     subtitle: "Waiting in silence",
@@ -39,17 +39,5 @@ export const BADGES: BadgeDef[] = [
     subtitleFontFamily: interFont,
     titleSize: "text-3xl",
     hideAfterFrames: 800,
-  },
-  {
-    phrase: "Forever lost",
-    fallbackFrame: 2458,
-    position: { right: 30, bottom: 80 },
-    borderColor: C.gold,
-    title: "FOREVER LOST",
-    subtitle: "The silent manuscript",
-    subtitleColor: C.gray,
-    titleFontFamily: cinzelFont,
-    subtitleFontFamily: interFont,
-    titleSize: "text-4xl",
   },
 ];

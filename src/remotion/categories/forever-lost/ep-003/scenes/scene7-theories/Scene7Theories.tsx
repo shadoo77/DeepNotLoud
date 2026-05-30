@@ -235,6 +235,14 @@ export const Scene7Theories: React.FC = () => {
     extrapolateRight: "clamp",
   });
 
+  // Fade manuscript BG when bottle appears
+  const manuscriptOpacity = interpolate(
+    frame,
+    [tBottleFrame - 10, tBottleFrame + 30],
+    [0.35, 0],
+    { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
+  );
+
   // "ALL AT ONCE" text — fills dead zone before bottle sequence
   const allAtOnceFade = interpolate(
     Math.max(0, frame - 2520),
@@ -257,7 +265,7 @@ export const Scene7Theories: React.FC = () => {
         <Img
           src={staticFile(`${ASSET_PATH}/images/ep003_manuscript_spread.jpeg`)}
           className="size-full object-cover"
-          style={{ opacity: 0.35 }}
+          style={{ opacity: manuscriptOpacity }}
         />
       </div>
 
@@ -515,10 +523,11 @@ export const Scene7Theories: React.FC = () => {
         <Audio
           src={staticFile(`${ASSET_PATH}/audio/sfx/silence_drone.wav`)}
           volume={(f) =>
-            interpolate(f, [0, 60, 600], [0, 0.18, 0.18], {
-              extrapolateLeft: "clamp",
-              extrapolateRight: "clamp",
-            })
+            interpolate(
+              f,
+              [0, 60, sceneEndFrame - tDroneFrame - 60, sceneEndFrame - tDroneFrame],
+              [0, 0.18, 0.18, 0],
+            )
           }
           loop
         />

@@ -17,68 +17,89 @@ export const MessageBottleText: React.FC<{
   const local = Math.max(0, frame - triggerFrame);
 
   // Bottle image fades in
-  const bottleOpacity = interpolate(local, [0, 40], [0, 0.5], {
-    extrapolateLeft: "clamp", extrapolateRight: "clamp",
+  const bottleOpacity = interpolate(local, [0, 40], [0, 0.85], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
   });
   const bottleBreath = interpolate(Math.sin(frame * 0.02), [-1, 1], [0.85, 1]);
 
   // Line 1: "A message in a bottle."
   const line1Fade = interpolate(local, [0, 30], [0, 1], {
-    extrapolateLeft: "clamp", extrapolateRight: "clamp",
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
   });
   const line1Y = interpolate(local, [0, 30], [30, 0], {
-    extrapolateLeft: "clamp", extrapolateRight: "clamp",
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
   });
 
   // Line 2: "Thrown into time."
   const line2Fade = interpolate(local, [40, 70], [0, 1], {
-    extrapolateLeft: "clamp", extrapolateRight: "clamp",
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
   });
   const line2Y = interpolate(local, [40, 70], [30, 0], {
-    extrapolateLeft: "clamp", extrapolateRight: "clamp",
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
   });
 
   // Line 3: "Never received."
   const line3FadeIn = interpolate(local, [80, 110], [0, 1], {
-    extrapolateLeft: "clamp", extrapolateRight: "clamp",
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
   });
   const line3Dim = interpolate(local, [200, 320], [1, 0.3], {
-    extrapolateLeft: "clamp", extrapolateRight: "clamp",
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
   });
   const line3Opacity = line3FadeIn * line3Dim;
   const line3Y = interpolate(local, [80, 110], [30, 0], {
-    extrapolateLeft: "clamp", extrapolateRight: "clamp",
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
   });
 
   // Water ripples — one per line
   const ripple1 = interpolate(local, [0, 80], [10, 250], {
-    extrapolateLeft: "clamp", extrapolateRight: "clamp",
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
   });
   const ripple1Opacity = interpolate(local, [0, 40, 80], [0, 0.12, 0], {
-    extrapolateLeft: "clamp", extrapolateRight: "clamp",
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
   });
   const ripple2 = interpolate(local, [40, 120], [10, 250], {
-    extrapolateLeft: "clamp", extrapolateRight: "clamp",
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
   });
   const ripple2Opacity = interpolate(local, [40, 80, 120], [0, 0.12, 0], {
-    extrapolateLeft: "clamp", extrapolateRight: "clamp",
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
   });
   const ripple3 = interpolate(local, [80, 160], [10, 250], {
-    extrapolateLeft: "clamp", extrapolateRight: "clamp",
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
   });
   const ripple3Opacity = interpolate(local, [80, 120, 160], [0, 0.12, 0], {
-    extrapolateLeft: "clamp", extrapolateRight: "clamp",
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
   });
 
   // Blue flash on "Never received."
   const blueFlash = interpolate(local, [80, 84, 95], [0, 0.18, 0], {
-    extrapolateLeft: "clamp", extrapolateRight: "clamp",
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
   });
 
   // Final fade to black
-  const finalFade = interpolate(frame, [sceneEndFrame - 60, sceneEndFrame], [0, 1], {
-    extrapolateLeft: "clamp", extrapolateRight: "clamp",
-  });
+  const finalFade = interpolate(
+    frame,
+    [sceneEndFrame - 60, sceneEndFrame],
+    [0, 1],
+    {
+      extrapolateLeft: "clamp",
+      extrapolateRight: "clamp",
+    },
+  );
 
   return (
     <>
@@ -120,8 +141,21 @@ export const MessageBottleText: React.FC<{
         />
       </svg>
 
-      {/* Text lines */}
-      <div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center">
+      {/* Full-width bottom card with all 3 text lines */}
+      <div
+        className="pointer-events-none absolute flex flex-col items-center justify-center"
+        style={{
+          top: "22%",
+          left: 0,
+          width: "100%",
+          paddingTop: 48,
+          paddingBottom: 48,
+          backgroundColor: "rgba(10,10,10,0.90)",
+          borderTop: "1px solid rgba(200,169,110,0.15)",
+          borderBottom: "1px solid rgba(200,169,110,0.15)",
+          opacity: line1Fade,
+        }}
+      >
         <div
           className="text-center"
           style={{
