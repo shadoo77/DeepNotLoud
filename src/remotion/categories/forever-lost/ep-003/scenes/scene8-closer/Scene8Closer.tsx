@@ -394,7 +394,7 @@ export const Scene8Closer: React.FC = () => {
           volume={(f) =>
             interpolate(
               f,
-              [0, 60, sceneEndFrame - 60, sceneEndFrame],
+              [0, 60, sceneEndFrame - VO_START_FRAME - 60, sceneEndFrame - VO_START_FRAME],
               [0, 0.2, 0.2, 0],
             )
           }
