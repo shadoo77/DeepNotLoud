@@ -77,6 +77,19 @@ export const Scene1Hook: React.FC = () => {
 
   return (
     <AbsoluteFill className="overflow-hidden" style={{ backgroundColor: C.bg }}>
+      {frame < 6 && (
+        <AbsoluteFill className="flex items-center justify-center" style={{ backgroundColor: "#0A0A0A" }}>
+          <div className="flex flex-col items-center gap-4">
+            <span className="text-6xl font-black tracking-widest" style={{ fontFamily: cinzelFont, color: C.gold }}>
+              FOREVER LOST
+            </span>
+            <span className="text-2xl tracking-wide" style={{ fontFamily: cinzelFont, color: "#888888" }}>
+              The Voynich Manuscript
+            </span>
+          </div>
+        </AbsoluteFill>
+      )}
+
       <div className="absolute inset-0 overflow-hidden" style={{ transform: `scale(${bgScale})` }}>
         <Img
           src={staticFile(`${ASSET_PATH}/images/short/ep003_manuscript_page.jpeg`)}
