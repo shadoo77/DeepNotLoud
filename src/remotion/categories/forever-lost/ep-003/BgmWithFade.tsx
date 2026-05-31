@@ -39,12 +39,20 @@ export const BgmWithFade: React.FC = () => (
       });
 
       const pos = f % LOOP_DURATION;
-      const loopMul =
-        pos > LOOP_DURATION - LOOP_FADE_OUT
-          ? (LOOP_DURATION - pos) / LOOP_FADE_OUT
-          : pos < LOOP_FADE_IN
-            ? pos / LOOP_FADE_IN
-            : 1;
+      const loopFadeInMul = interpolate(pos, [0, LOOP_FADE_IN], [0, 1], {
+        extrapolateLeft: "clamp",
+        extrapolateRight: "clamp",
+      });
+      const loopFadeOutMul = interpolate(
+        pos,
+        [LOOP_DURATION - LOOP_FADE_OUT, LOOP_DURATION],
+        [1, 0],
+        {
+          extrapolateLeft: "clamp",
+          extrapolateRight: "clamp",
+        },
+      );
+      const loopMul = Math.min(loopFadeInMul, loopFadeOutMul);
 
       return sceneVol * finalMul * loopMul;
     }}

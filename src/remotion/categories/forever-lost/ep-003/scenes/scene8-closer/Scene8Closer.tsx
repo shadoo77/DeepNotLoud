@@ -30,20 +30,30 @@ const IMAGES = {
 };
 
 const sceneEndFrame = SCENE_DURATION;
-
-const FADE_START = 2199;
-const FADE_END = 2319;
+const DRONE_FADE_IN_FRAMES = 60;
+const DRONE_FADE_OUT_FRAMES = 120;
+const DRONE_AUDIO_FRAMES = SCENE_DURATION - VO_START_FRAME;
 
 const SilenceDroneAudio: React.FC = () => (
   <Audio
     src={staticFile(`${ASSET_PATH}/audio/sfx/silence_drone.wav`)}
     volume={(f) =>
-      interpolate(f, [0, 60, FADE_START, FADE_END], [0, 0.2, 0.2, 0], {
-        extrapolateLeft: "clamp",
-        extrapolateRight: "clamp",
-      })
+      interpolate(
+        f,
+        [
+          0,
+          DRONE_FADE_IN_FRAMES,
+          DRONE_AUDIO_FRAMES - DRONE_FADE_OUT_FRAMES,
+          DRONE_AUDIO_FRAMES,
+        ],
+        [0, 0.2, 0.2, 0],
+        {
+          extrapolateLeft: "clamp",
+          extrapolateRight: "clamp",
+        },
+      )
     }
-    loop
+    loop={false}
   />
 );
 

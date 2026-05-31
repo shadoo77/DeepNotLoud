@@ -540,9 +540,14 @@ export const Scene7Theories: React.FC = () => {
                 sceneEndFrame - tDroneFrame,
               ],
               [0, 0.18, 0.18, 0],
+              {
+                extrapolateLeft: "clamp",
+                extrapolateRight: "clamp",
+              },
             )
           }
           loop
+          loopVolumeCurveBehavior="extend"
         />
       </Sequence>
 
