@@ -40,7 +40,7 @@ export const Scene7Theories: React.FC = () => {
 
   // ── Phrase triggers ──
   const tOne = getPhraseFrames({
-    phrase: "Theory one",
+    phrase: "Theory one:",
     transcriptData: TRASCRIPT_DATA,
     fps,
     voiceOverStartFrame: VO_START_FRAME,
@@ -525,7 +525,12 @@ export const Scene7Theories: React.FC = () => {
           volume={(f) =>
             interpolate(
               f,
-              [0, 60, sceneEndFrame - tDroneFrame - 60, sceneEndFrame - tDroneFrame],
+              [
+                0,
+                60,
+                sceneEndFrame - tDroneFrame - 60,
+                sceneEndFrame - tDroneFrame,
+              ],
               [0, 0.18, 0.18, 0],
             )
           }
