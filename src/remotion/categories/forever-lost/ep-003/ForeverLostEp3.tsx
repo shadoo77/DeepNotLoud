@@ -27,11 +27,23 @@ export const ForeverLostEp3 = () => {
       <Audio
         src={staticFile(`${ASSET_PATH}/audio/bgm/ep003_bgm_landscape.mp3`)}
         volume={(f) => {
-          if (f < S1_END) return 0.18;
-          if (f < S5_END) return 0.12;
-          if (f < S6_END) return 0.08;
-          if (f < S7_END) return 0.15;
-          return 0.22;
+          const LOOP_FRAMES = 2641;
+          const pos = f % LOOP_FRAMES;
+          const loopFadeOut = pos > LOOP_FRAMES - 90 ? (LOOP_FRAMES - pos) / 90 : 1;
+          const loopFadeIn = pos < 30 ? pos / 30 : 1;
+
+          let sceneVolume;
+          if (f < S1_END) sceneVolume = 0.18;
+          else if (f < S5_END) sceneVolume = 0.12;
+          else if (f < S6_END) sceneVolume = 0.10;
+          else if (f < S7_END) sceneVolume = 0.08;
+          else sceneVolume = 0.22;
+
+          const finalFadeOut = f > TOTAL_FRAMES - 120
+            ? Math.max(0, (TOTAL_FRAMES - f) / 120)
+            : 1;
+
+          return sceneVolume * Math.min(loopFadeOut, loopFadeIn) * finalFadeOut;
         }}
         loop
       />
