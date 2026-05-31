@@ -2,7 +2,7 @@
 
 ## What this is
 
-Remotion 4.0.459 project for **FOREVER LOST** — a YouTube documentary channel.  
+Remotion 4.0.469 project for **FOREVER LOST** — a YouTube documentary channel.  
 Three compositions registered in `src/Root.tsx`, all under the "Forever-Lost" folder:
 
 | ID | Resolution | FPS | Status |
@@ -59,6 +59,20 @@ src/
 - `getPhraseFrames()` from `@/lib/utils` is the canonical way to sync animations to spoken words
 - `<Audio>` from `@remotion/media`, `<Img>` from `remotion`, assets via `staticFile()` from `public/`
 - **No CSS transitions or Tailwind animation classes** — use `interpolate()`/`spring()` instead
+
+## Audio & BGM
+
+- `volume={(f) => ...}` callback form works everywhere — top-level, inside `<Sequence>`, inside `<TransitionSeries.Sequence>` — in both Studio and `npx remotion render`.
+- Always use `interpolate()` inside the callback (not raw JS math). Remotion optimizes `interpolate()` calls; equivalent manual math may not produce the same volume curve in the render pipeline.
+- For looped audio with volume curves, use `loopVolumeCurveBehavior="extend"`.
+- `useCurrentFrame()` + literal `volume={number}` works inside `<Sequence>` components but triggers a Remotion warning — prefer callback form.
+- Each episode gets its own `BgmWithFade.tsx` in the episode folder:
+  - Imports `SCENES`, `T`, `ASSET_PATH`, `BGM_LOOP_DURATION` from its `constants.ts`
+  - Computes scene boundaries and per-scene volume levels (step-function via if/else, not interpolate ramps)
+  - Uses `volume={(f) => { ... interpolate(...) }}` callback for final fade-out
+  - Uses manual `f % BGM_LOOP_DURATION` math for loop-seam crossfade (works alongside `loopVolumeCurveBehavior="extend"`)
+  - Placed outside `<TransitionSeries>` at composition root level
+- BGM loop duration: store as `export const BGM_LOOP_DURATION = N;` in the episode's `constants.ts`. Add an ffprobe comment showing the recompute command. Static files don't change — no Mediabunny, `calculateMetadata`, or `delayRender`. Verify once, done.
 
 ## Styling
 

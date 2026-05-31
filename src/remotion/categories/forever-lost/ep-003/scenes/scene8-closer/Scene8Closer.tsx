@@ -31,24 +31,21 @@ const IMAGES = {
 
 const sceneEndFrame = SCENE_DURATION;
 
-const SilenceDroneAudio: React.FC = () => {
-  const f = useCurrentFrame();
-  const FADE_START = 2199;
-  const FADE_END = 2319;
-  let vol: number;
-  if (f <= 0) vol = 0;
-  else if (f < 60) vol = 0.2 * (f / 60);
-  else if (f < FADE_START) vol = 0.2;
-  else if (f < FADE_END) vol = 0.2 * (1 - (f - FADE_START) / (FADE_END - FADE_START));
-  else vol = 0;
-  return (
-    <Audio
-      src={staticFile(`${ASSET_PATH}/audio/sfx/silence_drone.wav`)}
-      volume={vol}
-      loop
-    />
-  );
-};
+const FADE_START = 2199;
+const FADE_END = 2319;
+
+const SilenceDroneAudio: React.FC = () => (
+  <Audio
+    src={staticFile(`${ASSET_PATH}/audio/sfx/silence_drone.wav`)}
+    volume={(f) =>
+      interpolate(f, [0, 60, FADE_START, FADE_END], [0, 0.2, 0.2, 0], {
+        extrapolateLeft: "clamp",
+        extrapolateRight: "clamp",
+      })
+    }
+    loop
+  />
+);
 
 export const Scene8Closer: React.FC = () => {
   const frame = useCurrentFrame();
