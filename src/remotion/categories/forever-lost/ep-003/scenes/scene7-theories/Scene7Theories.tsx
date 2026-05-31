@@ -40,7 +40,7 @@ export const Scene7Theories: React.FC = () => {
 
   // ── Phrase triggers ──
   const tOne = getPhraseFrames({
-    phrase: "Theory one:",
+    phrase: "Theory one",
     transcriptData: TRASCRIPT_DATA,
     fps,
     voiceOverStartFrame: VO_START_FRAME,
