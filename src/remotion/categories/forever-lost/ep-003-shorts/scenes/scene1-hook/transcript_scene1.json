@@ -1,0 +1,114 @@
+[
+  {
+    "text": "A",
+    "startMs": 180,
+    "endMs": 270,
+    "timestampMs": 340,
+    "confidence": 0.897318
+  },
+  {
+    "text": " book",
+    "startMs": 270,
+    "endMs": 900,
+    "timestampMs": 700,
+    "confidence": 0.979062
+  },
+  {
+    "text": " exists",
+    "startMs": 900,
+    "endMs": 2390,
+    "timestampMs": 1360,
+    "confidence": 0.994072
+  },
+  {
+    "text": " that",
+    "startMs": 2390,
+    "endMs": 2610,
+    "timestampMs": 2500,
+    "confidence": 0.924406
+  },
+  {
+    "text": " no",
+    "startMs": 2610,
+    "endMs": 2890,
+    "timestampMs": 2880,
+    "confidence": 0.987649
+  },
+  {
+    "text": " human",
+    "startMs": 2890,
+    "endMs": 3620,
+    "timestampMs": 3600,
+    "confidence": 0.99397
+  },
+  {
+    "text": " has",
+    "startMs": 3620,
+    "endMs": 4080,
+    "timestampMs": 4080,
+    "confidence": 0.986141
+  },
+  {
+    "text": " ever",
+    "startMs": 4080,
+    "endMs": 4700,
+    "timestampMs": 4600,
+    "confidence": 0.99426
+  },
+  {
+    "text": " decoded.",
+    "startMs": 4700,
+    "endMs": 6200,
+    "timestampMs": 4880,
+    "confidence": 0.819455
+  },
+  {
+    "text": " Not",
+    "startMs": 6200,
+    "endMs": 6860,
+    "timestampMs": 6560,
+    "confidence": 0.980929
+  },
+  {
+    "text": " one",
+    "startMs": 6860,
+    "endMs": 7520,
+    "timestampMs": 7020,
+    "confidence": 0.987091
+  },
+  {
+    "text": " word,",
+    "startMs": 7520,
+    "endMs": 8640,
+    "timestampMs": 7560,
+    "confidence": 0.997994
+  },
+  {
+    "text": " in",
+    "startMs": 8640,
+    "endMs": 8880,
+    "timestampMs": 8660,
+    "confidence": 0.940428
+  },
+  {
+    "text": " six",
+    "startMs": 8880,
+    "endMs": 9250,
+    "timestampMs": 9160,
+    "confidence": 0.711699
+  },
+  {
+    "text": " hundred",
+    "startMs": 9250,
+    "endMs": 9990,
+    "timestampMs": 9160,
+    "confidence": 0.711699
+  },
+  {
+    "text": " years.",
+    "startMs": 9990,
+    "endMs": 11000,
+    "timestampMs": 10500,
+    "confidence": 0.997556
+  }
+]
