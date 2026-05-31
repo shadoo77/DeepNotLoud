@@ -1,18 +1,20 @@
-import { AbsoluteFill, staticFile } from "remotion";
-import { Audio } from "@remotion/media";
+import { AbsoluteFill } from "remotion";
 import { TransitionSeries } from "@remotion/transitions";
 import { SCENES, TOTAL_FRAMES, C, ASSET_PATH } from "./constants";
 import { Scene1Hook } from "./scenes/scene1-hook/Scene1Hook";
+import BgmWithFade from "@/components/atoms/BgmWithFade";
 
 export { TOTAL_FRAMES };
 
 export const ForeverLostEp3Shorts: React.FC = () => {
   return (
     <AbsoluteFill style={{ backgroundColor: C.bg }}>
-      <Audio
-        src={staticFile(`${ASSET_PATH}/audio/bgm/ep003_bgm_shorts.mp3`)}
+      <BgmWithFade
+        totalFrames={TOTAL_FRAMES}
+        srcPath={`${ASSET_PATH}/audio/bgm/ep003_bgm_shorts.mp3`}
         volume={0.15}
-        loop
+        fadeInFrames={15}
+        loop={false}
       />
 
       <TransitionSeries>

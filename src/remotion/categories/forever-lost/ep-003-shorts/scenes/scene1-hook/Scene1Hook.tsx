@@ -24,6 +24,9 @@ const { fontFamily: cinzelFont } = loadFont("normal", {
 
 const sceneDuration = SCENE_DURATION;
 
+const hookWords = ["A", "book", "exists", "that", "no", "human", "has", "ever", "decoded."];
+const WORD_STAGGER = 8;
+
 export const Scene1Hook: React.FC = () => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
@@ -35,10 +38,12 @@ export const Scene1Hook: React.FC = () => {
 
   const titleOpacity = interpolate(frame, [20, 50], [0, 1], {
     extrapolateLeft: "clamp", extrapolateRight: "clamp",
+    easing: Easing.bezier(0.16, 1, 0.3, 1),
   });
 
   const hookOpacity = interpolate(frame, [50, 80], [0, 1], {
     extrapolateLeft: "clamp", extrapolateRight: "clamp",
+    easing: Easing.bezier(0.16, 1, 0.3, 1),
   });
 
   const impactProgress = spring({
@@ -47,6 +52,9 @@ export const Scene1Hook: React.FC = () => {
     config: { damping: 12, stiffness: 180 },
   });
   const impactY = interpolate(impactProgress, [0, 1], [60, 0]);
+  const impactScale = interpolate(impactProgress, [0, 0.7, 1], [0.8, 1.05, 1], {
+    extrapolateLeft: "clamp", extrapolateRight: "clamp",
+  });
   const impactOpacity = interpolate(Math.max(0, frame - 80), [0, 20], [0, 1], {
     extrapolateLeft: "clamp", extrapolateRight: "clamp",
   });
@@ -135,7 +143,7 @@ export const Scene1Hook: React.FC = () => {
 
       <div className="pointer-events-none absolute inset-0 flex items-start justify-center" style={{ paddingTop: 80 }}>
         <span
-          className="text-xl tracking-widest"
+          className="text-3xl tracking-widest"
           style={{ fontFamily: cinzelFont, color: C.gold, opacity: titleOpacity }}
         >
           FOREVER LOST
@@ -148,7 +156,33 @@ export const Scene1Hook: React.FC = () => {
             className="text-3xl font-bold leading-relaxed tracking-wide"
             style={{ fontFamily: cinzelFont, color: C.white }}
           >
-            A book exists that no human has ever decoded.
+            {hookWords.map((word, i) => {
+              const wordOpacity = interpolate(
+                frame,
+                [50 + i * WORD_STAGGER, 50 + i * WORD_STAGGER + 12],
+                [0, 1],
+                { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
+              );
+              const wordY = interpolate(
+                frame,
+                [50 + i * WORD_STAGGER, 50 + i * WORD_STAGGER + 12],
+                [12, 0],
+                { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
+              );
+              return (
+                <span
+                  key={i}
+                  style={{
+                    opacity: wordOpacity,
+                    display: "inline-block",
+                    transform: `translateY(${wordY}px)`,
+                    marginRight: 8,
+                  }}
+                >
+                  {word}
+                </span>
+              );
+            })}
           </span>
         </div>
       </div>
@@ -157,7 +191,7 @@ export const Scene1Hook: React.FC = () => {
         className="pointer-events-none absolute inset-0 flex items-end justify-center"
         style={{ paddingBottom: 180, opacity: impactOpacity }}
       >
-        <div style={{ transform: `translateY(${impactY}px)`, textAlign: "center" }}>
+        <div style={{ transform: `translateY(${impactY}px) scale(${impactScale})`, textAlign: "center" }}>
           <p className="m-0 text-5xl font-black" style={{ fontFamily: cinzelFont, color: C.white }}>
             Not one word.
           </p>
@@ -176,11 +210,11 @@ export const Scene1Hook: React.FC = () => {
         voiceOverStartFrame={VO_START_FRAME}
       />
 
-      <Sequence>
+      <Sequence durationInFrames={60}>
         <Audio
           src={staticFile(`${ASSET_PATH}/audio/sfx/paper_rustle.wav`)}
           volume={(f) =>
-            interpolate(f, [0, 60], [0.2, 0], {
+            interpolate(f, [0, 60], [0.4, 0], {
               extrapolateLeft: "clamp", extrapolateRight: "clamp",
             })
           }
