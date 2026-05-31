@@ -396,6 +396,7 @@ export const Scene8Closer: React.FC = () => {
               f,
               [0, 60, tNeverFrame - VO_START_FRAME, tNeverFrame - VO_START_FRAME + 120],
               [0, 0.2, 0.2, 0],
+              { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
             )
           }
           loop
