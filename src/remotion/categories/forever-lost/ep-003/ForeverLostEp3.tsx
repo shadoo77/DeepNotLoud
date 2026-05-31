@@ -41,7 +41,7 @@ export const ForeverLostEp3 = () => {
           else sceneVolume = 0.22;
 
           const finalFadeOut =
-            f > TOTAL_FRAMES - 120 ? Math.max(0, (TOTAL_FRAMES - f) / 120) : 1;
+            f > TOTAL_FRAMES - 180 ? Math.max(0, (TOTAL_FRAMES - f) / 180) : 1;
 
           return sceneVolume * Math.min(loopFadeOut, loopFadeIn) * finalFadeOut;
         }}

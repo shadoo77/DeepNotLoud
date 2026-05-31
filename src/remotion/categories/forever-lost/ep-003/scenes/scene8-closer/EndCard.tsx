@@ -47,7 +47,7 @@ export const EndCard: React.FC<{
   });
 
   // Final 60f fade to black
-  const finalFade = interpolate(frame, [sceneEndFrame - 60, sceneEndFrame], [0, 1], {
+  const finalFade = interpolate(frame, [sceneEndFrame - 90, sceneEndFrame], [0, 1], {
     extrapolateLeft: "clamp", extrapolateRight: "clamp",
   });
 
