@@ -111,6 +111,15 @@ export const Scene7Theories: React.FC = () => {
   });
   const tBottleFrame = tBottle.from > 0 ? tBottle.from : 2680;
 
+  const tSixHundred = getPhraseFrames({
+    phrase: "six hundred",
+    transcriptData: TRASCRIPT_DATA,
+    fps,
+    voiceOverStartFrame: VO_START_FRAME,
+  });
+  const tSixHundredFrame =
+    tSixHundred.from > 0 ? tSixHundred.from : tOneFrame + 200;
+
   // ── Theory cards data ──
   const theoryCards = [
     {
@@ -174,7 +183,7 @@ export const Scene7Theories: React.FC = () => {
 
   // Count pulse on "six hundred" / "gold"
   const coinRing = spring({
-    frame: Math.max(0, frame - (tOneFrame + 200)),
+    frame: Math.max(0, frame - tSixHundredFrame),
     fps,
     config: { damping: 12, stiffness: 100 },
   });
@@ -182,7 +191,7 @@ export const Scene7Theories: React.FC = () => {
     extrapolateRight: "clamp",
   });
   const coinOpacity = interpolate(
-    Math.max(0, frame - (tOneFrame + 200)),
+    Math.max(0, frame - tSixHundredFrame),
     [0, 20, 60, 250, 280],
     [0, 1, 1, 1, 0],
     { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
@@ -501,7 +510,6 @@ export const Scene7Theories: React.FC = () => {
           position="bottom-center"
           fontSize="small"
           startFrame={0}
-          showOverlay
         />
       </Sequence>
 

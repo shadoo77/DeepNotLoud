@@ -519,7 +519,6 @@ export const Scene5Language: React.FC = () => {
           position="top-center"
           fontSize="small"
           startFrame={0}
-          showOverlay
         />
       </Sequence>
 

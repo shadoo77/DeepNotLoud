@@ -384,7 +384,6 @@ export const Scene8Closer: React.FC = () => {
           position="bottom-center"
           fontSize="small"
           startFrame={0}
-          showOverlay
         />
       </Sequence>
 

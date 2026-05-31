@@ -88,15 +88,23 @@ export const Scene6Attempts: React.FC = () => {
   // ── Image crossfade (dip-to-black, synced to VO triggers) ──
   // WWII codebreakers image stays up through 1919 Newbold + US Army segments
   const img1Opacity = interpolate(frame, [tNsaFrame - 40, tNsaFrame], [1, 0], {
-    extrapolateLeft: "clamp", extrapolateRight: "clamp",
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
   });
   // NSA building covers NSA + stylometry segments
-  const img2Opacity = interpolate(frame, [tNsaFrame, tNsaFrame + 40, tAiFrame - 40, tAiFrame], [0, 1, 1, 0], {
-    extrapolateLeft: "clamp", extrapolateRight: "clamp",
-  });
+  const img2Opacity = interpolate(
+    frame,
+    [tNsaFrame, tNsaFrame + 40, tAiFrame - 40, tAiFrame],
+    [0, 1, 1, 0],
+    {
+      extrapolateLeft: "clamp",
+      extrapolateRight: "clamp",
+    },
+  );
   // AI server room covers AI + conclusion
   const img3Opacity = interpolate(frame, [tAiFrame, tAiFrame + 40], [0, 1], {
-    extrapolateLeft: "clamp", extrapolateRight: "clamp",
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
   });
 
   const timelineEntries = [
@@ -248,9 +256,42 @@ export const Scene6Attempts: React.FC = () => {
           backgroundColor: "#000000",
         }}
       >
-        <Img src={staticFile(IMAGES.wwii)} style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", objectFit: "cover", opacity: img1Opacity }} />
-        <Img src={staticFile(IMAGES.nsa)} style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", objectFit: "cover", opacity: img2Opacity }} />
-        <Img src={staticFile(IMAGES.ai)} style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", objectFit: "cover", opacity: img3Opacity }} />
+        <Img
+          src={staticFile(IMAGES.wwii)}
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            opacity: img1Opacity,
+          }}
+        />
+        <Img
+          src={staticFile(IMAGES.nsa)}
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            opacity: img2Opacity,
+          }}
+        />
+        <Img
+          src={staticFile(IMAGES.ai)}
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            opacity: img3Opacity,
+          }}
+        />
       </div>
 
       {/* Failure Timeline (left 35%) */}
@@ -452,7 +493,6 @@ export const Scene6Attempts: React.FC = () => {
           position="bottom-center"
           fontSize="small"
           startFrame={0}
-          showOverlay
         />
       </Sequence>
 

@@ -473,7 +473,6 @@ export const Scene1Intro: React.FC = () => {
           ]}
           position="bottom-center"
           startFrame={0}
-          showOverlay
         />
       </Sequence>
 

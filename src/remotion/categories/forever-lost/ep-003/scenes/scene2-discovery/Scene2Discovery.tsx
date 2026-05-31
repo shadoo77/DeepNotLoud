@@ -430,7 +430,6 @@ export const Scene2Discovery: React.FC = () => {
           fontSize="small"
           captionWidth="70%"
           startFrame={0}
-          showOverlay
         />
       </Sequence>
 
