@@ -1,8 +1,15 @@
 {
-  "name": "claude-code",
+  "name": "deepnotloud",
   "version": "1.0.0",
-  "description": "My Remotion video",
-  "repository": {},
+  "description": "Remotion documentary video project by @DeepNotLoud",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shadoo77/DeepNotLoud.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shadoo77/DeepNotLoud/issues"
+  },
+  "homepage": "https://github.com/shadoo77/DeepNotLoud#readme",
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {

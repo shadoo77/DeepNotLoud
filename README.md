@@ -1,4 +1,6 @@
-# Remotion video
+# @DeepNotLoud
+
+A Remotion 4.0 documentary video project for the DeepNotLoud YouTube channel.
 
 <p align="center">
   <a href="https://github.com/remotion-dev/logo">
@@ -8,8 +10,6 @@
     </picture>
   </a>
 </p>
-
-Welcome to your Remotion project!
 
 ## Commands
 

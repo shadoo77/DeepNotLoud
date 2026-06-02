@@ -1,8 +1,8 @@
-# AGENTS.md — claude-code (Remotion video project)
+# AGENTS.md — @DeepNotLoud
 
 ## What this is
 
-Remotion 4.0.469 project for **FOREVER LOST** — a YouTube documentary channel.  
+Remotion 4.0.469 project for **DeepNotLoud** — a YouTube documentary channel.  
 Three compositions registered in `src/Root.tsx`, all under the "Forever-Lost" folder:
 
 | ID | Resolution | FPS | Status |
