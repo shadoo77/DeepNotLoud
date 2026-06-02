@@ -1,0 +1,219 @@
+[
+  {
+    "text": "In",
+    "startMs": 0,
+    "endMs": 890,
+    "timestampMs": 960,
+    "confidence": 0.971458
+  },
+  {
+    "text": " 1912,",
+    "startMs": 890,
+    "endMs": 1880,
+    "timestampMs": 1840,
+    "confidence": 0.996875
+  },
+  {
+    "text": " a",
+    "startMs": 1880,
+    "endMs": 1990,
+    "timestampMs": 2560,
+    "confidence": 0.976902
+  },
+  {
+    "text": " rare",
+    "startMs": 1990,
+    "endMs": 2540,
+    "timestampMs": 2800,
+    "confidence": 0.995298
+  },
+  {
+    "text": " book",
+    "startMs": 2540,
+    "endMs": 2930,
+    "timestampMs": 3140,
+    "confidence": 0.968184
+  },
+  {
+    "text": " dealer",
+    "startMs": 2930,
+    "endMs": 3680,
+    "timestampMs": 3400,
+    "confidence": 0.809398
+  },
+  {
+    "text": " named",
+    "startMs": 3680,
+    "endMs": 4020,
+    "timestampMs": 4000,
+    "confidence": 0.954405
+  },
+  {
+    "text": " Wilfrid",
+    "startMs": 4020,
+    "endMs": 4490,
+    "timestampMs": 4240,
+    "confidence": 0.964669
+  },
+  {
+    "text": " Voynich",
+    "startMs": 4490,
+    "endMs": 4990,
+    "timestampMs": 4800,
+    "confidence": 0.649201
+  },
+  {
+    "text": " discovered",
+    "startMs": 4990,
+    "endMs": 5880,
+    "timestampMs": 5720,
+    "confidence": 0.832892
+  },
+  {
+    "text": " it",
+    "startMs": 5880,
+    "endMs": 6130,
+    "timestampMs": 6000,
+    "confidence": 0.980924
+  },
+  {
+    "text": " in",
+    "startMs": 6130,
+    "endMs": 6210,
+    "timestampMs": 6200,
+    "confidence": 0.978694
+  },
+  {
+    "text": " an",
+    "startMs": 6210,
+    "endMs": 6360,
+    "timestampMs": 6300,
+    "confidence": 0.96915
+  },
+  {
+    "text": " Italian",
+    "startMs": 6360,
+    "endMs": 6920,
+    "timestampMs": 6700,
+    "confidence": 0.980819
+  },
+  {
+    "text": " castle.",
+    "startMs": 6920,
+    "endMs": 8600,
+    "timestampMs": 7220,
+    "confidence": 0.937472
+  },
+  {
+    "text": " Carbon",
+    "startMs": 8600,
+    "endMs": 9160,
+    "timestampMs": 8840,
+    "confidence": 0.857654
+  },
+  {
+    "text": " dating",
+    "startMs": 9160,
+    "endMs": 9720,
+    "timestampMs": 9200,
+    "confidence": 0.985721
+  },
+  {
+    "text": " places",
+    "startMs": 9720,
+    "endMs": 10280,
+    "timestampMs": 9620,
+    "confidence": 0.979791
+  },
+  {
+    "text": " it",
+    "startMs": 10280,
+    "endMs": 10460,
+    "timestampMs": 10000,
+    "confidence": 0.994052
+  },
+  {
+    "text": " in",
+    "startMs": 10460,
+    "endMs": 10640,
+    "timestampMs": 10160,
+    "confidence": 0.996082
+  },
+  {
+    "text": " the",
+    "startMs": 10640,
+    "endMs": 10920,
+    "timestampMs": 10260,
+    "confidence": 0.994518
+  },
+  {
+    "text": " early",
+    "startMs": 10920,
+    "endMs": 11350,
+    "timestampMs": 10600,
+    "confidence": 0.998432
+  },
+  {
+    "text": " 1400s.",
+    "startMs": 11350,
+    "endMs": 12920,
+    "timestampMs": 11100,
+    "confidence": 0.942487
+  },
+  {
+    "text": " Nobody",
+    "startMs": 12920,
+    "endMs": 13580,
+    "timestampMs": 13180,
+    "confidence": 0.961304
+  },
+  {
+    "text": " knew",
+    "startMs": 13580,
+    "endMs": 14020,
+    "timestampMs": 13500,
+    "confidence": 0.987988
+  },
+  {
+    "text": " who",
+    "startMs": 14020,
+    "endMs": 14260,
+    "timestampMs": 13800,
+    "confidence": 0.999081
+  },
+  {
+    "text": " wrote",
+    "startMs": 14260,
+    "endMs": 14880,
+    "timestampMs": 14040,
+    "confidence": 0.994306
+  },
+  {
+    "text": " it.",
+    "startMs": 14880,
+    "endMs": 15480,
+    "timestampMs": 14220,
+    "confidence": 0.997027
+  },
+  {
+    "text": " Nobody",
+    "startMs": 15480,
+    "endMs": 15880,
+    "timestampMs": 15600,
+    "confidence": 0.989712
+  },
+  {
+    "text": " knows",
+    "startMs": 15880,
+    "endMs": 16220,
+    "timestampMs": 16000,
+    "confidence": 0.977314
+  },
+  {
+    "text": " now.",
+    "startMs": 16220,
+    "endMs": 16640,
+    "timestampMs": 16440,
+    "confidence": 0.981826
+  }
+]

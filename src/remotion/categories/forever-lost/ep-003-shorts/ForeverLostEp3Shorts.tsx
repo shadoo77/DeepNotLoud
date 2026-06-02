@@ -1,7 +1,9 @@
 import { AbsoluteFill } from "remotion";
-import { TransitionSeries } from "@remotion/transitions";
-import { SCENES, TOTAL_FRAMES, C, ASSET_PATH } from "./constants";
+import { TransitionSeries, linearTiming } from "@remotion/transitions";
+import { fade } from "@remotion/transitions/fade";
+import { SCENES, TOTAL_FRAMES, T, C, ASSET_PATH } from "./constants";
 import { Scene1Hook } from "./scenes/scene1-hook/Scene1Hook";
+import { Scene2Discovery } from "./scenes/scene2-discovery/Scene2Discovery";
 import BgmWithFade from "@/components/atoms/BgmWithFade";
 
 export { TOTAL_FRAMES };
@@ -22,6 +24,17 @@ export const ForeverLostEp3Shorts: React.FC = () => {
           durationInFrames={SCENES.s1_hook.durationInFrames}
         >
           <Scene1Hook />
+        </TransitionSeries.Sequence>
+
+        <TransitionSeries.Transition
+          presentation={fade()}
+          timing={linearTiming({ durationInFrames: T.fade })}
+        />
+
+        <TransitionSeries.Sequence
+          durationInFrames={SCENES.s2_discovery.durationInFrames}
+        >
+          <Scene2Discovery />
         </TransitionSeries.Sequence>
       </TransitionSeries>
     </AbsoluteFill>

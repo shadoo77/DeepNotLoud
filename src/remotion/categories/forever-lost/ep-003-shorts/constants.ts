@@ -1,4 +1,5 @@
 import { SCENE_DURATION as S1_DURATION } from "./scenes/scene1-hook/constants";
+import { SCENE_DURATION as S2_DURATION } from "./scenes/scene2-discovery/constants";
 
 export const FPS = 30;
 export const WIDTH = 1080;
@@ -24,6 +25,7 @@ export const ASSET_PATH = "assets/forever-lost/ep-003";
 
 export const SCENES = {
   s1_hook: { durationInFrames: S1_DURATION },
+  s2_discovery: { durationInFrames: S2_DURATION },
 } as const;
 
 const NUM_SCENES = Object.keys(SCENES).length;
