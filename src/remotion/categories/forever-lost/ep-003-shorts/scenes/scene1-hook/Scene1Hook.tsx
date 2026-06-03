@@ -212,7 +212,7 @@ export const Scene1Hook: React.FC = () => {
 
       <Sequence durationInFrames={60}>
         <Audio
-          src={staticFile(`${ASSET_PATH}/audio/sfx/paper_rustle.wav`)}
+          src={staticFile(`${ASSET_PATH}/audio/sfx/paper_rustle.mp3`)}
           volume={(f) =>
             interpolate(f, [0, 60], [0.4, 0], {
               extrapolateLeft: "clamp", extrapolateRight: "clamp",
@@ -223,7 +223,7 @@ export const Scene1Hook: React.FC = () => {
 
       <Sequence from={VO_START_FRAME}>
         <Audio
-          src={staticFile(`${ASSET_PATH}/audio/vo/short/ep003_s1_hook.wav`)}
+          src={staticFile(`${ASSET_PATH}/audio/vo/short/ep003_s1_hook.mp3`)}
           volume={1}
         />
         <YouTubeCaptions

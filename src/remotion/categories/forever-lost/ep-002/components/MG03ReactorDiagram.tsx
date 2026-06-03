@@ -134,7 +134,7 @@ export const MG03ReactorDiagram: React.FC = () => {
       {LABELS.map((l) => (
         <Sequence key={`sfx-${l.start}`} from={l.start} durationInFrames={6}>
           <Audio
-            src={staticFile(`${ASSET_PATH}/audio/sfx/whoosh_data.wav`)}
+            src={staticFile(`${ASSET_PATH}/audio/sfx/whoosh_data.mp3`)}
             volume={0.25}
           />
         </Sequence>

@@ -10,6 +10,6 @@ They were told three days.
 Most never came back.
 [slow] Some areas won't be safe for twenty thousand years.`,
   wordCount: 24,
-  sfx: ["geiger_loop.wav at 15% loop"],
+  sfx: ["geiger_loop.mp3 at 15% loop"],
   image: "ep02_s6_exclusion_zone.jpeg — Full-frame, slow zoom OUT scale 1.06→1.0",
 };

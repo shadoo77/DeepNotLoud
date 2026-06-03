@@ -179,27 +179,27 @@ export const Scene0_ColdOpen = () => {
       />
 
       <Audio
-        src={staticFile(`${ASSET}/voices/sfx/sfx_sub_bass_rumble.wav`)}
+        src={staticFile(`${ASSET}/voices/sfx/sfx_sub_bass_rumble.mp3`)}
         volume={0.4}
       />
 
       <Sequence from={120}>
         <Audio
-          src={staticFile(`${ASSET}/voices/sfx/sfx_metal_creak.wav`)}
+          src={staticFile(`${ASSET}/voices/sfx/sfx_metal_creak.mp3`)}
           volume={0.3}
         />
       </Sequence>
 
       <Sequence from={240}>
         <Audio
-          src={staticFile(`${ASSET}/voices/sfx/sfx_pressure_groan.wav`)}
+          src={staticFile(`${ASSET}/voices/sfx/sfx_pressure_groan.mp3`)}
           volume={0.25}
         />
       </Sequence>
 
       <Sequence from={VO_START_FRAME}>
         <Audio
-          src={staticFile(`${ASSET}/voices/vo/vo_scene0.wav`)}
+          src={staticFile(`${ASSET}/voices/vo/vo_scene0.mp3`)}
           volume={0.8}
         />
       </Sequence>

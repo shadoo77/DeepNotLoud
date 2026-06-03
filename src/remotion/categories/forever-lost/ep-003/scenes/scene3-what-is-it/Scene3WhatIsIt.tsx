@@ -560,7 +560,7 @@ export const Scene3WhatIsIt: React.FC = () => {
 
       <Sequence from={VO_START_FRAME}>
         <Audio
-          src={staticFile(`${ASSET}/audio/vo/ep003_L_s3_what_is_it.wav`)}
+          src={staticFile(`${ASSET}/audio/vo/ep003_L_s3_what_is_it.mp3`)}
           volume={1}
         />
         <YouTubeCaptions
@@ -595,7 +595,7 @@ export const Scene3WhatIsIt: React.FC = () => {
 
       <Sequence durationInFrames={durationInFrames}>
         <Audio
-          src={staticFile(`${ASSET}/audio/sfx/quill_scratch.wav`)}
+          src={staticFile(`${ASSET}/audio/sfx/quill_scratch.mp3`)}
           volume={(f) =>
             interpolate(f % 450, [0, 15, 430, 450], [0, 0.12, 0.12, 0], {
               extrapolateLeft: "clamp",
@@ -607,7 +607,7 @@ export const Scene3WhatIsIt: React.FC = () => {
 
       <Sequence from={bioRumbleFrame} durationInFrames={120}>
         <Audio
-          src={staticFile(`${ASSET}/audio/sfx/deep_rumble.wav`)}
+          src={staticFile(`${ASSET}/audio/sfx/deep_rumble.mp3`)}
           volume={(f) =>
             interpolate(f, [0, 120], [0.25, 0], {
               extrapolateLeft: "clamp",
@@ -619,7 +619,7 @@ export const Scene3WhatIsIt: React.FC = () => {
 
       <Sequence from={2520} durationInFrames={60}>
         <Audio
-          src={staticFile(`${ASSET}/audio/sfx/impact_thud.wav`)}
+          src={staticFile(`${ASSET}/audio/sfx/impact_thud.mp3`)}
           volume={(f) =>
             interpolate(f, [0, 60], [0.3, 0], {
               extrapolateLeft: "clamp",

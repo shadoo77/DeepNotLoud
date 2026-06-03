@@ -221,27 +221,27 @@ export const Act2_ConsumingOcean: React.FC = () => {
 
       {/* === AUDIO === */}
       <Audio
-        src={staticFile(`${ASSET}/voices/sfx/sfx_micro_bubbles.wav`)}
+        src={staticFile(`${ASSET}/voices/sfx/sfx_micro_bubbles.mp3`)}
         volume={0.15}
       />
 
       <Sequence from={frame2030}>
         <Audio
-          src={staticFile(`${ASSET}/voices/sfx/sfx_clock_tick.wav`)}
+          src={staticFile(`${ASSET}/voices/sfx/sfx_clock_tick.mp3`)}
           volume={0.15}
         />
       </Sequence>
 
       <Sequence from={frameDisintegrate}>
         <Audio
-          src={staticFile(`${ASSET}/voices/sfx/sfx_dissolution.wav`)}
+          src={staticFile(`${ASSET}/voices/sfx/sfx_dissolution.mp3`)}
           volume={0.25}
         />
       </Sequence>
 
       <Sequence from={VO_START_FRAME}>
         <Audio
-          src={staticFile(`${ASSET}/voices/vo/short/vo_scene2.wav`)}
+          src={staticFile(`${ASSET}/voices/vo/short/vo_scene2.mp3`)}
           volume={0.85}
         />
       </Sequence>

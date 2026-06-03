@@ -184,7 +184,7 @@ export function Scene5_Structure() {
       {/* SFX: Catastrophic break synced with "shatter" */}
       <Sequence from={frameShatter}>
         <Audio
-          src={staticFile(`${ASSET}/voices/sfx/sfx_metal_break.wav`)}
+          src={staticFile(`${ASSET}/voices/sfx/sfx_metal_break.mp3`)}
           volume={0.8}
         />
       </Sequence>
@@ -192,7 +192,7 @@ export function Scene5_Structure() {
       {/* SFX: Underwater implosion boom (delayed slightly to rattle after the snap) */}
       <Sequence from={frameShatter + 10}>
         <Audio
-          src={staticFile(`${ASSET}/voices/sfx/sfx_implosion.wav`)}
+          src={staticFile(`${ASSET}/voices/sfx/sfx_implosion.mp3`)}
           volume={0.6}
         />
       </Sequence>
@@ -200,7 +200,7 @@ export function Scene5_Structure() {
       {/* Voiceover */}
       <Sequence from={VO_START_FRAME}>
         <Audio
-          src={staticFile(`${ASSET}/voices/vo/vo_scene5.wav`)}
+          src={staticFile(`${ASSET}/voices/vo/vo_scene5.mp3`)}
           volume={0.85}
         />
       </Sequence>

@@ -201,38 +201,38 @@ export const Scene1_Scale: React.FC = () => {
         volume={0.2}
       />
       <Audio
-        src={staticFile(`${ASSET}/voices/sfx/sfx_pressure_groan_2.wav`)}
+        src={staticFile(`${ASSET}/voices/sfx/sfx_pressure_groan_2.mp3`)}
         volume={0.15}
       />
 
       <Sequence from={fps * 1}>
         <Audio
-          src={staticFile(`${ASSET}/voices/sfx/sfx_sonar_ping.wav`)}
+          src={staticFile(`${ASSET}/voices/sfx/sfx_sonar_ping.mp3`)}
           volume={0.4}
         />
       </Sequence>
       <Sequence from={fps * 2}>
         <Audio
-          src={staticFile(`${ASSET}/voices/sfx/sfx_sonar_ping.wav`)}
+          src={staticFile(`${ASSET}/voices/sfx/sfx_sonar_ping.mp3`)}
           volume={0.4}
         />
       </Sequence>
       <Sequence from={fps * 3}>
         <Audio
-          src={staticFile(`${ASSET}/voices/sfx/sfx_sonar_ping.wav`)}
+          src={staticFile(`${ASSET}/voices/sfx/sfx_sonar_ping.mp3`)}
           volume={0.4}
         />
       </Sequence>
       <Sequence from={fps * 4}>
         <Audio
-          src={staticFile(`${ASSET}/voices/sfx/sfx_sonar_ping.wav`)}
+          src={staticFile(`${ASSET}/voices/sfx/sfx_sonar_ping.mp3`)}
           volume={0.5}
         />
       </Sequence>
 
       <Sequence from={VO_START_FRAME}>
         <Audio
-          src={staticFile(`${ASSET}/voices/vo/vo_scene1.wav`)}
+          src={staticFile(`${ASSET}/voices/vo/vo_scene1.mp3`)}
           volume={0.8}
         />
       </Sequence>

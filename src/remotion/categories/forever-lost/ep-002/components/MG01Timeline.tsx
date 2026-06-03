@@ -77,16 +77,16 @@ export const MG01Timeline: React.FC = () => {
     <AbsoluteFill style={{ backgroundColor: C.bg }}>
       {/* ─── AUDIO BRIDGE ─── */}
       <Audio
-        src={staticFile(`${ASSET_PATH}/audio/sfx/whoosh_data.wav`)}
+        src={staticFile(`${ASSET_PATH}/audio/sfx/whoosh_data.mp3`)}
         volume={0.5}
       />
       <Audio
-        src={staticFile(`${ASSET_PATH}/audio/sfx/geiger_loop.wav`)}
+        src={staticFile(`${ASSET_PATH}/audio/sfx/geiger_loop.mp3`)}
         volume={0.08}
         loop
       />
       <Audio
-        src={staticFile(`${ASSET_PATH}/audio/sfx/radiation_hum.wav`)}
+        src={staticFile(`${ASSET_PATH}/audio/sfx/radiation_hum.mp3`)}
         volume={0.12}
         loop
       />

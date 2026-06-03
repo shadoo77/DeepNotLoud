@@ -141,20 +141,20 @@ export function Scene3_Rusticle() {
 
       {/* ====== AUDIO LAYERS ====== */}
       <Audio
-        src={staticFile(`${ASSET}/voices/sfx/sfx_micro_bubbles.wav`)}
+        src={staticFile(`${ASSET}/voices/sfx/sfx_micro_bubbles.mp3`)}
         volume={bubblesVol}
       />
 
       <Sequence from={frame100kg}>
         <Audio
-          src={staticFile(`${ASSET}/voices/sfx/sfx_clock_tick.wav`)}
+          src={staticFile(`${ASSET}/voices/sfx/sfx_clock_tick.mp3`)}
           volume={clockVol}
         />
       </Sequence>
 
       <Sequence from={dissolvingFrame}>
         <Audio
-          src={staticFile(`${ASSET}/voices/sfx/sfx_dissolution.wav`)}
+          src={staticFile(`${ASSET}/voices/sfx/sfx_dissolution.mp3`)}
           volume={dissolveVol}
         />
       </Sequence>
@@ -168,7 +168,7 @@ export function Scene3_Rusticle() {
       {/* Voiceover */}
       <Sequence from={VO_START_FRAME}>
         <Audio
-          src={staticFile(`${ASSET}/voices/vo/vo_scene3.wav`)}
+          src={staticFile(`${ASSET}/voices/vo/vo_scene3.mp3`)}
           volume={0.85} // Slightly lowered to leave headroom for SFX
         />
       </Sequence>

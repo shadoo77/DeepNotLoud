@@ -254,21 +254,21 @@ export function Scene4_Weight() {
 
       <Sequence from={phrase52000.from}>
         <Audio
-          src={staticFile(`${ASSET}/voices/sfx/sfx_heavy_impact.wav`)}
+          src={staticFile(`${ASSET}/voices/sfx/sfx_heavy_impact.mp3`)}
           volume={0.6}
         />
       </Sequence>
 
       <Sequence from={phraseNearlyKilled.from}>
         <Audio
-          src={staticFile(`${ASSET}/voices/sfx/sfx_cable_snap.wav`)}
+          src={staticFile(`${ASSET}/voices/sfx/sfx_cable_snap.mp3`)}
           volume={0.5}
         />
       </Sequence>
 
       <Sequence from={VO_START_FRAME}>
         <Audio
-          src={staticFile(`${ASSET}/voices/vo/vo_scene4.wav`)}
+          src={staticFile(`${ASSET}/voices/vo/vo_scene4.mp3`)}
           volume={0.85}
         />
       </Sequence>

@@ -38,12 +38,12 @@ export const Scene7Closer: React.FC = () => {
   return (
     <AbsoluteFill className="bg-ash">
       <Audio
-        src={staticFile(`${ASSET_PATH}/audio/vo/short/ep02_s7.wav`)}
+        src={staticFile(`${ASSET_PATH}/audio/vo/short/ep02_s7.mp3`)}
         from={VO_START_FRAME}
       />
       <Sequence from={180} premountFor={10}>
         <Audio
-          src={staticFile(`${ASSET_PATH}/audio/sfx/heartbeat_slow.wav`)}
+          src={staticFile(`${ASSET_PATH}/audio/sfx/heartbeat_slow.mp3`)}
           volume={0.4}
         />
       </Sequence>

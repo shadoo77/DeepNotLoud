@@ -60,7 +60,7 @@ export const MG06HalfLife: React.FC = () => {
   return (
     <AbsoluteFill style={{ backgroundColor: C.bg }}>
       <Audio
-        src={staticFile(`${ASSET_PATH}/audio/sfx/radiation_hum.wav`)}
+        src={staticFile(`${ASSET_PATH}/audio/sfx/radiation_hum.mp3`)}
         volume={0.15}
         loop
       />

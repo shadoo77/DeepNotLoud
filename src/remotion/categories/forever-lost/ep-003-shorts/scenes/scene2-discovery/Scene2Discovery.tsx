@@ -468,7 +468,7 @@ export const Scene2Discovery: React.FC = () => {
       {/* SFX — quill scratch at scene open */}
       <Sequence durationInFrames={90}>
         <Audio
-          src={staticFile(`${ASSET_PATH}/audio/sfx/quill_scratch.wav`)}
+          src={staticFile(`${ASSET_PATH}/audio/sfx/quill_scratch.mp3`)}
           volume={(f) =>
             interpolate(f, [0, 90], [0.3, 0], {
               extrapolateLeft: "clamp", extrapolateRight: "clamp",
@@ -480,7 +480,7 @@ export const Scene2Discovery: React.FC = () => {
       {/* VO + Captions */}
       <Sequence from={VO_START_FRAME}>
         <Audio
-          src={staticFile(`${ASSET_PATH}/audio/vo/short/ep003_s2_discovery.wav`)}
+          src={staticFile(`${ASSET_PATH}/audio/vo/short/ep003_s2_discovery.mp3`)}
           volume={1}
         />
         <YouTubeCaptions

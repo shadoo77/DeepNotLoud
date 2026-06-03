@@ -142,7 +142,7 @@ export function Scene7_Outro() {
 
       {/* SFX: Final groan fading to silence — callback form for same reason */}
       <Audio
-        src={staticFile(`${ASSET}/voices/sfx/sfx_final_groan.wav`)}
+        src={staticFile(`${ASSET}/voices/sfx/sfx_final_groan.mp3`)}
         volume={(f) =>
           interpolate(f, [0, fps * 6], [0.4, 0], {
             extrapolateRight: "clamp",
@@ -153,7 +153,7 @@ export function Scene7_Outro() {
       {/* Voiceover */}
       <Sequence from={VO_START_FRAME}>
         <Audio
-          src={staticFile(`${ASSET}/voices/vo/vo_scene7.wav`)}
+          src={staticFile(`${ASSET}/voices/vo/vo_scene7.mp3`)}
           volume={0.85}
         />
       </Sequence>

@@ -391,7 +391,7 @@ export const Scene2Discovery: React.FC = () => {
 
       <Sequence from={VO_START_FRAME}>
         <Audio
-          src={staticFile(`${ASSET}/audio/vo/ep003_L_s2_discovery.wav`)}
+          src={staticFile(`${ASSET}/audio/vo/ep003_L_s2_discovery.mp3`)}
           volume={1}
         />
         <YouTubeCaptions
@@ -435,21 +435,21 @@ export const Scene2Discovery: React.FC = () => {
 
       <Sequence from={60}>
         <Audio
-          src={staticFile(`${ASSET}/audio/sfx/paper_rustle.wav`)}
+          src={staticFile(`${ASSET}/audio/sfx/paper_rustle.mp3`)}
           volume={0.35}
         />
       </Sequence>
 
       <Sequence from={portraitTrigger}>
         <Audio
-          src={staticFile(`${ASSET}/audio/sfx/quill_scratch.wav`)}
+          src={staticFile(`${ASSET}/audio/sfx/quill_scratch.mp3`)}
           volume={0.25}
         />
       </Sequence>
 
       <Sequence from={1050}>
         <Audio
-          src={staticFile(`${ASSET}/audio/sfx/whoosh_in.wav`)}
+          src={staticFile(`${ASSET}/audio/sfx/whoosh_in.mp3`)}
           volume={0.3}
         />
       </Sequence>

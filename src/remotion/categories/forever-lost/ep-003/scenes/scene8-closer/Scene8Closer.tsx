@@ -36,7 +36,7 @@ const DRONE_AUDIO_FRAMES = SCENE_DURATION - VO_START_FRAME;
 
 const SilenceDroneAudio: React.FC = () => (
   <Audio
-    src={staticFile(`${ASSET_PATH}/audio/sfx/silence_drone.wav`)}
+    src={staticFile(`${ASSET_PATH}/audio/sfx/silence_drone.mp3`)}
     volume={(f) =>
       interpolate(
         f,
@@ -389,7 +389,7 @@ export const Scene8Closer: React.FC = () => {
       {/* VO + Captions */}
       <Sequence from={VO_START_FRAME}>
         <Audio
-          src={staticFile(`${ASSET_PATH}/audio/vo/ep003_L_s8_closer.wav`)}
+          src={staticFile(`${ASSET_PATH}/audio/vo/ep003_L_s8_closer.mp3`)}
           volume={1}
         />
         <YouTubeCaptions
@@ -421,7 +421,7 @@ export const Scene8Closer: React.FC = () => {
       {/* SFX — paper rustle single soft */}
       <Sequence from={VO_START_FRAME + 60}>
         <Audio
-          src={staticFile(`${ASSET_PATH}/audio/sfx/paper_rustle.wav`)}
+          src={staticFile(`${ASSET_PATH}/audio/sfx/paper_rustle.mp3`)}
           volume={(f) =>
             interpolate(f, [0, 90], [0.15, 0], {
               extrapolateLeft: "clamp",

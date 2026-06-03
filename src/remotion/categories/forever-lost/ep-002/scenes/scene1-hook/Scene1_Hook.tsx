@@ -83,10 +83,10 @@ export const Scene1Hook: React.FC = () => {
       {/* ========== PHASE A: THE HOOK ========== */}
       <AbsoluteFill style={{ opacity: hookOpacity }}>
         <Audio
-          src={staticFile(`${ASSET_PATH}/audio/sfx/explosion_distant.wav`)}
+          src={staticFile(`${ASSET_PATH}/audio/sfx/explosion_distant.mp3`)}
           volume={0.9}
         />
-        <Audio src={staticFile(`${ASSET_PATH}/audio/vo/ep02L_s1.wav`)} />
+        <Audio src={staticFile(`${ASSET_PATH}/audio/vo/ep02L_s1.mp3`)} />
 
         {/* Background & Vignette */}
         <AbsoluteFill>
@@ -185,7 +185,7 @@ export const Scene1Hook: React.FC = () => {
       {/* 
         The magic: Mounts at frame 570. 
         Inside MG01Timeline, useCurrentFrame() will start at 0!
-        Its whoosh_data.wav audio will also trigger perfectly at frame 570.
+        Its whoosh_data.mp3 audio will also trigger perfectly at frame 570.
       */}
       <Sequence
         from={mg01StartFrame}

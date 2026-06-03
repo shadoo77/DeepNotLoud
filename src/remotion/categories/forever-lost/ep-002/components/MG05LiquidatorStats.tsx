@@ -80,13 +80,13 @@ export const MG05LiquidatorStats: React.FC = () => {
       >
         <Sequence from={12} durationInFrames={18}>
           <Audio
-            src={staticFile(`${ASSET_PATH}/audio/sfx/whoosh_data.wav`)}
+            src={staticFile(`${ASSET_PATH}/audio/sfx/whoosh_data.mp3`)}
             volume={0.3}
           />
         </Sequence>
         <Sequence from={100} durationInFrames={110}>
           <Audio
-            src={staticFile(`${ASSET_PATH}/audio/sfx/tick_counter.wav`)}
+            src={staticFile(`${ASSET_PATH}/audio/sfx/tick_counter.mp3`)}
             volume={0.15}
           />
         </Sequence>

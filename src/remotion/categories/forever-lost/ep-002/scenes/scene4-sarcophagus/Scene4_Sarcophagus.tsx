@@ -95,17 +95,17 @@ export const Scene4Sarcophagus: React.FC = () => {
     <AbsoluteFill style={{ backgroundColor: C.bg }}>
       <Sequence from={5} durationInFrames={12}>
         <Audio
-          src={staticFile(`${ASSET_PATH}/audio/sfx/metal_groan.wav`)}
+          src={staticFile(`${ASSET_PATH}/audio/sfx/metal_groan.mp3`)}
           volume={0.45}
         />
       </Sequence>
 
       <Audio
-        src={staticFile(`${ASSET_PATH}/audio/sfx/radiation_hum.wav`)}
+        src={staticFile(`${ASSET_PATH}/audio/sfx/radiation_hum.mp3`)}
         volume={0.12}
         loop
       />
-      <Audio src={staticFile(`${ASSET_PATH}/audio/vo/ep02L_s4.wav`)} />
+      <Audio src={staticFile(`${ASSET_PATH}/audio/vo/ep02L_s4.mp3`)} />
 
       {/* Right image panel */}
       <div

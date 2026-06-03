@@ -47,7 +47,7 @@ export const Scene5HumanCost: React.FC = () => {
 
   return (
     <AbsoluteFill style={{ backgroundColor: C.bg }}>
-      <Audio src={staticFile(`${ASSET_PATH}/audio/vo/ep02L_s5.wav`)} />
+      <Audio src={staticFile(`${ASSET_PATH}/audio/vo/ep02L_s5.mp3`)} />
 
       <Img
         src={staticFile(`${ASSET_PATH}/images/ep02L_s5_liquidators.jpeg`)}

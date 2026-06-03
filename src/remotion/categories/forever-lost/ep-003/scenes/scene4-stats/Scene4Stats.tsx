@@ -366,7 +366,7 @@ export const Scene4Stats: React.FC = () => {
 
       <Sequence from={VO_START_FRAME}>
         <Audio
-          src={staticFile(`${ASSET_PATH}/audio/vo/ep003_L_s4_stats.wav`)}
+          src={staticFile(`${ASSET_PATH}/audio/vo/ep003_L_s4_stats.mp3`)}
           volume={1}
         />
         <YouTubeCaptions
@@ -397,14 +397,14 @@ export const Scene4Stats: React.FC = () => {
 
       <Sequence from={VO_START_FRAME} durationInFrames={2280}>
         <Audio
-          src={staticFile(`${ASSET_PATH}/audio/sfx/clock_tick.wav`)}
+          src={staticFile(`${ASSET_PATH}/audio/sfx/clock_tick.mp3`)}
           volume={(f) => ([0, 15, 30, 45].includes(f) ? 0.25 : 0)}
         />
       </Sequence>
 
       <Sequence from={terrifyingFrame}>
         <Audio
-          src={staticFile(`${ASSET_PATH}/audio/sfx/impact_thud.wav`)}
+          src={staticFile(`${ASSET_PATH}/audio/sfx/impact_thud.mp3`)}
           volume={(f) =>
             interpolate(f, [0, 60], [0.5, 0], {
               extrapolateLeft: "clamp",

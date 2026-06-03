@@ -73,7 +73,7 @@ export const MG04CostChart: React.FC = () => {
 
       <Sequence from={30} durationInFrames={24}>
         <Audio
-          src={staticFile(`${ASSET_PATH}/audio/sfx/chart_build.wav`)}
+          src={staticFile(`${ASSET_PATH}/audio/sfx/chart_build.mp3`)}
           volume={0.35}
         />
       </Sequence>

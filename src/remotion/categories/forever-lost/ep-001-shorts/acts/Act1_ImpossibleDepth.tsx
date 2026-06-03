@@ -220,11 +220,11 @@ export const Act1_ImpossibleDepth: React.FC = () => {
 
       {/* === AUDIO === */}
       <Audio
-        src={staticFile(`${ASSET}/voices/sfx/sfx_sub_bass_rumble.wav`)}
+        src={staticFile(`${ASSET}/voices/sfx/sfx_sub_bass_rumble.mp3`)}
         volume={0.25}
       />
       <Audio
-        src={staticFile(`${ASSET}/voices/vo/short/vo_scene1.wav`)}
+        src={staticFile(`${ASSET}/voices/vo/short/vo_scene1.mp3`)}
         volume={0.85}
       />
 
