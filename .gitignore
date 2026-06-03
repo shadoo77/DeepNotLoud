@@ -26,4 +26,4 @@ whisper.cpp
 /graphify-out/
 
 # assets
-/assets/
+public/assets/
