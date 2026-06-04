@@ -47,7 +47,8 @@ export const Scene1Hook: React.FC = () => {
   });
 
   const titleOpacity = interpolate(frame, [20, 50], [0, 1], {
-    extrapolateLeft: "clamp", extrapolateRight: "clamp",
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
     easing: Easing.bezier(0.16, 1, 0.3, 1),
   });
 
@@ -173,7 +174,7 @@ export const Scene1Hook: React.FC = () => {
               }}
             >
               <span
-                className="text-3xl leading-relaxed font-bold tracking-wide"
+                className="text-4xl leading-relaxed font-black tracking-wide"
                 style={{ fontFamily: cinzelFont, color: C.white }}
               >
                 {hookWords.map((word, i) => {
