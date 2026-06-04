@@ -108,12 +108,10 @@ export const Scene1Hook: React.FC = () => {
     { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
   );
 
-  const thumbnailOpacity = interpolate(
-    frame,
-    [0, 6, 18],
-    [1, 1, 0],
-    { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
-  );
+  const thumbnailOpacity = interpolate(frame, [0, 6, 18], [1, 1, 0], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
 
   const drawProgress = interpolate(Math.max(0, frame - 230), [0, 40], [0, 1], {
     extrapolateLeft: "clamp",
@@ -139,7 +137,6 @@ export const Scene1Hook: React.FC = () => {
           className="size-full object-cover"
         />
       </div>
-
       <div
         className="pointer-events-none absolute inset-0"
         style={{
@@ -147,7 +144,6 @@ export const Scene1Hook: React.FC = () => {
             "radial-gradient(ellipse at center, transparent 30%, rgba(0,0,0,0.75) 100%)",
         }}
       />
-
       <div
         className="pointer-events-none absolute"
         style={{
@@ -176,7 +172,6 @@ export const Scene1Hook: React.FC = () => {
           }}
         />
       </div>
-
       <div
         className="pointer-events-none absolute inset-0 flex items-start justify-center"
         style={{ paddingTop: 80 }}
@@ -192,7 +187,6 @@ export const Scene1Hook: React.FC = () => {
           FOREVER LOST
         </span>
       </div>
-
       <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
         <div
           style={{
@@ -235,7 +229,6 @@ export const Scene1Hook: React.FC = () => {
           </span>
         </div>
       </div>
-
       <div
         className="pointer-events-none absolute inset-0 flex items-end justify-center"
         style={{ paddingBottom: 180, opacity: impactOpacity }}
@@ -264,13 +257,11 @@ export const Scene1Hook: React.FC = () => {
           </p>
         </div>
       </div>
-
       <SceneBadges
         badges={BADGES}
         transcriptData={TRASCRIPT_DATA}
         voiceOverStartFrame={VO_AUDIO_OFFSET}
       />
-
       <AbsoluteFill
         style={{
           opacity: thumbnailOpacity,
@@ -282,7 +273,6 @@ export const Scene1Hook: React.FC = () => {
           className="h-full w-full object-cover"
         />
       </AbsoluteFill>
-
       <Sequence from={6} durationInFrames={60}>
         <Audio
           src={staticFile(`${ASSET_PATH}/audio/sfx/paper_rustle.mp3`)}
@@ -294,7 +284,6 @@ export const Scene1Hook: React.FC = () => {
           }
         />
       </Sequence>
-
       <Sequence from={6}>
         <Audio
           src={staticFile(`${ASSET_PATH}/audio/vo/short/ep003_s1_hook.mp3`)}
