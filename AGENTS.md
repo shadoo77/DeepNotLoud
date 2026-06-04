@@ -49,7 +49,12 @@ src/
 1. Place WAV in `public/assets/forever-lost/ep-XXX/voices/vo/`
 2. Run: `npx tsx scripts/generate-captions.ts "<input.wav>" "<output transcript>.json"`
 3. Clean transcript JSON: merge split words (`" atmosp"+"heres"`→`" atmospheres"`), remove `[BLANK_AUDIO]`, zero-duration dupes, low-confidence trailing tokens
-4. The transcript variable is intentionally spelled `TRASCRIPT_DATA` (not `TRANSCRIPT`) across the codebase
+4. **Script-to-Transcript Alignment (CRITICAL — enforce on every scene):**
+   Whisper.cpp often outputs run-on sentences with commas and lowercase words (e.g. `"pages,"` followed by `"an"`, `"tried,"` followed by `"the"`, `"tried,"` followed by `"all"`). The captions agent MUST cross-reference the raw transcript against the **original voiceover script** (from the episode's `PORTRAIT.md` or `LANDSCAPE.md`) and fix three things:
+   - **Punctuation:** Replace whisper-generated commas at clause/sentence boundaries with whatever punctuation the script uses — periods, dashes, colons, etc. (e.g. `"pages,"` → `"pages."`, `"tried,"` → `"tried."`).
+   - **Casing:** Capitalize the first letter of any token that starts a new sentence in the script (e.g. `"an"` → `"An"`, `"the"` → `"The"`, `"all"` → `"All"`).
+   - **Acronyms:** Force ALL-CAPS for acronyms and abbreviations as they appear in the script (e.g. `"nsa"` → `"NSA"`, `"ai"` → `"AI"`).
+5. The transcript variable is intentionally spelled `TRASCRIPT_DATA` (not `TRANSCRIPT`) across the codebase
 
 ## Timing gotchas
 
