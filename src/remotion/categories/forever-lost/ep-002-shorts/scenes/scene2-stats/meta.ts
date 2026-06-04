@@ -9,6 +9,6 @@ Four hundred Hiroshima bombs worth of radiation.
 Two hundred tonnes of nuclear fuel — still fused inside.
 Six hundred thousand workers sent to clean it.`,
   wordCount: 29,
-  sfx: ["geiger_loop.wav loops at 25%"],
+  sfx: ["geiger_loop.mp3 loops at 25%"],
   image: "ep02_s2_texture.jpeg — Background at 15% opacity, texture only",
 };

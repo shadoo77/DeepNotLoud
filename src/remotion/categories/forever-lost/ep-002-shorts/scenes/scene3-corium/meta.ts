@@ -9,6 +9,6 @@ The melted fuel formed a new substance.
 They call it the Elephant's Foot.
 Four minutes beside it — fatal.`,
   wordCount: 17,
-  sfx: ["geiger_loop.wav 20% loop", "radiation_hum.wav 30% loop"],
+  sfx: ["geiger_loop.mp3 20% loop", "radiation_hum.mp3 30% loop"],
   image: "ep02_s3_corium.jpeg — Right 60% of screen, masked with gradient",
 };

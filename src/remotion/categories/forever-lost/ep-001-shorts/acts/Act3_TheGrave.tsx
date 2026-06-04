@@ -126,7 +126,7 @@ export const Act3_TheGrave: React.FC = () => {
       )}
 
       <Audio
-        src={staticFile(`${ASSET}/voices/vo/short/vo_scene3.wav`)}
+        src={staticFile(`${ASSET}/voices/vo/short/vo_scene3.mp3`)}
         volume={0.85}
       />
       <TiktokCaptions

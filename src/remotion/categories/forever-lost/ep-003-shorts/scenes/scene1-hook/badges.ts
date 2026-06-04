@@ -17,7 +17,7 @@ export const BADGES: BadgeDef[] = [
   {
     phrase: "book",
     fallbackFrame: 10,
-    position: { right: 30, bottom: 100 },
+    position: { right: 30, top: 100 },
     borderColor: C.gold,
     title: "BOOK",
     subtitle: "Ancient mystery",
@@ -30,7 +30,7 @@ export const BADGES: BadgeDef[] = [
   {
     phrase: "decoded",
     fallbackFrame: 145,
-    position: { left: 30, bottom: 100 },
+    position: { left: 30, top: 100 },
     borderColor: C.gold,
     title: "UNDECODED",
     subtitle: "Six centuries",
@@ -38,5 +38,6 @@ export const BADGES: BadgeDef[] = [
     titleFontFamily: cinzelFont,
     subtitleFontFamily: interFont,
     titleSize: "text-2xl",
+    hideAfterFrames: 100,
   },
 ];

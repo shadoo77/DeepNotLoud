@@ -111,14 +111,14 @@ export const Intro: React.FC = () => {
       {/* SFX: Single Geiger tick at frame 0 */}
       <Sequence durationInFrames={2}>
         <Audio
-          src={staticFile(`${ASSET_PATH}/audio/sfx/geiger_loop.wav`)}
+          src={staticFile(`${ASSET_PATH}/audio/sfx/geiger_loop.mp3`)}
           volume={0.6}
         />
       </Sequence>
 
       {/* VO: Intro Narration */}
       <Audio
-        src={staticFile(`${ASSET_PATH}/audio/vo/ep02L_intro.wav`)}
+        src={staticFile(`${ASSET_PATH}/audio/vo/ep02L_intro.mp3`)}
         volume={1}
       />
 

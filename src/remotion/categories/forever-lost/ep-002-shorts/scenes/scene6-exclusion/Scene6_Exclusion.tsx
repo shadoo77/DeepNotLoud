@@ -58,11 +58,11 @@ export const Scene6Exclusion: React.FC = () => {
   return (
     <AbsoluteFill className="bg-ash">
       <Audio
-        src={staticFile(`${ASSET_PATH}/audio/vo/short/ep02_s6.wav`)}
+        src={staticFile(`${ASSET_PATH}/audio/vo/short/ep02_s6.mp3`)}
         from={VO_START_FRAME}
       />
       <Audio
-        src={staticFile(`${ASSET_PATH}/audio/sfx/geiger_loop.wav`)}
+        src={staticFile(`${ASSET_PATH}/audio/sfx/geiger_loop.mp3`)}
         volume={0.15}
         loop
       />

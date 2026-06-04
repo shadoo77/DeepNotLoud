@@ -41,11 +41,11 @@ export const Scene7Closer: React.FC = () => {
 
   return (
     <AbsoluteFill style={{ backgroundColor: C.bg }}>
-      <Audio src={staticFile(`${ASSET_PATH}/audio/vo/ep02L_s7.wav`)} />
+      <Audio src={staticFile(`${ASSET_PATH}/audio/vo/ep02L_s7.mp3`)} />
 
       <Sequence from={360} durationInFrames={22}>
         <Audio
-          src={staticFile(`${ASSET_PATH}/audio/sfx/heartbeat_slow.wav`)}
+          src={staticFile(`${ASSET_PATH}/audio/sfx/heartbeat_slow.mp3`)}
           volume={0.4}
         />
       </Sequence>

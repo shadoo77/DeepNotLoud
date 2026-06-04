@@ -202,14 +202,14 @@ export function Scene6_Grave() {
 
       {/* SFX: Muffled underwater room tone */}
       <Audio
-        src={staticFile(`${ASSET}/voices/sfx/sfx_underwater_ambience.wav`)}
+        src={staticFile(`${ASSET}/voices/sfx/sfx_underwater_ambience.mp3`)}
         volume={0.4}
       />
 
       {/* SFX: Distant whale song */}
       <Sequence from={fps * 2}>
         <Audio
-          src={staticFile(`${ASSET}/voices/sfx/sfx_whale_song.wav`)}
+          src={staticFile(`${ASSET}/voices/sfx/sfx_whale_song.mp3`)}
           volume={0.3}
         />
       </Sequence>
@@ -217,7 +217,7 @@ export function Scene6_Grave() {
       {/* SFX: Document rustle (synced with document appearance) */}
       <Sequence from={frameUNESCO.from}>
         <Audio
-          src={staticFile(`${ASSET}/voices/sfx/sfx_document_rustle.wav`)}
+          src={staticFile(`${ASSET}/voices/sfx/sfx_document_rustle.mp3`)}
           volume={0.25}
         />
       </Sequence>
@@ -225,7 +225,7 @@ export function Scene6_Grave() {
       {/* Voiceover */}
       <Sequence from={VO_START_FRAME}>
         <Audio
-          src={staticFile(`${ASSET}/voices/vo/vo_scene6.wav`)}
+          src={staticFile(`${ASSET}/voices/vo/vo_scene6.mp3`)}
           volume={0.85}
         />
       </Sequence>

@@ -1,0 +1,177 @@
+[
+  {
+    "text": "Two",
+    "startMs": 450,
+    "endMs": 695,
+    "timestampMs": 572,
+    "confidence": 0.949597
+  },
+  {
+    "text": " hundred",
+    "startMs": 695,
+    "endMs": 1185,
+    "timestampMs": 940,
+    "confidence": 0.949597
+  },
+  {
+    "text": " and",
+    "startMs": 1185,
+    "endMs": 1430,
+    "timestampMs": 1307,
+    "confidence": 0.949597
+  },
+  {
+    "text": " forty",
+    "startMs": 1430,
+    "endMs": 1920,
+    "timestampMs": 1675,
+    "confidence": 0.949597
+  },
+  {
+    "text": " pages.",
+    "startMs": 1920,
+    "endMs": 3440,
+    "timestampMs": 2740,
+    "confidence": 0.924425
+  },
+  {
+    "text": " An",
+    "startMs": 3440,
+    "endMs": 3920,
+    "timestampMs": 3980,
+    "confidence": 0.559352
+  },
+  {
+    "text": " unknown",
+    "startMs": 3920,
+    "endMs": 4250,
+    "timestampMs": 4300,
+    "confidence": 0.968938
+  },
+  {
+    "text": " alphabet,",
+    "startMs": 4250,
+    "endMs": 6070,
+    "timestampMs": 5040,
+    "confidence": 0.991188
+  },
+  {
+    "text": " over",
+    "startMs": 6070,
+    "endMs": 6200,
+    "timestampMs": 6140,
+    "confidence": 0.924448
+  },
+  {
+    "text": " one",
+    "startMs": 6200,
+    "endMs": 6617,
+    "timestampMs": 6408,
+    "confidence": 0.972667
+  },
+  {
+    "text": " hundred",
+    "startMs": 6617,
+    "endMs": 7450,
+    "timestampMs": 7033,
+    "confidence": 0.972667
+  },
+  {
+    "text": " unique",
+    "startMs": 7450,
+    "endMs": 8280,
+    "timestampMs": 7560,
+    "confidence": 0.997381
+  },
+  {
+    "text": " characters.",
+    "startMs": 8280,
+    "endMs": 9860,
+    "timestampMs": 8300,
+    "confidence": 0.994382
+  },
+  {
+    "text": " World",
+    "startMs": 9860,
+    "endMs": 10280,
+    "timestampMs": 9920,
+    "confidence": 0.641265
+  },
+  {
+    "text": " War",
+    "startMs": 10280,
+    "endMs": 10520,
+    "timestampMs": 10300,
+    "confidence": 0.982036
+  },
+  {
+    "text": " Two",
+    "startMs": 10520,
+    "endMs": 10780,
+    "timestampMs": 10620,
+    "confidence": 0.812269
+  },
+  {
+    "text": " codebreakers",
+    "startMs": 10780,
+    "endMs": 11560,
+    "timestampMs": 10920,
+    "confidence": 0.660628
+  },
+  {
+    "text": " tried.",
+    "startMs": 11560,
+    "endMs": 13040,
+    "timestampMs": 11860,
+    "confidence": 0.928649
+  },
+  {
+    "text": " The",
+    "startMs": 13040,
+    "endMs": 13600,
+    "timestampMs": 13080,
+    "confidence": 0.953433
+  },
+  {
+    "text": " NSA",
+    "startMs": 13600,
+    "endMs": 14140,
+    "timestampMs": 13340,
+    "confidence": 0.964558
+  },
+  {
+    "text": " tried.",
+    "startMs": 14140,
+    "endMs": 15470,
+    "timestampMs": 14120,
+    "confidence": 0.979245
+  },
+  {
+    "text": " AI",
+    "startMs": 15470,
+    "endMs": 15830,
+    "timestampMs": 15320,
+    "confidence": 0.892065
+  },
+  {
+    "text": " tried.",
+    "startMs": 15830,
+    "endMs": 17440,
+    "timestampMs": 16040,
+    "confidence": 0.996101
+  },
+  {
+    "text": " All",
+    "startMs": 17440,
+    "endMs": 17600,
+    "timestampMs": 17600,
+    "confidence": 0.931874
+  },
+  {
+    "text": " failed.",
+    "startMs": 17600,
+    "endMs": 18400,
+    "timestampMs": 18160,
+    "confidence": 0.995714
+  }
+]

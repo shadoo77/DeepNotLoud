@@ -69,12 +69,12 @@ export const Scene4Sarcophagus: React.FC = () => {
   return (
     <AbsoluteFill className="bg-ash">
       <Audio
-        src={staticFile(`${ASSET_PATH}/audio/vo/short/ep02_s4.wav`)}
+        src={staticFile(`${ASSET_PATH}/audio/vo/short/ep02_s4.mp3`)}
         from={VO_START_FRAME}
       />
       <Sequence from={5} premountFor={10}>
         <Audio
-          src={staticFile(`${ASSET_PATH}/audio/sfx/metal_groan.wav`)}
+          src={staticFile(`${ASSET_PATH}/audio/sfx/metal_groan.mp3`)}
           volume={0.45}
         />
       </Sequence>

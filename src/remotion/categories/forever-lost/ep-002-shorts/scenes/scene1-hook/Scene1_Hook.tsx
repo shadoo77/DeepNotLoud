@@ -32,9 +32,9 @@ export const Scene1Hook: React.FC = () => {
 
   return (
     <AbsoluteFill>
-      <Audio src={staticFile(`${ASSET_PATH}/audio/vo/short/ep02_s1.wav`)} />
+      <Audio src={staticFile(`${ASSET_PATH}/audio/vo/short/ep02_s1.mp3`)} />
       <Audio
-        src={staticFile(`${ASSET_PATH}/audio/sfx/explosion_distant.wav`)}
+        src={staticFile(`${ASSET_PATH}/audio/sfx/explosion_distant.mp3`)}
         volume={0.8}
       />
 

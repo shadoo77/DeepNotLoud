@@ -416,26 +416,26 @@ export function Scene2_Pressure() {
 
       <Sequence from={frameCup}>
         <Audio
-          src={staticFile(`${ASSET}/voices/sfx/sfx_crushing.wav`)}
+          src={staticFile(`${ASSET}/voices/sfx/sfx_crushing.mp3`)}
           volume={0.4}
         />
       </Sequence>
 
       <Sequence from={frameHull}>
         <Audio
-          src={staticFile(`${ASSET}/voices/sfx/sfx_metal_shriek.wav`)}
+          src={staticFile(`${ASSET}/voices/sfx/sfx_metal_shriek.mp3`)}
           volume={0.3}
         />
       </Sequence>
 
       <Audio
-        src={staticFile(`${ASSET}/voices/sfx/sfx_heartbeat.wav`)}
+        src={staticFile(`${ASSET}/voices/sfx/sfx_heartbeat.mp3`)}
         volume={0.3}
       />
 
       <Sequence from={VO_START_FRAME}>
         <Audio
-          src={staticFile(`${ASSET}/voices/vo/vo_scene2.wav`)}
+          src={staticFile(`${ASSET}/voices/vo/vo_scene2.mp3`)}
           volume={0.8}
         />
       </Sequence>

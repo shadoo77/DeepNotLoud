@@ -83,9 +83,9 @@ export const Scene2Stats: React.FC = () => {
 
   return (
     <AbsoluteFill style={{ backgroundColor: C.bg }}>
-      <Audio src={staticFile(`${ASSET_PATH}/audio/vo/ep02L_s2.wav`)} />
+      <Audio src={staticFile(`${ASSET_PATH}/audio/vo/ep02L_s2.mp3`)} />
       <Audio
-        src={staticFile(`${ASSET_PATH}/audio/sfx/geiger_loop.wav`)}
+        src={staticFile(`${ASSET_PATH}/audio/sfx/geiger_loop.mp3`)}
         volume={0.25}
         loop
       />

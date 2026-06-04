@@ -90,13 +90,13 @@ export const MG02RadiationChart: React.FC = () => {
       {/* FIX 3: Use Sequence to start the SFX exactly at frame 30 */}
       <Sequence from={30} durationInFrames={40}>
         <Audio
-          src={staticFile(`${ASSET_PATH}/audio/sfx/chart_build.wav`)}
+          src={staticFile(`${ASSET_PATH}/audio/sfx/chart_build.mp3`)}
           volume={0.4}
         />
       </Sequence>
 
       <Audio
-        src={staticFile(`${ASSET_PATH}/audio/sfx/geiger_loop.wav`)}
+        src={staticFile(`${ASSET_PATH}/audio/sfx/geiger_loop.mp3`)}
         volume={0.15}
         loop
       />

@@ -9,6 +9,6 @@ No robot survives inside. Radiation destroys electronics within hours.
 So the world spent two point three billion dollars — to build a dome over it.
 [slow] Not to fix it. Just to contain it.`,
   wordCount: 29,
-  sfx: ["metal_groan.wav at frame 5, 45%"],
+  sfx: ["metal_groan.mp3 at frame 5, 45%"],
   image: "ep02_s4_sarcophagus.jpeg — Full-frame, parallax translateY -20→0",
 };
