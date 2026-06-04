@@ -1,4 +1,10 @@
-import { spring, interpolate, useCurrentFrame, useVideoConfig } from "remotion";
+import {
+  AbsoluteFill,
+  spring,
+  interpolate,
+  useCurrentFrame,
+  useVideoConfig,
+} from "remotion";
 import type { TranscriptEntry } from "@/types";
 import { getPhraseFrames } from "@/lib/utils";
 
@@ -6,8 +12,8 @@ export type BadgeDef = {
   phrase: string;
   fallbackFrame: number;
   position: {
-    left?: number;
-    right?: number;
+    left?: number | string;
+    right?: number | string;
     top?: number | string;
     bottom?: number | string;
   };
@@ -53,58 +59,69 @@ export const SceneBadges: React.FC<{
       Math.max(0, frame - (trigger + hideFrames)),
       [0, 30],
       [1, 0],
-      { extrapolateRight: "clamp" },
+      { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
     );
     return entry * exit;
   };
 
-  return badges.map((badge) => {
-    const result = getPhraseFrames({
-      phrase: badge.phrase,
-      transcriptData,
-      fps,
-      voiceOverStartFrame,
-    });
-    const triggerFrame = result.from > 0 ? result.from : badge.fallbackFrame;
+  return (
+    <AbsoluteFill className="pointer-events-none" style={{ zIndex: 40 }}>
+      {badges.map((badge) => {
+        const result = getPhraseFrames({
+          phrase: badge.phrase,
+          transcriptData,
+          fps,
+          voiceOverStartFrame,
+        });
 
-    if (triggerFrame <= 0) return null;
+        // FIX: Allow frame 0 to be a valid trigger
+        const triggerFrame =
+          result.from >= 0 ? result.from : badge.fallbackFrame;
 
-    return (
-      <div
-        key={badge.title}
-        className="pointer-events-none absolute rounded-xl px-6 py-4"
-        style={{
-          left: badge.position.left,
-          right: badge.position.right,
-          top: badge.position.top,
-          bottom: badge.position.bottom,
-          opacity: badgeOpacity(triggerFrame, badge.hideAfterFrames),
-          transform: `scale(${badgeSpring(triggerFrame)})`,
-          backgroundColor: "rgba(10,10,10,0.88)",
-          border: `1px solid ${badge.borderColor}`,
-        }}
-      >
-        <div
-          className={`${badge.titleSize || "text-3xl"} font-black tracking-wider`}
-          style={{
-            fontFamily: badge.titleFontFamily,
-            color: badge.borderColor,
-          }}
-        >
-          {badge.title}
-        </div>
-        {badge.subtitle && (
+        // FIX: Only return null if frame is explicitly negative (invalid)
+        if (triggerFrame < 0) return null;
+
+        return (
           <div
-            className="mt-1.5 text-2xl"
+            key={badge.title}
+            className="absolute rounded-xl px-6 py-4"
             style={{
-              fontFamily: badge.subtitleFontFamily,
-              color: badge.subtitleColor || "#AAAAAA",
+              left: badge.position.left,
+              right: badge.position.right,
+              top: badge.position.top,
+              bottom: badge.position.bottom,
+              opacity: badgeOpacity(triggerFrame, badge.hideAfterFrames),
+              transform: `scale(${badgeSpring(triggerFrame)})`,
+              transformOrigin: badge.position.right
+                ? "right center"
+                : "left center",
+              backgroundColor: "rgba(10,10,10,0.88)",
+              border: `1px solid ${badge.borderColor}`,
             }}
           >
-            {badge.subtitle}
+            <div
+              className={`${badge.titleSize || "text-3xl"} font-black tracking-wider`}
+              style={{
+                fontFamily: badge.titleFontFamily,
+                color: badge.borderColor,
+              }}
+            >
+              {badge.title}
+            </div>
+            {badge.subtitle && (
+              <div
+                className="mt-1.5 text-2xl"
+                style={{
+                  fontFamily: badge.subtitleFontFamily,
+                  color: badge.subtitleColor || "#AAAAAA",
+                }}
+              >
+                {badge.subtitle}
+              </div>
+            )}
           </div>
-        )}
-      </div>
-    );
-  });
+        );
+      })}
+    </AbsoluteFill>
+  );
 };
