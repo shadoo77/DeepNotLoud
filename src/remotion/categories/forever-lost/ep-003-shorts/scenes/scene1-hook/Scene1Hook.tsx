@@ -13,6 +13,7 @@ import { Audio } from "@remotion/media";
 import { loadFont } from "@remotion/google-fonts/Cinzel";
 import { YouTubeCaptions } from "@/components/atoms/YouTubeCaptions";
 import { SceneBadges } from "@/components/atoms/SceneBadges";
+import { getPhraseFrames } from "@/lib/utils";
 import { C, ASSET_PATH } from "../../constants";
 import { TRASCRIPT_DATA, VO_START_FRAME, SCENE_DURATION } from "./constants";
 import { BADGES } from "./badges";
@@ -41,6 +42,16 @@ export const Scene1Hook: React.FC = () => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
+  const VO_AUDIO_OFFSET = 6;
+
+  const frameNotOneWord = getPhraseFrames({
+    phrase: "not one word",
+    transcriptData: TRASCRIPT_DATA,
+    fps,
+    voiceOverStartFrame: VO_AUDIO_OFFSET,
+    bufferFrames: 12,
+  });
+
   const bgScale = interpolate(frame, [0, sceneDuration], [1.0, 1.08], {
     extrapolateRight: "clamp",
     easing: Easing.bezier(0.16, 1, 0.3, 1),
@@ -53,7 +64,7 @@ export const Scene1Hook: React.FC = () => {
   });
 
   const impactProgress = spring({
-    frame: Math.max(0, frame - 80),
+    frame: Math.max(0, frame - frameNotOneWord.from),
     fps,
     config: { damping: 12, stiffness: 180 },
   });
@@ -62,15 +73,25 @@ export const Scene1Hook: React.FC = () => {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
   });
-  const impactOpacity = interpolate(Math.max(0, frame - 80), [0, 20], [0, 1], {
-    extrapolateLeft: "clamp",
-    extrapolateRight: "clamp",
-  });
+  const impactOpacity = interpolate(
+    Math.max(0, frame - frameNotOneWord.from),
+    [0, 20],
+    [0, 1],
+    {
+      extrapolateLeft: "clamp",
+      extrapolateRight: "clamp",
+    },
+  );
 
-  const subtitleOpacity = interpolate(frame, [110, 140], [0, 1], {
-    extrapolateLeft: "clamp",
-    extrapolateRight: "clamp",
-  });
+  const subtitleOpacity = interpolate(
+    frame,
+    [frameNotOneWord.from + 20, frameNotOneWord.from + 50],
+    [0, 1],
+    {
+      extrapolateLeft: "clamp",
+      extrapolateRight: "clamp",
+    },
+  );
 
   const goldFlareOpacity = interpolate(
     frame,
