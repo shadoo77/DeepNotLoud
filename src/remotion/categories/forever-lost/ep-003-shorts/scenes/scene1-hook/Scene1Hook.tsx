@@ -24,7 +24,17 @@ const { fontFamily: cinzelFont } = loadFont("normal", {
 
 const sceneDuration = SCENE_DURATION;
 
-const hookWords = ["A", "book", "exists", "that", "no", "human", "has", "ever", "decoded."];
+const hookWords = [
+  "A",
+  "book",
+  "exists",
+  "that",
+  "no",
+  "human",
+  "has",
+  "ever",
+  "decoded.",
+];
 const WORD_STAGGER = 8;
 
 export const Scene1Hook: React.FC = () => {
@@ -41,11 +51,6 @@ export const Scene1Hook: React.FC = () => {
     easing: Easing.bezier(0.16, 1, 0.3, 1),
   });
 
-  const hookOpacity = interpolate(frame, [50, 80], [0, 1], {
-    extrapolateLeft: "clamp", extrapolateRight: "clamp",
-    easing: Easing.bezier(0.16, 1, 0.3, 1),
-  });
-
   const impactProgress = spring({
     frame: Math.max(0, frame - 80),
     fps,
@@ -53,14 +58,17 @@ export const Scene1Hook: React.FC = () => {
   });
   const impactY = interpolate(impactProgress, [0, 1], [60, 0]);
   const impactScale = interpolate(impactProgress, [0, 0.7, 1], [0.8, 1.05, 1], {
-    extrapolateLeft: "clamp", extrapolateRight: "clamp",
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
   });
   const impactOpacity = interpolate(Math.max(0, frame - 80), [0, 20], [0, 1], {
-    extrapolateLeft: "clamp", extrapolateRight: "clamp",
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
   });
 
   const subtitleOpacity = interpolate(frame, [110, 140], [0, 1], {
-    extrapolateLeft: "clamp", extrapolateRight: "clamp",
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
   });
 
   const goldFlareOpacity = interpolate(
@@ -70,12 +78,10 @@ export const Scene1Hook: React.FC = () => {
     { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
   );
 
-  const drawProgress = interpolate(
-    Math.max(0, frame - 230),
-    [0, 40],
-    [0, 1],
-    { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
-  );
+  const drawProgress = interpolate(Math.max(0, frame - 230), [0, 40], [0, 1], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
   const drawLineOpacity = interpolate(
     Math.max(0, frame - 270),
     [0, 15],
@@ -94,9 +100,14 @@ export const Scene1Hook: React.FC = () => {
         </AbsoluteFill>
       ) : (
         <>
-          <div className="absolute inset-0 overflow-hidden" style={{ transform: `scale(${bgScale})` }}>
+          <div
+            className="absolute inset-0 overflow-hidden"
+            style={{ transform: `scale(${bgScale})` }}
+          >
             <Img
-              src={staticFile(`${ASSET_PATH}/images/short/ep003_manuscript_page.jpeg`)}
+              src={staticFile(
+                `${ASSET_PATH}/images/short/ep003_manuscript_page.jpeg`,
+              )}
               className="size-full object-cover"
             />
           </div>
@@ -104,7 +115,8 @@ export const Scene1Hook: React.FC = () => {
           <div
             className="pointer-events-none absolute inset-0"
             style={{
-              background: "radial-gradient(ellipse at center, transparent 30%, rgba(0,0,0,0.75) 100%)",
+              background:
+                "radial-gradient(ellipse at center, transparent 30%, rgba(0,0,0,0.75) 100%)",
             }}
           />
 
@@ -137,19 +149,31 @@ export const Scene1Hook: React.FC = () => {
             />
           </div>
 
-          <div className="pointer-events-none absolute inset-0 flex items-start justify-center" style={{ paddingTop: 80 }}>
+          <div
+            className="pointer-events-none absolute inset-0 flex items-start justify-center"
+            style={{ paddingTop: 80 }}
+          >
             <span
               className="text-3xl tracking-widest"
-              style={{ fontFamily: cinzelFont, color: C.gold, opacity: titleOpacity }}
+              style={{
+                fontFamily: cinzelFont,
+                color: C.gold,
+                opacity: titleOpacity,
+              }}
             >
               FOREVER LOST
             </span>
           </div>
 
           <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
-            <div style={{ opacity: hookOpacity, textAlign: "center", padding: "0 40px" }}>
+            <div
+              style={{
+                textAlign: "center",
+                padding: "0 40px",
+              }}
+            >
               <span
-                className="text-3xl font-bold leading-relaxed tracking-wide"
+                className="text-3xl leading-relaxed font-bold tracking-wide"
                 style={{ fontFamily: cinzelFont, color: C.white }}
               >
                 {hookWords.map((word, i) => {
@@ -187,13 +211,25 @@ export const Scene1Hook: React.FC = () => {
             className="pointer-events-none absolute inset-0 flex items-end justify-center"
             style={{ paddingBottom: 180, opacity: impactOpacity }}
           >
-            <div style={{ transform: `translateY(${impactY}px) scale(${impactScale})`, textAlign: "center" }}>
-              <p className="m-0 text-5xl font-black" style={{ fontFamily: cinzelFont, color: C.white }}>
+            <div
+              style={{
+                transform: `translateY(${impactY}px) scale(${impactScale})`,
+                textAlign: "center",
+              }}
+            >
+              <p
+                className="m-0 text-5xl font-black"
+                style={{ fontFamily: cinzelFont, color: C.white }}
+              >
                 Not one word.
               </p>
               <p
                 className="m-0 mt-2 text-2xl"
-                style={{ fontFamily: cinzelFont, color: C.gold, opacity: subtitleOpacity }}
+                style={{
+                  fontFamily: cinzelFont,
+                  color: C.gold,
+                  opacity: subtitleOpacity,
+                }}
               >
                 In six hundred years.
               </p>
@@ -213,7 +249,8 @@ export const Scene1Hook: React.FC = () => {
           src={staticFile(`${ASSET_PATH}/audio/sfx/paper_rustle.mp3`)}
           volume={(f) =>
             interpolate(f, [0, 60], [0.4, 0], {
-              extrapolateLeft: "clamp", extrapolateRight: "clamp",
+              extrapolateLeft: "clamp",
+              extrapolateRight: "clamp",
             })
           }
         />
@@ -227,10 +264,9 @@ export const Scene1Hook: React.FC = () => {
         <YouTubeCaptions
           transcript={TRASCRIPT_DATA}
           highlightedWords={["book", "decoded", "word", "hundred"]}
-          position="top-center"
+          position="youtube-shorts"
           fontSize="small"
           startFrame={0}
-          showOverlay
         />
       </Sequence>
     </AbsoluteFill>
