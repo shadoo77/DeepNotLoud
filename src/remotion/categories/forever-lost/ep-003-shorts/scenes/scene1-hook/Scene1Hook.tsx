@@ -15,7 +15,7 @@ import { YouTubeCaptions } from "@/components/atoms/YouTubeCaptions";
 import { SceneBadges } from "@/components/atoms/SceneBadges";
 import { getPhraseFrames } from "@/lib/utils";
 import { C, ASSET_PATH } from "../../constants";
-import { TRASCRIPT_DATA, VO_START_FRAME, SCENE_DURATION } from "./constants";
+import { TRASCRIPT_DATA, SCENE_DURATION } from "./constants";
 import { BADGES } from "./badges";
 
 const { fontFamily: cinzelFont } = loadFont("normal", {
@@ -50,6 +50,14 @@ export const Scene1Hook: React.FC = () => {
     fps,
     voiceOverStartFrame: VO_AUDIO_OFFSET,
     bufferFrames: 12,
+  });
+
+  const frameHookLine = getPhraseFrames({
+    phrase: "a book exists",
+    transcriptData: TRASCRIPT_DATA,
+    fps,
+    voiceOverStartFrame: VO_AUDIO_OFFSET,
+    bufferFrames: 4,
   });
 
   const bgScale = interpolate(frame, [0, sceneDuration], [1.0, 1.08], {
@@ -100,6 +108,13 @@ export const Scene1Hook: React.FC = () => {
     { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
   );
 
+  const thumbnailOpacity = interpolate(
+    frame,
+    [0, 6, 18],
+    [1, 1, 0],
+    { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
+  );
+
   const drawProgress = interpolate(Math.max(0, frame - 230), [0, 40], [0, 1], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
@@ -113,158 +128,160 @@ export const Scene1Hook: React.FC = () => {
 
   return (
     <AbsoluteFill className="overflow-hidden" style={{ backgroundColor: C.bg }}>
-      {frame < 6 ? (
-        <AbsoluteFill>
-          <Img
-            src={staticFile(`${ASSET_PATH}/images/short/thumbnail-9:16.jpeg`)}
-            className="h-full w-full object-cover"
-          />
-        </AbsoluteFill>
-      ) : (
-        <>
-          <div
-            className="absolute inset-0 overflow-hidden"
-            style={{ transform: `scale(${bgScale})` }}
-          >
-            <Img
-              src={staticFile(
-                `${ASSET_PATH}/images/short/ep003_manuscript_page.jpeg`,
-              )}
-              className="size-full object-cover"
-            />
-          </div>
+      <div
+        className="absolute inset-0 overflow-hidden"
+        style={{ transform: `scale(${bgScale})` }}
+      >
+        <Img
+          src={staticFile(
+            `${ASSET_PATH}/images/short/ep003_manuscript_page.jpeg`,
+          )}
+          className="size-full object-cover"
+        />
+      </div>
 
-          <div
-            className="pointer-events-none absolute inset-0"
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(ellipse at center, transparent 30%, rgba(0,0,0,0.75) 100%)",
+        }}
+      />
+
+      <div
+        className="pointer-events-none absolute"
+        style={{
+          top: 0,
+          right: 0,
+          width: 300,
+          height: 300,
+          background: `radial-gradient(circle at top right, ${C.gold}26, transparent 70%)`,
+          opacity: goldFlareOpacity,
+        }}
+      />
+      <div
+        className="pointer-events-none absolute flex justify-center"
+        style={{
+          top: 120,
+          width: "100%",
+          opacity: drawLineOpacity,
+        }}
+      >
+        <div
+          style={{
+            width: `${drawProgress * 180}px`,
+            height: 1,
+            backgroundColor: C.gold,
+            opacity: 0.4,
+          }}
+        />
+      </div>
+
+      <div
+        className="pointer-events-none absolute inset-0 flex items-start justify-center"
+        style={{ paddingTop: 80 }}
+      >
+        <span
+          className="text-3xl tracking-widest"
+          style={{
+            fontFamily: cinzelFont,
+            color: C.gold,
+            opacity: titleOpacity,
+          }}
+        >
+          FOREVER LOST
+        </span>
+      </div>
+
+      <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+        <div
+          style={{
+            textAlign: "center",
+            padding: "0 40px",
+          }}
+        >
+          <span
+            className="text-4xl leading-relaxed font-black tracking-wide"
+            style={{ fontFamily: cinzelFont, color: C.white }}
+          >
+            {hookWords.map((word, i) => {
+              const wordStart = frameHookLine.from + i * WORD_STAGGER;
+              const wordOpacity = interpolate(
+                frame,
+                [wordStart, wordStart + 12],
+                [0, 1],
+                { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
+              );
+              const wordY = interpolate(
+                frame,
+                [wordStart, wordStart + 12],
+                [12, 0],
+                { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
+              );
+              return (
+                <span
+                  key={i}
+                  style={{
+                    opacity: wordOpacity,
+                    display: "inline-block",
+                    transform: `translateY(${wordY}px)`,
+                    marginRight: 8,
+                  }}
+                >
+                  {word}
+                </span>
+              );
+            })}
+          </span>
+        </div>
+      </div>
+
+      <div
+        className="pointer-events-none absolute inset-0 flex items-end justify-center"
+        style={{ paddingBottom: 180, opacity: impactOpacity }}
+      >
+        <div
+          style={{
+            transform: `translateY(${impactY}px) scale(${impactScale})`,
+            textAlign: "center",
+          }}
+        >
+          <p
+            className="m-0 text-5xl font-black"
+            style={{ fontFamily: cinzelFont, color: C.white }}
+          >
+            Not one word.
+          </p>
+          <p
+            className="m-0 mt-2 text-2xl"
             style={{
-              background:
-                "radial-gradient(ellipse at center, transparent 30%, rgba(0,0,0,0.75) 100%)",
-            }}
-          />
-
-          <div
-            className="pointer-events-none absolute"
-            style={{
-              top: 0,
-              right: 0,
-              width: 300,
-              height: 300,
-              background: `radial-gradient(circle at top right, ${C.gold}26, transparent 70%)`,
-              opacity: goldFlareOpacity,
-            }}
-          />
-          <div
-            className="pointer-events-none absolute flex justify-center"
-            style={{
-              top: 120,
-              width: "100%",
-              opacity: drawLineOpacity,
+              fontFamily: cinzelFont,
+              color: C.gold,
+              opacity: subtitleOpacity,
             }}
           >
-            <div
-              style={{
-                width: `${drawProgress * 180}px`,
-                height: 1,
-                backgroundColor: C.gold,
-                opacity: 0.4,
-              }}
-            />
-          </div>
+            In six hundred years.
+          </p>
+        </div>
+      </div>
 
-          <div
-            className="pointer-events-none absolute inset-0 flex items-start justify-center"
-            style={{ paddingTop: 80 }}
-          >
-            <span
-              className="text-3xl tracking-widest"
-              style={{
-                fontFamily: cinzelFont,
-                color: C.gold,
-                opacity: titleOpacity,
-              }}
-            >
-              FOREVER LOST
-            </span>
-          </div>
+      <SceneBadges
+        badges={BADGES}
+        transcriptData={TRASCRIPT_DATA}
+        voiceOverStartFrame={VO_AUDIO_OFFSET}
+      />
 
-          <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
-            <div
-              style={{
-                textAlign: "center",
-                padding: "0 40px",
-              }}
-            >
-              <span
-                className="text-4xl leading-relaxed font-black tracking-wide"
-                style={{ fontFamily: cinzelFont, color: C.white }}
-              >
-                {hookWords.map((word, i) => {
-                  const wordOpacity = interpolate(
-                    frame,
-                    [50 + i * WORD_STAGGER, 50 + i * WORD_STAGGER + 12],
-                    [0, 1],
-                    { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
-                  );
-                  const wordY = interpolate(
-                    frame,
-                    [50 + i * WORD_STAGGER, 50 + i * WORD_STAGGER + 12],
-                    [12, 0],
-                    { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
-                  );
-                  return (
-                    <span
-                      key={i}
-                      style={{
-                        opacity: wordOpacity,
-                        display: "inline-block",
-                        transform: `translateY(${wordY}px)`,
-                        marginRight: 8,
-                      }}
-                    >
-                      {word}
-                    </span>
-                  );
-                })}
-              </span>
-            </div>
-          </div>
-
-          <div
-            className="pointer-events-none absolute inset-0 flex items-end justify-center"
-            style={{ paddingBottom: 180, opacity: impactOpacity }}
-          >
-            <div
-              style={{
-                transform: `translateY(${impactY}px) scale(${impactScale})`,
-                textAlign: "center",
-              }}
-            >
-              <p
-                className="m-0 text-5xl font-black"
-                style={{ fontFamily: cinzelFont, color: C.white }}
-              >
-                Not one word.
-              </p>
-              <p
-                className="m-0 mt-2 text-2xl"
-                style={{
-                  fontFamily: cinzelFont,
-                  color: C.gold,
-                  opacity: subtitleOpacity,
-                }}
-              >
-                In six hundred years.
-              </p>
-            </div>
-          </div>
-
-          <SceneBadges
-            badges={BADGES}
-            transcriptData={TRASCRIPT_DATA}
-            voiceOverStartFrame={VO_START_FRAME}
-          />
-        </>
-      )}
+      <AbsoluteFill
+        style={{
+          opacity: thumbnailOpacity,
+          zIndex: 50,
+        }}
+      >
+        <Img
+          src={staticFile(`${ASSET_PATH}/images/short/thumbnail-9:16.jpeg`)}
+          className="h-full w-full object-cover"
+        />
+      </AbsoluteFill>
 
       <Sequence from={6} durationInFrames={60}>
         <Audio
