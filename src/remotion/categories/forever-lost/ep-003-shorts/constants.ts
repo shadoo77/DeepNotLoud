@@ -2,6 +2,7 @@ import { SCENE_DURATION as S1_DURATION } from "./scenes/scene1-hook/constants";
 import { SCENE_DURATION as S2_DURATION } from "./scenes/scene2-discovery/constants";
 import { SCENE_DURATION as S3_DURATION } from "./scenes/scene3-stats/constants";
 import { SCENE_DURATION as S4_DURATION } from "./scenes/scene4-language/constants";
+import { SCENE_DURATION as S5_DURATION } from "./scenes/scene5-attempts/constants";
 
 export const FPS = 30;
 export const WIDTH = 1080;
@@ -30,6 +31,7 @@ export const SCENES = {
   s2_discovery: { durationInFrames: S2_DURATION },
   s3_stats: { durationInFrames: S3_DURATION },
   s4_language: { durationInFrames: S4_DURATION },
+  s5_attempts: { durationInFrames: S5_DURATION },
 } as const;
 
 const NUM_SCENES = Object.keys(SCENES).length;
