@@ -1,54 +1,111 @@
-import { AbsoluteFill } from "remotion";
-import { TransitionSeries, linearTiming } from "@remotion/transitions";
-import { fade } from "@remotion/transitions/fade";
+import { AbsoluteFill, Sequence } from "remotion";
 import { SCENES, TOTAL_FRAMES, T, C, ASSET_PATH } from "./constants";
 import { Scene1Hook } from "./scenes/scene1-hook/Scene1Hook";
 import { Scene2Discovery } from "./scenes/scene2-discovery/Scene2Discovery";
 import { Scene3Stats } from "./scenes/scene3-stats/Scene3Stats";
+import { Scene4Language } from "./scenes/scene4-language/Scene4Language";
+import { Scene5Attempts } from "./scenes/scene5-attempts/Scene5Attempts";
+import { Scene6Theories } from "./scenes/scene6-theories/Scene6Theories";
+import { Scene7Closer } from "./scenes/scene7-closer/Scene7Closer";
 import BgmWithFade from "@/components/atoms/BgmWithFade";
+import { ManualCrossfadeTransition } from "@/components/atoms/transitions/ManualCrossfadeTransition";
 
 export { TOTAL_FRAMES };
 
 export const ForeverLostEp3Shorts: React.FC = () => {
+  const s1From = 0;
+  const s2From = s1From + SCENES.s1_hook.durationInFrames - T.fade;
+  const s3From = s2From + SCENES.s2_discovery.durationInFrames - T.fade;
+  const s4From = s3From + SCENES.s3_stats.durationInFrames - T.fade;
+  const s5From = s4From + SCENES.s4_language.durationInFrames - T.fade;
+  const s6From = s5From + SCENES.s5_attempts.durationInFrames - T.fade;
+  const s7From = s6From + SCENES.s6_theories.durationInFrames - T.fade;
+
   return (
     <AbsoluteFill style={{ backgroundColor: C.bg }}>
       <BgmWithFade
         totalFrames={TOTAL_FRAMES}
-        srcPath={`${ASSET_PATH}/audio/bgm/ep003_bgm_shorts.mp3`}
+        srcPath={`${ASSET_PATH}/audio/bgm/ep003_bgm_shorts.wav`}
         volume={0.15}
         fadeInFrames={21}
         loop={false}
       />
 
-      <TransitionSeries>
-        <TransitionSeries.Sequence
+      <Sequence from={s1From} durationInFrames={SCENES.s1_hook.durationInFrames}>
+        <ManualCrossfadeTransition
           durationInFrames={SCENES.s1_hook.durationInFrames}
+          transitionInFrames={T.fade}
+          fadeIn={false}
+          fadeOut
         >
           <Scene1Hook />
-        </TransitionSeries.Sequence>
+        </ManualCrossfadeTransition>
+      </Sequence>
 
-        <TransitionSeries.Transition
-          presentation={fade()}
-          timing={linearTiming({ durationInFrames: T.fade })}
-        />
-
-        <TransitionSeries.Sequence
+      <Sequence from={s2From} durationInFrames={SCENES.s2_discovery.durationInFrames}>
+        <ManualCrossfadeTransition
           durationInFrames={SCENES.s2_discovery.durationInFrames}
+          transitionInFrames={T.fade}
+          fadeIn
+          fadeOut
         >
           <Scene2Discovery />
-        </TransitionSeries.Sequence>
+        </ManualCrossfadeTransition>
+      </Sequence>
 
-        <TransitionSeries.Transition
-          presentation={fade()}
-          timing={linearTiming({ durationInFrames: T.fade })}
-        />
-
-        <TransitionSeries.Sequence
+      <Sequence from={s3From} durationInFrames={SCENES.s3_stats.durationInFrames}>
+        <ManualCrossfadeTransition
           durationInFrames={SCENES.s3_stats.durationInFrames}
+          transitionInFrames={T.fade}
+          fadeIn
+          fadeOut
         >
           <Scene3Stats />
-        </TransitionSeries.Sequence>
-      </TransitionSeries>
+        </ManualCrossfadeTransition>
+      </Sequence>
+
+      <Sequence from={s4From} durationInFrames={SCENES.s4_language.durationInFrames}>
+        <ManualCrossfadeTransition
+          durationInFrames={SCENES.s4_language.durationInFrames}
+          transitionInFrames={T.fade}
+          fadeIn
+          fadeOut
+        >
+          <Scene4Language />
+        </ManualCrossfadeTransition>
+      </Sequence>
+
+      <Sequence from={s5From} durationInFrames={SCENES.s5_attempts.durationInFrames}>
+        <ManualCrossfadeTransition
+          durationInFrames={SCENES.s5_attempts.durationInFrames}
+          transitionInFrames={T.fade}
+          fadeIn
+          fadeOut
+        >
+          <Scene5Attempts />
+        </ManualCrossfadeTransition>
+      </Sequence>
+
+      <Sequence from={s6From} durationInFrames={SCENES.s6_theories.durationInFrames}>
+        <ManualCrossfadeTransition
+          durationInFrames={SCENES.s6_theories.durationInFrames}
+          transitionInFrames={T.fade}
+          fadeIn
+          fadeOut
+        >
+          <Scene6Theories />
+        </ManualCrossfadeTransition>
+      </Sequence>
+
+      <Sequence from={s7From} durationInFrames={SCENES.s7_closer.durationInFrames}>
+        <ManualCrossfadeTransition
+          durationInFrames={SCENES.s7_closer.durationInFrames}
+          transitionInFrames={T.fade}
+          fadeIn
+        >
+          <Scene7Closer />
+        </ManualCrossfadeTransition>
+      </Sequence>
     </AbsoluteFill>
   );
 };

@@ -451,7 +451,7 @@ export const Scene1Intro: React.FC = () => {
 
       <Sequence from={VO_START_FRAME}>
         <Audio
-          src={staticFile(`${ASSET}/audio/vo/ep003_L_s1_intro.mp3`)}
+          src={staticFile(`${ASSET}/audio/vo/ep003_L_s1_intro.wav`)}
           volume={1}
         />
         <YouTubeCaptions
@@ -478,7 +478,7 @@ export const Scene1Intro: React.FC = () => {
 
       <Sequence durationInFrames={120}>
         <Audio
-          src={staticFile(`${ASSET}/audio/sfx/deep_rumble.mp3`)}
+          src={staticFile(`${ASSET}/audio/sfx/deep_rumble.wav`)}
           volume={(f) =>
             interpolate(f, [0, 120], [0.5, 0], {
               extrapolateLeft: "clamp",
@@ -490,21 +490,21 @@ export const Scene1Intro: React.FC = () => {
 
       <Sequence from={60}>
         <Audio
-          src={staticFile(`${ASSET}/audio/sfx/paper_rustle.mp3`)}
+          src={staticFile(`${ASSET}/audio/sfx/paper_rustle.wav`)}
           volume={0.5}
         />
       </Sequence>
 
       <Sequence from={impactFrame}>
         <Audio
-          src={staticFile(`${ASSET}/audio/sfx/impact_thud.mp3`)}
+          src={staticFile(`${ASSET}/audio/sfx/impact_thud.wav`)}
           volume={0.6}
         />
       </Sequence>
 
       <Sequence from={finalImpactFrame}>
         <Audio
-          src={staticFile(`${ASSET}/audio/sfx/impact_thud.mp3`)}
+          src={staticFile(`${ASSET}/audio/sfx/impact_thud.wav`)}
           volume={0.6}
         />
       </Sequence>

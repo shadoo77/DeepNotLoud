@@ -4,6 +4,7 @@ import {
   useVideoConfig,
   Sequence,
   AbsoluteFill,
+  interpolate,
 } from "remotion";
 import { createTikTokStyleCaptions } from "@remotion/captions";
 import type { Caption, TikTokPage } from "@remotion/captions";
@@ -84,18 +85,23 @@ const SentencePage = ({
                   .trim() === hw.toLowerCase(),
             );
 
-            const style: React.CSSProperties = isActive
-              ? {
-                  textShadow:
-                    "0px 0px 15px oklch(50% 0.2 85 / 0.8), 2px 2px 0px oklch(0% 0 0)",
-                  transform: "scale(1.05)",
-                  // eslint-disable-next-line @remotion/non-pure-animation
-                  transition: "transform 0.1s ease-out",
-                }
-              : {
-                  textShadow: "2px 2px 0px oklch(0% 0 0)",
-                  transform: "scale(1)",
-                };
+            const activeScale = interpolate(
+              currentTimeMs,
+              [
+                token.startMs - 60,
+                token.startMs,
+                token.endMs,
+                token.endMs + 60,
+              ],
+              [1, 1.05, 1.05, 1],
+              { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
+            );
+            const style: React.CSSProperties = {
+              textShadow: isActive
+                ? "0px 0px 15px oklch(50% 0.2 85 / 0.8), 2px 2px 0px oklch(0% 0 0)"
+                : "2px 2px 0px oklch(0% 0 0)",
+              transform: `scale(${activeScale})`,
+            };
 
             return (
               <span
@@ -169,18 +175,23 @@ const CaptionPage = ({
                   .trim() === hw.toLowerCase(),
             );
 
-            const style: React.CSSProperties = isActive
-              ? {
-                  textShadow:
-                    "0px 0px 15px oklch(50% 0.2 85 / 0.8), 2px 2px 0px oklch(0% 0 0)",
-                  transform: "scale(1.05)",
-                  // eslint-disable-next-line @remotion/non-pure-animation
-                  transition: "transform 0.1s ease-out",
-                }
-              : {
-                  textShadow: "2px 2px 0px oklch(0% 0 0)",
-                  transform: "scale(1)",
-                };
+            const activeScale = interpolate(
+              absoluteTimeMs,
+              [
+                token.fromMs - 60,
+                token.fromMs,
+                token.toMs,
+                token.toMs + 60,
+              ],
+              [1, 1.05, 1.05, 1],
+              { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
+            );
+            const style: React.CSSProperties = {
+              textShadow: isActive
+                ? "0px 0px 15px oklch(50% 0.2 85 / 0.8), 2px 2px 0px oklch(0% 0 0)"
+                : "2px 2px 0px oklch(0% 0 0)",
+              transform: `scale(${activeScale})`,
+            };
 
             return (
               <span
@@ -275,7 +286,7 @@ export const YouTubeCaptions: React.FC<CaptionProps> = ({
 
       return (
         <Sequence
-          key={index}
+          key={`yt-tiktok-${page.startMs}-${nextPage?.startMs ?? "end"}`}
           from={startFrameAbs}
           durationInFrames={durationInFrames}
           ref={ref}
@@ -325,7 +336,7 @@ export const YouTubeCaptions: React.FC<CaptionProps> = ({
 
     return (
       <Sequence
-        key={index}
+        key={`yt-sentence-${firstToken.startMs}-${lastToken.endMs}`}
         from={startFrameAbs}
         durationInFrames={durationInFrames}
         ref={ref}

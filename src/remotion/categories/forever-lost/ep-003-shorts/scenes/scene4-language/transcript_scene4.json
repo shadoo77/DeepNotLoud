@@ -1,0 +1,205 @@
+[
+  {
+    "text": "The",
+    "startMs": 240,
+    "endMs": 280,
+    "timestampMs": 340,
+    "confidence": 0.935617
+  },
+  {
+    "text": " text",
+    "startMs": 280,
+    "endMs": 650,
+    "timestampMs": 780,
+    "confidence": 0.994603
+  },
+  {
+    "text": " follows",
+    "startMs": 650,
+    "endMs": 1310,
+    "timestampMs": 1340,
+    "confidence": 0.997187
+  },
+  {
+    "text": " natural",
+    "startMs": 1310,
+    "endMs": 1980,
+    "timestampMs": 1740,
+    "confidence": 0.993227
+  },
+  {
+    "text": " language",
+    "startMs": 1980,
+    "endMs": 2720,
+    "timestampMs": 2460,
+    "confidence": 0.9711
+  },
+  {
+    "text": " patterns",
+    "startMs": 2720,
+    "endMs": 3630,
+    "timestampMs": 2860,
+    "confidence": 0.997539
+  },
+  {
+    "text": " word",
+    "startMs": 3660,
+    "endMs": 3980,
+    "timestampMs": 3860,
+    "confidence": 0.51908
+  },
+  {
+    "text": " frequency",
+    "startMs": 3980,
+    "endMs": 4710,
+    "timestampMs": 4320,
+    "confidence": 0.959591
+  },
+  {
+    "text": " structure",
+    "startMs": 4940,
+    "endMs": 5960,
+    "timestampMs": 5180,
+    "confidence": 0.964579
+  },
+  {
+    "text": " flow.",
+    "startMs": 6060,
+    "endMs": 6450,
+    "timestampMs": 6060,
+    "confidence": 0.981556
+  },
+  {
+    "text": " It",
+    "startMs": 6620,
+    "endMs": 6920,
+    "timestampMs": 6960,
+    "confidence": 0.994423
+  },
+  {
+    "text": " behaves",
+    "startMs": 6920,
+    "endMs": 7580,
+    "timestampMs": 7300,
+    "confidence": 0.999622
+  },
+  {
+    "text": " like",
+    "startMs": 7580,
+    "endMs": 8010,
+    "timestampMs": 7800,
+    "confidence": 0.999176
+  },
+  {
+    "text": " a",
+    "startMs": 8010,
+    "endMs": 8110,
+    "timestampMs": 7920,
+    "confidence": 0.995004
+  },
+  {
+    "text": " real",
+    "startMs": 8110,
+    "endMs": 8540,
+    "timestampMs": 8140,
+    "confidence": 0.996746
+  },
+  {
+    "text": " language.",
+    "startMs": 8540,
+    "endMs": 9420,
+    "timestampMs": 8760,
+    "confidence": 0.999005
+  },
+  {
+    "text": " But",
+    "startMs": 9840,
+    "endMs": 9860,
+    "timestampMs": 9880,
+    "confidence": 0.896174
+  },
+  {
+    "text": " it",
+    "startMs": 9860,
+    "endMs": 10060,
+    "timestampMs": 10000,
+    "confidence": 0.986722
+  },
+  {
+    "text": " matches",
+    "startMs": 10060,
+    "endMs": 10630,
+    "timestampMs": 10260,
+    "confidence": 0.998037
+  },
+  {
+    "text": " nothing.",
+    "startMs": 10630,
+    "endMs": 11240,
+    "timestampMs": 10880,
+    "confidence": 0.99586
+  },
+  {
+    "text": " Not",
+    "startMs": 11500,
+    "endMs": 11790,
+    "timestampMs": 11860,
+    "confidence": 0.991017
+  },
+  {
+    "text": " Latin.",
+    "startMs": 11790,
+    "endMs": 12300,
+    "timestampMs": 12180,
+    "confidence": 0.972065
+  },
+  {
+    "text": " Not",
+    "startMs": 12460,
+    "endMs": 12750,
+    "timestampMs": 12820,
+    "confidence": 0.987291
+  },
+  {
+    "text": " Arabic.",
+    "startMs": 12750,
+    "endMs": 13330,
+    "timestampMs": 13120,
+    "confidence": 0.982621
+  },
+  {
+    "text": " Not",
+    "startMs": 13670,
+    "endMs": 13810,
+    "timestampMs": 13820,
+    "confidence": 0.974249
+  },
+  {
+    "text": " any",
+    "startMs": 13810,
+    "endMs": 14080,
+    "timestampMs": 14140,
+    "confidence": 0.996366
+  },
+  {
+    "text": " cipher",
+    "startMs": 14080,
+    "endMs": 14630,
+    "timestampMs": 14740,
+    "confidence": 0.780195
+  },
+  {
+    "text": " ever",
+    "startMs": 14630,
+    "endMs": 15050,
+    "timestampMs": 15160,
+    "confidence": 0.920788
+  },
+  {
+    "text": " invented.",
+    "startMs": 15050,
+    "endMs": 15720,
+    "timestampMs": 15580,
+    "confidence": 0.991756
+  }
+]

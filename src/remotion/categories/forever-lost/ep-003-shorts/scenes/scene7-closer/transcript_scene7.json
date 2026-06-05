@@ -1,0 +1,156 @@
+[
+  {
+    "text": "Somewhere,",
+    "startMs": 260,
+    "endMs": 1840,
+    "timestampMs": 820,
+    "confidence": 0.833387
+  },
+  {
+    "text": " someone",
+    "startMs": 1840,
+    "endMs": 2530,
+    "timestampMs": 2120,
+    "confidence": 0.180297
+  },
+  {
+    "text": " wrote",
+    "startMs": 2530,
+    "endMs": 3340,
+    "timestampMs": 2700,
+    "confidence": 0.991961
+  },
+  {
+    "text": " this.",
+    "startMs": 3340,
+    "endMs": 4230,
+    "timestampMs": 3120,
+    "confidence": 0.109328
+  },
+  {
+    "text": " They",
+    "startMs": 4230,
+    "endMs": 4800,
+    "timestampMs": 4860,
+    "confidence": 0.773808
+  },
+  {
+    "text": " had",
+    "startMs": 4800,
+    "endMs": 5050,
+    "timestampMs": 5060,
+    "confidence": 0.993375
+  },
+  {
+    "text": " thoughts,",
+    "startMs": 5050,
+    "endMs": 6490,
+    "timestampMs": 5480,
+    "confidence": 0.921076
+  },
+  {
+    "text": " ideas,",
+    "startMs": 6490,
+    "endMs": 8300,
+    "timestampMs": 6900,
+    "confidence": 0.90171
+  },
+  {
+    "text": " maybe",
+    "startMs": 8300,
+    "endMs": 8830,
+    "timestampMs": 8420,
+    "confidence": 0.793374
+  },
+  {
+    "text": " secrets.",
+    "startMs": 8830,
+    "endMs": 10790,
+    "timestampMs": 9200,
+    "confidence": 0.550086
+  },
+  {
+    "text": " And",
+    "startMs": 10790,
+    "endMs": 11110,
+    "timestampMs": 10900,
+    "confidence": 0.726676
+  },
+  {
+    "text": " we",
+    "startMs": 11110,
+    "endMs": 11280,
+    "timestampMs": 11220,
+    "confidence": 0.965497
+  },
+  {
+    "text": " will",
+    "startMs": 11280,
+    "endMs": 12650,
+    "timestampMs": 12400,
+    "confidence": 0.759851
+  },
+  {
+    "text": " probably",
+    "startMs": 12650,
+    "endMs": 13340,
+    "timestampMs": 13140,
+    "confidence": 0.820102
+  },
+  {
+    "text": " never",
+    "startMs": 13340,
+    "endMs": 13920,
+    "timestampMs": 13840,
+    "confidence": 0.690556
+  },
+  {
+    "text": " know",
+    "startMs": 13920,
+    "endMs": 15020,
+    "timestampMs": 14480,
+    "confidence": 0.974395
+  },
+  {
+    "text": " what",
+    "startMs": 15020,
+    "endMs": 15900,
+    "timestampMs": 15740,
+    "confidence": 0.810036
+  },
+  {
+    "text": " they",
+    "startMs": 15900,
+    "endMs": 16000,
+    "timestampMs": 15960,
+    "confidence": 0.975169
+  },
+  {
+    "text": " were",
+    "startMs": 16000,
+    "endMs": 16320,
+    "timestampMs": 16120,
+    "confidence": 0.984912
+  },
+  {
+    "text": " trying",
+    "startMs": 16320,
+    "endMs": 16810,
+    "timestampMs": 16480,
+    "confidence": 0.996354
+  },
+  {
+    "text": " to",
+    "startMs": 16810,
+    "endMs": 16960,
+    "timestampMs": 16800,
+    "confidence": 0.996772
+  },
+  {
+    "text": " say.",
+    "startMs": 16960,
+    "endMs": 17460,
+    "timestampMs": 17120,
+    "confidence": 0.926606
+  }
+]

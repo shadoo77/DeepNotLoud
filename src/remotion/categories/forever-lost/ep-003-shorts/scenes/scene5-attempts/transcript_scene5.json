@@ -1,0 +1,177 @@
+[
+  {
+    "text": "Yale",
+    "startMs": 270,
+    "endMs": 410,
+    "timestampMs": 500,
+    "confidence": 0.975748
+  },
+  {
+    "text": " University",
+    "startMs": 410,
+    "endMs": 1330,
+    "timestampMs": 1220,
+    "confidence": 0.986739
+  },
+  {
+    "text": " holds",
+    "startMs": 1330,
+    "endMs": 1820,
+    "timestampMs": 1700,
+    "confidence": 0.995391
+  },
+  {
+    "text": " it",
+    "startMs": 1820,
+    "endMs": 2010,
+    "timestampMs": 1900,
+    "confidence": 0.998157
+  },
+  {
+    "text": " now.",
+    "startMs": 2010,
+    "endMs": 2600,
+    "timestampMs": 2160,
+    "confidence": 0.994784
+  },
+  {
+    "text": " The",
+    "startMs": 2600,
+    "endMs": 2910,
+    "timestampMs": 2880,
+    "confidence": 0.995061
+  },
+  {
+    "text": " FBI",
+    "startMs": 2910,
+    "endMs": 3240,
+    "timestampMs": 3160,
+    "confidence": 0.994059
+  },
+  {
+    "text": " studied",
+    "startMs": 3240,
+    "endMs": 3940,
+    "timestampMs": 3880,
+    "confidence": 0.997796
+  },
+  {
+    "text": " it.",
+    "startMs": 3940,
+    "endMs": 4500,
+    "timestampMs": 4120,
+    "confidence": 0.997961
+  },
+  {
+    "text": " Britain's",
+    "startMs": 4500,
+    "endMs": 5090,
+    "timestampMs": 4860,
+    "confidence": 0.993799
+  },
+  {
+    "text": " top",
+    "startMs": 5090,
+    "endMs": 5290,
+    "timestampMs": 5300,
+    "confidence": 0.992928
+  },
+  {
+    "text": " codebreakers",
+    "startMs": 5290,
+    "endMs": 6100,
+    "timestampMs": 5580,
+    "confidence": 0.834132
+  },
+  {
+    "text": " during",
+    "startMs": 6100,
+    "endMs": 6590,
+    "timestampMs": 6240,
+    "confidence": 0.947178
+  },
+  {
+    "text": " the",
+    "startMs": 6590,
+    "endMs": 7100,
+    "timestampMs": 6420,
+    "confidence": 0.988646
+  },
+  {
+    "text": " war",
+    "startMs": 7100,
+    "endMs": 7180,
+    "timestampMs": 6680,
+    "confidence": 0.990543
+  },
+  {
+    "text": " stumped.",
+    "startMs": 7180,
+    "endMs": 8000,
+    "timestampMs": 7560,
+    "confidence": 0.99756
+  },
+  {
+    "text": " In",
+    "startMs": 8000,
+    "endMs": 8310,
+    "timestampMs": 8380,
+    "confidence": 0.997681
+  },
+  {
+    "text": " 2018,",
+    "startMs": 8310,
+    "endMs": 9570,
+    "timestampMs": 8860,
+    "confidence": 0.998731
+  },
+  {
+    "text": " artificial",
+    "startMs": 9570,
+    "endMs": 10030,
+    "timestampMs": 9780,
+    "confidence": 0.818377
+  },
+  {
+    "text": " intelligence",
+    "startMs": 10030,
+    "endMs": 10800,
+    "timestampMs": 10660,
+    "confidence": 0.998894
+  },
+  {
+    "text": " analyzed",
+    "startMs": 10800,
+    "endMs": 11300,
+    "timestampMs": 11020,
+    "confidence": 0.810588
+  },
+  {
+    "text": " every",
+    "startMs": 11300,
+    "endMs": 11820,
+    "timestampMs": 11640,
+    "confidence": 0.925025
+  },
+  {
+    "text": " pattern.",
+    "startMs": 11820,
+    "endMs": 12500,
+    "timestampMs": 12080,
+    "confidence": 0.992466
+  },
+  {
+    "text": " Still",
+    "startMs": 12500,
+    "endMs": 13160,
+    "timestampMs": 13000,
+    "confidence": 0.995792
+  },
+  {
+    "text": " nothing.",
+    "startMs": 13160,
+    "endMs": 14500,
+    "timestampMs": 13680,
+    "confidence": 0.748801
+  }
+]

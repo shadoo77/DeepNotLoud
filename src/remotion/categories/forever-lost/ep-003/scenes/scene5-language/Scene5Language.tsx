@@ -491,7 +491,7 @@ export const Scene5Language: React.FC = () => {
       {/* VO + Captions */}
       <Sequence from={VO_START_FRAME}>
         <Audio
-          src={staticFile(`${ASSET_PATH}/audio/vo/ep003_L_s5_language.mp3`)}
+          src={staticFile(`${ASSET_PATH}/audio/vo/ep003_L_s5_language.wav`)}
           volume={1}
         />
         <YouTubeCaptions
@@ -525,7 +525,7 @@ export const Scene5Language: React.FC = () => {
       {/* SFX — impossible */}
       <Sequence from={impossibleFrame}>
         <Audio
-          src={staticFile(`${ASSET_PATH}/audio/sfx/deep_rumble.mp3`)}
+          src={staticFile(`${ASSET_PATH}/audio/sfx/deep_rumble.wav`)}
           volume={(f) =>
             interpolate(f, [0, 90], [0.3, 0], {
               extrapolateLeft: "clamp",
