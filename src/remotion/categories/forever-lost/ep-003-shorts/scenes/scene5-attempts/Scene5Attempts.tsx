@@ -83,7 +83,7 @@ const UnsolvedTag: React.FC<{
 
   return (
     <span
-      className="ml-auto rounded-md px-2 py-0.5 text-sm font-bold tracking-wider"
+      className="ml-auto rounded-md px-2 py-0.5 text-2xl font-bold tracking-wider"
       style={{
         transform: `scale(${scale * pulseProgress})`,
         opacity,
@@ -118,16 +118,14 @@ const FloatingFragment: React.FC<{
 
   return (
     <div
-      className="pointer-events-none absolute"
+      className="pointer-events-none absolute text-2xl font-bold tracking-widest"
       style={{
         left: `${x}%`,
         top: `${y}%`,
         opacity,
         transform: `translateY(${driftY}px)`,
         fontFamily: cinzelFont,
-        fontSize: 14,
         color: C.red,
-        letterSpacing: 2,
       }}
     >
       {text}
@@ -246,17 +244,12 @@ export const Scene5Attempts: React.FC = () => {
   );
 
   return (
-    <AbsoluteFill
-      className="overflow-hidden"
-      style={{
-        backgroundColor: C.bg,
-        transform: `translate(${shakeX}px, ${shakeY}px)`,
-      }}
-    >
+    <AbsoluteFill className="overflow-hidden" style={{ backgroundColor: C.bg }}>
+      {/* ─── 1. SHAKE LAYER: ONLY the background image ─── */}
       <div
         className="absolute inset-0 overflow-hidden"
         style={{
-          transform: `scale(${bgScale})`,
+          transform: `scale(${bgScale}) translate(${shakeX}px, ${shakeY}px)`,
           transformOrigin: "center",
         }}
       >
@@ -300,7 +293,7 @@ export const Scene5Attempts: React.FC = () => {
           return (
             <div
               key={row.institution}
-              className="rounded-xl px-5 py-3"
+              className="rounded-xl p-5"
               style={{
                 opacity,
                 transform: `translateY(${y}px)`,
@@ -311,13 +304,13 @@ export const Scene5Attempts: React.FC = () => {
               <div className="flex items-center gap-3">
                 <span className="text-2xl">{row.icon}</span>
                 <span
-                  className="text-lg font-bold tracking-wider"
+                  className="text-4xl font-bold tracking-wider"
                   style={{ fontFamily: cinzelFont, color: C.white }}
                 >
                   {row.institution}
                 </span>
                 <span
-                  className="text-sm tracking-widest"
+                  className="text-2xl tracking-widest"
                   style={{ fontFamily: interFont, color: C.gray }}
                 >
                   — {row.action}
@@ -330,10 +323,25 @@ export const Scene5Attempts: React.FC = () => {
       </div>
 
       <div>
-        <FloatingFragment x={10} y={15} delay={phraseYale.from} text="UNSOLVED" />
+        <FloatingFragment
+          x={10}
+          y={15}
+          delay={phraseYale.from}
+          text="UNSOLVED"
+        />
         <FloatingFragment x={80} y={20} delay={phraseFBI.from} text="FAILED" />
-        <FloatingFragment x={85} y={75} delay={phraseCodebreakers.from} text="NO CLUE" />
-        <FloatingFragment x={15} y={80} delay={phraseIntelligence.from} text="MYSTERY" />
+        <FloatingFragment
+          x={85}
+          y={75}
+          delay={phraseCodebreakers.from}
+          text="NO CLUE"
+        />
+        <FloatingFragment
+          x={15}
+          y={80}
+          delay={phraseIntelligence.from}
+          text="MYSTERY"
+        />
       </div>
 
       <div
@@ -354,7 +362,7 @@ export const Scene5Attempts: React.FC = () => {
           }}
         >
           <span
-            className="text-2xl font-bold tracking-widest"
+            className="text-4xl font-bold tracking-widest"
             style={{ fontFamily: cinzelFont, color: C.red }}
           >
             STILL NOTHING
@@ -426,9 +434,7 @@ export const Scene5Attempts: React.FC = () => {
 
       <Sequence from={VO_START_FRAME}>
         <Audio
-          src={staticFile(
-            `${ASSET_PATH}/audio/vo/short/ep003_s5_attempts.wav`,
-          )}
+          src={staticFile(`${ASSET_PATH}/audio/vo/short/ep003_s5_attempts.wav`)}
           volume={1}
         />
         <YouTubeCaptions
