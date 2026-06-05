@@ -331,14 +331,14 @@ export const Scene4Language: React.FC = () => {
         >
           <div className="flex items-center gap-3 overflow-hidden">
             <span
-              className="text-5xl tracking-wider"
+              className="text-5xl font-semibold tracking-wider"
               style={{ fontFamily: cinzelFont, color: C.gold }}
             >
               {ROWS[0].label}
             </span>
             <div className="relative flex-1">
               <span
-                className="text-3xl tracking-wide"
+                className="text-3xl font-semibold tracking-wide"
                 style={{ fontFamily: interFont, color: C.gray }}
               >
                 {ROWS[0].text}
@@ -377,14 +377,14 @@ export const Scene4Language: React.FC = () => {
         >
           <div className="flex items-center gap-3 overflow-hidden">
             <span
-              className="text-5xl tracking-wider"
+              className="text-5xl font-semibold tracking-wider"
               style={{ fontFamily: cinzelFont, color: C.gold }}
             >
               {ROWS[1].label}
             </span>
             <div className="relative flex-1">
               <span
-                className="text-3xl tracking-wide"
+                className="text-3xl font-semibold tracking-wide"
                 style={{ fontFamily: interFont, color: C.gray }}
               >
                 {ROWS[1].text}
@@ -427,13 +427,13 @@ export const Scene4Language: React.FC = () => {
         >
           <div className="flex items-center gap-3">
             <span
-              className="text-5xl tracking-wider"
+              className="text-5xl font-semibold tracking-wider"
               style={{ fontFamily: cinzelFont, color: C.gold }}
             >
               {ROWS[2].label}
             </span>
             <span
-              className="text-3xl tracking-widest"
+              className="text-3xl font-semibold tracking-widest"
               style={{
                 fontFamily: interFont,
                 color: C.gold,
@@ -457,7 +457,7 @@ export const Scene4Language: React.FC = () => {
             </span>
           </div>
           <div
-            className="mt-1 text-sm tracking-widest"
+            className="mt-1 text-xl tracking-widest"
             style={{ fontFamily: interFont, color: C.gray, opacity: 0.6 }}
           >
             — unknown language —
