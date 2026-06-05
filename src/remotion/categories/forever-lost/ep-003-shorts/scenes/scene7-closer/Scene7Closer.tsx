@@ -12,9 +12,11 @@ import {
 import { Audio } from "@remotion/media";
 import { loadFont } from "@remotion/google-fonts/Cinzel";
 import { YouTubeCaptions } from "@/components/atoms/YouTubeCaptions";
+import { SceneBadges } from "@/components/atoms/SceneBadges";
 import { getPhraseFrames } from "@/lib/utils";
 import { C, ASSET_PATH } from "../../constants";
 import { TRASCRIPT_DATA, VO_START_FRAME, SCENE_DURATION } from "./constants";
+import { BADGES } from "./badges";
 
 const { fontFamily: cinzelFont } = loadFont("normal", {
   weights: ["400", "700", "900"],
@@ -82,40 +84,33 @@ export const Scene7Closer: React.FC = () => {
     return Math.min(fadeIn, fadeOut);
   };
 
-  const line1FadeIn = interpolate(
-    frame,
-    [line1From, line1From + 30],
-    [0, 1],
-    { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
-  );
-  const line1Dim = interpolate(
-    frame,
-    [line2From, line2From + 30],
-    [1, 0.35],
-    { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
-  );
+  // Line 1: Fade in, then dim when Line 2 appears
+  const line1FadeIn = interpolate(frame, [line1From, line1From + 30], [0, 1], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+  const line1Dim = interpolate(frame, [line2From, line2From + 30], [1, 0.35], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
   const line1Opacity = Math.min(line1FadeIn, line1Dim);
 
-  const line2FadeIn = interpolate(
-    frame,
-    [line2From, line2From + 30],
-    [0, 1],
-    { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
-  );
-  const line2Dim = interpolate(
-    frame,
-    [line3From, line3From + 30],
-    [1, 0.35],
-    { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
-  );
+  // Line 2: Fade in, then dim when Line 3 appears
+  const line2FadeIn = interpolate(frame, [line2From, line2From + 30], [0, 1], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+  const line2Dim = interpolate(frame, [line3From, line3From + 30], [1, 0.35], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
   const line2Opacity = Math.min(line2FadeIn, line2Dim);
 
-  const line3FadeIn = interpolate(
-    frame,
-    [line3From, line3From + 30],
-    [0, 1],
-    { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
-  );
+  // Line 3: Fade in, then whisper fade on "probably"
+  const line3FadeIn = interpolate(frame, [line3From, line3From + 30], [0, 1], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
   const line3Whisper = interpolate(
     frame,
     [whisperFrom, whisperFrom + 60],
@@ -124,6 +119,7 @@ export const Scene7Closer: React.FC = () => {
   );
   const line3Opacity = Math.min(line3FadeIn, line3Whisper);
 
+  // End card
   const endCardOpacity = interpolate(
     frame,
     [sceneDuration - 50, sceneDuration - 15],
@@ -137,6 +133,7 @@ export const Scene7Closer: React.FC = () => {
   });
   const endCardScale = interpolate(endCardSpring, [0, 1], [0.8, 1]);
 
+  // Final fade to black
   const blackOpacity = interpolate(
     frame,
     [sceneDuration - 30, sceneDuration],
@@ -145,21 +142,13 @@ export const Scene7Closer: React.FC = () => {
   );
 
   return (
-    <AbsoluteFill
-      className="overflow-hidden"
-      style={{ backgroundColor: C.bg }}
-    >
+    <AbsoluteFill className="overflow-hidden" style={{ backgroundColor: C.bg }}>
       <div
         className="absolute inset-0 overflow-hidden"
-        style={{
-          transform: `scale(${bgScale})`,
-          transformOrigin: "center",
-        }}
+        style={{ transform: `scale(${bgScale})`, transformOrigin: "center" }}
       >
         <Img
-          src={staticFile(
-            `${ASSET_PATH}/images/short/ep003_scribe_hand.jpeg`,
-          )}
+          src={staticFile(`${ASSET_PATH}/images/short/ep003_scribe_hand.jpeg`)}
           className="size-full object-cover"
         />
       </div>
@@ -168,7 +157,6 @@ export const Scene7Closer: React.FC = () => {
         className="pointer-events-none absolute inset-0"
         style={{ backgroundColor: "rgba(0,0,0,0.55)" }}
       />
-
       <div
         className="pointer-events-none absolute inset-0"
         style={{
@@ -181,7 +169,7 @@ export const Scene7Closer: React.FC = () => {
       <div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center gap-10 px-10">
         <div style={{ opacity: line1Opacity }}>
           <p
-            className="text-center text-3xl leading-relaxed"
+            className="text-center text-5xl leading-relaxed"
             style={{ fontFamily: cinzelFont, color: C.white }}
           >
             Somewhere, someone wrote this.
@@ -189,7 +177,7 @@ export const Scene7Closer: React.FC = () => {
         </div>
         <div style={{ opacity: line2Opacity }}>
           <p
-            className="text-center text-3xl leading-relaxed"
+            className="text-center text-5xl leading-relaxed"
             style={{ fontFamily: cinzelFont, color: C.white }}
           >
             They had thoughts, ideas, maybe secrets.
@@ -197,7 +185,7 @@ export const Scene7Closer: React.FC = () => {
         </div>
         <div style={{ opacity: line3Opacity }}>
           <p
-            className="text-center text-3xl leading-relaxed"
+            className="text-center text-5xl leading-relaxed"
             style={{ fontFamily: cinzelFont, color: C.white }}
           >
             And we will probably never know what they were trying to say.
@@ -211,7 +199,7 @@ export const Scene7Closer: React.FC = () => {
       >
         <div style={{ transform: `scale(${endCardScale})` }}>
           <p
-            className="text-center text-2xl font-bold tracking-[0.2em]"
+            className="text-center text-5xl font-bold tracking-[0.2em]"
             style={{ fontFamily: cinzelFont, color: C.gold }}
           >
             FOREVER LOST
@@ -224,6 +212,13 @@ export const Scene7Closer: React.FC = () => {
         style={{ backgroundColor: "#000000", opacity: blackOpacity }}
       />
 
+      {/* ✅ RESTORED: Badges component */}
+      <SceneBadges
+        badges={BADGES}
+        transcriptData={TRASCRIPT_DATA}
+        voiceOverStartFrame={VO_START_FRAME}
+      />
+
       <Sequence durationInFrames={sceneDuration}>
         <Audio
           src={staticFile(`${ASSET_PATH}/audio/sfx/silence_drone.wav`)}
@@ -233,9 +228,7 @@ export const Scene7Closer: React.FC = () => {
 
       <Sequence from={VO_START_FRAME}>
         <Audio
-          src={staticFile(
-            `${ASSET_PATH}/audio/vo/short/ep003_s7_closer.wav`,
-          )}
+          src={staticFile(`${ASSET_PATH}/audio/vo/short/ep003_s7_closer.wav`)}
           volume={1}
         />
         <YouTubeCaptions
