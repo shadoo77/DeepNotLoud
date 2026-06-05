@@ -3,6 +3,8 @@ import { SCENE_DURATION as S2_DURATION } from "./scenes/scene2-discovery/constan
 import { SCENE_DURATION as S3_DURATION } from "./scenes/scene3-stats/constants";
 import { SCENE_DURATION as S4_DURATION } from "./scenes/scene4-language/constants";
 import { SCENE_DURATION as S5_DURATION } from "./scenes/scene5-attempts/constants";
+import { SCENE_DURATION as S6_DURATION } from "./scenes/scene6-theories/constants";
+import { SCENE_DURATION as S7_DURATION } from "./scenes/scene7-closer/constants";
 
 export const FPS = 30;
 export const WIDTH = 1080;
@@ -32,6 +34,8 @@ export const SCENES = {
   s3_stats: { durationInFrames: S3_DURATION },
   s4_language: { durationInFrames: S4_DURATION },
   s5_attempts: { durationInFrames: S5_DURATION },
+  s6_theories: { durationInFrames: S6_DURATION },
+  s7_closer: { durationInFrames: S7_DURATION },
 } as const;
 
 const NUM_SCENES = Object.keys(SCENES).length;

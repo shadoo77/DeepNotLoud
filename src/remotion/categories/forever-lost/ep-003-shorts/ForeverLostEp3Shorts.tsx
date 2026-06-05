@@ -5,6 +5,8 @@ import { Scene2Discovery } from "./scenes/scene2-discovery/Scene2Discovery";
 import { Scene3Stats } from "./scenes/scene3-stats/Scene3Stats";
 import { Scene4Language } from "./scenes/scene4-language/Scene4Language";
 import { Scene5Attempts } from "./scenes/scene5-attempts/Scene5Attempts";
+import { Scene6Theories } from "./scenes/scene6-theories/Scene6Theories";
+import { Scene7Closer } from "./scenes/scene7-closer/Scene7Closer";
 import BgmWithFade from "@/components/atoms/BgmWithFade";
 import { ManualCrossfadeTransition } from "@/components/atoms/transitions/ManualCrossfadeTransition";
 
@@ -16,6 +18,8 @@ export const ForeverLostEp3Shorts: React.FC = () => {
   const s3From = s2From + SCENES.s2_discovery.durationInFrames - T.fade;
   const s4From = s3From + SCENES.s3_stats.durationInFrames - T.fade;
   const s5From = s4From + SCENES.s4_language.durationInFrames - T.fade;
+  const s6From = s5From + SCENES.s5_attempts.durationInFrames - T.fade;
+  const s7From = s6From + SCENES.s6_theories.durationInFrames - T.fade;
 
   return (
     <AbsoluteFill style={{ backgroundColor: C.bg }}>
@@ -79,6 +83,27 @@ export const ForeverLostEp3Shorts: React.FC = () => {
           fadeOut
         >
           <Scene5Attempts />
+        </ManualCrossfadeTransition>
+      </Sequence>
+
+      <Sequence from={s6From} durationInFrames={SCENES.s6_theories.durationInFrames}>
+        <ManualCrossfadeTransition
+          durationInFrames={SCENES.s6_theories.durationInFrames}
+          transitionInFrames={T.fade}
+          fadeIn
+          fadeOut
+        >
+          <Scene6Theories />
+        </ManualCrossfadeTransition>
+      </Sequence>
+
+      <Sequence from={s7From} durationInFrames={SCENES.s7_closer.durationInFrames}>
+        <ManualCrossfadeTransition
+          durationInFrames={SCENES.s7_closer.durationInFrames}
+          transitionInFrames={T.fade}
+          fadeIn
+        >
+          <Scene7Closer />
         </ManualCrossfadeTransition>
       </Sequence>
     </AbsoluteFill>

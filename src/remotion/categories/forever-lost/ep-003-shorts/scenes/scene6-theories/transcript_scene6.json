@@ -1,0 +1,191 @@
+[
+  {
+    "text": "Some",
+    "startMs": 300,
+    "endMs": 490,
+    "timestampMs": 540,
+    "confidence": 0.887776
+  },
+  {
+    "text": " say",
+    "startMs": 490,
+    "endMs": 860,
+    "timestampMs": 860,
+    "confidence": 0.998809
+  },
+  {
+    "text": " it's",
+    "startMs": 860,
+    "endMs": 1350,
+    "timestampMs": 1380,
+    "confidence": 0.949638
+  },
+  {
+    "text": " a",
+    "startMs": 1350,
+    "endMs": 1470,
+    "timestampMs": 1460,
+    "confidence": 0.996183
+  },
+  {
+    "text": " hoax.",
+    "startMs": 1470,
+    "endMs": 3100,
+    "timestampMs": 1700,
+    "confidence": 0.999031
+  },
+  {
+    "text": " Some",
+    "startMs": 3100,
+    "endMs": 3170,
+    "timestampMs": 3220,
+    "confidence": 0.778075
+  },
+  {
+    "text": " say",
+    "startMs": 3170,
+    "endMs": 3410,
+    "timestampMs": 3520,
+    "confidence": 0.997978
+  },
+  {
+    "text": " it's",
+    "startMs": 3410,
+    "endMs": 3770,
+    "timestampMs": 3860,
+    "confidence": 0.993779
+  },
+  {
+    "text": " a",
+    "startMs": 3770,
+    "endMs": 3860,
+    "timestampMs": 3960,
+    "confidence": 0.995268
+  },
+  {
+    "text": " lost",
+    "startMs": 3860,
+    "endMs": 4230,
+    "timestampMs": 4200,
+    "confidence": 0.972718
+  },
+  {
+    "text": " language.",
+    "startMs": 4230,
+    "endMs": 6330,
+    "timestampMs": 4780,
+    "confidence": 0.996635
+  },
+  {
+    "text": " Some",
+    "startMs": 6330,
+    "endMs": 6400,
+    "timestampMs": 6380,
+    "confidence": 0.516297
+  },
+  {
+    "text": " say",
+    "startMs": 6400,
+    "endMs": 6740,
+    "timestampMs": 6660,
+    "confidence": 0.984292
+  },
+  {
+    "text": " it's",
+    "startMs": 6740,
+    "endMs": 7000,
+    "timestampMs": 6960,
+    "confidence": 0.983434
+  },
+  {
+    "text": " a",
+    "startMs": 7000,
+    "endMs": 7080,
+    "timestampMs": 7020,
+    "confidence": 0.990422
+  },
+  {
+    "text": " medieval",
+    "startMs": 7080,
+    "endMs": 7600,
+    "timestampMs": 7340,
+    "confidence": 0.960329
+  },
+  {
+    "text": " medical",
+    "startMs": 7600,
+    "endMs": 8070,
+    "timestampMs": 7880,
+    "confidence": 0.811988
+  },
+  {
+    "text": " manual...",
+    "startMs": 8070,
+    "endMs": 9370,
+    "timestampMs": 8420,
+    "confidence": 0.82046
+  },
+  {
+    "text": " written",
+    "startMs": 9370,
+    "endMs": 9700,
+    "timestampMs": 9480,
+    "confidence": 0.602286
+  },
+  {
+    "text": " in",
+    "startMs": 9700,
+    "endMs": 9840,
+    "timestampMs": 9840,
+    "confidence": 0.946609
+  },
+  {
+    "text": " a",
+    "startMs": 9840,
+    "endMs": 9910,
+    "timestampMs": 9920,
+    "confidence": 0.97564
+  },
+  {
+    "text": " code",
+    "startMs": 9910,
+    "endMs": 10760,
+    "timestampMs": 10280,
+    "confidence": 0.947443
+  },
+  {
+    "text": " that",
+    "startMs": 10760,
+    "endMs": 11070,
+    "timestampMs": 10820,
+    "confidence": 0.937088
+  },
+  {
+    "text": " died",
+    "startMs": 11070,
+    "endMs": 11400,
+    "timestampMs": 11220,
+    "confidence": 0.959493
+  },
+  {
+    "text": " with",
+    "startMs": 11400,
+    "endMs": 11800,
+    "timestampMs": 11560,
+    "confidence": 0.990637
+  },
+  {
+    "text": " its",
+    "startMs": 11800,
+    "endMs": 12060,
+    "timestampMs": 11720,
+    "confidence": 0.977786
+  },
+  {
+    "text": " author.",
+    "startMs": 12060,
+    "endMs": 13000,
+    "timestampMs": 12040,
+    "confidence": 0.992075
+  }
+]
