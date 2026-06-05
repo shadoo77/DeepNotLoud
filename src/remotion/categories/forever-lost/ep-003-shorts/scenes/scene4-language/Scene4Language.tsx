@@ -35,17 +35,14 @@ const ROWS = [
   {
     label: "Latin:",
     text: "Lorem ipsum dolor sit amet...",
-    type: "strikethrough" as const,
   },
   {
     label: "Arabic:",
     text: "بسم الله الرحمن الرحيم",
-    type: "strikethrough" as const,
   },
   {
     label: "Voynich:",
     text: "⊕ ∂ ꝏ ꝑ ꜀ ɵ ꟟ ꞁ 𐑒 𐑰 𐑥 𐑾",
-    type: "glow" as const,
   },
 ];
 
@@ -103,18 +100,6 @@ export const Scene4Language: React.FC = () => {
     fps,
     voiceOverStartFrame: VO_START_FRAME,
   });
-  const phraseBehaves = getPhraseFrames({
-    phrase: "behaves",
-    transcriptData: TRASCRIPT_DATA,
-    fps,
-    voiceOverStartFrame: VO_START_FRAME,
-  });
-  const phraseMatches = getPhraseFrames({
-    phrase: "matches",
-    transcriptData: TRASCRIPT_DATA,
-    fps,
-    voiceOverStartFrame: VO_START_FRAME,
-  });
   const phraseLatin = getPhraseFrames({
     phrase: "Latin",
     transcriptData: TRASCRIPT_DATA,
@@ -134,13 +119,11 @@ export const Scene4Language: React.FC = () => {
     voiceOverStartFrame: VO_START_FRAME,
   });
 
-  const row1Trigger = Math.max(0, phrasePatterns.from);
-  const row2Trigger = Math.max(0, phraseBehaves.from - 20);
-  const row3Trigger = Math.max(0, phraseMatches.from);
-
-  const row1Entry = Math.max(0, frame - row1Trigger);
-  const row2Entry = Math.max(0, frame - row2Trigger);
-  const row3Entry = Math.max(0, frame - row3Trigger);
+  // ── Row entry: all three slide in during "patterns" voiceover ──
+  const entryBase = Math.max(0, phrasePatterns.from);
+  const row1Entry = Math.max(0, frame - entryBase);
+  const row2Entry = Math.max(0, frame - (entryBase + 20));
+  const row3Entry = Math.max(0, frame - (entryBase + 40));
 
   const row1X = interpolate(row1Entry, [0, ROW_ENTRY_DURATION], [-200, 0], {
     extrapolateLeft: "clamp",
@@ -168,86 +151,136 @@ export const Scene4Language: React.FC = () => {
     extrapolateRight: "clamp",
   });
 
-  const row1Strikethrough = interpolate(
-    Math.max(0, row1Entry - 20),
+  // ── Rejection / Validation triggers (synced to "Not Latin", "Not Arabic", "Not any cipher") ──
+  const latinRejectFrame = Math.max(0, phraseLatin.from);
+  const arabicRejectFrame = Math.max(0, phraseArabic.from);
+  const cipherValidateFrame = Math.max(0, phraseCipher.from);
+
+  const latinRejectEntry = Math.max(0, frame - latinRejectFrame);
+  const arabicRejectEntry = Math.max(0, frame - arabicRejectFrame);
+  const cipherValidateEntry = Math.max(0, frame - cipherValidateFrame);
+
+  // ── Strikethroughs draw on rejection ──
+  const latinStrikethrough = interpolate(
+    latinRejectEntry,
     [0, STRIKETHROUGH_DURATION],
     [0, 1],
     { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
   );
-  const row2Strikethrough = interpolate(
-    Math.max(0, row2Entry - 20),
+  const arabicStrikethrough = interpolate(
+    arabicRejectEntry,
     [0, STRIKETHROUGH_DURATION],
     [0, 1],
     { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
   );
 
-  const row3GlowSpring = spring({
-    frame: Math.max(0, frame - row3Trigger - 40),
+  // ── Spring-loaded rejection ✗ marks ──
+  const latinXSpring = spring({
+    frame: Math.max(0, latinRejectEntry - 15),
+    fps,
+    config: { damping: 8, stiffness: 150 },
+  });
+  const arabicXSpring = spring({
+    frame: Math.max(0, arabicRejectEntry - 15),
+    fps,
+    config: { damping: 8, stiffness: 150 },
+  });
+  const cipherCheckSpring = spring({
+    frame: Math.max(0, cipherValidateEntry - 15),
+    fps,
+    config: { damping: 8, stiffness: 150 },
+  });
+
+  // ── Dynamic border colors (neutral → red/gold on rejection/validation) ──
+  const latinBorderProg = Math.min(latinRejectEntry / 15, 1);
+  const latinBorderR = interpolate(latinBorderProg, [0, 1], [70, 204]);
+  const latinBorderG = interpolate(latinBorderProg, [0, 1], [70, 51]);
+  const latinBorderB = interpolate(latinBorderProg, [0, 1], [70, 51]);
+
+  const arabicBorderProg = Math.min(arabicRejectEntry / 15, 1);
+  const arabicBorderR = interpolate(arabicBorderProg, [0, 1], [70, 204]);
+  const arabicBorderG = interpolate(arabicBorderProg, [0, 1], [70, 51]);
+  const arabicBorderB = interpolate(arabicBorderProg, [0, 1], [70, 51]);
+
+  const cipherBorderProg = Math.min(cipherValidateEntry / 20, 1);
+  const cipherBorderR = interpolate(cipherBorderProg, [0, 1], [70, 200]);
+  const cipherBorderG = interpolate(cipherBorderProg, [0, 1], [70, 169]);
+  const cipherBorderB = interpolate(cipherBorderProg, [0, 1], [70, 110]);
+
+  // ── Voynich gold glow ──
+  const cipherGlowSpring = spring({
+    frame: cipherValidateEntry,
     fps,
     config: { damping: 12, stiffness: 100 },
   });
-  const row3Glow = interpolate(row3GlowSpring, [0, 0.7, 1], [0, 25, 15], {
-    extrapolateLeft: "clamp",
-    extrapolateRight: "clamp",
-  });
-  const row3Pulse = interpolate(frame % 60, [0, 30, 60], [0.7, 1, 0.7], {
+  const cipherGlow = interpolate(cipherGlowSpring, [0, 0.7, 1], [0, 25, 15], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
   });
 
+  const cipherPulseActive = frame >= cipherValidateFrame;
+  const cipherPulse = cipherPulseActive
+    ? interpolate(frame % 60, [0, 30, 60], [0.7, 1, 0.7])
+    : 1; // Static full opacity before validation
+
+  // ── Background Ken Burns zoom ──
   const bgScale = interpolate(frame, [0, sceneDuration], [1.0, 1.06], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
     easing: Easing.ease,
   });
 
+  // ── Vignette ──
   const vignetteOpacity = interpolate(frame, [0, 40], [0, 1], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
   });
 
+  // ── Gold flare during Voynich validation ──
   const goldFlareOpacity = interpolate(
     frame,
-    [120, 150, 220, 250],
+    [
+      cipherValidateFrame,
+      cipherValidateFrame + 30,
+      cipherValidateFrame + 80,
+      cipherValidateFrame + 110,
+    ],
     [0, 0.35, 0.35, 0],
     { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
   );
 
+  // ── Cipher text fragments during rejection/validation ──
   const cipherFragOpacity = interpolate(
     frame,
     [
-      phraseMatches.from,
-      phraseMatches.from + 15,
-      phraseCipher.from + 20,
-      phraseCipher.from + 50,
+      latinRejectFrame - 30,
+      latinRejectFrame,
+      latinRejectFrame + 100,
+      cipherValidateFrame + 40,
     ],
     [0, 1, 1, 0],
     { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
   );
 
+  // ── Red screen flash on "Not Latin" + "Not Arabic" ──
   const latinFlash = interpolate(
     frame,
-    [phraseLatin.from, phraseLatin.from + 5],
-    [0, 0.18],
+    [latinRejectFrame, latinRejectFrame + 5, latinRejectFrame + 25],
+    [0, 0.18, 0],
     { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
   );
   const arabicFlash = interpolate(
     frame,
-    [phraseArabic.from, phraseArabic.from + 5],
-    [0, 0.14],
+    [arabicRejectFrame, arabicRejectFrame + 5, arabicRejectFrame + 25],
+    [0, 0.14, 0],
     { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
   );
-  const redFlashDecay = interpolate(
-    frame,
-    [phraseCipher.from + 15, phraseCipher.from + 25],
-    [0.18, 0],
-    { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
-  );
-  const redFlash = Math.max(0, latinFlash + arabicFlash - redFlashDecay);
+  const redFlash = Math.max(0, latinFlash + arabicFlash);
 
+  // ── "UNKNOWN LANGUAGE" capsule — fades in on Voynich validation ──
   const closeLabelOpacity = interpolate(
     frame,
-    [sceneDuration - 60, sceneDuration - 30],
+    [cipherValidateFrame, cipherValidateFrame + 30],
     [0, 1],
     { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
   );
@@ -286,26 +319,26 @@ export const Scene4Language: React.FC = () => {
       {/* ─── TEXT COMPARISON ROWS ─────────────────────── */}
 
       <div className="pointer-events-none absolute inset-0 flex flex-col justify-center gap-6 px-6">
-        {/* Row 1 — Latin */}
+        {/* ── Row 1 — Latin ──────────────────────────── */}
         <div
           className="rounded-xl px-5 py-4"
           style={{
             opacity: row1Opacity,
             transform: `translateX(${row1X}px)`,
             backgroundColor: "rgba(10,10,10,0.8)",
-            borderLeft: `3px solid ${C.red}`,
+            borderLeft: `3px solid rgb(${latinBorderR},${latinBorderG},${latinBorderB})`,
           }}
         >
           <div className="flex items-center gap-3 overflow-hidden">
             <span
-              className="text-lg tracking-wider"
+              className="text-5xl tracking-wider"
               style={{ fontFamily: cinzelFont, color: C.gold }}
             >
               {ROWS[0].label}
             </span>
             <div className="relative flex-1">
               <span
-                className="text-base tracking-wide"
+                className="text-3xl tracking-wide"
                 style={{ fontFamily: interFont, color: C.gray }}
               >
                 {ROWS[0].text}
@@ -313,17 +346,17 @@ export const Scene4Language: React.FC = () => {
               <div
                 className="absolute top-1/2 left-0 h-0.5"
                 style={{
-                  width: `${row1Strikethrough * 100}%`,
+                  width: `${latinStrikethrough * 100}%`,
                   backgroundColor: C.red,
                   transform: "translateY(-50%)",
-                  opacity: row1Strikethrough * 0.8,
+                  opacity: latinStrikethrough * 0.8,
                 }}
               />
             </div>
             <span
-              className="text-2xl font-black"
+              className="text-4xl font-black"
               style={{
-                opacity: Math.max(0, row1Strikethrough - 0.2) * 1.25,
+                transform: `scale(${latinXSpring})`,
                 color: C.red,
               }}
             >
@@ -332,26 +365,26 @@ export const Scene4Language: React.FC = () => {
           </div>
         </div>
 
-        {/* Row 2 — Arabic */}
+        {/* ── Row 2 — Arabic ─────────────────────────── */}
         <div
           className="rounded-xl px-5 py-4"
           style={{
             opacity: row2Opacity,
             transform: `translateX(${row2X}px)`,
             backgroundColor: "rgba(10,10,10,0.8)",
-            borderLeft: `3px solid ${C.red}`,
+            borderLeft: `3px solid rgb(${arabicBorderR},${arabicBorderG},${arabicBorderB})`,
           }}
         >
           <div className="flex items-center gap-3 overflow-hidden">
             <span
-              className="text-lg tracking-wider"
+              className="text-5xl tracking-wider"
               style={{ fontFamily: cinzelFont, color: C.gold }}
             >
               {ROWS[1].label}
             </span>
             <div className="relative flex-1">
               <span
-                className="text-base tracking-wide"
+                className="text-3xl tracking-wide"
                 style={{ fontFamily: interFont, color: C.gray }}
               >
                 {ROWS[1].text}
@@ -359,17 +392,17 @@ export const Scene4Language: React.FC = () => {
               <div
                 className="absolute top-1/2 left-0 h-0.5"
                 style={{
-                  width: `${row2Strikethrough * 100}%`,
+                  width: `${arabicStrikethrough * 100}%`,
                   backgroundColor: C.red,
                   transform: "translateY(-50%)",
-                  opacity: row2Strikethrough * 0.8,
+                  opacity: arabicStrikethrough * 0.8,
                 }}
               />
             </div>
             <span
-              className="text-2xl font-black"
+              className="text-4xl font-black"
               style={{
-                opacity: Math.max(0, row2Strikethrough - 0.2) * 1.25,
+                transform: `scale(${arabicXSpring})`,
                 color: C.red,
               }}
             >
@@ -378,44 +411,47 @@ export const Scene4Language: React.FC = () => {
           </div>
         </div>
 
-        {/* Row 3 — Voynich */}
+        {/* ── Row 3 — Voynich ────────────────────────── */}
         <div
           className="rounded-xl px-5 py-4"
           style={{
             opacity: row3Opacity,
             transform: `translateX(${row3X}px)`,
             backgroundColor: "rgba(10,10,10,0.8)",
-            borderLeft: `3px solid ${C.gold}`,
+            borderLeft: `3px solid rgb(${cipherBorderR},${cipherBorderG},${cipherBorderB})`,
             boxShadow:
-              row3Glow > 0.5
-                ? `0 0 ${interpolate(row3Glow, [0, 25], [0, 20])}px ${C.gold}`
+              cipherGlow > 0.5
+                ? `0 0 ${interpolate(cipherGlow, [0, 25], [0, 20])}px ${C.gold}`
                 : undefined,
           }}
         >
           <div className="flex items-center gap-3">
             <span
-              className="text-lg tracking-wider"
+              className="text-5xl tracking-wider"
               style={{ fontFamily: cinzelFont, color: C.gold }}
             >
               {ROWS[2].label}
             </span>
             <span
-              className="text-base tracking-widest"
+              className="text-3xl tracking-widest"
               style={{
                 fontFamily: interFont,
                 color: C.gold,
                 textShadow:
-                  row3Glow > 0.5
-                    ? `0 0 ${interpolate(row3Pulse, [0.7, 1], [4, 12])}px ${C.gold}`
+                  cipherGlow > 0.5
+                    ? `0 0 ${interpolate(cipherPulse, [0.7, 1], [4, 12])}px ${C.gold}`
                     : undefined,
-                opacity: row3Pulse,
+                opacity: cipherPulse,
               }}
             >
               {ROWS[2].text}
             </span>
             <span
-              className="text-2xl font-black"
-              style={{ color: C.gold, opacity: row3Pulse }}
+              className="ml-auto text-5xl font-black"
+              style={{
+                transform: `scale(${cipherCheckSpring})`,
+                color: C.gold,
+              }}
             >
               ✓
             </span>
@@ -456,7 +492,7 @@ export const Scene4Language: React.FC = () => {
         style={{ backgroundColor: C.red, opacity: redFlash }}
       />
 
-      {/* ─── CLOSE LABEL ────────────────────────────── */}
+      {/* ─── "UNKNOWN LANGUAGE" CAPSULE ──────────────── */}
       <div
         className="pointer-events-none absolute flex w-full justify-center"
         style={{ bottom: 140, opacity: closeLabelOpacity }}
