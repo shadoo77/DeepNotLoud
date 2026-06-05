@@ -74,16 +74,18 @@ const UnsolvedTag: React.FC<{
     extrapolateRight: "clamp",
   });
 
-  const pulse = interpolate(frame % 45, [0, 22, 45], [1, 1.15, 1], {
-    extrapolateLeft: "clamp",
-    extrapolateRight: "clamp",
-  });
+  const pulseProgress = interpolate(
+    active,
+    [0, 10, 20, 30, 40, 50],
+    [1, 1.15, 1, 1.15, 1, 1],
+    { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
+  );
 
   return (
     <span
       className="ml-auto rounded-md px-2 py-0.5 text-sm font-bold tracking-wider"
       style={{
-        transform: `scale(${scale * pulse})`,
+        transform: `scale(${scale * pulseProgress})`,
         opacity,
         backgroundColor: C.red,
         color: C.white,
@@ -168,58 +170,13 @@ export const Scene5Attempts: React.FC = () => {
     voiceOverStartFrame: VO_START_FRAME,
   });
 
-  const row1Entry = Math.max(0, frame - phraseYale.from);
-  const row2Entry = Math.max(0, frame - phraseFBI.from);
-  const row3Entry = Math.max(0, frame - phraseCodebreakers.from);
-  const row4Entry = Math.max(0, frame - phraseIntelligence.from);
-
-  const row1Spring = spring({
-    frame: row1Entry,
-    fps,
-    config: { damping: 12, stiffness: 150 },
-  });
-  const row2Spring = spring({
-    frame: row2Entry,
-    fps,
-    config: { damping: 12, stiffness: 150 },
-  });
-  const row3Spring = spring({
-    frame: row3Entry,
-    fps,
-    config: { damping: 12, stiffness: 150 },
-  });
-  const row4Spring = spring({
-    frame: row4Entry,
-    fps,
-    config: { damping: 12, stiffness: 150 },
-  });
-
-  const row1Y = interpolate(row1Spring, [0, 1], [-35, 0]);
-  const row2Y = interpolate(row2Spring, [0, 1], [-35, 0]);
-  const row3Y = interpolate(row3Spring, [0, 1], [-35, 0]);
-  const row4Y = interpolate(row4Spring, [0, 1], [-35, 0]);
-
-  const row1Opacity = interpolate(row1Spring, [0, 0.3], [0, 1], {
-    extrapolateLeft: "clamp",
-    extrapolateRight: "clamp",
-  });
-  const row2Opacity = interpolate(row2Spring, [0, 0.3], [0, 1], {
-    extrapolateLeft: "clamp",
-    extrapolateRight: "clamp",
-  });
-  const row3Opacity = interpolate(row3Spring, [0, 0.3], [0, 1], {
-    extrapolateLeft: "clamp",
-    extrapolateRight: "clamp",
-  });
-  const row4Opacity = interpolate(row4Spring, [0, 0.3], [0, 1], {
-    extrapolateLeft: "clamp",
-    extrapolateRight: "clamp",
-  });
-
-  const tag1Trigger = phraseYale.from + ROW_ENTRY_DURATION;
-  const tag2Trigger = phraseFBI.from + ROW_ENTRY_DURATION;
-  const tag3Trigger = phraseCodebreakers.from + ROW_ENTRY_DURATION;
-  const tag4Trigger = phraseIntelligence.from + ROW_ENTRY_DURATION;
+  const phraseTriggers = [
+    phraseYale.from,
+    phraseFBI.from,
+    phraseCodebreakers.from,
+    phraseIntelligence.from,
+  ];
+  const tagTriggers = phraseTriggers.map((t) => t + ROW_ENTRY_DURATION);
 
   const bgScale = interpolate(frame, [0, sceneDuration], [1.0, 1.05], {
     extrapolateLeft: "clamp",
@@ -234,25 +191,25 @@ export const Scene5Attempts: React.FC = () => {
 
   const redPulse1 = interpolate(
     frame,
-    [tag1Trigger, tag1Trigger + 5, tag1Trigger + 20],
+    [tagTriggers[0], tagTriggers[0] + 5, tagTriggers[0] + 20],
     [0, 0.08, 0],
     { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
   );
   const redPulse2 = interpolate(
     frame,
-    [tag2Trigger, tag2Trigger + 5, tag2Trigger + 20],
+    [tagTriggers[1], tagTriggers[1] + 5, tagTriggers[1] + 20],
     [0, 0.08, 0],
     { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
   );
   const redPulse3 = interpolate(
     frame,
-    [tag3Trigger, tag3Trigger + 5, tag3Trigger + 20],
+    [tagTriggers[2], tagTriggers[2] + 5, tagTriggers[2] + 20],
     [0, 0.08, 0],
     { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
   );
   const redPulse4 = interpolate(
     frame,
-    [tag4Trigger, tag4Trigger + 5, tag4Trigger + 20],
+    [tagTriggers[3], tagTriggers[3] + 5, tagTriggers[3] + 20],
     [0, 0.08, 0],
     { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
   );
@@ -327,16 +284,18 @@ export const Scene5Attempts: React.FC = () => {
 
       <div className="pointer-events-none absolute inset-0 flex flex-col justify-center gap-4 px-6">
         {ROWS.map((row, idx) => {
-          const y = [row1Y, row2Y, row3Y, row4Y][idx];
-          const opacity = [row1Opacity, row2Opacity, row3Opacity, row4Opacity][
-            idx
-          ];
-          const tagTrigger = [
-            tag1Trigger,
-            tag2Trigger,
-            tag3Trigger,
-            tag4Trigger,
-          ][idx];
+          const entry = Math.max(0, frame - phraseTriggers[idx]);
+          const rowSpringVal = spring({
+            frame: entry,
+            fps,
+            config: { damping: 12, stiffness: 150 },
+          });
+          const y = interpolate(rowSpringVal, [0, 1], [-35, 0]);
+          const opacity = interpolate(rowSpringVal, [0, 0.3], [0, 1], {
+            extrapolateLeft: "clamp",
+            extrapolateRight: "clamp",
+          });
+          const tagTrigger = tagTriggers[idx];
 
           return (
             <div
@@ -371,10 +330,10 @@ export const Scene5Attempts: React.FC = () => {
       </div>
 
       <div>
-        <FloatingFragment x={10} y={15} delay={60} text="UNSOLVED" />
-        <FloatingFragment x={80} y={20} delay={90} text="FAILED" />
-        <FloatingFragment x={85} y={75} delay={120} text="NO CLUE" />
-        <FloatingFragment x={15} y={80} delay={150} text="MYSTERY" />
+        <FloatingFragment x={10} y={15} delay={phraseYale.from} text="UNSOLVED" />
+        <FloatingFragment x={80} y={20} delay={phraseFBI.from} text="FAILED" />
+        <FloatingFragment x={85} y={75} delay={phraseCodebreakers.from} text="NO CLUE" />
+        <FloatingFragment x={15} y={80} delay={phraseIntelligence.from} text="MYSTERY" />
       </div>
 
       <div
@@ -431,6 +390,37 @@ export const Scene5Attempts: React.FC = () => {
         <Audio
           src={staticFile(`${ASSET_PATH}/audio/sfx/clock_tick.wav`)}
           volume={0.4}
+        />
+      </Sequence>
+
+      <Sequence from={tagTriggers[0]} durationInFrames={30}>
+        <Audio
+          src={staticFile(`${ASSET_PATH}/audio/sfx/impact_thud.wav`)}
+          volume={0.3}
+        />
+      </Sequence>
+      <Sequence from={tagTriggers[1]} durationInFrames={30}>
+        <Audio
+          src={staticFile(`${ASSET_PATH}/audio/sfx/impact_thud.wav`)}
+          volume={0.3}
+        />
+      </Sequence>
+      <Sequence from={tagTriggers[2]} durationInFrames={30}>
+        <Audio
+          src={staticFile(`${ASSET_PATH}/audio/sfx/impact_thud.wav`)}
+          volume={0.3}
+        />
+      </Sequence>
+      <Sequence from={tagTriggers[3]} durationInFrames={30}>
+        <Audio
+          src={staticFile(`${ASSET_PATH}/audio/sfx/impact_thud.wav`)}
+          volume={0.3}
+        />
+      </Sequence>
+      <Sequence from={phraseNothing.from} durationInFrames={30}>
+        <Audio
+          src={staticFile(`${ASSET_PATH}/audio/sfx/impact_thud.wav`)}
+          volume={0.5}
         />
       </Sequence>
 
