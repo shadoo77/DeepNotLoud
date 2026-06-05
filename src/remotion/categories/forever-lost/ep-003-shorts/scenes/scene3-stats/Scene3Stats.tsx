@@ -262,15 +262,6 @@ export const Scene3Stats: React.FC = () => {
           style={{ backgroundColor: "rgba(0,0,0,0.05)" }}
         />
 
-        {/* Vignette */}
-        <div
-          className="pointer-events-none absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(ellipse at center, transparent 30%, rgba(0,0,0,0.5) 100%)",
-          }}
-        />
-
         {/* Stat cards — sequential reveal */}
         <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
           <div
