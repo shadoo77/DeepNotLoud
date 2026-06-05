@@ -1,5 +1,7 @@
 # FOREVER LOST — Episode 003 (LANDSCAPE / YOUTUBE)
+
 ## "The Voynich Manuscript — Why Nobody Can Decode It"
+
 ### Format: 16:9 · YouTube · ~8–10 min target · Motion-graphics heavy
 
 ---
@@ -45,15 +47,15 @@ public/
 │   ├── ep003_empty_library.png           ← S8 crossfade
 │   └── ep003_manuscript_in_case.png      ← S8 crossfade (museum display)
 ├── sfx/
-│   ├── paper_rustle.mp3
-│   ├── quill_scratch.mp3
-│   ├── deep_rumble.mp3
-│   ├── clock_tick.mp3
-│   ├── silence_drone.mp3
-│   ├── whoosh_in.mp3
-│   └── impact_thud.mp3
+│   ├── paper_rustle.wav
+│   ├── quill_scratch.wav
+│   ├── deep_rumble.wav
+│   ├── clock_tick.wav
+│   ├── silence_drone.wav
+│   ├── whoosh_in.wav
+│   └── impact_thud.wav
 └── music/
-    └── ep003_bgm_landscape.mp3            ← longer, ~10 min version
+    └── ep003_bgm_landscape.wav            ← longer, ~10 min version
 ```
 
 ---
@@ -64,6 +66,7 @@ public/
 **Recommendation:** YouTube Audio Library — "Mysterious Fate", "Dark Ambience", or similar
 **Duration:** Loop or find 10+ min track
 **Volume envelope:**
+
 - Scene 1 intro: 0.18
 - Scenes 2–5 (information): 0.10–0.12
 - Scene 6 attempts: 0.08 (tension)
@@ -108,28 +111,34 @@ Six hundred years of silence.
 
 **Estimated duration:** ~38–42 sec
 **SFX:**
-- `deep_rumble.mp3` — frame 0–90, vol 0.5, fade out
-- `paper_rustle.mp3` — frame 60, vol 0.3
-- `impact_thud.mp3` — on "six hundred years of silence", vol 0.6
+
+- `deep_rumble.wav` — frame 0–90, vol 0.5, fade out
+- `paper_rustle.wav` — frame 60, vol 0.3
+- `impact_thud.wav` — on "six hundred years of silence", vol 0.6
 
 #### 🖼️ IMAGE PROMPTS (Nano Banana 2)
 
 **Image A — `ep003_manuscript_spread.png` — Hero BG (full frame, reused S4+S5)**
+
 > Cinematic wide establishing shot of an ancient manuscript open on a dark stone reading desk, single dramatic shaft of light from above illuminating the pages, surrounded by deep shadow, photorealistic, 16:9 landscape, epic documentary style
 
 **Image B — `ep003_astronomical_wheel.png` — S1 crossfade + S3 section card**
+
 > Close-up of a medieval astronomical diagram wheel with circular text and celestial markings, aged parchment texture, warm amber tones, photorealistic, 16:9
 
 **Image C — `ep003_yale_beinecke_interior.png` — S1 crossfade**
+
 > Interior of Yale Beinecke Rare Book Library, marble translucent walls glowing warm, tall bookshelves, dramatic architecture, cinematic photography, 16:9 landscape
 
 #### 🎬 MOTION DIRECTION (LANDSCAPE — Motion Graphics Active Throughout)
 
 **Layer stack (bottom → top):**
+
 1. BG image: manuscript spread — Ken Burns, 1.0 → 1.1 over scene duration, very slow
 2. Dark vignette overlay: radial, 70% opacity on edges
 3. Animated particle system: tiny dust motes floating upward (**use `interpolate()` with `Easing` and per-mote random offsets, NOT CSS animations** — CSS transitions/animations are FORBIDDEN in Remotion)
 4. **LOWER THIRD TICKER** (frame 0–scene end, always visible): scrolling text at bottom
+
    > `"BEINECKE RARE BOOK LIBRARY · YALE UNIVERSITY · MS 408 · CARBON DATED: 1404–1438 CE · PAGES: 240 · STATUS: UNDECIPHERED · LANGUAGE: UNKNOWN · ..."`
    - Font: Courier New, 16px, color #C8A96E, background: rgba(0,0,0,0.7), height 36px
    - Animation: `translateX()` driven by `useCurrentFrame()` — continuous, speed: 80px/sec
@@ -186,22 +195,27 @@ And somehow, one of them wrote something nobody else could understand.
 
 **Estimated duration:** ~58–65 sec
 **SFX:**
-- `paper_rustle.mp3` — frame 1350, vol 0.3, 3s
-- `quill_scratch.mp3` — frame 1800, vol 0.25, 2s
-- `whoosh_in.mp3` — frame 2400 (on "carbon dating"), vol 0.3
+
+- `paper_rustle.wav` — frame 1350, vol 0.3, 3s
+- `quill_scratch.wav` — frame 1800, vol 0.25, 2s
+- `whoosh_in.wav` — frame 2400 (on "carbon dating"), vol 0.3
 
 #### 🖼️ IMAGE PROMPTS (Nano Banana 2)
 
 **Image A — `ep003_villa_mondragone.png` — BG**
+
 > Italian renaissance villa exterior at golden hour, overgrown garden, baroque architecture, slightly dramatic moody sky, cinematic photography, 16:9 landscape, warm amber tones
 
 **Image B — `ep003_wilfrid_portrait.png` — Cutout PNG**
+
 > Vintage black and white photograph style, mustachioed Eastern European man circa 1910, formal suit, isolated on transparent background, aged film grain effect
 
 **Image C — `ep003_plant_illustrations.png` — Right panel (reused S3)**
+
 > Page from a medieval herbal manuscript showing fantastical plant drawings with unknown root systems and unfamiliar leaf shapes, warm parchment tone, cinematic close-up, 16:9
 
 **Image D — `ep003_map_italy.png` — Map overlay**
+
 > Stylized dark vintage map of central Italy with Rome highlighted, parchment texture overlay, cinematic color grade, 16:9
 
 #### 🎬 MOTION DIRECTION
@@ -209,6 +223,7 @@ And somehow, one of them wrote something nobody else could understand.
 **Persistent animated banners (always on screen, never idle):**
 
 **LEFT SIDEBAR PANEL** (frame 1350 → 3300, slides in at 1380):
+
 - Width: 280px, left edge
 - Content (updating):
   - `📍 VILLA MONDRAGONE` → `📍 ROME, ITALY`
@@ -218,18 +233,21 @@ And somehow, one of them wrote something nobody else could understand.
 - Panel bg: rgba(10,10,10,0.85), left border: 3px solid #C8A96E
 
 **TIMELINE BAR** (bottom, frame 1500–3300):
+
 - Horizontal timeline: `1400 ——●—— 1440 ——————— 1912 ——●—— 1969 ——————— 2009`
 - Active dot pulses gold at years being discussed
 - Timeline track: thin line, 2px, color #444444
 - Active segment: animated highlight fills left → right
 
 **Voynich portrait reveal** (frame 1800–2400):
+
 - Portrait slides in from right with parallax
 - Name card below: "WILFRID VOYNICH · 1865–1930"
 - Gold line animates under name
 - Exits left at frame 2400 with slide-out
 
 **Manuscript illustration reveal** (frame 2400–3000):
+
 - Image fades in right panel (60% screen width)
 - Annotation arrows: 3 hand-drawn style arrows pointing to:
   - "Unknown plant species"
@@ -277,18 +295,22 @@ We just can't hear it.
 
 **Estimated duration:** ~70–78 sec
 **SFX:**
-- `quill_scratch.mp3` — light, recurring every ~15 sec, vol 0.15
-- `deep_rumble.mp3` — on "biological section", vol 0.25, 4s
+
+- `quill_scratch.wav` — light, recurring every ~15 sec, vol 0.15
+- `deep_rumble.wav` — on "biological section", vol 0.25, 4s
 
 #### 🖼️ IMAGE PROMPTS (Nano Banana 2)
 
 **Image A — `ep003_plant_illustrations.png` — Right panel (reused from S2)**
+
 > Same file. Shown in right panel alongside herbal section card.
 
 **Image B — `ep003_astronomical_wheel.png` — Right panel (reused from S1)**
+
 > Same file. Shown in right panel alongside astronomical section card.
 
 **Image C — `ep003_biological_section.png` — Right panel**
+
 > Medieval manuscript page showing small human figures bathing in tube systems and pools, unusual medieval illustration style, warm ink-on-parchment, 16:9
 
 #### 🎬 MOTION DIRECTION
@@ -296,6 +318,7 @@ We just can't hear it.
 **SECTION CARDS — Primary animated graphic (6 cards, each on screen ~10 sec):**
 
 Each card design:
+
 - Full-width lower panel, 240px height, slides up from bottom
 - Section name: large left, 36px Cinzel, gold
 - Icon: relevant emoji/SVG, 80px, right side
@@ -303,6 +326,7 @@ Each card design:
 - "STATUS: UNEXPLAINED" badge: red rounded pill, top right
 
 Card sequence:
+
 1. 🌿 `HERBAL` — "217 plant species. 0 identified."
 2. ⭐ `ASTRONOMICAL` — "Circular diagrams. No known star system."
 3. 🧬 `BIOLOGICAL` — "Human figures. Impossible plumbing."
@@ -313,10 +337,12 @@ Card sequence:
 **Animation per card:** slide up (y: 100px → 0) over 20 frames, spring, stays 200 frames, slide out (y: 0 → -80) over 15 frames
 
 **RIGHT SIDE — Image showcase** (always visible, slow crossfade between A/B/C):
+
 - 50% screen width, right side
 - Each image: 8-second hold + 1-second crossfade
 
 **Scrolling annotation layer:**
+
 - Thin horizontal lines appearing over manuscript images
 - Each line: draws itself left-to-right over 40 frames
 - At end of line: small label box appears ("Unknown Glyph", "Repeated Pattern")
@@ -358,12 +384,14 @@ And the book is valued today at conservatively over one hundred million dollars.
 
 **Estimated duration:** ~52–56 sec
 **SFX:**
-- `clock_tick.mp3` — synced to each number, 0.3 vol, single ticks
-- `impact_thud.mp3` — on "terrifying", vol 0.5
+
+- `clock_tick.wav` — synced to each number, 0.3 vol, single ticks
+- `impact_thud.wav` — on "terrifying", vol 0.5
 
 #### 🖼️ IMAGE PROMPTS (Nano Banana 2)
 
 **Image A — `ep003_manuscript_spread.png` — BG (reused from S1)**
+
 > Same file. Used at 40% opacity behind stat dashboard.
 
 #### 🎬 MOTION DIRECTION
@@ -376,6 +404,7 @@ Bottom half: dark panel (#0D0D0D)
 **Animated stat counters (in grid, 2×2):**
 
 Each counter:
+
 - Large number: rolls up digit-by-digit (0→ target over 60 frames)
 - Label below: fade in after counter finishes
 - Thin gold underline: draws left-to-right
@@ -386,6 +415,7 @@ Counter 3: `240` / "pages"
 Counter 4: `$100M+` / "estimated value"
 
 **ZIPF'S LAW ANIMATED CHART** (appears frame 6200–7000):
+
 - Simple bar chart, 10 bars, labeled "Word Frequency"
 - X-axis: "Rank of word"
 - Y-axis: "Frequency"
@@ -434,15 +464,18 @@ The manuscript may be — in the technical linguistic sense — not a language a
 
 **Estimated duration:** ~75–82 sec
 **SFX:**
-- `silence_drone.mp3` — fade in frame 8200, vol 0.15, sustained
-- `deep_rumble.mp3` — on "impossible", vol 0.3, 3s
+
+- `silence_drone.wav` — fade in frame 8200, vol 0.15, sustained
+- `deep_rumble.wav` — on "impossible", vol 0.3, 3s
 
 #### 🖼️ IMAGE PROMPTS (Nano Banana 2)
 
 **Image A — `ep003_cipher_closeup.png` — BG**
+
 > Dark background showing three rows of script: a line of Latin text, a line of Arabic text, and a line of Voynich-style unknown glyphs, cinematic layout, white text on dark, slightly glowing, 16:9
 
 **Image B — `ep003_manuscript_spread.png` — Secondary BG (reused)**
+
 > Same file. Used during entropy visualization section.
 
 #### 🎬 MOTION DIRECTION
@@ -451,17 +484,18 @@ The manuscript may be — in the technical linguistic sense — not a language a
 
 Full-width panel, 3 rows + header:
 
-| | Script | Entropy | Word Length | Corrections |
-|---|---|---|---|---|
-| 🇬🇧 Latin | `lorem ipsum...` | ✅ Normal | ✅ 4-6 chars | ✅ Many |
-| 🇸🇦 Arabic | `بسم الله...` | ✅ Normal | ✅ 3-5 chars | ✅ Some |
-| 📜 Voynich | `ⴀꝏ⊕ꝑ...` | ✅ Normal | ✅ 4-6 chars | ❌ Almost none |
+|            | Script           | Entropy   | Word Length  | Corrections    |
+| ---------- | ---------------- | --------- | ------------ | -------------- |
+| 🇬🇧 Latin   | `lorem ipsum...` | ✅ Normal | ✅ 4-6 chars | ✅ Many        |
+| 🇸🇦 Arabic  | `بسم الله...`    | ✅ Normal | ✅ 3-5 chars | ✅ Some        |
+| 📜 Voynich | `ⴀꝏ⊕ꝑ...`        | ✅ Normal | ✅ 4-6 chars | ❌ Almost none |
 
 - Each row enters with slide-in from left, 40-frame stagger
 - "Almost none" cell: highlighted red background
 - Final conclusion row: slides up from bottom — "Matches real language — but isn't one we know"
 
 **ENTROPY VISUALIZATION** (frame 8400–9200):
+
 - Waveform-style line animation
 - Three colored lines: English (blue), Arabic (green), Voynich (gold)
 - All three lines track nearly identically
@@ -469,6 +503,7 @@ Full-width panel, 3 rows + header:
 - Voynich line pulses gold at end
 
 **REDUPLICATION BANNER** (frame 9000–9400):
+
 - Three identical glyphs in a row, large, centered
 - Label: "Same word · 3× in a row · Appears 1000+ times"
 - Pulsing highlight on middle word
@@ -511,19 +546,23 @@ The manuscript had fooled the machine.
 
 **Estimated duration:** ~100–112 sec
 **SFX:**
-- `impact_thud.mp3` — on "They gave up", vol 0.5
-- `impact_thud.mp3` — on "It was nonsense", vol 0.5
-- `clock_tick.mp3` — light, recurring, vol 0.12
+
+- `impact_thud.wav` — on "They gave up", vol 0.5
+- `impact_thud.wav` — on "It was nonsense", vol 0.5
+- `clock_tick.wav` — light, recurring, vol 0.12
 
 #### 🖼️ IMAGE PROMPTS (Nano Banana 2)
 
 **Image A — `ep003_wwii_codebreakers.png` — Right panel**
+
 > Vintage 1940s intelligence office scene, men in military uniforms around large tables covered in papers and telegraph equipment, black and white photography style, dramatic lighting, 16:9
 
 **Image B — `ep003_ai_server_room.png` — Right panel**
+
 > Modern server room with blue glowing racks of computers, dark environment, dramatic lens flare, cinematic, 16:9
 
 **Image C — `ep003_nsa_building.png` — Right panel**
+
 > NSA headquarters exterior, Fort Meade Maryland, dramatic sky, architectural photography, slightly ominous, 16:9
 
 #### 🎬 MOTION DIRECTION
@@ -549,6 +588,7 @@ A vertical timeline running down left 35% of screen:
 ```
 
 Timeline construction:
+
 - Vertical line draws downward at rate of story progression
 - Each dot: springs in at appropriate moment, color = red (#CC3333)
 - Text label: fades in right of dot, 15 frames after dot appears
@@ -557,6 +597,7 @@ Timeline construction:
 **RIGHT PANEL — Image zone** (always showing relevant image with smooth crossfades)
 
 **ATTEMPT SPOTLIGHT CARDS** (appear over right panel when discussing each attempt):
+
 - Large semi-transparent panel, 60% width, centered-right
 - Header: Institution name, year
 - Body: 2-line summary
@@ -564,6 +605,7 @@ Timeline construction:
 - Entry: scale 0.9→1.0 + opacity 0→1, 20-frame spring
 
 **NSA DECLASSIFICATION BANNER** (frame 11400–11700):
+
 - Breaking-news style ticker: "NSA · CLASSIFIED DOCUMENT RELEASED · 2014 · FINDING: UNKNOWN"
 - Red background, white text, slides in from right
 - Pulsing "DECLASSIFIED" watermark behind
@@ -606,18 +648,22 @@ A message in a bottle. Thrown into time. Never received.
 
 **Estimated duration:** ~75–82 sec
 **SFX:**
-- `paper_rustle.mp3` — frame 12900, vol 0.2
-- `silence_drone.mp3` — fades in at frame 14800, vol 0.18
+
+- `paper_rustle.wav` — frame 12900, vol 0.2
+- `silence_drone.wav` — fades in at frame 14800, vol 0.18
 
 #### 🖼️ IMAGE PROMPTS (Nano Banana 2)
 
 **Image A — `ep003_roger_bacon.png` — Suspect portrait (right panel)**
+
 > Medieval-style illuminated manuscript portrait of a hooded Franciscan monk scholar, writing at a desk, candlelight, intricate border decoration, warm parchment colors, 16:9
 
 **Image B — `ep003_john_dee.png` — Suspect portrait (right panel)**
+
 > Dramatic Renaissance-era portrait of an Elizabethan court scholar with long beard, dark robes, holding a celestial globe, candlelit background, oil painting style, 16:9
 
 **Image C — `ep003_message_bottle.png` — Final closing image**
+
 > Lone glass bottle floating in dark still water, single folded paper visible inside, moody blue-gray tones, long exposure photography style, cinematic, 16:9
 
 #### 🎬 MOTION DIRECTION
@@ -625,12 +671,14 @@ A message in a bottle. Thrown into time. Never received.
 **THEORY CARDS** — 5 cards, stacked reveal:
 
 Each card (750×180px, full-width):
+
 - Left colored tab: 6px, color varies by theory
 - Number: large faded watermark (1–5), 120px, 15% opacity
 - Theory name: 28px Cinzel, white
 - Brief description: 16px, gray
 
 Colors:
+
 1. 🔴 Red — "THE HOAX" (skeptical)
 2. 🔵 Blue — "CONSTRUCTED LANGUAGE"
 3. 🟢 Green — "MEDICAL ENCYCLOPEDIA"
@@ -641,11 +689,13 @@ Entry: each card slides in from left as voiceover reaches that theory
 Exit: previous card dims to 30% opacity (stays on screen, shows accumulation)
 
 **SUSPECT PORTRAITS** (right panel, appears when named):
+
 - Roger Bacon portrait: frame 13800
 - John Dee portrait: frame 14100
 - Each: slides in from right, name card below, exits when next person mentioned
 
 **FINAL LINE — "Message in a bottle"** (frame 15000–15300):
+
 - Bottle image crossfades in
 - Text overlaid: "A message in a bottle." — white, 38px, centered
 - "Thrown into time." — smaller, gold, fades in 20 frames later
@@ -695,18 +745,22 @@ Billions of human eyes have now looked at it. The most powerful thinking machine
 
 **Estimated duration:** ~65–72 sec
 **SFX:**
-- `silence_drone.mp3` — frame 15300, vol 0.2, sustained to end
-- `paper_rustle.mp3` — frame 15600, vol 0.15, single soft rustle
+
+- `silence_drone.wav` — frame 15300, vol 0.2, sustained to end
+- `paper_rustle.wav` — frame 15600, vol 0.15, single soft rustle
 
 #### 🖼️ IMAGE PROMPTS (Nano Banana 2)
 
 **Image A — `ep003_scribe_hand.png` — Hero BG**
+
 > Dark, intimate cinematic shot, a single hand holding a quill writing on parchment by candlelight, deep shadow surrounding, warm amber glow, photorealistic, 16:9 landscape, emotionally resonant
 
 **Image B — `ep003_empty_library.png` — Crossfade**
+
 > Grand empty library reading room, single shaft of light through high window illuminating an empty reading table, dust motes visible, deep shadow, cinematic, 16:9, melancholic
 
 **Image C — `ep003_manuscript_in_case.png` — Crossfade**
+
 > Museum display case containing an open ancient manuscript, protective glass visible, soft gallery lighting, small information placard visible, 16:9
 
 #### 🎬 MOTION DIRECTION
@@ -719,6 +773,7 @@ Vignette: heavy, 80% opacity
 **LOWER THIRD — now silent** (ticker stops, fades out at frame 15300)
 
 **TEXT REVEALS** — one line at a time, center-aligned, large:
+
 - "Someone wrote this." — 38px, white, fade in
 - (10 sec later) "They had something to say." — same style
 - (10 sec later) "We still don't know what." — gold
@@ -727,6 +782,7 @@ Vignette: heavy, 80% opacity
 **Image crossfade sequence:** scribe → empty room → manuscript in glass → back to first manuscript page (full circle)
 
 **END CARD** (frame 17000–17400):
+
 - Full black fade
 - "FOREVER LOST" — gold, large, Cinzel, center
 - "EPISODE 003" — small, below
@@ -743,18 +799,20 @@ Vignette: heavy, 80% opacity
 export const FPS = 30;
 
 export const SCENES_L = {
-  s1_intro:      { start: 0,   durationSec: 43  },
-  s2_discovery:  { start: 43,  durationSec: 63  },
-  s3_what:       { start: 106, durationSec: 75  },
-  s4_stats:      { start: 181, durationSec: 55  },
-  s5_language:   { start: 236, durationSec: 80  },
-  s6_attempts:   { start: 316, durationSec: 110 },
-  s7_theories:   { start: 426, durationSec: 80  },
-  s8_closer:     { start: 506, durationSec: 70  },
+  s1_intro: { start: 0, durationSec: 43 },
+  s2_discovery: { start: 43, durationSec: 63 },
+  s3_what: { start: 106, durationSec: 75 },
+  s4_stats: { start: 181, durationSec: 55 },
+  s5_language: { start: 236, durationSec: 80 },
+  s6_attempts: { start: 316, durationSec: 110 },
+  s7_theories: { start: 426, durationSec: 80 },
+  s8_closer: { start: 506, durationSec: 70 },
 } as const;
 
 export const secToFrames = (sec: number) => Math.round(sec * FPS);
-export const totalFramesL = secToFrames(SCENES_L.s8_closer.start + SCENES_L.s8_closer.durationSec);
+export const totalFramesL = secToFrames(
+  SCENES_L.s8_closer.start + SCENES_L.s8_closer.durationSec,
+);
 // → 17280 frames ≈ 576 seconds ≈ 9.6 minutes
 ```
 
@@ -764,9 +822,9 @@ export const totalFramesL = secToFrames(SCENES_L.s8_closer.start + SCENES_L.s8_c
 
 ```tsx
 // src/Root.tsx — add alongside portrait composition
-import { Composition } from 'remotion';
-import { VoynichLandscape } from './compositions/VoynichLandscape';
-import { SCENES_L, FPS, totalFramesL } from './constants.landscape';
+import { Composition } from "remotion";
+import { VoynichLandscape } from "./compositions/VoynichLandscape";
+import { SCENES_L, FPS, totalFramesL } from "./constants.landscape";
 
 // Inside RemotionRoot:
 <Composition
@@ -776,7 +834,7 @@ import { SCENES_L, FPS, totalFramesL } from './constants.landscape';
   fps={FPS}
   width={1920}
   height={1080}
-/>
+/>;
 ```
 
 ---
@@ -785,33 +843,33 @@ import { SCENES_L, FPS, totalFramesL } from './constants.landscape';
 
 ```tsx
 // src/compositions/VoynichLandscape.tsx
-import { AbsoluteFill, Sequence, staticFile } from 'remotion';
-import { Audio } from '@remotion/media';
-import { SCENES_L, secToFrames } from '../constants.landscape';
-import { LScene1Intro } from '../scenes/landscape/LScene1Intro';
-import { LScene2Discovery } from '../scenes/landscape/LScene2Discovery';
-import { LScene3WhatIsIt } from '../scenes/landscape/LScene3WhatIsIt';
-import { LScene4Stats } from '../scenes/landscape/LScene4Stats';
-import { LScene5Language } from '../scenes/landscape/LScene5Language';
-import { LScene6Attempts } from '../scenes/landscape/LScene6Attempts';
-import { LScene7Theories } from '../scenes/landscape/LScene7Theories';
-import { LScene8Closer } from '../scenes/landscape/LScene8Closer';
+import { AbsoluteFill, Sequence, staticFile } from "remotion";
+import { Audio } from "@remotion/media";
+import { SCENES_L, secToFrames } from "../constants.landscape";
+import { LScene1Intro } from "../scenes/landscape/LScene1Intro";
+import { LScene2Discovery } from "../scenes/landscape/LScene2Discovery";
+import { LScene3WhatIsIt } from "../scenes/landscape/LScene3WhatIsIt";
+import { LScene4Stats } from "../scenes/landscape/LScene4Stats";
+import { LScene5Language } from "../scenes/landscape/LScene5Language";
+import { LScene6Attempts } from "../scenes/landscape/LScene6Attempts";
+import { LScene7Theories } from "../scenes/landscape/LScene7Theories";
+import { LScene8Closer } from "../scenes/landscape/LScene8Closer";
 
 const SCENE_COMPONENTS: Record<keyof typeof SCENES_L, React.FC> = {
-  s1_intro:     LScene1Intro,
+  s1_intro: LScene1Intro,
   s2_discovery: LScene2Discovery,
-  s3_what:      LScene3WhatIsIt,
-  s4_stats:     LScene4Stats,
-  s5_language:  LScene5Language,
-  s6_attempts:  LScene6Attempts,
-  s7_theories:  LScene7Theories,
-  s8_closer:    LScene8Closer,
+  s3_what: LScene3WhatIsIt,
+  s4_stats: LScene4Stats,
+  s5_language: LScene5Language,
+  s6_attempts: LScene6Attempts,
+  s7_theories: LScene7Theories,
+  s8_closer: LScene8Closer,
 };
 
 export const VoynichLandscape: React.FC = () => {
   return (
-    <AbsoluteFill style={{ backgroundColor: '#0A0A0A' }}>
-      <Audio src={staticFile('music/ep003_bgm_landscape.mp3')} volume={0.12} />
+    <AbsoluteFill style={{ backgroundColor: "#0A0A0A" }}>
+      <Audio src={staticFile("music/ep003_bgm_landscape.wav")} volume={0.12} />
 
       {(Object.keys(SCENES_L) as Array<keyof typeof SCENES_L>).map((key) => {
         const scene = SCENES_L[key];
@@ -840,9 +898,10 @@ export const VoynichLandscape: React.FC = () => {
 
 ```tsx
 // src/components/TickerBar.tsx
-import { useCurrentFrame, useVideoConfig, interpolate } from 'remotion';
+import { useCurrentFrame, useVideoConfig, interpolate } from "remotion";
 
-const TICKER_TEXT = "BEINECKE RARE BOOK LIBRARY · YALE UNIVERSITY · MS 408 · CARBON DATED: 1404–1438 CE · PAGES: 240 · STATUS: UNDECIPHERED · LANGUAGE: UNKNOWN · ESTIMATED VALUE: $100M+ · ";
+const TICKER_TEXT =
+  "BEINECKE RARE BOOK LIBRARY · YALE UNIVERSITY · MS 408 · CARBON DATED: 1404–1438 CE · PAGES: 240 · STATUS: UNDECIPHERED · LANGUAGE: UNKNOWN · ESTIMATED VALUE: $100M+ · ";
 
 export const TickerBar: React.FC<{ opacity?: number }> = ({ opacity = 1 }) => {
   const frame = useCurrentFrame();
@@ -850,20 +909,31 @@ export const TickerBar: React.FC<{ opacity?: number }> = ({ opacity = 1 }) => {
   const offset = -(frame * SPEED) % (TICKER_TEXT.length * 10);
 
   return (
-    <div style={{
-      position: 'absolute', bottom: 0, left: 0, right: 0,
-      height: 40, backgroundColor: 'rgba(0,0,0,0.80)',
-      borderTop: '1px solid #C8A96E',
-      overflow: 'hidden', display: 'flex', alignItems: 'center',
-      opacity,
-    }}>
-      <div style={{
-        whiteSpace: 'nowrap',
-        fontFamily: 'Courier New, monospace',
-        fontSize: 14, color: '#C8A96E',
-        transform: `translateX(${offset}px)`,
-        paddingLeft: 1920,
-      }}>
+    <div
+      style={{
+        position: "absolute",
+        bottom: 0,
+        left: 0,
+        right: 0,
+        height: 40,
+        backgroundColor: "rgba(0,0,0,0.80)",
+        borderTop: "1px solid #C8A96E",
+        overflow: "hidden",
+        display: "flex",
+        alignItems: "center",
+        opacity,
+      }}
+    >
+      <div
+        style={{
+          whiteSpace: "nowrap",
+          fontFamily: "Courier New, monospace",
+          fontSize: 14,
+          color: "#C8A96E",
+          transform: `translateX(${offset}px)`,
+          paddingLeft: 1920,
+        }}
+      >
         {TICKER_TEXT.repeat(5)}
       </div>
     </div>
@@ -875,15 +945,18 @@ export const TickerBar: React.FC<{ opacity?: number }> = ({ opacity = 1 }) => {
 
 ```tsx
 // src/components/SidebarPanel.tsx
-import { spring, useCurrentFrame, useVideoConfig, interpolate } from 'remotion';
-import { loadFont } from '@remotion/google-fonts/Cinzel';
+import { spring, useCurrentFrame, useVideoConfig, interpolate } from "remotion";
+import { loadFont } from "@remotion/google-fonts/Cinzel";
 
-const { fontFamily: cinzelFont } = loadFont('normal', {
-  weights: ['400', '700'],
-  subsets: ['latin'],
+const { fontFamily: cinzelFont } = loadFont("normal", {
+  weights: ["400", "700"],
+  subsets: ["latin"],
 });
 
-interface SidebarField { label: string; value: string }
+interface SidebarField {
+  label: string;
+  value: string;
+}
 
 export const SidebarPanel: React.FC<{
   fields: SidebarField[];
@@ -891,22 +964,50 @@ export const SidebarPanel: React.FC<{
 }> = ({ fields, delayFrames = 0 }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
-  const progress = spring({ frame: frame - delayFrames, fps, config: { damping: 14 } });
+  const progress = spring({
+    frame: frame - delayFrames,
+    fps,
+    config: { damping: 14 },
+  });
   const x = interpolate(progress, [0, 1], [-300, 0]);
 
   return (
-    <div style={{
-      position: 'absolute', left: 0, top: 80,
-      width: 280, transform: `translateX(${x}px)`,
-      backgroundColor: 'rgba(10,10,10,0.88)',
-      borderLeft: '3px solid #C8A96E',
-      borderRight: '1px solid #333',
-      padding: '20px 16px',
-    }}>
+    <div
+      style={{
+        position: "absolute",
+        left: 0,
+        top: 80,
+        width: 280,
+        transform: `translateX(${x}px)`,
+        backgroundColor: "rgba(10,10,10,0.88)",
+        borderLeft: "3px solid #C8A96E",
+        borderRight: "1px solid #333",
+        padding: "20px 16px",
+      }}
+    >
       {fields.map(({ label, value }) => (
         <div key={label} style={{ marginBottom: 16 }}>
-          <div style={{ fontSize: 11, color: '#C8A96E', letterSpacing: 2, textTransform: 'uppercase', fontFamily: 'Courier New' }}>{label}</div>
-          <div style={{ fontSize: 16, color: '#FFFFFF', fontFamily: cinzelFont, marginTop: 4 }}>{value}</div>
+          <div
+            style={{
+              fontSize: 11,
+              color: "#C8A96E",
+              letterSpacing: 2,
+              textTransform: "uppercase",
+              fontFamily: "Courier New",
+            }}
+          >
+            {label}
+          </div>
+          <div
+            style={{
+              fontSize: 16,
+              color: "#FFFFFF",
+              fontFamily: cinzelFont,
+              marginTop: 4,
+            }}
+          >
+            {value}
+          </div>
         </div>
       ))}
     </div>
@@ -918,18 +1019,18 @@ export const SidebarPanel: React.FC<{
 
 ```tsx
 // src/components/StatCounter.tsx
-import { useCurrentFrame, useVideoConfig, spring, interpolate } from 'remotion';
-import { loadFont } from '@remotion/google-fonts/Cinzel';
-import { loadFont as loadInterFont } from '@remotion/google-fonts/Inter';
+import { useCurrentFrame, useVideoConfig, spring, interpolate } from "remotion";
+import { loadFont } from "@remotion/google-fonts/Cinzel";
+import { loadFont as loadInterFont } from "@remotion/google-fonts/Inter";
 
-const { fontFamily: cinzelFont } = loadFont('normal', {
-  weights: ['400', '700', '900'],
-  subsets: ['latin'],
+const { fontFamily: cinzelFont } = loadFont("normal", {
+  weights: ["400", "700", "900"],
+  subsets: ["latin"],
 });
 
-const { fontFamily: interFont } = loadInterFont('normal', {
-  weights: ['400'],
-  subsets: ['latin'],
+const { fontFamily: interFont } = loadInterFont("normal", {
+  weights: ["400"],
+  subsets: ["latin"],
 });
 
 export const StatCounter: React.FC<{
@@ -939,21 +1040,58 @@ export const StatCounter: React.FC<{
   suffix?: string;
   color?: string;
   delayFrames?: number;
-}> = ({ target, label, prefix = '', suffix = '', color = '#FFFFFF', delayFrames = 0 }) => {
+}> = ({
+  target,
+  label,
+  prefix = "",
+  suffix = "",
+  color = "#FFFFFF",
+  delayFrames = 0,
+}) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
-  const progress = spring({ frame: frame - delayFrames, fps, config: { damping: 18, stiffness: 60 } });
+  const progress = spring({
+    frame: frame - delayFrames,
+    fps,
+    config: { damping: 18, stiffness: 60 },
+  });
   const current = Math.round(interpolate(progress, [0, 1], [0, target]));
 
   return (
-    <div style={{ textAlign: 'center', padding: '24px 20px' }}>
-      <div style={{ fontFamily: cinzelFont, fontSize: 80, fontWeight: 900, color, lineHeight: 1 }}>
-        {prefix}{current.toLocaleString()}{suffix}
+    <div style={{ textAlign: "center", padding: "24px 20px" }}>
+      <div
+        style={{
+          fontFamily: cinzelFont,
+          fontSize: 80,
+          fontWeight: 900,
+          color,
+          lineHeight: 1,
+        }}
+      >
+        {prefix}
+        {current.toLocaleString()}
+        {suffix}
       </div>
-      <div style={{ fontFamily: interFont, fontSize: 16, color: '#AAAAAA', marginTop: 12 }}>
+      <div
+        style={{
+          fontFamily: interFont,
+          fontSize: 16,
+          color: "#AAAAAA",
+          marginTop: 12,
+        }}
+      >
         {label}
       </div>
-      <div style={{ width: '60%', height: 2, backgroundColor: '#C8A96E', margin: '12px auto 0', transform: `scaleX(${progress})`, transformOrigin: 'left' }} />
+      <div
+        style={{
+          width: "60%",
+          height: 2,
+          backgroundColor: "#C8A96E",
+          margin: "12px auto 0",
+          transform: `scaleX(${progress})`,
+          transformOrigin: "left",
+        }}
+      />
     </div>
   );
 };
@@ -963,12 +1101,12 @@ export const StatCounter: React.FC<{
 
 ```tsx
 // src/components/FailureCard.tsx
-import { spring, useCurrentFrame, useVideoConfig, interpolate } from 'remotion';
-import { loadFont } from '@remotion/google-fonts/Cinzel';
+import { spring, useCurrentFrame, useVideoConfig, interpolate } from "remotion";
+import { loadFont } from "@remotion/google-fonts/Cinzel";
 
-const { fontFamily: cinzelFont } = loadFont('normal', {
-  weights: ['400', '700'],
-  subsets: ['latin'],
+const { fontFamily: cinzelFont } = loadFont("normal", {
+  weights: ["400", "700"],
+  subsets: ["latin"],
 });
 
 export const FailureCard: React.FC<{
@@ -980,31 +1118,67 @@ export const FailureCard: React.FC<{
 }> = ({ year, institution, description, result, delayFrames = 0 }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
-  const progress = spring({ frame: frame - delayFrames, fps, config: { damping: 14 } });
+  const progress = spring({
+    frame: frame - delayFrames,
+    fps,
+    config: { damping: 14 },
+  });
   const y = interpolate(progress, [0, 1], [40, 0]);
   const opacity = interpolate(progress, [0, 0.3], [0, 1], {
-    extrapolateRight: 'clamp',
+    extrapolateRight: "clamp",
   });
 
   return (
-    <div style={{
-      transform: `translateY(${y}px)`, opacity,
-      backgroundColor: 'rgba(20,20,20,0.90)',
-      borderLeft: '4px solid #CC3333',
-      borderRadius: 8, padding: '16px 24px',
-      marginBottom: 12, display: 'flex',
-      justifyContent: 'space-between', alignItems: 'center',
-    }}>
+    <div
+      style={{
+        transform: `translateY(${y}px)`,
+        opacity,
+        backgroundColor: "rgba(20,20,20,0.90)",
+        borderLeft: "4px solid #CC3333",
+        borderRadius: 8,
+        padding: "16px 24px",
+        marginBottom: 12,
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+      }}
+    >
       <div>
-        <div style={{ fontSize: 12, color: '#C8A96E', fontFamily: 'Courier New', letterSpacing: 2 }}>{year}</div>
-        <div style={{ fontSize: 20, color: '#FFFFFF', fontFamily: cinzelFont, fontWeight: 700 }}>{institution}</div>
-        <div style={{ fontSize: 13, color: '#AAAAAA', marginTop: 4 }}>{description}</div>
+        <div
+          style={{
+            fontSize: 12,
+            color: "#C8A96E",
+            fontFamily: "Courier New",
+            letterSpacing: 2,
+          }}
+        >
+          {year}
+        </div>
+        <div
+          style={{
+            fontSize: 20,
+            color: "#FFFFFF",
+            fontFamily: cinzelFont,
+            fontWeight: 700,
+          }}
+        >
+          {institution}
+        </div>
+        <div style={{ fontSize: 13, color: "#AAAAAA", marginTop: 4 }}>
+          {description}
+        </div>
       </div>
-      <div style={{
-        backgroundColor: '#CC3333', color: 'white',
-        padding: '6px 14px', borderRadius: 20,
-        fontFamily: 'Courier New', fontSize: 12, letterSpacing: 1,
-      }}>
+      <div
+        style={{
+          backgroundColor: "#CC3333",
+          color: "white",
+          padding: "6px 14px",
+          borderRadius: 20,
+          fontFamily: "Courier New",
+          fontSize: 12,
+          letterSpacing: 1,
+        }}
+      >
         {result}
       </div>
     </div>
@@ -1035,6 +1209,7 @@ Font — Mono:       Courier New (cipher text / tickers)
 No more than **90–120 frames (3–4 seconds)** shall pass without a visual event — a change, movement, highlight, flash, or reveal. Every gap in VO or static exposition must be filled with a micro-reveal.
 
 **Micro-reveal palette** (pick one, rotate through them):
+
 - **Ken Burns drift** — continuous slow zoom/pan on BG (always on ✓)
 - **Dust particle gust** — brief burst of particles from edge
 - **Gold flash** — 0→0.18→0 opacity over 12 frames (C.gold overlay)

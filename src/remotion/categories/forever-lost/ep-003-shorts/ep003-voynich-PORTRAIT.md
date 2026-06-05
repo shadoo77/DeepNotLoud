@@ -1,5 +1,7 @@
 # FOREVER LOST — Episode 003 (PORTRAIT / SHORTS)
+
 ## "The Voynich Manuscript — Why Nobody Can Decode It"
+
 ### Format: 9:16 · TikTok / Reels / YouTube Shorts · ~60 sec target
 
 ---
@@ -32,13 +34,13 @@ public/
 │   ├── ep003_plant_botanical.png         ← S6 BG (herbal illustration)
 │   └── ep003_scribe_hand.png             ← S7 BG (hand + quill)
 ├── sfx/
-│   ├── paper_rustle.mp3
-│   ├── quill_scratch.mp3
-│   ├── deep_rumble.mp3
-│   ├── clock_tick.mp3
-│   └── silence_drone.mp3
+│   ├── paper_rustle.wav
+│   ├── quill_scratch.wav
+│   ├── deep_rumble.wav
+│   ├── clock_tick.wav
+│   └── silence_drone.wav
 └── music/
-    └── ep003_bgm_shorts.mp3
+    └── ep003_bgm_shorts.wav
 ```
 
 ---
@@ -48,6 +50,7 @@ public/
 **Track:** Dark ambient / medieval mystery
 **Recommendation:** "Cipher" or "Forgotten Scroll" style — YouTube Audio Library
 **Volume envelope:**
+
 - Scenes 1–2: 0.15 (under hook)
 - Scenes 3–5: 0.10 (info-dense)
 - Scenes 6–7: 0.20 (emotional swell)
@@ -81,16 +84,18 @@ Pacing: Slow and deliberate. Each word lands.
 ```
 
 **Estimated duration:** ~7 sec
-**SFX:** `paper_rustle.mp3` at frame 0, vol 0.4 → fade by frame 60
+**SFX:** `paper_rustle.wav` at frame 0, vol 0.4 → fade by frame 60
 
 #### 🖼️ IMAGE PROMPTS (Nano Banana 2)
 
 **Image A — `ep003_manuscript_page.png` — Background layer (full frame)**
+
 > Extreme close-up of aged yellowed manuscript pages covered in unknown script, candlelight glow from left, deep shadow on right, cinematic, photorealistic, moody, mysterious, 9:16 vertical
 
 **Image B — none** — Text overlay is motion graphics only
 
 #### 🎬 MOTION DIRECTION
+
 - Background image: slow Ken Burns — scale from 1.0 → 1.08 over full scene
 - Title text "FOREVER LOST" fades in at frame 20, size 28px, color #C8A96E (gold), font: Cinzel
 - Hook line appears word-by-word with 8-frame stagger
@@ -122,17 +127,20 @@ Pacing: Medium. Conversational but weighted.
 ```
 
 **Estimated duration:** ~10 sec
-**SFX:** `quill_scratch.mp3` at frame 240, vol 0.3, 2s duration
+**SFX:** `quill_scratch.wav` at frame 240, vol 0.3, 2s duration
 
 #### 🖼️ IMAGE PROMPTS (Nano Banana 2)
 
 **Image A — `ep003_wilfrid_voynich.png` — Cutout portrait PNG**
+
 > Black and white vintage portrait photo style, mustachioed man in early 1900s formal attire, dramatic side lighting, isolated on transparent background, slightly worn photograph effect
 
 **Image B — `ep003_castle_exterior.png` — Background**
+
 > Italian renaissance castle exterior, overcast sky, moody, cinematic, photorealistic, desaturated green-brown tones, 9:16 vertical composition
 
 #### 🎬 MOTION DIRECTION
+
 - Castle BG: static with subtle parallax (moves -5px on y over 300 frames)
 - Voynich portrait: slides in from right (x: 400 → 80) with spring easing, frame 260–310
 - Year "1412–1438" appears as animated counter (digit roll-up effect)
@@ -164,11 +172,12 @@ Pacing: Each number gets its own beat. No rushing.
 ```
 
 **Estimated duration:** ~11 sec
-**SFX:** `clock_tick.mp3` looping under stats, vol 0.25
+**SFX:** `clock_tick.wav` looping under stats, vol 0.25
 
 #### 🖼️ IMAGE PROMPTS (Nano Banana 2)
 
 **Image A — `ep003_manuscript_page.png` — Background (reused from S1)**
+
 > Same file. Used at 40% opacity behind stat cards.
 
 #### 🎬 MOTION DIRECTION (STAT CARDS — Primary motion graphics)
@@ -176,17 +185,20 @@ Pacing: Each number gets its own beat. No rushing.
 Three stat cards animate in sequence:
 
 **Card 1** (frame 560–660):
+
 - "240" — 120px white Cinzel Bold
 - Subtitle: "pages of unknown text"
 - Animation: scale 0 → 1 with spring, then slight float
 - Color: white on dark charcoal panel (#1A1A1A, 85% opacity)
 
 **Card 2** (frame 660–760):
+
 - "100+" — same style
 - Subtitle: "unique characters, no Rosetta Stone"
 - Slide in from right
 
 **Card 3** (frame 760–880):
+
 - "600" — red tint (#CC3333)
 - Subtitle: "years. Still unsolved."
 - Pulse glow animation: box-shadow 0 → 20px red, loop 2×
@@ -216,11 +228,12 @@ Pacing: Medium. Building unease.
 ```
 
 **Estimated duration:** ~11 sec
-**SFX:** `deep_rumble.mp3` fade in at frame 900, vol 0.2
+**SFX:** `deep_rumble.wav` fade in at frame 900, vol 0.2
 
 #### 🖼️ IMAGE PROMPTS (Nano Banana 2)
 
 **Image A — `ep003_cipher_closeup.png` — Background**
+
 > Extreme macro close-up of Voynich manuscript text, individual unknown glyphs visible, shallow depth of field, warm parchment color, mysterious, photorealistic texture detail, portrait orientation
 
 #### 🎬 MOTION DIRECTION
@@ -261,11 +274,12 @@ Pacing: Slightly faster. Rhythmic. Almost percussive.
 ```
 
 **Estimated duration:** ~9–10 sec
-**SFX:** `clock_tick.mp3` single ticks synced to each institution name
+**SFX:** `clock_tick.wav` single ticks synced to each institution name
 
 #### 🖼️ IMAGE PROMPTS (Nano Banana 2)
 
 **Image A — `ep003_yale_beinecke.png` — Background**
+
 > Yale Beinecke Rare Book Library exterior at dusk, dramatic sky, architectural photography, slightly desaturated cinematic look, 9:16 portrait crop
 
 #### 🎬 MOTION DIRECTION
@@ -310,6 +324,7 @@ Pacing: Slower. Each theory is a shrug.
 #### 🖼️ IMAGE PROMPTS (Nano Banana 2)
 
 **Image A — `ep003_plant_botanical.png` — Background**
+
 > Stylized medieval herbal manuscript illustration of an unidentifiable plant with roots, in warm ink-on-parchment style, photorealistic aged paper texture, full frame portrait
 
 #### 🎬 MOTION DIRECTION
@@ -347,11 +362,12 @@ Pacing: Slow. Deliberate pauses.
 ```
 
 **Estimated duration:** ~8–9 sec
-**SFX:** `silence_drone.mp3` fade in at frame 1760, vol 0.15 → fade out at frame 2010
+**SFX:** `silence_drone.wav` fade in at frame 1760, vol 0.15 → fade out at frame 2010
 
 #### 🖼️ IMAGE PROMPTS (Nano Banana 2)
 
 **Image A — `ep003_scribe_hand.png` — Background (hero closer)**
+
 > Dark cinematic shot of a medieval scribe's hand holding a quill, writing on candlelit parchment, only hand and page visible, deep shadows, warm amber candlelight, photorealistic, 9:16 vertical, emotional, lonely
 
 #### 🎬 MOTION DIRECTION
@@ -372,18 +388,20 @@ Pacing: Slow. Deliberate pauses.
 export const FPS = 30;
 
 export const SCENES = {
-  s1_hook:       { start: 0,    durationSec: 8  },
-  s2_discovery:  { start: 8,    durationSec: 10 },
-  s3_stats:      { start: 18,   durationSec: 12 },
-  s4_language:   { start: 30,   durationSec: 12 },
-  s5_attempts:   { start: 42,   durationSec: 10 },
-  s6_theories:   { start: 52,   durationSec: 6  },
-  s7_closer:     { start: 58,   durationSec: 9  },
+  s1_hook: { start: 0, durationSec: 8 },
+  s2_discovery: { start: 8, durationSec: 10 },
+  s3_stats: { start: 18, durationSec: 12 },
+  s4_language: { start: 30, durationSec: 12 },
+  s5_attempts: { start: 42, durationSec: 10 },
+  s6_theories: { start: 52, durationSec: 6 },
+  s7_closer: { start: 58, durationSec: 9 },
 } as const;
 
 // Helper
 export const secToFrames = (sec: number) => Math.round(sec * FPS);
-export const totalFrames = secToFrames(SCENES.s7_closer.start + SCENES.s7_closer.durationSec);
+export const totalFrames = secToFrames(
+  SCENES.s7_closer.start + SCENES.s7_closer.durationSec,
+);
 // → 2010 frames ≈ 67 seconds
 ```
 
@@ -393,9 +411,9 @@ export const totalFrames = secToFrames(SCENES.s7_closer.start + SCENES.s7_closer
 
 ```tsx
 // src/Root.tsx
-import { Composition } from 'remotion';
-import { VoynichShort } from './compositions/VoynichShort';
-import { SCENES, FPS, totalFrames } from './constants';
+import { Composition } from "remotion";
+import { VoynichShort } from "./compositions/VoynichShort";
+import { SCENES, FPS, totalFrames } from "./constants";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -419,16 +437,16 @@ export const RemotionRoot: React.FC = () => {
 
 ```tsx
 // src/compositions/VoynichShort.tsx
-import { AbsoluteFill, Sequence, staticFile } from 'remotion';
-import { Audio } from '@remotion/media';
-import { SCENES, secToFrames } from '../constants';
-import { Scene1Hook } from '../scenes/portrait/Scene1Hook';
-import { Scene2Discovery } from '../scenes/portrait/Scene2Discovery';
-import { Scene3Stats } from '../scenes/portrait/Scene3Stats';
-import { Scene4Language } from '../scenes/portrait/Scene4Language';
-import { Scene5Attempts } from '../scenes/portrait/Scene5Attempts';
-import { Scene6Theories } from '../scenes/portrait/Scene6Theories';
-import { Scene7Closer } from '../scenes/portrait/Scene7Closer';
+import { AbsoluteFill, Sequence, staticFile } from "remotion";
+import { Audio } from "@remotion/media";
+import { SCENES, secToFrames } from "../constants";
+import { Scene1Hook } from "../scenes/portrait/Scene1Hook";
+import { Scene2Discovery } from "../scenes/portrait/Scene2Discovery";
+import { Scene3Stats } from "../scenes/portrait/Scene3Stats";
+import { Scene4Language } from "../scenes/portrait/Scene4Language";
+import { Scene5Attempts } from "../scenes/portrait/Scene5Attempts";
+import { Scene6Theories } from "../scenes/portrait/Scene6Theories";
+import { Scene7Closer } from "../scenes/portrait/Scene7Closer";
 
 const SCENE_COMPONENTS: Record<keyof typeof SCENES, React.FC> = {
   s1_hook: Scene1Hook,
@@ -442,9 +460,9 @@ const SCENE_COMPONENTS: Record<keyof typeof SCENES, React.FC> = {
 
 export const VoynichShort: React.FC = () => {
   return (
-    <AbsoluteFill style={{ backgroundColor: '#0A0A0A' }}>
+    <AbsoluteFill style={{ backgroundColor: "#0A0A0A" }}>
       {/* BGM */}
-      <Audio src={staticFile('music/ep003_bgm_shorts.mp3')} volume={0.12} />
+      <Audio src={staticFile("music/ep003_bgm_shorts.wav")} volume={0.12} />
 
       {/* SCENES */}
       {(Object.keys(SCENES) as Array<keyof typeof SCENES>).map((key) => {
@@ -473,12 +491,20 @@ export const VoynichShort: React.FC = () => {
 ### Scene1Hook.tsx
 
 ```tsx
-import { AbsoluteFill, Img, staticFile, useCurrentFrame, useVideoConfig, interpolate, Easing } from 'remotion';
-import { loadFont } from '@remotion/google-fonts/Cinzel';
+import {
+  AbsoluteFill,
+  Img,
+  staticFile,
+  useCurrentFrame,
+  useVideoConfig,
+  interpolate,
+  Easing,
+} from "remotion";
+import { loadFont } from "@remotion/google-fonts/Cinzel";
 
-const { fontFamily: cinzelFont } = loadFont('normal', {
-  weights: ['400', '700', '900'],
-  subsets: ['latin'],
+const { fontFamily: cinzelFont } = loadFont("normal", {
+  weights: ["400", "700", "900"],
+  subsets: ["latin"],
 });
 
 export const Scene1Hook: React.FC = () => {
@@ -486,57 +512,123 @@ export const Scene1Hook: React.FC = () => {
   const { fps } = useVideoConfig();
 
   const bgScale = interpolate(frame, [0, 8 * fps], [1.0, 1.08], {
-    extrapolateRight: 'clamp',
+    extrapolateRight: "clamp",
     easing: Easing.bezier(0.16, 1, 0.3, 1),
   });
   const titleOpacity = interpolate(frame, [20, 50], [0, 1], {
-    extrapolateLeft: 'clamp',
-    extrapolateRight: 'clamp',
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
     easing: Easing.bezier(0.16, 1, 0.3, 1),
   });
   const hookOpacity = interpolate(frame, [40, 70], [0, 1], {
-    extrapolateLeft: 'clamp',
-    extrapolateRight: 'clamp',
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
     easing: Easing.bezier(0.16, 1, 0.3, 1),
   });
-  const impactY = spring({ frame: frame - 80, fps, config: { damping: 12, stiffness: 180 } });
+  const impactY = spring({
+    frame: frame - 80,
+    fps,
+    config: { damping: 12, stiffness: 180 },
+  });
   const impactTranslate = interpolate(impactY, [0, 1], [60, 0]);
 
   return (
     <AbsoluteFill>
       {/* BG Image with Ken Burns */}
-      <AbsoluteFill style={{ transform: `scale(${bgScale})`, transformOrigin: 'center' }}>
-        <Img src={staticFile('images/ep003_manuscript_page.png')} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+      <AbsoluteFill
+        style={{ transform: `scale(${bgScale})`, transformOrigin: "center" }}
+      >
+        <Img
+          src={staticFile("images/ep003_manuscript_page.png")}
+          style={{ width: "100%", height: "100%", objectFit: "cover" }}
+        />
       </AbsoluteFill>
 
       {/* Vignette */}
-      <AbsoluteFill style={{
-        background: 'radial-gradient(ellipse at center, transparent 30%, rgba(0,0,0,0.75) 100%)',
-      }} />
+      <AbsoluteFill
+        style={{
+          background:
+            "radial-gradient(ellipse at center, transparent 30%, rgba(0,0,0,0.75) 100%)",
+        }}
+      />
 
       {/* FOREVER LOST label */}
-      <AbsoluteFill style={{ alignItems: 'center', justifyContent: 'flex-start', paddingTop: 80 }}>
-        <div style={{ opacity: titleOpacity, fontFamily: cinzelFont, fontSize: 22, color: '#C8A96E', letterSpacing: 6 }}>
+      <AbsoluteFill
+        style={{
+          alignItems: "center",
+          justifyContent: "flex-start",
+          paddingTop: 80,
+        }}
+      >
+        <div
+          style={{
+            opacity: titleOpacity,
+            fontFamily: cinzelFont,
+            fontSize: 22,
+            color: "#C8A96E",
+            letterSpacing: 6,
+          }}
+        >
           FOREVER LOST
         </div>
       </AbsoluteFill>
 
       {/* Hook text */}
-      <AbsoluteFill style={{ alignItems: 'center', justifyContent: 'center' }}>
-        <div style={{ opacity: hookOpacity, textAlign: 'center', padding: '0 60px' }}>
-          <p style={{ fontFamily: cinzelFont, fontSize: 32, color: 'white', lineHeight: 1.4, margin: 0 }}>
+      <AbsoluteFill style={{ alignItems: "center", justifyContent: "center" }}>
+        <div
+          style={{
+            opacity: hookOpacity,
+            textAlign: "center",
+            padding: "0 60px",
+          }}
+        >
+          <p
+            style={{
+              fontFamily: cinzelFont,
+              fontSize: 32,
+              color: "white",
+              lineHeight: 1.4,
+              margin: 0,
+            }}
+          >
             A book exists that no human has ever decoded.
           </p>
         </div>
       </AbsoluteFill>
 
       {/* Impact line */}
-      <AbsoluteFill style={{ alignItems: 'center', justifyContent: 'flex-end', paddingBottom: 180 }}>
-        <div style={{ transform: `translateY(${impactTranslate}px)`, textAlign: 'center' }}>
-          <p style={{ fontFamily: cinzelFont, fontSize: 52, fontWeight: 900, color: 'white', margin: 0 }}>
+      <AbsoluteFill
+        style={{
+          alignItems: "center",
+          justifyContent: "flex-end",
+          paddingBottom: 180,
+        }}
+      >
+        <div
+          style={{
+            transform: `translateY(${impactTranslate}px)`,
+            textAlign: "center",
+          }}
+        >
+          <p
+            style={{
+              fontFamily: cinzelFont,
+              fontSize: 52,
+              fontWeight: 900,
+              color: "white",
+              margin: 0,
+            }}
+          >
             Not one word.
           </p>
-          <p style={{ fontFamily: cinzelFont, fontSize: 28, color: '#C8A96E', margin: '8px 0 0' }}>
+          <p
+            style={{
+              fontFamily: cinzelFont,
+              fontSize: 28,
+              color: "#C8A96E",
+              margin: "8px 0 0",
+            }}
+          >
             In 600 years.
           </p>
         </div>
@@ -549,24 +641,43 @@ export const Scene1Hook: React.FC = () => {
 ### Scene3Stats.tsx (stat cards example)
 
 ```tsx
-import { AbsoluteFill, Img, staticFile, useCurrentFrame, useVideoConfig, spring, interpolate, Easing } from 'remotion';
-import { loadFont } from '@remotion/google-fonts/Cinzel';
-import { loadFont as loadInterFont } from '@remotion/google-fonts/Inter';
+import {
+  AbsoluteFill,
+  Img,
+  staticFile,
+  useCurrentFrame,
+  useVideoConfig,
+  spring,
+  interpolate,
+  Easing,
+} from "remotion";
+import { loadFont } from "@remotion/google-fonts/Cinzel";
+import { loadFont as loadInterFont } from "@remotion/google-fonts/Inter";
 
-const { fontFamily: cinzelFont } = loadFont('normal', {
-  weights: ['400', '700', '900'],
-  subsets: ['latin'],
+const { fontFamily: cinzelFont } = loadFont("normal", {
+  weights: ["400", "700", "900"],
+  subsets: ["latin"],
 });
 
-const { fontFamily: interFont } = loadInterFont('normal', {
-  weights: ['400'],
-  subsets: ['latin'],
+const { fontFamily: interFont } = loadInterFont("normal", {
+  weights: ["400"],
+  subsets: ["latin"],
 });
 
 const stats = [
-  { number: '240', label: 'pages of unknown text', color: '#FFFFFF', delay: 0 },
-  { number: '100+', label: 'unique characters — no Rosetta Stone', color: '#FFFFFF', delay: 30 },
-  { number: '600', label: 'years. Still unsolved.', color: '#CC3333', delay: 60 },
+  { number: "240", label: "pages of unknown text", color: "#FFFFFF", delay: 0 },
+  {
+    number: "100+",
+    label: "unique characters — no Rosetta Stone",
+    color: "#FFFFFF",
+    delay: 30,
+  },
+  {
+    number: "600",
+    label: "years. Still unsolved.",
+    color: "#CC3333",
+    delay: 60,
+  },
 ];
 
 export const Scene3Stats: React.FC = () => {
@@ -576,21 +687,66 @@ export const Scene3Stats: React.FC = () => {
   return (
     <AbsoluteFill>
       <AbsoluteFill style={{ opacity: 0.4 }}>
-        <Img src={staticFile('images/ep003_manuscript_page.png')} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+        <Img
+          src={staticFile("images/ep003_manuscript_page.png")}
+          style={{ width: "100%", height: "100%", objectFit: "cover" }}
+        />
       </AbsoluteFill>
-      <AbsoluteFill style={{ backgroundColor: 'rgba(0,0,0,0.6)' }} />
+      <AbsoluteFill style={{ backgroundColor: "rgba(0,0,0,0.6)" }} />
 
-      <AbsoluteFill style={{ justifyContent: 'center', alignItems: 'center', gap: 24, flexDirection: 'column', padding: '0 40px' }}>
+      <AbsoluteFill
+        style={{
+          justifyContent: "center",
+          alignItems: "center",
+          gap: 24,
+          flexDirection: "column",
+          padding: "0 40px",
+        }}
+      >
         {stats.map(({ number, label, color, delay }) => {
-          const progress = spring({ frame: frame - delay, fps, config: { damping: 14, stiffness: 120 } });
+          const progress = spring({
+            frame: frame - delay,
+            fps,
+            config: { damping: 14, stiffness: 120 },
+          });
           const scale = interpolate(progress, [0, 1], [0.6, 1]);
           const opacity = interpolate(progress, [0, 0.3], [0, 1], {
-            extrapolateRight: 'clamp',
+            extrapolateRight: "clamp",
           });
           return (
-            <div key={number} style={{ transform: `scale(${scale})`, opacity, backgroundColor: 'rgba(26,26,26,0.88)', borderRadius: 16, padding: '24px 40px', width: '100%', textAlign: 'center' }}>
-              <div style={{ fontFamily: cinzelFont, fontSize: 72, fontWeight: 900, color, lineHeight: 1 }}>{number}</div>
-              <div style={{ fontFamily: interFont, fontSize: 18, color: '#AAAAAA', marginTop: 8 }}>{label}</div>
+            <div
+              key={number}
+              style={{
+                transform: `scale(${scale})`,
+                opacity,
+                backgroundColor: "rgba(26,26,26,0.88)",
+                borderRadius: 16,
+                padding: "24px 40px",
+                width: "100%",
+                textAlign: "center",
+              }}
+            >
+              <div
+                style={{
+                  fontFamily: cinzelFont,
+                  fontSize: 72,
+                  fontWeight: 900,
+                  color,
+                  lineHeight: 1,
+                }}
+              >
+                {number}
+              </div>
+              <div
+                style={{
+                  fontFamily: interFont,
+                  fontSize: 18,
+                  color: "#AAAAAA",
+                  marginTop: 8,
+                }}
+              >
+                {label}
+              </div>
             </div>
           );
         })}

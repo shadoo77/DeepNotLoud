@@ -14,7 +14,7 @@ export const ForeverLostEp3Shorts: React.FC = () => {
     <AbsoluteFill style={{ backgroundColor: C.bg }}>
       <BgmWithFade
         totalFrames={TOTAL_FRAMES}
-        srcPath={`${ASSET_PATH}/audio/bgm/ep003_bgm_shorts.mp3`}
+        srcPath={`${ASSET_PATH}/audio/bgm/ep003_bgm_shorts.wav`}
         volume={0.15}
         fadeInFrames={21}
         loop={false}

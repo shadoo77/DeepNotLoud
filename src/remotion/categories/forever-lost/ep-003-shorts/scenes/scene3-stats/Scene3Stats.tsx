@@ -476,7 +476,7 @@ export const Scene3Stats: React.FC = () => {
 
       <Sequence durationInFrames={35}>
         <Audio
-          src={staticFile(`${ASSET_PATH}/audio/sfx/whoosh_in.mp3`)}
+          src={staticFile(`${ASSET_PATH}/audio/sfx/whoosh_in.wav`)}
           volume={(f) =>
             interpolate(f, [0, 2, 30, 35], [0, 0.35, 0.35, 0], {
               extrapolateLeft: "clamp",
@@ -488,7 +488,7 @@ export const Scene3Stats: React.FC = () => {
 
       <Sequence from={card1Exit} durationInFrames={35}>
         <Audio
-          src={staticFile(`${ASSET_PATH}/audio/sfx/whoosh_in.mp3`)}
+          src={staticFile(`${ASSET_PATH}/audio/sfx/whoosh_in.wav`)}
           volume={(f) =>
             interpolate(f, [0, 2, 30, 35], [0, 0.3, 0.3, 0], {
               extrapolateLeft: "clamp",
@@ -500,7 +500,7 @@ export const Scene3Stats: React.FC = () => {
 
       <Sequence from={card2Exit} durationInFrames={40}>
         <Audio
-          src={staticFile(`${ASSET_PATH}/audio/sfx/impact_thud.mp3`)}
+          src={staticFile(`${ASSET_PATH}/audio/sfx/impact_thud.wav`)}
           volume={(f) =>
             interpolate(f, [0, 2, 35, 40], [0, 0.6, 0.6, 0], {
               extrapolateLeft: "clamp",
@@ -511,7 +511,7 @@ export const Scene3Stats: React.FC = () => {
       </Sequence>
 
       <Audio
-        src={staticFile(`${ASSET_PATH}/audio/sfx/clock_tick.mp3`)}
+        src={staticFile(`${ASSET_PATH}/audio/sfx/clock_tick.wav`)}
         volume={(f) =>
           interpolate(
             f,
@@ -529,7 +529,7 @@ export const Scene3Stats: React.FC = () => {
       {/* VO + Captions */}
       <Sequence>
         <Audio
-          src={staticFile(`${ASSET_PATH}/audio/vo/short/ep003_s3_stats.mp3`)}
+          src={staticFile(`${ASSET_PATH}/audio/vo/short/ep003_s3_stats.wav`)}
           volume={1}
         />
         <YouTubeCaptions

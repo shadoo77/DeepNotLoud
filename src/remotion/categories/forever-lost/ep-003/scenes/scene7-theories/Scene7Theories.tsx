@@ -485,7 +485,7 @@ export const Scene7Theories: React.FC = () => {
       {/* VO + Captions */}
       <Sequence from={VO_START_FRAME}>
         <Audio
-          src={staticFile(`${ASSET_PATH}/audio/vo/ep003_L_s7_theories.mp3`)}
+          src={staticFile(`${ASSET_PATH}/audio/vo/ep003_L_s7_theories.wav`)}
           volume={1}
         />
         <YouTubeCaptions
@@ -516,7 +516,7 @@ export const Scene7Theories: React.FC = () => {
       {/* SFX — paper rustle at scene open */}
       <Sequence from={VO_START_FRAME}>
         <Audio
-          src={staticFile(`${ASSET_PATH}/audio/sfx/paper_rustle.mp3`)}
+          src={staticFile(`${ASSET_PATH}/audio/sfx/paper_rustle.wav`)}
           volume={(f) =>
             interpolate(f, [0, 90], [0.2, 0], {
               extrapolateLeft: "clamp",
@@ -529,7 +529,7 @@ export const Scene7Theories: React.FC = () => {
       {/* SFX — silence drone when theory 5 lands */}
       <Sequence from={tDroneFrame}>
         <Audio
-          src={staticFile(`${ASSET_PATH}/audio/sfx/silence_drone.mp3`)}
+          src={staticFile(`${ASSET_PATH}/audio/sfx/silence_drone.wav`)}
           volume={(f) =>
             interpolate(
               f,
@@ -554,7 +554,7 @@ export const Scene7Theories: React.FC = () => {
       {/* SFX — impact_thud with blue flash on "bottle" */}
       <Sequence from={tBottleFrame + 80}>
         <Audio
-          src={staticFile(`${ASSET_PATH}/audio/sfx/impact_thud.mp3`)}
+          src={staticFile(`${ASSET_PATH}/audio/sfx/impact_thud.wav`)}
           volume={(f) =>
             interpolate(f, [0, 60], [0.5, 0], {
               extrapolateLeft: "clamp",

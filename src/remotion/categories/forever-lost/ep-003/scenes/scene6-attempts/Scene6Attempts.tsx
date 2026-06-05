@@ -467,7 +467,7 @@ export const Scene6Attempts: React.FC = () => {
       {/* VO + Captions */}
       <Sequence from={VO_START_FRAME}>
         <Audio
-          src={staticFile(`${ASSET_PATH}/audio/vo/ep003_L_s6_attempts.mp3`)}
+          src={staticFile(`${ASSET_PATH}/audio/vo/ep003_L_s6_attempts.wav`)}
           volume={1}
         />
         <YouTubeCaptions
@@ -499,7 +499,7 @@ export const Scene6Attempts: React.FC = () => {
       {/* SFX — gave up */}
       <Sequence from={gaveUpFrame}>
         <Audio
-          src={staticFile(`${ASSET_PATH}/audio/sfx/impact_thud.mp3`)}
+          src={staticFile(`${ASSET_PATH}/audio/sfx/impact_thud.wav`)}
           volume={(f) =>
             interpolate(f, [0, 60], [0.5, 0], {
               extrapolateLeft: "clamp",
@@ -512,7 +512,7 @@ export const Scene6Attempts: React.FC = () => {
       {/* SFX — nonsense */}
       <Sequence from={nonsenseFrame}>
         <Audio
-          src={staticFile(`${ASSET_PATH}/audio/sfx/impact_thud.mp3`)}
+          src={staticFile(`${ASSET_PATH}/audio/sfx/impact_thud.wav`)}
           volume={(f) =>
             interpolate(f, [0, 60], [0.5, 0], {
               extrapolateLeft: "clamp",
@@ -525,7 +525,7 @@ export const Scene6Attempts: React.FC = () => {
       {/* SFX — clock tick recurring */}
       <Sequence from={VO_START_FRAME}>
         <Audio
-          src={staticFile(`${ASSET_PATH}/audio/sfx/clock_tick.mp3`)}
+          src={staticFile(`${ASSET_PATH}/audio/sfx/clock_tick.wav`)}
           volume={(f) => (f % 210 < 2 ? 0.12 : 0)}
         />
       </Sequence>

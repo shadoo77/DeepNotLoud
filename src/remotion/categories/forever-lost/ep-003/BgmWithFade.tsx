@@ -24,7 +24,7 @@ const TOTAL = B4 + (S7 - T.fade) + (S8 - T.fade);
 
 export const BgmWithFade: React.FC = () => (
   <Audio
-    src={staticFile(`${ASSET_PATH}/audio/bgm/ep003_bgm_landscape.mp3`)}
+    src={staticFile(`${ASSET_PATH}/audio/bgm/ep003_bgm_landscape.wav`)}
     volume={(f) => {
       let sceneVol: number;
       if (f < B1) sceneVol = 0.18;
