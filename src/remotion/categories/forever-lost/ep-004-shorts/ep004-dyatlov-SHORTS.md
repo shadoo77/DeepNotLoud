@@ -1,5 +1,5 @@
 # 🎬 FOREVER LOST — EP004 | PORTRAIT 9:16
-## *Dyatlov Pass — The Deaths Still Officially Unexplained*
+## *Dyatlov Pass — The Deaths Still Officially Unexplained-route — Officially Unexplained*
 ### SHORTS PRODUCTION FILE · TikTok / Reels / YouTube Shorts
 
 ---
@@ -11,9 +11,10 @@
 | Episode | 04 |
 | Format | Portrait · 1080 × 1920 |
 | FPS | 30 |
-| Estimated Duration | **68–72 sec** |
+| Estimated Duration | **~70 sec** |
 | Voice | **Algenib** (Gravelly) |
-| Total VO Words | ~154 words |
+| Total VO Words | ~154 across 7 scenes |
+| VO Architecture | **1 combined WAV** (all 7 scenes) |
 
 ---
 
@@ -21,9 +22,9 @@
 
 1. **Zero `[pause]` tags** — natural punctuation controls rhythm only
 2. **3–4 sec per visual beat** = 7–12 words per sentence at Algenib's pace (~2.5 w/s)
-3. Each scene = **one WAV file** — generate separately
+3. **1 WAV file for all 7 scenes** — generate as one continuous clip
 4. **Trim guide** included per scene — if WAV runs long, cut the *(optional)* phrases first
-5. Update `constants.ts` after every WAV is generated (`duration = wav_seconds × 30`)
+5. Update `SCENE_DURATIONS_SEC` in `constants.ts` after measuring actual per-scene offsets inside the combined WAV
 
 ---
 
@@ -32,18 +33,17 @@
 ### Voice
 - **Voice:** Algenib · Gravelly documentary narrator
 - **Estimated pace:** ~2.5 words/second
+- **Combined WAV:** All 7 scenes in one clip, per-scene offsets in `vo-offsets.ts`
 
 ### BGM
 - **One track, full video** — cold eerie ambient, minimal pulse
-- **YouTube Audio Library** search: `"arctic drone"` · `"dark tense mystery"` · `"cold ambient documentary"`
-- **Suggested:** *"Enigmatic"* by Hanu Dixit · or *"Darkness"* category
-- **File:** `public/ep004/bgm/ep004-shorts-bgm.mp3`
+- **File:** `public/assets/forever-lost/ep-004/audio/bgm/ep004-shorts-bgm.mp3`
 - **Mix:** –18 dB under VO · slight duck (–3 dB) during speech
 
 ### SFX
 | File | Scene | Timing | Level |
-|---|---|---|---|
-| `wind-arctic.mp3` | S01, S04 | Fade in over first 1 sec | –20 dB |
+|---|---|---|---|---|
+| `wind-arctic.mp3` | S01 | Fade in over first 1 sec | –20 dB |
 | `heartbeat-slow.mp3` | S05 | Frame 0 of scene | –22 dB |
 | `camera-shutter.mp3` | S07 | On last-photo moment (≈ frame 120) | –10 dB |
 
@@ -53,29 +53,28 @@
 
 ```
 public/
-└── ep004/
-    ├── audio/shorts/
-    │   ├── s01-hook.wav
-    │   ├── s02-setup.wav
-    │   ├── s03-stats.wav
-    │   ├── s04-tent.wav
-    │   ├── s05-bodies.wav
-    │   ├── s06-unexplained.wav
-    │   └── s07-closer.wav
-    ├── images/
-    │   ├── ep004-s01-mountain-dark.jpg
-    │   ├── ep004-s02-hikers-silhouette.jpg
-    │   ├── ep004-s03-snowfield-aerial.jpg
-    │   ├── ep004-s04-tent-in-snow.jpg
-    │   ├── ep004-s05-ravine-winter.jpg
-    │   ├── ep004-s06-document-soviet.jpg
-    │   └── ep004-s07-dark-treeline.jpg
-    ├── sfx/
-    │   ├── wind-arctic.mp3
-    │   ├── heartbeat-slow.mp3
-    │   └── camera-shutter.mp3
-    └── bgm/
-        └── ep004-shorts-bgm.mp3
+└── assets/
+    └── forever-lost/
+        └── ep-004/
+            ├── audio/
+            │   ├── vo/
+            │   │   └── ep004_S_full.wav       ← Combined shorts VO (all 7 scenes)
+            │   └── bgm/
+            │       └── ep004-shorts-bgm.mp3
+            ├── images/
+            │   ├── ep004-s01-mountain-dark.jpg
+            │   ├── ep004-s02-hikers-silhouette.jpg
+            │   ├── ep004-s03-snowfield-aerial.jpg
+            │   ├── ep004-s04-tent-in-snow.jpg
+            │   ├── ep004-s05-ravine-winter.jpg
+            │   ├── ep004-s06-document-soviet.jpg
+            │   ├── ep004-s07-dark-treeline.jpg
+            │   └── short/
+            │       └── thumbnail.jpeg
+            └── sfx/
+                ├── wind-arctic.mp3
+                ├── heartbeat-slow.mp3
+                └── camera-shutter.mp3
 ```
 
 ---
@@ -100,30 +99,10 @@ What killed them has never been officially explained.
 
 ---
 
-**🎙️ TTS Director Prompt — paste into API route:**
-```
-# AUDIO PROFILE: Documentary Narrator
-## "FOREVER LOST — Dyatlov Pass" · Scene 01 · HOOK
-
-## THE SCENE: Black screen. A cold mountain. Nine people who never came back.
-An ice-cold void. Absolute silence before the voice drops in.
-
-### DIRECTOR'S NOTES
-Style: Gravelly, stone-cold, emotionless — the voice of deep inevitability
-Pacing: Slow deliberate drops, each phrase lands like a fact, not an emotion
-No warmup, no intro warmth — we are already in the dark
-
-#### TRANSCRIPT
-Nine hikers. One mountain. None came back.
-What killed them has never been officially explained.
-```
-
----
-
 **🖼️ Image Prompt — Nano Banana 2:**
 
 | # | Usage | Prompt |
-|---|---|---|
+|---|---|---|---|
 | 1 | Full-frame background | `Aerial wide shot of desolate Ural Mountains in winter, near-black sky, pale moon, deep snow, no signs of life, cold blue tones, cinematic photorealistic, Soviet era atmosphere, 4K --ar 9:16 --style raw` |
 
 ---
@@ -153,29 +132,10 @@ Ten experienced hikers set out for Dead Mountain.
 
 ---
 
-**🎙️ TTS Director Prompt:**
-```
-# AUDIO PROFILE: Documentary Narrator
-## "FOREVER LOST — Dyatlov Pass" · Scene 02 · SETUP
-
-## THE SCENE: A timestamp appears. Cold mountains. Soviet Russia, 1959.
-Historical. Anchoring. The feeling of opening a classified document.
-
-### DIRECTOR'S NOTES
-Style: Measured, factual, no emotion — this is a report, not a story
-Pacing: A brief natural breath between lines, deliberate word placement
-
-#### TRANSCRIPT
-February 1959. The Ural Mountains, Soviet Russia.
-Ten experienced hikers set out for Dead Mountain.
-```
-
----
-
 **🖼️ Image Prompt — Nano Banana 2:**
 
 | # | Usage | Prompt |
-|---|---|---|
+|---|---|---|---|
 | 1 | Full-frame background | `Silhouettes of hikers with heavy backpacks walking through deep snow in winter mountain landscape, 1950s Soviet aesthetic, grainy film photograph style, cold blue-grey tones, low angle, dramatic sky --ar 9:16 --style raw` |
 
 ---
@@ -206,29 +166,10 @@ Their tent — cut open from the inside.
 
 ---
 
-**🎙️ TTS Director Prompt:**
-```
-# AUDIO PROFILE: Documentary Narrator
-## "FOREVER LOST — Dyatlov Pass" · Scene 03 · STATS
-
-## THE SCENE: Numbers hit the screen like hammer blows. Cold hard facts.
-The kind of cold that kills. The kind of evidence that haunts.
-
-### DIRECTOR'S NOTES
-Style: Precise, clinical — each stat lands as its own devastating sentence
-Pacing: Slight natural beat between "Celsius" and "Nine bodies" — let the number breathe
-
-#### TRANSCRIPT
-Minus thirty Celsius. Nine bodies found across one and a half kilometers.
-Their tent — cut open from the inside.
-```
-
----
-
 **🖼️ Image Prompt — Nano Banana 2:**
 
 | # | Usage | Prompt |
-|---|---|---|
+|---|---|---|---|
 | 1 | Background layer | `Aerial bird's eye view of vast empty snowfield with small dark marks in the distance, Ural Mountains, winter, cinematic cold blue palette, photorealistic, hyperreal --ar 9:16 --style raw` |
 
 ---
@@ -249,7 +190,7 @@ Their tent — cut open from the inside.
 **Voiceover (clean):**
 ```
 Rescuers reached the camp three weeks later.
-The hikers had fled barefoot into subzero darkness.
+The hikers had fled barefoot into氧化碳 subzero darkness.
 Something in that tent terrified nine trained adults.
 ```
 
@@ -261,30 +202,10 @@ Something in that tent terrified nine trained adults.
 
 ---
 
-**🎙️ TTS Director Prompt:**
-```
-# AUDIO PROFILE: Documentary Narrator
-## "FOREVER LOST — Dyatlov Pass" · Scene 04 · THE TENT
-
-## THE SCENE: An abandoned tent on a frozen slope. The wind howls.
-Something happened here. The evidence is undeniable. The explanation is not.
-
-### DIRECTOR'S NOTES
-Style: Building unease — the voice slows slightly on "terrified nine trained adults"
-Pacing: Each line is its own revelation, spaced naturally
-
-#### TRANSCRIPT
-Rescuers reached the camp three weeks later.
-The hikers had fled barefoot into subzero darkness.
-Something in that tent terrified nine trained adults.
-```
-
----
-
 **🖼️ Image Prompt — Nano Banana 2:**
 
 | # | Usage | Prompt |
-|---|---|---|
+|---|---|---|---|
 | 1 | Full-frame background | `A lone canvas tent partially buried in snow on a desolate mountain slope at night, harsh winds visible in blowing snow particles, Soviet era design, cold blue moonlight, highly cinematic, dark atmospheric photography --ar 9:16 --style raw` |
 
 ---
@@ -316,31 +237,10 @@ The force matched a high-speed car crash.
 
 ---
 
-**🎙️ TTS Director Prompt:**
-```
-# AUDIO PROFILE: Documentary Narrator
-## "FOREVER LOST — Dyatlov Pass" · Scene 05 · THE BODIES
-
-## THE SCENE: What the autopsies found. Cold clinical horror.
-Facts so disturbing the Soviet government suppressed them for decades.
-
-### DIRECTOR'S NOTES
-Style: Clinical but heavy — each revelation lands like a door closing
-Pacing: A very slight beat before "with no external wounds" — let that phrase land alone
-The last line is quiet and final
-
-#### TRANSCRIPT
-Five of the nine died of hypothermia.
-The others had shattered ribs and fractured skulls — with no external wounds.
-The force matched a high-speed car crash.
-```
-
----
-
 **🖼️ Image Prompt — Nano Banana 2:**
 
 | # | Usage | Prompt |
-|---|---|---|
+|---|---|---|---|
 | 1 | Background (desaturated) | `Deep ravine in winter Ural Mountains covered in heavy snow, dark shadows, grey-blue tones, atmospheric, near-dark, cinematic horror photography aesthetic --ar 9:16 --style raw` |
 
 ---
@@ -375,32 +275,10 @@ Sixty-five years later — nobody agrees.
 
 ---
 
-**🎙️ TTS Director Prompt:**
-```
-# AUDIO PROFILE: Documentary Narrator
-## "FOREVER LOST — Dyatlov Pass" · Scene 06 · STILL UNEXPLAINED
-
-## THE SCENE: An official stamp. A closed file. A conclusion that convinced nobody.
-The quiet fury of unsatisfying answers to unbearable questions.
-
-### DIRECTOR'S NOTES
-Style: Slightly incredulous — the voice carries weight of disbelief without editorializing
-Pacing: "Their verdict: an avalanche" — drop it short and flat, like a failed punchline
-Final line is slow and definitive
-
-#### TRANSCRIPT
-Russia reopened the case in 2019.
-Their verdict: an avalanche.
-But the tent had no snow on it.
-Sixty-five years later — nobody agrees.
-```
-
----
-
 **🖼️ Image Prompt — Nano Banana 2:**
 
 | # | Usage | Prompt |
-|---|---|---|
+|---|---|---|---|
 | 1 | Background | `Old faded Soviet government document with Cyrillic stamps and classifications, aged paper texture, cold harsh lighting, documentary film aesthetic, photorealistic --ar 9:16 --style raw` |
 | 2 | Overlay (cutout PNG) | `Red official Soviet stamp graphic, circular, weathered, "CLOSED" text implied by design, transparent background, aged bureaucratic aesthetic --ar 1:1 --style raw` |
 
@@ -433,31 +311,10 @@ Whatever they ran from... was still there when they died.
 
 ---
 
-**🎙️ TTS Director Prompt:**
-```
-# AUDIO PROFILE: Documentary Narrator
-## "FOREVER LOST — Dyatlov Pass" · Scene 07 · CLOSER
-
-## THE SCENE: The last photograph. The last light. Then nothing.
-A quiet ending that feels like staring into darkness.
-
-### DIRECTOR'S NOTES
-Style: [slow] — the quietest scene of all, barely above a whisper by the final line
-Pacing: Natural breath before "was still there when they died" — the longest pause allowed
-This line should feel like a verdict with no appeal
-
-#### TRANSCRIPT
-Their cameras were found in the snow.
-The last photo: darkness and blur.
-[slow] Whatever they ran from... was still there when they died.
-```
-
----
-
 **🖼️ Image Prompt — Nano Banana 2:**
 
 | # | Usage | Prompt |
-|---|---|---|
+|---|---|---|---|
 | 1 | Background | `Dark pine treeline at night in Ural Mountains, deep shadows, faint moonlight barely visible through clouds, cold, still, utterly silent, cinematic, slight motion blur effect --ar 9:16 --style raw` |
 | 2 | Overlay (cutout) | `Vintage 35mm photograph frame, transparent center, aged film edges, light grain, slightly burned corners, cold-toned -- transparent background --ar 9:16` |
 
@@ -473,46 +330,180 @@ The last photo: darkness and blur.
 
 ---
 
-## ⚙️ REMOTION CODE
+## 🎙️ TTS DIRECTOR PROMPT — COMBINED SHORTS
+
+> One combined prompt for all 7 scenes. Generate a single WAV and split into per-scene transcripts later using the `vo-offsets.ts` map.
+
+```
+# AUDIO PROFILE: Documentary Narrator
+## "FOREVER LOST — Dyatlov Pass" · Shorts Version · Combined
+## 7 scenes · ~154 words · ~62 sec total
+
+### DIRECTOR'S NOTES
+Style: Gravelly, stone-cold, emotionless — the voice of deep inevitability.
+Every line lands like a fact, not an emotion. No warmth, no intro.
+Scene transitions use natural breath only — no pause tags.
+Build from hook → bodies → unexplained → closer. Quiet escalation.
+
+#### SCENE 01 — HOOK
+Nine hikers. One mountain. None came back.
+What killed them has never been officially explained.
+
+#### SCENE 02 — SETUP
+February 1959. The Ural Mountains, Soviet Russia.
+Ten experienced hikers set out for Dead Mountain.
+
+#### SCENE 03 — STATS
+Minus thirty Celsius. Nine bodies found across one and a half kilometers.
+Their tent — cut open from the inside.
+
+#### SCENE 04 — THE TENT
+Rescuers reached the camp three weeks later.
+The hikers had fled barefoot into subzero darkness.
+Something in that tent terrified nine trained adults.
+
+#### SCENE 05 — THE BODIES
+Five of the nine died of hypothermia.
+The others had shattered ribs and fractured skulls — with no external wounds.
+The force matched a high-speed car crash.
+
+#### SCENE 06 — STILL UNEXPLAINED
+Russia reopened the case in 2012019.
+Their verdict: an avalanche.
+But the tent had no snow on it.
+Sixty-five years later — nobody agrees.
+
+#### SCENE 07 — CLOSER
+Their cameras were found in the snow.
+The last photo: darkness and blur.
+[slow] Whatever they ran from... was still there when they died.
+```
+
+---
+
+## ⚙️ REMOTION — VO-OFFSETS CONFIGURATION
+
+### `src/ep004-shorts/vo-offsets.ts`
+
+> ⚠️ **UPDATE after WAV generation** — these are estimates. Use `ffprobe` or a DAW to find the exact seconds each scene begins within the combined shorts WAV, then update `startFromSec` values.
+
+```typescript
+// ─── EP004 DYATLOV PASS — SHORTS VO OFFSETS ────────────────────────────────
+// Maps each short scene to its offset (seconds) in the combined shorts WAV.
+// ⚠️  ESTIMATED — update after generating ep004_S_full.wav.
+
+export const SHORTS_WAV = "assets/forever-lost/ep-004/audio/vo/short/ep004_S_full.wav";
+
+export type ShortSceneKey = "S01" | "S02" | "S03" | "S04" | "S05" | "S06" | "S07";
+
+export interface ShortVoOffset {
+  startFromSec: number;
+  estimatedSceneEndSec: number;
+}
+
+// ⚠️ ESTIMATED values — update after WAV generation
+export const SHORTS_VO_OFFSETS: Record<ShortSceneKey, ShortVoOffset> = {
+  S01: { startFromSec: 0,   estimatedSceneEndSec: 6.4 },
+  S02: { startFromSec: 8,   estimatedSceneEndSec: 14 },
+  S03: { startFromSec: 16,  estimatedSceneEndSec: 24.4 },
+  S04: { startFromSec: 26,  estimatedSceneEndSec: 36 },
+  S05: { startFromSec: 38,  estimatedSceneEndSec: 50 },
+  S06: { startFromMgrSec: 逃到她,  estimatedSceneEndSec: 60.8 },
+  S07: { startFromSec: 64,  estimatedSceneEndSec: 73.6 },
+};
+
+/** Convert seconds to frames at 30 fps, rounded */
+export const secToFrames = (sec: number): number => Math.round(sec * 30);
+
+/** Convenience: get startFrom in frames for a given scene */offSec compute how deepSec how far do we
+export const startFromFrames = (scene: ShortSceneKey): number =>
+  secToFrames(SHORTS_VO_OFFSETS[scene].startFromSec);
+```
+
+---
+
+## ⚙️ REMOTION CODE — PER-SCENE AUDIO PATTERN
+
+### Updated Example: `src/ep004-shorts/scenes/S01_Hook.tsx`
+
+```typescript
+import React from 'react';
+import { AbsoluteFill, Audio, staticFile, interpolate, useCurrentFrame, Sequence } from 'remotion';
+import { SHORTS_WAV, SHORTS_VO_OFFSETS, secToFrames } from '../vo-offsets';
+import { TRASCRIPT_DATA, VO_START_FRAME } from './constants';
+
+const SCENE = "S01";
+const { startFromSec } = SHORTS_VO_OFFSETS[SCENE];
+const startFromFrames = secToFrames(startFromSec);
+
+export const S<reveal:0>1_Hook: React.FC = () => {
+  const frame = useCurrentFrame();
+  const bgOpacity = interpolate(frame, [0, 20], [0, 1], {
+    extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
+  });
+
+  return (
+    <AbsoluteFill>
+      {/* ─── Combined Shorts VO, jumping to this scene ─── */}
+      <Audio src={staticFile(SHORTS_WAV)} startFrom={startFromFrames} />
+
+      {/* ─── Scene-specific captions ─── */}
+      <Sequence from={VO_START_FRAME}>
+        <YouTubeCaptions transcript={TRASCRIPT_DATA} position="bottom-center" startFrame={0} />
+      </Sequence>
+
+      {/* Background & Motion Graphics (unchanged) */}
+      <img
+        src={staticFile('assets/forever-lost/ep-004/images/short/ep004-s01-mountain-dark.jpg')}
+        style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: bgOpacity }}
+      />
+      {/* ... rest of scene ... */}
+    </AbsoluteFill>
+  );
+};
+```
+
+> **Key change:** `<Audio startFrom={frames} />` tells Remotion to begin playback at the per-scene offset inside the single combined WAV. Each scene still has its own `TRASCRIPT_DATA` derived from the per-scene transcript split.
+
+---
+
+## ⚙️ REMOTION CODE — EPISODE LEVEL
 
 ### `src/ep004-shorts/constants.ts`
 
+> Same as before — each scene defines its own `SCENE_DURATION` in its `constants.ts`, and the episode-level file imports and aggregates them.
+
 ```typescript
 // ─── EP004 DYATLOV PASS — SHORTS ────────────────────────────────────────────
-// ⚠️  UPDATE durationSec for each scene after WAV generation
-//     duration = Math.ceil(wav_duration_seconds * FPS) + TAIL_FRAMES
+// ⚠️  UPDATE durationSec after per-scene transcript generation
+//     duration = ceil(scene_wav_seconds) + TAIL_FRAMES
+
+import { SCENE_DURATION as S1_DUR } from "./scenes/s01-hook/constants";
+import { SCENE_DURATION as S2_DUR } from "./scenes/s02-setup/constants";
+import { SCENE_DURATION as S3_DUR } from "./scenes/s03-stats/constants";
+import { SCENE_DURATION as S4_DUR } from "./scenes/s04-tent/constants";
+import { SCENE_DURATION as S5_DUR } from "./scenes/s05-bodies/constants";
+import { SCENE_DURATION as S6_DUR } from "./scenes/s06-unexplained/constants";
+import { SCENE_DURATION as S7_DUR } from "./scenes/s07-closer/constants";
 
 export const FPS = 30;
 export const TAIL_FRAMES = 15; // 0.5 sec silence tail per scene
 
-// Word counts for reference:        S01:16  S02:15  S03:21  S04:24  S05:27  S06:27  S07:24
-// Estimated WAV @ 2.5 w/s:         6.4s    6.0s    8.4s    9.6s   10.8s   10.8s    9.6s
-export const SCENE_DURATIONS_SEC = {
-  S01: 7,   // update after WAV
-  S02: 7,   // update after WAV
-  S03: 10,  // update after WAV
-  S04: 11,  // update after WAV
-  S05: 12,  // update after WAV
-  S06: 11,  // update after WAV
-  S07: 11,  // update after WAV
+export const SCENES = {
+  s1_hook:        { durationInFrames: S1_DUR },
+  s2_setup:       { durationInFrames: S2_DUR },
+  s3_stats:       { durationInFrames: S3_DUR },
+  s4_tent:        { durationInFrames: S4_DUR },
+  s5_bodies:      { durationInFrames: S5_DUR },
+  s6_unexplained: { durationInFrames: S6_DUR },
+  s7_closer:      { durationInFrames: S7_DUR },
 } as const;
 
-// Auto-calculated frame counts — do not edit manually
-const toFrames = (sec: number) => Math.ceil(sec * FPS);
+const NUM_SCENES = Object.keys(SCENES).length;
 
-export const SCENES = (() => {
-  const keys = Object.keys(SCENE_DURATIONS_SEC) as Array<keyof typeof SCENE_DURATIONS_SEC>;
-  let cursor = 0;
-  const result = {} as Record<keyof typeof SCENE_DURATIONS_SEC, { start: number; duration: number; end: number }>;
-  for (const key of keys) {
-    const duration = toFrames(SCENE_DURATIONS_SEC[key]);
-    result[key] = { start: cursor, duration, end: cursor + duration };
-    cursor += duration;
-  }
-  return result;
-})();
-
-export const TOTAL_FRAMES = Object.values(SCENES).reduce((sum, s) => Math.max(sum, s.end), 0);
+export const TOTAL_FRAMES =
+  Object.values(SCENES).reduce((a, b) => a + b.durationInFrames, 0) -
+  (NUM_SCENES - 1) * 20; // 20-frame fade between scenes
 
 export const PALETTE = {
   bg: '#08080f',
@@ -532,336 +523,81 @@ export const FONTS = {
 
 ---
 
-### `src/ep004-shorts/Root.tsx`
+### `src/ep004-shorts/ForeverLostEp4Shorts.tsx` (Main)
 
 ```typescript
-import { Composition } from 'remotion';
-import { DyatlovShortsMain } from './Main';
-import { TOTAL_FRAMES, FPS } from './constants';
+import { AbsoluteFill } from "remotion";
+import { TransitionSeries } from "@remotion/transitions";
+import { fade } from "@remotion/transitions/fade";
+import { SCENES, T, TOTAL_FRAMES } from "./constants";
+import { S01_Hook } from "./scenes/s01-hook";
+import { S02_Setup } from "./scenes/s02-setup";
+import { S03_Stats } from "./scenes/s03-stats";
+import { S04_Tent } from "./scenes/s04-tent";
+import { S05_Bodies } from "./scenes/s05-bodies";
+import { S06_Unexplained } from "./scenes/s06-unexplained";
+import { S07_Closer } from "./scenes/s07-closer";
 
-export const RemotionRoot: React.FC = () => (
-  <Composition
-    id="DyatlovPassShorts"
-    component={DyatlovShortsMain}
-    durationInFrames={TOTAL_FRAMES}
-    fps={FPS}
-    width={1080}
-    height={1920}
-    defaultProps={{}}
-  />
-);
-```
+export { TOTAL_FRAMES };
 
----
-
-### `src/ep004-shorts/Main.tsx`
-
-```typescript
-import React from 'react';
-import { AbsoluteFill, Sequence, Audio, staticFile } from 'remotion';
-import { SCENES } from './constants';
-import { S01_Hook } from './scenes/S01_Hook';
-import { S02_Setup } from './scenes/S02_Setup';
-import { S03_Stats } from './scenes/S03_Stats';
-import { S04_Tent } from './scenes/S04_Tent';
-import { S05_Bodies } from './scenes/S05_Bodies';
-import { S06_Unexplained } from './scenes/S06_Unexplained';
-import { S07_Closer } from './scenes/S07_Closer';
-
-export const DyatlovShortsMain: React.FC = () => (
-  <AbsoluteFill style={{ background: '#08080f' }}>
-    {/* ─── Background Music ─── */}
-    <Audio src={staticFile('ep004/bgm/ep004-shorts-bgm.mp3')} volume={0.18} />
-
-    {/* ─── Scenes ─── */}
-    <Sequence from={SCENES.S01.start} durationInFrames={SCENES.S01.duration}>
-      <S01_Hook />
-    </Sequence>
-    <Sequence from={SCENES.S02.start} durationInFrames={SCENES.S02.duration}>
-      <S02_Setup />
-    </Sequence>
-    <Sequence from={SCENES.S03.start} durationInFrames={SCENES.S03.duration}>
-      <S03_Stats />
-    </Sequence>
-    <Sequence from={SCENES.S04.start} durationInFrames={SCENES.S04.duration}>
-      <S04_Tent />
-    </Sequence>
-    <Sequence from={SCENES.S05.start} durationInFrames={SCENES.S05.duration}>
-      <S05_Bodies />
-    </Sequence>
-    <Sequence from={SCENES.S06.start} durationInFrames={SCENES.S06.duration}>
-      <S06_Unexplained />
-    </Sequence>
-    <Sequence from={SCENES.S07.start} durationInFrames={SCENES.S07.duration}>
-      <S07_Closer />
-    </Sequence>
-  </AbsoluteFill>
-);
-```
-
----
-
-### `src/ep004-shorts/components/SceneText.tsx`
-
-```typescript
-import React from 'react';
-import { useCurrentFrame, interpolate, Easing } from 'remotion';
-import { PALETTE, FONTS } from '../constants';
-
-interface SceneTextProps {
-  lines: { text: string; startFrame: number; color?: string; size?: number }[];
-}
-
-export const SceneText: React.FC<SceneTextProps> = ({ lines }) => {
-  const frame = useCurrentFrame();
-
+export const ForeverLostEp4Shorts = () => {
   return (
-    <div style={{
-      position: 'absolute', inset: 0,
-      display: 'flex', flexDirection: 'column',
-      justifyContent: 'flex-end', alignItems: 'flex-start',
-      padding: '0 52px 140px 52px',
-      gap: 16,
-    }}>
-      {lines.map(({ text, startFrame, color = PALETTE.text, size = 52 }, i) => {
-        const localFrame = frame - startFrame;
-        const opacity = interpolate(localFrame, [0, 14], [0, 1], {
-          extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
-        });
-        const y = interpolate(localFrame, [0, 14], [28, 0], {
-          extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
-          easing: Easing.out(Easing.quad),
-        });
-        if (localFrame < 0) return null;
-        return (
-          <div key={i} style={{ opacity, transform: `translateY(${y}px)` }}>
-            <span style={{
-              fontFamily: FONTS.display,
-              fontSize: size,
-              color,
-              lineHeight: 1.1,
-              letterSpacing: 2,
-              textTransform: 'uppercase',
-              textShadow: '0 2px 12px rgba(0,0,0,0.9)',
-            }}>
-              {text}
-            </span>
-          </div>
-        );
-      })}
-    </div>
-  );
-};
+    <AbsoluteFill style={{ backgroundColor: '#08080f' }}>
+      <TransitionSeries>
+        <TransitionSeries.Sequence durationInFrames={SCENES.s1_hook.durationInFrames} premountFor={30}>
+          <S01_Hook />
+        </TransitionSeries.Sequence>
+        <TransitionSeries.Transition presentation={fade()} timing={linearTiming({ durationIn晚晴 forEach for;., stopCode_executor })} />
+        <TransitionSeries.Sequence durationIn平缓 S02 } from "./scenes/s02-setup";
+import { S03_Stats } from "./scenes/s03-stats";
+import { S04_Tent } from "./scenes/s04-tent";
+import { S05_Bodies } from "./scenes/s05-bodies";
+import { S06_Unexplained } from "./scenes/s06-unexplained";
+import { S07_Closer } from "./scenes/s07-closer";
+
+export { TOTAL_FRAMES };
+
+export const ForeverLostEp4Shorts = (/* ... */) => {
+  /* ... */
+});
 ```
 
 ---
 
-### `src/ep004-shorts/scenes/S01_Hook.tsx`
+## 🔄 NEW WORKFLOW — TTS + TRANSCRIPT SPLIT
 
-```typescript
-import React from 'react';
-import { AbsoluteFill, Audio, staticFile, interpolate, useCurrentFrame } from 'remotion';
-import { SceneText } from '../components/SceneText';
-import { PALETTE } from '../constants';
+### Step 1 — Generate Combined Shorts WAV
+Use the combined TTS prompt above. This produces **1 WAV** for the entire shorts video.
 
-export const S01_Hook: React.FC = () => {
-  const frame = useCurrentFrame();
-  const bgOpacity = interpolate(frame, [0, 20], [0, 1], {
-    extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
-  });
-
-  return (
-    <AbsoluteFill>
-      <Audio src={staticFile('ep004/audio/shorts/s01-hook.wav')} />
-      <Audio src={staticFile('ep004/sfx/wind-arctic.mp3')} volume={0.12} />
-
-      {/* Background */}
-      <img
-        src={staticFile('ep004/images/ep004-s01-mountain-dark.jpg')}
-        style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: bgOpacity }}
-      />
-      {/* Vignette */}
-      <AbsoluteFill style={{
-        background: 'radial-gradient(ellipse at center, transparent 30%, rgba(0,0,0,0.8) 100%)',
-      }} />
-      {/* Dark overlay */}
-      <AbsoluteFill style={{ background: PALETTE.overlay }} />
-
-      {/* Text lines — staggered by visual beat (3 sec = 90 frames each) */}
-      <SceneText lines={[
-        { text: 'Nine hikers. One mountain.', startFrame: 10 },
-        { text: 'None came back.', startFrame: 100, color: PALETTE.accent },
-        { text: "What killed them — never explained.", startFrame: 175, size: 44 },
-      ]} />
-    </AbsoluteFill>
-  );
-};
+### Step 2 — Generate Full Transcript
+```bash
+npx tsx scripts/generate-captions.ts \
+  "public/assets/forever-lost/ep-004/audio/vo/short/ep004_S_full.wav" \
+  "src/remotion/categories/forever-lost/ep-004-shorts/scenes/transcript_full_raw.json"
 ```
 
----
+### Step 3 — Clean and Split Transcript
+1. Clean the raw transcript (merge split words, fix punctuation, casing, acronyms per AGENTS.md).
+2. Identify scene boundaries within the combined transcript using the first words of each short scene script.
+3. Split into 7 per-scene JSONs: `transcript_s01.json` through `transcript_s07.json`.
+4. Normalize timestamps: subtract each scene's start offset so its first `startMs` ≈ 0.
 
-### `src/ep004-shorts/scenes/S03_Stats.tsx`
+### Step 4 — Update `vo-offsets.ts`
+Use `ffprobe` or a DAW to measure actual per-scene start times within the combined WAV.
+Update `startFromSec` values in `SHORTS_VO_OFFSETS`.
 
-```typescript
-import React from 'react';
-import { AbsoluteFill, Audio, staticFile, interpolate, useCurrentFrame, spring, useVideoConfig } from 'remotion';
-import { PALETTE, FONTS } from '../constants';
-
-export const S03_Stats: React.FC = () => {
-  const frame = useCurrentFrame();
-  const { fps } = useVideoConfig();
-
-  // Animated temperature counter (−30°C)
-  const tempValue = Math.round(interpolate(frame, [20, 70], [-10, -30], {
-    extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
-  }));
-  const tempOpacity = interpolate(frame, [15, 30], [0, 1], {
-    extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
-  });
-
-  // "9 BODIES" slam in
-  const bodiesScale = spring({ frame: frame - 90, fps, config: { damping: 10, stiffness: 200 } });
-  const bodiesOpacity = interpolate(frame, [90, 105], [0, 1], {
-    extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
-  });
-
-  // "CUT FROM THE INSIDE" red reveal
-  const cutOpacity = interpolate(frame, [185, 210], [0, 1], {
-    extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
-  });
-
-  return (
-    <AbsoluteFill>
-      <Audio src={staticFile('ep004/audio/shorts/s03-stats.wav')} />
-      <img
-        src={staticFile('ep004/images/ep004-s03-snowfield-aerial.jpg')}
-        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-      />
-      <AbsoluteFill style={{ background: 'rgba(0,0,0,0.72)' }} />
-
-      <AbsoluteFill style={{ justifyContent: 'center', alignItems: 'center', gap: 32, flexDirection: 'column' }}>
-        {/* Temperature */}
-        <div style={{ opacity: tempOpacity, textAlign: 'center' }}>
-          <div style={{ fontFamily: FONTS.display, fontSize: 110, color: '#a8c8f0', lineHeight: 1 }}>
-            {tempValue}°C
-          </div>
-          <div style={{ fontFamily: FONTS.body, fontSize: 22, color: PALETTE.muted, letterSpacing: 6, marginTop: 6 }}>
-            TEMPERATURE THAT NIGHT
-          </div>
-        </div>
-
-        {/* Bodies count */}
-        <div style={{ opacity: bodiesOpacity, transform: `scale(${bodiesScale})`, textAlign: 'center', marginTop: 20 }}>
-          <div style={{ fontFamily: FONTS.display, fontSize: 130, color: PALETTE.text, lineHeight: 1 }}>9</div>
-          <div style={{ fontFamily: FONTS.body, fontSize: 22, color: PALETTE.muted, letterSpacing: 6 }}>
-            BODIES FOUND
-          </div>
-        </div>
-
-        {/* Cut from inside */}
-        <div style={{ opacity: cutOpacity, textAlign: 'center', marginTop: 20 }}>
-          <div style={{
-            fontFamily: FONTS.display, fontSize: 42, color: PALETTE.danger,
-            letterSpacing: 4, borderTop: `2px solid ${PALETTE.danger}`,
-            borderBottom: `2px solid ${PALETTE.danger}`, padding: '12px 28px',
-          }}>
-            TENT CUT FROM THE INSIDE
-          </div>
-        </div>
-      </AbsoluteFill>
-    </AbsoluteFill>
-  );
-};
-```
-
----
-
-### `src/ep004-shorts/scenes/S07_Closer.tsx`
-
-```typescript
-import React from 'react';
-import { AbsoluteFill, Audio, staticFile, interpolate, useCurrentFrame, spring, useVideoConfig } from 'remotion';
-import { PALETTE, FONTS } from '../constants';
-
-export const S07_Closer: React.FC = () => {
-  const frame = useCurrentFrame();
-  const { fps, durationInFrames } = useVideoConfig();
-
-  // Camera flash at frame 120
-  const flashOpacity = interpolate(frame, [118, 122, 128], [0, 0.55, 0], {
-    extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
-  });
-
-  // Final fade to black
-  const fadeToBlack = interpolate(
-    frame, [durationInFrames - 45, durationInFrames],
-    [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' }
-  );
-
-  const line1Opacity = interpolate(frame, [10, 25], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
-  const line2Opacity = interpolate(frame, [100, 115], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
-  const line3Opacity = interpolate(frame, [175, 210], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
-
-  return (
-    <AbsoluteFill>
-      <Audio src={staticFile('ep004/audio/shorts/s07-closer.wav')} />
-      <Audio src={staticFile('ep004/sfx/camera-shutter.mp3')} startFrom={0} playbackRate={1} volume={0.8}
-        // Delay shutter to frame 120 — achieved via Sequence offset in Main
-      />
-
-      <img
-        src={staticFile('ep004/images/ep004-s07-dark-treeline.jpg')}
-        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-      />
-      <AbsoluteFill style={{ background: 'rgba(0,0,0,0.7)' }} />
-
-      {/* Camera flash */}
-      <AbsoluteFill style={{ background: `rgba(255,255,255,${flashOpacity})` }} />
-
-      {/* Text */}
-      <AbsoluteFill style={{ justifyContent: 'flex-end', padding: '0 52px 160px 52px', flexDirection: 'column', gap: 20 }}>
-        <div style={{ opacity: line1Opacity, fontFamily: FONTS.body, fontSize: 26, color: PALETTE.muted, letterSpacing: 3, textTransform: 'uppercase' }}>
-          Their cameras were found in the snow.
-        </div>
-        <div style={{ opacity: line2Opacity, fontFamily: FONTS.display, fontSize: 54, color: PALETTE.text, letterSpacing: 2 }}>
-          THE LAST PHOTO: DARKNESS AND BLUR.
-        </div>
-        <div style={{ opacity: line3Opacity, fontFamily: FONTS.display, fontSize: 46, color: PALETTE.accent, letterSpacing: 2, lineHeight: 1.2 }}>
-          WHATEVER THEY RAN FROM... WAS STILL THERE.
-        </div>
-      </AbsoluteFill>
-
-      {/* Fade to black */}
-      <AbsoluteFill style={{ background: `rgba(0,0,0,${fadeToBlack})` }} />
-    </AbsoluteFill>
-  );
-};
-```
-
-> **Note:** Scenes `S02_Setup`, `S04_Tent`, `S05_Bodies`, and `S06_Unexplained` follow the same structure as S01/S07. Use `SceneText` component with appropriate `startFrame` offsets based on each scene's line timing.
-
----
-
-## 🔄 TIMING UPDATE WORKFLOW
-
-```
-1. Generate all 7 WAV files via TTS API
-2. For each file: get duration_seconds
-3. Update SCENE_DURATIONS_SEC in constants.ts
-   → duration = ceil(wav_seconds) + 1  (1 sec silence buffer)
-4. Run: npx remotion preview
-5. Verify: each line of text aligns to the spoken word
-6. Fine-tune startFrame offsets in scene components if needed
-7. Render: npx remotion render DyatlovPassShorts out/ep004-shorts.mp4
-```
+### Step 5 — Update per-scene constants.ts
+Each scene imports its own `transcript_sN.json` as `TRASCRIPT_DATA` and exports `SCENE_DURATION` based on its last `endMs`.
 
 ---
 
 ## 🔧 RENDER COMMAND
 
 ```bash
-npx remotion render DyatlovPassShorts out/ep004-dyatlov-shorts.mp4 \
+npx remotion render ForeverLostEp4Shorts out/ep004-dyatlov-shorts.mp4 \
   --codec=h264 \
   --crf=18 \
   --fps=30
 ```
+
+> CRF 18 gives excellent quality at manageable file size for short-form video.

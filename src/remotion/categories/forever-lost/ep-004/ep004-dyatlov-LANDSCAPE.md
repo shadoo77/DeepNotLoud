@@ -25,6 +25,15 @@
 - **Pace estimate:** ~2.3 words/second
 - **TTS tags used:** `[pause]`, `[slow]`, `[serious]`, `[whispers]`
 
+### VO — 3-Act Combined System
+This episode uses **1 combined VO per act** (3 WAVs total) instead of 1 per scene. This gives consistent pacing across scenes in each act while still allowing per-scene transcript/caption sync.
+
+| Act | Scenes | Content Arc | Words | Est. Length | File |
+|---|---|---|---|---|---|
+| **Act 1 (Setup)** | S01–S03 | Cold open → who they were → the mountain | ~180 | ~78s | `ep004_L_act1_setup.wav` |
+| **Act 2 (Horror)** | S04–S08 | The night → discovery → bodies → theories → verdict | ~361 | ~157s | `ep004_L_act2_horror.wav` |
+| **Act 3 (Resolution)** | S09–S10 | Why it's still wrong → closer | ~134 | ~58s | `ep004_L_act3_resolution.wav` |
+
 ### BGM — 3 Cue System
 | Cue | Scenes | Mood | YouTube Audio Library Search |
 |---|---|---|---|
@@ -51,41 +60,39 @@
 
 ```
 public/
-└── ep004/
-    ├── audio/landscape/
-    │   ├── s01-cold-open.wav
-    │   ├── s02-who-were-they.wav
-    │   ├── s03-the-mountain.wav
-    │   ├── s04-the-night.wav
-    │   ├── s05-discovery.wav
-    │   ├── s06-the-bodies.wav
-    │   ├── s07-theories.wav
-    │   ├── s08-verdict.wav
-    │   ├── s09-still-wrong.wav
-    │   └── s10-closer.wav
-    ├── images/
-    │   ├── ep004-l-s01-title-bg.jpg        ← dark mountain aerial
-    │   ├── ep004-l-s02-hikers-1959.jpg     ← group silhouette winter
-    │   ├── ep004-l-s03-dead-mountain.jpg   ← Kholat Syakhl slope
-    │   ├── ep004-l-s04-tent-wide.jpg       ← abandoned tent on slope
-    │   ├── ep004-l-s05-cedar-tree.jpg      ← lone cedar tree winter
-    │   ├── ep004-l-s06-ravine.jpg          ← dark ravine in snow
-    │   ├── ep004-l-s07-theories-bg.jpg     ← abstract dark bg for cards
-    │   ├── ep004-l-s08-document.jpg        ← Soviet document texture
-    │   ├── ep004-l-s09-mountain-mist.jpg   ← misty Ural landscape
-    │   └── ep004-l-s10-treeline-night.jpg  ← dark pine treeline
-    ├── sfx/
-    │   ├── wind-arctic.mp3
-    │   ├── snow-crunch.mp3
-    │   ├── heartbeat-slow.mp3
-    │   ├── radio-static.mp3
-    │   ├── paper-rustle.mp3
-    │   ├── camera-shutter.mp3
-    │   └── low-rumble.mp3
-    └── bgm/
-        ├── ep004-l-bgm-intro.mp3
-        ├── ep004-l-bgm-tension.mp3
-        └── ep004-l-bgm-closer.mp3
+└── assets/
+    └── forever-lost/
+        └── ep-004/
+            ├── audio/
+            │   ├── vo/
+            │   │   ├── ep004_L_act1_setup.wav         ← S01-S03 combined
+            │   │   ├── ep004_L_act2_horror.wav        ← S04-S08 combined
+            │   │   └── ep004_L_act3_resolution.wav    ← S09-S10 combined
+            │   └── vo/short/
+            │       └── ep004_S_full.wav              ← Shorts: all scenes combined
+            ├── images/
+            │   ├── ep004-l-s01-title-bg.jpg        ← dark mountain aerial
+            │   ├── ep004-l-s02-hikers-1959.jpg     ← group silhouette winter
+            │   ├── ep004-l-s03-dead-mountain.jpg   ← Kholat Syakhl slope
+            │   ├── ep004-l-s04-tent-wide.jpg       ← abandoned tent on slope
+            │   ├── ep004-l-s05-cedar-tree.jpg      ← lone cedar tree winter
+            │   ├── ep004-l-s06-ravine.jpg          ← dark ravine in snow
+            │   ├── ep004-l-s07-theories-bg.jpg     ← abstract dark bg for cards
+            │   ├── ep004-l-s08-document.jpg        ← Soviet document texture
+            │   ├── ep004-l-s09-mountain-mist.jpg   ← misty Ural landscape
+            │   └── ep004-l-s10-treeline-night.jpg  ← dark pine treeline
+            ├── sfx/
+            │   ├── wind-arctic.mp3
+            │   ├── snow-crunch.mp3
+            │   ├── heartbeat-slow.mp3
+            │   ├── radio-static.mp3
+            │   ├── paper-rustle.mp3
+            │   ├── camera-shutter.mp3
+            │   └── low-rumble.mp3
+            └── bgm/
+                ├── ep004-l-bgm-intro.mp3
+                ├── ep004-l-bgm-tension.mp3
+                └── ep004-l-bgm-closer.mp3
 ```
 
 ---
@@ -130,31 +137,6 @@ This is Dyatlov Pass.
 
 ---
 
-**🎙️ TTS Director Prompt:**
-```
-# AUDIO PROFILE: Documentary Narrator
-## "FOREVER LOST — Dyatlov Pass" · Scene 01 · COLD OPEN
-
-## THE SCENE: Total darkness. Wind. Then a voice from far away.
-The feeling of being handed a classified file you were never meant to read.
-
-### DIRECTOR'S NOTES
-Style: [whispers] on first two lines, then [serious] from "Russia reopened"
-Pacing: Long natural breath after "nine people died" — the voice is discovering this too
-Final line: slow, final, almost reverential
-
-#### TRANSCRIPT
-[whispers] Somewhere in the Ural Mountains... nine people died.
-The Soviet government closed the investigation in two weeks.
-Their official cause of death: an unknown compelling force.
-[pause]
-[serious] Russia reopened the case sixty years later.
-They still couldn't explain it.
-[slow] This is Dyatlov Pass.
-```
-
----
-
 **🖼️ Image Prompts — Nano Banana 2:**
 
 | # | Usage | Prompt |
@@ -190,30 +172,6 @@ None of them should have died on this one.
 
 ---
 
-**🎙️ TTS Director Prompt:**
-```
-# AUDIO PROFILE: Documentary Narrator
-## "FOREVER LOST — Dyatlov Pass" · Scene 02 · WHO WERE THEY
-
-## THE SCENE: Photographs of young people. Happy faces before the mountain.
-The voice is giving them dignity — these are not just statistics.
-
-### DIRECTOR'S NOTES
-Style: [serious] throughout — matter-of-fact but carrying weight
-Pacing: Natural conversational pace, no dramatic pauses — this is setup, not payoff
-Slight emphasis on "None of them should have died on this one"
-
-#### TRANSCRIPT
-It was February 1959.
-Ten students and graduates from the Ural Polytechnic Institute had set off on a winter expedition to climb Otorten Mountain.
-Their route would take them through a remote mountain pass in the northern Urals.
-The group was led by 23-year-old Igor Dyatlov — a respected and experienced mountaineer.
-Every member of that team had completed multiple expeditions before.
-[serious] None of them should have died on this one.
-```
-
----
-
 **🖼️ Image Prompts — Nano Banana 2:**
 
 | # | Usage | Prompt |
@@ -246,32 +204,6 @@ That was the last night any of them were seen alive.
 
 **📊 Timing check:**
 - ~58 words ÷ 2.3 = ~25 sec · padded to 30 sec (900 frames)
-
----
-
-**🎙️ TTS Director Prompt:**
-```
-# AUDIO PROFILE: Documentary Narrator
-## "FOREVER LOST — Dyatlov Pass" · Scene 03 · THE MOUNTAIN
-
-## THE SCENE: The mountain reveals its name. The name is a warning.
-Cold. Desolate. The kind of place that was always going to be dangerous.
-
-### DIRECTOR'S NOTES
-Style: The name "Kholat Syakhl" should land carefully, almost syllable by syllable
-Pacing: [pause] after "Dead Mountain" — let the translation sink in
-Final line: quiet, final — a door closing
-
-#### TRANSCRIPT
-The pass they were crossing had a name in the language of the local Mansi people.
-Kholat Syakhl.
-[pause]
-Dead Mountain.
-[pause]
-On the evening of February 1st, the group pitched their tent on its eastern slope.
-That night — the temperature dropped to minus thirty Celsius.
-[slow] That was the last night any of them were seen alive.
-```
 
 ---
 
@@ -314,35 +246,6 @@ In temperatures that would kill an unprotected adult within hours, they walked b
 
 ---
 
-**🎙️ TTS Director Prompt:**
-```
-# AUDIO PROFILE: Documentary Narrator
-## "FOREVER LOST — Dyatlov Pass" · Scene 04 · THE NIGHT
-
-## THE SCENE: The discovery. The tent. The inexplicable.
-Each new piece of evidence makes the situation more impossible, not less.
-
-### DIRECTOR'S NOTES
-Style: [serious] throughout, building tension — each revelation is delivered like a fact that cannot be explained
-Pacing: Natural breath before "But it had been sliced open from the inside"
-Short sentences like "Their food. Their skis. Their warm clothing." — deliver each flat and final
-Final sentence: slow down slightly on "walked barefoot into the dark"
-
-#### TRANSCRIPT
-Search teams were sent when the group failed to return on schedule.
-They found the abandoned camp on February 26th — three weeks after the group went silent.
-[pause]
-The tent was still standing on the slope.
-[serious] But it had been sliced open from the inside.
-[pause]
-All footprints led downhill — toward the treeline, one and a half kilometers away.
-The hikers had abandoned everything.
-Their food. Their skis. Their warm clothing.
-[slow] In temperatures that would kill an unprotected adult within hours, they walked barefoot into the dark.
-```
-
----
-
 **🖼️ Image Prompts — Nano Banana 2:**
 
 | # | Usage | Prompt |
@@ -376,31 +279,6 @@ Because what the autopsies revealed had no clean explanation.
 
 **📊 Timing check:**
 - ~79 words ÷ 2.3 = ~34 sec · padded to 40 sec (1200 frames)
-
----
-
-**🎙️ TTS Director Prompt:**
-```
-# AUDIO PROFILE: Documentary Narrator
-## "FOREVER LOST — Dyatlov Pass" · Scene 05 · THE DISCOVERY
-
-## THE SCENE: Bodies being found, one by one. A map of death.
-The investigation that couldn't answer its own questions.
-
-### DIRECTOR'S NOTES
-Style: [serious] — each body discovery is spoken with the weight of finality
-Pacing: [pause] before "They weren't found until May" — let the timeline register
-Final line is the pivot into horror — lean into it slightly
-
-#### TRANSCRIPT
-Following the footprints, rescuers found the first two bodies near a large cedar tree.
-Three more were found scattered between the tree and the tent.
-The remaining four were buried under four meters of compacted snow in a ravine nearby.
-[pause]
-They weren't found until May.
-[serious] By then, the Soviet investigation had already begun — and already stalled.
-Because what the autopsies revealed had no clean explanation.
-```
 
 ---
 
@@ -445,38 +323,6 @@ Simply... missing.
 
 ---
 
-**🎙️ TTS Director Prompt:**
-```
-# AUDIO PROFILE: Documentary Narrator
-## "FOREVER LOST — Dyatlov Pass" · Scene 06 · THE BODIES
-
-## THE SCENE: The autopsy. The injuries that made no sense.
-Clinical horror. The voice stays controlled — facts delivered without flinching.
-
-### DIRECTOR'S NOTES
-Style: [serious] — clinical, forensic, no editorializing
-Pacing: [pause] before "And then there was Lyudmila Dubinina" — this is the pivot
-"Not cut. Not torn by animals." — deliver each as its own flat sentence
-Final word "missing" — [slow], quiet, almost nothing
-
-#### TRANSCRIPT
-Five of the nine had died of hypothermia. That, at least, made sense.
-[serious] But the remaining four told a different story.
-Two had fractured ribs. One had a shattered skull.
-[pause]
-The force required to cause these injuries — without leaving any external wounds — was comparable, according to investigators, to a high-speed vehicle impact.
-Not a fall. Not a fight.
-Something had compressed them.
-[pause]
-And then there was Lyudmila Dubinina.
-She was found in the ravine, in a kneeling position.
-Her tongue, her eyes, and parts of her lips were gone.
-Not cut. Not torn by animals.
-[slow] Simply... missing.
-```
-
----
-
 **🖼️ Image Prompts — Nano Banana 2:**
 
 | # | Usage | Prompt |
@@ -516,33 +362,6 @@ None explains all of it.
 
 ---
 
-**🎙️ TTS Director Prompt:**
-```
-# AUDIO PROFILE: Documentary Narrator
-## "FOREVER LOST — Dyatlov Pass" · Scene 07 · THE THEORIES
-
-## THE SCENE: A wall of theories. Each one credible. Each one incomplete.
-The frustration of a case that resists every attempt at explanation.
-
-### DIRECTOR'S NOTES
-Style: [serious] — analytical, slightly faster pace than previous scenes
-Pacing: Natural breath before each new theory — they are separate ideas
-Final two lines: [slow] — deliberate, the point of the entire episode
-
-#### TRANSCRIPT
-Over sixty-five years, investigators and researchers have proposed dozens of theories.
-[serious] The most credible: a katabatic wind event that triggered a slab avalanche — causing sudden compression injuries and forcing a panicked evacuation.
-But critics note: no avalanche debris was found on the tent. No snow disturbed around it.
-[pause]
-Others suggest military involvement — secret weapons testing in the region. Infrasound devices capable of triggering mass panic and disorientation.
-Some cite paradoxical undressing — a known symptom of late-stage hypothermia where victims feel burning hot and tear off their clothing.
-[pause]
-[slow] Each theory explains some of the evidence.
-None explains all of it.
-```
-
----
-
 **🖼️ Image Prompts — Nano Banana 2:**
 
 | # | Usage | Prompt |
@@ -556,15 +375,15 @@ Three `TheoryCard` components appear sequentially:
 - **Card 1** — delay: frame 60
   - Number: `"01"` · Color: `#1a6b8b`
   - Title: `"Katabatic Wind + Slab Avalanche"`
-  - Points: `["Most accepted by Russian authorities", "Explains compression injuries", "Does NOT explain: no snow on tent, no debris"]`
+  - Points: `["Most accepted by Russian authorities (2021)", "Explains compression injuries from snow weight", "✕ No debris on tent — no disturbed snow around camp"]`
 - **Card 2** — delay: frame 390
   - Number: `"02"` · Color: `#6b1a6b`
-  - Title: `"Military Weapons Testing / Infrasound"`
-  - Points: `["Closed military zone nearby", "Explains panic behavior", "Does NOT explain: physical injuries, radiation"]`
+  - Title: `"Military Testing / Infrasound"`
+  - Points: `["Closed military test zone nearby in 1959", "Infrasound can cause panic, disorientation, paranoia", "✕ No physical mechanism for injuries explained"]`
 - **Card 3** — delay: frame 720
   - Number: `"03"` · Color: `#1a6b2d`
   - Title: `"Paradoxical Undressing + Hypothermia"`
-  - Points: `["Documented medical phenomenon", "Explains clothing removal", "Does NOT explain: skull fractures, missing tissue"]`
+  - Points: `["Documented medical phenomenon — victims feel overheated", "Explains removal of clothing in cold conditions", "✕ Does not explain skull fractures or missing tissue"]`
 - Low rumble SFX at each card entry
 - Final 2 lines: cards fade out, text `"NONE EXPLAINS ALL OF IT"` appears centered, large, cold white
 
@@ -585,31 +404,6 @@ The case was officially closed.
 
 **📊 Timing check:**
 - ~63 words ÷ 2.3 = ~27 sec · padded to 35 sec (1050 frames)
-
----
-
-**🎙️ TTS Director Prompt:**
-```
-# AUDIO PROFILE: Documentary Narrator
-## "FOREVER LOST — Dyatlov Pass" · Scene 08 · THE OFFICIAL VERDICT
-
-## THE SCENE: A government announcement. An official file being stamped closed.
-The weight of bureaucracy attempting to end a story that isn't over.
-
-### DIRECTOR'S NOTES
-Style: Slightly detached — reporting what the government said, not endorsing it
-Pacing: [pause] before "A small slab avalanche" — letting the verdict be heard fully
-Final line: flat and final, like a stamp on paper
-
-#### TRANSCRIPT
-In 2019, Russian prosecutors formally reopened the Dyatlov Pass investigation.
-Two years later, they announced their conclusion:
-[pause]
-A small slab avalanche had struck the tent while the group slept.
-Disoriented and frost-damaged, they fled in the wrong direction.
-The internal injuries, they said, were caused by the weight of the snow.
-[serious] The case was officially closed.
-```
 
 ---
 
@@ -639,38 +433,13 @@ The internal injuries, they said, were caused by the weight of the snow.
 But most independent researchers reject this conclusion.
 Snow scientists found no evidence of avalanche debris in the original photographs.
 The victims' body positions suggest controlled movement — not blind panic.
-And the missing soft tissue on Dubinina's body has never been satisfactorily explained by any snow or weather model.
+And the missing soft tissue on Dubinina's body has never been satisfactorily explained by any snow or炭 model.
 The Dyatlov Foundation — formed by relatives of the victims — officially disputes the government's findings.
 In their view, the case is far from closed.
 ```
 
 **📊 Timing check:**
 - ~76 words ÷ 2.3 = ~33 sec · padded to 37 sec (1110 frames)
-
----
-
-**🎙️ TTS Director Prompt:**
-```
-# AUDIO PROFILE: Documentary Narrator
-## "FOREVER LOST — Dyatlov Pass" · Scene 09 · WHY IT'S STILL WRONG
-
-## THE SCENE: The rebuttals. The families who refuse to let it be closed.
-Quiet resistance against an official verdict that doesn't add up.
-
-### DIRECTOR'S NOTES
-Style: Measured, factual — this is not anger, it's evidence
-Pacing: [pause] before "The Dyatlov Foundation" — humanizing the opposition
-Final line: [slow] and final — this is the thesis of the episode
-
-#### TRANSCRIPT
-But most independent researchers reject this conclusion.
-Snow scientists found no evidence of avalanche debris in the original photographs.
-The victims' body positions suggest controlled movement — not blind panic.
-[pause]
-And the missing soft tissue on Dubinina's body has never been satisfactorily explained by any snow or weather model.
-[serious] The Dyatlov Foundation — formed by relatives of the victims — officially disputes the government's findings.
-[slow] In their view, the case is far from closed.
-```
 
 ---
 
@@ -710,32 +479,6 @@ And whatever reason they had for running... died with them in the snow.
 
 ---
 
-**🎙️ TTS Director Prompt:**
-```
-# AUDIO PROFILE: Documentary Narrator
-## "FOREVER LOST — Dyatlov Pass" · Scene 10 · CLOSER
-
-## THE SCENE: The last photograph. The last light. Then nothing.
-The quietest moment in the video — we are staring into the dark.
-
-### DIRECTOR'S NOTES
-Style: [slow] from "Nine people entered this mountain" to end
-Pacing: Generous natural breath before final sentence — the weight of it deserves space
-[whispers] on final line — almost nothing, like the mountain itself speaking
-
-#### TRANSCRIPT
-The group's cameras were recovered from the snow.
-Thirty-four photographs survived.
-The last image taken that night shows the campsite in daylight — quiet, ordinary, undisturbed.
-[pause]
-Whatever came for them, came after dark.
-[slow] Nine people entered this mountain.
-None of them walked out.
-[whispers] And whatever reason they had for running... died with them in the snow.
-```
-
----
-
 **🖼️ Image Prompts — Nano Banana 2:**
 
 | # | Usage | Prompt |
@@ -765,46 +508,360 @@ None of them walked out.
 
 ---
 
-## ⚙️ REMOTION CODE
+## 🎙️ TTS DIRECTOR PROMPTS — 3-ACT SYSTEM
+
+> Each combined prompt includes `[pause] 2s` markers between scenes within the act.
+> Generate one WAV per act, then split the resulting transcript by scene boundaries.
+
+---
+
+### ACT 1 — SETUP (S01 + S02 + S03)
+
+**Approximate length:** ~80 sec · **Words:** ~180
+
+```
+# AUDIO PROFILE: Documentary Narrator
+## "FOREVER LOST — Dyatlov Pass" · Act 01 · SETUP
+## Scenes 01–03 (Cold Open → Who Were They → The Mountain)
+
+### DIRECTOR'S NOTES
+Act 1 evolves through three emotional phases:
+1. S01: [whispers] — we are discovering the case with the voice
+2. S02: [serious] — matter-of-fact dignity for the victims
+3. S03: Careful, almost reverential — the mountain's name is a warning
+
+Pacing: Scene transitions must feel natural but distinct. After S02, there's a moment — like turning a page. After S03, the silence persists.
+
+#### SCENE 01 — COLD OPEN
+[whispers] Somewhere in the Ural Mountains... nine people died.
+The Soviet government closed the investigation in two weeks.
+Their official cause of death: an unknown compelling force.
+[pause]
+[serious] Russia reopened the case sixty years later.
+They still couldn't explain it.
+[slow] This is Dyatlov Pass.
+
+[pause 2s]
+
+#### SCENE 02 — WHO WERE THEY
+It was February 1959.
+Ten students and graduates from the Ural Polytechnic Institute had set off on a winter expedition to climb Otorten Mountain.
+Their route would take them through a remote mountain pass in the northern Urals.
+The group was led by 23-year-old Igor Dyatlov — a respected and experienced mountaineer.
+Every member of that team had completed multiple expeditions before.
+[serious] None of them should have died on this one.
+
+[pause 2s]
+
+#### SCENE 03 — THE MOUNTAIN
+The pass they were crossing had a name in the language of the local Mansi people.
+Kholat Syakhl.
+[pause]
+Dead Mountain.
+[pause]
+On the evening of February 1st, the group pitched their tent on its eastern slope.
+That night — the temperature dropped to minus thirty Celsius.
+[slow] That was the last night any of them were seen alive.
+```
+
+---
+
+### ACT 2 — HORROR (S04 + S05 + S06 + S07 + S08)
+
+**Approximate length:** ~165 sec · **Words:** ~361
+
+```
+# AUDIO PROFILE: Documentary Narrator
+## "FOREVER LOST — Dyatlov Pass" · Act 02 · HORROR
+## Scenes 04–08 (The Night → Discovery → Bodies → Theories → Verdict)
+
+### DIRECTOR'S NOTES
+Act 2 is a five-scene descent into the inexplicable.
+Each scene adds a new layer of impossibility.
+S04 builds dread. S05 finds the bodies. S06 reveals the clinical horror.
+S07 presents the theories — each one failing. S08 drops the official stamp.
+
+Pacing: Starts tense, escalates toward S06, then shifts to analytical in S07, and detachment in S08.
+
+#### SCENE 04 — THE NIGHT
+Search teams were sent when the group failed to return on schedule.
+They found the abandoned camp on February 26th — three weeks after the group went silent.
+[pause]
+The tent was still standing on the slope.
+[serious] But it had been sliced open from the inside.
+[pause]
+All footprints led downhill — toward the treeline, one and a half kilometers away.
+The hikers had abandoned everything.
+Their food. Their skis. Their warm clothing.
+[slow] In temperatures that would kill an unprotected adult within hours, they walked barefoot into the dark.
+
+[pause 2s]
+
+#### SCENE 05 — THE DISCOVERY
+Following the footprints, rescuers found the first two bodies near a large cedar tree.
+Three more were found scattered between the tree and the tent.
+The remaining four were buried under four meters of compacted snow in a ravine nearby.
+[pause]
+They weren't found until May.
+[serious] By then, the Soviet investigation had already begun — and already stalled.
+Because what the autopsies revealed had no clean explanation.
+
+[pause 2s]
+
+#### SCENE 06 — WHAT THE BODIES REVEALED
+Five of the nine had died of hypothermia. That, at least, made sense.
+[serious] But the remaining four told a different story.
+Two had fractured ribs. One had a shattered skull.
+[pause]
+The force required to cause these injuries — without leaving any external wounds — was comparable, according to investigators, to a high-speed vehicle impact.
+Not a fall. Not a fight.
+Something had compressed them.
+[pause]
+And then there was Lyudmila Dubinina.
+She was found in the ravine, in a kneeling position.
+Her tongue, her eyes, and parts of her lips were gone.
+Not cut意见的. Not torn by animals.
+[slow] Simply... missing.
+
+[pause 2s]
+
+#### SCENE 07 — THE THEORIES
+Over sixty-five years, investigators and researchers have proposed dozens of theories.
+[serious] The most credible: a katabatic wind event that triggered a slab avalanche — causing sudden compression injuries and forcing a panicked evacuation.
+But critics note: no avalanche debris was found on the tent. No snow disturbed around it.
+[pause]
+Others suggest military involvement — secret weapons testing in the region. Infrasound devices capable of triggering mass panic and disorientation.
+Some cite paradoxical undressing — a known symptom of late-stage hypothermia where victims feel burning hot and tear off their clothing.
+[pause]
+[slow] Each theory explains some of the evidence.
+None explains all of it.
+
+[pause 2s]
+
+#### SCENE 08 — THE OFFICIAL VERDICT
+In 2019, Russian prosecutors formally reopened the Dyatlov Pass investigation.
+Two years later, they announced their conclusion:
+[pause]
+A small slab avalanche had struck the tent while the group slept.
+Disoriented and frost-damaged, they fled in the wrong direction.
+The internal injuries, they said, were caused by the weight of the snow.
+[serious] The case was officially closed.
+```
+
+---
+
+### ACT 3 — RESOLUTION (S09 + S10)
+
+**Approximate length:** ~60 sec · **Words:** ~134
+
+```
+# AUDIO PROFILE: Documentary Narrator
+## "FOREVER LOST — Dyatlov Pass" · Act 03 · RESOLUTION
+## Scenes 09–10 (Why It's Still Wrong → Closer)
+
+### DIRECTOR'S NOTES
+Act 3 is a quiet rejection, then a door closing on darkness.
+S09: the evidence against the official verdict — measured, not angry, but final.
+S10: a meditation on what photographic evidence cannot capture — the last light, then nothing.
+
+Pacing: S09 natural, conversational. S10 slows and becomes almost whispered.
+
+#### SCENE 09 — WHY IT'S STILL WRONG
+But most independent researchers reject this conclusion.
+Snow scientists found no evidence of avalanche debris in the original photographs.
+The victims' body positions suggest controlled movement — not blind panic.
+[pause]
+And the missing soft tissue on Dubinina's body has never been satisfactorily explained by any snow or weather model.
+[serious] The Dyatlov Foundation — formed by relatives of the victims — officially disputes the government's findings.
+[slow] In their view, the case is far from closed.
+
+[pause 2s]
+
+#### SCENE 10 — THE CLOSER
+The group's cameras were recovered from the snow.
+Thirty-four photographs survived.
+The last image taken that night shows the campsite in daylight — quiet, ordinary, undisturbed.
+[pause]
+Whatever came for them, came after dark.
+[slow] Nine people entered this mountain.
+None of them walked out.
+[whispers] And whatever reason they had for running... died with them in the snow.
+```
+
+---
+
+## ⚙️ REMOTION — VO-OFFSETS CONFIGURATION
+
+### `src/ep004-landscape/vo-offsets.ts`
+
+> ⚠️ **UPDATE after WAV generation** — these are описания. Use the actual scene boundary times from the act WAV to set precise `startFromSec` values.
+
+```typescript
+// ─── EP004 DYATLOV PASS — VO OFFSETS ────────────────────────────────────────
+// Maps each scene to its act WAV and the offset (seconds) where its VO starts.
+// ⚠️ UPDATE these values after generating the act WAVs — use ffprobe or a DAW
+//    to find the exact MS each scene begins within the combined act WAV.
+
+export const VO = {
+  act1: "assets/forever-lost/ep-004/audio/vo/ep004_L_act1_setup.wav",
+  act2: "assets/forever-lost/ep-004/audio/vo/ep004_L_act2_horror.wav",
+  act3: "assets/forever-lost/ep-004/audio/vo/ep004_L_act3_resolution.wav",
+} as const;
+
+// ⚠️ ESTIMATED values below — update after WAV generation
+// Format: scene key → { WAV path, start offset in seconds }
+export const VO_OFFSETS: Record<
+  string,
+  { src: string; startFromSec: number; estimatedSceneEndSec: number }
+> = {
+  // ─── ACT 1 ──────────────────────
+  S01: {
+    src: VO.act1,
+    startFromSec: 0,
+    estimatedSceneEndSec: 22, // S01 ends ~22s into act1
+  },
+  S02: {
+    src: VO.act1,
+    startFromSec: 24, // S02 starts ~24s into act1 (after 2s pause)
+    estimatedSceneEndSec: 55,
+  },
+  S03: {
+    src: VO.act1,
+    startFromSec: 57, // S03 starts ~57s into act1 (after 2s pause)
+    estimatedSceneEndSec: 78,
+  },
+
+  // ─── ACT 2 ──────────────────────
+  S04: {
+    src: VO.act2,
+    startFromSec: 0,
+    estimatedSceneEndSec: 41,
+  },
+  S05: {
+    src: VO.act2,
+    startFromSec: 43,
+    estimatedSceneEndSec: 75,
+  },
+  S06: {
+    src: VO.act2,
+    startFromSec: 77,
+    estimatedSceneEndSec: 124,
+  },
+  S07: {
+    src: VO.act2,
+    startFromSec: 126,
+    estimatedSceneEndSec: 176,
+  },
+  S08: {
+    src: VO.act2,
+    startFromSec: 178,
+    estimatedSceneEndSec: 207,
+  },
+
+  // ─── ACT 3 ──────────────────────
+  S09: {
+    src: VO.act3,
+    startFromSec: 0,
+    estimatedSceneEndSec: 33,
+  },
+  S10: {
+    src: VO.act3,
+    startFromSec: 35,
+    estimatedSceneEndSec: 58,
+  },
+} as const;
+
+// Helper: convert seconds to frames (30 fps)
+export const secToFrames = (sec: number) => Math.round(sec * 30);
+```
+
+---
+
+## ⚙️ REMOTION CODE — PER-SCENE AUDIO PATTERN
+
+### Updated Scene Component — Example: `S01_ColdOpen.tsx`
+
+```typescript
+import React from 'react';
+import { AbsoluteFill, Audio, staticFile, Sequence } from 'remotion';
+import { VO_OFFSETS, secToFrames } from '../vo-offsets';
+import { TRASCRIPT_DATA, VO_START_FRAME } from './constants';
+
+const SCENE = "S01"; // Change per scene
+const { src, startFromSec } = VO_OFFSETS[SCENE];
+const startFromFrames = secToFrames(startFromSec);
+
+export const S01_ColdOpen: React.FC = () => (
+  <AbsoluteFill>
+    {/* ─── Act 1 VO, jumping to S01's position ─── */}
+    <Audio
+      src={staticFile(src)}
+      startFrom={startFromFrames}
+      // Note: stopAt is optional — Remotion will mute audio when scene unmounts.
+    />
+
+    {/* ─── Scene-specific captions ─── */}
+    <Sequence from={VO_START_FRAME}>
+      <YouTubeCaptions
+        transcript={TRASCRIPT_DATA}
+        position="bottom-center"
+        startFrame={0}
+      />
+    </Sequence>
+
+    {/* ─── Background, Motion Graphics, SFX ─── */}
+    {/* ... existing S01 content unchanged ... */}
+  </AbsoluteFill>
+);
+```
+
+> **Important:** `<Audio startFrom={frames} />` tells Remotion to start playing the act WAV at the specified frame count. The scene component still owns its own `TRASCRIPT_DATA` for per-scene captions.
+
+---
+
+## ⚙️ REMOTION CODE — EPISODE LEVEL
 
 ### `src/ep004-landscape/constants.ts`
+
+> Same as before — each scene defines its own `SCENE_DURATION` in its `constants.ts`, and the episode-level file imports and aggregates them.
 
 ```typescript
 // ─── EP004 DYATLOV PASS — LANDSCAPE ─────────────────────────────────────────
 // ⚠️  UPDATE durationSec after WAV generation: duration = ceil(wav_sec) + 2
 
+import { SCENE_DURATION as S1_DUR } from "./scenes/s01-cold-open/constants";
+import { SCENE_DURATION as S2_DUR } from "./scenes/s02-who-were-they/constants";
+import { SCENE_DURATION as S3_DUR } from "./scenes/s03-the-mountain/constants";
+import { SCENE_DURATION as S4_DUR } from "./scenes/s04-the-night/constants";
+import { SCENE_DURATION as S5_DUR } from "./scenes/s05-discovery/constants";
+import { SCENE_DURATION as S6_DUR } from "./scenes/s06-the-bodies/constants";
+import { SCENE_DURATION as S7_DUR } from "./scenes/s07-theories/constants";
+import { SCENE_DURATION as S8_DUR } from "./scenes/s08-verdict/constants";
+import { SCENE_DURATION as S9_DUR } from "./scenes/s09-still-wrong/constants";
+import { SCENE_DURATION as S10_DUR } from "./scenes/s10-closer/constants";
+
 export const FPS = 30;
 
-export const SCENE_DURATIONS_SEC = {
-  S01: 25,  // Cold Open
-  S02: 35,  // Who Were They
-  S03: 30,  // The Mountain
-  S04: 45,  // The Night
-  S05: 40,  // Discovery
-  S06: 55,  // The Bodies
-  S07: 55,  // Theories
-  S08: 35,  // Official Verdict
-  S09: 37,  // Why Wrong
-  S10: 30,  // Closer
-  OUTRO: 10,
+export const SCENES = {
+  s1:  { durationInFrames: S1_DUR },
+  s2:  { durationInFrames: S2_DUR },
+  s3:  { durationInFrames: S3_DUR },
+  s4:  { durationInFrames: S4_DUR },
+  s5:  { durationInFrames: S5_DUR },
+  s6:  { durationInFrames: S6_DUR },
+  s7:  { durationInFrames: S7_DUR },
+  s8:  { durationInFrames: S8_DUR },
+  s9:  { durationInFrames: S9_DUR },
+  s10: { durationInFrames: S10_DUR },
 } as const;
 
-const toFrames = (sec: number) => Math.ceil(sec * FPS);
+const NUM_SCENES = Object.keys(SCENES).length;
 
-export const SCENES = (() => {
-  const keys = Object.keys(SCENE_DURATIONS_SEC) as Array<keyof typeof SCENE_DURATIONS_SEC>;
-  let cursor = 0;
-  const result = {} as Record<keyof typeof SCENE_DURATIONS_SEC, { start: number; duration: number; end: number }>;
-  for (const key of keys) {
-    const dur = toFrames(SCENE_DURATIONS_SEC[key]);
-    result[key] = { start: cursor, duration: dur, end: cursor + dur };
-    cursor += dur;
-  }
-  return result;
-})();
+export const TOTAL_FRAMES =
+  Object.values(SCENES).reduce((a, b) => a + b.durationInFrames, 0) -
+  (NUM_SCENES - 1) * 20; // 20-frame fade between scenes
 
-export const TOTAL_FRAMES = Object.values(SCENES).reduce((sum, s) => Math.max(sum, s.end), 0);
-// Expected: ~11,910 frames = 6:37
+export const FPS = 30;
 
 export const PALETTE = {
   bg: '#08080f',
@@ -827,496 +884,41 @@ export const FONTS = {
 
 ---
 
-### `src/ep004-landscape/Root.tsx`
+### `src/ep004-landscape/ForeverLostEp4.tsx` (Main)
 
 ```typescript
-import React from 'react';
-import { Composition } from 'remotion';
-import { DyatlovLandscapeMain } from './Main';
-import { TOTAL_FRAMES, FPS } from './constants';
+import { AbsoluteFill, Audio, Sequence, staticFile } from 'remotion';
+import { TransitionSeries } from '@remotion/transitions';
+import { fade } from '@remotion/transitions/fade';
+import { SCENES, T, TOTAL_FRAMES } from './constants';
+import { BgmWithFade } from './BgmWithFade';
+import { S01_ColdOpen } from './scenes/s01-cold-open';
+import { S02_WhoWereThey } from './scenes/s02-who-were-they';
+import { S03_TheMountain } from './scenes/riven otherwise is fine (the mountain);
+import { S04_TheNight } from './scenes/s04-the-night';
+import { S05_Discovery } from './scenes/s05-discovery';
+import { S06_TheBodies } from './scenes/s06-the-bodies';
+import { S07_Theories } from './scenes/s07-theories';
+import { S08_Verdict } from './scenes/s08-verdict';
+import { S09_StillWrong } from './scenes/s09-still-wrong';
+import { S10_Closer } from './scenes/s10-closer';
 
-export const RemotionRoot: React.FC = () => (
-  <Composition
-    id="DyatlovPassLandscape"
-    component={DyatlovLandscapeMain}
-    durationInFrames={TOTAL_FRAMES}
-    fps={FPS}
-    width={1920}
-    height={1080}
-    defaultProps={{}}
-  />
-);
-```
+export { TOTAL_FRAMES };
 
----
-
-### `src/ep004-landscape/Main.tsx`
-
-```typescript
-import React from 'react';
-import { AbsoluteFill, Sequence, Audio, staticFile } from 'remotion';
-import { SCENES } from './constants';
-import { S01_ColdOpen } from './scenes/S01_ColdOpen';
-import { S02_WhoWereThey } from './scenes/S02_WhoWereThey';
-import { S03_TheMountain } from './scenes/S03_TheMountain';
-import { S04_TheNight } from './scenes/S04_TheNight';
-import { S05_Discovery } from './scenes/S05_Discovery';
-import { S06_TheBodies } from './scenes/S06_TheBodies';
-import { S07_Theories } from './scenes/S07_Theories';
-import { S08_OfficialVerdict } from './scenes/S08_OfficialVerdict';
-import { S09_StillWrong } from './scenes/S09_StillWrong';
-import { S10_Closer } from './scenes/S10_Closer';
-import { Outro } from './scenes/Outro';
-
-export const DyatlovLandscapeMain: React.FC = () => (
-  <AbsoluteFill style={{ background: '#08080f' }}>
-
-    {/* ─── BGM Cues ─── */}
-    <Sequence from={SCENES.S01.start} durationInFrames={SCENES.S03.end - SCENES.S01.start}>
-      <Audio src={staticFile('ep004/bgm/ep004-l-bgm-intro.mp3')} volume={0.15} />
-    </Sequence>
-    <Sequence from={SCENES.S04.start} durationInFrames={SCENES.S08.end - SCENES.S04.start}>
-      <Audio src={staticFile('ep004/bgm/ep004-l-bgm-tension.mp3')} volume={0.15} />
-    </Sequence>
-    <Sequence from={SCENES.S09.start} durationInFrames={SCENES.OUTRO.end - SCENES.S09.start}>
-      <Audio src={staticFile('ep004/bgm/ep004-l-bgm-closer.mp3')} volume={0.12} />
-    </Sequence>
-
-    {/* ─── Scenes ─── */}
-    <Sequence from={SCENES.S01.start} durationInFrames={SCENES.S01.duration}><S01_ColdOpen /></Sequence>
-    <Sequence from={SCENES.S02.start} durationInFrames={SCENES.S02.duration}><S02_WhoWereThey /></Sequence>
-    <Sequence from={SCENES.S03.start} durationInFrames={SCENES.S03.duration}><S03_TheMountain /></Sequence>
-    <Sequence from={SCENES.S04.start} durationInFrames={SCENES.S04.duration}><S04_TheNight /></Sequence>
-    <Sequence from={SCENES.S05.start} durationInFrames={SCENES.S05.duration}><S05_Discovery /></Sequence>
-    <Sequence from={SCENES.S06.start} durationInFrames={SCENES.S06.duration}><S06_TheBodies /></Sequence>
-    <Sequence from={SCENES.S07.start} durationInFrames={SCENES.S07.duration}><S07_Theories /></Sequence>
-    <Sequence from={SCENES.S08.start} durationInFrames={SCENES.S08.duration}><S08_OfficialVerdict /></Sequence>
-    <Sequence from={SCENES.S09.start} durationInFrames={SCENES.S09.duration}><S09_StillWrong /></Sequence>
-    <Sequence from={SCENES.S10.start} durationInFrames={SCENES.S10.duration}><S10_Closer /></Sequence>
-    <Sequence from={SCENES.OUTRO.start} durationInFrames={SCENES.OUTRO.duration}><Outro /></Sequence>
-  </AbsoluteFill>
-);
-```
-
----
-
-### `src/ep004-landscape/components/AnimatedLowerThird.tsx`
-
-```typescript
-import React from 'react';
-import { useCurrentFrame, interpolate, Easing } from 'remotion';
-import { FONTS } from '../constants';
-
-interface Props {
-  title: string;
-  subtitle?: string;
-  accentColor?: string;
-  delayFrames?: number;
-  holdFrames?: number;
-}
-
-export const AnimatedLowerThird: React.FC<Props> = ({
-  title,
-  subtitle,
-  accentColor = '#c17f24',
-  delayFrames = 0,
-  holdFrames = 120,
-}) => {
-  const frame = useCurrentFrame();
-  const lf = frame - delayFrames;
-  if (lf < 0) return null;
-
-  const slideX = interpolate(lf, [0, 22], [-420, 0], {
-    extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
-    easing: Easing.out(Easing.cubic),
-  });
-  const exitOpacity = interpolate(lf, [holdFrames - 18, holdFrames], [1, 0], {
-    extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
-  });
-  const barH = interpolate(lf, [0, 18], [0, subtitle ? 72 : 50], {
-    extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
-  });
-
+export const ForeverLostEp4 = () => {
   return (
-    <div style={{
-      position: 'absolute', bottom: 80, left: 0,
-      transform: `translateX(${slideX}px)`,
-      opacity: exitOpacity,
-      display: 'flex', alignItems: 'stretch',
-    }}>
-      {/* Accent bar */}
-      <div style={{ width: 5, background: accentColor, height: barH, alignSelf: 'center' }} />
-      {/* Content box */}
-      <div style={{
-        background: 'rgba(6, 8, 18, 0.88)',
-        borderBottom: `1px solid rgba(232,240,245,0.12)`,
-        paddingLeft: 18, paddingRight: 32,
-        paddingTop: 10, paddingBottom: 10,
-        display: 'flex', flexDirection: 'column', justifyContent: 'center',
-      }}>
-        <div style={{ fontFamily: FONTS.body, fontWeight: 700, fontSize: 22, color: '#ffffff', letterSpacing: 1 }}>
-          {title}
-        </div>
-        {subtitle && (
-          <div style={{ fontFamily: FONTS.body, fontSize: 14, color: accentColor, marginTop: 3, letterSpacing: 1 }}>
-            {subtitle}
-          </div>
-        )}
-      </div>
-    </div>
-  );
-};
-```
-
----
-
-### `src/ep004-landscape/components/FactBanner.tsx`
-
-```typescript
-import React from 'react';
-import { useCurrentFrame, interpolate, Easing } from 'remotion';
-import { FONTS, PALETTE } from '../constants';
-
-interface Props {
-  text: string;
-  side?: 'left' | 'right';
-  accentColor?: string;
-  delayFrames?: number;
-  holdFrames?: number;
-  verticalPosition?: string; // CSS top value e.g. '30%'
-}
-
-export const FactBanner: React.FC<Props> = ({
-  text,
-  side = 'right',
-  accentColor = PALETTE.cold,
-  delayFrames = 0,
-  holdFrames = 150,
-  verticalPosition = '35%',
-}) => {
-  const frame = useCurrentFrame();
-  const lf = frame - delayFrames;
-  if (lf < 0) return null;
-
-  const dist = side === 'right' ? 500 : -500;
-  const x = interpolate(lf, [0, 28], [dist, 0], {
-    extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
-    easing: Easing.out(Easing.exp),
-  });
-  const exitOpacity = interpolate(lf, [holdFrames - 18, holdFrames], [1, 0], {
-    extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
-  });
-  const entryOpacity = interpolate(lf, [0, 18], [0, 1], {
-    extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
-  });
-
-  return (
-    <div style={{
-      position: 'absolute',
-      [side]: 0,
-      top: verticalPosition,
-      transform: `translateX(${x}px)`,
-      opacity: Math.min(entryOpacity, exitOpacity),
-      background: 'rgba(6, 8, 18, 0.90)',
-      borderLeft: side === 'right' ? `4px solid ${accentColor}` : 'none',
-      borderRight: side === 'left' ? `4px solid ${accentColor}` : 'none',
-      padding: '14px 28px 14px 20px',
-      maxWidth: 520,
-    }}>
-      <p style={{
-        fontFamily: FONTS.body, fontSize: 18,
-        color: PALETTE.text, margin: 0, lineHeight: 1.5,
-        fontWeight: 500,
-      }}>
-        {text}
-      </p>
-    </div>
-  );
-};
-```
-
----
-
-### `src/ep004-landscape/components/StatCounter.tsx`
-
-```typescript
-import React from 'react';
-import { useCurrentFrame, interpolate } from 'remotion';
-import { FONTS, PALETTE } from '../constants';
-
-interface Props {
-  from?: number;
-  to: number;
-  unit?: string;
-  label: string;
-  delayFrames?: number;
-  countDuration?: number;
-  color?: string;
-  size?: number;
-}
-
-export const StatCounter: React.FC<Props> = ({
-  from = 0,
-  to,
-  unit = '',
-  label,
-  delayFrames = 0,
-  countDuration = 60,
-  color = PALETTE.text,
-  size = 120,
-}) => {
-  const frame = useCurrentFrame();
-  const lf = frame - delayFrames;
-  if (lf < 0) return null;
-
-  const count = Math.round(interpolate(lf, [0, countDuration], [from, to], {
-    extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
-  }));
-  const opacity = interpolate(lf, [0, 18], [0, 1], {
-    extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
-  });
-
-  return (
-    <div style={{ opacity, textAlign: 'center' }}>
-      <div style={{
-        fontFamily: FONTS.display,
-        fontSize: size,
-        color,
-        lineHeight: 1,
-        letterSpacing: -2,
-      }}>
-        {count.toLocaleString()}{unit}
-      </div>
-      <div style={{
-        fontFamily: FONTS.body,
-        fontSize: 14,
-        color: PALETTE.muted,
-        letterSpacing: 4,
-        textTransform: 'uppercase',
-        marginTop: 8,
-      }}>
-        {label}
-      </div>
-    </div>
-  );
-};
-```
-
----
-
-### `src/ep004-landscape/components/CaseFileStamp.tsx`
-
-```typescript
-import React from 'react';
-import { useCurrentFrame, interpolate, spring, useVideoConfig } from 'remotion';
-import { FONTS } from '../constants';
-
-type StampType = 'CLASSIFIED' | 'CASE REOPENED' | 'OFFICIALLY CLOSED' | 'UNEXPLAINED' | 'INVESTIGATION STALLED';
-
-const STAMP_COLORS: Record<StampType, string> = {
-  'CLASSIFIED': '#8b1a1a',
-  'CASE REOPENED': '#1a4b8b',
-  'OFFICIALLY CLOSED': '#1a5c1a',
-  'UNEXPLAINED': '#5c1a1a',
-  'INVESTIGATION STALLED': '#5c4a1a',
-};
-
-interface Props {
-  type: StampType;
-  delayFrames?: number;
-  holdFrames?: number;
-  x?: string;
-  y?: string;
-}
-
-export const CaseFileStamp: React.FC<Props> = ({
-  type,
-  delayFrames = 0,
-  holdFrames = 180,
-  x = '50%',
-  y = '42%',
-}) => {
-  const frame = useCurrentFrame();
-  const { fps } = useVideoConfig();
-  const lf = frame - delayFrames;
-  if (lf < 0) return null;
-
-  const scale = spring({ frame: lf, fps, config: { damping: 7, stiffness: 260 } });
-  const exitOpacity = interpolate(lf, [holdFrames - 18, holdFrames], [1, 0], {
-    extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
-  });
-  const entryOpacity = interpolate(lf, [0, 8], [0, 1], {
-    extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
-  });
-
-  const color = STAMP_COLORS[type];
-
-  return (
-    <div style={{
-      position: 'absolute',
-      left: x, top: y,
-      transform: `translate(-50%, -50%) scale(${scale}) rotate(-8deg)`,
-      opacity: Math.min(entryOpacity, exitOpacity),
-      border: `3px solid ${color}`,
-      padding: '8px 24px',
-      pointerEvents: 'none',
-    }}>
-      <div style={{
-        fontFamily: FONTS.display,
-        fontSize: 38,
-        color,
-        letterSpacing: 8,
-        whiteSpace: 'nowrap',
-      }}>
-        {type}
-      </div>
-    </div>
-  );
-};
-```
-
----
-
-### `src/ep004-landscape/components/TheoryCard.tsx`
-
-```typescript
-import React from 'react';
-import { useCurrentFrame, interpolate, Easing } from 'remotion';
-import { FONTS, PALETTE } from '../constants';
-
-interface Props {
-  number: string;
-  title: string;
-  points: string[];
-  accentColor?: string;
-  delayFrames?: number;
-  holdFrames?: number;
-  top?: string;
-}
-
-export const TheoryCard: React.FC<Props> = ({
-  number,
-  title,
-  points,
-  accentColor = PALETTE.cold,
-  delayFrames = 0,
-  holdFrames = 300,
-  top = '15%',
-}) => {
-  const frame = useCurrentFrame();
-  const lf = frame - delayFrames;
-  if (lf < 0) return null;
-
-  const x = interpolate(lf, [0, 32], [1000, 0], {
-    extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
-    easing: Easing.out(Easing.exp),
-  });
-  const exitOpacity = interpolate(lf, [holdFrames - 24, holdFrames], [1, 0], {
-    extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
-  });
-  const entryOpacity = interpolate(lf, [0, 20], [0, 1], {
-    extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
-  });
-
-  return (
-    <div style={{
-      position: 'absolute',
-      right: 60, top,
-      transform: `translateX(${x}px)`,
-      opacity: Math.min(entryOpacity, exitOpacity),
-      background: 'rgba(6, 8, 18, 0.92)',
-      borderLeft: `6px solid ${accentColor}`,
-      padding: '18px 28px',
-      width: 520,
-    }}>
-      <div style={{ display: 'flex', alignItems: 'baseline', gap: 14, marginBottom: 10 }}>
-        <span style={{ fontFamily: FONTS.display, fontSize: 52, color: accentColor, lineHeight: 1 }}>
-          {number}
-        </span>
-        <span style={{ fontFamily: FONTS.body, fontSize: 20, fontWeight: 700, color: PALETTE.text, lineHeight: 1.2 }}>
-          {title}
-        </span>
-      </div>
-      {points.map((p, i) => (
-        <div key={i} style={{
-          fontFamily: FONTS.body, fontSize: 15,
-          color: PALETTE.muted, marginBottom: 6,
-          paddingLeft: 14,
-          borderLeft: `2px solid rgba(232,240,245,0.18)`,
-          lineHeight: 1.4,
-        }}>
-          {p}
-        </div>
-      ))}
-    </div>
-  );
-};
-```
-
----
-
-### `src/ep004-landscape/scenes/S01_ColdOpen.tsx`
-
-```typescript
-import React from 'react';
-import { AbsoluteFill, Audio, staticFile, interpolate, useCurrentFrame, useVideoConfig, spring } from 'remotion';
-import { AnimatedLowerThird } from '../components/AnimatedLowerThird';
-import { CaseFileStamp } from '../components/CaseFileStamp';
-import { PALETTE, FONTS } from '../constants';
-
-export const S01_ColdOpen: React.FC = () => {
-  const frame = useCurrentFrame();
-  const { fps, durationInFrames } = useVideoConfig();
-
-  const bgOpacity = interpolate(frame, [0, 30], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
-  const bgScale = interpolate(frame, [0, durationInFrames], [1.0, 1.08], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
-
-  // Title reveal at frame 480
-  const titleOpacity = interpolate(frame, [480, 530], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
-  const titleY = interpolate(frame, [480, 530], [30, 0], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
-
-  return (
-    <AbsoluteFill>
-      <Audio src={staticFile('ep004/audio/landscape/s01-cold-open.wav')} />
-      <Audio src={staticFile('ep004/sfx/wind-arctic.mp3')} volume={0.10} />
-
-      {/* Background */}
-      <div style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}>
-        <img
-          src={staticFile('ep004/images/ep004-l-s01-title-bg.jpg')}
-          style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: bgOpacity, transform: `scale(${bgScale})` }}
-        />
-      </div>
-      <AbsoluteFill style={{ background: PALETTE.overlay }} />
-
-      {/* Classified stamp */}
-      <CaseFileStamp type="CLASSIFIED" delayFrames={90} holdFrames={200} x="75%" y="25%" />
-
-      {/* Title */}
-      <AbsoluteFill style={{ justifyContent: 'center', alignItems: 'center', flexDirection: 'column', gap: 12 }}>
-        <div style={{
-          opacity: titleOpacity, transform: `translateY(${titleY}px)`, textAlign: 'center',
-        }}>
-          <div style={{ fontFamily: FONTS.display, fontSize: 88, color: PALETTE.text, letterSpacing: 6, lineHeight: 1 }}>
-            DYATLOV PASS
-          </div>
-          <div style={{ fontFamily: FONTS.body, fontSize: 18, color: PALETTE.muted, letterSpacing: 8, marginTop: 12, textTransform: 'uppercase' }}>
-            The Deaths Still Officially Unexplained
-          </div>
-        </div>
-      </AbsoluteFill>
-
-      {/* Lower third */}
-      <AnimatedLowerThird
-        title="FEBRUARY 1–2, 1959 · URAL MOUNTAINS, USSR"
-        subtitle="Nine hikers · All deceased · No official explanation"
-        accentColor={PALETTE.accent}
-        delayFrames={520}
-        holdFrames={220}
-      />
-
-      {/* Fade from black */}
-      <AbsoluteFill style={{ background: `rgba(0,0,0,${interpolate(frame, [0, 30], [1, 0], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' })})` }} />
+    <AbsoluteFill style={{ backgroundColor: '#08080f' }}>
+      <BgmWithFade />
+      <TransitionSeries>
+        <TransitionSeries.Sequence durationInFrames={SCENES.s1.durationInFrames} premountFor={30}>
+          <S01_ColdOpen />
+        </TransitionSeries.Sequence>
+        <TransitionSeries.Transition presentation={fade()} timing={linearTiming({ durationInFrames: T.fade })} />
+        <TransitionSeries.Sequence durationInFrames={SCENES.s2.durationInFrames} premountFor={30}>
+          <S02_WhoWereThey />
+        </TransitionSeries.Sequence>
+        {/* ... continues for all 10 scenes ... */}
+      </TransitionSeries>
     </AbsoluteFill>
   );
 };
@@ -1324,116 +926,47 @@ export const S01_ColdOpen: React.FC = () => {
 
 ---
 
-### `src/ep004-landscape/scenes/S07_Theories.tsx`
+## 🔄 NEW WORKFLOW — TTS + TRANSCRIPT SPLIT
 
-```typescript
-import React from 'react';
-import { AbsoluteFill, Audio, staticFile, interpolate, useCurrentFrame } from 'remotion';
-import { TheoryCard } from '../components/TheoryCard';
-import { PALETTE, FONTS } from '../constants';
+### Step 1 — Generate 3 Act WAVs
+Use the combined TTS prompts above. Each prompt will produce one WAV file (act1, act2, act3).
 
-export const S07_Theories: React.FC = () => {
-  const frame = useCurrentFrame();
+### Step 2 — Run generate-captions.ts per Act
+```bash
+# Generate transcript for the full act WAV
+npx tsx scripts/generate-captions.ts \
+  "public/assets/forever-lost/ep-004/audio/vo/ep004_L_act1_setup.wav" \
+  "src/remotion/categories/forever-lost/ep-004/scenes/transcript_act1_raw.json"
 
-  const finalLineOpacity = interpolate(frame, [1350, 1420], [0, 1], {
-    extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
-  });
+# Repeat for act2 and act3
+npx tsx scripts/generate-captions.ts \
+  "public/assets/forever-lost/ep-004/audio/vo/ep004_L_act2_horror.wav" \
+  ".../transcript_act2_raw.json"
 
-  return (
-    <AbsoluteFill>
-      <Audio src={staticFile('ep004/audio/landscape/s07-theories.wav')} />
-      <Audio src={staticFile('ep004/sfx/low-rumble.mp3')} volume={0.08} />
-
-      <img
-        src={staticFile('ep004/images/ep004-l-s07-theories-bg.jpg')}
-        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-      />
-      <AbsoluteFill style={{ background: 'rgba(0,0,0,0.75)' }} />
-
-      {/* Left side: section header */}
-      <div style={{ position: 'absolute', left: 60, top: 60 }}>
-        <div style={{ fontFamily: FONTS.display, fontSize: 18, color: PALETTE.muted, letterSpacing: 8 }}>
-          THE THEORIES — 65 YEARS OF INVESTIGATION
-        </div>
-        <div style={{ width: 180, height: 2, background: PALETTE.accent, marginTop: 10 }} />
-      </div>
-
-      {/* Theory Cards */}
-      <TheoryCard
-        number="01" title="Katabatic Wind + Slab Avalanche"
-        points={[
-          'Most accepted by Russian authorities (2021)',
-          'Explains compression injuries from snow weight',
-          '✕ No debris on tent — no disturbed snow around camp',
-        ]}
-        accentColor="#1a6b8b"
-        delayFrames={60} holdFrames={900}
-        top="15%"
-      />
-      <TheoryCard
-        number="02" title="Military Testing / Infrasound"
-        points={[
-          'Closed military test zone nearby in 1959',
-          'Infrasound can cause panic, disorientation, paranoia',
-          '✕ No physical mechanism for injuries explained',
-        ]}
-        accentColor="#6b1a6b"
-        delayFrames={390} holdFrames={900}
-        top="42%"
-      />
-      <TheoryCard
-        number="03" title="Paradoxical Undressing / Hypothermia"
-        points={[
-          'Documented medical phenomenon — victims feel overheated',
-          'Explains removal of clothing in cold conditions',
-          '✕ Does not explain skull fractures or missing tissue',
-        ]}
-        accentColor="#1a6b2d"
-        delayFrames={720} holdFrames={900}
-        top="68%"
-      />
-
-      {/* Final statement */}
-      <div style={{
-        position: 'absolute', bottom: 80, left: 60, right: 60,
-        opacity: finalLineOpacity, textAlign: 'center',
-      }}>
-        <div style={{
-          fontFamily: FONTS.display, fontSize: 42, color: PALETTE.text,
-          letterSpacing: 4, borderTop: `1px solid ${PALETTE.muted}`, paddingTop: 20,
-        }}>
-          NONE EXPLAINS ALL OF IT
-        </div>
-      </div>
-    </AbsoluteFill>
-  );
-};
+npx tsx scripts/generate-captions.ts \
+  "public/assets/forever-lost/ep-004/audio/vo/ep004_L_act3_resolution.wav" \
+  ".../transcript_act3_raw.json"
 ```
 
-> **Note:** All other scene components (`S02` through `S10`) follow the same pattern — `AbsoluteFill` + background image + overlay + `Audio` + component library calls using the `delayFrames` offsets specified in each scene's Motion Graphics section above.
+### Step 3 — Clean and Split Transcripts
+1. Open each act's `transcript_actN_raw.json`
+2. Clean: merge split words, fix punctuation per script, capitalize sentence starts, fix acronyms
+3. Find where each scene begins within the act transcript (using the first words of each scene)
+4. Split into per-scene arrays, **subtracting each scene's start offset** so its first `startMs` is ~0
+5. Save as `transcript_s01.json`, `transcript_s02.json`, etc.
 
----
+### Step 4 — Update per-scene constants.ts
+Each scene imports its own `transcript_sN.json` into `TRASCRIPT_DATA` and exports `SCENE_DURATION`.
 
-## 🔄 TIMING UPDATE WORKFLOW
-
-```
-1. Generate all 10 WAV files via TTS API
-2. For each WAV: measure duration_seconds
-3. Open constants.ts → update SCENE_DURATIONS_SEC
-   → rule: duration = ceil(wav_seconds) + 2  (2 sec buffer)
-4. Verify: TOTAL_FRAMES stays between 10,800–14,400 (6–8 min)
-5. Adjust motion graphic delayFrames in each scene if needed
-   → rule: first banner = frame 60, each subsequent = +240–300
-6. Preview: npx remotion preview
-7. Spot-check key frames: npx remotion still DyatlovPassLandscape --frame=750 --scale=0.5
-```
+### Step 5 — Measure Actual Scene Boundaries
+Use `ffprobe` or a DAW to find the exact second each scene begins in the act WAV. Update `vo-offsets.ts` with real `startFromSec` values.
 
 ---
 
 ## 🔧 RENDER COMMAND
 
 ```bash
-npx remotion render DyatlovPassLandscape out/ep004-dyatlov-landscape.mp4 \
+npx remotion render ForeverLostEp4 out/ep004-dyatlov-landscape.mp4 \
   --codec=h264 \
   --crf=18 \
   --fps=30 \
