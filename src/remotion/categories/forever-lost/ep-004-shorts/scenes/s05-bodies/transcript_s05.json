@@ -1,0 +1,184 @@
+[
+  {
+    "text": " Five",
+    "startMs": 0,
+    "endMs": 370,
+    "timestampMs": -60,
+    "confidence": 0.562902
+  },
+  {
+    "text": " of",
+    "startMs": 370,
+    "endMs": 550,
+    "timestampMs": 120,
+    "confidence": 0.996187
+  },
+  {
+    "text": " the",
+    "startMs": 550,
+    "endMs": 830,
+    "timestampMs": 240,
+    "confidence": 0.988783
+  },
+  {
+    "text": " nine",
+    "startMs": 830,
+    "endMs": 1190,
+    "timestampMs": 500,
+    "confidence": 0.976619
+  },
+  {
+    "text": " died",
+    "startMs": 1190,
+    "endMs": 1630,
+    "timestampMs": 1000,
+    "confidence": 0.998112
+  },
+  {
+    "text": " of",
+    "startMs": 1630,
+    "endMs": 1750,
+    "timestampMs": 1180,
+    "confidence": 0.995552
+  },
+  {
+    "text": " hypothermia.",
+    "startMs": 1750,
+    "endMs": 3120,
+    "timestampMs": 1340,
+    "confidence": 0.975461
+  },
+  {
+    "text": " The",
+    "startMs": 3120,
+    "endMs": 3400,
+    "timestampMs": 3120,
+    "confidence": 0.975641
+  },
+  {
+    "text": " others",
+    "startMs": 3400,
+    "endMs": 3960,
+    "timestampMs": 3460,
+    "confidence": 0.985913
+  },
+  {
+    "text": " had",
+    "startMs": 3960,
+    "endMs": 4240,
+    "timestampMs": 3600,
+    "confidence": 0.970454
+  },
+  {
+    "text": " shattered",
+    "startMs": 4240,
+    "endMs": 5080,
+    "timestampMs": 4060,
+    "confidence": 0.99478
+  },
+  {
+    "text": " ribs",
+    "startMs": 5080,
+    "endMs": 5490,
+    "timestampMs": 4420,
+    "confidence": 0.979237
+  },
+  {
+    "text": " and",
+    "startMs": 5490,
+    "endMs": 5730,
+    "timestampMs": 4840,
+    "confidence": 0.98462
+  },
+  {
+    "text": " fractured",
+    "startMs": 5730,
+    "endMs": 6620,
+    "timestampMs": 5180,
+    "confidence": 0.993339
+  },
+  {
+    "text": " skulls —",
+    "startMs": 6620,
+    "endMs": 7150,
+    "timestampMs": 5760,
+    "confidence": 0.996339
+  },
+  {
+    "text": " with",
+    "startMs": 7150,
+    "endMs": 7500,
+    "timestampMs": 6520,
+    "confidence": 0.853471
+  },
+  {
+    "text": " no",
+    "startMs": 7500,
+    "endMs": 7670,
+    "timestampMs": 6840,
+    "confidence": 0.997411
+  },
+  {
+    "text": " external",
+    "startMs": 7670,
+    "endMs": 8430,
+    "timestampMs": 7400,
+    "confidence": 0.997166
+  },
+  {
+    "text": " wounds.",
+    "startMs": 8430,
+    "endMs": 9320,
+    "timestampMs": 7920,
+    "confidence": 0.984913
+  },
+  {
+    "text": " The",
+    "startMs": 9320,
+    "endMs": 9670,
+    "timestampMs": 9300,
+    "confidence": 0.99895
+  },
+  {
+    "text": " force",
+    "startMs": 9670,
+    "endMs": 10230,
+    "timestampMs": 9620,
+    "confidence": 0.952606
+  },
+  {
+    "text": " matched",
+    "startMs": 10230,
+    "endMs": 11060,
+    "timestampMs": 9960,
+    "confidence": 0.990548
+  },
+  {
+    "text": " a",
+    "startMs": 11060,
+    "endMs": 11140,
+    "timestampMs": 10200,
+    "confidence": 0.955687
+  },
+  {
+    "text": " high-speed",
+    "startMs": 11140,
+    "endMs": 12260,
+    "timestampMs": 10460,
+    "confidence": 0.718152
+  },
+  {
+    "text": " car",
+    "startMs": 12260,
+    "endMs": 12620,
+    "timestampMs": 11220,
+    "confidence": 0.994089
+  },
+  {
+    "text": " crash.",
+    "startMs": 12620,
+    "endMs": 13600,
+    "timestampMs": 11640,
+    "confidence": 0.982068
+  }
+]

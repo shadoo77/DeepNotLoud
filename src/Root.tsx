@@ -10,9 +10,9 @@ import {
   TOTAL_FRAMES as EP3_SHORTS_TOTAL_FRAMES,
 } from "@/remotion/categories/forever-lost/ep-003-shorts/ForeverLostEp3Shorts";
 import {
-  TransitionSeriesSanity,
-  TOTAL_FRAMES as TRANSITION_SANITY_FRAMES,
-} from "@/remotion/debug/TransitionSeriesSanity";
+  ForeverLostEp4Shorts,
+  TOTAL_FRAMES as EP4_SHORTS_TOTAL_FRAMES,
+} from "@/remotion/categories/forever-lost/ep-004-shorts/ForeverLostEp4Shorts";
 
 export function RemotionRoot() {
   return (
@@ -35,12 +35,12 @@ export function RemotionRoot() {
         height={1920}
       />
       <Composition
-        id="TransitionSeries-Sanity"
-        component={TransitionSeriesSanity}
-        durationInFrames={TRANSITION_SANITY_FRAMES}
+        id="ForeverLost-Ep4-Shorts"
+        component={ForeverLostEp4Shorts}
+        durationInFrames={EP4_SHORTS_TOTAL_FRAMES}
         fps={30}
-        width={1280}
-        height={720}
+        width={1080}
+        height={1920}
       />
     </Folder>
   );

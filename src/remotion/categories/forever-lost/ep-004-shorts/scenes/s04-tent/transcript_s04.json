@@ -1,0 +1,163 @@
+[
+  {
+    "text": " Rescuers",
+    "startMs": 0,
+    "endMs": 610,
+    "timestampMs": -480,
+    "confidence": 0.813465
+  },
+  {
+    "text": " reached",
+    "startMs": 610,
+    "endMs": 1150,
+    "timestampMs": 240,
+    "confidence": 0.977625
+  },
+  {
+    "text": " the",
+    "startMs": 1150,
+    "endMs": 1380,
+    "timestampMs": 500,
+    "confidence": 0.993316
+  },
+  {
+    "text": " camp",
+    "startMs": 1380,
+    "endMs": 1690,
+    "timestampMs": 760,
+    "confidence": 0.994173
+  },
+  {
+    "text": " three",
+    "startMs": 1690,
+    "endMs": 2070,
+    "timestampMs": 1220,
+    "confidence": 0.962573
+  },
+  {
+    "text": " weeks",
+    "startMs": 2070,
+    "endMs": 2450,
+    "timestampMs": 1520,
+    "confidence": 0.998849
+  },
+  {
+    "text": " later.",
+    "startMs": 2450,
+    "endMs": 3140,
+    "timestampMs": 1980,
+    "confidence": 0.971071
+  },
+  {
+    "text": " The",
+    "startMs": 3140,
+    "endMs": 3460,
+    "timestampMs": 3140,
+    "confidence": 0.998649
+  },
+  {
+    "text": " hikers",
+    "startMs": 3460,
+    "endMs": 4100,
+    "timestampMs": 3400,
+    "confidence": 0.995363
+  },
+  {
+    "text": " had",
+    "startMs": 4100,
+    "endMs": 4420,
+    "timestampMs": 3760,
+    "confidence": 0.982889
+  },
+  {
+    "text": " fled",
+    "startMs": 4420,
+    "endMs": 4840,
+    "timestampMs": 4040,
+    "confidence": 0.998713
+  },
+  {
+    "text": " barefoot",
+    "startMs": 4840,
+    "endMs": 5680,
+    "timestampMs": 4520,
+    "confidence": 0.986926
+  },
+  {
+    "text": " into",
+    "startMs": 5680,
+    "endMs": 6190,
+    "timestampMs": 5120,
+    "confidence": 0.979968
+  },
+  {
+    "text": " subzero",
+    "startMs": 6190,
+    "endMs": 7680,
+    "timestampMs": 5560,
+    "confidence": 0.596105
+  },
+  {
+    "text": " darkness.",
+    "startMs": 7680,
+    "endMs": 8180,
+    "timestampMs": 6400,
+    "confidence": 0.914697
+  },
+  {
+    "text": " Something",
+    "startMs": 8180,
+    "endMs": 9150,
+    "timestampMs": 8100,
+    "confidence": 0.992741
+  },
+  {
+    "text": " in",
+    "startMs": 9150,
+    "endMs": 9480,
+    "timestampMs": 8420,
+    "confidence": 0.996398
+  },
+  {
+    "text": " that",
+    "startMs": 9480,
+    "endMs": 9910,
+    "timestampMs": 8640,
+    "confidence": 0.975295
+  },
+  {
+    "text": " tent",
+    "startMs": 9910,
+    "endMs": 10220,
+    "timestampMs": 8980,
+    "confidence": 0.999296
+  },
+  {
+    "text": " terrified",
+    "startMs": 10220,
+    "endMs": 11180,
+    "timestampMs": 9740,
+    "confidence": 0.944382
+  },
+  {
+    "text": " nine",
+    "startMs": 11180,
+    "endMs": 11610,
+    "timestampMs": 10400,
+    "confidence": 0.975368
+  },
+  {
+    "text": " trained",
+    "startMs": 11610,
+    "endMs": 12960,
+    "timestampMs": 11000,
+    "confidence": 0.86919
+  },
+  {
+    "text": " adults.",
+    "startMs": 12960,
+    "endMs": 13360,
+    "timestampMs": 11560,
+    "confidence": 0.980999
+  }
+]

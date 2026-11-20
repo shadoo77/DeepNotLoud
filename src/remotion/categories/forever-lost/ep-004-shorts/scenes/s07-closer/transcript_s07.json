@@ -1,0 +1,163 @@
+[
+  {
+    "text": " Their",
+    "startMs": 0,
+    "endMs": 470,
+    "timestampMs": -20,
+    "confidence": 0.769727
+  },
+  {
+    "text": " cameras",
+    "startMs": 470,
+    "endMs": 1130,
+    "timestampMs": 440,
+    "confidence": 0.994776
+  },
+  {
+    "text": " were",
+    "startMs": 1130,
+    "endMs": 1500,
+    "timestampMs": 740,
+    "confidence": 0.998441
+  },
+  {
+    "text": " found",
+    "startMs": 1500,
+    "endMs": 1950,
+    "timestampMs": 1080,
+    "confidence": 0.999133
+  },
+  {
+    "text": " in",
+    "startMs": 1950,
+    "endMs": 1970,
+    "timestampMs": 1280,
+    "confidence": 0.997413
+  },
+  {
+    "text": " the",
+    "startMs": 1970,
+    "endMs": 2430,
+    "timestampMs": 1380,
+    "confidence": 0.996578
+  },
+  {
+    "text": " snow.",
+    "startMs": 2430,
+    "endMs": 3120,
+    "timestampMs": 1640,
+    "confidence": 0.976865
+  },
+  {
+    "text": " The",
+    "startMs": 3120,
+    "endMs": 3690,
+    "timestampMs": 3120,
+    "confidence": 0.704931
+  },
+  {
+    "text": " last",
+    "startMs": 3690,
+    "endMs": 5020,
+    "timestampMs": 3380,
+    "confidence": 0.972103
+  },
+  {
+    "text": " photo:",
+    "startMs": 5020,
+    "endMs": 6420,
+    "timestampMs": 3780,
+    "confidence": 0.63837
+  },
+  {
+    "text": " darkness",
+    "startMs": 6420,
+    "endMs": 7300,
+    "timestampMs": 5320,
+    "confidence": 0.986025
+  },
+  {
+    "text": " and",
+    "startMs": 7300,
+    "endMs": 8650,
+    "timestampMs": 6500,
+    "confidence": 0.547654
+  },
+  {
+    "text": " blur.",
+    "startMs": 8650,
+    "endMs": 8890,
+    "timestampMs": 6840,
+    "confidence": 0.467278
+  },
+  {
+    "text": " Whatever",
+    "startMs": 8890,
+    "endMs": 9710,
+    "timestampMs": 8900,
+    "confidence": 0.86673
+  },
+  {
+    "text": " they",
+    "startMs": 9710,
+    "endMs": 10460,
+    "timestampMs": 9200,
+    "confidence": 0.987059
+  },
+  {
+    "text": " ran",
+    "startMs": 10460,
+    "endMs": 10886,
+    "timestampMs": 10460,
+    "confidence": 0.785844
+  },
+  {
+    "text": " from...",
+    "startMs": 10886,
+    "endMs": 11130,
+    "timestampMs": 9860,
+    "confidence": 0.785844
+  },
+  {
+    "text": " was",
+    "startMs": 11130,
+    "endMs": 11300,
+    "timestampMs": 11180,
+    "confidence": 0.824794
+  },
+  {
+    "text": " still",
+    "startMs": 11300,
+    "endMs": 11610,
+    "timestampMs": 11580,
+    "confidence": 0.981476
+  },
+  {
+    "text": " there",
+    "startMs": 11610,
+    "endMs": 11920,
+    "timestampMs": 11920,
+    "confidence": 0.9924
+  },
+  {
+    "text": " when",
+    "startMs": 11920,
+    "endMs": 12170,
+    "timestampMs": 12260,
+    "confidence": 0.987434
+  },
+  {
+    "text": " they",
+    "startMs": 12170,
+    "endMs": 12590,
+    "timestampMs": 12400,
+    "confidence": 0.992712
+  },
+  {
+    "text": " died.",
+    "startMs": 12590,
+    "endMs": 13200,
+    "timestampMs": 12860,
+    "confidence": 0.952379
+  }
+]

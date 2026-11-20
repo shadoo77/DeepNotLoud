@@ -1,0 +1,163 @@
+[
+  {
+    "text": " Russia",
+    "startMs": 0,
+    "endMs": 550,
+    "timestampMs": 80,
+    "confidence": 0.991813
+  },
+  {
+    "text": " reopened",
+    "startMs": 550,
+    "endMs": 1280,
+    "timestampMs": 500,
+    "confidence": 0.969241
+  },
+  {
+    "text": " the",
+    "startMs": 1280,
+    "endMs": 1550,
+    "timestampMs": 840,
+    "confidence": 0.995059
+  },
+  {
+    "text": " case",
+    "startMs": 1550,
+    "endMs": 1910,
+    "timestampMs": 1060,
+    "confidence": 0.998671
+  },
+  {
+    "text": " in",
+    "startMs": 1910,
+    "endMs": 2090,
+    "timestampMs": 1320,
+    "confidence": 0.996329
+  },
+  {
+    "text": " 2019.",
+    "startMs": 2090,
+    "endMs": 3500,
+    "timestampMs": 2100,
+    "confidence": 0.942166
+  },
+  {
+    "text": " Their",
+    "startMs": 3500,
+    "endMs": 4680,
+    "timestampMs": 3460,
+    "confidence": 0.780633
+  },
+  {
+    "text": " verdict:",
+    "startMs": 4680,
+    "endMs": 5180,
+    "timestampMs": 3780,
+    "confidence": 0.460134
+  },
+  {
+    "text": " an",
+    "startMs": 5180,
+    "endMs": 5440,
+    "timestampMs": 4780,
+    "confidence": 0.460134
+  },
+  {
+    "text": " avalanche.",
+    "startMs": 5440,
+    "endMs": 6820,
+    "timestampMs": 5160,
+    "confidence": 0.389614
+  },
+  {
+    "text": " But",
+    "startMs": 6820,
+    "endMs": 7130,
+    "timestampMs": 6740,
+    "confidence": 0.882608
+  },
+  {
+    "text": " the",
+    "startMs": 7130,
+    "endMs": 7500,
+    "timestampMs": 6860,
+    "confidence": 0.992769
+  },
+  {
+    "text": " tent",
+    "startMs": 7500,
+    "endMs": 8000,
+    "timestampMs": 7120,
+    "confidence": 0.996584
+  },
+  {
+    "text": " had",
+    "startMs": 8000,
+    "endMs": 8370,
+    "timestampMs": 7420,
+    "confidence": 0.994019
+  },
+  {
+    "text": " no",
+    "startMs": 8370,
+    "endMs": 8620,
+    "timestampMs": 7740,
+    "confidence": 0.998275
+  },
+  {
+    "text": " snow",
+    "startMs": 8620,
+    "endMs": 9040,
+    "timestampMs": 8040,
+    "confidence": 0.997371
+  },
+  {
+    "text": " on",
+    "startMs": 9040,
+    "endMs": 9370,
+    "timestampMs": 8400,
+    "confidence": 0.996478
+  },
+  {
+    "text": " it.",
+    "startMs": 9370,
+    "endMs": 10020,
+    "timestampMs": 8560,
+    "confidence": 0.984193
+  },
+  {
+    "text": " Sixty-five",
+    "startMs": 10020,
+    "endMs": 10870,
+    "timestampMs": 10160,
+    "confidence": 0.625423
+  },
+  {
+    "text": " years",
+    "startMs": 10870,
+    "endMs": 12040,
+    "timestampMs": 10740,
+    "confidence": 0.99799
+  },
+  {
+    "text": " later —",
+    "startMs": 12040,
+    "endMs": 12570,
+    "timestampMs": 11180,
+    "confidence": 0.891013
+  },
+  {
+    "text": " nobody",
+    "startMs": 12570,
+    "endMs": 14270,
+    "timestampMs": 12320,
+    "confidence": 0.994867
+  },
+  {
+    "text": " agrees.",
+    "startMs": 14270,
+    "endMs": 14720,
+    "timestampMs": 12880,
+    "confidence": 0.983537
+  }
+]

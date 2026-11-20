@@ -1,0 +1,107 @@
+[
+  {
+    "text": " February",
+    "startMs": 0,
+    "endMs": 1060,
+    "timestampMs": 300,
+    "confidence": 0.955036
+  },
+  {
+    "text": " 1959.",
+    "startMs": 1060,
+    "endMs": 2850,
+    "timestampMs": 1820,
+    "confidence": 0.879013
+  },
+  {
+    "text": " The",
+    "startMs": 2850,
+    "endMs": 3190,
+    "timestampMs": 2940,
+    "confidence": 0.900781
+  },
+  {
+    "text": " Ural",
+    "startMs": 3190,
+    "endMs": 3810,
+    "timestampMs": 3120,
+    "confidence": 0.630209
+  },
+  {
+    "text": " Mountains,",
+    "startMs": 3810,
+    "endMs": 5090,
+    "timestampMs": 3720,
+    "confidence": 0.907109
+  },
+  {
+    "text": " Soviet",
+    "startMs": 5090,
+    "endMs": 6670,
+    "timestampMs": 4800,
+    "confidence": 0.954829
+  },
+  {
+    "text": " Russia.",
+    "startMs": 6670,
+    "endMs": 6780,
+    "timestampMs": 5460,
+    "confidence": 0.354687
+  },
+  {
+    "text": " Ten",
+    "startMs": 6780,
+    "endMs": 7280,
+    "timestampMs": 6900,
+    "confidence": 0.708918
+  },
+  {
+    "text": " experienced",
+    "startMs": 7280,
+    "endMs": 8200,
+    "timestampMs": 7820,
+    "confidence": 0.982153
+  },
+  {
+    "text": " hikers",
+    "startMs": 8200,
+    "endMs": 8770,
+    "timestampMs": 8260,
+    "confidence": 0.990124
+  },
+  {
+    "text": " set",
+    "startMs": 8770,
+    "endMs": 8940,
+    "timestampMs": 8960,
+    "confidence": 0.962125
+  },
+  {
+    "text": " out",
+    "startMs": 8940,
+    "endMs": 9160,
+    "timestampMs": 9180,
+    "confidence": 0.974535
+  },
+  {
+    "text": " for",
+    "startMs": 9160,
+    "endMs": 9380,
+    "timestampMs": 9400,
+    "confidence": 0.993674
+  },
+  {
+    "text": " Dead",
+    "startMs": 9380,
+    "endMs": 9920,
+    "timestampMs": 9720,
+    "confidence": 0.732334
+  },
+  {
+    "text": " Mountain.",
+    "startMs": 9920,
+    "endMs": 11720,
+    "timestampMs": 10060,
+    "confidence": 0.535596
+  }
+]
