@@ -11,7 +11,9 @@ Config.overrideWebpackConfig((currentConfig) => {
     resolve: {
       ...currentConfig.resolve,
       alias: {
-        ...(currentConfig.resolve?.alias ? (currentConfig.resolve.alias as Record<string, string>) : {}),
+        ...(currentConfig.resolve?.alias
+          ? (currentConfig.resolve.alias as Record<string, string>)
+          : {}),
         "@": path.resolve(process.cwd(), "src"),
       },
     },

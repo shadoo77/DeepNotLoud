@@ -21,7 +21,12 @@ export function Scene5_Structure() {
   const { fps } = useVideoConfig();
 
   const gpf = (phrase: string) =>
-    getPhraseFrames({ phrase, transcriptData, fps, voiceOverStartFrame: VO_START_FRAME }).from;
+    getPhraseFrames({
+      phrase,
+      transcriptData,
+      fps,
+      voiceOverStartFrame: VO_START_FRAME,
+    }).from;
 
   const frameBrokeHalf = gpf("broke in half");
   const frameShatter = gpf("shatter");

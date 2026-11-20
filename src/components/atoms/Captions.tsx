@@ -68,7 +68,7 @@ export const Captions: React.FC<CaptionProps> = ({
             <span
               key={i}
               // ✅ Tailwind still fine for non-layout classes (font-weight, mr)
-              className={`inline-block mr-[0.3em] ${
+              className={`mr-[0.3em] inline-block ${
                 isHighlighted
                   ? "font-extrabold"
                   : isActive

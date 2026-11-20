@@ -53,16 +53,11 @@ export const MG02RadiationChart: React.FC = () => {
   const holdStart = Math.max(241, durationInFrames - 90);
   const exitEnd = Math.max(holdStart + 1, durationInFrames);
 
-  const panelTranslateY = interpolate(
-    frame,
-    [holdStart, exitEnd],
-    [0, 1080],
-    {
-      extrapolateLeft: "clamp",
-      extrapolateRight: "clamp",
-      easing: Easing.bezier(0.16, 1, 0.3, 1),
-    },
-  );
+  const panelTranslateY = interpolate(frame, [holdStart, exitEnd], [0, 1080], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+    easing: Easing.bezier(0.16, 1, 0.3, 1),
+  });
 
   const titleSweepX = interpolate(frame, [0, 20], [-80, 0], {
     extrapolateLeft: "clamp",

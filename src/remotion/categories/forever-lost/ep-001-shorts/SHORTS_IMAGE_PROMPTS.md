@@ -68,16 +68,16 @@ The bow of the Titanic wreck on the deep ocean floor, vertical 9:16 frame. The r
 
 ## Summary
 
-| # | Filename | Act | Purpose |
-|---|----------|-----|---------|
-| 1 | `img_shorts_act1_bow.jpeg` | Act 1 | Cold open rivet→bow |
-| 2 | `img_shorts_act1_depth_column.jpeg` | Act 1 | Depth column/scale |
-| 3 | `img_shorts_act2_rusticle_macro.jpeg` | Act 2 | Rusticle macro |
-| 4 | `img_shorts_act2_bacteria.jpeg` | Act 2 | Bacteria consuming |
-| 5 | `img_shorts_act2_dissolution.jpeg` | Act 2 | Dissolution background |
-| 6 | `img_shorts_act3_weight_scale.jpeg` | Act 3 | Weight/salvage crane |
-| 7 | `img_shorts_act3_ship_split.jpeg` | Act 3 | Ship broken in half |
-| 8 | `img_shorts_act3_porthole.jpeg` | Act 3 | Grave porthole |
-| 9 | `img_shorts_act3_outro.jpeg` | Act 3 | Outro bow fading |
+| #   | Filename                              | Act   | Purpose                |
+| --- | ------------------------------------- | ----- | ---------------------- |
+| 1   | `img_shorts_act1_bow.jpeg`            | Act 1 | Cold open rivet→bow    |
+| 2   | `img_shorts_act1_depth_column.jpeg`   | Act 1 | Depth column/scale     |
+| 3   | `img_shorts_act2_rusticle_macro.jpeg` | Act 2 | Rusticle macro         |
+| 4   | `img_shorts_act2_bacteria.jpeg`       | Act 2 | Bacteria consuming     |
+| 5   | `img_shorts_act2_dissolution.jpeg`    | Act 2 | Dissolution background |
+| 6   | `img_shorts_act3_weight_scale.jpeg`   | Act 3 | Weight/salvage crane   |
+| 7   | `img_shorts_act3_ship_split.jpeg`     | Act 3 | Ship broken in half    |
+| 8   | `img_shorts_act3_porthole.jpeg`       | Act 3 | Grave porthole         |
+| 9   | `img_shorts_act3_outro.jpeg`          | Act 3 | Outro bow fading       |
 
 All images: **1080×1920 (9:16)**, photorealistic, cinematic, dark deep-ocean palette matching the landscape video (`abyssBlack`, `deepNavy`, `biolumTeal`, `rustOrange`).

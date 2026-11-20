@@ -91,7 +91,7 @@ const CrackLines = ({ triggerFrame }: { triggerFrame: number }) => {
       width="1920"
       height="1080"
       viewBox="0 0 1920 1080"
-      className="absolute pointer-events-none"
+      className="pointer-events-none absolute"
     >
       {crackPaths.map((d, i) => {
         const pathLength = 300;
@@ -118,7 +118,12 @@ export function Scene2_Pressure() {
   const { fps } = useVideoConfig();
 
   const gpf = (phrase: string) =>
-    getPhraseFrames({ phrase, transcriptData: TRASCRIPT_DATA, fps, voiceOverStartFrame: VO_START_FRAME }).from;
+    getPhraseFrames({
+      phrase,
+      transcriptData: TRASCRIPT_DATA,
+      fps,
+      voiceOverStartFrame: VO_START_FRAME,
+    }).from;
 
   const frame380 = gpf("380");
   const frameCup = gpf("crushed");

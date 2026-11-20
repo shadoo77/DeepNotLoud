@@ -47,9 +47,9 @@ const SentencePage = ({
         className="font-patua max-w-7xl text-5xl font-bold whitespace-pre-wrap"
         style={{ textShadow: "0 2px 12px rgba(0,0,0,0.9)" }}
       >
-          <div
-            className="relative inline-block rounded-xl px-6 py-3 text-center line-clamp-3"
-            style={
+        <div
+          className="relative line-clamp-3 inline-block rounded-xl px-6 py-3 text-center"
+          style={
             showOverlay ? { backgroundColor: "oklch(0.15 0.02 260 / 0.7)" } : {}
           }
         >
@@ -126,9 +126,9 @@ const CaptionPage = ({
         className="font-patua max-w-4xl text-5xl font-bold whitespace-pre-wrap"
         style={{ textShadow: "0 2px 12px rgba(0,0,0,0.9)" }}
       >
-          <div
-            className="relative inline-block rounded-xl px-6 py-3 line-clamp-3"
-            style={
+        <div
+          className="relative line-clamp-3 inline-block rounded-xl px-6 py-3"
+          style={
             showOverlay ? { backgroundColor: "oklch(0.15 0.02 260 / 0.7)" } : {}
           }
         >
@@ -145,12 +145,7 @@ const CaptionPage = ({
 
             const activeScale = interpolate(
               absoluteTimeMs,
-              [
-                token.fromMs - 60,
-                token.fromMs,
-                token.toMs,
-                token.toMs + 60,
-              ],
+              [token.fromMs - 60, token.fromMs, token.toMs, token.toMs + 60],
               [1, 1.05, 1.05, 1],
               { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
             );

@@ -27,16 +27,29 @@ export const ManualDissolveTransition: React.FC<ManualTransitionProps> = ({
     : 1;
 
   const outProgress = fadeOut
-    ? interpolate(frame, [durationInFrames - transitionInFrames, durationInFrames], [0, 1], {
-        extrapolateLeft: "clamp",
-        extrapolateRight: "clamp",
-      })
+    ? interpolate(
+        frame,
+        [durationInFrames - transitionInFrames, durationInFrames],
+        [0, 1],
+        {
+          extrapolateLeft: "clamp",
+          extrapolateRight: "clamp",
+        },
+      )
     : 0;
 
   const noiseBucket = random(`dissolve-${frame}`);
-  const inQuantized = Math.floor((inProgress + noiseBucket * 0.04) * DISSOLVE_STEPS) / DISSOLVE_STEPS;
+  const inQuantized =
+    Math.floor((inProgress + noiseBucket * 0.04) * DISSOLVE_STEPS) /
+    DISSOLVE_STEPS;
   const outQuantized =
-    Math.floor((Math.max(0, 1 - outProgress) + noiseBucket * 0.04) * DISSOLVE_STEPS) / DISSOLVE_STEPS;
+    Math.floor(
+      (Math.max(0, 1 - outProgress) + noiseBucket * 0.04) * DISSOLVE_STEPS,
+    ) / DISSOLVE_STEPS;
 
-  return <AbsoluteFill style={{ opacity: Math.min(inQuantized, outQuantized) }}>{children}</AbsoluteFill>;
+  return (
+    <AbsoluteFill style={{ opacity: Math.min(inQuantized, outQuantized) }}>
+      {children}
+    </AbsoluteFill>
+  );
 };

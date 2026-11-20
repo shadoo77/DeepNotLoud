@@ -10,7 +10,8 @@ export const VO = {
   act3: "assets/forever-lost/ep-004/audio/vo/ep004_L_act3_resolution.wav",
 } as const;
 
-export type SceneKey = "S01" | "S02" | "S03" | "S04" | "S05" | "S06" | "S07" | "S08" | "S09" | "S10";
+export type SceneKey =
+  "S01" | "S02" | "S03" | "S04" | "S05" | "S06" | "S07" | "S08" | "S09" | "S10";
 
 export interface VoOffset {
   src: string;

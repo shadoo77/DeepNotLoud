@@ -1,5 +1,7 @@
 # FOREVER LOST — Episode: "The Real Loser in Every World Cup"
+
 ### ⚡ SHORT FORMAT — TikTok / Reels / YouTube Shorts
+
 > Target Duration: 50–60 seconds | Format: 9:16 Portrait | FPS: 30 | Language: English
 
 ---
@@ -17,14 +19,14 @@ The viewer should feel breathless by the end.
 
 ## 🎨 VISUAL IDENTITY — SAME AS LONG
 
-| Token | Value |
-|-------|-------|
-| Background | `#080808` |
-| Primary text | `#F0F0F0` |
-| Accent / Gold | `#C9A84C` |
-| Impact Red | `#C1121F` |
-| Display font | `Bebas Neue` |
-| Body font | `Inter` thin |
+| Token         | Value        |
+| ------------- | ------------ |
+| Background    | `#080808`    |
+| Primary text  | `#F0F0F0`    |
+| Accent / Gold | `#C9A84C`    |
+| Impact Red    | `#C1121F`    |
+| Display font  | `Bebas Neue` |
+| Body font     | `Inter` thin |
 
 ---
 
@@ -67,6 +69,7 @@ public/
 ```
 
 ---
+
 ---
 
 # 🎬 SCENE-BY-SCENE SCRIPT
@@ -74,10 +77,12 @@ public/
 ---
 
 ## SCENE 1 — HOOK
+
 **Target duration:** ~5 seconds | **Frames:** ~150
 **Mood:** Stops the scroll. No context. Pure tension.
 
 ### VOICEOVER TEXT
+
 ```
 [serious] [slow] Every World Cup...
 [pause: 0.8s]
@@ -87,6 +92,7 @@ Here's who.
 ```
 
 ### 🎙️ TTS PROMPT
+
 ```
 # AUDIO PROFILE: Documentary Narrator — Algenib Voice
 ## "FOREVER LOST — SHORT — The Real Loser in Every World Cup"
@@ -109,21 +115,24 @@ Here's who.
 ```
 
 ### 🎞️ MOTION DIRECTION
-| Beat | Duration | Action |
-|------|----------|--------|
-| 1 | 2s | Black. SFX: single low heartbeat. Then — **"EVERY WORLD CUP"** slams in |
-| 2 | 2s | **"DESTROYS SOMEONE."** — red `#C1121F`, smash cut |
-| 3 | 1s | **"HERE'S WHO."** — white, smaller — then hard cut |
+
+| Beat | Duration | Action                                                                  |
+| ---- | -------- | ----------------------------------------------------------------------- |
+| 1    | 2s       | Black. SFX: single low heartbeat. Then — **"EVERY WORLD CUP"** slams in |
+| 2    | 2s       | **"DESTROYS SOMEONE."** — red `#C1121F`, smash cut                      |
+| 3    | 1s       | **"HERE'S WHO."** — white, smaller — then hard cut                      |
 
 **SFX:** `hit_impact.wav` on beat 1
 
 ---
 
 ## SCENE 2 — RAPID FIRE (1994 / 1998 / 2006)
+
 **Target duration:** ~22 seconds | **Frames:** ~660
 **Mood:** Machine-gun delivery. Each hit lands before the last one settles.
 
 ### VOICEOVER TEXT
+
 ```
 [serious] Nineteen ninety-four. [pause: 0.3s] Roberto Baggio.
 [pause: 0.3s]
@@ -145,6 +154,7 @@ Final game of his career. [pause: 0.3s] Red card. [pause: 0.3s] Never played aga
 ```
 
 ### 🎙️ TTS PROMPT
+
 ```
 # AUDIO PROFILE: Documentary Narrator — Algenib Voice
 ## "FOREVER LOST — SHORT — The Real Loser in Every World Cup"
@@ -183,26 +193,29 @@ Final game of his career. [pause: 0.3s] Red card. [pause: 0.3s] Never played aga
 ```
 
 ### 🎞️ MOTION DIRECTION
-| Beat | Duration | Action |
-|------|----------|--------|
-| 1 | 3s | **"1994"** — year slams in gold. Then: **"ROBERTO BAGGIO"** under it |
-| 2 | 3s | **"5 GOALS → FINAL → MISSED PENALTY"** — arrow chain, left to right |
-| 3 | 3s | `scene2_penalty_silhouette.png` — ball goes over bar. Red arc. |
-| 4 | 3s | **"1998"** — year slams. **"RONALDO — AGE 21"** |
-| 5 | 3s | Alert card: **"SEIZURE — NIGHT BEFORE THE FINAL"** → **"NO EXPLANATION"** |
-| 6 | 3s | Score: **BRA 0 — FRA 3** — cold, flat |
-| 7 | 4s | **"2006"** — year slams. **"ZIDANE — FINAL GAME EVER"** |
-| 8 | 4s | **RED CARD** fills screen → `scene4_tunnel_walk.png` — walks away |
+
+| Beat | Duration | Action                                                                    |
+| ---- | -------- | ------------------------------------------------------------------------- |
+| 1    | 3s       | **"1994"** — year slams in gold. Then: **"ROBERTO BAGGIO"** under it      |
+| 2    | 3s       | **"5 GOALS → FINAL → MISSED PENALTY"** — arrow chain, left to right       |
+| 3    | 3s       | `scene2_penalty_silhouette.png` — ball goes over bar. Red arc.            |
+| 4    | 3s       | **"1998"** — year slams. **"RONALDO — AGE 21"**                           |
+| 5    | 3s       | Alert card: **"SEIZURE — NIGHT BEFORE THE FINAL"** → **"NO EXPLANATION"** |
+| 6    | 3s       | Score: **BRA 0 — FRA 3** — cold, flat                                     |
+| 7    | 4s       | **"2006"** — year slams. **"ZIDANE — FINAL GAME EVER"**                   |
+| 8    | 4s       | **RED CARD** fills screen → `scene4_tunnel_walk.png` — walks away         |
 
 **SFX:** `clock_tick.wav` running under entire scene + `hit_impact.wav` on each year reveal
 
 ---
 
 ## SCENE 3 — 2014 — THE MINEIRAZO
+
 **Target duration:** ~12 seconds | **Frames:** ~360
 **Mood:** Peak horror. One punch to the gut.
 
 ### VOICEOVER TEXT
+
 ```
 [serious] Brazil. Two thousand and fourteen.
 [pause: 0.5s]
@@ -216,6 +229,7 @@ They lost... [pause: 0.8s] seven to one.
 ```
 
 ### 🎙️ TTS PROMPT
+
 ```
 # AUDIO PROFILE: Documentary Narrator — Algenib Voice
 ## "FOREVER LOST — SHORT — The Real Loser in Every World Cup"
@@ -244,22 +258,25 @@ They lost... [pause: 0.8s] seven to one.
 ```
 
 ### 🎞️ MOTION DIRECTION
-| Beat | Duration | Action |
-|------|----------|--------|
-| 1 | 3s | **"BRAZIL 2014"** — flag drains to grey. **"HOST NATION"** |
-| 2 | 3s | Score flashes: **"0-1 / 0-2 / 0-3 / 0-4 / 0-5"** rapid-fire flash frames |
-| 3 | 3s | Final: **"BRA 1 — GER 7"** — massive. Held. Screen trembles slightly |
-| 4 | 3s | `scene5_knees_pitch.png` — player on knees. **"58,141 PEOPLE. SILENCE."** |
+
+| Beat | Duration | Action                                                                    |
+| ---- | -------- | ------------------------------------------------------------------------- |
+| 1    | 3s       | **"BRAZIL 2014"** — flag drains to grey. **"HOST NATION"**                |
+| 2    | 3s       | Score flashes: **"0-1 / 0-2 / 0-3 / 0-4 / 0-5"** rapid-fire flash frames  |
+| 3    | 3s       | Final: **"BRA 1 — GER 7"** — massive. Held. Screen trembles slightly      |
+| 4    | 3s       | `scene5_knees_pitch.png` — player on knees. **"58,141 PEOPLE. SILENCE."** |
 
 **SFX:** `goal_horn_rapid.wav` × 5 (beat 2) → `crowd_silence.wav` (beat 4)
 
 ---
 
 ## SCENE 4 — 2022 — MBAPPÉ
+
 **Target duration:** ~11 seconds | **Frames:** ~330
 **Mood:** Surreal. Disbelief. Then quiet sadness.
 
 ### VOICEOVER TEXT
+
 ```
 [serious] Qatar. Two thousand and twenty-two.
 [pause: 0.5s]
@@ -273,6 +290,7 @@ Mbappé scored a hat-trick. [pause: 0.3s] In the World Cup final.
 ```
 
 ### 🎙️ TTS PROMPT
+
 ```
 # AUDIO PROFILE: Documentary Narrator — Algenib Voice
 ## "FOREVER LOST — SHORT — The Real Loser in Every World Cup"
@@ -301,22 +319,25 @@ Mbappé scored a hat-trick. [pause: 0.3s] In the World Cup final.
 ```
 
 ### 🎞️ MOTION DIRECTION
-| Beat | Duration | Action |
-|------|----------|--------|
-| 1 | 3s | **"QATAR 2022"** — **"MBAPPÉ"** — **"HAT-TRICK IN THE FINAL"** stacked |
-| 2 | 3s | ⚽⚽⚽ — **"FIRST IN WORLD CUP FINAL HISTORY"** — gold |
-| 3 | 2s | Hard cut: **"ARGENTINA WINS."** — grey. Cold. |
-| 4 | 3s | `scene6_alone_trophy.png` — **"3 GOALS. 0 TROPHIES."** — simple. Brutal. |
+
+| Beat | Duration | Action                                                                   |
+| ---- | -------- | ------------------------------------------------------------------------ |
+| 1    | 3s       | **"QATAR 2022"** — **"MBAPPÉ"** — **"HAT-TRICK IN THE FINAL"** stacked   |
+| 2    | 3s       | ⚽⚽⚽ — **"FIRST IN WORLD CUP FINAL HISTORY"** — gold                   |
+| 3    | 2s       | Hard cut: **"ARGENTINA WINS."** — grey. Cold.                            |
+| 4    | 3s       | `scene6_alone_trophy.png` — **"3 GOALS. 0 TROPHIES."** — simple. Brutal. |
 
 **SFX:** goal-hit sound × 3 (beat 1) → `crowd_silence.wav` (beat 3)
 
 ---
 
 ## SCENE 5 — CLOSER: 2026
+
 **Target duration:** ~8 seconds | **Frames:** ~240
 **Mood:** Quiet inevitability. The kicker.
 
 ### VOICEOVER TEXT
+
 ```
 [slow] Two thousand and twenty-six.
 [pause: 1s]
@@ -330,6 +351,7 @@ what this summer is going to cost them.
 ```
 
 ### 🎙️ TTS PROMPT
+
 ```
 # AUDIO PROFILE: Documentary Narrator — Algenib Voice
 ## "FOREVER LOST — SHORT — The Real Loser in Every World Cup"
@@ -360,11 +382,12 @@ what this summer is going to cost them.
 ```
 
 ### 🎞️ MOTION DIRECTION
-| Beat | Duration | Action |
-|------|----------|--------|
-| 1 | 3s | **"2026"** — large, slow reveal, gold — 🇺🇸🇨🇦🇲🇽 flags appear |
-| 2 | 3s | `scene7_silhouette_question.png` — player back to camera, **"?"** appears |
-| 3 | 2s | **FOREVER LOST** logo fades in — then black |
+
+| Beat | Duration | Action                                                                    |
+| ---- | -------- | ------------------------------------------------------------------------- |
+| 1    | 3s       | **"2026"** — large, slow reveal, gold — 🇺🇸🇨🇦🇲🇽 flags appear               |
+| 2    | 3s       | `scene7_silhouette_question.png` — player back to camera, **"?"** appears |
+| 3    | 2s       | **FOREVER LOST** logo fades in — then black                               |
 
 **SFX:** `ambient_low_drone.wav` under entire scene, fading to silence on "Forever."
 
@@ -372,14 +395,14 @@ what this summer is going to cost them.
 
 ## ⏱️ TIMING SUMMARY
 
-| Scene | Description | Target | Frames |
-|-------|-------------|--------|--------|
-| 1 | Hook | ~5s | ~150 |
-| 2 | Rapid Fire | ~22s | ~660 |
-| 3 | Mineirazo | ~12s | ~360 |
-| 4 | Mbappé | ~11s | ~330 |
-| 5 | Closer | ~8s | ~240 |
-| **TOTAL** | | **~58s** | **~1,740** |
+| Scene     | Description | Target   | Frames     |
+| --------- | ----------- | -------- | ---------- |
+| 1         | Hook        | ~5s      | ~150       |
+| 2         | Rapid Fire  | ~22s     | ~660       |
+| 3         | Mineirazo   | ~12s     | ~360       |
+| 4         | Mbappé      | ~11s     | ~330       |
+| 5         | Closer      | ~8s      | ~240       |
+| **TOTAL** |             | **~58s** | **~1,740** |
 
 > ⚠️ Update frame counts in `constants.ts` after WAV generation. Duration (sec) × 30 = frames.
 
@@ -387,21 +410,22 @@ what this summer is going to cost them.
 
 ## 🔁 SHORT vs LONG — KEY DIFFERENCES
 
-| Element | Long | Short |
-|---------|------|-------|
-| Hook angle | "Nobody talks about the real losers" | "Every World Cup destroys someone" |
-| 1994 Baggio | Full scene ~38s | 7 seconds |
-| 1998 Ronaldo | Full scene ~38s | 7 seconds |
-| 2006 Zidane | Full scene ~38s | 7 seconds |
-| 2014 Mineirazo | Full scene ~38s | 12 seconds |
-| 2022 Mbappé | Full scene ~38s | 11 seconds |
-| Closer | 32 seconds | 8 seconds |
-| Total | ~3:57 | ~58s |
-| Posting platform | YouTube / Long Reels | TikTok / Reels / Shorts |
+| Element          | Long                                 | Short                              |
+| ---------------- | ------------------------------------ | ---------------------------------- |
+| Hook angle       | "Nobody talks about the real losers" | "Every World Cup destroys someone" |
+| 1994 Baggio      | Full scene ~38s                      | 7 seconds                          |
+| 1998 Ronaldo     | Full scene ~38s                      | 7 seconds                          |
+| 2006 Zidane      | Full scene ~38s                      | 7 seconds                          |
+| 2014 Mineirazo   | Full scene ~38s                      | 12 seconds                         |
+| 2022 Mbappé      | Full scene ~38s                      | 11 seconds                         |
+| Closer           | 32 seconds                           | 8 seconds                          |
+| Total            | ~3:57                                | ~58s                               |
+| Posting platform | YouTube / Long Reels                 | TikTok / Reels / Shorts            |
 
 ---
 
 ## 📋 NEXT STEPS
+
 1. Generate WAVs: 5 files for the short version
 2. Measure durations → update frame counts above
 3. Reuse images from long version (no new Nano Banana 2 needed)

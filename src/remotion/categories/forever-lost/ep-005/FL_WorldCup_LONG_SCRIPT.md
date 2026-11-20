@@ -1,21 +1,23 @@
 # FOREVER LOST — Episode: "The Real Loser in Every World Cup"
+
 ### 🎬 LONG FORMAT — Full Production Script
+
 > Target Duration: ~3:00–3:30 min | Format: 9:16 Portrait | FPS: 30 | Language: English
 
 ---
 
 ## 🎨 VISUAL IDENTITY — THIS EPISODE
 
-| Token | Value | Notes |
-|-------|-------|-------|
-| **Background** | `#080808` | Near-absolute black — cinematic, not flat |
-| **Primary text** | `#F0F0F0` | Warm white, not pure — easier on mobile |
-| **Accent / Gold** | `#C9A84C` | Trophy gold — used ONLY for key stats |
-| **Impact Red** | `#C1121F` | Red card, danger, heartbreak moments only |
-| **Year stamps** | `#3A3A3A` → `#F0F0F0` | Fades in from dark grey |
-| **Display font** | `Bebas Neue` | All-caps, wide tracking — stats & titles |
-| **Body font** | `Inter` thin | Voiceover subtitles — elegant, readable |
-| **Signature** | Silhouette on empty pitch — back to camera, slow push-in | The recurring image of every "loser" — never show a real face |
+| Token             | Value                                                    | Notes                                                         |
+| ----------------- | -------------------------------------------------------- | ------------------------------------------------------------- |
+| **Background**    | `#080808`                                                | Near-absolute black — cinematic, not flat                     |
+| **Primary text**  | `#F0F0F0`                                                | Warm white, not pure — easier on mobile                       |
+| **Accent / Gold** | `#C9A84C`                                                | Trophy gold — used ONLY for key stats                         |
+| **Impact Red**    | `#C1121F`                                                | Red card, danger, heartbreak moments only                     |
+| **Year stamps**   | `#3A3A3A` → `#F0F0F0`                                    | Fades in from dark grey                                       |
+| **Display font**  | `Bebas Neue`                                             | All-caps, wide tracking — stats & titles                      |
+| **Body font**     | `Inter` thin                                             | Voiceover subtitles — elegant, readable                       |
+| **Signature**     | Silhouette on empty pitch — back to camera, slow push-in | The recurring image of every "loser" — never show a real face |
 
 > **PACING RULE:** Every motion graphic beat = 3–4 seconds max. Cut or transition every 3–4 seconds throughout.
 
@@ -59,22 +61,26 @@ public/
 ## 🖼️ IMAGE LIST — NANO BANANA 2
 
 ### IMG-01 | `scene1_pitch_silhouette.png`
+
 **Scene use:** Full-frame background, Scene 1 (Hook)
 **Layer type:** Full frame — place behind text
 **Prompt:**
+
 ```
-A lone male football player silhouette, seen from behind, standing on an empty floodlit pitch at night. 
-Center frame. Long shadow ahead of him. Cinematic vignette. No face visible. 
-Ultra-dark background, pitch has a faint green glow from stadium lights above. 
+A lone male football player silhouette, seen from behind, standing on an empty floodlit pitch at night.
+Center frame. Long shadow ahead of him. Cinematic vignette. No face visible.
+Ultra-dark background, pitch has a faint green glow from stadium lights above.
 Moody, cinematic, hyper-realistic photography style. 9:16 portrait.
 ```
 
 ---
 
 ### IMG-02 | `scene2_penalty_silhouette.png`
+
 **Scene use:** Scene 2 — penalty moment (composited with motion graphic ball trajectory)
 **Layer type:** Background plate — motion graphic overlaid on top
 **Prompt:**
+
 ```
 A male football player silhouette mid-kick on a penalty spot, side profile, dramatic low angle.
 Empty stadium in the background, blurred. Head slightly bowed after kick.
@@ -85,12 +91,14 @@ Hyper-realistic, no face. 9:16 portrait.
 ---
 
 ### IMG-03 | `scene3_hotel_room.png`
+
 **Scene use:** Scene 3 — Ronaldo hotel mystery
 **Layer type:** Full frame, very dark treatment — text overlay
 **Prompt:**
+
 ```
 Dark, empty hotel room corridor at night. One door slightly open with faint light inside.
-Moody, cinematic. No people. Long corridor perspective. 
+Moody, cinematic. No people. Long corridor perspective.
 Feels like a mystery — something happened here but you can't see it.
 Ultra-dark, film grain, 9:16 portrait.
 ```
@@ -98,9 +106,11 @@ Ultra-dark, film grain, 9:16 portrait.
 ---
 
 ### IMG-04 | `scene4_tunnel_walk.png`
+
 **Scene use:** Scene 4 — Zidane walking off
 **Layer type:** Full frame background
 **Prompt:**
+
 ```
 Silhouette of a football player walking away from camera down a stadium tunnel toward the light.
 He walks alone. Jersey on. Head slightly down. The tunnel frames him.
@@ -110,21 +120,25 @@ Cinematic, backlit, symbolic. No face. 9:16 portrait. Ultra-dark except the tunn
 ---
 
 ### IMG-05 | `scene5_knees_pitch.png`
+
 **Scene use:** Scene 5 — Mineirazo emotional low
 **Layer type:** Full frame, composited with score graphic
 **Prompt:**
+
 ```
 A football player silhouette on his knees on a pitch. Head down. Arms at sides.
-Seen from the front but face in shadow / unrecognizable. Stadium lights in the far background. 
+Seen from the front but face in shadow / unrecognizable. Stadium lights in the far background.
 Grass close-up in foreground. Deep emotional weight. Cinematic, dark. 9:16 portrait.
 ```
 
 ---
 
 ### IMG-06 | `scene6_alone_trophy.png`
+
 **Scene use:** Scene 6 — Mbappé watching the trophy go the other way
 **Layer type:** Background plate
 **Prompt:**
+
 ```
 A football player silhouette standing alone on a pitch, looking to the right of frame.
 To the right, far away, there is a golden glow / light suggesting a celebration he is not part of.
@@ -134,9 +148,11 @@ He stands still. No one near him. Cinematic isolation. 9:16 portrait. Ultra-dark
 ---
 
 ### IMG-07 | `scene7_silhouette_question.png`
+
 **Scene use:** Scene 7 — closing emotional image
 **Layer type:** Full frame
 **Prompt:**
+
 ```
 A football player silhouette, back to camera, standing on an empty pitch under stars.
 The stadium is empty. Just him. Head slightly tilted upward toward sky.
@@ -145,6 +161,7 @@ Feels like a question about the future. Cinematic, quiet, almost peaceful but lo
 ```
 
 ---
+
 ---
 
 # 🎬 SCENE-BY-SCENE SCRIPT
@@ -152,10 +169,12 @@ Feels like a question about the future. Cinematic, quiet, almost peaceful but lo
 ---
 
 ## SCENE 1 — HOOK
+
 **Estimated duration:** 13–16 seconds | **Frames (30fps):** ~390–480
 **Mood:** Tense, cinematic, scroll-stopper
 
 ### VOICEOVER TEXT
+
 ```
 [serious] [slow] Every four years... the world holds its breath.
 [pause: 0.8s]
@@ -169,6 +188,7 @@ The people.
 ```
 
 ### 🎙️ TTS PROMPT — PASTE INTO NEXT.JS ROUTE
+
 ```
 # AUDIO PROFILE: Documentary Narrator — Algenib Voice
 ## "FOREVER LOST — The Real Loser in Every World Cup"
@@ -195,24 +215,27 @@ The people.
 ```
 
 ### 🎞️ MOTION DIRECTION (3–4s per beat)
-| Beat | Duration | Action |
-|------|----------|--------|
-| 1 | 3s | Pure black. SFX: `crowd_roar_fade.wav` swells in |
-| 2 | 3s | White text fades in: **"EVERY 4 YEARS"** — Bebas Neue, wide tracking, centered |
-| 3 | 3s | Text morphs: **"ONE WINNER."** — holds |
-| 4 | 3s | Text morphs: **"MILLIONS OF LOSERS."** — holds, then cuts hard |
-| 5 | 4s | `scene1_pitch_silhouette.png` — slow push-in, vignette |
-| 6 | 3s | Title card animates in: **"THE REAL LOSER IN EVERY WORLD CUP"** — character reveal left to right |
+
+| Beat | Duration | Action                                                                                           |
+| ---- | -------- | ------------------------------------------------------------------------------------------------ |
+| 1    | 3s       | Pure black. SFX: `crowd_roar_fade.wav` swells in                                                 |
+| 2    | 3s       | White text fades in: **"EVERY 4 YEARS"** — Bebas Neue, wide tracking, centered                   |
+| 3    | 3s       | Text morphs: **"ONE WINNER."** — holds                                                           |
+| 4    | 3s       | Text morphs: **"MILLIONS OF LOSERS."** — holds, then cuts hard                                   |
+| 5    | 4s       | `scene1_pitch_silhouette.png` — slow push-in, vignette                                           |
+| 6    | 3s       | Title card animates in: **"THE REAL LOSER IN EVERY WORLD CUP"** — character reveal left to right |
 
 **SFX:** `crowd_roar_fade.wav`
 
 ---
 
 ## SCENE 2 — 1994 — ROBERTO BAGGIO
+
 **Estimated duration:** 35–40 seconds | **Frames (30fps):** ~1,050–1,200
 **Mood:** Quiet tragedy. Personal. Isolated.
 
 ### VOICEOVER TEXT
+
 ```
 [serious] July seventeenth. [pause: 0.8s] Nineteen ninety-four. [pause: 0.5s] Pasadena, California.
 [pause: 1s]
@@ -234,6 +257,7 @@ Brazil became world champions.
 ```
 
 ### 🎙️ TTS PROMPT
+
 ```
 # AUDIO PROFILE: Documentary Narrator — Algenib Voice
 ## "FOREVER LOST — The Real Loser in Every World Cup"
@@ -270,27 +294,30 @@ Brazil became world champions.
 ```
 
 ### 🎞️ MOTION DIRECTION (3–4s per beat)
-| Beat | Duration | Action |
-|------|----------|--------|
-| 1 | 3s | Year stamp reveals: **"JULY 17, 1994"** — gold `#C9A84C`, top corner. Location pin: PASADENA, CA |
-| 2 | 3s | **"ITALY vs BRAZIL"** — two stripped silhouette jerseys facing each other |
-| 3 | 3s | Center text: **"FIRST WC FINAL DECIDED BY PENALTIES"** — Bebas Neue |
-| 4 | 4s | Stat build: **"5 GOALS"** — dots light up 1 by 1 in gold. Label: "BAGGIO'S CONTRIBUTION" |
-| 5 | 3s | `scene2_penalty_silhouette.png` fades in — silhouette at penalty spot |
-| 6 | 4s | Ball trajectory arc animates: curls → **goes OVER bar** — red line `#C1121F` |
-| 7 | 3s | **"BRAZIL: WORLD CHAMPIONS"** — desaturated confetti (grey, not festive — seen from Italy's side) |
-| 8 | 3s | Back to `scene2_penalty_silhouette.png` — silhouette, head down, slow fade |
-| 9 | 3s | Year stamp: **"1994"** — white on black, burns in, holds |
+
+| Beat | Duration | Action                                                                                            |
+| ---- | -------- | ------------------------------------------------------------------------------------------------- |
+| 1    | 3s       | Year stamp reveals: **"JULY 17, 1994"** — gold `#C9A84C`, top corner. Location pin: PASADENA, CA  |
+| 2    | 3s       | **"ITALY vs BRAZIL"** — two stripped silhouette jerseys facing each other                         |
+| 3    | 3s       | Center text: **"FIRST WC FINAL DECIDED BY PENALTIES"** — Bebas Neue                               |
+| 4    | 4s       | Stat build: **"5 GOALS"** — dots light up 1 by 1 in gold. Label: "BAGGIO'S CONTRIBUTION"          |
+| 5    | 3s       | `scene2_penalty_silhouette.png` fades in — silhouette at penalty spot                             |
+| 6    | 4s       | Ball trajectory arc animates: curls → **goes OVER bar** — red line `#C1121F`                      |
+| 7    | 3s       | **"BRAZIL: WORLD CHAMPIONS"** — desaturated confetti (grey, not festive — seen from Italy's side) |
+| 8    | 3s       | Back to `scene2_penalty_silhouette.png` — silhouette, head down, slow fade                        |
+| 9    | 3s       | Year stamp: **"1994"** — white on black, burns in, holds                                          |
 
 **SFX:** `crowd_gasp.wav` on beat 6 → `whistle_final.wav` on beat 7
 
 ---
 
 ## SCENE 3 — 1998 — RONALDO'S MYSTERY
+
 **Estimated duration:** 35–40 seconds | **Frames (30fps):** ~1,050–1,200
 **Mood:** Investigative. Unsettling. A cold case in real time.
 
 ### VOICEOVER TEXT
+
 ```
 [serious] Four years later. [pause: 0.5s] France. Nineteen ninety-eight.
 [pause: 0.8s]
@@ -310,6 +337,7 @@ Brazil lost. [pause: 0.3s] Three nil. [pause: 0.5s] To France.
 ```
 
 ### 🎙️ TTS PROMPT
+
 ```
 # AUDIO PROFILE: Documentary Narrator — Algenib Voice
 ## "FOREVER LOST — The Real Loser in Every World Cup"
@@ -344,27 +372,30 @@ Brazil lost. [pause: 0.3s] Three nil. [pause: 0.5s] To France.
 ```
 
 ### 🎞️ MOTION DIRECTION (3–4s per beat)
-| Beat | Duration | Action |
-|------|----------|--------|
-| 1 | 3s | **"FRANCE 1998"** — Eiffel Tower minimal outline, desaturated |
-| 2 | 3s | Age badge: **"21 YEARS OLD"** — "FIFA WORLD PLAYER OF THE YEAR" ribbon appears |
-| 3 | 4s | Timeline graphic: **"24 HOURS BEFORE THE FINAL"** — clock begins ticking |
-| 4 | 3s | `scene3_hotel_room.png` fades in. Red alert overlay: **"MEDICAL INCIDENT — TEAM HOTEL"** |
-| 5 | 4s | Lineup card: name crossed out → then restored. **"LINEUP CHANGED. THEN CHANGED BACK."** |
-| 6 | 3s | Countdown: **"2 HOURS TO KICKOFF"** |
-| 7 | 4s | Score reveal, cold: **BRA 0 — FRA 3** — each goal appears one by one |
-| 8 | 4s | Red stamp: **"NO OFFICIAL EXPLANATION. EVER."** — typewriter reveal |
-| 9 | 3s | Giant **"?"** — centered, white on black — slow fade out |
+
+| Beat | Duration | Action                                                                                   |
+| ---- | -------- | ---------------------------------------------------------------------------------------- |
+| 1    | 3s       | **"FRANCE 1998"** — Eiffel Tower minimal outline, desaturated                            |
+| 2    | 3s       | Age badge: **"21 YEARS OLD"** — "FIFA WORLD PLAYER OF THE YEAR" ribbon appears           |
+| 3    | 4s       | Timeline graphic: **"24 HOURS BEFORE THE FINAL"** — clock begins ticking                 |
+| 4    | 3s       | `scene3_hotel_room.png` fades in. Red alert overlay: **"MEDICAL INCIDENT — TEAM HOTEL"** |
+| 5    | 4s       | Lineup card: name crossed out → then restored. **"LINEUP CHANGED. THEN CHANGED BACK."**  |
+| 6    | 3s       | Countdown: **"2 HOURS TO KICKOFF"**                                                      |
+| 7    | 4s       | Score reveal, cold: **BRA 0 — FRA 3** — each goal appears one by one                     |
+| 8    | 4s       | Red stamp: **"NO OFFICIAL EXPLANATION. EVER."** — typewriter reveal                      |
+| 9    | 3s       | Giant **"?"** — centered, white on black — slow fade out                                 |
 
 **SFX:** `heartbeat_low.wav` (under scene) → `news_alert_tone.wav` on beat 5
 
 ---
 
 ## SCENE 4 — 2006 — ZIDANE'S LAST ACT
+
 **Estimated duration:** 35–40 seconds | **Frames (30fps):** ~1,050–1,200
 **Mood:** Shakespearean tragedy. Greatness destroying itself.
 
 ### VOICEOVER TEXT
+
 ```
 [serious] Germany. Two thousand and six.
 [pause: 0.8s]
@@ -388,6 +419,7 @@ France lost on penalties.
 ```
 
 ### 🎙️ TTS PROMPT
+
 ```
 # AUDIO PROFILE: Documentary Narrator — Algenib Voice
 ## "FOREVER LOST — The Real Loser in Every World Cup"
@@ -427,27 +459,30 @@ France lost on penalties.
 ```
 
 ### 🎞️ MOTION DIRECTION (3–4s per beat)
-| Beat | Duration | Action |
-|------|----------|--------|
-| 1 | 3s | **"GERMANY 2006"** — clean title |
-| 2 | 4s | Legacy flash cards rapid-reveal: "3× BALLON D'OR" / "WORLD CUP WINNER 1998" / "CHAMPIONS LEAGUE WINNER" — gold tones |
-| 3 | 3s | Match clock: **"110'"** — bold, red, ticking |
-| 4 | 3s | Simple motion: two silhouettes, one turns — impact graphic (no gore) — clean cut |
-| 5 | 4s | **RED CARD** — fills screen bottom-to-top, deep `#C1121F`, slow expand |
-| 6 | 4s | `scene4_tunnel_walk.png` — silhouette walking away down tunnel — extremely slow |
-| 7 | 3s | **"FRANCE LOSE ON PENALTIES"** — cold, matter-of-fact |
-| 8 | 4s | **"LAST PROFESSIONAL TOUCH OF A FOOTBALL:"** → **"NOT A GOAL. NOT A PASS."** — staggered reveal |
-| 9 | 3s | **"2006"** stamp — black. Silence. |
+
+| Beat | Duration | Action                                                                                                               |
+| ---- | -------- | -------------------------------------------------------------------------------------------------------------------- |
+| 1    | 3s       | **"GERMANY 2006"** — clean title                                                                                     |
+| 2    | 4s       | Legacy flash cards rapid-reveal: "3× BALLON D'OR" / "WORLD CUP WINNER 1998" / "CHAMPIONS LEAGUE WINNER" — gold tones |
+| 3    | 3s       | Match clock: **"110'"** — bold, red, ticking                                                                         |
+| 4    | 3s       | Simple motion: two silhouettes, one turns — impact graphic (no gore) — clean cut                                     |
+| 5    | 4s       | **RED CARD** — fills screen bottom-to-top, deep `#C1121F`, slow expand                                               |
+| 6    | 4s       | `scene4_tunnel_walk.png` — silhouette walking away down tunnel — extremely slow                                      |
+| 7    | 3s       | **"FRANCE LOSE ON PENALTIES"** — cold, matter-of-fact                                                                |
+| 8    | 4s       | **"LAST PROFESSIONAL TOUCH OF A FOOTBALL:"** → **"NOT A GOAL. NOT A PASS."** — staggered reveal                      |
+| 9    | 3s       | **"2006"** stamp — black. Silence.                                                                                   |
 
 **SFX:** `red_card_whistle.wav` on beat 5 → `crowd_silence.wav` on beat 6
 
 ---
 
 ## SCENE 5 — 2014 — THE MINEIRAZO
+
 **Estimated duration:** 35–40 seconds | **Frames (30fps):** ~1,050–1,200
 **Mood:** Clinical horror. The facts are the weapon.
 
 ### VOICEOVER TEXT
+
 ```
 [serious] Brazil. Two thousand and fourteen.
 [pause: 0.8s]
@@ -471,6 +506,7 @@ The final score was seven to one.
 ```
 
 ### 🎙️ TTS PROMPT
+
 ```
 # AUDIO PROFILE: Documentary Narrator — Algenib Voice
 ## "FOREVER LOST — The Real Loser in Every World Cup"
@@ -511,27 +547,30 @@ The final score was seven to one.
 ```
 
 ### 🎞️ MOTION DIRECTION (3–4s per beat)
-| Beat | Duration | Action |
-|------|----------|--------|
-| 1 | 3s | **"BRAZIL 2014"** — Brazilian flag colors, then slowly drains to grayscale |
-| 2 | 3s | **"200,000,000 BRAZILIANS"** — crowd dot counter builds up fast |
-| 3 | 4s | Scoreboard — rapid fire flash: **0-1 → 0-2 → 0-3 → 0-4 → 0-5** — screen white-flash on each goal |
-| 4 | 3s | **"29 MINUTES ELAPSED"** — clock frozen at 29' in red |
-| 5 | 3s | Final score: **BRA 1 — GER 7** — enormous on screen, held |
-| 6 | 4s | `scene5_knees_pitch.png` — player on knees |
-| 7 | 3s | **"58,141 IN ATTENDANCE"** → then waveform graphic: → **SILENCE** — flatline |
-| 8 | 4s | **"MINEIRAZO"** — graffiti-spray typeface, appears like a stamp — red |
-| 9 | 3s | Slow fade to black. **"THE SCAR NEVER HEALED."** — small text, bottom center |
+
+| Beat | Duration | Action                                                                                           |
+| ---- | -------- | ------------------------------------------------------------------------------------------------ |
+| 1    | 3s       | **"BRAZIL 2014"** — Brazilian flag colors, then slowly drains to grayscale                       |
+| 2    | 3s       | **"200,000,000 BRAZILIANS"** — crowd dot counter builds up fast                                  |
+| 3    | 4s       | Scoreboard — rapid fire flash: **0-1 → 0-2 → 0-3 → 0-4 → 0-5** — screen white-flash on each goal |
+| 4    | 3s       | **"29 MINUTES ELAPSED"** — clock frozen at 29' in red                                            |
+| 5    | 3s       | Final score: **BRA 1 — GER 7** — enormous on screen, held                                        |
+| 6    | 4s       | `scene5_knees_pitch.png` — player on knees                                                       |
+| 7    | 3s       | **"58,141 IN ATTENDANCE"** → then waveform graphic: → **SILENCE** — flatline                     |
+| 8    | 4s       | **"MINEIRAZO"** — graffiti-spray typeface, appears like a stamp — red                            |
+| 9    | 3s       | Slow fade to black. **"THE SCAR NEVER HEALED."** — small text, bottom center                     |
 
 **SFX:** `goal_horn_rapid.wav` × 5 rapid (beat 3) → `silence_flatline.wav` (beat 7)
 
 ---
 
 ## SCENE 6 — 2022 — MBAPPÉ'S HEARTBREAK
+
 **Estimated duration:** 35–40 seconds | **Frames (30fps):** ~1,050–1,200
 **Mood:** Disbelief. A record broken in defeat.
 
 ### VOICEOVER TEXT
+
 ```
 [serious] Qatar. Two thousand and twenty-two.
 [pause: 0.8s]
@@ -555,6 +594,7 @@ Argentina won on penalties.
 ```
 
 ### 🎙️ TTS PROMPT
+
 ```
 # AUDIO PROFILE: Documentary Narrator — Algenib Voice
 ## "FOREVER LOST — The Real Loser in Every World Cup"
@@ -595,27 +635,30 @@ Argentina won on penalties.
 ```
 
 ### 🎞️ MOTION DIRECTION (3–4s per beat)
-| Beat | Duration | Action |
-|------|----------|--------|
-| 1 | 3s | **"QATAR 2022"** — minimal desert night sky |
-| 2 | 3s | **"23 YEARS OLD"** badge in gold |
-| 3 | 4s | Hat-trick counter: ⚽ ... ⚽ ... ⚽ — each ball drops with sound + score: **1, 2, 3** |
-| 4 | 4s | Gold banner: **"FIRST PLAYER IN WC FINAL HISTORY TO SCORE A HAT-TRICK"** |
-| 5 | 3s | Then: penalty shootout bracket graphic — France eliminated |
-| 6 | 3s | **"ARGENTINA: WORLD CHAMPIONS"** — confetti shown grey/desaturated (France POV) |
-| 7 | 4s | `scene6_alone_trophy.png` — silhouette alone, golden glow far right of frame |
-| 8 | 3s | Simple brutal text: **"3 GOALS."** → pause → **"0 TROPHIES."** |
-| 9 | 3s | Fade to black. Silence. |
+
+| Beat | Duration | Action                                                                                |
+| ---- | -------- | ------------------------------------------------------------------------------------- |
+| 1    | 3s       | **"QATAR 2022"** — minimal desert night sky                                           |
+| 2    | 3s       | **"23 YEARS OLD"** badge in gold                                                      |
+| 3    | 4s       | Hat-trick counter: ⚽ ... ⚽ ... ⚽ — each ball drops with sound + score: **1, 2, 3** |
+| 4    | 4s       | Gold banner: **"FIRST PLAYER IN WC FINAL HISTORY TO SCORE A HAT-TRICK"**              |
+| 5    | 3s       | Then: penalty shootout bracket graphic — France eliminated                            |
+| 6    | 3s       | **"ARGENTINA: WORLD CHAMPIONS"** — confetti shown grey/desaturated (France POV)       |
+| 7    | 4s       | `scene6_alone_trophy.png` — silhouette alone, golden glow far right of frame          |
+| 8    | 3s       | Simple brutal text: **"3 GOALS."** → pause → **"0 TROPHIES."**                        |
+| 9    | 3s       | Fade to black. Silence.                                                               |
 
 **SFX:** ⚽ goal-hit sound × 3 (beat 3) → `whistle_final.wav` → `crowd_silence.wav`
 
 ---
 
 ## SCENE 7 — THE CLOSER: 2026
+
 **Estimated duration:** 28–35 seconds | **Frames (30fps):** ~840–1,050
 **Mood:** Meditative. Inevitable. Haunting.
 
 ### VOICEOVER TEXT
+
 ```
 [slow] Two thousand and twenty-six is almost here.
 [pause: 1s]
@@ -637,6 +680,7 @@ will define the rest of their life.
 ```
 
 ### 🎙️ TTS PROMPT
+
 ```
 # AUDIO PROFILE: Documentary Narrator — Algenib Voice
 ## "FOREVER LOST — The Real Loser in Every World Cup"
@@ -675,17 +719,18 @@ will define the rest of their life.
 ```
 
 ### 🎞️ MOTION DIRECTION (3–4s per beat)
-| Beat | Duration | Action |
-|------|----------|--------|
-| 1 | 4s | **"2026"** — slow character reveal, large centered, warm gold |
-| 2 | 4s | Three flags fade in one by one: 🇺🇸 USA · 🇨🇦 CANADA · 🇲🇽 MEXICO |
-| 3 | 3s | **"48 NATIONS"** → **"3 HOST COUNTRIES"** → **"BIGGEST WORLD CUP IN HISTORY"** — stacked reveal |
-| 4 | 4s | `scene7_silhouette_question.png` — player back to camera on empty pitch, slow push-in |
-| 5 | 4s | Names fade in as text, one by one, floating: **"BAGGIO"** ... **"RONALDO"** ... **"ZIDANE"** ... **"BRAZIL"** ... **"MBAPPÉ"** |
-| 6 | 4s | All names fade. Only silhouette remains. A **"?"** appears slowly beside them |
-| 7 | 4s | **FOREVER LOST** logo — slow fade in |
-| 8 | 3s | Pure black. **"Forever."** — tiny, centered, white. Holds 3s. |
-| 9 | — | End card / loop |
+
+| Beat | Duration | Action                                                                                                                         |
+| ---- | -------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| 1    | 4s       | **"2026"** — slow character reveal, large centered, warm gold                                                                  |
+| 2    | 4s       | Three flags fade in one by one: 🇺🇸 USA · 🇨🇦 CANADA · 🇲🇽 MEXICO                                                                 |
+| 3    | 3s       | **"48 NATIONS"** → **"3 HOST COUNTRIES"** → **"BIGGEST WORLD CUP IN HISTORY"** — stacked reveal                                |
+| 4    | 4s       | `scene7_silhouette_question.png` — player back to camera on empty pitch, slow push-in                                          |
+| 5    | 4s       | Names fade in as text, one by one, floating: **"BAGGIO"** ... **"RONALDO"** ... **"ZIDANE"** ... **"BRAZIL"** ... **"MBAPPÉ"** |
+| 6    | 4s       | All names fade. Only silhouette remains. A **"?"** appears slowly beside them                                                  |
+| 7    | 4s       | **FOREVER LOST** logo — slow fade in                                                                                           |
+| 8    | 3s       | Pure black. **"Forever."** — tiny, centered, white. Holds 3s.                                                                  |
+| 9    | —        | End card / loop                                                                                                                |
 
 **SFX:** `ambient_low_drone.wav` throughout scene (very subtle)
 
@@ -693,22 +738,23 @@ will define the rest of their life.
 
 ## ⏱️ TIMING SUMMARY (Pre-WAV estimates)
 
-| Scene | Description | Est. Duration | Est. Frames |
-|-------|-------------|---------------|-------------|
-| 1 | Hook | ~15s | ~450 |
-| 2 | Baggio 1994 | ~38s | ~1,140 |
-| 3 | Ronaldo 1998 | ~38s | ~1,140 |
-| 4 | Zidane 2006 | ~38s | ~1,140 |
-| 5 | Mineirazo 2014 | ~38s | ~1,140 |
-| 6 | Mbappé 2022 | ~38s | ~1,140 |
-| 7 | Closer 2026 | ~32s | ~960 |
-| **TOTAL** | | **~237s / ~3:57** | **~7,110** |
+| Scene     | Description    | Est. Duration     | Est. Frames |
+| --------- | -------------- | ----------------- | ----------- |
+| 1         | Hook           | ~15s              | ~450        |
+| 2         | Baggio 1994    | ~38s              | ~1,140      |
+| 3         | Ronaldo 1998   | ~38s              | ~1,140      |
+| 4         | Zidane 2006    | ~38s              | ~1,140      |
+| 5         | Mineirazo 2014 | ~38s              | ~1,140      |
+| 6         | Mbappé 2022    | ~38s              | ~1,140      |
+| 7         | Closer 2026    | ~32s              | ~960        |
+| **TOTAL** |                | **~237s / ~3:57** | **~7,110**  |
 
 > ⚠️ Update all frame counts in `constants.ts` after generating real WAVs. Each WAV duration (sec) × 30 = exact frame count.
 
 ---
 
 ## 📋 NEXT STEPS
+
 1. Generate WAVs for all 7 scenes via Next.js TTS route
 2. Measure real WAV durations → update `constants.ts`
 3. Source SFX from freesound.org / zapsplat using filenames above
