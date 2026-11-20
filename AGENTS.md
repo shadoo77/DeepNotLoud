@@ -5,21 +5,21 @@
 Remotion 4.0.469 project for **DeepNotLoud** — a YouTube documentary channel.  
 Three compositions registered in `src/Root.tsx`, all under the "Forever-Lost" folder:
 
-| ID | Resolution | FPS | Status |
-|---|---|---|---|
-| `ForeverLost` | 1280×720 | 30 | Titanic (done) |
-| `ForeverLost-Ep2` | 1920×1080 | 30 | Chernobyl (WIP) |
-| `ForeverLost-Ep2-Shorts` | 1080×1920 | 30 | Shorts cut (WIP) |
+| ID                       | Resolution | FPS | Status           |
+| ------------------------ | ---------- | --- | ---------------- |
+| `ForeverLost`            | 1280×720   | 30  | Titanic (done)   |
+| `ForeverLost-Ep2`        | 1920×1080  | 30  | Chernobyl (WIP)  |
+| `ForeverLost-Ep2-Shorts` | 1080×1920  | 30  | Shorts cut (WIP) |
 
 ## Commands
 
-| Action | Command |
-|---|---|
-| Dev server (port **3002**) | `npm run dev` |
-| Lint (ESLint + tsc) | `npm run lint` |
-| Build | `npm run build` |
-| Render | `npx remotion render` |
-| Single-frame check | `npx remotion still <composition-id> --scale=0.25 --frame=30` |
+| Action                     | Command                                                          |
+| -------------------------- | ---------------------------------------------------------------- |
+| Dev server (port **3002**) | `npm run dev`                                                    |
+| Lint (ESLint + tsc)        | `npm run lint`                                                   |
+| Build                      | `npm run build`                                                  |
+| Render                     | `npx remotion render`                                            |
+| Single-frame check         | `npx remotion still <composition-id> --scale=0.25 --frame=30`    |
 | Generate captions from WAV | `npx tsx scripts/generate-captions.ts <input.wav> <output.json>` |
 
 ## Project structure
@@ -99,6 +99,7 @@ This project has a knowledge graph at graphify-out/ with god nodes, community st
 When the user types `/graphify`, invoke the `skill` tool with `skill: "graphify"` before doing anything else.
 
 Rules:
+
 - For codebase questions, first run `graphify query "<question>"` when graphify-out/graph.json exists. Use `graphify path "<A>" "<B>"` for relationships and `graphify explain "<concept>"` for focused concepts. These return a scoped subgraph, usually much smaller than GRAPH_REPORT.md or raw grep output.
 - Dirty graphify-out/ files are expected after hooks or incremental updates; dirty graph files are not a reason to skip graphify. Only skip graphify if the task is about stale or incorrect graph output, or the user explicitly says not to use it.
 - If graphify-out/wiki/index.md exists, use it for broad navigation instead of raw source browsing.

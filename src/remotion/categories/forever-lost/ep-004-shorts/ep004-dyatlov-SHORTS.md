@@ -1,20 +1,22 @@
 # 🎬 FOREVER LOST — EP004 | PORTRAIT 9:16
-## *Dyatlov Pass — The Deaths Still Officially Unexplained-route — Officially Unexplained*
+
+## _Dyatlov Pass — The Deaths Still Officially Unexplained-route — Officially Unexplained_
+
 ### SHORTS PRODUCTION FILE · TikTok / Reels / YouTube Shorts
 
 ---
 
 ## 📋 EPISODE METADATA
 
-| Field | Value |
-|---|---|
-| Episode | 04 |
-| Format | Portrait · 1080 × 1920 |
-| FPS | 30 |
-| Estimated Duration | **~70 sec** |
-| Voice | **Algenib** (Gravelly) |
-| Total VO Words | ~154 across 7 scenes |
-| VO Architecture | **1 combined WAV** (all 7 scenes) |
+| Field              | Value                             |
+| ------------------ | --------------------------------- |
+| Episode            | 04                                |
+| Format             | Portrait · 1080 × 1920            |
+| FPS                | 30                                |
+| Estimated Duration | **~70 sec**                       |
+| Voice              | **Algenib** (Gravelly)            |
+| Total VO Words     | ~154 across 7 scenes              |
+| VO Architecture    | **1 combined WAV** (all 7 scenes) |
 
 ---
 
@@ -23,7 +25,7 @@
 1. **Zero `[pause]` tags** — natural punctuation controls rhythm only
 2. **3–4 sec per visual beat** = 7–12 words per sentence at Algenib's pace (~2.5 w/s)
 3. **1 WAV file for all 7 scenes** — generate as one continuous clip
-4. **Trim guide** included per scene — if WAV runs long, cut the *(optional)* phrases first
+4. **Trim guide** included per scene — if WAV runs long, cut the _(optional)_ phrases first
 5. Update `SCENE_DURATIONS_SEC` in `constants.ts` after measuring actual per-scene offsets inside the combined WAV
 
 ---
@@ -31,16 +33,19 @@
 ## 🎵 AUDIO OVERVIEW
 
 ### Voice
+
 - **Voice:** Algenib · Gravelly documentary narrator
 - **Estimated pace:** ~2.5 words/second
 - **Combined WAV:** All 7 scenes in one clip, per-scene offsets in `vo-offsets.ts`
 
 ### BGM
+
 - **One track, full video** — cold eerie ambient, minimal pulse
 - **File:** `public/assets/forever-lost/ep-004/audio/bgm/ep004-shorts-bgm.mp3`
 - **Mix:** –18 dB under VO · slight duck (–3 dB) during speech
 
 ### SFX
+
 | File | Scene | Timing | Level |
 |---|---|---|---|---|
 | `wind-arctic.mp3` | S01 | Fade in over first 1 sec | –20 dB |
@@ -84,15 +89,18 @@ public/
 ---
 
 ### SCENE 01 — HOOK
+
 > **Duration target:** 7 sec · **Words:** 16 · **Est. WAV:** ~6.4 sec
 
 **Voiceover (clean):**
+
 ```
 Nine hikers. One mountain. None came back.
 What killed them has never been officially explained.
 ```
 
 **📊 Timing check:**
+
 - Line 1: 7 words → ~2.8 sec
 - Line 2: 9 words → ~3.6 sec
 - **Total VO: ~6.4 sec** → scene padded to 7 sec (210 frames)
@@ -108,6 +116,7 @@ What killed them has never been officially explained.
 ---
 
 **🎨 Remotion Motion Notes:**
+
 - Frame 0–15: Fade from absolute black to bg image (opacity 0→1)
 - Line 1 slides up from +30px, opacity 0→1 over frames 10–25, holds, fades out at frame 75
 - Line 2 slides up, opacity 0→1 at frame 80, holds through end of scene
@@ -117,15 +126,18 @@ What killed them has never been officially explained.
 ---
 
 ### SCENE 02 — SETUP
+
 > **Duration target:** 7 sec · **Words:** 15 · **Est. WAV:** ~6 sec
 
 **Voiceover (clean):**
+
 ```
 February 1959. The Ural Mountains, Soviet Russia.
 Ten experienced hikers set out for Dead Mountain.
 ```
 
 **📊 Timing check:**
+
 - Line 1: 7 words → ~2.8 sec
 - Line 2: 8 words → ~3.2 sec
 - **Total VO: ~6 sec** → scene padded to 7 sec (210 frames)
@@ -141,6 +153,7 @@ Ten experienced hikers set out for Dead Mountain.
 ---
 
 **🎨 Remotion Motion Notes:**
+
 - Cut from S01 (no transition)
 - "FEBRUARY 1959" appears as a timestamped title card first (frames 0–30): bold amber text, centered
 - Then fades to image bg at frame 30
@@ -150,19 +163,22 @@ Ten experienced hikers set out for Dead Mountain.
 ---
 
 ### SCENE 03 — STATS
+
 > **Duration target:** 10 sec · **Words:** 21 · **Est. WAV:** ~8.4 sec
 
 **Voiceover (clean):**
+
 ```
 Minus thirty Celsius. Nine bodies found across one and a half kilometers.
 Their tent — cut open from the inside.
 ```
 
 **📊 Timing check:**
+
 - Line 1: 13 words → ~5.2 sec
 - Line 2: 8 words → ~3.2 sec
 - **Total VO: ~8.4 sec** → scene padded to 10 sec (300 frames)
-- *(optional trim: cut "across one and a half kilometers" → saves ~2 sec)*
+- _(optional trim: cut "across one and a half kilometers" → saves ~2 sec)_
 
 ---
 
@@ -175,6 +191,7 @@ Their tent — cut open from the inside.
 ---
 
 **🎨 Remotion Motion Notes:**
+
 - Stats appear as large animated numbers (see `StatLine` component in code)
 - "−30°C" counts down from −10 to −30 over 20 frames
 - "9 BODIES" slams in bold white at frame 45
@@ -185,9 +202,11 @@ Their tent — cut open from the inside.
 ---
 
 ### SCENE 04 — THE TENT
+
 > **Duration target:** 11 sec · **Words:** 24 · **Est. WAV:** ~9.6 sec
 
 **Voiceover (clean):**
+
 ```
 Rescuers reached the camp three weeks later.
 The hikers had fled barefoot into氧化碳 subzero darkness.
@@ -195,6 +214,7 @@ Something in that tent terrified nine trained adults.
 ```
 
 **📊 Timing check:**
+
 - Line 1: 7 words → ~2.8 sec
 - Line 2: 8 words → ~3.2 sec
 - Line 3: 9 words → ~3.6 sec
@@ -211,6 +231,7 @@ Something in that tent terrified nine trained adults.
 ---
 
 **🎨 Remotion Motion Notes:**
+
 - Wind SFX starts at frame 0 of this scene
 - Each line appears and holds individually (3-sec each)
 - Line 3 ("terrified nine trained adults") is slightly larger font size (1.15×) + slow scale animation (0.98→1.0) for emphasis
@@ -219,9 +240,11 @@ Something in that tent terrified nine trained adults.
 ---
 
 ### SCENE 05 — THE BODIES
+
 > **Duration target:** 12 sec · **Words:** 27 · **Est. WAV:** ~10.8 sec
 
 **Voiceover (clean):**
+
 ```
 Five of the nine died of hypothermia.
 The others had shattered ribs and fractured skulls — with no external wounds.
@@ -229,11 +252,12 @@ The force matched a high-speed car crash.
 ```
 
 **📊 Timing check:**
+
 - Line 1: 8 words → ~3.2 sec
-- Line 2: 14 words → ~5.6 sec ← *longest line — if WAV runs long, cut "with no external wounds" and add it to line 3*
+- Line 2: 14 words → ~5.6 sec ← _longest line — if WAV runs long, cut "with no external wounds" and add it to line 3_
 - Line 3: 8 words → ~3.2 sec
 - **Total VO: ~12 sec** → scene padded to 12 sec (360 frames)
-- *(optional trim: split Line 2 into "shattered ribs and fractured skulls" — removes 4 words)*
+- _(optional trim: split Line 2 into "shattered ribs and fractured skulls" — removes 4 words)_
 
 ---
 
@@ -246,6 +270,7 @@ The force matched a high-speed car crash.
 ---
 
 **🎨 Remotion Motion Notes:**
+
 - Heartbeat SFX starts at frame 0
 - Line 1: fades in normally
 - Line 2: slides in from left (x: –60 → 0) — the dash pause creates visual emphasis
@@ -256,9 +281,11 @@ The force matched a high-speed car crash.
 ---
 
 ### SCENE 06 — STILL UNEXPLAINED
+
 > **Duration target:** 11 sec · **Words:** 27 · **Est. WAV:** ~10.8 sec
 
 **Voiceover (clean):**
+
 ```
 Russia reopened the case in 2019.
 Their verdict: an avalanche.
@@ -267,6 +294,7 @@ Sixty-five years later — nobody agrees.
 ```
 
 **📊 Timing check:**
+
 - Line 1: 6 words → ~2.4 sec
 - Line 2: 4 words → ~1.6 sec (short — intentional dramatic drop)
 - Line 3: 8 words → ~3.2 sec
@@ -285,6 +313,7 @@ Sixty-five years later — nobody agrees.
 ---
 
 **🎨 Remotion Motion Notes:**
+
 - Background: document image with slight sepia shift
 - "THEIR VERDICT" banner: slides in from left at frame 60 — white on deep red
 - "AN AVALANCHE" appears below it with a stamp-drop spring animation
@@ -294,9 +323,11 @@ Sixty-five years later — nobody agrees.
 ---
 
 ### SCENE 07 — CLOSER
+
 > **Duration target:** 11 sec · **Words:** 24 · **Est. WAV:** ~9.6 sec
 
 **Voiceover (clean):**
+
 ```
 Their cameras were found in the snow.
 The last photo: darkness and blur.
@@ -304,6 +335,7 @@ Whatever they ran from... was still there when they died.
 ```
 
 **📊 Timing check:**
+
 - Line 1: 7 words → ~2.8 sec
 - Line 2: 5 words → ~2 sec
 - Line 3: 11 words → ~4.4 sec
@@ -321,6 +353,7 @@ Whatever they ran from... was still there when they died.
 ---
 
 **🎨 Remotion Motion Notes:**
+
 - Camera shutter SFX fires at frame 120
 - "THE LAST PHOTO" appears in monospace font — feels forensic
 - At shutter SFX: quick white flash (opacity 0 → 0.6 → 0 over 8 frames)
@@ -490,13 +523,13 @@ export const FPS = 30;
 export const TAIL_FRAMES = 15; // 0.5 sec silence tail per scene
 
 export const SCENES = {
-  s1_hook:        { durationInFrames: S1_DUR },
-  s2_setup:       { durationInFrames: S2_DUR },
-  s3_stats:       { durationInFrames: S3_DUR },
-  s4_tent:        { durationInFrames: S4_DUR },
-  s5_bodies:      { durationInFrames: S5_DUR },
+  s1_hook: { durationInFrames: S1_DUR },
+  s2_setup: { durationInFrames: S2_DUR },
+  s3_stats: { durationInFrames: S3_DUR },
+  s4_tent: { durationInFrames: S4_DUR },
+  s5_bodies: { durationInFrames: S5_DUR },
   s6_unexplained: { durationInFrames: S6_DUR },
-  s7_closer:      { durationInFrames: S7_DUR },
+  s7_closer: { durationInFrames: S7_DUR },
 } as const;
 
 const NUM_SCENES = Object.keys(SCENES).length;
@@ -506,13 +539,13 @@ export const TOTAL_FRAMES =
   (NUM_SCENES - 1) * 20; // 20-frame fade between scenes
 
 export const PALETTE = {
-  bg: '#08080f',
-  text: '#e8f0f5',
-  accent: '#c17f24',     // amber
-  danger: '#8b1a1a',     // dark red
-  cold: '#1a3d6b',       // cold blue
-  muted: 'rgba(232,240,245,0.55)',
-  overlay: 'rgba(0,0,0,0.62)',
+  bg: "#08080f",
+  text: "#e8f0f5",
+  accent: "#c17f24", // amber
+  danger: "#8b1a1a", // dark red
+  cold: "#1a3d6b", // cold blue
+  muted: "rgba(232,240,245,0.55)",
+  overlay: "rgba(0,0,0,0.62)",
 };
 
 export const FONTS = {
@@ -567,9 +600,11 @@ export const ForeverLostEp4Shorts = (/* ... */) => {
 ## 🔄 NEW WORKFLOW — TTS + TRANSCRIPT SPLIT
 
 ### Step 1 — Generate Combined Shorts WAV
+
 Use the combined TTS prompt above. This produces **1 WAV** for the entire shorts video.
 
 ### Step 2 — Generate Full Transcript
+
 ```bash
 npx tsx scripts/generate-captions.ts \
   "public/assets/forever-lost/ep-004/audio/vo/short/ep004_S_full.wav" \
@@ -577,16 +612,19 @@ npx tsx scripts/generate-captions.ts \
 ```
 
 ### Step 3 — Clean and Split Transcript
+
 1. Clean the raw transcript (merge split words, fix punctuation, casing, acronyms per AGENTS.md).
 2. Identify scene boundaries within the combined transcript using the first words of each short scene script.
 3. Split into 7 per-scene JSONs: `transcript_s01.json` through `transcript_s07.json`.
 4. Normalize timestamps: subtract each scene's start offset so its first `startMs` ≈ 0.
 
 ### Step 4 — Update `vo-offsets.ts`
+
 Use `ffprobe` or a DAW to measure actual per-scene start times within the combined WAV.
 Update `startFromSec` values in `SHORTS_VO_OFFSETS`.
 
 ### Step 5 — Update per-scene constants.ts
+
 Each scene imports its own `transcript_sN.json` as `TRASCRIPT_DATA` and exports `SCENE_DURATION` based on its last `endMs`.
 
 ---

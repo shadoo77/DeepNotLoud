@@ -36,7 +36,7 @@ const CaptionLine = ({
 }) => {
   return (
     <div className="w-full text-center">
-      <div className="font-cause wrap-break-word text-4xl font-black tracking-wide whitespace-pre-wrap">
+      <div className="font-cause text-4xl font-black tracking-wide wrap-break-word whitespace-pre-wrap">
         {page.tokens.map((token) => {
           const isSpoken = token.toMs > token.fromMs;
           const isActive =

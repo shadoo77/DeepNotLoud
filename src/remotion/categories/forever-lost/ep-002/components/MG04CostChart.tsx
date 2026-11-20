@@ -80,18 +80,24 @@ export const MG04CostChart: React.FC = () => {
 
       <AbsoluteFill style={{ transform: `translateX(${exitX}px)` }}>
         <div
-          className="absolute left-0 right-0 top-10 text-center"
+          className="absolute top-10 right-0 left-0 text-center"
           style={{ transform: `translateY(${titleY}px)` }}
         >
-          <div className="font-bebas text-white" style={{ fontSize: 80, letterSpacing: 6 }}>
+          <div
+            className="font-bebas text-white"
+            style={{ fontSize: 80, letterSpacing: 6 }}
+          >
             WHAT $1.5 BILLION BUYS
           </div>
-          <div className="font-inter mt-1 text-3xl text-white/70" style={{ opacity: subtitleOpacity }}>
+          <div
+            className="font-inter mt-1 text-3xl text-white/70"
+            style={{ opacity: subtitleOpacity }}
+          >
             Global mega-project comparison
           </div>
         </div>
 
-        <div className="absolute left-[8%] right-[8%] top-[20%] bottom-[13%] flex flex-col justify-center gap-6">
+        <div className="absolute top-[20%] right-[8%] bottom-[13%] left-[8%] flex flex-col justify-center gap-6">
           {COST_DATA.map((item, i) => {
             const start = 40 + i * 20;
             const barProgress = spring({
@@ -107,7 +113,9 @@ export const MG04CostChart: React.FC = () => {
                 <div className="mb-2 flex items-center justify-between">
                   <div
                     className="font-inter text-2xl font-semibold"
-                    style={{ color: item.highlight ? C.white : "rgba(240,238,228,0.9)" }}
+                    style={{
+                      color: item.highlight ? C.white : "rgba(240,238,228,0.9)",
+                    }}
                   >
                     {item.label}
                   </div>
@@ -136,7 +144,9 @@ export const MG04CostChart: React.FC = () => {
                 </div>
 
                 {item.note ? (
-                  <div className="font-inter mt-2 text-xl font-semibold text-white/90">{item.note}</div>
+                  <div className="font-inter mt-2 text-xl font-semibold text-white/90">
+                    {item.note}
+                  </div>
                 ) : null}
               </div>
             );
@@ -144,7 +154,7 @@ export const MG04CostChart: React.FC = () => {
         </div>
 
         <div
-          className="absolute left-1/2 top-[62%] -translate-x-1/2 rounded-md border border-white/35 px-6 py-3"
+          className="absolute top-[62%] left-1/2 -translate-x-1/2 rounded-md border border-white/35 px-6 py-3"
           style={{
             backgroundColor: "rgba(17,17,17,0.9)",
             opacity: interpolate(frame, [200, 220], [0, 1], {
@@ -153,7 +163,9 @@ export const MG04CostChart: React.FC = () => {
             }),
           }}
         >
-          <div className="font-inter text-2xl italic text-white/95">This did not fix anything.</div>
+          <div className="font-inter text-2xl text-white/95 italic">
+            This did not fix anything.
+          </div>
         </div>
       </AbsoluteFill>
 

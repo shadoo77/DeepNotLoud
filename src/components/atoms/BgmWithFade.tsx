@@ -31,10 +31,15 @@ export default function BgmWithFade({
     <Audio
       src={staticFile(srcPath)}
       volume={(f) =>
-        interpolate(f, [0, fadeInFrames, fadeOutStart, end], [0, volume, volume, 0], {
-          extrapolateLeft: "clamp",
-          extrapolateRight: "clamp",
-        })
+        interpolate(
+          f,
+          [0, fadeInFrames, fadeOutStart, end],
+          [0, volume, volume, 0],
+          {
+            extrapolateLeft: "clamp",
+            extrapolateRight: "clamp",
+          },
+        )
       }
       loop={loop}
       loopVolumeCurveBehavior={loop ? "extend" : undefined}

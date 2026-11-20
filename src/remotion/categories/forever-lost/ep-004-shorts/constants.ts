@@ -25,8 +25,10 @@ export const C = {
 
 export const ASSET_PATH = "assets/forever-lost/ep-004";
 
-const _sf = (k: ShortSceneKey) => Math.round(SHORTS_VO_OFFSETS[k].startFromSec * FPS);
-const _ef = (k: ShortSceneKey) => Math.round(SHORTS_VO_OFFSETS[k].estimatedSceneEndSec * FPS);
+const _sf = (k: ShortSceneKey) =>
+  Math.round(SHORTS_VO_OFFSETS[k].startFromSec * FPS);
+const _ef = (k: ShortSceneKey) =>
+  Math.round(SHORTS_VO_OFFSETS[k].estimatedSceneEndSec * FPS);
 
 export const SCENE_DURATIONS = {
   s1_hook: _sf("S02") - _sf("S01") + T.fade,

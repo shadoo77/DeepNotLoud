@@ -66,12 +66,7 @@ const CaptionPage = ({
 
             const activeScale = interpolate(
               absoluteTimeMs,
-              [
-                token.fromMs - 60,
-                token.fromMs,
-                token.toMs,
-                token.toMs + 60,
-              ],
+              [token.fromMs - 60, token.fromMs, token.toMs, token.toMs + 60],
               [1, 1.05, 1.05, 1],
               { extrapolateLeft: "clamp", extrapolateRight: "clamp" },
             );

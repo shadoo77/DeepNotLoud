@@ -20,16 +20,29 @@ export interface StatDef {
 
 export const STATS: StatDef[] = [
   { id: "words", target: 38000, label: "WORDS — UNREADABLE", delay: 0 },
-  { id: "chars", target: 170, label: "UNIQUE CHARACTERS", suffix: "+", delay: 15 },
+  {
+    id: "chars",
+    target: 170,
+    label: "UNIQUE CHARACTERS",
+    suffix: "+",
+    delay: 15,
+  },
   { id: "pages", target: 240, label: "PAGES", delay: 30 },
-  { id: "value", target: 100, label: "ESTIMATED VALUE", prefix: "$", suffix: "M+", delay: 45 },
+  {
+    id: "value",
+    target: 100,
+    label: "ESTIMATED VALUE",
+    prefix: "$",
+    suffix: "M+",
+    delay: 45,
+  },
 ];
 
-export const StatCounter: React.FC<{ stat: StatDef; frame: number; fps: number }> = ({
-  stat,
-  frame,
-  fps,
-}) => {
+export const StatCounter: React.FC<{
+  stat: StatDef;
+  frame: number;
+  fps: number;
+}> = ({ stat, frame, fps }) => {
   const progress = spring({
     frame: Math.max(0, frame - stat.delay),
     fps,

@@ -36,5 +36,9 @@ export const ManualCrossfadeTransition: React.FC<ManualTransitionProps> = ({
       )
     : 1;
 
-  return <AbsoluteFill style={{ opacity: Math.min(inOpacity, outOpacity) }}>{children}</AbsoluteFill>;
+  return (
+    <AbsoluteFill style={{ opacity: Math.min(inOpacity, outOpacity) }}>
+      {children}
+    </AbsoluteFill>
+  );
 };

@@ -22,7 +22,8 @@ export const EndCard: React.FC<{
   const local = Math.max(0, frame - triggerFrame);
 
   const bgFade = interpolate(local, [0, 20], [0, 1], {
-    extrapolateLeft: "clamp", extrapolateRight: "clamp",
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
   });
 
   const titleSpring = spring({
@@ -32,7 +33,8 @@ export const EndCard: React.FC<{
   });
   const titleScale = interpolate(titleSpring, [0, 1], [0.8, 1]);
   const titleOpacity = interpolate(local, [0, 25], [0, 1], {
-    extrapolateLeft: "clamp", extrapolateRight: "clamp",
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
   });
 
   const lineProgress = spring({
@@ -43,18 +45,28 @@ export const EndCard: React.FC<{
   const lineScaleX = interpolate(lineProgress, [0, 1], [0, 1]);
 
   const subtitleFade = interpolate(local, [30, 50], [0, 1], {
-    extrapolateLeft: "clamp", extrapolateRight: "clamp",
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
   });
 
   // Final 60f fade to black
-  const finalFade = interpolate(frame, [sceneEndFrame - 90, sceneEndFrame], [0, 1], {
-    extrapolateLeft: "clamp", extrapolateRight: "clamp",
-  });
+  const finalFade = interpolate(
+    frame,
+    [sceneEndFrame - 90, sceneEndFrame],
+    [0, 1],
+    {
+      extrapolateLeft: "clamp",
+      extrapolateRight: "clamp",
+    },
+  );
 
   return (
     <>
       {/* Black overlay behind card */}
-      <div className="pointer-events-none absolute inset-0" style={{ backgroundColor: "#000000", opacity: bgFade }} />
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{ backgroundColor: "#000000", opacity: bgFade }}
+      />
 
       {/* Title card content */}
       <div
@@ -83,18 +95,30 @@ export const EndCard: React.FC<{
           />
         </div>
 
-        <div className="mt-6 flex flex-col items-center gap-2" style={{ opacity: subtitleFade }}>
-          <span className="text-xl tracking-widest" style={{ fontFamily: interFont, color: C.gray }}>
+        <div
+          className="mt-6 flex flex-col items-center gap-2"
+          style={{ opacity: subtitleFade }}
+        >
+          <span
+            className="text-xl tracking-widest"
+            style={{ fontFamily: interFont, color: C.gray }}
+          >
             EPISODE 003
           </span>
-          <span className="text-2xl tracking-wide" style={{ fontFamily: cinzelFont, color: "#888888" }}>
+          <span
+            className="text-2xl tracking-wide"
+            style={{ fontFamily: cinzelFont, color: "#888888" }}
+          >
             The Voynich Manuscript
           </span>
         </div>
       </div>
 
       {/* Final fade to black */}
-      <div className="pointer-events-none absolute inset-0" style={{ backgroundColor: "#000000", opacity: finalFade }} />
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{ backgroundColor: "#000000", opacity: finalFade }}
+      />
     </>
   );
 };

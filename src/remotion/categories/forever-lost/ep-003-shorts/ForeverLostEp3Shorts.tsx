@@ -31,7 +31,10 @@ export const ForeverLostEp3Shorts: React.FC = () => {
         loop={false}
       />
 
-      <Sequence from={s1From} durationInFrames={SCENES.s1_hook.durationInFrames}>
+      <Sequence
+        from={s1From}
+        durationInFrames={SCENES.s1_hook.durationInFrames}
+      >
         <ManualCrossfadeTransition
           durationInFrames={SCENES.s1_hook.durationInFrames}
           transitionInFrames={T.fade}
@@ -42,7 +45,10 @@ export const ForeverLostEp3Shorts: React.FC = () => {
         </ManualCrossfadeTransition>
       </Sequence>
 
-      <Sequence from={s2From} durationInFrames={SCENES.s2_discovery.durationInFrames}>
+      <Sequence
+        from={s2From}
+        durationInFrames={SCENES.s2_discovery.durationInFrames}
+      >
         <ManualCrossfadeTransition
           durationInFrames={SCENES.s2_discovery.durationInFrames}
           transitionInFrames={T.fade}
@@ -53,7 +59,10 @@ export const ForeverLostEp3Shorts: React.FC = () => {
         </ManualCrossfadeTransition>
       </Sequence>
 
-      <Sequence from={s3From} durationInFrames={SCENES.s3_stats.durationInFrames}>
+      <Sequence
+        from={s3From}
+        durationInFrames={SCENES.s3_stats.durationInFrames}
+      >
         <ManualCrossfadeTransition
           durationInFrames={SCENES.s3_stats.durationInFrames}
           transitionInFrames={T.fade}
@@ -64,7 +73,10 @@ export const ForeverLostEp3Shorts: React.FC = () => {
         </ManualCrossfadeTransition>
       </Sequence>
 
-      <Sequence from={s4From} durationInFrames={SCENES.s4_language.durationInFrames}>
+      <Sequence
+        from={s4From}
+        durationInFrames={SCENES.s4_language.durationInFrames}
+      >
         <ManualCrossfadeTransition
           durationInFrames={SCENES.s4_language.durationInFrames}
           transitionInFrames={T.fade}
@@ -75,7 +87,10 @@ export const ForeverLostEp3Shorts: React.FC = () => {
         </ManualCrossfadeTransition>
       </Sequence>
 
-      <Sequence from={s5From} durationInFrames={SCENES.s5_attempts.durationInFrames}>
+      <Sequence
+        from={s5From}
+        durationInFrames={SCENES.s5_attempts.durationInFrames}
+      >
         <ManualCrossfadeTransition
           durationInFrames={SCENES.s5_attempts.durationInFrames}
           transitionInFrames={T.fade}
@@ -86,7 +101,10 @@ export const ForeverLostEp3Shorts: React.FC = () => {
         </ManualCrossfadeTransition>
       </Sequence>
 
-      <Sequence from={s6From} durationInFrames={SCENES.s6_theories.durationInFrames}>
+      <Sequence
+        from={s6From}
+        durationInFrames={SCENES.s6_theories.durationInFrames}
+      >
         <ManualCrossfadeTransition
           durationInFrames={SCENES.s6_theories.durationInFrames}
           transitionInFrames={T.fade}
@@ -97,7 +115,10 @@ export const ForeverLostEp3Shorts: React.FC = () => {
         </ManualCrossfadeTransition>
       </Sequence>
 
-      <Sequence from={s7From} durationInFrames={SCENES.s7_closer.durationInFrames}>
+      <Sequence
+        from={s7From}
+        durationInFrames={SCENES.s7_closer.durationInFrames}
+      >
         <ManualCrossfadeTransition
           durationInFrames={SCENES.s7_closer.durationInFrames}
           transitionInFrames={T.fade}

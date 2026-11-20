@@ -34,8 +34,18 @@ export const Scene1_Scale: React.FC = () => {
       config: { damping: 10, stiffness: 200 },
     });
 
-  const frame380atm = getPhraseFrames({ phrase: "380", transcriptData: TRASCRIPT_DATA, fps, voiceOverStartFrame: VO_START_FRAME }).from;
-  const frame385kg = getPhraseFrames({ phrase: "385", transcriptData: TRASCRIPT_DATA, fps, voiceOverStartFrame: VO_START_FRAME }).from;
+  const frame380atm = getPhraseFrames({
+    phrase: "380",
+    transcriptData: TRASCRIPT_DATA,
+    fps,
+    voiceOverStartFrame: VO_START_FRAME,
+  }).from;
+  const frame385kg = getPhraseFrames({
+    phrase: "385",
+    transcriptData: TRASCRIPT_DATA,
+    fps,
+    voiceOverStartFrame: VO_START_FRAME,
+  }).from;
 
   const highlightedWords = ["3", "800", "380", "385"];
 
@@ -44,18 +54,18 @@ export const Scene1_Scale: React.FC = () => {
       <AbsoluteFill>
         <Img
           src={staticFile(`${ASSET}/images/img_depth_ocean_gradien.jpeg`)}
-          className="object-cover w-full h-full opacity-60"
+          className="h-full w-full object-cover opacity-60"
         />
       </AbsoluteFill>
 
       <AbsoluteFill className="flex flex-row">
         <div
-          className="relative w-1/2 h-full overflow-hidden"
+          className="relative h-full w-1/2 overflow-hidden"
           style={{ perspective: "1000px" }}
         >
           <Img
             src={staticFile(`${ASSET}/images/img_titanic_crosssection.png`)}
-            className="object-contain w-full h-full opacity-90"
+            className="h-full w-full object-contain opacity-90"
             style={{
               transform: `
                 translateY(${interpolate(frame, [0, fps * 75], [0, 50])}px)
@@ -66,7 +76,7 @@ export const Scene1_Scale: React.FC = () => {
           />
 
           <div
-            className="absolute left-0 w-full pointer-events-none"
+            className="pointer-events-none absolute left-0 w-full"
             style={{
               top: `${interpolate(frame, [0, fps * 5], [0, 100])}%`,
               height: 2,
@@ -77,7 +87,7 @@ export const Scene1_Scale: React.FC = () => {
           />
         </div>
 
-        <div className="relative w-1/2 h-full flex flex-col items-center pt-20 pb-24">
+        <div className="relative flex h-full w-1/2 flex-col items-center pt-20 pb-24">
           <div
             className="absolute top-20 bottom-24 w-0.5"
             style={{
@@ -115,17 +125,17 @@ export const Scene1_Scale: React.FC = () => {
                 }}
               >
                 <div
-                  className="w-5 h-0.5 opacity-50"
+                  className="h-0.5 w-5 opacity-50"
                   style={{ backgroundColor: "var(--color-surfaceWhite)" }}
                 />
-                <span className="ml-2.5 font-mono text-steelGrey text-sm whitespace-nowrap">
+                <span className="text-steelGrey ml-2.5 font-mono text-sm whitespace-nowrap">
                   {depth}m
                 </span>
               </div>
             );
           })}
 
-          <div className="absolute top-[10%] text-center z-10">
+          <div className="absolute top-[10%] z-10 text-center">
             <CountUp
               to={3800}
               durationInFrames={fps * 4}
@@ -133,7 +143,7 @@ export const Scene1_Scale: React.FC = () => {
               fontSize={100}
               suffix="m"
             />
-            <div className="text-steelGrey text-2xl mt-2.5">
+            <div className="text-steelGrey mt-2.5 text-2xl">
               Below Sea Level
             </div>
           </div>
@@ -172,10 +182,10 @@ export const Scene1_Scale: React.FC = () => {
 
       {frame380atm > 0 && (
         <div
-          className="absolute top-[20%] right-[5%] bg-deepNavy/80 backdrop-blur-md border border-oceanBlue rounded-xl p-5"
+          className="bg-deepNavy/80 border-oceanBlue absolute top-[20%] right-[5%] rounded-xl border p-5 backdrop-blur-md"
           style={{ transform: `scale(${badgeScale(frame380atm)})` }}
         >
-          <div className="text-biolumTeal text-[48px] font-mono font-bold">
+          <div className="text-biolumTeal font-mono text-[48px] font-bold">
             380 ATM
           </div>
           <div className="text-surfaceWhite text-base">Water Pressure</div>
@@ -184,10 +194,10 @@ export const Scene1_Scale: React.FC = () => {
 
       {frame385kg > 0 && (
         <div
-          className="absolute bottom-[25%] left-[5%] bg-deepNavy/80 backdrop-blur-md border border-rustOrange rounded-xl p-5"
+          className="bg-deepNavy/80 border-rustOrange absolute bottom-[25%] left-[5%] rounded-xl border p-5 backdrop-blur-md"
           style={{ transform: `scale(${badgeScale(frame385kg)})` }}
         >
-          <div className="text-rustOrange text-[48px] font-mono font-bold">
+          <div className="text-rustOrange font-mono text-[48px] font-bold">
             385 KG
           </div>
           <div className="text-surfaceWhite text-base">

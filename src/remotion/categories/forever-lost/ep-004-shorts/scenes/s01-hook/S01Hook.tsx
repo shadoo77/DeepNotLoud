@@ -101,10 +101,7 @@ export const S01Hook: React.FC = () => {
     );
 
   return (
-    <AbsoluteFill
-      className="overflow-hidden"
-      style={{ backgroundColor: C.bg }}
-    >
+    <AbsoluteFill className="overflow-hidden" style={{ backgroundColor: C.bg }}>
       <div
         className="absolute inset-0 overflow-hidden"
         style={{ transform: `scale(${bgScale})`, opacity: bgOpacity }}

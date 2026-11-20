@@ -1,58 +1,64 @@
 # 🎬 FOREVER LOST — EP004 | LANDSCAPE 16:9
-## *Dyatlov Pass — The Deaths Still Officially Unexplained*
+
+## _Dyatlov Pass — The Deaths Still Officially Unexplained_
+
 ### LANDSCAPE PRODUCTION FILE · YouTube
 
 ---
 
 ## 📋 EPISODE METADATA
 
-| Field | Value |
-|---|---|
-| Episode | 04 |
-| Format | Landscape · 1920 × 1080 |
-| FPS | 30 |
-| Target Duration | **6:00 – 6:30** |
-| Estimated Duration | **~6:37** (11,910 frames) |
-| Voice | **Charon** |
-| Total VO Words | ~773 words across 10 scenes |
+| Field              | Value                       |
+| ------------------ | --------------------------- |
+| Episode            | 04                          |
+| Format             | Landscape · 1920 × 1080     |
+| FPS                | 30                          |
+| Target Duration    | **6:00 – 6:30**             |
+| Estimated Duration | **~6:37** (11,910 frames)   |
+| Voice              | **Charon**                  |
+| Total VO Words     | ~773 words across 10 scenes |
 
 ---
 
 ## 🎵 AUDIO OVERVIEW
 
 ### Voice
+
 - **Voice:** Charon · Deep, measured documentary narrator
 - **Pace estimate:** ~2.3 words/second
 - **TTS tags used:** `[pause]`, `[slow]`, `[serious]`, `[whispers]`
 
 ### VO — 3-Act Combined System
+
 This episode uses **1 combined VO per act** (3 WAVs total) instead of 1 per scene. This gives consistent pacing across scenes in each act while still allowing per-scene transcript/caption sync.
 
-| Act | Scenes | Content Arc | Words | Est. Length | File |
-|---|---|---|---|---|---|
-| **Act 1 (Setup)** | S01–S03 | Cold open → who they were → the mountain | ~180 | ~78s | `ep004_L_act1_setup.wav` |
-| **Act 2 (Horror)** | S04–S08 | The night → discovery → bodies → theories → verdict | ~361 | ~157s | `ep004_L_act2_horror.wav` |
-| **Act 3 (Resolution)** | S09–S10 | Why it's still wrong → closer | ~134 | ~58s | `ep004_L_act3_resolution.wav` |
+| Act                    | Scenes  | Content Arc                                         | Words | Est. Length | File                          |
+| ---------------------- | ------- | --------------------------------------------------- | ----- | ----------- | ----------------------------- |
+| **Act 1 (Setup)**      | S01–S03 | Cold open → who they were → the mountain            | ~180  | ~78s        | `ep004_L_act1_setup.wav`      |
+| **Act 2 (Horror)**     | S04–S08 | The night → discovery → bodies → theories → verdict | ~361  | ~157s       | `ep004_L_act2_horror.wav`     |
+| **Act 3 (Resolution)** | S09–S10 | Why it's still wrong → closer                       | ~134  | ~58s        | `ep004_L_act3_resolution.wav` |
 
 ### BGM — 3 Cue System
-| Cue | Scenes | Mood | YouTube Audio Library Search |
-|---|---|---|---|
-| `bgm-intro.mp3` | S01–S03 | Cold, eerie, sparse piano + drone | `"cold documentary intro"` · `"arctic tension minimal"` |
-| `bgm-tension.mp3` | S04–S08 | Building dread, subtle percussion | `"dark thriller tension buildup"` · `"mystery underscore"` |
-| `bgm-closer.mp3` | S09–S10 + Outro | Quiet, reflective, sparse | `"sad ambient reflection"` · `"melancholic piano drone"` |
+
+| Cue               | Scenes          | Mood                              | YouTube Audio Library Search                               |
+| ----------------- | --------------- | --------------------------------- | ---------------------------------------------------------- |
+| `bgm-intro.mp3`   | S01–S03         | Cold, eerie, sparse piano + drone | `"cold documentary intro"` · `"arctic tension minimal"`    |
+| `bgm-tension.mp3` | S04–S08         | Building dread, subtle percussion | `"dark thriller tension buildup"` · `"mystery underscore"` |
+| `bgm-closer.mp3`  | S09–S10 + Outro | Quiet, reflective, sparse         | `"sad ambient reflection"` · `"melancholic piano drone"`   |
 
 > **Crossfade rule:** 2-second crossfade between cues · All at –20 dB under VO · –3 dB duck when VO is speaking
 
 ### SFX Master List
-| File | Scene | Moment | Level |
-|---|---|---|---|
-| `wind-arctic.mp3` | S01, S03, S04 | Scene start, under VO | –18 dB |
-| `snow-crunch.mp3` | S04 | "Footprints" beat | –14 dB |
-| `heartbeat-slow.mp3` | S06 | "The body positions" | –22 dB |
-| `radio-static.mp3` | S08 | "Official verdict" stamp moment | –15 dB |
-| `paper-rustle.mp3` | S08, S09 | Document transitions | –18 dB |
-| `camera-shutter.mp3` | S10 | "Last photograph" | –10 dB |
-| `low-rumble.mp3` | S07 | Theory card reveals | –20 dB |
+
+| File                 | Scene         | Moment                          | Level  |
+| -------------------- | ------------- | ------------------------------- | ------ |
+| `wind-arctic.mp3`    | S01, S03, S04 | Scene start, under VO           | –18 dB |
+| `snow-crunch.mp3`    | S04           | "Footprints" beat               | –14 dB |
+| `heartbeat-slow.mp3` | S06           | "The body positions"            | –22 dB |
+| `radio-static.mp3`   | S08           | "Official verdict" stamp moment | –15 dB |
+| `paper-rustle.mp3`   | S08, S09      | Document transitions            | –18 dB |
+| `camera-shutter.mp3` | S10           | "Last photograph"               | –10 dB |
+| `low-rumble.mp3`     | S07           | Theory card reveals             | –20 dB |
 
 ---
 
@@ -100,18 +106,19 @@ public/
 ## 🎨 MOTION GRAPHICS SYSTEM
 
 ### Component Library Overview
+
 All reusable banner components live in `src/ep004-landscape/components/`.
 Each accepts `delayFrames` so it can be triggered independently within a scene.
 
-| Component | Style | Usage |
-|---|---|---|
-| `AnimatedLowerThird` | News-style bar slides from left | Names, locations, dates |
-| `FactBanner` | Floating panel slides from right | Key evidence points |
-| `StatCounter` | Large counting number | Body counts, distances, temperatures |
-| `CaseFileStamp` | Rotating stamp drops in | CLASSIFIED · CASE REOPENED · OFFICIALLY CLOSED |
-| `TheoryCard` | Panel slides from right | Theory name + bullet points |
-| `TitleReveal` | Letter-by-letter or clip reveal | Scene titles |
-| `TimelineMarker` | Bottom bar with date pin | Chronology beats |
+| Component            | Style                            | Usage                                          |
+| -------------------- | -------------------------------- | ---------------------------------------------- |
+| `AnimatedLowerThird` | News-style bar slides from left  | Names, locations, dates                        |
+| `FactBanner`         | Floating panel slides from right | Key evidence points                            |
+| `StatCounter`        | Large counting number            | Body counts, distances, temperatures           |
+| `CaseFileStamp`      | Rotating stamp drops in          | CLASSIFIED · CASE REOPENED · OFFICIALLY CLOSED |
+| `TheoryCard`         | Panel slides from right          | Theory name + bullet points                    |
+| `TitleReveal`        | Letter-by-letter or clip reveal  | Scene titles                                   |
+| `TimelineMarker`     | Bottom bar with date pin         | Chronology beats                               |
 
 ---
 
@@ -120,9 +127,11 @@ Each accepts `delayFrames` so it can be triggered independently within a scene.
 ---
 
 ### SCENE 01 — COLD OPEN
+
 > **Duration target:** 25 sec · **Words:** ~50 · **Est. WAV:** ~22 sec
 
 **Voiceover (clean):**
+
 ```
 Somewhere in the Ural Mountains... nine people died.
 The Soviet government closed the investigation in two weeks.
@@ -133,19 +142,21 @@ This is Dyatlov Pass.
 ```
 
 **📊 Timing check:**
+
 - ~50 words ÷ 2.3 = ~21.7 sec · padded to 25 sec (750 frames)
 
 ---
 
 **🖼️ Image Prompts — Nano Banana 2:**
 
-| # | Usage | Prompt |
-|---|---|---|
-| 1 | Full-frame bg | `Aerial cinematic view of desolate Ural Mountains in deep winter, dark overcast sky, pale cold light, vast snowfields, no human presence, photorealistic 4K, Russian wilderness, cold documentary atmosphere --ar 16:9 --style raw` |
+| #   | Usage         | Prompt                                                                                                                                                                                                                              |
+| --- | ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | Full-frame bg | `Aerial cinematic view of desolate Ural Mountains in deep winter, dark overcast sky, pale cold light, vast snowfields, no human presence, photorealistic 4K, Russian wilderness, cold documentary atmosphere --ar 16:9 --style raw` |
 
 ---
 
 **🎨 Motion Graphics — Scene 01:**
+
 - `CaseFileStamp` type `"CLASSIFIED"` · delay: frame 90 · auto-removes at frame 200
 - Title card: `"DYATLOV PASS"` — `TitleReveal` clip animation, frame 480–570
 - `"FEB 1959 · URAL MOUNTAINS, USSR"` — `AnimatedLowerThird` · delay: frame 520
@@ -155,9 +166,11 @@ This is Dyatlov Pass.
 ---
 
 ### SCENE 02 — WHO WERE THEY
+
 > **Duration target:** 35 sec · **Words:** ~72 · **Est. WAV:** ~31 sec
 
 **Voiceover (clean):**
+
 ```
 It was February 1959.
 Ten students and graduates from the Ural Polytechnic Institute had set off on a winter expedition to climb Otorten Mountain.
@@ -168,19 +181,21 @@ None of them should have died on this one.
 ```
 
 **📊 Timing check:**
+
 - ~72 words ÷ 2.3 = ~31 sec · padded to 35 sec (1050 frames)
 
 ---
 
 **🖼️ Image Prompts — Nano Banana 2:**
 
-| # | Usage | Prompt |
-|---|---|---|
-| 1 | Background | `Vintage Soviet-era photograph aesthetic, group of young university students in winter hiking gear, smiling, mountain setting, grainy film, warm-cold contrast, 1950s photographic style --ar 16:9 --style raw` |
+| #   | Usage      | Prompt                                                                                                                                                                                                          |
+| --- | ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | Background | `Vintage Soviet-era photograph aesthetic, group of young university students in winter hiking gear, smiling, mountain setting, grainy film, warm-cold contrast, 1950s photographic style --ar 16:9 --style raw` |
 
 ---
 
 **🎨 Motion Graphics — Scene 02:**
+
 - `AnimatedLowerThird` · title: `"IGOR DYATLOV"` · subtitle: `"Expedition Leader, Age 23"` · delay: frame 180
 - `AnimatedLowerThird` · title: `"URAL POLYTECHNIC INSTITUTE"` · subtitle: `"Sverdlovsk, Soviet Russia"` · delay: frame 400
 - `StatCounter` from 0 to 10 · label: `"EXPEDITION MEMBERS"` · delay: frame 80 · count over 45 frames
@@ -190,9 +205,11 @@ None of them should have died on this one.
 ---
 
 ### SCENE 03 — THE MOUNTAIN
+
 > **Duration target:** 30 sec · **Words:** ~58 · **Est. WAV:** ~25 sec
 
 **Voiceover (clean):**
+
 ```
 The pass they were crossing had a name in the language of the local Mansi people.
 Kholat Syakhl.
@@ -203,20 +220,22 @@ That was the last night any of them were seen alive.
 ```
 
 **📊 Timing check:**
+
 - ~58 words ÷ 2.3 = ~25 sec · padded to 30 sec (900 frames)
 
 ---
 
 **🖼️ Image Prompts — Nano Banana 2:**
 
-| # | Usage | Prompt |
-|---|---|---|
-| 1 | BG | `Dramatic wide shot of Kholat Syakhl mountain (Dead Mountain) in Ural Mountains, winter, harsh cold light from low angle, grey-blue sky, desolate, no vegetation on upper slopes, cinematic 4K --ar 16:9 --style raw` |
-| 2 | Map overlay (cutout) | `Minimalist topographic map section showing northern Ural Mountains, Soviet cartography style, lines and elevation marks, red dot marker for pass location, aged paper color, transparent background --ar 16:9` |
+| #   | Usage                | Prompt                                                                                                                                                                                                                |
+| --- | -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | BG                   | `Dramatic wide shot of Kholat Syakhl mountain (Dead Mountain) in Ural Mountains, winter, harsh cold light from low angle, grey-blue sky, desolate, no vegetation on upper slopes, cinematic 4K --ar 16:9 --style raw` |
+| 2   | Map overlay (cutout) | `Minimalist topographic map section showing northern Ural Mountains, Soviet cartography style, lines and elevation marks, red dot marker for pass location, aged paper color, transparent background --ar 16:9`       |
 
 ---
 
 **🎨 Motion Graphics — Scene 03:**
+
 - `TitleReveal` · `"KHOLAT SYAKHL"` in Cyrillic-style lettering · delay: frame 90 · hold 90 frames
 - Subtitle below: `"— DEAD MOUNTAIN"` · fades in after title · delay: frame 180
 - `AnimatedLowerThird` · `"Ural Mountains, Northern Russia"` · `"Elevation: 1,079m"` · delay: frame 300
@@ -227,9 +246,11 @@ That was the last night any of them were seen alive.
 ---
 
 ### SCENE 04 — THE NIGHT OF FEBRUARY 1–2
+
 > **Duration target:** 45 sec · **Words:** ~95 · **Est. WAV:** ~41 sec
 
 **Voiceover (clean):**
+
 ```
 Search teams were sent when the group failed to return on schedule.
 They found the abandoned camp on February 26th — three weeks after the group went silent.
@@ -242,19 +263,21 @@ In temperatures that would kill an unprotected adult within hours, they walked b
 ```
 
 **📊 Timing check:**
+
 - ~95 words ÷ 2.3 = ~41 sec · padded to 45 sec (1350 frames)
 
 ---
 
 **🖼️ Image Prompts — Nano Banana 2:**
 
-| # | Usage | Prompt |
-|---|---|---|
-| 1 | BG | `A canvas tent standing on a desolate snow-covered mountain slope, cut open and flapping in harsh wind, cold moonlight, no people, cinematic horror atmosphere, ultra-realistic, Ural Mountains USSR --ar 16:9 --style raw` |
+| #   | Usage | Prompt                                                                                                                                                                                                                      |
+| --- | ----- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | BG    | `A canvas tent standing on a desolate snow-covered mountain slope, cut open and flapping in harsh wind, cold moonlight, no people, cinematic horror atmosphere, ultra-realistic, Ural Mountains USSR --ar 16:9 --style raw` |
 
 ---
 
 **🎨 Motion Graphics — Scene 04:**
+
 - `AnimatedLowerThird` · `"February 26, 1959"` · `"Discovery — 21 Days After Silence"` · delay: frame 60 · accent color: amber
 - `FactBanner` · `"Tent cut open from the INSIDE"` · delay: frame 280 · color: danger red border
 - `FactBanner` · `"Footprints: 1.5 km toward treeline"` · delay: frame 500 · slide from left this time
@@ -265,9 +288,11 @@ In temperatures that would kill an unprotected adult within hours, they walked b
 ---
 
 ### SCENE 05 — THE DISCOVERY
+
 > **Duration target:** 40 sec · **Words:** ~79 · **Est. WAV:** ~34 sec
 
 **Voiceover (clean):**
+
 ```
 Following the footprints, rescuers found the first two bodies near a large cedar tree.
 Three more were found scattered between the tree and the tent.
@@ -278,20 +303,22 @@ Because what the autopsies revealed had no clean explanation.
 ```
 
 **📊 Timing check:**
+
 - ~79 words ÷ 2.3 = ~34 sec · padded to 40 sec (1200 frames)
 
 ---
 
 **🖼️ Image Prompts — Nano Banana 2:**
 
-| # | Usage | Prompt |
-|---|---|---|
-| 1 | BG | `Lone large cedar tree in deep snow, Ural Mountains winter, dark atmospheric, cold light filtering through clouds, no people, haunting and desolate, ultra-realistic 4K --ar 16:9 --style raw` |
-| 2 | Overlay (map cutout) | `Simple illustrated map showing discovery locations of 9 bodies in Ural Mountains pass, minimalist investigative diagram style, white lines on dark background, numbered position markers, transparent bg --ar 16:9` |
+| #   | Usage                | Prompt                                                                                                                                                                                                               |
+| --- | -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | BG                   | `Lone large cedar tree in deep snow, Ural Mountains winter, dark atmospheric, cold light filtering through clouds, no people, haunting and desolate, ultra-realistic 4K --ar 16:9 --style raw`                       |
+| 2   | Overlay (map cutout) | `Simple illustrated map showing discovery locations of 9 bodies in Ural Mountains pass, minimalist investigative diagram style, white lines on dark background, numbered position markers, transparent bg --ar 16:9` |
 
 ---
 
 **🎨 Motion Graphics — Scene 05:**
+
 - `AnimatedLowerThird` · `"CEDAR TREE"` · `"2 Bodies Found — ~1.5 km from tent"` · delay: frame 90
 - Map overlay fades in top-right · numbered dots appear one by one (each dot: 45-frame interval)
 - `StatCounter` · 0 → 5 · label: `"BODIES FOUND — FEBRUARY"` · delay: frame 200
@@ -301,9 +328,11 @@ Because what the autopsies revealed had no clean explanation.
 ---
 
 ### SCENE 06 — WHAT THE BODIES REVEALED
+
 > **Duration target:** 55 sec · **Words:** ~112 · **Est. WAV:** ~49 sec
 
 **Voiceover (clean):**
+
 ```
 Five of the nine had died of hypothermia. That, at least, made sense.
 But the remaining four told a different story.
@@ -319,19 +348,21 @@ Simply... missing.
 ```
 
 **📊 Timing check:**
+
 - ~112 words ÷ 2.3 = ~49 sec · padded to 55 sec (1650 frames)
 
 ---
 
 **🖼️ Image Prompts — Nano Banana 2:**
 
-| # | Usage | Prompt |
-|---|---|---|
-| 1 | BG (dark) | `Dark snow-filled ravine at night, Ural Mountains, deep shadows, cold blue moonlight barely visible, empty and oppressive, ultra-cinematic, extremely high contrast --ar 16:9 --style raw` |
+| #   | Usage     | Prompt                                                                                                                                                                                     |
+| --- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 1   | BG (dark) | `Dark snow-filled ravine at night, Ural Mountains, deep shadows, cold blue moonlight barely visible, empty and oppressive, ultra-cinematic, extremely high contrast --ar 16:9 --style raw` |
 
 ---
 
 **🎨 Motion Graphics — Scene 06:**
+
 - Heartbeat SFX at frame 0 · low and slow
 - `AnimatedLowerThird` · `"CAUSE OF DEATH: HYPOTHERMIA"` · delay: frame 0 · green accent
 - `AnimatedLowerThird` · `"CAUSE OF DEATH: UNKNOWN FORCE"` · delay: frame 180 · red accent · replaces first
@@ -344,9 +375,11 @@ Simply... missing.
 ---
 
 ### SCENE 07 — THE THEORIES
+
 > **Duration target:** 55 sec · **Words:** ~110 · **Est. WAV:** ~48 sec
 
 **Voiceover (clean):**
+
 ```
 Over sixty-five years, investigators and researchers have proposed dozens of theories.
 The most credible: a katabatic wind event that triggered a slab avalanche — causing sudden compression injuries and forcing a panicked evacuation.
@@ -358,20 +391,22 @@ None explains all of it.
 ```
 
 **📊 Timing check:**
+
 - ~110 words ÷ 2.3 = ~48 sec · padded to 55 sec (1650 frames)
 
 ---
 
 **🖼️ Image Prompts — Nano Banana 2:**
 
-| # | Usage | Prompt |
-|---|---|---|
-| 1 | BG (neutral, dark) | `Abstract dark background with faint texture, deep cold blue-black gradient, subtle snow particle bokeh, investigation board aesthetic, clean and cinematic --ar 16:9 --style raw` |
+| #   | Usage              | Prompt                                                                                                                                                                             |
+| --- | ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | BG (neutral, dark) | `Abstract dark background with faint texture, deep cold blue-black gradient, subtle snow particle bokeh, investigation board aesthetic, clean and cinematic --ar 16:9 --style raw` |
 
 ---
 
 **🎨 Motion Graphics — Scene 07:**
 Three `TheoryCard` components appear sequentially:
+
 - **Card 1** — delay: frame 60
   - Number: `"01"` · Color: `#1a6b8b`
   - Title: `"Katabatic Wind + Slab Avalanche"`
@@ -390,9 +425,11 @@ Three `TheoryCard` components appear sequentially:
 ---
 
 ### SCENE 08 — THE OFFICIAL VERDICT
+
 > **Duration target:** 35 sec · **Words:** ~63 · **Est. WAV:** ~27 sec
 
 **Voiceover (clean):**
+
 ```
 In 2019, Russian prosecutors formally reopened the Dyatlov Pass investigation.
 Two years later, they announced their conclusion:
@@ -403,19 +440,21 @@ The case was officially closed.
 ```
 
 **📊 Timing check:**
+
 - ~63 words ÷ 2.3 = ~27 sec · padded to 35 sec (1050 frames)
 
 ---
 
 **🖼️ Image Prompts — Nano Banana 2:**
 
-| # | Usage | Prompt |
-|---|---|---|
-| 1 | BG | `Aged Soviet government document on dark table, official stamps and Cyrillic text visible, harsh desk lighting, investigative atmosphere, photorealistic --ar 16:9 --style raw` |
+| #   | Usage | Prompt                                                                                                                                                                          |
+| --- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | BG    | `Aged Soviet government document on dark table, official stamps and Cyrillic text visible, harsh desk lighting, investigative atmosphere, photorealistic --ar 16:9 --style raw` |
 
 ---
 
 **🎨 Motion Graphics — Scene 08:**
+
 - Radio static SFX brief burst at frame 0
 - Paper rustle SFX at frame 90
 - `AnimatedLowerThird` · `"OFFICIAL VERDICT — 2021"` · `"Russian Prosecutor General's Office"` · delay: frame 60 · accent: cold blue
@@ -426,9 +465,11 @@ The case was officially closed.
 ---
 
 ### SCENE 09 — WHY IT'S STILL WRONG
+
 > **Duration target:** 37 sec · **Words:** ~76 · **Est. WAV:** ~33 sec
 
 **Voiceover (clean):**
+
 ```
 But most independent researchers reject this conclusion.
 Snow scientists found no evidence of avalanche debris in the original photographs.
@@ -439,19 +480,21 @@ In their view, the case is far from closed.
 ```
 
 **📊 Timing check:**
+
 - ~76 words ÷ 2.3 = ~33 sec · padded to 37 sec (1110 frames)
 
 ---
 
 **🖼️ Image Prompts — Nano Banana 2:**
 
-| # | Usage | Prompt |
-|---|---|---|
-| 1 | BG | `Misty Ural Mountains landscape at dawn, cold blue-grey tones, soft atmospheric haze, quiet and unresolved feeling, contemplative, 4K cinematic --ar 16:9 --style raw` |
+| #   | Usage | Prompt                                                                                                                                                                 |
+| --- | ----- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | BG    | `Misty Ural Mountains landscape at dawn, cold blue-grey tones, soft atmospheric haze, quiet and unresolved feeling, contemplative, 4K cinematic --ar 16:9 --style raw` |
 
 ---
 
 **🎨 Motion Graphics — Scene 09:**
+
 - `CaseFileStamp` · `"CASE REOPENED"` · color: `#1a4b8b` (blue) · delay: frame 0 · fades out by frame 150
 - `FactBanner` · `"No avalanche debris found in original photos"` · delay: frame 90 · left side
 - `FactBanner` · `"Body positions: deliberate, not panicked"` · delay: frame 320 · right side
@@ -461,9 +504,11 @@ In their view, the case is far from closed.
 ---
 
 ### SCENE 10 — THE CLOSER
+
 > **Duration target:** 30 sec · **Words:** ~58 · **Est. WAV:** ~25 sec
 
 **Voiceover (clean):**
+
 ```
 The group's cameras were recovered from the snow.
 Thirty-four photographs survived.
@@ -475,20 +520,22 @@ And whatever reason they had for running... died with them in the snow.
 ```
 
 **📊 Timing check:**
+
 - ~58 words ÷ 2.3 = ~25 sec · padded to 30 sec (900 frames)
 
 ---
 
 **🖼️ Image Prompts — Nano Banana 2:**
 
-| # | Usage | Prompt |
-|---|---|---|
-| 1 | BG | `Dark pine treeline at night in Ural Mountains, cold, still, utterly silent, faint moonlight, cinematic, extremely dark atmosphere, sense of deep unease --ar 16:9 --style raw` |
-| 2 | Overlay (film frame) | `Vintage 35mm film photograph borders and grain overlay, slightly overexposed edges, aged and damaged, transparent center, film negative aesthetic, transparent background --ar 16:9` |
+| #   | Usage                | Prompt                                                                                                                                                                                |
+| --- | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | BG                   | `Dark pine treeline at night in Ural Mountains, cold, still, utterly silent, faint moonlight, cinematic, extremely dark atmosphere, sense of deep unease --ar 16:9 --style raw`       |
+| 2   | Overlay (film frame) | `Vintage 35mm film photograph borders and grain overlay, slightly overexposed edges, aged and damaged, transparent center, film negative aesthetic, transparent background --ar 16:9` |
 
 ---
 
 **🎨 Motion Graphics — Scene 10:**
+
 - Camera shutter SFX at frame 90
 - Brief white flash at shutter (opacity 0.5 over 6 frames)
 - `StatCounter` · 0 → 34 · label: `"PHOTOGRAPHS RECOVERED"` · delay: frame 60
@@ -500,6 +547,7 @@ And whatever reason they had for running... died with them in the snow.
 ---
 
 ### OUTRO — 10 sec (300 frames)
+
 - No voiceover
 - Black screen
 - Channel logo + `"FOREVER LOST"` title fade in
@@ -843,15 +891,15 @@ import { SCENE_DURATION as S10_DUR } from "./scenes/s10-closer/constants";
 export const FPS = 30;
 
 export const SCENES = {
-  s1:  { durationInFrames: S1_DUR },
-  s2:  { durationInFrames: S2_DUR },
-  s3:  { durationInFrames: S3_DUR },
-  s4:  { durationInFrames: S4_DUR },
-  s5:  { durationInFrames: S5_DUR },
-  s6:  { durationInFrames: S6_DUR },
-  s7:  { durationInFrames: S7_DUR },
-  s8:  { durationInFrames: S8_DUR },
-  s9:  { durationInFrames: S9_DUR },
+  s1: { durationInFrames: S1_DUR },
+  s2: { durationInFrames: S2_DUR },
+  s3: { durationInFrames: S3_DUR },
+  s4: { durationInFrames: S4_DUR },
+  s5: { durationInFrames: S5_DUR },
+  s6: { durationInFrames: S6_DUR },
+  s7: { durationInFrames: S7_DUR },
+  s8: { durationInFrames: S8_DUR },
+  s9: { durationInFrames: S9_DUR },
   s10: { durationInFrames: S10_DUR },
 } as const;
 
@@ -864,15 +912,15 @@ export const TOTAL_FRAMES =
 export const FPS = 30;
 
 export const PALETTE = {
-  bg: '#08080f',
-  text: '#e8f0f5',
-  accent: '#c17f24',
-  danger: '#8b1a1a',
-  cold: '#1a3d6b',
-  official: '#1a5c1a',
-  mystery: '#3d1a6b',
-  muted: 'rgba(232,240,245,0.55)',
-  overlay: 'rgba(0,0,0,0.62)',
+  bg: "#08080f",
+  text: "#e8f0f5",
+  accent: "#c17f24",
+  danger: "#8b1a1a",
+  cold: "#1a3d6b",
+  official: "#1a5c1a",
+  mystery: "#3d1a6b",
+  muted: "rgba(232,240,245,0.55)",
+  overlay: "rgba(0,0,0,0.62)",
 };
 
 export const FONTS = {
@@ -929,9 +977,11 @@ export const ForeverLostEp4 = () => {
 ## 🔄 NEW WORKFLOW — TTS + TRANSCRIPT SPLIT
 
 ### Step 1 — Generate 3 Act WAVs
+
 Use the combined TTS prompts above. Each prompt will produce one WAV file (act1, act2, act3).
 
 ### Step 2 — Run generate-captions.ts per Act
+
 ```bash
 # Generate transcript for the full act WAV
 npx tsx scripts/generate-captions.ts \
@@ -949,6 +999,7 @@ npx tsx scripts/generate-captions.ts \
 ```
 
 ### Step 3 — Clean and Split Transcripts
+
 1. Open each act's `transcript_actN_raw.json`
 2. Clean: merge split words, fix punctuation per script, capitalize sentence starts, fix acronyms
 3. Find where each scene begins within the act transcript (using the first words of each scene)
@@ -956,9 +1007,11 @@ npx tsx scripts/generate-captions.ts \
 5. Save as `transcript_s01.json`, `transcript_s02.json`, etc.
 
 ### Step 4 — Update per-scene constants.ts
+
 Each scene imports its own `transcript_sN.json` into `TRASCRIPT_DATA` and exports `SCENE_DURATION`.
 
 ### Step 5 — Measure Actual Scene Boundaries
+
 Use `ffprobe` or a DAW to find the exact second each scene begins in the act WAV. Update `vo-offsets.ts` with real `startFromSec` values.
 
 ---

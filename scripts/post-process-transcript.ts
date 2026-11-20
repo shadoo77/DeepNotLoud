@@ -323,11 +323,7 @@ async function main() {
     }
 
     // --- Correction 5: " I" (after Elizabeth) → " the" + " First" ---
-    if (
-      cur.text === " I" &&
-      i > 0 &&
-      step1[i - 1].text === " Elizabeth"
-    ) {
+    if (cur.text === " I" && i > 0 && step1[i - 1].text === " Elizabeth") {
       const totalMs = cur.endMs - cur.startMs; // ~70ms
       const wordSyls = [
         { text: " the", syl: countSyllables("the") },

@@ -36,7 +36,7 @@ export const TransitionSeriesSanity: React.FC = () => {
         timing={linearTiming({ durationInFrames: FADE_DURATION })}
       />
       <TransitionSeries.Sequence durationInFrames={B_DURATION}>
-          <Card label="B" color="#1e3a8a" />
+        <Card label="B" color="#1e3a8a" />
       </TransitionSeries.Sequence>
     </TransitionSeries>
   );

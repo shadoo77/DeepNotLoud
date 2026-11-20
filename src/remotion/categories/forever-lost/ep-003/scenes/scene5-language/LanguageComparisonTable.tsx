@@ -54,7 +54,7 @@ export const LanguageComparisonTable: React.FC<{
   );
 
   const highlightPulse = interpolate(
-    Math.sin((Math.max(0, frame - highlightCorrections) * 0.12)),
+    Math.sin(Math.max(0, frame - highlightCorrections) * 0.12),
     [-1, 1],
     [0.8, 1.2],
   );
@@ -83,31 +83,31 @@ export const LanguageComparisonTable: React.FC<{
       }}
     >
       <div
-        className="rounded-xl px-10 pb-6 pt-5"
+        className="rounded-xl px-10 pt-5 pb-6"
         style={{ backgroundColor: "rgba(10,10,10,0.94)" }}
       >
         {/* Header */}
         <div className="mb-4 grid grid-cols-4 gap-4 border-b border-gray-700 pb-3">
           <span
-            className="text-2xl font-bold uppercase tracking-widest"
+            className="text-2xl font-bold tracking-widest uppercase"
             style={{ fontFamily: "Courier New", color: C.gold }}
           >
             Script
           </span>
           <span
-            className="text-2xl font-bold uppercase tracking-widest"
+            className="text-2xl font-bold tracking-widest uppercase"
             style={{ fontFamily: "Courier New", color: C.gold }}
           >
             Entropy
           </span>
           <span
-            className="text-2xl font-bold uppercase tracking-widest"
+            className="text-2xl font-bold tracking-widest uppercase"
             style={{ fontFamily: "Courier New", color: C.gold }}
           >
             Word Length
           </span>
           <span
-            className="text-2xl font-bold uppercase tracking-widest"
+            className="text-2xl font-bold tracking-widest uppercase"
             style={{ fontFamily: "Courier New", color: C.gold }}
           >
             Corrections
@@ -164,7 +164,10 @@ export const LanguageComparisonTable: React.FC<{
               >
                 <span
                   className="inline-flex size-10 items-center justify-center rounded-full"
-                  style={{ backgroundColor: "rgba(76,175,80,0.2)", color: "#4CAF50" }}
+                  style={{
+                    backgroundColor: "rgba(76,175,80,0.2)",
+                    color: "#4CAF50",
+                  }}
                 >
                   ✓
                 </span>
@@ -214,14 +217,12 @@ export const LanguageComparisonTable: React.FC<{
               [0, 1],
               { extrapolateRight: "clamp" },
             ),
-            transform: `translateY(${
-              interpolate(
-                Math.max(0, frame - (triggerFrame + 160)),
-                [0, 25],
-                [30, 0],
-                { extrapolateRight: "clamp" },
-              )
-            }px)`,
+            transform: `translateY(${interpolate(
+              Math.max(0, frame - (triggerFrame + 160)),
+              [0, 25],
+              [30, 0],
+              { extrapolateRight: "clamp" },
+            )}px)`,
           }}
         >
           <span

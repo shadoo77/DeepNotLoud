@@ -129,10 +129,7 @@ export function splitIntoSentences(tokens: Caption[]): Caption[][] {
 
   for (const token of tokens) {
     current.push(token);
-    if (
-      token.text.match(/[.!?]\s*$/) &&
-      !token.text.match(/^\d+\.[\d.]*$/)
-    ) {
+    if (token.text.match(/[.!?]\s*$/) && !token.text.match(/^\d+\.[\d.]*$/)) {
       strongSentences.push(current);
       current = [];
     }
