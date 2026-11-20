@@ -43,7 +43,9 @@
     "dev": "remotion studio --port 3002",
     "build": "remotion bundle",
     "upgrade": "remotion upgrade",
-    "lint": "eslint src && tsc"
+    "lint": "eslint src && tsc",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "sideEffects": [
     "*.css"

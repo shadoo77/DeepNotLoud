@@ -1,0 +1,21 @@
+node_modules/
+build/
+dist/
+out/
+
+# Large generated media, never formatted
+public/assets/
+whisper.cpp/
+graphify-out/
+logs/
+
+# Local tooling / AI config
+.opencode/
+.claude/
+.codex/
+.agents/
+
+# Generated or machine-owned files
+package-lock.json
+**/transcript*.json
+*.log
