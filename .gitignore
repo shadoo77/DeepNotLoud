@@ -6,6 +6,9 @@ dist
 # Ignore the output video from Git but not videos you import into src/.
 out
 
+# Remotion bundle output
+build
+
 # Ignore log files
 logs
 *.log
@@ -15,9 +18,12 @@ logs
 .opencode
 .codex
 .agents
-.github
 .AGENT.md
 .CLAUDE.md
+
+# CI workflows must be tracked; everything else under .github stays local
+.github/*
+!.github/workflows/
 
 # whisper
 whisper.cpp

@@ -29,7 +29,13 @@ const LABELS: LabelDef[] = [
   { text: "Control rods", start: 130, x: 220, y: 390, lineW: 140 },
   { text: "Primary coolant circuit", start: 165, x: 1160, y: 230, lineW: 180 },
   { text: "Steam turbines", start: 200, x: 1160, y: 310, lineW: 140 },
-  { text: "Containment vessel (destroyed)", start: 235, x: 1160, y: 390, lineW: 230 },
+  {
+    text: "Containment vessel (destroyed)",
+    start: 235,
+    x: 1160,
+    y: 390,
+    lineW: 230,
+  },
   {
     text: "CORIUM LOCATION (BASEMENT)",
     start: 270,
@@ -142,13 +148,16 @@ export const MG03ReactorDiagram: React.FC = () => {
 
       {/* Title */}
       <div
-        className="absolute left-0 right-0 top-8 text-center"
+        className="absolute top-8 right-0 left-0 text-center"
         style={{
           transform: `translateY(${titleY}px)`,
           opacity: titleOpacity,
         }}
       >
-        <div className="font-bebas text-white" style={{ fontSize: 72, letterSpacing: 6 }}>
+        <div
+          className="font-bebas text-white"
+          style={{ fontSize: 72, letterSpacing: 6 }}
+        >
           REACTOR 4 · ANATOMY
         </div>
       </div>
@@ -177,7 +186,7 @@ export const MG03ReactorDiagram: React.FC = () => {
 
       {/* 200 tonnes banner */}
       <div
-        className="absolute left-1/2 top-[18%] -translate-x-1/2 rounded-md border px-6 py-2"
+        className="absolute top-[18%] left-1/2 -translate-x-1/2 rounded-md border px-6 py-2"
         style={{
           borderColor: C.green,
           backgroundColor: "rgba(17,17,17,0.82)",
@@ -192,7 +201,7 @@ export const MG03ReactorDiagram: React.FC = () => {
 
       {/* DataTicker roentgen */}
       <div
-        className="absolute right-10 top-10 rounded-lg border border-toxicGreen px-5 py-3"
+        className="border-toxicGreen absolute top-10 right-10 rounded-lg border px-5 py-3"
         style={{
           backgroundColor: "rgba(17,17,17,0.84)",
           opacity: interpolate(frame, [240, 270], [0, 1], {
@@ -201,7 +210,9 @@ export const MG03ReactorDiagram: React.FC = () => {
           }),
         }}
       >
-        <div className="font-inter mb-1 text-sm tracking-wider text-white/70">RADIATION INSIDE</div>
+        <div className="font-inter mb-1 text-sm tracking-wider text-white/70">
+          RADIATION INSIDE
+        </div>
         <DataTicker
           to={10000}
           startFrame={240}
@@ -231,10 +242,15 @@ export const MG03ReactorDiagram: React.FC = () => {
       <AbsoluteFill
         style={{
           background: C.bg,
-          opacity: interpolate(frame, [durationInFrames - 30, durationInFrames], [0, 0.35], {
-            extrapolateLeft: "clamp",
-            extrapolateRight: "clamp",
-          }),
+          opacity: interpolate(
+            frame,
+            [durationInFrames - 30, durationInFrames],
+            [0, 0.35],
+            {
+              extrapolateLeft: "clamp",
+              extrapolateRight: "clamp",
+            },
+          ),
         }}
       />
     </AbsoluteFill>

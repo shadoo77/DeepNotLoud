@@ -58,7 +58,7 @@ const LightShaft = () => {
 
   return (
     <div
-      className="absolute top-0 w-1/5 h-full pointer-events-none"
+      className="pointer-events-none absolute top-0 h-full w-1/5"
       style={{
         left: "40%",
         background: `linear-gradient(
@@ -76,7 +76,7 @@ const GrainOverlay = () => {
   return (
     <AbsoluteFill
       style={{ opacity: 0.03 }}
-      className="mix-blend-overlay pointer-events-none"
+      className="pointer-events-none mix-blend-overlay"
     >
       <svg viewBox="0 0 256 256" width="100%" height="100%">
         <filter id="noise">

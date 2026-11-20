@@ -17,7 +17,12 @@ export const TimelineBar: React.FC<{
   startFrame?: number;
   color?: string;
   trackFontSize?: number;
-}> = ({ milestones, startFrame = 0, color = "#C8A96E", trackFontSize = 18 }) => {
+}> = ({
+  milestones,
+  startFrame = 0,
+  color = "#C8A96E",
+  trackFontSize = 18,
+}) => {
   const frame = useCurrentFrame();
   const { fps, width } = useVideoConfig();
 
@@ -56,7 +61,7 @@ export const TimelineBar: React.FC<{
         width: BAR_WIDTH,
       }}
     >
-      <div className="relative h-7 mb-3">
+      <div className="relative mb-3 h-7">
         {milestones.map((m, i) => {
           const isActive = i <= activeMilestoneIndex;
           const isCurrent = i === activeMilestoneIndex;
@@ -80,7 +85,8 @@ export const TimelineBar: React.FC<{
       </div>
 
       <div className="relative h-6">
-        <div className="absolute top-[10px] left-0 right-0 h-[3px] rounded-sm"
+        <div
+          className="absolute top-[10px] right-0 left-0 h-[3px] rounded-sm"
           style={{ backgroundColor: "#333" }}
         />
 

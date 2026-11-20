@@ -53,10 +53,7 @@ export const LowerThird: React.FC<Props> = ({
         className="mr-3.5 rounded-sm"
         style={{ width: 5, background: accentColor }}
       />
-      <div
-        className="rounded-md px-6 py-3"
-        style={{ background: C.panel }}
-      >
+      <div className="rounded-md px-6 py-3" style={{ background: C.panel }}>
         <div
           className="font-bebas text-white"
           style={{ fontSize: 32, letterSpacing: 3 }}
@@ -66,7 +63,11 @@ export const LowerThird: React.FC<Props> = ({
         {subtitle && (
           <div
             className="font-inter mt-0.5"
-            style={{ fontSize: 18, color: "rgba(240,238,228,0.7)", fontWeight: 400 }}
+            style={{
+              fontSize: 18,
+              color: "rgba(240,238,228,0.7)",
+              fontWeight: 400,
+            }}
           >
             {subtitle}
           </div>

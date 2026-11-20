@@ -23,7 +23,11 @@ export const NsaBanner: React.FC<{
     extrapolateRight: "clamp",
   });
 
-  const watermarkPulse = interpolate(Math.sin(local * 0.08), [-1, 1], [0.05, 0.15]);
+  const watermarkPulse = interpolate(
+    Math.sin(local * 0.08),
+    [-1, 1],
+    [0.05, 0.15],
+  );
 
   return (
     <div

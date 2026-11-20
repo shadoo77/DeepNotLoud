@@ -1,0 +1,107 @@
+[
+  {
+    "text": "Nine",
+    "startMs": 0,
+    "endMs": 400,
+    "timestampMs": 460,
+    "confidence": 0.468452
+  },
+  {
+    "text": " hikers.",
+    "startMs": 400,
+    "endMs": 2320,
+    "timestampMs": 1160,
+    "confidence": 0.229842
+  },
+  {
+    "text": " One",
+    "startMs": 2320,
+    "endMs": 2500,
+    "timestampMs": 2600,
+    "confidence": 0.462596
+  },
+  {
+    "text": " mountain.",
+    "startMs": 2500,
+    "endMs": 4290,
+    "timestampMs": 3120,
+    "confidence": 0.309396
+  },
+  {
+    "text": " None",
+    "startMs": 4290,
+    "endMs": 5060,
+    "timestampMs": 4500,
+    "confidence": 0.938348
+  },
+  {
+    "text": " came",
+    "startMs": 5060,
+    "endMs": 5840,
+    "timestampMs": 5200,
+    "confidence": 0.986289
+  },
+  {
+    "text": " back.",
+    "startMs": 5840,
+    "endMs": 7000,
+    "timestampMs": 5660,
+    "confidence": 0.841612
+  },
+  {
+    "text": " What",
+    "startMs": 7000,
+    "endMs": 7390,
+    "timestampMs": 6960,
+    "confidence": 0.993689
+  },
+  {
+    "text": " killed",
+    "startMs": 7390,
+    "endMs": 8090,
+    "timestampMs": 7340,
+    "confidence": 0.995347
+  },
+  {
+    "text": " them",
+    "startMs": 8090,
+    "endMs": 8370,
+    "timestampMs": 7680,
+    "confidence": 0.999272
+  },
+  {
+    "text": " has",
+    "startMs": 8370,
+    "endMs": 8650,
+    "timestampMs": 8140,
+    "confidence": 0.914349
+  },
+  {
+    "text": " never",
+    "startMs": 8650,
+    "endMs": 9210,
+    "timestampMs": 8660,
+    "confidence": 0.992193
+  },
+  {
+    "text": " been",
+    "startMs": 9210,
+    "endMs": 9540,
+    "timestampMs": 8920,
+    "confidence": 0.987901
+  },
+  {
+    "text": " officially",
+    "startMs": 9540,
+    "endMs": 10490,
+    "timestampMs": 9440,
+    "confidence": 0.997444
+  },
+  {
+    "text": " explained.",
+    "startMs": 10490,
+    "endMs": 11740,
+    "timestampMs": 10340,
+    "confidence": 0.942683
+  }
+]

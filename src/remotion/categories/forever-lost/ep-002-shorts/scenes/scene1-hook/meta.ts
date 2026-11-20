@@ -10,5 +10,6 @@ The core is still there.
 [slow] It will be there... forever.`,
   wordCount: 14,
   sfx: ["explosion_distant.mp3 at frame 0, 60%"],
-  image: "ep02_s1_aerial.jpeg — Full-frame background, scale 1.0→1.08 Ken Burns zoom",
+  image:
+    "ep02_s1_aerial.jpeg — Full-frame background, scale 1.0→1.08 Ken Burns zoom",
 };

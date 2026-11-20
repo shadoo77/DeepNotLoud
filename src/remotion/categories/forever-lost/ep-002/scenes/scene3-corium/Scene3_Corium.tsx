@@ -144,7 +144,7 @@ export const Scene3Corium: React.FC = () => {
 
       {/* Left VO kinetic text */}
       <div
-        className="absolute left-0 top-0 h-full px-10 pt-36 pb-28"
+        className="absolute top-0 left-0 h-full px-10 pt-36 pb-28"
         style={{
           width: `${leftPanelWidthPct}%`,
           opacity: leftPanelOpacity,
@@ -166,21 +166,31 @@ export const Scene3Corium: React.FC = () => {
       </div>
 
       {/* Right floating data badges */}
-      <div className="absolute right-8 top-20 flex w-[52%] flex-col gap-5">
+      <div className="absolute top-20 right-8 flex w-[52%] flex-col gap-5">
         <div
           className="rounded-lg border p-4"
           style={{
             borderColor: C.red,
             backgroundColor: "rgba(17,17,17,0.8)",
             transform: `scale(${badgePops[0]})`,
-            opacity: interpolate(frame, [badge1Frame, badge1Frame + 20], [0, 1], {
-              extrapolateLeft: "clamp",
-              extrapolateRight: "clamp",
-            }),
+            opacity: interpolate(
+              frame,
+              [badge1Frame, badge1Frame + 20],
+              [0, 1],
+              {
+                extrapolateLeft: "clamp",
+                extrapolateRight: "clamp",
+              },
+            ),
           }}
         >
-          <div className="font-inter text-sm tracking-wider text-white/70">TEMP AT FORMATION</div>
-          <div className="font-mono text-5xl font-bold" style={{ color: C.white }}>
+          <div className="font-inter text-sm tracking-wider text-white/70">
+            TEMP AT FORMATION
+          </div>
+          <div
+            className="font-mono text-5xl font-bold"
+            style={{ color: C.white }}
+          >
             ~2,000°C
           </div>
         </div>
@@ -191,14 +201,24 @@ export const Scene3Corium: React.FC = () => {
             borderColor: C.green,
             backgroundColor: "rgba(17,17,17,0.8)",
             transform: `scale(${badgePops[1]})`,
-            opacity: interpolate(frame, [badge2Frame, badge2Frame + 20], [0, 1], {
-              extrapolateLeft: "clamp",
-              extrapolateRight: "clamp",
-            }),
+            opacity: interpolate(
+              frame,
+              [badge2Frame, badge2Frame + 20],
+              [0, 1],
+              {
+                extrapolateLeft: "clamp",
+                extrapolateRight: "clamp",
+              },
+            ),
           }}
         >
-          <div className="font-inter text-sm tracking-wider text-white/70">CURRENT RADIATION</div>
-          <div className="font-mono text-5xl font-bold" style={{ color: C.green }}>
+          <div className="font-inter text-sm tracking-wider text-white/70">
+            CURRENT RADIATION
+          </div>
+          <div
+            className="font-mono text-5xl font-bold"
+            style={{ color: C.green }}
+          >
             ~8 Sievert/hour
           </div>
         </div>
@@ -209,14 +229,24 @@ export const Scene3Corium: React.FC = () => {
             borderColor: C.red,
             backgroundColor: "rgba(17,17,17,0.8)",
             transform: `scale(${badgePops[2]})`,
-            opacity: interpolate(frame, [badge3Frame, badge3Frame + 20], [0, 1], {
-              extrapolateLeft: "clamp",
-              extrapolateRight: "clamp",
-            }),
+            opacity: interpolate(
+              frame,
+              [badge3Frame, badge3Frame + 20],
+              [0, 1],
+              {
+                extrapolateLeft: "clamp",
+                extrapolateRight: "clamp",
+              },
+            ),
           }}
         >
-          <div className="font-inter text-sm tracking-wider text-white/70">LETHAL DOSE TIME</div>
-          <div className="font-mono text-5xl font-bold" style={{ color: C.red }}>
+          <div className="font-inter text-sm tracking-wider text-white/70">
+            LETHAL DOSE TIME
+          </div>
+          <div
+            className="font-mono text-5xl font-bold"
+            style={{ color: C.red }}
+          >
             4 minutes (1986)
           </div>
         </div>

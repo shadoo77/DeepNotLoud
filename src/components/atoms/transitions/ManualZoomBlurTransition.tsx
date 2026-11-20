@@ -25,10 +25,15 @@ export const ManualZoomBlurTransition: React.FC<ManualTransitionProps> = ({
     : 1;
 
   const outProgress = fadeOut
-    ? interpolate(frame, [durationInFrames - transitionInFrames, durationInFrames], [0, 1], {
-        extrapolateLeft: "clamp",
-        extrapolateRight: "clamp",
-      })
+    ? interpolate(
+        frame,
+        [durationInFrames - transitionInFrames, durationInFrames],
+        [0, 1],
+        {
+          extrapolateLeft: "clamp",
+          extrapolateRight: "clamp",
+        },
+      )
     : 0;
 
   const inOpacity = inProgress;
@@ -43,10 +48,15 @@ export const ManualZoomBlurTransition: React.FC<ManualTransitionProps> = ({
     : 1;
 
   const outScale = fadeOut
-    ? interpolate(frame, [durationInFrames - transitionInFrames, durationInFrames], [1, 1.04], {
-        extrapolateLeft: "clamp",
-        extrapolateRight: "clamp",
-      })
+    ? interpolate(
+        frame,
+        [durationInFrames - transitionInFrames, durationInFrames],
+        [1, 1.04],
+        {
+          extrapolateLeft: "clamp",
+          extrapolateRight: "clamp",
+        },
+      )
     : 1;
 
   const inBlur = fadeIn
@@ -57,10 +67,15 @@ export const ManualZoomBlurTransition: React.FC<ManualTransitionProps> = ({
     : 0;
 
   const outBlur = fadeOut
-    ? interpolate(frame, [durationInFrames - transitionInFrames, durationInFrames], [0, 8], {
-        extrapolateLeft: "clamp",
-        extrapolateRight: "clamp",
-      })
+    ? interpolate(
+        frame,
+        [durationInFrames - transitionInFrames, durationInFrames],
+        [0, 8],
+        {
+          extrapolateLeft: "clamp",
+          extrapolateRight: "clamp",
+        },
+      )
     : 0;
 
   return (

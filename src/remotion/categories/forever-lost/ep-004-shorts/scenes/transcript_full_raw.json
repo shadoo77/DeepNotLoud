@@ -1,0 +1,1010 @@
+[
+  {
+    "text": "Nine",
+    "startMs": 260,
+    "endMs": 660,
+    "timestampMs": 720,
+    "confidence": 0.468452
+  },
+  {
+    "text": " hikers.",
+    "startMs": 660,
+    "endMs": 2580,
+    "timestampMs": 1420,
+    "confidence": 0.229842
+  },
+  {
+    "text": " One",
+    "startMs": 2580,
+    "endMs": 2760,
+    "timestampMs": 2860,
+    "confidence": 0.462596
+  },
+  {
+    "text": " mountain.",
+    "startMs": 2760,
+    "endMs": 4550,
+    "timestampMs": 3380,
+    "confidence": 0.309396
+  },
+  {
+    "text": " None",
+    "startMs": 4550,
+    "endMs": 5320,
+    "timestampMs": 4760,
+    "confidence": 0.938348
+  },
+  {
+    "text": " came",
+    "startMs": 5320,
+    "endMs": 6100,
+    "timestampMs": 5460,
+    "confidence": 0.986289
+  },
+  {
+    "text": " back.",
+    "startMs": 6100,
+    "endMs": 7260,
+    "timestampMs": 5920,
+    "confidence": 0.841612
+  },
+  {
+    "text": " What",
+    "startMs": 7260,
+    "endMs": 7650,
+    "timestampMs": 7220,
+    "confidence": 0.993689
+  },
+  {
+    "text": " killed",
+    "startMs": 7650,
+    "endMs": 8350,
+    "timestampMs": 7600,
+    "confidence": 0.995347
+  },
+  {
+    "text": " them",
+    "startMs": 8350,
+    "endMs": 8630,
+    "timestampMs": 7940,
+    "confidence": 0.999272
+  },
+  {
+    "text": " has",
+    "startMs": 8630,
+    "endMs": 8910,
+    "timestampMs": 8400,
+    "confidence": 0.914349
+  },
+  {
+    "text": " never",
+    "startMs": 8910,
+    "endMs": 9470,
+    "timestampMs": 8920,
+    "confidence": 0.992193
+  },
+  {
+    "text": " been",
+    "startMs": 9470,
+    "endMs": 9800,
+    "timestampMs": 9180,
+    "confidence": 0.987901
+  },
+  {
+    "text": " officially",
+    "startMs": 9800,
+    "endMs": 10750,
+    "timestampMs": 9700,
+    "confidence": 0.997444
+  },
+  {
+    "text": " explained.",
+    "startMs": 10750,
+    "endMs": 12000,
+    "timestampMs": 10600,
+    "confidence": 0.942683
+  },
+  {
+    "text": " February",
+    "startMs": 12000,
+    "endMs": 13060,
+    "timestampMs": 12300,
+    "confidence": 0.955036
+  },
+  {
+    "text": " 1959.",
+    "startMs": 13060,
+    "endMs": 14850,
+    "timestampMs": 13820,
+    "confidence": 0.879013
+  },
+  {
+    "text": " The",
+    "startMs": 14850,
+    "endMs": 15190,
+    "timestampMs": 14940,
+    "confidence": 0.900781
+  },
+  {
+    "text": " Ural",
+    "startMs": 15190,
+    "endMs": 15810,
+    "timestampMs": 15120,
+    "confidence": 0.630209
+  },
+  {
+    "text": " Mountains,",
+    "startMs": 15810,
+    "endMs": 17090,
+    "timestampMs": 15720,
+    "confidence": 0.907109
+  },
+  {
+    "text": " Soviet",
+    "startMs": 17090,
+    "endMs": 18670,
+    "timestampMs": 16800,
+    "confidence": 0.954829
+  },
+  {
+    "text": " Russia.",
+    "startMs": 18670,
+    "endMs": 18780,
+    "timestampMs": 17460,
+    "confidence": 0.354687
+  },
+  {
+    "text": " Ten",
+    "startMs": 18780,
+    "endMs": 19280,
+    "timestampMs": 18900,
+    "confidence": 0.708918
+  },
+  {
+    "text": " experienced",
+    "startMs": 19280,
+    "endMs": 20200,
+    "timestampMs": 19820,
+    "confidence": 0.982153
+  },
+  {
+    "text": " hikers",
+    "startMs": 20200,
+    "endMs": 20770,
+    "timestampMs": 20260,
+    "confidence": 0.990124
+  },
+  {
+    "text": " set",
+    "startMs": 20770,
+    "endMs": 20940,
+    "timestampMs": 20960,
+    "confidence": 0.962125
+  },
+  {
+    "text": " out",
+    "startMs": 20940,
+    "endMs": 21160,
+    "timestampMs": 21180,
+    "confidence": 0.974535
+  },
+  {
+    "text": " for",
+    "startMs": 21160,
+    "endMs": 21380,
+    "timestampMs": 21400,
+    "confidence": 0.993674
+  },
+  {
+    "text": " Dead",
+    "startMs": 21380,
+    "endMs": 21920,
+    "timestampMs": 21720,
+    "confidence": 0.732334
+  },
+  {
+    "text": " Mountain.",
+    "startMs": 21920,
+    "endMs": 23720,
+    "timestampMs": 22060,
+    "confidence": 0.535596
+  },
+  {
+    "text": " Minus",
+    "startMs": 23720,
+    "endMs": 24250,
+    "timestampMs": 23940,
+    "confidence": 0.671942
+  },
+  {
+    "text": " thirty",
+    "startMs": 24250,
+    "endMs": 24890,
+    "timestampMs": 24360,
+    "confidence": 0.904863
+  },
+  {
+    "text": " Celsius.",
+    "startMs": 24890,
+    "endMs": 26040,
+    "timestampMs": 24720,
+    "confidence": 0.3002
+  },
+  {
+    "text": " Nine",
+    "startMs": 26040,
+    "endMs": 26370,
+    "timestampMs": 26300,
+    "confidence": 0.710488
+  },
+  {
+    "text": " bodies",
+    "startMs": 26370,
+    "endMs": 27010,
+    "timestampMs": 26920,
+    "confidence": 0.99883
+  },
+  {
+    "text": " found",
+    "startMs": 27010,
+    "endMs": 27540,
+    "timestampMs": 27280,
+    "confidence": 0.960702
+  },
+  {
+    "text": " across",
+    "startMs": 27540,
+    "endMs": 28180,
+    "timestampMs": 27760,
+    "confidence": 0.918296
+  },
+  {
+    "text": " one",
+    "startMs": 28180,
+    "endMs": 28500,
+    "timestampMs": 28260,
+    "confidence": 0.571963
+  },
+  {
+    "text": " and",
+    "startMs": 28500,
+    "endMs": 28840,
+    "timestampMs": 28380,
+    "confidence": 0.829801
+  },
+  {
+    "text": " a",
+    "startMs": 28840,
+    "endMs": 28930,
+    "timestampMs": 28480,
+    "confidence": 0.948623
+  },
+  {
+    "text": " half",
+    "startMs": 28930,
+    "endMs": 29330,
+    "timestampMs": 28740,
+    "confidence": 0.997822
+  },
+  {
+    "text": " kilometers.",
+    "startMs": 29330,
+    "endMs": 30800,
+    "timestampMs": 29180,
+    "confidence": 0.726166
+  },
+  {
+    "text": " Their",
+    "startMs": 30800,
+    "endMs": 31990,
+    "timestampMs": 30760,
+    "confidence": 0.951051
+  },
+  {
+    "text": " tent —",
+    "startMs": 31990,
+    "endMs": 32100,
+    "timestampMs": 31020,
+    "confidence": 0.995002
+  },
+  {
+    "text": " cut",
+    "startMs": 32100,
+    "endMs": 32530,
+    "timestampMs": 32060,
+    "confidence": 0.733985
+  },
+  {
+    "text": " open",
+    "startMs": 32530,
+    "endMs": 33110,
+    "timestampMs": 32400,
+    "confidence": 0.994759
+  },
+  {
+    "text": " from",
+    "startMs": 33110,
+    "endMs": 33680,
+    "timestampMs": 32740,
+    "confidence": 0.997383
+  },
+  {
+    "text": " the",
+    "startMs": 33680,
+    "endMs": 34800,
+    "timestampMs": 32880,
+    "confidence": 0.984391
+  },
+  {
+    "text": " inside.",
+    "startMs": 34800,
+    "endMs": 35440,
+    "timestampMs": 33180,
+    "confidence": 0.962094
+  },
+  {
+    "text": " Rescuers",
+    "startMs": 35440,
+    "endMs": 36050,
+    "timestampMs": 34960,
+    "confidence": 0.813465
+  },
+  {
+    "text": " reached",
+    "startMs": 36050,
+    "endMs": 36590,
+    "timestampMs": 35680,
+    "confidence": 0.977625
+  },
+  {
+    "text": " the",
+    "startMs": 36590,
+    "endMs": 36820,
+    "timestampMs": 35940,
+    "confidence": 0.993316
+  },
+  {
+    "text": " camp",
+    "startMs": 36820,
+    "endMs": 37130,
+    "timestampMs": 36200,
+    "confidence": 0.994173
+  },
+  {
+    "text": " three",
+    "startMs": 37130,
+    "endMs": 37510,
+    "timestampMs": 36660,
+    "confidence": 0.962573
+  },
+  {
+    "text": " weeks",
+    "startMs": 37510,
+    "endMs": 37890,
+    "timestampMs": 36960,
+    "confidence": 0.998849
+  },
+  {
+    "text": " later.",
+    "startMs": 37890,
+    "endMs": 38580,
+    "timestampMs": 37420,
+    "confidence": 0.971071
+  },
+  {
+    "text": " The",
+    "startMs": 38580,
+    "endMs": 38900,
+    "timestampMs": 38580,
+    "confidence": 0.998649
+  },
+  {
+    "text": " hikers",
+    "startMs": 38900,
+    "endMs": 39540,
+    "timestampMs": 38840,
+    "confidence": 0.995363
+  },
+  {
+    "text": " had",
+    "startMs": 39540,
+    "endMs": 39860,
+    "timestampMs": 39200,
+    "confidence": 0.982889
+  },
+  {
+    "text": " fled",
+    "startMs": 39860,
+    "endMs": 40280,
+    "timestampMs": 39480,
+    "confidence": 0.998713
+  },
+  {
+    "text": " barefoot",
+    "startMs": 40280,
+    "endMs": 41120,
+    "timestampMs": 39960,
+    "confidence": 0.986926
+  },
+  {
+    "text": " into",
+    "startMs": 41120,
+    "endMs": 41630,
+    "timestampMs": 40560,
+    "confidence": 0.979968
+  },
+  {
+    "text": " subzero",
+    "startMs": 41630,
+    "endMs": 43120,
+    "timestampMs": 41000,
+    "confidence": 0.596105
+  },
+  {
+    "text": " darkness.",
+    "startMs": 43120,
+    "endMs": 43620,
+    "timestampMs": 41840,
+    "confidence": 0.914697
+  },
+  {
+    "text": " Something",
+    "startMs": 43620,
+    "endMs": 44590,
+    "timestampMs": 43540,
+    "confidence": 0.992741
+  },
+  {
+    "text": " in",
+    "startMs": 44590,
+    "endMs": 44920,
+    "timestampMs": 43860,
+    "confidence": 0.996398
+  },
+  {
+    "text": " that",
+    "startMs": 44920,
+    "endMs": 45350,
+    "timestampMs": 44080,
+    "confidence": 0.975295
+  },
+  {
+    "text": " tent",
+    "startMs": 45350,
+    "endMs": 45660,
+    "timestampMs": 44420,
+    "confidence": 0.999296
+  },
+  {
+    "text": " terrified",
+    "startMs": 45660,
+    "endMs": 46620,
+    "timestampMs": 45180,
+    "confidence": 0.944382
+  },
+  {
+    "text": " nine",
+    "startMs": 46620,
+    "endMs": 47050,
+    "timestampMs": 45840,
+    "confidence": 0.975368
+  },
+  {
+    "text": " trained",
+    "startMs": 47050,
+    "endMs": 48400,
+    "timestampMs": 46440,
+    "confidence": 0.86919
+  },
+  {
+    "text": " adults.",
+    "startMs": 48400,
+    "endMs": 48800,
+    "timestampMs": 47000,
+    "confidence": 0.980999
+  },
+  {
+    "text": " Five",
+    "startMs": 48800,
+    "endMs": 49170,
+    "timestampMs": 48740,
+    "confidence": 0.562902
+  },
+  {
+    "text": " of",
+    "startMs": 49170,
+    "endMs": 49350,
+    "timestampMs": 48920,
+    "confidence": 0.996187
+  },
+  {
+    "text": " the",
+    "startMs": 49350,
+    "endMs": 49630,
+    "timestampMs": 49040,
+    "confidence": 0.988783
+  },
+  {
+    "text": " nine",
+    "startMs": 49630,
+    "endMs": 49990,
+    "timestampMs": 49300,
+    "confidence": 0.976619
+  },
+  {
+    "text": " died",
+    "startMs": 49990,
+    "endMs": 50430,
+    "timestampMs": 49800,
+    "confidence": 0.998112
+  },
+  {
+    "text": " of",
+    "startMs": 50430,
+    "endMs": 50550,
+    "timestampMs": 49980,
+    "confidence": 0.995552
+  },
+  {
+    "text": " hypothermia.",
+    "startMs": 50550,
+    "endMs": 51920,
+    "timestampMs": 50140,
+    "confidence": 0.975461
+  },
+  {
+    "text": " The",
+    "startMs": 51920,
+    "endMs": 52200,
+    "timestampMs": 51920,
+    "confidence": 0.975641
+  },
+  {
+    "text": " others",
+    "startMs": 52200,
+    "endMs": 52760,
+    "timestampMs": 52260,
+    "confidence": 0.985913
+  },
+  {
+    "text": " had",
+    "startMs": 52760,
+    "endMs": 53040,
+    "timestampMs": 52400,
+    "confidence": 0.970454
+  },
+  {
+    "text": " shattered",
+    "startMs": 53040,
+    "endMs": 53880,
+    "timestampMs": 52860,
+    "confidence": 0.99478
+  },
+  {
+    "text": " ribs",
+    "startMs": 53880,
+    "endMs": 54290,
+    "timestampMs": 53220,
+    "confidence": 0.979237
+  },
+  {
+    "text": " and",
+    "startMs": 54290,
+    "endMs": 54530,
+    "timestampMs": 53640,
+    "confidence": 0.98462
+  },
+  {
+    "text": " fractured",
+    "startMs": 54530,
+    "endMs": 55420,
+    "timestampMs": 53980,
+    "confidence": 0.993339
+  },
+  {
+    "text": " skulls —",
+    "startMs": 55420,
+    "endMs": 55950,
+    "timestampMs": 54560,
+    "confidence": 0.996339
+  },
+  {
+    "text": " with",
+    "startMs": 55950,
+    "endMs": 56300,
+    "timestampMs": 55320,
+    "confidence": 0.853471
+  },
+  {
+    "text": " no",
+    "startMs": 56300,
+    "endMs": 56470,
+    "timestampMs": 55640,
+    "confidence": 0.997411
+  },
+  {
+    "text": " external",
+    "startMs": 56470,
+    "endMs": 57230,
+    "timestampMs": 56200,
+    "confidence": 0.997166
+  },
+  {
+    "text": " wounds.",
+    "startMs": 57230,
+    "endMs": 58120,
+    "timestampMs": 56720,
+    "confidence": 0.984913
+  },
+  {
+    "text": " The",
+    "startMs": 58120,
+    "endMs": 58470,
+    "timestampMs": 58100,
+    "confidence": 0.99895
+  },
+  {
+    "text": " force",
+    "startMs": 58470,
+    "endMs": 59030,
+    "timestampMs": 58420,
+    "confidence": 0.952606
+  },
+  {
+    "text": " matched",
+    "startMs": 59030,
+    "endMs": 59860,
+    "timestampMs": 58760,
+    "confidence": 0.990548
+  },
+  {
+    "text": " a",
+    "startMs": 59860,
+    "endMs": 59940,
+    "timestampMs": 59000,
+    "confidence": 0.955687
+  },
+  {
+    "text": " high-speed",
+    "startMs": 59940,
+    "endMs": 61060,
+    "timestampMs": 59260,
+    "confidence": 0.718152
+  },
+  {
+    "text": " car",
+    "startMs": 61060,
+    "endMs": 61420,
+    "timestampMs": 60020,
+    "confidence": 0.994089
+  },
+  {
+    "text": " crash.",
+    "startMs": 61420,
+    "endMs": 62400,
+    "timestampMs": 60440,
+    "confidence": 0.982068
+  },
+  {
+    "text": " Russia",
+    "startMs": 62400,
+    "endMs": 62950,
+    "timestampMs": 62480,
+    "confidence": 0.991813
+  },
+  {
+    "text": " reopened",
+    "startMs": 62950,
+    "endMs": 63680,
+    "timestampMs": 62900,
+    "confidence": 0.969241
+  },
+  {
+    "text": " the",
+    "startMs": 63680,
+    "endMs": 63950,
+    "timestampMs": 63240,
+    "confidence": 0.995059
+  },
+  {
+    "text": " case",
+    "startMs": 63950,
+    "endMs": 64310,
+    "timestampMs": 63460,
+    "confidence": 0.998671
+  },
+  {
+    "text": " in",
+    "startMs": 64310,
+    "endMs": 64490,
+    "timestampMs": 63720,
+    "confidence": 0.996329
+  },
+  {
+    "text": " 2019.",
+    "startMs": 64490,
+    "endMs": 65900,
+    "timestampMs": 64500,
+    "confidence": 0.942166
+  },
+  {
+    "text": " Their",
+    "startMs": 65900,
+    "endMs": 67080,
+    "timestampMs": 65860,
+    "confidence": 0.780633
+  },
+  {
+    "text": " verdict:",
+    "startMs": 67080,
+    "endMs": 67580,
+    "timestampMs": 66180,
+    "confidence": 0.460134
+  },
+  {
+    "text": " an",
+    "startMs": 67580,
+    "endMs": 67840,
+    "timestampMs": 67180,
+    "confidence": 0.460134
+  },
+  {
+    "text": " avalanche.",
+    "startMs": 67840,
+    "endMs": 69220,
+    "timestampMs": 67560,
+    "confidence": 0.389614
+  },
+  {
+    "text": " But",
+    "startMs": 69220,
+    "endMs": 69530,
+    "timestampMs": 69140,
+    "confidence": 0.882608
+  },
+  {
+    "text": " the",
+    "startMs": 69530,
+    "endMs": 69900,
+    "timestampMs": 69260,
+    "confidence": 0.992769
+  },
+  {
+    "text": " tent",
+    "startMs": 69900,
+    "endMs": 70400,
+    "timestampMs": 69520,
+    "confidence": 0.996584
+  },
+  {
+    "text": " had",
+    "startMs": 70400,
+    "endMs": 70770,
+    "timestampMs": 69820,
+    "confidence": 0.994019
+  },
+  {
+    "text": " no",
+    "startMs": 70770,
+    "endMs": 71020,
+    "timestampMs": 70140,
+    "confidence": 0.998275
+  },
+  {
+    "text": " snow",
+    "startMs": 71020,
+    "endMs": 71440,
+    "timestampMs": 70440,
+    "confidence": 0.997371
+  },
+  {
+    "text": " on",
+    "startMs": 71440,
+    "endMs": 71770,
+    "timestampMs": 70800,
+    "confidence": 0.996478
+  },
+  {
+    "text": " it.",
+    "startMs": 71770,
+    "endMs": 72420,
+    "timestampMs": 70960,
+    "confidence": 0.984193
+  },
+  {
+    "text": " Sixty-five",
+    "startMs": 72420,
+    "endMs": 73270,
+    "timestampMs": 72560,
+    "confidence": 0.625423
+  },
+  {
+    "text": " years",
+    "startMs": 73270,
+    "endMs": 74440,
+    "timestampMs": 73140,
+    "confidence": 0.99799
+  },
+  {
+    "text": " later —",
+    "startMs": 74440,
+    "endMs": 74970,
+    "timestampMs": 73580,
+    "confidence": 0.891013
+  },
+  {
+    "text": " nobody",
+    "startMs": 74970,
+    "endMs": 76670,
+    "timestampMs": 74720,
+    "confidence": 0.994867
+  },
+  {
+    "text": " agrees.",
+    "startMs": 76670,
+    "endMs": 77120,
+    "timestampMs": 75280,
+    "confidence": 0.983537
+  },
+  {
+    "text": " Their",
+    "startMs": 77120,
+    "endMs": 77590,
+    "timestampMs": 77100,
+    "confidence": 0.769727
+  },
+  {
+    "text": " cameras",
+    "startMs": 77590,
+    "endMs": 78250,
+    "timestampMs": 77560,
+    "confidence": 0.994776
+  },
+  {
+    "text": " were",
+    "startMs": 78250,
+    "endMs": 78620,
+    "timestampMs": 77860,
+    "confidence": 0.998441
+  },
+  {
+    "text": " found",
+    "startMs": 78620,
+    "endMs": 79070,
+    "timestampMs": 78200,
+    "confidence": 0.999133
+  },
+  {
+    "text": " in",
+    "startMs": 79070,
+    "endMs": 79090,
+    "timestampMs": 78400,
+    "confidence": 0.997413
+  },
+  {
+    "text": " the",
+    "startMs": 79090,
+    "endMs": 79550,
+    "timestampMs": 78500,
+    "confidence": 0.996578
+  },
+  {
+    "text": " snow.",
+    "startMs": 79550,
+    "endMs": 80240,
+    "timestampMs": 78760,
+    "confidence": 0.976865
+  },
+  {
+    "text": " The",
+    "startMs": 80240,
+    "endMs": 80810,
+    "timestampMs": 80240,
+    "confidence": 0.704931
+  },
+  {
+    "text": " last",
+    "startMs": 80810,
+    "endMs": 82140,
+    "timestampMs": 80500,
+    "confidence": 0.972103
+  },
+  {
+    "text": " photo:",
+    "startMs": 82140,
+    "endMs": 83540,
+    "timestampMs": 80900,
+    "confidence": 0.63837
+  },
+  {
+    "text": " darkness",
+    "startMs": 83540,
+    "endMs": 84420,
+    "timestampMs": 82440,
+    "confidence": 0.986025
+  },
+  {
+    "text": " and",
+    "startMs": 84420,
+    "endMs": 85770,
+    "timestampMs": 83620,
+    "confidence": 0.547654
+  },
+  {
+    "text": " blur.",
+    "startMs": 85770,
+    "endMs": 86010,
+    "timestampMs": 83960,
+    "confidence": 0.467278
+  },
+  {
+    "text": " Whatever",
+    "startMs": 86010,
+    "endMs": 86830,
+    "timestampMs": 86020,
+    "confidence": 0.86673
+  },
+  {
+    "text": " they",
+    "startMs": 86830,
+    "endMs": 87580,
+    "timestampMs": 86320,
+    "confidence": 0.987059
+  },
+  {
+    "text": " ran",
+    "startMs": 87580,
+    "endMs": 88006,
+    "timestampMs": 87580,
+    "confidence": 0.785844
+  },
+  {
+    "text": " from...",
+    "startMs": 88006,
+    "endMs": 88250,
+    "timestampMs": 86980,
+    "confidence": 0.785844
+  },
+  {
+    "text": " was",
+    "startMs": 88250,
+    "endMs": 88420,
+    "timestampMs": 88300,
+    "confidence": 0.824794
+  },
+  {
+    "text": " still",
+    "startMs": 88420,
+    "endMs": 88730,
+    "timestampMs": 88700,
+    "confidence": 0.981476
+  },
+  {
+    "text": " there",
+    "startMs": 88730,
+    "endMs": 89040,
+    "timestampMs": 89040,
+    "confidence": 0.9924
+  },
+  {
+    "text": " when",
+    "startMs": 89040,
+    "endMs": 89290,
+    "timestampMs": 89380,
+    "confidence": 0.987434
+  },
+  {
+    "text": " they",
+    "startMs": 89290,
+    "endMs": 89710,
+    "timestampMs": 89520,
+    "confidence": 0.992712
+  },
+  {
+    "text": " died.",
+    "startMs": 89710,
+    "endMs": 90320,
+    "timestampMs": 89980,
+    "confidence": 0.952379
+  }
+]

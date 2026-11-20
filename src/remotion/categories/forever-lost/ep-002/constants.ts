@@ -65,8 +65,8 @@ export const SCENES = {
 } as const;
 
 export const TOTAL_FRAMES =
-  (Object.values(SCENES).reduce((a, b) => a + b.durationInFrames, 0) -
-    SCENES.mg01.durationInFrames) -
+  Object.values(SCENES).reduce((a, b) => a + b.durationInFrames, 0) -
+  SCENES.mg01.durationInFrames -
   (8 * T.fade + 2 * T.wipe);
 
 export const mg01StartFrame =

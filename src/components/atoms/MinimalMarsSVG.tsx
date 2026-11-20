@@ -6,7 +6,9 @@ type MinimalMarsSVGProps = {
   size?: number;
 };
 
-export const MinimalMarsSVG: React.FC<MinimalMarsSVGProps> = ({ size = 480 }) => (
+export const MinimalMarsSVG: React.FC<MinimalMarsSVGProps> = ({
+  size = 480,
+}) => (
   <svg
     width={size}
     height={size}
