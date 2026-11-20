@@ -21,9 +21,10 @@ logs
 .AGENT.md
 .CLAUDE.md
 
-# CI workflows must be tracked; everything else under .github stays local
+# CI workflows and PR template must be tracked; everything else under .github stays local
 .github/*
 !.github/workflows/
+!.github/pull_request_template.md
 
 # whisper
 whisper.cpp

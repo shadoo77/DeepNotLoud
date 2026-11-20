@@ -2,14 +2,14 @@
 
 ## What this is
 
-Remotion 4.0.469 project for **DeepNotLoud** — a YouTube documentary channel.  
+Remotion 4.0.545 project for **DeepNotLoud** — a YouTube documentary channel.  
 Three compositions registered in `src/Root.tsx`, all under the "Forever-Lost" folder:
 
-| ID                       | Resolution | FPS | Status           |
-| ------------------------ | ---------- | --- | ---------------- |
-| `ForeverLost`            | 1280×720   | 30  | Titanic (done)   |
-| `ForeverLost-Ep2`        | 1920×1080  | 30  | Chernobyl (WIP)  |
-| `ForeverLost-Ep2-Shorts` | 1080×1920  | 30  | Shorts cut (WIP) |
+| ID                          | Resolution | FPS | Status                |
+| --------------------------- | ---------- | --- | --------------------- |
+| `ForeverLost-Ep3-Landscape` | 1920×1080  | 30  | Ep 3 landscape (done) |
+| `ForeverLost-Ep3-Shorts`    | 1080×1920  | 30  | Ep 3 shorts (done)    |
+| `ForeverLost-Ep4-Shorts`    | 1080×1920  | 30  | Ep 4 shorts (WIP)     |
 
 ## Commands
 
@@ -17,10 +17,45 @@ Three compositions registered in `src/Root.tsx`, all under the "Forever-Lost" fo
 | -------------------------- | ---------------------------------------------------------------- |
 | Dev server (port **3002**) | `npm run dev`                                                    |
 | Lint (ESLint + tsc)        | `npm run lint`                                                   |
+| Format (write)             | `npm run format`                                                 |
+| Format (check, CI gate)    | `npm run format:check`                                           |
 | Build                      | `npm run build`                                                  |
 | Render                     | `npx remotion render`                                            |
 | Single-frame check         | `npx remotion still <composition-id> --scale=0.25 --frame=30`    |
 | Generate captions from WAV | `npx tsx scripts/generate-captions.ts <input.wav> <output.json>` |
+
+## Branching & CI
+
+`master` and `staging` are **protected**: pull requests only, required checks, no force pushes, no deletions.
+Never commit or push to them directly — the push will be rejected.
+
+```
+feat/<slug> ──PR──> staging ──PR──> master
+```
+
+| Branch    | Purpose                                                             |
+| --------- | ------------------------------------------------------------------- |
+| `master`  | Released episodes. Only updated by a `staging` → `master` PR.       |
+| `staging` | Integration branch. Updated by feature PRs.                         |
+| `feat/*`  | One branch per video, episode, toolkit or docs change. Short-lived. |
+
+Every PR into `staging` or `master` runs `.github/workflows/ci.yml`, and all three jobs must pass:
+
+| Check    | Runs                 |
+| -------- | -------------------- |
+| `lint`   | `eslint src && tsc`  |
+| `format` | `prettier --check .` |
+| `build`  | `remotion bundle`    |
+
+Before pushing, run locally:
+
+```bash
+npm run format   # prettier --write .
+npm run lint
+npm run build
+```
+
+Use `.prettierignore` for generated or machine-owned files instead of formatting them by hand.
 
 ## Project structure
 
